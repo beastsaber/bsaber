@@ -5,7 +5,7 @@
 <script lang="ts">
   import Cards from '$lib/Cards.svelte'
 
-  let cards = [{}, {}, {}, {}]
+  let cards = []
 
   getCards()
 
