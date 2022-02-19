@@ -14,7 +14,7 @@ const config = {
         dashes: 'oldschool',
       },
       layout: {
-        posts: './src/layouts/posts.svelte',
+        posts: './src/routes/__layout.svelte',
       },
       remarkPlugins: [],
       rehypePlugins: [],
