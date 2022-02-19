@@ -4,6 +4,20 @@
 
 <script lang="ts">
   import Cards from '$lib/Cards.svelte'
+
+  let cards = [{}, {}, {}, {}]
+
+  getCards()
+
+  async function getCards() {
+    cards = await Promise.all(
+      Object.entries(import.meta.glob('/src/routes/**/*.md')).map(async ([path, module]) => {
+        const { metadata } = await module()
+        const slug = path.split('/').reverse()[0].split('.')[0]
+        return { slug, ...metadata }
+      }),
+    )
+  }
 </script>
 
 <svelte:head>
@@ -11,7 +25,7 @@
 </svelte:head>
 
 <section>
-  <Cards />
+  <Cards {cards} />
 </section>
 
 <style>

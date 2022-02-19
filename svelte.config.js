@@ -1,11 +1,25 @@
-import adapter from '@sveltejs/adapter-auto'
+import { mdsvex } from 'mdsvex'
 import preprocess from 'svelte-preprocess'
+import adapter from '@sveltejs/adapter-netlify'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
-  preprocess: preprocess(),
+  preprocess: [
+    preprocess(),
+    mdsvex({
+      extensions: ['.svelte.md', '.md', '.svx'],
+      smartypants: {
+        dashes: 'oldschool',
+      },
+      layout: {
+        posts: './src/layouts/posts.svelte',
+      },
+      remarkPlugins: [],
+      rehypePlugins: [],
+    }),
+  ],
 
   kit: {
     adapter: adapter(),
@@ -15,6 +29,7 @@ const config = {
       allowed: ['PATCH', 'DELETE'],
     },
   },
+  extensions: ['.svelte', '.svelte.md', '.md', '.svx'],
 }
 
 export default config

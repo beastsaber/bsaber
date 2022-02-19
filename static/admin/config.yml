@@ -2,13 +2,12 @@ backend:
   name: git-gateway
   branch: master
 collections:
-  - name: routes
-    label: routes
-    folder: src/routes
+  - name: posts
+    label: Posts
+    folder: src/routes/posts
     create: true
     fields:
       - name: title
-      - name: nav_label
       - name: body
         widget: markdown
 media_folder: 'static/uploads'

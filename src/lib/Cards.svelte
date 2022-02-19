@@ -1,19 +1,14 @@
 <script>
-  let cards = [
-    { title: 'Lorem Ipsum' },
-    { title: 'Lorem Ipsum' },
-    { title: 'Lorem Ipsum' },
-    { title: 'Lorem Ipsum' },
-  ]
+  export let cards
 </script>
 
 <div class="cards">
   {#each cards as card}
-    <div class="card">
+    <a class="card" href={`/posts/${card.slug}`}>
       <div class="title">
-        {card.title}
+        {card.title ?? ''}
       </div>
-    </div>
+    </a>
   {/each}
 </div>
 
