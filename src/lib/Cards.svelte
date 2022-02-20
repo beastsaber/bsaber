@@ -4,11 +4,7 @@
 
 <div class="cards">
   {#each cards as card}
-    <a
-      class="card"
-      href={`/posts/${card.slug}`}
-      style={`background-image: url(${import.meta.env.VITE_DOMAIN_BASE}${card.image})`}
-    >
+    <a class="card" href={`/posts/${card.slug}`} style={`background-image: url(${card.image})`}>
       <div class="title">
         {card.title ?? ''}
       </div>
