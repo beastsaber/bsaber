@@ -21,10 +21,12 @@ app.get('/posts', async function (request, response) {
     index: 'posts',
     body: {
       query: {
-        match: {
-          text: {
-            query: request.query.search,
-          },
+        multi_match: {
+          query: request.query.search,
+          fields: [
+            'title^3', // ^ multiples the field's score
+            'text',
+          ],
         },
       },
     },
