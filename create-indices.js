@@ -1,4 +1,6 @@
-import 'dotenv/config'
+if (process.env.NODE_ENV !== 'production') {
+  import 'dotenv/config'
+}
 import { Client } from '@opensearch-project/opensearch'
 import yaml from 'js-yaml'
 import fs from 'fs'
