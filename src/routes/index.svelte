@@ -17,6 +17,9 @@
         return { slug, ...metadata }
       }),
     )
+    cards = cards.sort(function (a, b) {
+      return b.publish.localeCompare(a.publish)
+    })
   }
 </script>
 
