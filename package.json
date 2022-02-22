@@ -32,10 +32,11 @@
   },
   "type": "module",
   "dependencies": {
-    "@elastic/elasticsearch": "^8.0.0",
     "@fontsource/fira-mono": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
+    "@opensearch-project/opensearch": "^1.0.2",
     "cookie": "^0.4.1",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "js-yaml": "^4.1.0",
     "mdsvex": "^0.10.5"
