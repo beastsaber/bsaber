@@ -8,6 +8,8 @@ collections:
     create: true
     fields:
       - name: title
+      - name: publish
+        widget: datetime
       - name: body
         widget: markdown
       - name: image
