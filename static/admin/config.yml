@@ -25,6 +25,7 @@ collections:
         options: [Curator, Senior Curator]
       - name: style tags
         widget: list
+        allow_add: true
       - name: favorite map
         widget: object
         fields:
