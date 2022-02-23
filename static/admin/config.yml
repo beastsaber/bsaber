@@ -14,5 +14,22 @@ collections:
         widget: markdown
       - name: image
         widget: image
+  - name: curation-team
+    label: Curation Team
+    folder: src/collections/curation-team
+    create: true
+    fields:
+      - name: name
+      - name: role
+        widget: select
+        options: [Curator, Senior Curator]
+      - name: style tags
+        widget: list
+      - name: favorite map
+        widget: object
+        fields:
+          - name: name
+          - name: url
+      - name: bio
 media_folder: 'static/uploads'
 public_folder: '/uploads'
