@@ -1,10 +1,10 @@
 ---
 name: Maybeemae
 role: Senior Curator
-style tags:
+style_tags:
   - dance
   - balanced
-favorite map:
+favorite_map:
   name: Jax – 90S Kids
   url: https://bsaber.com/songs/1a1e8/
 bio: I love curating novice maps that make me dance without even thinking about

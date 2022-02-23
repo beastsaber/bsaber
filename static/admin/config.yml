@@ -16,6 +16,7 @@ collections:
         widget: image
   - name: curation-team
     label: Curation Team
+    slug: '{{name}}'
     folder: src/collections/curation-team
     create: true
     fields:
@@ -23,10 +24,10 @@ collections:
       - name: role
         widget: select
         options: [Curator, Senior Curator]
-      - name: style tags
+      - name: style_tags
         widget: list
         allow_add: true
-      - name: favorite map
+      - name: favorite_map
         widget: object
         fields:
           - name: name
