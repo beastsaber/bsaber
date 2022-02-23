@@ -32,5 +32,6 @@ collections:
           - name: name
           - name: url
       - name: bio
+        widget: markdown
 media_folder: 'static/uploads'
 public_folder: '/uploads'
