@@ -5,6 +5,8 @@
 <script lang="ts">
   import Cards from '$lib/Cards.svelte'
   import Listing from '$lib/Listing.svelte'
+  import Leaderboards from '$lib/Leaderboards.svelte'
+
   import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
   import { faYoutube } from '@fortawesome/free-brands-svg-icons'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons'
@@ -38,7 +40,7 @@
     <Listing title="Latest News" icon={faBullhorn} />
     <Listing title="Featured Videos" icon={faYoutube} />
     <Listing title="Upcoming Events" icon={faCalendarDay} />
-    <Listing title="ScoreSaber Leaderboards" img="/static/scoresaber-logo.svg" />
+    <Leaderboards />
   </div>
 </section>
 
