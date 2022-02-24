@@ -17,7 +17,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 12px;
     width: 100%;
     max-width: 1364px;
     margin: 0 auto;

@@ -53,7 +53,7 @@
 
   .title {
     margin-top: auto;
-    padding: 20px;
+    padding: 12px;
     color: white;
     font-size: 24px;
     z-index: 1;

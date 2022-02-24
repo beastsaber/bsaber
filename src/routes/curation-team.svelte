@@ -31,6 +31,6 @@
 
 <style>
   section {
-    max-width: 1332px;
+    max-width: 1356px;
   }
 </style>

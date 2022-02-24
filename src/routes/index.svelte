@@ -4,6 +4,10 @@
 
 <script lang="ts">
   import Cards from '$lib/Cards.svelte'
+  import Listing from '$lib/Listing.svelte'
+  import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
+  import { faYoutube } from '@fortawesome/free-brands-svg-icons'
+  import { faCalendarDay } from '@fortawesome/free-solid-svg-icons'
 
   let cards = []
 
@@ -29,10 +33,44 @@
 
 <section>
   <Cards {cards} />
+  <hr />
+  <div class="listings">
+    <Listing title="Latest News" icon={faBullhorn} />
+    <Listing title="Featured Videos" icon={faYoutube} />
+    <Listing title="Upcoming Events" icon={faCalendarDay} />
+    <Listing title="ScoreSaber Leaderboards" img="/static/scoresaber-logo.svg" />
+  </div>
 </section>
 
 <style>
   section {
-    max-width: 1332px;
+    max-width: 1356px;
+  }
+
+  hr {
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #707070;
+  }
+
+  .listings {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    gap: 12px;
+  }
+
+  @media (min-width: 678px) {
+    .listings {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1356px) {
+    .listings {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 </style>
