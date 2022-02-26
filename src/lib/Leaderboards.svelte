@@ -7,28 +7,11 @@
   getPlayers()
 
   async function getPlayers() {
-    let response = await fetch('https://scoresaber.com/api/players')
+    let response = await fetch(
+      `${import.meta.env.VITE_BSABER_API_BASE || 'https://api.bsaber.com'}/top-players`,
+    )
     let json = await response.json()
-    players = json.players
-    players.length = 10
-    players = players.map(function (player) {
-      player.weeklyChange = weeklyChange(player.histories)
-      return player
-    })
-  }
-
-  function weeklyChange(histories) {
-    let changes = histories.split(',')
-    let lastWeek
-    if (changes.length >= 7) {
-      lastWeek = Number(changes[changes.length - 7])
-    } else {
-      lastWeek = Number(changes[0])
-    }
-
-    if (lastWeek != 999999) {
-      return lastWeek - Number(changes[changes.length - 1])
-    }
+    players = json
   }
 </script>
 
@@ -39,15 +22,11 @@
     {/if}
     <div class="player">
       <div class="rank">#{player.rank}</div>
-      <img class="avatar" src={player.profilePicture} alt="" />
+      <img class="avatar" src={player.avatar} alt="" />
       <div class="name">{player.name}</div>
-      <div class="score">{player.pp.toPrecision(7).toLocaleString()}pp</div>
-      <div
-        class="change"
-        class:up={player.weeklyChange >= 1}
-        class:down={player.weeklyChange <= -1}
-      >
-        {player.weeklyChange >= 1 ? '+' : ''}{player.weeklyChange}
+      <div class="score">{player.score}pp</div>
+      <div class="change" class:up={player.change >= 1} class:down={player.change <= -1}>
+        {player.change >= 1 ? '+' : ''}{player.change}
       </div>
     </div>
   {/each}
