@@ -7,9 +7,9 @@
   import Listing from '$lib/Listing.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
 
-  import faBullhorn from '@fortawesome/free-solid-svg-icons/faBullhorn'
-  import faYoutube from '@fortawesome/free-brands-svg-icons/faYoutube'
-  import faCalendarDay from '@fortawesome/free-solid-svg-icons/faCalendarDay'
+  import { faBullhorn } from '@fortawesome/free-solid-svg-icons/faBullhorn'
+  import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
+  import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
 
   let cards = []
 

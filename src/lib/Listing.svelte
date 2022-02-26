@@ -27,10 +27,6 @@
     background-color: #303030;
   }
 
-  .img {
-    width: 25px;
-  }
-
   .header {
     display: flex;
     align-items: center;
@@ -42,6 +38,10 @@
     border-top-right-radius: 4px;
     background-color: #444;
     font-size: 20px;
+  }
+
+  .img {
+    width: 25px;
   }
 
   .content {
