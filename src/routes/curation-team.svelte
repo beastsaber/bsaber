@@ -5,20 +5,7 @@
 <script lang="ts">
   import CuratorCard from '$lib/CuratorCard.svelte'
 
-  let curators = []
-
-  getTeam()
-
-  async function getTeam() {
-    curators = await Promise.all(
-      Object.entries(import.meta.glob('/src/collections/curation-team/*.md')).map(
-        async ([path, module]) => {
-          const { metadata } = await module()
-          return { ...metadata }
-        }
-      )
-    )
-  }
+  export let curators
 </script>
 
 <svelte:head>
@@ -27,7 +14,7 @@
 
 <section>
   {#each curators as curator}
-    <CuratorCard 
+    <CuratorCard
       name={curator.name}
       slug={curator.slug}
       role={curator.role}
@@ -42,8 +29,7 @@
 <style lang="scss">
   section {
     max-width: 1356px;
-    display: flex;
-    align-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   }
 </style>

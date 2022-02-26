@@ -21,7 +21,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/scss/variables";
+  @import 'src/scss/variables';
 
   .listing {
     width: 100%;

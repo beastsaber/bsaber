@@ -13,7 +13,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/scss/variables";
+  @import 'src/scss/variables';
 
   .cards {
     display: grid;
