@@ -32,11 +32,10 @@
   {/each}
 </Listing>
 
-<style>
+<style lang="scss">
   hr {
     height: 1px;
-    margin-left: -12px;
-    margin-right: -12px;
+    margin: 8px -12px;
     border: none;
     background-color: #444;
   }

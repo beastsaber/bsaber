@@ -44,9 +44,11 @@
     "express": "^4.17.3",
     "js-yaml": "^4.1.0",
     "mdsvex": "^0.10.5",
-    "node-fetch": "^3.2.0"
+    "node-fetch": "^3.2.0",
+    "node-sass": "^7.0.1",
+    "sass": "^1.49.9"
   },
   "engines": {
-    "node": "^16.14.0"
+    "node": ">=16.14.0"
   }
 }
