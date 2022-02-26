@@ -11,22 +11,7 @@
   import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
 
-  let cards = []
-
-  getCards()
-
-  async function getCards() {
-    cards = await Promise.all(
-      Object.entries(import.meta.glob('/src/routes/**/*.md')).map(async ([path, module]) => {
-        const { metadata } = await module()
-        const slug = path.split('/').reverse()[0].split('.')[0]
-        return { slug, ...metadata }
-      }),
-    )
-    cards = cards.sort(function (a, b) {
-      return b.publish.localeCompare(a.publish)
-    })
-  }
+  export let cards
 </script>
 
 <svelte:head>
