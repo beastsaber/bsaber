@@ -30,10 +30,6 @@
 </section>
 
 <style lang="scss">
-  section {
-    max-width: 1356px;
-  }
-
   hr {
     height: 1px;
     margin-top: 20px;
