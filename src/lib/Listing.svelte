@@ -20,11 +20,13 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
+  @import 'src/scss/variables';
+
   .listing {
     width: 100%;
     border-radius: 4px;
-    background-color: #303030;
+    background-color: $background-secondary;
   }
 
   .header {
@@ -36,7 +38,7 @@
     padding-right: 12px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    background-color: #444;
+    background-color: $background-tertiary;
     font-size: 20px;
   }
 

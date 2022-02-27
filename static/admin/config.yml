@@ -21,6 +21,7 @@ collections:
     create: true
     fields:
       - name: name
+      - name: slug
       - name: role
         widget: select
         options: [Curator, Senior Curator]
@@ -34,5 +35,7 @@ collections:
           - name: url
       - name: bio
         widget: markdown
+      - name: image
+        widget: image
 media_folder: 'static/uploads'
 public_folder: '/uploads'

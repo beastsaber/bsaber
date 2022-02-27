@@ -12,7 +12,9 @@
   {/each}
 </div>
 
-<style>
+<style lang="scss">
+  @import 'src/scss/variables';
+
   .cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -47,7 +49,7 @@
     width: 100%;
     height: 100%;
     border-radius: 4px;
-    background: transparent linear-gradient(180deg, #45408800 0%, #000000 100%) 0% 0% no-repeat
+    background: transparent linear-gradient(180deg, #45408800 50%, #000000 100%) 0 0 no-repeat
       padding-box;
   }
 

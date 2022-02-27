@@ -29,7 +29,7 @@
   </div>
 </section>
 
-<style>
+<style lang="scss">
   section {
     max-width: 1356px;
   }
