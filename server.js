@@ -58,7 +58,7 @@ app.get('/top-players', cache('5 minutes'), async function (request, response) {
       rank: player.rank,
       avatar: player.profilePicture,
       name: player.name,
-      score: player.pp.toPrecision(7).toLocaleString(),
+      score: player.pp,
       change: weeklyChange(player.histories),
     }
   })
