@@ -23,7 +23,6 @@
   </div>
   <div class="bottom">
     <div>
-      <h4>Biography:</h4>
       <p class="bio">{bio}</p>
     </div>
     <div class="fav-map">
@@ -53,7 +52,7 @@
 
       .image {
         border-radius: 50%;
-        height: 120px;
+        height: 5rem;
         margin: 12px 12px 12px 0;
       }
 

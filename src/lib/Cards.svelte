@@ -39,8 +39,13 @@
     display: flex;
     aspect-ratio: 1;
     border-radius: 4px;
-    background-size: cover;
+    background-size: 100%;
     background-position: center;
+    transition: 0.5s;
+  }
+
+  .card:hover {
+    background-size: 110%;
   }
 
   .card::after {
