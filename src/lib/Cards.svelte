@@ -38,7 +38,7 @@
     position: relative;
     display: flex;
     aspect-ratio: 1;
-    border-radius: 4px;
+    border-radius: $rounding;
     background-size: 100%;
     background-position: center;
     transition: 0.5s;
@@ -53,7 +53,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 4px;
+    border-radius: $rounding;
     background: transparent linear-gradient(180deg, #45408800 50%, #000000 100%) 0 0 no-repeat
       padding-box;
   }

@@ -25,7 +25,7 @@
 
   .listing {
     width: 100%;
-    border-radius: 4px;
+    border-radius: $rounding;
     background-color: $background-secondary;
   }
 
@@ -36,8 +36,8 @@
     height: 40px;
     padding-left: 12px;
     padding-right: 12px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: $rounding;
+    border-top-right-radius: $rounding;
     background-color: $background-tertiary;
     font-size: 20px;
   }

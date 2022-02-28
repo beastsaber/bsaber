@@ -37,7 +37,7 @@
 
   .curator-card {
     background-color: $background-secondary;
-    border-radius: 4px;
+    border-radius: $rounding;
     overflow: hidden;
     flex-basis: 30%;
     margin: 12px;
@@ -68,7 +68,7 @@
         .style-tag {
           font-size: 0.75rem;
           font-weight: bold;
-          border-radius: 4px;
+          border-radius: $rounding;
           padding: 0 4px;
           background-color: #1268a1;
           margin-right: 8px;
