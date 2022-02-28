@@ -28,7 +28,6 @@
 
 <style lang="scss">
   section {
-    max-width: 1356px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   }

@@ -24,7 +24,9 @@
       <div class="rank">#{player.rank}</div>
       <img class="avatar" src={player.avatar} alt="" />
       <div class="name">{player.name}</div>
-      <div class="score">{player.score}pp</div>
+      <div class="score">
+        {player.score.toLocaleString(undefined, { minimumFractionDigits: 2 })}pp
+      </div>
       <div class="change" class:up={player.change >= 1} class:down={player.change <= -1}>
         {player.change >= 1 ? '+' : ''}{player.change}
       </div>
