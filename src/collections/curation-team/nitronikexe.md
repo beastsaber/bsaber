@@ -13,5 +13,5 @@ bio: I like maps that have a lot of energy to get my heart rate up
   (like dance maps), or really interesting patterns I haven’t seen
   before (often found in tech). Sometimes when I want to chill I
   play maps with gorgeous lightshows and just vibe to the song.
-image: /uploads/nitro.png
+image: /static/uploads/curators/nitro.png
 ---

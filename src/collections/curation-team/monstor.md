@@ -13,5 +13,5 @@ bio: Thoughtful mapping in the lower 3 difficulties for any style. Casual and
   new players need good maps, too. I also look for new/lesser known mappers
   showing budding talent that may benefit from joining the mapping/modding
   communities.
-image: https://bsaber.com/curators/monstor.png
+image: /static/uploads/curators/monstor.png
 ---

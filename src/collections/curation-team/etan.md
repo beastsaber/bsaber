@@ -14,5 +14,5 @@ bio: I look for fun and creative maps
   +1 if you have lower diffs I can acc
 
   Also jammers only
-image: /uploads/etan.png
+image: /static/uploads/curators/etan.png
 ---
