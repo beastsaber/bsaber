@@ -3,6 +3,7 @@
 </script>
 
 <script lang="ts">
+  import QuickFilters from '$lib/QuickFilters.svelte'
   import Cards from '$lib/Cards.svelte'
   import Listing from '$lib/Listing.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
@@ -19,6 +20,7 @@
 </svelte:head>
 
 <section>
+  <QuickFilters />
   <Cards {cards} />
   <hr />
   <div class="listings">

@@ -23,7 +23,6 @@
   </div>
   <div class="bottom">
     <div>
-      <h4>Biography:</h4>
       <p class="bio">{bio}</p>
     </div>
     <div class="fav-map">
@@ -38,7 +37,7 @@
 
   .curator-card {
     background-color: $background-secondary;
-    border-radius: 4px;
+    border-radius: $rounding;
     overflow: hidden;
     flex-basis: 30%;
     margin: 12px;
@@ -53,7 +52,7 @@
 
       .image {
         border-radius: 50%;
-        height: 120px;
+        height: 5rem;
         margin: 12px 12px 12px 0;
       }
 
@@ -69,7 +68,7 @@
         .style-tag {
           font-size: 0.75rem;
           font-weight: bold;
-          border-radius: 4px;
+          border-radius: $rounding;
           padding: 0 4px;
           background-color: #1268a1;
           margin-right: 8px;
