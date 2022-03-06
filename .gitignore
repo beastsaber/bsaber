@@ -9,3 +9,6 @@ node_modules
 !.env.example
 .vercel
 .output
+
+/static/images/*/*
+!.keep
