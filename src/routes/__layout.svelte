@@ -1,7 +1,9 @@
 <script lang="ts">
   import '../app.scss'
+  import Navbar from '$lib/Navbar.svelte';
 </script>
 
+<Navbar />
 <main>
   <slot />
 </main>
@@ -14,7 +16,7 @@
     padding: 12px;
     width: 100%;
     max-width: 1364px;
-    margin: 0 auto;
+    margin: 60px auto;
     box-sizing: border-box;
   }
 
