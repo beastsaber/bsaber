@@ -110,7 +110,7 @@
 </script>
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-  <div class="container"><a href="/" class="navbar-brand" id="home-link"><img alt="BeatSaver" src="/static/BeastSaber-LogoW.webp" title="BeatSaver" height="23px"></a>
+  <div class="container"><a href="/" class="navbar-brand" id="home-link"><img alt="BeatSaver" src="/BeastSaber-LogoW.webp" title="BeatSaver" height="23px"></a>
     <button type="button" class="navbar-toggler" id="navbar-button" on:click="{() => showNavbarMobile = !showNavbarMobile}" data-toggle="collapse" data-target="navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse {showNavbarMobile ? 'show' : ''}" id="navbar">
       <ul class="navbar-nav me-auto">

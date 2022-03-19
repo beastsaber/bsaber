@@ -30,7 +30,7 @@
 	<body id="error-page" class="error">
 		<div class="message">
 		<blockquote>
-			<center><a class="logoimg" href="https://bsaber.com"><img src="/static/BeastSaber-LogoW.webp" class="logoimg" alt="BeastSaber"></a></center>
+			<center><a class="logoimg" href="https://bsaber.com"><img src="/BeastSaber-LogoW.webp" class="logoimg" alt="BeastSaber"></a></center>
 			<h2>
 				<center>Error {errorCode} {errorMessage}</center>
 			</h2>
