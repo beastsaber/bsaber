@@ -119,7 +119,8 @@
           <li class="nav-item dropdown">
             <!-- <a href="#" class="nav-link dropdown-toggle {item.show ? 'show' : ''}" on:mouseover="{() => toggleDropdown(item)}" on:mouseleave="{toggleOff}">{item.name}</a> -->
             <a href="#" class="nav-link dropdown-toggle {item.show ? 'show' : ''}" on:click="{() => toggleDropdown(item)}">{item.name}</a>
-            <div class="dropdown-menu {item.show ? 'show' : ''}">
+            <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+            <div class="dropdown-menu {item.show ? 'show' : ''}" on:mouseleave="{() => toggleOff()}">
 
               {#each item.Items as navItem}
                 <a href="{navItem.href}" class="dropdown-item">{navItem.name}</a>
