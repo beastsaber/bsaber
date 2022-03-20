@@ -54,11 +54,7 @@
 
 <style lang="scss">
 	@import 'src/scss/variables';
-	/* * {
-		background: #262626;
-		display: block;
-		font-family: arial,sans-serif;
-	}*/
+
 	body.error {
 		background: #1c1c1c;
 		color: LightGray;
@@ -103,34 +99,5 @@
 		font-size: 1em;
 		margin: 0.5rem;
 		padding: 0.2em 0.4em;
-	}/*
-	b {
-		font-weight: bold;
 	}
-	@media screen and (max-width: 400px) {
-		.message{
-			padding-bottom: 0px;
-		}
-	}
-	#error-page p, #error-page .message {
-		font-size: 14px;
-		line-height: 1.5;
-		margin: 25px 0 20px;
-	}
-	ul {
-		padding: 0% 5% 0% 5%;
-	}
-	ul li {
-		margin-bottom: 10px;
-	}
-	a:link {color: DodgerBlue; }
-	a:hover {color: DeepSkyBlue; }
-	a:visited {color: RoyalBlue; }
-	a:active {color: SteelBlue; }
-	a.logoimg {
-		padding-top: 20px;
-		max-width: 100%;
-	}
-	img { border:none; }
-	*/
 </style>
