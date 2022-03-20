@@ -24,7 +24,7 @@
   <div class="filters-search">
     <QuickFilters />
     <Search />
-  </div> 
+  </div>
   <Cards {cards} />
   <hr />
   <div class="listings">

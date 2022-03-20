@@ -75,8 +75,8 @@
             {
               name: 'Mapping Resources',
               href: '',
-            }
-          ]
+            },
+          ],
         },
         {
           name: 'Events',
@@ -104,8 +104,8 @@
             {
               name: 'About Curation',
               href: '',
-            }
-          ]
+            },
+          ],
         },
         {
           name: 'The Beasties',
@@ -114,8 +114,8 @@
             {
               name: 'Past Winners',
               href: '',
-            }
-          ]
+            },
+          ],
         },
       ],
     },
@@ -145,11 +145,7 @@
   ]
 
   // Function that toggles all other dropdown items to false
-  function toggleDropdown(in_item: {
-    name?: string
-    show?: boolean
-    Items?: any[]
-  }) {
+  function toggleDropdown(in_item: { name?: string; show?: boolean; Items?: any[] }) {
     let tempArray = navbarDropdownItems // Copy the array because svelte doesn't like to change arrays
     tempArray.forEach(function (item, index) {
       if (item !== in_item) {
@@ -193,47 +189,50 @@
     <div class="collapse navbar-collapse {showNavbarMobile ? 'show' : ''}" id="navbar">
       <ul class="navbar-nav me-auto">
         {#each navbarDropdownItems as item}
-        {#if item.Items}
-          <li class="nav-item dropdown">
-            <!-- svelte-ignore a11y-invalid-attribute -->
-            <a
-              href=""
-              class="nav-link dropdown-toggle {item.show ? 'show' : ''}"
-              on:click={() => toggleDropdown(item)}>{item.name}</a
-            >
-            <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-            <div class="dropdown-menu {item.show ? 'show' : ''}" on:mouseleave={() => toggleOff()}>
-              {#each item.Items as navItem}
-              <!-- {#if navItem.Items}
+          {#if item.Items}
+            <li class="nav-item dropdown">
+              <!-- svelte-ignore a11y-invalid-attribute -->
+              <a
+                href=""
+                class="nav-link dropdown-toggle {item.show ? 'show' : ''}"
+                on:click={() => toggleDropdown(item)}>{item.name}</a
+              >
+              <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+              <div
+                class="dropdown-menu {item.show ? 'show' : ''}"
+                on:mouseleave={() => toggleOff()}
+              >
+                {#each item.Items as navItem}
+                  <!-- {#if navItem.Items}
               <li class="nav-item dropdown">
                 <!-- <a href="#" class="nav-link dropdown-toggle {item.show ? 'show' : ''}" on:mouseover="{() => toggleDropdown(item)}" on:mouseleave="{toggleOff}">{item.name}</a> -->
-                <!-- svelte-ignore a11y-invalid-attribute -->
-                <!-- <a
+                  <!-- svelte-ignore a11y-invalid-attribute -->
+                  <!-- <a
                   href=""
                   class="nav-link dropdown-toggle {navItem.show ? 'show' : ''}"
                   on:click={() => toggleDropdown(navItem)}>{navItem.name}</a
                 > -->
-                <!-- {#each navItem.Items as navSubItem}
+                  <!-- {#each navItem.Items as navSubItem}
                 <a href={navSubItem.href} class="dropdown-item">{navSubItem.name}</a>
                 {#if navSubItem.dividerAfter}
                   <div class="dropdown-divider" /> -->
-                <!-- {/if}
+                  <!-- {/if}
                 {/each} -->
-              <!-- </li> -->
-                <!-- {:else} -->
-                <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
-                {#if navItem.dividerAfter}
-                  <div class="dropdown-divider" />
-                {/if}
-                <!-- {/if} -->
-              {/each}
-            </div>
-          </li>
+                  <!-- </li> -->
+                  <!-- {:else} -->
+                  <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
+                  {#if navItem.dividerAfter}
+                    <div class="dropdown-divider" />
+                  {/if}
+                  <!-- {/if} -->
+                {/each}
+              </div>
+            </li>
           {:else}
-          <li class="nav-item">
-            <a href={item.href} class="nav-link">{item.name}</a>
-          </li>
-        {/if}
+            <li class="nav-item">
+              <a href={item.href} class="nav-link">{item.name}</a>
+            </li>
+          {/if}
         {/each}
       </ul>
     </div>
