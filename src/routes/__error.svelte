@@ -44,57 +44,66 @@
 			<small><center>Made by Bobbie <a href="https://www.youtube.com/watch?v=64f34Injgas">Orignal Video</a></center></small>
 			<h3><center><a href="https://bsaber.com">Back to the Homepage</a></center></h3>
 			<div class="debugging-info">
-				Stacktrace: <code class="block">{stackTrace}</code>
+				Stacktrace:
+				<code class="block">{stackTrace}</code>
 			</div>
 		</blockquote>
 		</div>
 	</body>
 </section>
 
-<style>
+<style lang="scss">
+	@import 'src/scss/variables';
 	/* * {
 		background: #262626;
 		display: block;
 		font-family: arial,sans-serif;
-	}
-	body {
+	}*/
+	body.error {
 		background: #1c1c1c;
 		color: LightGray;
-		margin: 5% auto;
-		max-width: 1200px;
 		min-width: min-content;
 		-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+	}
+	img.logoimg {
+		margin-top: 20px;
+		max-width: 100%;
+		margin-bottom: 20px;
 	}
 	h2 {
 		color: LightGray;
 		font-weight: bold;
 		font-size: 1.5em;
+		padding-bottom: 2%;
 	}
-	body.error {
-		position: absolute;
-		left: 3%;
-		right: 3%;
-		min-width: min-content;
-	}*/
+	.message {
+		width: 100%;
+		border-radius: $rounding;
+		background-color: $background-secondary;
+	}
+	p, ul {
+		font-size: 16px;
+		padding: 0% 5% 1% 5%;
+	}
+	ul {
+		padding: 0% 10% 0% 10%;
+	}
 	div.debugging-info {
 		color: LightGray;
 		font-size: 1em;
 		padding: 2em;
 	}
 	code.block {
+		display: block;
 		background: #1c1c1c;
 		border-radius: 3px;
 		color: LightGray;
 		font-family: monospace;
 		font-size: 1em;
+		margin: 0.5rem;
 		padding: 0.2em 0.4em;
-		box-decoration-break: clone;
 	}/*
-	p {
-		font-size: 16px;
-		padding: 0% 5% 0% 5%;
-	}
 	b {
 		font-weight: bold;
 	}
@@ -123,9 +132,5 @@
 		max-width: 100%;
 	}
 	img { border:none; }
-	img.logoimg {
-		margin-top: 20px;
-		max-width: 100%;
-		margin-bottom: 20px;
-	} */
+	*/
 </style>
