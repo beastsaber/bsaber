@@ -62,12 +62,12 @@
           ></small
         >
         <h3><center><a href="/">Back to the Homepage</a></center></h3>
-		{#if stackTrace !== ''}
-        <div class="debugging-info">
-          Stacktrace:
-          <code class="block">{stackTrace}</code>
-        </div>
-		{/if}
+        {#if stackTrace !== ''}
+          <div class="debugging-info">
+            Stacktrace:
+            <code class="block">{stackTrace}</code>
+          </div>
+        {/if}
       </blockquote>
     </div>
   </body>
@@ -77,14 +77,14 @@
   @import 'src/scss/variables';
 
   section {
-	margin: 0;
+    margin: 0;
   }
 
   body.error {
     background: #1c1c1c;
     color: LightGray;
     min-width: min-content;
-	min-height: fit-content;
+    min-height: fit-content;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
   }
@@ -100,7 +100,7 @@
     padding-bottom: 2%;
   }
   h3 {
-	padding-bottom: 1em;
+    padding-bottom: 1em;
   }
   .message {
     width: 100%;
@@ -113,7 +113,7 @@
     padding: 0% 5% 1% 5%;
   }
   p {
-	font-size: 15px;
+    font-size: 15px;
   }
   ul {
     padding: 0% 10% 0% 10%;
@@ -122,7 +122,7 @@
     color: LightGray;
     font-size: 1em;
     padding: 2em;
-	padding-top: .5em;
+    padding-top: 0.5em;
   }
   code.block {
     display: block;
