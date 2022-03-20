@@ -33,18 +33,17 @@
 <form on:submit|preventDefault={search}>
   <div class="row">
     <div class="searchForm">
-      <button
+      <div
         class="filter-dropdown btn btn-primary dropdown-toggle"
         on:click={() => (dropdownShown = !dropdownShown)}
-        type="button"
         id="dropdownMenuButton"
-        data-toggle="dropdown"
         aria-haspopup="true"
-        aria-expanded="false"
+        aria-expanded="{dropdownShown}"
       >
         <i class="fas fa-angle-up" />
         <span class="d-none d-lg-inline">{searchType}</span>
-      </button>
+      </div>
+      <!-- </button> -->
       {#if dropdownShown}
         <div transition:slide class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {#each dropdownItems as item}
