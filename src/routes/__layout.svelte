@@ -16,7 +16,8 @@
     padding: 12px;
     width: 100%;
     max-width: 1364px;
-    margin: 60px auto;
+    margin: 0 auto;
+    margin-top: 60px;
     box-sizing: border-box;
   }
 

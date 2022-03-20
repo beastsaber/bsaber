@@ -15,7 +15,7 @@
   export let title
   export let errorCode
   export let errorMessage
-  export let stackTrace
+  export let stackTrace = ''
   // Having the message in a variable as it seems they get seperated on each line that starts with a html tag
   let helpfullMessages = [
     `<b>Verify url and typos</b> - The web page you were attempting to view may not exist or may have moved - try <em>checking the web address for typos</em>.`,
@@ -62,10 +62,12 @@
           ></small
         >
         <h3><center><a href="/">Back to the Homepage</a></center></h3>
+		{#if stackTrace !== ''}
         <div class="debugging-info">
           Stacktrace:
           <code class="block">{stackTrace}</code>
         </div>
+		{/if}
       </blockquote>
     </div>
   </body>
@@ -74,10 +76,15 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
+  section {
+	margin: 0;
+  }
+
   body.error {
     background: #1c1c1c;
     color: LightGray;
     min-width: min-content;
+	min-height: fit-content;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
   }
@@ -92,6 +99,9 @@
     font-size: 1.5em;
     padding-bottom: 2%;
   }
+  h3 {
+	padding-bottom: 1em;
+  }
   .message {
     width: 100%;
     border-radius: $rounding;
@@ -102,6 +112,9 @@
     font-size: 16px;
     padding: 0% 5% 1% 5%;
   }
+  p {
+	font-size: 15px;
+  }
   ul {
     padding: 0% 10% 0% 10%;
   }
@@ -109,6 +122,7 @@
     color: LightGray;
     font-size: 1em;
     padding: 2em;
+	padding-top: .5em;
   }
   code.block {
     display: block;
