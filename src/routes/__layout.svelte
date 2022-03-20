@@ -17,7 +17,7 @@
     width: 100%;
     max-width: 1364px;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 56px;
     box-sizing: border-box;
   }
 
