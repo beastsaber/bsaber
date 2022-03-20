@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { slide } from 'svelte/transition'
+
   let navbarDropdownItems: {
     name: string
     show?: boolean
@@ -70,7 +72,6 @@
         {
           name: 'Tutorials',
           href: '',
-          show: false,
           Items: [
             {
               name: 'Mapping Resources',
@@ -89,9 +90,13 @@
       ],
     },
     {
-      name: 'Community Hub',
+      name: 'Community',
       show: false,
       Items: [
+        {
+          name: 'Community Hub',
+          href: '#',
+        },
         {
           name: 'Mappers',
           href: 'https://beatsaver.com/mappers',
@@ -99,7 +104,6 @@
         {
           name: 'Curators',
           href: '',
-          show: false,
           Items: [
             {
               name: 'About Curation',
@@ -121,8 +125,11 @@
     },
     {
       name: 'Help',
-      show: false,
       Items: [
+        {
+          name: 'Terms of Service',
+          href: '#',
+        },
         {
           name: 'BSMG Wiki',
           href: 'https://bsmg.wiki',
@@ -186,7 +193,8 @@
       aria-expanded="false"
       aria-label="Toggle navigation"><span class="navbar-toggler-icon" /></button
     >
-    <div class="collapse navbar-collapse {showNavbarMobile ? 'show' : ''}" id="navbar">
+    {#if showNavbarMobile}
+    <div transition:slide class="collapse navbar-collapse show" id="navbar">
       <ul class="navbar-nav me-auto">
         {#each navbarDropdownItems as item}
           {#if item.Items}
@@ -194,39 +202,35 @@
               <!-- svelte-ignore a11y-invalid-attribute -->
               <a
                 href=""
-                class="nav-link dropdown-toggle {item.show ? 'show' : ''}"
+                class="nav-link dropdown-toggle show"
                 on:click={() => toggleDropdown(item)}>{item.name}</a
               >
+              {#if item.show}
               <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-              <div
-                class="dropdown-menu {item.show ? 'show' : ''}"
+              <div transition:slide
+                class="dropdown-menu show"
                 on:mouseleave={() => toggleOff()}
               >
                 {#each item.Items as navItem}
-                  <!-- {#if navItem.Items}
-              <li class="nav-item dropdown">
-                <!-- <a href="#" class="nav-link dropdown-toggle {item.show ? 'show' : ''}" on:mouseover="{() => toggleDropdown(item)}" on:mouseleave="{toggleOff}">{item.name}</a> -->
-                  <!-- svelte-ignore a11y-invalid-attribute -->
-                  <!-- <a
-                  href=""
-                  class="nav-link dropdown-toggle {navItem.show ? 'show' : ''}"
-                  on:click={() => toggleDropdown(navItem)}>{navItem.name}</a
-                > -->
-                  <!-- {#each navItem.Items as navSubItem}
-                <a href={navSubItem.href} class="dropdown-item">{navSubItem.name}</a>
-                {#if navSubItem.dividerAfter}
-                  <div class="dropdown-divider" /> -->
-                  <!-- {/if}
-                {/each} -->
-                  <!-- </li> -->
-                  <!-- {:else} -->
-                  <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
-                  {#if navItem.dividerAfter}
+
+                <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
+                {#if navItem.dividerAfter}
+                  <div class="dropdown-divider" />
+                {/if}
+
+                  {#if navItem.Items}
+                  {#each navItem.Items as navSubItem}
+                    <a href={navSubItem.href} class="dropdown-item subItem">{navSubItem.name}</a>
+
+                    {#if navSubItem.dividerAfter}
                     <div class="dropdown-divider" />
+                    {/if}
+
+                  {/each}
                   {/if}
-                  <!-- {/if} -->
                 {/each}
               </div>
+              {/if}
             </li>
           {:else}
             <li class="nav-item">
@@ -236,6 +240,7 @@
         {/each}
       </ul>
     </div>
+    {/if}
   </div>
 </nav>
 
@@ -259,21 +264,18 @@
   .dropdown-menu {
     position: absolute;
     z-index: 1000;
-    display: none;
+    display: block;
     min-width: 10rem;
     padding: 0.5rem 0;
     margin: 0;
     font-size: 1rem;
-    color: #212529;
+    color: #fff;
     text-align: left;
     list-style: none;
-    background-color: #fff;
+    background-color: #222222;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
-  }
-  .dropdown-menu.show {
-    display: block;
   }
   .dropdown-item {
     display: block;
@@ -281,12 +283,18 @@
     padding: 0.25rem 1rem;
     clear: both;
     font-weight: 400;
-    color: #212529;
+    color: #fff;
     text-align: inherit;
     text-decoration: none;
     white-space: nowrap;
     background-color: transparent;
     border: 0;
+  }
+  .dropdown-item:hover {
+    background-color: #5f58b9;
+  }
+  .dropdown-item.subItem {
+    padding-left: 2rem;
   }
   @media (min-width: 992px) {
     .navbar-expand-lg {
@@ -328,7 +336,6 @@
   .nav-link {
     display: block;
     padding: 0.5rem 1rem;
-    color: #0d6efd;
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out;
@@ -375,13 +382,13 @@
   *::after {
     box-sizing: border-box;
   }
-  a:hover {
+  /* a:hover {
     text-decoration: underline;
     text-decoration-line: underline;
     text-decoration-thickness: initial;
     text-decoration-style: initial;
     text-decoration-color: initial;
-  }
+  } */
   @media (min-width: 992px) {
     .container {
       max-width: 960px;
@@ -402,14 +409,6 @@
     flex-grow: 1;
     align-items: center;
   }
-  .navbar-collapse {
-    flex-basis: 100%;
-    flex-grow: 1;
-    align-items: center;
-  }
-  .collapse:not(.show) {
-    display: none;
-  }
   .navbar-brand {
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
@@ -423,6 +422,9 @@
   }
   .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.55);
+  }
+  .navbar-nav .nav-link:hover {
+    color: #fff;
   }
   button:focus:not(:focus-visible) {
     outline: 0;

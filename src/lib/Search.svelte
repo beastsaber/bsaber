@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { slide } from 'svelte/transition'
+
   const dropdownItems: {
     name: string
   }[] = [
@@ -6,18 +8,29 @@
       name: 'Maps',
     },
     {
-      name: 'Placeholder1',
+      name: 'Playlists',
     },
     {
-      name: 'Placeholder2',
+      name: 'Content',
     },
   ]
 
-  let selectedItem: string = dropdownItems[0].name
+  let searchType: string = dropdownItems[0].name
+  let searchQuery: string = ''
   let dropdownShown: boolean = false
+
+    // Search function that opens a new url in the browser
+    function search() {
+        if (searchType === dropdownItems[0].name) {
+            const url = `https://beatsaver.com/?q=${searchQuery}`
+            window.open(url, '_self')
+        } else {
+            console.log('Not yet implemented')
+        }
+    }
 </script>
 
-<form action="">
+<form on:submit|preventDefault="{search}">
   <div class="row">
     <div class="searchForm">
       <button
@@ -30,17 +43,19 @@
         aria-expanded="false"
       >
         <i class="fas fa-angle-up" />
-        <span class="d-none d-lg-inline">{selectedItem}</span>
+        <span class="d-none d-lg-inline">{searchType}</span>
       </button>
-      <div class="dropdown-menu {dropdownShown ? 'show' : ''}" aria-labelledby="dropdownMenuButton">
+      {#if dropdownShown}
+      <div transition:slide class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         {#each dropdownItems as item}
           <!-- svelte-ignore a11y-invalid-attribute -->
-          <a class="dropdown-item" href="" on:click={() => (selectedItem = item.name)}
-            >{item.name}</a
+          <button class="dropdown-item" on:click={() => {searchType = item.name; dropdownShown = false}}>
+            {item.name}</button
           >
         {/each}
       </div>
-      <input type="text" class="form-control" placeholder="Enter Keywords" />
+        {/if}
+      <input type="text" class="form-control" bind:value="{searchQuery}" placeholder="Enter Keywords" />
       <button type="submit" class="btn btn-primary">Search</button>
     </div>
   </div>
@@ -85,21 +100,18 @@
     position: absolute;
     top: 2rem;
     z-index: 1000;
-    display: none;
+    display: block;
     min-width: 10rem;
     padding: 0.5rem 0;
     margin: 0.125rem 0 0;
     font-size: 1rem;
-    color: #212529;
+    color: #fff;
     text-align: left;
     list-style: none;
-    background-color: #fff;
+    background-color: #222222;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
-  }
-  .dropdown-menu.show {
-    display: block;
   }
   .dropdown-item {
     display: block;
@@ -107,11 +119,14 @@
     padding: 0.25rem 1.5rem;
     clear: both;
     font-weight: 400;
-    color: #212529;
+    color: #fff;
     text-align: inherit;
     white-space: nowrap;
     background-color: transparent;
     border: 0;
+  }
+  .dropdown-item:hover {
+    background-color: rgb(42, 81, 121);
   }
   .form-control {
     display: block;
@@ -159,5 +174,8 @@
   }
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
+  }
+  .btn:hover {
+    background-color: #39699c;
   }
 </style>
