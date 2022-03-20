@@ -7,7 +7,7 @@
         <div class="searchForm">
             <button class="filter-dropdown btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-angle-up"></i>
-                <span class="d-none d-lg-inline">Filter</span>
+                <span class="d-none d-lg-inline">Maps</span>
             </button>
             <input type="text" class="form-control" placeholder="Enter Keywords">
             <button type="submit" class="btn btn-primary">Search</button>
