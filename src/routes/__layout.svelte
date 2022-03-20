@@ -14,10 +14,10 @@
     display: flex;
     flex-direction: column;
     padding: 12px;
+    padding-top: 68px;
     width: 100%;
     max-width: 1364px;
     margin: 0 auto;
-    margin-top: 56px;
     box-sizing: border-box;
   }
 
