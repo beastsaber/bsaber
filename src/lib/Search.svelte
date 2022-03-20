@@ -19,18 +19,18 @@
   let searchQuery: string = ''
   let dropdownShown: boolean = false
 
-    // Search function that opens a new url in the browser
-    function search() {
-        if (searchType === dropdownItems[0].name) {
-            const url = `https://beatsaver.com/?q=${searchQuery}`
-            window.open(url, '_self')
-        } else {
-            console.log('Not yet implemented')
-        }
+  // Search function that opens a new url in the browser
+  function search() {
+    if (searchType === dropdownItems[0].name) {
+      const url = `https://beatsaver.com/?q=${searchQuery}`
+      window.open(url, '_self')
+    } else {
+      console.log('Not yet implemented')
     }
+  }
 </script>
 
-<form on:submit|preventDefault="{search}">
+<form on:submit|preventDefault={search}>
   <div class="row">
     <div class="searchForm">
       <button
@@ -46,16 +46,27 @@
         <span class="d-none d-lg-inline">{searchType}</span>
       </button>
       {#if dropdownShown}
-      <div transition:slide class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        {#each dropdownItems as item}
-          <!-- svelte-ignore a11y-invalid-attribute -->
-          <button class="dropdown-item" on:click={() => {searchType = item.name; dropdownShown = false}}>
-            {item.name}</button
-          >
-        {/each}
-      </div>
-        {/if}
-      <input type="text" class="form-control" bind:value="{searchQuery}" placeholder="Enter Keywords" />
+        <div transition:slide class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {#each dropdownItems as item}
+            <!-- svelte-ignore a11y-invalid-attribute -->
+            <button
+              class="dropdown-item"
+              on:click={() => {
+                searchType = item.name
+                dropdownShown = false
+              }}
+            >
+              {item.name}</button
+            >
+          {/each}
+        </div>
+      {/if}
+      <input
+        type="text"
+        class="form-control"
+        bind:value={searchQuery}
+        placeholder="Enter Keywords"
+      />
       <button type="submit" class="btn btn-primary">Search</button>
     </div>
   </div>

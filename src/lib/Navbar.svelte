@@ -1,6 +1,6 @@
 <script lang="ts">
   import { width } from '@fortawesome/free-solid-svg-icons/faStar'
-import { slide } from 'svelte/transition'
+  import { slide } from 'svelte/transition'
 
   let navbarDropdownItems: {
     name: string
@@ -169,7 +169,7 @@ import { slide } from 'svelte/transition'
 
   let showNavbarMobile = false
 
-  let windowSize;
+  let windowSize
 
   function toggleOff() {
     let tempArray = navbarDropdownItems
@@ -180,7 +180,7 @@ import { slide } from 'svelte/transition'
   }
 </script>
 
-<svelte:window bind:innerWidth={windowSize}/>
+<svelte:window bind:innerWidth={windowSize} />
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
   <div class="container">
@@ -199,52 +199,53 @@ import { slide } from 'svelte/transition'
       aria-label="Toggle navigation"><span class="navbar-toggler-icon" /></button
     >
     {#if windowSize > 992 || showNavbarMobile}
-    <div transition:slide class="collapse navbar-collapse show" id="navbar">
-      <ul class="navbar-nav me-auto">
-        {#each navbarDropdownItems as item}
-          {#if item.Items}
-            <li class="nav-item dropdown">
-              <!-- svelte-ignore a11y-invalid-attribute -->
-              <a
-                href=""
-                class="nav-link dropdown-toggle show"
-                on:click={() => toggleDropdown(item)}>{item.name}</a
-              >
-              {#if item.show }
-              <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-              <div transition:slide
-                class="dropdown-menu {item.show ? 'show' : ''}"
-                on:mouseleave={() => toggleOff()}
-              >
-                {#each item.Items as navItem}
+      <div transition:slide class="collapse navbar-collapse show" id="navbar">
+        <ul class="navbar-nav me-auto">
+          {#each navbarDropdownItems as item}
+            {#if item.Items}
+              <li class="nav-item dropdown">
+                <!-- svelte-ignore a11y-invalid-attribute -->
+                <a
+                  href=""
+                  class="nav-link dropdown-toggle show"
+                  on:click={() => toggleDropdown(item)}>{item.name}</a
+                >
+                {#if item.show}
+                  <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+                  <div
+                    transition:slide
+                    class="dropdown-menu {item.show ? 'show' : ''}"
+                    on:mouseleave={() => toggleOff()}
+                  >
+                    {#each item.Items as navItem}
+                      <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
+                      {#if navItem.dividerAfter}
+                        <div class="dropdown-divider" />
+                      {/if}
 
-                <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
-                {#if navItem.dividerAfter}
-                  <div class="dropdown-divider" />
+                      {#if navItem.Items}
+                        {#each navItem.Items as navSubItem}
+                          <a href={navSubItem.href} class="dropdown-item subItem"
+                            >{navSubItem.name}</a
+                          >
+
+                          {#if navSubItem.dividerAfter}
+                            <div class="dropdown-divider" />
+                          {/if}
+                        {/each}
+                      {/if}
+                    {/each}
+                  </div>
                 {/if}
-
-                  {#if navItem.Items}
-                  {#each navItem.Items as navSubItem}
-                    <a href={navSubItem.href} class="dropdown-item subItem">{navSubItem.name}</a>
-
-                    {#if navSubItem.dividerAfter}
-                    <div class="dropdown-divider" />
-                    {/if}
-
-                  {/each}
-                  {/if}
-                {/each}
-              </div>
-              {/if}
-            </li>
-          {:else}
-            <li class="nav-item">
-              <a href={item.href} class="nav-link">{item.name}</a>
-            </li>
-          {/if}
-        {/each}
-      </ul>
-    </div>
+              </li>
+            {:else}
+              <li class="nav-item">
+                <a href={item.href} class="nav-link">{item.name}</a>
+              </li>
+            {/if}
+          {/each}
+        </ul>
+      </div>
     {/if}
   </div>
 </nav>
