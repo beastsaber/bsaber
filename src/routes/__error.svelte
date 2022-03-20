@@ -57,8 +57,8 @@
         >
         <small
           ><center
-            >Made by Bobbie <a href="https://www.youtube.com/watch?v=64f34Injgas">Orignal Video</a
-            ></center
+            ><a href="https://www.youtube.com/watch?v=64f34Injgas">Orignal Video</a
+				> by Bobbie</center
           ></small
         >
         <h3><center><a href="/">Back to the Homepage</a></center></h3>
