@@ -1,14 +1,35 @@
-<script>
+<script lang="ts">
+    const dropdownItems: {
+            name: string;
+        }[] = [
+        {
+            name: 'Maps',
+        },
+        {
+            name: 'Placeholder1',
+        },
+        {
+            name: 'Placeholder2',
+        },
+    ]
 
+    let selectedItem: string = dropdownItems[0].name
+    let dropdownShown: boolean = false
 </script>
 
 <form action="">
     <div class="row">
         <div class="searchForm">
-            <button class="filter-dropdown btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="filter-dropdown btn btn-primary dropdown-toggle" on:click="{() => dropdownShown = !dropdownShown}" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-angle-up"></i>
-                <span class="d-none d-lg-inline">Maps</span>
+                <span class="d-none d-lg-inline">{selectedItem}</span>
             </button>
+            <div class="dropdown-menu {dropdownShown ? 'show' : ''}" aria-labelledby="dropdownMenuButton">
+                {#each dropdownItems as item}
+                <!-- svelte-ignore a11y-invalid-attribute -->
+                <a class="dropdown-item" href="" on:click="{() => selectedItem = item.name}">{item.name}</a>
+                {/each}
+            </div>
             <input type="text" class="form-control" placeholder="Enter Keywords">
             <button type="submit" class="btn btn-primary">Search</button>
         </div>
@@ -23,6 +44,7 @@
         margin-bottom: 12px;
     }
     .searchForm {
+        position: relative;
         display: grid;
         grid-template-columns: .3fr 6fr .3fr;
         align-items: center;
@@ -37,7 +59,7 @@
         text-align: left;
     }
     .dropdown-toggle {
-    white-space: nowrap;
+        white-space: nowrap;
     }
     .dropdown-toggle::after {
         display: inline-block;
@@ -48,6 +70,38 @@
         border-right: 0.3em solid transparent;
         border-bottom: 0;
         border-left: 0.3em solid transparent;
+    }
+    .dropdown-menu {
+        position: absolute;
+        top: 2rem;
+        z-index: 1000;
+        display: none;
+        min-width: 10rem;
+        padding: .5rem 0;
+        margin: .125rem 0 0;
+        font-size: 1rem;
+        color: #212529;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: .25rem;
+    }
+    .dropdown-menu.show {
+        display: block;
+    }
+    .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: .25rem 1.5rem;
+        clear: both;
+        font-weight: 400;
+        color: #212529;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
     }
     .form-control {
         display: block;
@@ -65,6 +119,9 @@
         appearance: none;
         border-radius: 0 .25rem .25rem 0;
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    button, input {
+        overflow: visible;
     }
     .btn {
         display: inline-block;
@@ -87,5 +144,8 @@
         background-color: #375a7f;
         border-color: #375a7f;
         margin-left: .25rem;
+    }
+    .btn:not(:disabled):not(.disabled) {
+        cursor: pointer;
     }
 </style>
