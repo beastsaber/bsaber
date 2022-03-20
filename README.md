@@ -4,12 +4,26 @@ NodeJS >=16.14.0
 
 ## Installation
 
-```bash
+```
 npm install
 ```
 
 ## Developing
 
-```bash
+```
 npm run dev
 ```
+
+## Contributing
+
+### Before submitting a PR
+
+Verify that the app can be built:
+```
+npm run build
+````
+
+Run prettier formatter:
+```
+npm run format
+````
