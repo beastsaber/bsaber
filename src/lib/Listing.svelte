@@ -24,7 +24,6 @@
   @import 'src/scss/variables';
 
   .listing {
-    width: 100%;
     border-radius: $rounding;
     background-color: $background-secondary;
   }

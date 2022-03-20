@@ -4,6 +4,7 @@
 
 <script lang="ts">
   import QuickFilters from '$lib/QuickFilters.svelte'
+  import Search from '$lib/Search.svelte'
   import Cards from '$lib/Cards.svelte'
   import Listing from '$lib/Listing.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
@@ -20,7 +21,10 @@
 </svelte:head>
 
 <section>
-  <QuickFilters />
+  <div class="filters-search">
+    <QuickFilters />
+    <Search />
+  </div> 
   <Cards {cards} />
   <hr />
   <div class="listings">
@@ -45,6 +49,19 @@
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
     gap: 12px;
+  }
+
+  .filters-search {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 12px;
+  }
+
+  @media (max-width: 740px) {
+    .filters-search {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   @media (min-width: 678px) {

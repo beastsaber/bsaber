@@ -35,7 +35,7 @@
   .filters {
     display: grid;
     grid-template-rows: repeat(1, 1fr);
-    width: 50%;
+    width: 100%;
     gap: 12px;
     margin-bottom: 12px;
   }
