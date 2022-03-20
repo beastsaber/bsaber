@@ -57,7 +57,7 @@
         >
         <small
           ><center
-            ><a href="https://www.youtube.com/watch?v=64f34Injgas">Orignal Video</a> by Bobbie</center
+            ><a href="https://www.youtube.com/watch?v=64f34Injgas">Original Video</a> by Bobbie</center
           ></small
         >
         <h3><center><a href="/">Back to the Homepage</a></center></h3>
