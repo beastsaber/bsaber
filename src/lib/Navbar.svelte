@@ -14,7 +14,7 @@
       Items: [
         {
           name: 'Test',
-          href: '#',
+          href: '',
         },
       ],
     },
@@ -24,7 +24,7 @@
       Items: [
         {
           name: 'Test',
-          href: '#',
+          href: '',
         },
       ],
     },
@@ -34,7 +34,7 @@
       Items: [
         {
           name: 'Test',
-          href: '#',
+          href: '',
         },
       ],
     },
@@ -44,7 +44,7 @@
       Items: [
         {
           name: 'Test',
-          href: '#',
+          href: '',
         },
       ],
     },
@@ -54,7 +54,7 @@
       Items: [
         {
           name: 'Test',
-          href: '#',
+          href: '',
         },
       ],
     },
@@ -136,7 +136,7 @@
             <!-- <a href="#" class="nav-link dropdown-toggle {item.show ? 'show' : ''}" on:mouseover="{() => toggleDropdown(item)}" on:mouseleave="{toggleOff}">{item.name}</a> -->
             <!-- svelte-ignore a11y-invalid-attribute -->
             <a
-              href="#"
+              href=""
               class="nav-link dropdown-toggle {item.show ? 'show' : ''}"
               on:click={() => toggleDropdown(item)}>{item.name}</a
             >
