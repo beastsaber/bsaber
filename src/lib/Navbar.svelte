@@ -1,29 +1,42 @@
 <script lang="ts">
   let navbarDropdownItems: {
     name: string
-    show: boolean
-    Items: {
+    show?: boolean
+    href?: string
+    Items?: {
       name: string
       href: string
       dividerAfter?: boolean
+      show?: boolean
+      Items?: {
+        name: string
+        href: string
+        dividerAfter?: boolean
+      }[]
     }[]
   }[] = [
     {
       name: 'Get Started',
-      show: false,
-      Items: [
-        {
-          name: 'Test',
-          href: '',
-        },
-      ],
+      href: '',
     },
     {
       name: 'Find Maps',
       show: false,
       Items: [
         {
-          name: 'Test',
+          name: 'Curator Recommended',
+          href: 'https://beatsaver.com/?curated=true',
+        },
+        {
+          name: 'Verified Mappers',
+          href: '',
+        },
+        {
+          name: 'Ranked',
+          href: 'https://beatsaver.com/?ranked=true',
+        },
+        {
+          name: 'Browse by Genre',
           href: '',
         },
       ],
@@ -33,7 +46,11 @@
       show: false,
       Items: [
         {
-          name: 'Test',
+          name: 'Cureated Playlists',
+          href: '',
+        },
+        {
+          name: 'All Playlists',
           href: '',
         },
       ],
@@ -43,7 +60,30 @@
       show: false,
       Items: [
         {
-          name: 'Test',
+          name: 'News',
+          href: '',
+        },
+        {
+          name: 'Interviews',
+          href: '',
+        },
+        {
+          name: 'Tutorials',
+          href: '',
+          show: false,
+          Items: [
+            {
+              name: 'Mapping Resources',
+              href: '',
+            }
+          ]
+        },
+        {
+          name: 'Events',
+          href: '',
+        },
+        {
+          name: 'Videos',
           href: '',
         },
       ],
@@ -53,8 +93,29 @@
       show: false,
       Items: [
         {
-          name: 'Test',
+          name: 'Mappers',
+          href: 'https://beatsaver.com/mappers',
+        },
+        {
+          name: 'Curators',
           href: '',
+          show: false,
+          Items: [
+            {
+              name: 'About Curation',
+              href: '',
+            }
+          ]
+        },
+        {
+          name: 'The Beasties',
+          href: '',
+          Items: [
+            {
+              name: 'Past Winners',
+              href: '',
+            }
+          ]
         },
       ],
     },
@@ -86,8 +147,8 @@
   // Function that toggles all other dropdown items to false
   function toggleDropdown(in_item: {
     name?: string
-    show: any
-    Items?: { name: string; href: string; dividerAfter?: boolean }[]
+    show?: boolean
+    Items?: any[]
   }) {
     let tempArray = navbarDropdownItems // Copy the array because svelte doesn't like to change arrays
     tempArray.forEach(function (item, index) {
@@ -132,8 +193,8 @@
     <div class="collapse navbar-collapse {showNavbarMobile ? 'show' : ''}" id="navbar">
       <ul class="navbar-nav me-auto">
         {#each navbarDropdownItems as item}
+        {#if item.Items}
           <li class="nav-item dropdown">
-            <!-- <a href="#" class="nav-link dropdown-toggle {item.show ? 'show' : ''}" on:mouseover="{() => toggleDropdown(item)}" on:mouseleave="{toggleOff}">{item.name}</a> -->
             <!-- svelte-ignore a11y-invalid-attribute -->
             <a
               href=""
@@ -143,13 +204,36 @@
             <!-- svelte-ignore a11y-mouse-events-have-key-events -->
             <div class="dropdown-menu {item.show ? 'show' : ''}" on:mouseleave={() => toggleOff()}>
               {#each item.Items as navItem}
+              <!-- {#if navItem.Items}
+              <li class="nav-item dropdown">
+                <!-- <a href="#" class="nav-link dropdown-toggle {item.show ? 'show' : ''}" on:mouseover="{() => toggleDropdown(item)}" on:mouseleave="{toggleOff}">{item.name}</a> -->
+                <!-- svelte-ignore a11y-invalid-attribute -->
+                <!-- <a
+                  href=""
+                  class="nav-link dropdown-toggle {navItem.show ? 'show' : ''}"
+                  on:click={() => toggleDropdown(navItem)}>{navItem.name}</a
+                > -->
+                <!-- {#each navItem.Items as navSubItem}
+                <a href={navSubItem.href} class="dropdown-item">{navSubItem.name}</a>
+                {#if navSubItem.dividerAfter}
+                  <div class="dropdown-divider" /> -->
+                <!-- {/if}
+                {/each} -->
+              <!-- </li> -->
+                <!-- {:else} -->
                 <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
                 {#if navItem.dividerAfter}
                   <div class="dropdown-divider" />
                 {/if}
+                <!-- {/if} -->
               {/each}
             </div>
           </li>
+          {:else}
+          <li class="nav-item">
+            <a href={item.href} class="nav-link">{item.name}</a>
+          </li>
+        {/if}
         {/each}
       </ul>
     </div>
