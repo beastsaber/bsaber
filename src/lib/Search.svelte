@@ -15,26 +15,75 @@
     },
   ]
 
+  const beatsaverRoot = 'https://beatsaver.com/'
+  const beatsaverApiRoot = 'https://api.beatsaver.com/'
+
+  const mapsSearchApiEndpoint = `${beatsaverApiRoot}search/text/`
+  const playlistsApiEndpoint = `${beatsaverApiRoot}playlists/search/`
+
   let searchType: string = dropdownItems[0].name
   let searchQuery: string = ''
   let dropdownShown: boolean = false
 
+  let previewResults: Record<any, any>[] = []
+
+  let searchPreviewTimeout
+
   // Search function that opens a new url in the browser
   function search() {
-    if (searchType === dropdownItems[0].name) {
-      const url = `https://beatsaver.com/?q=${searchQuery}`
-      window.open(url, '_self')
-    } else {
-      console.log('Not yet implemented')
+    if (searchQuery === '') {
+      return
     }
+    if (searchType === dropdownItems[0].name) {
+      const url = `${beatsaverRoot}?q=${searchQuery}`
+      window.open(url, '_self')
+    } else if (searchType === dropdownItems[1].name) {
+      alert('Not yet implemented')
+    } else if (searchType === dropdownItems[2].name) {
+      alert('Not yet implemented')
+    } else {
+      alert('Unknown search type')
+    }
+  }
+
+  function searchPreview(event?) {
+    clearTimeout(searchPreviewTimeout)
+    searchQuery = event ? event.target.value : searchQuery
+    previewResults = []
+    if (searchQuery.length < 2) {
+      return
+    }
+
+    searchPreviewTimeout = setTimeout(() => {
+      if (searchType === dropdownItems[0].name) {
+        fetch(`${mapsSearchApiEndpoint}0?q=${searchQuery}&sortOrder=Relevance`)
+          .then((response) => response.json())
+          .then((data) => {
+            previewResults = data.docs
+            console.log(data)
+          })
+      } else if (searchType === dropdownItems[1].name) {
+        fetch(`${playlistsApiEndpoint}0?q=${searchQuery}&sortOrder=Relevance`)
+          .then((response) => response.json())
+          .then((data) => {
+            previewResults = data.docs
+            console.log(data)
+          })
+      } else if (searchType === dropdownItems[2].name) {
+        alert('Not yet implemented')
+      } else {
+        alert('Unknown search type')
+      }
+    }, 400)
   }
 </script>
 
 <form on:submit|preventDefault={search}>
   <div class="row">
     <div class="searchForm">
-      <div
+      <button
         class="filter-dropdown btn btn-primary dropdown-toggle"
+        type="button"
         on:click={() => (dropdownShown = !dropdownShown)}
         id="dropdownMenuButton"
         aria-haspopup="true"
@@ -42,21 +91,22 @@
       >
         <i class="fas fa-angle-up" />
         <span class="d-none d-lg-inline">{searchType}</span>
-      </div>
+      </button>
       <!-- </button> -->
       {#if dropdownShown}
         <div
           transition:slide={{ duration: 150 }}
-          class="dropdown-menu"
+          class="dropdown-menu filter"
           aria-labelledby="dropdownMenuButton"
         >
           {#each dropdownItems as item}
-            <!-- svelte-ignore a11y-invalid-attribute -->
             <button
+              type="button"
               class="dropdown-item"
               on:click={() => {
                 searchType = item.name
                 dropdownShown = false
+                searchPreview()
               }}
             >
               {item.name}</button
@@ -65,11 +115,37 @@
         </div>
       {/if}
       <input
-        type="text"
+        type="search"
         class="form-control"
-        bind:value={searchQuery}
         placeholder="Enter Keywords"
+        on:emptied={searchPreview}
+        on:input={searchPreview}
+        on:click={() => (dropdownShown = false)}
       />
+      {#if previewResults.length > 0}
+        <div
+          transition:slide={{ duration: 150 }}
+          class="dropdown-menu"
+          aria-labelledby="dropdownMenuButton"
+        >
+          {#each previewResults as preview}
+            {#if searchType === dropdownItems[0].name}
+              <a
+                class="dropdown-item"
+                href={`${beatsaverRoot}${searchType.toLowerCase()}/${preview.id}`}
+              >
+                {preview.name}</a
+              >
+            {:else if searchType === dropdownItems[1].name}
+              <a class="dropdown-item" href={preview.downloadURL}> {preview.name}</a>
+            {:else if searchType === dropdownItems[2].name}
+              // TODO: Waiting for content search
+              <a class="dropdown-item" href={'#'}> {preview.name}</a>
+            {/if}
+          {/each}
+        </div>
+      {/if}
+
       <button type="submit" class="btn btn-primary">Search</button>
     </div>
   </div>
@@ -111,6 +187,7 @@
     border-left: 0.3em solid transparent;
   }
   .dropdown-menu {
+    max-width: 100%;
     position: absolute;
     top: 2rem;
     z-index: 1000;
@@ -127,6 +204,9 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
   }
+  .dropdown-menu.filter {
+    z-index: 1100;
+  }
   .dropdown-item {
     display: block;
     width: 100%;
@@ -138,6 +218,15 @@
     white-space: nowrap;
     background-color: transparent;
     border: 0;
+  }
+  a.dropdown-item {
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  a.dropdown-item:hover {
+    text-decoration: none;
   }
   .dropdown-item:hover {
     background-color: rgb(42, 81, 121);
@@ -159,9 +248,13 @@
     border-radius: 0 0.25rem 0.25rem 0;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
+  div,
   button,
   input {
     overflow: visible;
+  }
+  input:hover {
+    color: #39699c;
   }
   .btn {
     display: inline-block;
