@@ -48,7 +48,7 @@
       show: false,
       Items: [
         {
-          name: 'Cureated Playlists',
+          name: 'Curated Playlists',
           href: '',
         },
         {
