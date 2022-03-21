@@ -38,14 +38,18 @@
         on:click={() => (dropdownShown = !dropdownShown)}
         id="dropdownMenuButton"
         aria-haspopup="true"
-        aria-expanded="{dropdownShown}"
+        aria-expanded={dropdownShown}
       >
         <i class="fas fa-angle-up" />
         <span class="d-none d-lg-inline">{searchType}</span>
       </div>
       <!-- </button> -->
       {#if dropdownShown}
-        <div transition:slide class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div
+          transition:slide={{ duration: 150 }}
+          class="dropdown-menu"
+          aria-labelledby="dropdownMenuButton"
+        >
           {#each dropdownItems as item}
             <!-- svelte-ignore a11y-invalid-attribute -->
             <button
