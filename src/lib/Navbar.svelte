@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { width } from '@fortawesome/free-solid-svg-icons/faStar'
   import { slide } from 'svelte/transition'
 
   let navbarDropdownItems: {
@@ -199,7 +198,7 @@
       aria-label="Toggle navigation"><span class="navbar-toggler-icon" /></button
     >
     {#if windowSize > 992 || showNavbarMobile}
-      <div transition:slide class="collapse navbar-collapse show" id="navbar">
+      <div transition:slide={{ duration: 150 }} class="collapse navbar-collapse show" id="navbar">
         <ul class="navbar-nav me-auto">
           {#each navbarDropdownItems as item}
             {#if item.Items}
@@ -213,7 +212,7 @@
                 {#if item.show}
                   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
                   <div
-                    transition:slide
+                    transition:slide={{ duration: 150 }}
                     class="dropdown-menu {item.show ? 'show' : ''}"
                     on:mouseleave={() => toggleOff()}
                   >
