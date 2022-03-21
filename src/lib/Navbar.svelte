@@ -160,8 +160,6 @@
         this[index].show = false
       } else {
         this[index].show = !in_item.show
-        console.log(in_item)
-        console.log(this[index].show)
       }
     }, tempArray)
     navbarDropdownItems = tempArray
