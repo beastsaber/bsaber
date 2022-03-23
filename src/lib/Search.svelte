@@ -27,7 +27,12 @@
 
   let dropdownShown: boolean = false
 
-  let previewResults: Record<any, any>[] = []
+  let previewResults: {
+    name: string
+    uploader: string
+    url: string
+    image: string
+  }[] = []
 
   let searchPreviewTimeout
 
@@ -68,7 +73,14 @@
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs
+              previewResults = data.docs.map((song) => {
+                return {
+                  name: song.name,
+                  uploader: song.uploader.name,
+                  url: `${beatsaverRoot}${searchType.toLowerCase()}/${song.id}`,
+                  image: song.versions.at(-1).coverURL,
+                }
+              })
               console.log(data) // TOOD: Remove console.log
             }
           })
@@ -77,7 +89,14 @@
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs
+              previewResults = data.docs.map((playlist) => {
+                return {
+                  name: playlist.name,
+                  uploader: playlist.owner.name,
+                  url: `${beatsaverRoot}${searchType.toLowerCase()}/${playlist.playlistId}`,
+                  image: playlist.playlistImage,
+                }
+              })
               console.log(data) // TOOD: Remove console.log
             }
           })
@@ -139,36 +158,20 @@
           aria-labelledby="dropdownMenuButton"
         >
           {#each previewResults as preview}
-            {#if searchType === dropdownItems[0].name}
               <a
                 class="dropdown-item"
-                href={`${beatsaverRoot}${searchType.toLowerCase()}/${preview.id}`}
+                href={preview.url}
               >
                 <img
-                  src={preview.versions.at(-1).coverURL}
+                  src={preview.image}
                   class="dropdown-item-image"
                   alt="Map Thumbnail"
                 />
                 <div class="dropdown-item-text">
                   {preview.name}<br />
-                  <div class="dropdown-item-text2">{preview.uploader.name}</div>
+                  <div class="dropdown-item-text2">{preview.uploader}</div>
                 </div></a
               >
-            {:else if searchType === dropdownItems[1].name}
-              <a
-                class="dropdown-item"
-                href={`${beatsaverRoot}${searchType.toLowerCase()}/${preview.playlistId}`}
-                ><img
-                  src={preview.playlistImage}
-                  class="dropdown-item-image"
-                  alt="Playlist Thumbnail"
-                />
-                <div class="dropdown-item-text">{preview.name}</div></a
-              >
-            {:else if searchType === dropdownItems[2].name}
-              <!-- TODO: Waiting for content search -->
-              <a class="dropdown-item" href={'#'}> {preview.name}</a>
-            {/if}
           {/each}
         </div>
       {/if}
