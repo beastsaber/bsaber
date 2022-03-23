@@ -131,7 +131,7 @@
         class="form-control"
         placeholder="Enter Keywords"
         on:input={searchPreview}
-        />
+      />
       {#if previewResults.length > 0}
         <div
           transition:slide={{ duration: 150 }}
@@ -144,13 +144,27 @@
                 class="dropdown-item"
                 href={`${beatsaverRoot}${searchType.toLowerCase()}/${preview.id}`}
               >
-              <img src={preview.versions.at(-1).coverURL} class="dropdown-item-image" alt="Map Thumbnail"
-              /><div class="dropdown-item-text">{preview.name}<br><div class="dropdown-item-text2">{preview.uploader.name}</div></div></a
+                <img
+                  src={preview.versions.at(-1).coverURL}
+                  class="dropdown-item-image"
+                  alt="Map Thumbnail"
+                />
+                <div class="dropdown-item-text">
+                  {preview.name}<br />
+                  <div class="dropdown-item-text2">{preview.uploader.name}</div>
+                </div></a
               >
             {:else if searchType === dropdownItems[1].name}
-              <a class="dropdown-item" href={`${beatsaverRoot}${searchType.toLowerCase()}/${preview.playlistId}`}
-              ><img src={preview.playlistImage} class="dropdown-item-image" alt="Playlist Thumbnail"
-              /><div class="dropdown-item-text">{preview.name}</div></a>
+              <a
+                class="dropdown-item"
+                href={`${beatsaverRoot}${searchType.toLowerCase()}/${preview.playlistId}`}
+                ><img
+                  src={preview.playlistImage}
+                  class="dropdown-item-image"
+                  alt="Playlist Thumbnail"
+                />
+                <div class="dropdown-item-text">{preview.name}</div></a
+              >
             {:else if searchType === dropdownItems[2].name}
               <!-- TODO: Waiting for content search -->
               <a class="dropdown-item" href={'#'}> {preview.name}</a>
@@ -252,9 +266,9 @@
   /* .dropdown-item-text {
 
   } */
-    .dropdown-item-text2 {
-      padding-top: 0.15rem;
-      font-size: small;
+  .dropdown-item-text2 {
+    padding-top: 0.15rem;
+    font-size: small;
   }
   .form-control {
     display: block;
