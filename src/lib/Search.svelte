@@ -236,6 +236,7 @@
   }
   .dropdown-menu-list {
     height: 10rem;
+    width: 100%;
     overflow-y: auto;
   }
   .dropdown-menu.filter {
