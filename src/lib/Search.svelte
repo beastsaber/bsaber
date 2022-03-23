@@ -117,7 +117,6 @@
         type="button"
         on:click={() => (dropdownShown = !dropdownShown)}
         id="dropdownMenuButton"
-        aria-haspopup="true"
         aria-expanded={dropdownShown}
       >
         <i class="fas fa-angle-up" />
