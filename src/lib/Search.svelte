@@ -118,8 +118,7 @@
         type="search"
         class="form-control"
         placeholder="Enter Keywords"
-        on:emptied={searchPreview}
-        on:input={searchPreview}
+        on:keyup={searchPreview}
         on:click={() => (dropdownShown = false)}
       />
       {#if previewResults.length > 0}
