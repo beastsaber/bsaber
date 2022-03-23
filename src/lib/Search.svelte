@@ -23,6 +23,8 @@
 
   let searchType: string = dropdownItems[0].name
   let searchQuery: string = ''
+  let lastQuery: string = ''
+
   let dropdownShown: boolean = false
 
   let previewResults: Record<any, any>[] = []
@@ -46,28 +48,38 @@
     }
   }
 
-  function searchPreview(event?) {
+  function searchPreview(event?, force?: boolean) {
     clearTimeout(searchPreviewTimeout)
+    lastQuery = searchQuery
     searchQuery = event ? event.target.value : searchQuery
-    previewResults = []
-    if (searchQuery.length < 2) {
-      return
-    }
-
+    console.log(`searchQuery ${searchQuery} lastQuery: ${lastQuery}`) // TOOD: Remove console.log
     searchPreviewTimeout = setTimeout(() => {
+      // We're checking if the query is the same as the last query to avoid making unnecessary requests
+      if (searchQuery === lastQuery && !force) {
+        return
+      }
+      // If the query is empty, we don't need to do anything
+      previewResults = []
+      if (searchQuery.length < 1) {
+        return
+      }
       if (searchType === dropdownItems[0].name) {
         fetch(`${mapsSearchApiEndpoint}0?q=${searchQuery}&sortOrder=Relevance`)
           .then((response) => response.json())
           .then((data) => {
-            previewResults = data.docs
-            console.log(data)
+            if (searchQuery !== '') {
+              previewResults = data.docs
+              console.log(data) // TOOD: Remove console.log
+            }
           })
       } else if (searchType === dropdownItems[1].name) {
         fetch(`${playlistsApiEndpoint}0?q=${searchQuery}&sortOrder=Relevance`)
           .then((response) => response.json())
           .then((data) => {
-            previewResults = data.docs
-            console.log(data)
+            if (searchQuery !== '') {
+              previewResults = data.docs
+              console.log(data) // TOOD: Remove console.log
+            }
           })
       } else if (searchType === dropdownItems[2].name) {
         alert('Not yet implemented')
@@ -106,7 +118,7 @@
               on:click={() => {
                 searchType = item.name
                 dropdownShown = false
-                searchPreview()
+                searchPreview(null, true)
               }}
             >
               {item.name}</button
@@ -118,9 +130,8 @@
         type="search"
         class="form-control"
         placeholder="Enter Keywords"
-        on:keyup={searchPreview}
-        on:click={() => (dropdownShown = false)}
-      />
+        on:input={searchPreview}
+        />
       {#if previewResults.length > 0}
         <div
           transition:slide={{ duration: 150 }}
@@ -133,12 +144,15 @@
                 class="dropdown-item"
                 href={`${beatsaverRoot}${searchType.toLowerCase()}/${preview.id}`}
               >
-                {preview.name}</a
+              <img src={preview.versions.at(-1).coverURL} class="dropdown-item-image" alt="Map Thumbnail"
+              /><div class="dropdown-item-text">{preview.name}<br><div class="dropdown-item-text2">{preview.uploader.name}</div></div></a
               >
             {:else if searchType === dropdownItems[1].name}
-              <a class="dropdown-item" href={preview.downloadURL}> {preview.name}</a>
+              <a class="dropdown-item" href={`${beatsaverRoot}${searchType.toLowerCase()}/${preview.playlistId}`}
+              ><img src={preview.playlistImage} class="dropdown-item-image" alt="Playlist Thumbnail"
+              /><div class="dropdown-item-text">{preview.name}</div></a>
             {:else if searchType === dropdownItems[2].name}
-              // TODO: Waiting for content search
+              <!-- TODO: Waiting for content search -->
               <a class="dropdown-item" href={'#'}> {preview.name}</a>
             {/if}
           {/each}
@@ -207,7 +221,7 @@
     z-index: 1100;
   }
   .dropdown-item {
-    display: block;
+    display: flex;
     width: 100%;
     padding: 0.25rem 1.5rem;
     clear: both;
@@ -229,6 +243,18 @@
   }
   .dropdown-item:hover {
     background-color: rgb(42, 81, 121);
+  }
+  .dropdown-item-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+  }
+  /* .dropdown-item-text {
+
+  } */
+    .dropdown-item-text2 {
+      padding-top: 0.15rem;
+      font-size: small;
   }
   .form-control {
     display: block;
