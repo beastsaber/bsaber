@@ -135,7 +135,7 @@
       {#if previewResults.length > 0}
         <div
           transition:slide={{ duration: 150 }}
-          class="dropdown-menu"
+          class="dropdown-menu dropdown-menu-list"
           aria-labelledby="dropdownMenuButton"
         >
           {#each previewResults as preview}
@@ -231,6 +231,10 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
   }
+  .dropdown-menu-list {
+    height: 10rem;
+    overflow-y: auto;
+  }
   .dropdown-menu.filter {
     z-index: 1100;
   }
@@ -264,7 +268,7 @@
     margin-right: 0.5rem;
   }
   .dropdown-item-text {
-    overflow: hidden;
+    overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
