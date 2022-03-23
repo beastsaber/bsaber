@@ -263,12 +263,17 @@
     height: 2.5rem;
     margin-right: 0.5rem;
   }
-  /* .dropdown-item-text {
-
-  } */
+  .dropdown-item-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .dropdown-item-text2 {
     padding-top: 0.15rem;
     font-size: small;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .form-control {
     display: block;
