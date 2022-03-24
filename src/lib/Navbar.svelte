@@ -182,7 +182,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
   <div class="container">
     <a href="/" class="navbar-brand" id="home-link"
-      ><img alt="BeatSaver" src="/BeastSaber-LogoW.webp" title="BeatSaver" height="23px" /></a
+      ><img alt="BeastSaber" src="/BeastSaber-LogoW.webp" title="BeastSaber" height="23px" /></a
     >
     <button
       type="button"
