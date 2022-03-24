@@ -48,7 +48,7 @@
       show: false,
       Items: [
         {
-          name: 'Cureated Playlists',
+          name: 'Curated Playlists',
           href: '',
         },
         {
@@ -103,7 +103,7 @@
         },
         {
           name: 'Curators',
-          href: '',
+          href: '/curation-team',
           Items: [
             {
               name: 'About Curation',
@@ -159,8 +159,6 @@
         this[index].show = false
       } else {
         this[index].show = !in_item.show
-        console.log(in_item)
-        console.log(this[index].show)
       }
     }, tempArray)
     navbarDropdownItems = tempArray
@@ -184,7 +182,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
   <div class="container">
     <a href="/" class="navbar-brand" id="home-link"
-      ><img alt="BeatSaver" src="/BeastSaber-LogoW.webp" title="BeatSaver" height="23px" /></a
+      ><img alt="BeastSaber" src="/BeastSaber-LogoW.webp" title="BeastSaber" height="23px" /></a
     >
     <button
       type="button"
@@ -468,7 +466,7 @@
     background-size: 100%;
   }
   .navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url('/navbar_menu_icon.svg');
   }
   .dropdown-divider {
     height: 0;
