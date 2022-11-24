@@ -11,7 +11,7 @@
       `${import.meta.env.VITE_BSABER_API_BASE || 'https://api.bsaber.com'}/top-players`,
     )
     let json = await response.json()
-    players = json
+    players = json.scoresaber
   }
 </script>
 
