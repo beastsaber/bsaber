@@ -157,20 +157,13 @@
           aria-labelledby="dropdownMenuButton"
         >
           {#each previewResults as preview}
-              <a
-                class="dropdown-item"
-                href={preview.url}
-              >
-                <img
-                  src={preview.image}
-                  class="dropdown-item-image"
-                  alt="Map Thumbnail"
-                />
-                <div class="dropdown-item-text">
-                  {preview.name}<br />
-                  <div class="dropdown-item-text2">{preview.uploader}</div>
-                </div></a
-              >
+            <a class="dropdown-item" href={preview.url}>
+              <img src={preview.image} class="dropdown-item-image" alt="Map Thumbnail" />
+              <div class="dropdown-item-text">
+                {preview.name}<br />
+                <div class="dropdown-item-text2">{preview.uploader}</div>
+              </div></a
+            >
           {/each}
         </div>
       {/if}
