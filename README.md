@@ -1,6 +1,6 @@
 ## Requirements
 
-NodeJS >=16.14.0
+NodeJS >=18.12.1
 
 ## Installation
 
