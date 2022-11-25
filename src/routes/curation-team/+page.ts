@@ -1,4 +1,4 @@
-export async function get() {
+export async function load() {
   const curators = await Promise.all(
     Object.entries(import.meta.glob('/src/collections/curation-team/*.md')).map(
       async ([path, module]) => {
@@ -9,8 +9,6 @@ export async function get() {
     ),
   )
   return {
-    body: {
-      curators,
-    },
+    curators,
   }
 }

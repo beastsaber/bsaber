@@ -1,6 +1,5 @@
 <script lang="ts">
   import Listing from '$lib/Listing.svelte'
-  import scoreSaberLogo from '/static/scoresaber-logo.svg'
 
   let players = []
 
@@ -15,7 +14,7 @@
   }
 </script>
 
-<Listing title="ScoreSaber Leaderboards" img={scoreSaberLogo}>
+<Listing title="ScoreSaber Leaderboards" img={'/scoresaber-logo.svg'}>
   {#each players as player, index}
     {#if index > 0}
       <hr />

@@ -1,7 +1,3 @@
-<script context="module" lang="ts">
-  export const prerender = true
-</script>
-
 <script lang="ts">
   import QuickFilters from '$lib/QuickFilters.svelte'
   import Search from '$lib/Search.svelte'
@@ -13,7 +9,8 @@
   import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
 
-  export let cards
+  export let data
+  let cards = data.cards
 </script>
 
 <svelte:head>

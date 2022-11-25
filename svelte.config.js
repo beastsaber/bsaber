@@ -14,7 +14,7 @@ const config = {
         dashes: 'oldschool',
       },
       layout: {
-        posts: './src/routes/__layout.svelte',
+        posts: './src/routes/+layout.svelte',
       },
       remarkPlugins: [],
       rehypePlugins: [],
@@ -22,11 +22,10 @@ const config = {
   ],
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({}),
 
-    // Override http methods in the Todo forms
-    methodOverride: {
-      allowed: ['PATCH', 'DELETE'],
+    prerender: {
+      crawl: true,
     },
 
     // Content-Security-Policy Configuration

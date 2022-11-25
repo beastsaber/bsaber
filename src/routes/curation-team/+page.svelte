@@ -1,11 +1,8 @@
-<script context="module" lang="ts">
-  export const prerender = true
-</script>
-
 <script lang="ts">
   import CuratorCard from '$lib/CuratorCard.svelte'
 
-  export let curators
+  export let data
+  let curators = data.curators
 </script>
 
 <svelte:head>
