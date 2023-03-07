@@ -1,9 +1,9 @@
 <script lang="ts">
   import Fa from 'svelte-fa/src/fa.svelte'
 
-  export let icon = null
-  export let img = null
-  export let title
+  export let icon: string
+  export let img: string
+  export let title: string
 </script>
 
 <div class="listing">
