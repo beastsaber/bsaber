@@ -11,7 +11,7 @@
     "lint": "prettier --plugin-search-dir . --check .",
     "format": "prettier --plugin-search-dir . --write .",
     "create-indices": "node create-indices",
-    "server": "node server",
+    "server": "node backend/server",
     "netlify-cms": "npx netlify-cms-proxy-server"
   },
   "devDependencies": {
