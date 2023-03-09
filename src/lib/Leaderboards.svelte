@@ -22,19 +22,19 @@
 </script>
 
 <Leaderboard
-  title="ScoreSaber Leaderboards"
+  title="ScoreSaber"
   img="/scoresaber-logo.svg"
   players={players.scoresaber}
 />
 
-<Leaderboard
-  title="AccSaber Leaderboards"
-  img="/accsaber-logo.svg"
-  players={players.accsaber}
-/>
-
 <Leaderboard 
-  title="BeatLeader Leaderboards"
+  title="BeatLeader"
   img="/beatleader-logo.svg"
   players={players.beatleader}
+/>
+
+<Leaderboard
+  title="AccSaber"
+  img="/accsaber-logo.svg"
+  players={players.accsaber}
 />

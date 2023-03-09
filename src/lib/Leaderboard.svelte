@@ -18,7 +18,7 @@
       <hr />
     {/if}
     <div class="player">
-      <div class="rank">#{player.rank}</div>
+      <div class="rank">{player.rank}</div>
       <img class="avatar" src={player.avatar} alt="" />
       <div class="name">{player.name}</div>
       <div class="score">
@@ -32,11 +32,12 @@
 </Listing>
 
 <style lang="scss">
+  @import 'src/scss/variables';
+  
   hr {
     height: 1px;
     margin: 8px -12px;
     border: none;
-    background-color: #444;
   }
 
   .player {
@@ -47,6 +48,16 @@
   }
 
   .rank {
+    background: red;
+    color: $background-primary;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
   }
 
   .avatar {

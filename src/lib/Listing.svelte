@@ -13,7 +13,7 @@
     {:else if img}
       <img class="img" src={img} alt="" />
     {/if}
-    <div>{title}</div>
+    <h3>{title}</h3>
   </div>
   <div class="content">
     <slot />
@@ -25,20 +25,17 @@
 
   .listing {
     border-radius: $rounding;
-    background-color: $background-secondary;
   }
 
   .header {
     display: flex;
     align-items: center;
     gap: 8px;
-    height: 40px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-right: 20px;
     border-top-left-radius: $rounding;
     border-top-right-radius: $rounding;
-    background-color: $background-tertiary;
     font-size: 20px;
+    border-bottom: 1px solid $color-muted-text;
   }
 
   .img {
