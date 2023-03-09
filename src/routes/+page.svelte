@@ -32,7 +32,11 @@
     <Listing title="Upcoming Events" icon={faCalendarDay} />
   </div>
   <div class="header">
-    <ListingsHeader icon={faChartLine} text="Global Leaderboard Rankings" linkUrl="google.ca" linkText="View all leaderboards"/>
+    <ListingsHeader
+      icon={faChartLine}
+      text="Global Leaderboard Rankings"
+      linkUrl="#"
+      linkText="View all leaderboards"/>
   </div>
   <div class="listings">
     <Leaderboards />
