@@ -93,10 +93,4 @@
   .img {
     width: 25px;
   }
-
-  .content {
-    padding: 12px 0;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
 </style>
