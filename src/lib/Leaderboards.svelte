@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte'
+  import { onMount } from 'svelte'
   import Leaderboard from '$lib/Leaderboard.svelte'
 
   let players = {
