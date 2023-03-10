@@ -1,19 +1,32 @@
 <script lang="ts">
   import Fa from 'svelte-fa/src/fa.svelte'
+  import IconLink from './IconLink.svelte'
+  import type { IconDefinition } from '@fortawesome/fontawesome-common-types'
 
-  export let icon: string
-  export let img: string
   export let title: string
+
+  export let icon: IconDefinition | undefined = undefined
+  export let img: string | undefined = undefined
+  export let linkUrl: string | undefined = undefined
+  export let linkText: string | undefined = undefined
+  
 </script>
 
 <div class="listing">
   <div class="header">
-    {#if icon}
-      <Fa fw {icon} />
-    {:else if img}
-      <img class="img" src={img} alt="" />
+    <div class="source">
+      {#if icon}
+        <Fa fw {icon} />
+      {:else if img}
+        <img class="img" src={img} alt="" />
+      {/if}
+      <h3>{title}</h3>
+    </div>
+    {#if linkText}
+      <div class="icon-link">
+        <IconLink {linkUrl} {linkText} />
+      </div>
     {/if}
-    <h3>{title}</h3>
   </div>
   <div class="content">
     <slot />
@@ -30,12 +43,51 @@
   .header {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding-right: 20px;
-    border-top-left-radius: $rounding;
-    border-top-right-radius: $rounding;
-    font-size: 20px;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
     border-bottom: 1px solid $color-muted-text;
+    flex-wrap: wrap;
+
+    .source {
+      font-size: 20px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .icon-link {
+      display: flex;
+      justify-content: end;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (min-width: 840px) or (max-width: 677px) {
+    .header {
+      .source {
+        width: unset;
+      }
+
+      .icon-link {
+        width: unset;
+      }
+    }
+  }
+
+  @media (min-width: 840px) {
+    .header {
+      .source {
+        width: unset;
+      }
+
+      .icon-link {
+        width: unset;
+      }
+    }
   }
 
   .img {
@@ -43,6 +95,8 @@
   }
 
   .content {
-    padding: 12px;
+    padding: 12px 0;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 </style>

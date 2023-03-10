@@ -24,17 +24,26 @@
 <Leaderboard
   title="ScoreSaber"
   img="/scoresaber-logo.svg"
+  rankColor="warning-yellow"
+  linkText="See full rankings"
+  linkUrl="https://scoresaber.com/rankings"
   players={players.scoresaber}
 />
 
 <Leaderboard 
   title="BeatLeader"
   img="/beatleader-logo.svg"
+  rankColor="info-blue"
+  linkText="See full rankings"
+  linkUrl="https://www.beatleader.xyz/ranking/1"
   players={players.beatleader}
 />
 
 <Leaderboard
   title="AccSaber"
   img="/accsaber-logo.svg"
+  rankColor="success-green"
+  linkText="See full rankings"
+  linkUrl="https://accsaber.com/leaderboards/overall"
   players={players.accsaber}
 />

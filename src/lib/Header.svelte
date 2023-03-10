@@ -1,11 +1,12 @@
 <script lang="ts">
   import type { IconDefinition } from '@fortawesome/fontawesome-common-types'
   import Fa from 'svelte-fa/src/fa.svelte'
+  import IconLink from './IconLink.svelte'
 
   export let text: string
   export let icon: IconDefinition
-  export let linkUrl = ''
-  export let linkText = ''
+  export let linkUrl: string | undefined = undefined
+  export let linkText: string | undefined = undefined
 </script>
 
 <div class="container">
@@ -20,25 +21,25 @@
     <div class="line" />
   </div>
   {#if linkText}
-    <a href={linkUrl}>{linkText}</a>
+    <IconLink linkUrl={linkUrl} linkText={linkText}/>
   {/if}
 </div>
 
 <style lang="scss">
   @import 'src/scss/variables';
 
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
   .icon {
     height: 2.5rem;
     width: 2.5rem;
     margin-right: 20px;
   }
-
-  .container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
   h2 {
     display: block;
   }
@@ -56,18 +57,5 @@
       width: 100%;
       background: linear-gradient(90deg, #999999 0%, rgba(153, 153, 153, 0) 100%);
     }
-  }
-
-  a {
-    display: inline-flex;
-    justify-content: right;
-    align-items: center;
-    &::before {
-      height: 15px;
-      width: 8px;
-      margin-right: 9px;
-      content: url('/red-triangle.svg');
-    }
-    color: $color-danger-red;
   }
 </style>
