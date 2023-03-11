@@ -1,0 +1,61 @@
+<script lang="ts">
+  import type { IconDefinition } from '@fortawesome/fontawesome-common-types'
+  import Fa from 'svelte-fa/src/fa.svelte'
+  import IconLink from './IconLink.svelte'
+
+  export let text: string
+  export let icon: IconDefinition
+  export let linkUrl: string | undefined = undefined
+  export let linkText: string | undefined = undefined
+</script>
+
+<div class="container">
+  {#if icon}
+    <div class="icon">
+      <!-- TODO: Check for better way to style this -->
+      <Fa style='height:100%;width:100%;' class="fa" fw {icon} />
+    </div>
+  {/if}
+  <h2>{text}</h2>
+  <div class="accent-line-container">
+    <div class="line" />
+  </div>
+  {#if linkText}
+    <IconLink linkUrl={linkUrl} linkText={linkText}/>
+  {/if}
+</div>
+
+<style lang="scss">
+  @import 'src/scss/variables';
+
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: 20px;
+  }
+  h2 {
+    display: block;
+  }
+
+  .accent-line-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+    flex-grow: 1;
+
+    .line {
+      height: 5px;
+      width: 100%;
+      background: linear-gradient(90deg, #999999 0%, rgba(153, 153, 153, 0) 100%);
+    }
+  }
+</style>
