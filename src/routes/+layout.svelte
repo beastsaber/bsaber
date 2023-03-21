@@ -9,15 +9,13 @@
 </main>
 
 <style lang="scss">
-  @import 'src/scss/variables';
-
   main {
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 12px;
     width: 100%;
-    margin-top: $navbar-height;
+    margin-top: 75px;
     box-sizing: border-box;
   }
 </style>
