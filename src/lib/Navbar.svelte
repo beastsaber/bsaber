@@ -1,15 +1,26 @@
 <script lang="ts">
   import { slide } from 'svelte/transition'
 
+  let navbarMenu: HTMLElement | null = null
+  let showMobileNavbar: boolean = false
+  let windowSize: number
+  let expandedDropdownId: string | null = null
+
+  interface DropdownItem {
+    name?: string
+    expanded?: boolean
+    Items?: any[]
+  }
+
   let navbarDropdownItems: {
     name: string
-    show?: boolean
+    expanded?: boolean
     href?: string
     Items?: {
       name: string
       href: string
       dividerAfter?: boolean
-      show?: boolean
+      expanded?: boolean
       Items?: {
         name: string
         href: string
@@ -19,11 +30,11 @@
   }[] = [
     {
       name: 'Get Started',
-      href: '',
+      href: '/getting-started',
     },
     {
       name: 'Find Maps',
-      show: false,
+      expanded: false,
       Items: [
         {
           name: 'Curator Recommended',
@@ -31,7 +42,7 @@
         },
         {
           name: 'Verified Mappers',
-          href: '',
+          href: 'https://beatsaver.com/?verified=true',
         },
         {
           name: 'Ranked',
@@ -39,27 +50,57 @@
         },
         {
           name: 'Browse by Genre',
-          href: '',
+          href: '/browse', // future app page
+        },
+        {
+          name: 'Curated Playlists',
+          href: 'https://beatsaver.com/playlists?curated=true',
+        },
+        {
+          name: 'All Playlists',
+          href: 'https://beatsaver.com/playlists',
         },
       ],
     },
     {
-      name: 'Playlists',
-      show: false,
+      name: 'Find Playlists',
+      expanded: false,
       Items: [
         {
           name: 'Curated Playlists',
-          href: '',
+          href: 'https://beatsaver.com/playlists?curated=true',
         },
         {
           name: 'All Playlists',
+          href: 'https://beatsaver.com/playlists',
+        },
+      ],
+    },
+    {
+      name: 'Models',
+      expanded: false,
+      Items: [
+        {
+          name: 'Avatars',
+          href: '',
+        },
+        {
+          name: 'Sabers',
+          href: '',
+        },
+        {
+          name: 'Blocks',
+          href: '',
+        },
+        {
+          name: 'Walls',
           href: '',
         },
       ],
     },
     {
       name: 'News & Info',
-      show: false,
+      expanded: false,
       Items: [
         {
           name: 'News',
@@ -90,13 +131,9 @@
       ],
     },
     {
-      name: 'Community',
-      show: false,
+      name: 'Community Hub',
+      expanded: false,
       Items: [
-        {
-          name: 'Community Hub',
-          href: '#',
-        },
         {
           name: 'Mappers',
           href: 'https://beatsaver.com/mappers',
@@ -138,94 +175,103 @@
           name: 'BSMG Discord',
           href: 'https://discord.gg/beatsabermods',
         },
-        {
-          name: 'BeastSaber Discord',
-          href: 'https://discord.gg/VJZHUbt',
-          dividerAfter: true,
-        },
-        {
-          name: 'GitHub',
-          href: 'https://github.com/beastsaber/bsaber',
-        },
       ],
     },
   ]
 
-  // Function that toggles all other dropdown items to false
-  function toggleDropdown(in_item: { name?: string; show?: boolean; Items?: any[] }) {
-    let tempArray = navbarDropdownItems // Copy the array because svelte doesn't like to change arrays
-    tempArray.forEach(function (item, index) {
-      if (item !== in_item) {
-        this[index].show = false
-      } else {
-        this[index].show = !in_item.show
-      }
-    }, tempArray)
-    navbarDropdownItems = tempArray
+  const toggleDropdown = (selectedItem: DropdownItem, dropdownId: string) => {
+    if (selectedItem.expanded) {
+      selectedItem.expanded = false
+      navbarDropdownItems = navbarDropdownItems
+      return
+    }
+    collapseAllDropdowns()
+    expandDropdown(selectedItem, dropdownId, true)
   }
 
-  let showNavbarMobile = false
+  const expandDropdown = (dropdownItem: DropdownItem, dropdownId: string, forceUpdate = false) => {
+    dropdownItem.expanded = true
+    expandedDropdownId = dropdownId
+    if (forceUpdate) navbarDropdownItems = navbarDropdownItems
+  }
 
-  let windowSize
+  const collapseAllDropdowns = (forceUpdate = false) => {
+    navbarDropdownItems.forEach((item) => (item.expanded = false))
+    expandedDropdownId = null
+    if (forceUpdate) navbarDropdownItems = navbarDropdownItems
+  }
 
-  function toggleOff() {
-    let tempArray = navbarDropdownItems
-    tempArray.forEach(function (item, index) {
-      this[index].show = false
-    }, tempArray)
-    navbarDropdownItems = tempArray
+  const closeDropdownMenus = (e: Event) => {
+    // Mobile navbar not being shown
+    if (windowSize > 1100) {
+      const dropdownMenu = navbarMenu?.querySelector(`#${expandedDropdownId}`)
+      if (dropdownMenu?.contains(e?.target as Node)) return
+    } else if (showMobileNavbar) {
+      // width <= 1100px and mobile menu is visible
+      const menu = navbarMenu?.querySelector('.navbar-list')
+      const menuContainsClickedTarget = menu?.contains(e?.target as Node)
+      const targetIsToggler = (e?.target as Element)?.hasAttribute('data-toggler')
+      if (menuContainsClickedTarget || targetIsToggler) return
+    }
+    collapseAllDropdowns(true)
+    showMobileNavbar = false
   }
 </script>
 
-<svelte:window bind:innerWidth={windowSize} />
+<svelte:window bind:innerWidth={windowSize} on:click={closeDropdownMenus} />
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+<nav class="navbar">
   <div class="container">
-    <a href="/" class="navbar-brand" id="home-link"
-      ><img alt="BeastSaber" src="/BeastSaber-LogoW.webp" title="BeastSaber" height="23px" /></a
-    >
+    <a id="home-link" href="/">
+      <img alt="BeastSaber" src="/beastsaber-logo.svg" />
+    </a>
     <button
       type="button"
       class="navbar-toggler"
-      id="navbar-button"
-      on:click={() => (showNavbarMobile = !showNavbarMobile)}
-      data-toggle="collapse"
-      data-target="navbar"
-      aria-controls="navbar"
-      aria-expanded="false"
-      aria-label="Toggle navigation"><span class="navbar-toggler-icon" /></button
+      on:click={() => (showMobileNavbar = !showMobileNavbar)}
+      data-target="navbar-menu"
+      data-toggler=""
+      aria-controls="navbar-menu"
+      aria-expanded={showMobileNavbar ? 'true' : 'false'}
+      aria-label="Toggle navigation"
     >
-    {#if windowSize > 992 || showNavbarMobile}
-      <div transition:slide={{ duration: 150 }} class="collapse navbar-collapse show" id="navbar">
-        <ul class="navbar-nav me-auto">
-          {#each navbarDropdownItems as item}
+      <span class="navbar-toggler-icon" data-toggler="" />
+    </button>
+    {#if windowSize > 1100 || showMobileNavbar}
+      <div
+        transition:slide={{ duration: 150 }}
+        class:fixed-nav={windowSize <= 1100}
+        id="navbar-menu"
+        bind:this={navbarMenu}
+      >
+        <ul class="navbar-list">
+          {#each navbarDropdownItems as item, index}
             {#if item.Items}
-              <li class="nav-item dropdown">
+              <li class="nav-item">
                 <!-- svelte-ignore a11y-invalid-attribute -->
                 <a
                   href=""
-                  class="nav-link dropdown-toggle show"
-                  on:click={() => toggleDropdown(item)}>{item.name}</a
+                  class="nav-link dropdown-toggle"
+                  on:click|preventDefault|stopPropagation={() =>
+                    toggleDropdown(item, `dropdown-menu-${index}`)}>{item.name}</a
                 >
-                {#if item.show}
+                {#if item.expanded}
                   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
                   <div
                     transition:slide={{ duration: 150 }}
-                    class="dropdown-menu {item.show ? 'show' : ''}"
-                    on:mouseleave={() => toggleOff()}
+                    id="dropdown-menu-{index}"
+                    class="dropdown-menu"
                   >
                     {#each item.Items as navItem}
                       <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
                       {#if navItem.dividerAfter}
                         <div class="dropdown-divider" />
                       {/if}
-
                       {#if navItem.Items}
                         {#each navItem.Items as navSubItem}
-                          <a href={navSubItem.href} class="dropdown-item subItem"
+                          <a href={navSubItem.href} class="dropdown-item sub-item"
                             >{navSubItem.name}</a
                           >
-
                           {#if navSubItem.dividerAfter}
                             <div class="dropdown-divider" />
                           {/if}
@@ -247,231 +293,226 @@
   </div>
 </nav>
 
-<style>
-  .container {
-    width: 100%;
-    padding-right: var(--bs-gutter-x, 0.75rem);
-    padding-left: var(--bs-gutter-x, 0.75rem);
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-  .dropdown-menu {
-    position: absolute;
-    z-index: 1000;
-    display: block;
-    min-width: 10rem;
-    padding: 0.5rem 0;
-    margin: 0;
-    font-size: 1rem;
-    color: #fff;
-    text-align: left;
-    list-style: none;
-    background-color: #222222;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 0.25rem;
-  }
-  .dropdown-item {
-    display: block;
-    width: 100%;
-    padding: 0.25rem 1rem;
-    clear: both;
-    font-weight: 400;
-    color: #fff;
-    text-align: inherit;
-    text-decoration: none;
-    white-space: nowrap;
-    background-color: transparent;
-    border: 0;
-  }
-  .dropdown-item:hover {
-    background-color: #5f58b9;
-  }
-  .dropdown-item.subItem {
-    padding-left: 2rem;
-  }
-  @media (min-width: 992px) {
-    .navbar-expand-lg {
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-    }
-    .navbar-expand-lg .navbar-nav .nav-link {
-      padding-right: 0.5rem;
-      padding-left: 0.5rem;
-    }
-    .navbar-expand-lg .navbar-nav {
-      flex-direction: row;
-    }
-    .navbar-expand-lg .navbar-nav .dropdown-menu {
-      position: absolute;
-    }
-    .navbar-expand-lg .navbar-toggler {
-      display: none;
-    }
-  }
-  .fixed-top {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-  }
-  .navbar-nav {
-    display: flex;
-    flex-direction: column;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
-  .bg-primary {
-    --bs-bg-opacity: 1;
-    background-color: #454088 !important;
-  }
-  .nav-link {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out;
-  }
-  .dropdown-toggle {
-    white-space: nowrap;
-  }
-  .dropdown-toggle::after {
-    display: inline-block;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: '';
-    border-top: 0.3em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    border-left: 0.3em solid transparent;
-  }
-  @media (min-width: 1400px) {
-    .container {
-      max-width: 1320px;
-    }
-  }
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1140px;
-    }
-  }
-  @media (min-width: 768px) {
-    .container {
-      max-width: 720px;
-    }
-  }
-  @media (min-width: 576px) {
-    .container {
-      max-width: 540px;
-    }
-  }
-  button:not(:disabled),
-  [type='button']:not(:disabled) {
-    cursor: pointer;
-  }
+<style lang="scss">
+  @import 'src/scss/variables';
+
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
-  /* a:hover {
-    text-decoration: underline;
-    text-decoration-line: underline;
-    text-decoration-thickness: initial;
-    text-decoration-style: initial;
-    text-decoration-color: initial;
-  } */
-  @media (min-width: 992px) {
-    .container {
-      max-width: 960px;
-    }
-    .navbar-expand-lg .navbar-collapse {
-      display: flex !important;
-      flex-basis: auto;
+
+  button,
+  [type='button'] {
+    &:not(:disabled) {
+      cursor: pointer;
     }
   }
-  .navbar > .container {
+
+  .navbar {
     display: flex;
-    flex-wrap: inherit;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: $navbar-height;
+    background: linear-gradient(90deg, #b52a1c 0%, #454088 27.08%, #454088 72.92%, #1268a1 100%);
+    z-index: 2;
+  }
+
+  .container {
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 1356px;
+    max-width: 100%;
+    padding: 0 0.75rem;
+    margin: 0 auto;
   }
-  .navbar-collapse {
-    flex-basis: 100%;
-    flex-grow: 1;
-    align-items: center;
+
+  .fixed-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 16rem;
+    padding: 1rem 0;
+    margin-top: calc($navbar-height - 10px);
+    margin-right: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: $rounding;
+    background: $background-primary;
   }
-  .navbar-brand {
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  .navbar-brand {
-    color: #fff;
-  }
-  .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.55);
-  }
-  .navbar-nav .nav-link:hover {
-    color: #fff;
-  }
-  button:focus:not(:focus-visible) {
-    outline: 0;
-    outline-color: initial;
-    outline-style: initial;
-    outline-width: 0px;
-  }
-  .navbar-nav .dropdown-menu {
+
+  .dropdown-menu {
     position: static;
+    display: flex;
+    flex-direction: column;
+    min-width: 10rem;
+    color: $color-primary-text;
+    background-color: $background-primary;
+    list-style: none;
+    z-index: 2;
   }
-  .navbar-toggler:focus {
+
+  .dropdown-item {
+    width: 100%;
+    font-weight: 400;
+    color: $color-primary-text;
     text-decoration: none;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem;
+    padding: 0.5rem 2rem;
+
+    &:hover,
+    &:focus {
+      background-color: #5f58b9;
+    }
+    &.sub-item {
+      padding-left: 3rem;
+    }
   }
+
+  .dropdown-divider {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .navbar-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 1.25rem;
+  }
+
+  .nav-item {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0 1rem;
+    font-weight: 600;
+    font-family: $font-poppins;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out;
+    color: $color-primary-text;
+
+    &:hover {
+      text-shadow: 0px 0px 2px $color-primary-text;
+    }
+  }
+
+  .dropdown-toggle {
+    white-space: nowrap;
+    &:after {
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      content: '';
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+    }
+  }
+
   .navbar-toggler {
     padding: 0.25rem 0.75rem;
     font-size: 1.25rem;
     line-height: 1;
     background-color: transparent;
-    border: 1px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0.25rem;
     transition: box-shadow 0.15s ease-in-out;
-  }
-  .navbar-dark .navbar-toggler {
     color: rgba(255, 255, 255, 0.55);
-    border-color: rgba(255, 255, 255, 0.1);
+
+    &:focus {
+      outline: 0;
+      text-decoration: none;
+      box-shadow: 0 0 0 0.25rem;
+    }
   }
+
   .navbar-toggler-icon {
     display: inline-block;
     width: 1.5em;
     height: 1.5em;
-    vertical-align: middle;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-  }
-  .navbar-dark .navbar-toggler-icon {
     background-image: url('/navbar_menu_icon.svg');
   }
-  .dropdown-divider {
-    height: 0;
-    margin: 0.5rem 0;
-    overflow: hidden;
-    border-top: 1px solid rgba(0, 0, 0, 0.15);
+
+  @media (min-width: 1100px) {
+    #home-link {
+      margin-right: 1.25rem;
+      > img {
+        height: 1.75rem;
+      }
+    }
+
+    .container {
+      justify-content: flex-start;
+    }
+
+    .navbar {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+
+    .navbar-toggler {
+      display: none;
+    }
+
+    .navbar-list {
+      flex-direction: row;
+    }
+
+    .nav-item {
+      font-size: 1rem;
+      line-height: 1.1875rem;
+    }
+
+    .nav-link {
+      padding: unset;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      padding: 1rem 0;
+      margin-top: 0.5rem;
+      text-align: left;
+      list-style: none;
+      background-color: #222222;
+      background-clip: padding-box;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: $rounding;
+    }
+
+    .dropdown-item {
+      padding: 0.5rem 1rem;
+      &.sub-item {
+        padding-left: 1.75rem;
+      }
+    }
+  }
+
+  @media (min-width: 1356px) {
+    .navbar-list {
+      gap: 2.5rem;
+    }
+
+    #home-link {
+      margin-right: 2.5rem;
+      > img {
+        height: 2.25rem;
+      }
+    }
   }
 </style>
