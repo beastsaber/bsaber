@@ -399,12 +399,13 @@
     font-family: $font-poppins;
     text-transform: uppercase;
     text-decoration: none;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out;
     color: $color-primary-text;
 
-    &:hover {
-      text-shadow: 0px 0px 2px $color-primary-text;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
     }
   }
 
