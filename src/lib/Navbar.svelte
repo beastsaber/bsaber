@@ -216,6 +216,11 @@
     collapseAllDropdowns(true)
     showMobileNavbar = false
   }
+
+  const slideInOnMobile = (element:Element) => {
+    if (windowSize > 1100) return;
+    return slide(element, { duration: 150 });
+  }
 </script>
 
 <svelte:window bind:innerWidth={windowSize} on:click={closeDropdownMenus} />
@@ -239,7 +244,7 @@
     </button>
     {#if windowSize > 1100 || showMobileNavbar}
       <div
-        transition:slide={{ duration: 150 }}
+        transition:slideInOnMobile
         class:fixed-nav={windowSize <= 1100}
         id="navbar-menu"
         bind:this={navbarMenu}
@@ -248,13 +253,18 @@
           {#each navbarDropdownItems as item, index}
             {#if item.Items}
               <li class="nav-item">
-                <!-- svelte-ignore a11y-invalid-attribute -->
-                <a
-                  href=""
-                  class="nav-link dropdown-toggle"
-                  on:click|preventDefault|stopPropagation={() =>
-                    toggleDropdown(item, `dropdown-menu-${index}`)}>{item.name}</a
-                >
+                <div class="nav-link">
+                  <!-- svelte-ignore a11y-invalid-attribute -->
+                  <a
+                    href=""
+                    on:click|preventDefault|stopPropagation={() =>
+                      toggleDropdown(item, `dropdown-menu-${index}`)}
+                    ><span
+                      >{item.name}
+                      <div class="dropdown-toggle" /></span
+                    >
+                  </a>
+                </div>
                 {#if item.expanded}
                   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
                   <div
@@ -390,37 +400,39 @@
   .nav-item {
     font-size: 1.25rem;
     line-height: 1.4375rem;
-  }
 
-  .nav-link {
-    display: block;
-    padding: 0 1rem;
-    font-weight: 600;
-    font-family: $font-poppins;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: $color-primary-text;
+    .nav-link {
+      display: block;
+      padding: 0 1rem;
+      font-weight: 600;
+      font-family: $font-poppins;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out;
+      color: $color-primary-text;
+      a {
+        color: $color-primary-text;
+      }
+      box-sizing: content-box;
 
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
+      &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
     }
   }
 
   .dropdown-toggle {
     white-space: nowrap;
-    &:after {
-      display: inline-block;
-      margin-left: 0.255em;
-      vertical-align: 0.255em;
-      content: '';
-      border-top: 0.3em solid;
-      border-right: 0.3em solid transparent;
-      border-bottom: 0;
-      border-left: 0.3em solid transparent;
-    }
+    display: inline-block;
+    vertical-align: 0.255em;
+    height: 100%;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
   }
 
   .navbar-toggler {
@@ -478,10 +490,9 @@
     .nav-item {
       font-size: 1rem;
       line-height: 1.1875rem;
-    }
-
-    .nav-link {
-      padding: unset;
+      .nav-link {
+        padding: unset;
+      }
     }
 
     .dropdown-menu {
