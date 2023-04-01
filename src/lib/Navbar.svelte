@@ -320,12 +320,12 @@
   }
 
   .navbar {
-    display: flex;
-    align-items: center;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
+    display: flex;
+    align-items: center;
     height: $navbar-height;
     background: linear-gradient(90deg, #b52a1c 0%, #454088 27.08%, #454088 72.92%, #1268a1 100%);
     z-index: 2;

@@ -16,7 +16,7 @@
   }
 
   a {    
-    font-family: 'DM Sans';
+    font-family: $font-dm-sans;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
