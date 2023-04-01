@@ -218,12 +218,12 @@
   }
 
   const slideInOnMobile = (element:Element) => {
-    if (windowSize > 1100) return;
-    return slide(element, { duration: 150 });
+    if (windowSize > 1100) return {}; // undefined would be a type issue...
+    return (slide(element, { duration: 150 }) as __sveltets_2_SvelteTransitionReturnType);
   }
 </script>
 
-<svelte:window bind:innerWidth={windowSize} on:click={closeDropdownMenus} />
+<svelte:window bind:innerWidth={windowSize} on:touchstart={closeDropdownMenus} on:click={closeDropdownMenus} />
 
 <nav class="navbar">
   <div class="container">
