@@ -1,21 +1,21 @@
-<script lang="ts">    
+<script lang="ts">
   export let linkUrl = ''
   export let linkText = ''
 </script>
 
 <span class="link">
-    <div class="icon"></div>
-    <a href={linkUrl}>{linkText}</a>
+  <div class="icon" />
+  <a href={linkUrl}>{linkText}</a>
 </span>
 
 <style lang="scss">
   @import 'src/scss/variables';
   .link {
-    display: flex;    
+    display: flex;
     align-items: center;
   }
 
-  a {    
+  a {
     font-family: $font-dm-sans;
     font-style: normal;
     font-weight: 400;
@@ -29,6 +29,6 @@
     height: 15px;
     width: 8px;
     margin-right: 9px;
-    content: url('/red-triangle.svg');    
+    content: url('/red-triangle.svg');
   }
 </style>

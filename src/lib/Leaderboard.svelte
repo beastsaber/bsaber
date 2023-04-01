@@ -15,7 +15,7 @@
   export let rankColor: RankColorType
 </script>
 
-<Listing {title} {img} linkText={linkText} linkUrl={linkUrl}>
+<Listing {title} {img} {linkText} {linkUrl}>
   {#each players as player, index}
     <div class="player-container">
       <div class="player">
