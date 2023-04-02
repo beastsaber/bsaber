@@ -38,17 +38,16 @@ body::before {
   flex-direction: column;
 }
 
-
 h1,
 h2,
 h3 {
   font-weight: 600;
-  font-family: Poppins, sans-serif;
+  font-family: $font-header-text;
 }
 
 p {
   font-weight: 400;
-  color: $text-primary;
+  color: $color-primary-text;
 }
 
 p {
@@ -80,7 +79,7 @@ pre {
   box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
   padding: 0.5em;
   overflow-x: auto;
-  color: $text-primary;
+  color: $color-primary-text;
 }
 
 input,

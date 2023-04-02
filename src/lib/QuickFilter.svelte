@@ -24,7 +24,7 @@
 
   .quick-filter {
     height: 64px;
-    color: $text-primary;
+    color: $color-primary-text;
     border-radius: $rounding;
     overflow: hidden;
 

@@ -6,18 +6,18 @@
     scoresaber: [],
     beatleader: [],
     accsaber: [],
-  };
+  }
 
   onMount(async () => {
-    await getPlayers();
-	});
+    await getPlayers()
+  })
 
   async function getPlayers() {
     let response = await fetch(
       `${import.meta.env.VITE_BSABER_API_BASE || 'https://api.bsaber.com'}/top-players`,
     )
     let json = await response.json()
-    players = json;
+    players = json
   }
 </script>
 
@@ -30,7 +30,7 @@
   players={players.scoresaber}
 />
 
-<Leaderboard 
+<Leaderboard
   title="BeatLeader"
   img="/beatleader-logo.svg"
   rankColor="info-blue"

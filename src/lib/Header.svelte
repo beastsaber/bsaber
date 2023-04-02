@@ -13,7 +13,7 @@
   {#if icon}
     <div class="icon">
       <!-- TODO: Check for better way to style this -->
-      <Fa style='height:100%;width:100%;' class="fa" fw {icon} />
+      <Fa style="height:100%;width:100%;" class="fa" fw {icon} />
     </div>
   {/if}
   <h2>{text}</h2>
@@ -21,7 +21,7 @@
     <div class="line" />
   </div>
   {#if linkText}
-    <IconLink linkUrl={linkUrl} linkText={linkText}/>
+    <IconLink {linkUrl} {linkText} />
   {/if}
 </div>
 

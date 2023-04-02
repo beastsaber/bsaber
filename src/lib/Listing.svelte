@@ -9,7 +9,6 @@
   export let img: string | undefined = undefined
   export let linkUrl: string | undefined = undefined
   export let linkText: string | undefined = undefined
-  
 </script>
 
 <div class="listing">
@@ -65,7 +64,7 @@
       margin-bottom: 10px;
     }
   }
-  
+
   @media (min-width: 840px) or (max-width: 677px) {
     .header {
       .source {

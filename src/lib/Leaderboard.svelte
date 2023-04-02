@@ -15,7 +15,7 @@
   export let rankColor: RankColorType
 </script>
 
-<Listing {title} {img} linkText={linkText} linkUrl={linkUrl}>
+<Listing {title} {img} {linkText} {linkUrl}>
   {#each players as player, index}
     <div class="player-container">
       <div class="player">
@@ -40,7 +40,7 @@
   }
 
   .player {
-    font-family: DM Sans, sans-serif;
+    font-family: $font-primary-text;
     font-weight: 700;
     display: grid;
     grid-template-columns: 34px 24px 1fr 24px 20px;
@@ -61,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Poppins, sans-serif;
+    font-family: $font-header-text;
     font-weight: 600;
 
     &.warning-yellow {
