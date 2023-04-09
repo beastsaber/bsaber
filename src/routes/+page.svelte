@@ -32,7 +32,7 @@
   <hr />
 
   <Header text="Latest News" icon={faNewspaper} />
-  <Cards {cards} gridWidth="3" maxAmount={maxNewsCards} aspectRatio={21 / 16} />
+  <Cards {cards} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
   <!-- ^^ replace cards with news data in future -->
 
   <Header
@@ -41,7 +41,7 @@
     linkUrl="/posts"
     linkText="See all curated packs"
   />
-  <Cards {cards} gridWidth="4" maxAmount={maxFeaturedPackCards} />
+  <Cards {cards} maxColumns="4" maxCards={maxFeaturedPackCards} />
 
   <Header text="Community Events" icon={faCalendarDay} />
 

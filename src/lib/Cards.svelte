@@ -1,21 +1,21 @@
 <script lang="ts">
   import type { CardData } from '../types'
-  type ValidGridWidths = `${'3' | '4'}`
+  type ValidNumColumns = `${'3' | '4'}`
 
-  export let gridWidth: ValidGridWidths = '4'
+  export let maxColumns: ValidNumColumns = '4'
   export let cards: CardData[]
-  export let maxAmount: number | undefined = undefined // max amount of cards to show
+  export let maxCards: number | undefined = undefined // max amount of cards to show
   export let aspectRatio: number = 1
 
   const cardsToShow =
-    maxAmount !== undefined && maxAmount >= 0 ? cards.slice(0, Math.round(maxAmount)) : cards
-  const gridWidthClass = `gw-${gridWidth}`
+    maxCards !== undefined && maxCards >= 0 ? cards.slice(0, Math.round(maxCards)) : cards
+  const maxColsClass = `max-cols-${maxColumns}`
 </script>
 
-<div class="cards {gridWidthClass}" style="--aspect-ratio:{aspectRatio}">
+<div class="cards {maxColsClass}" style="--aspect-ratio:{aspectRatio}">
   {#each cardsToShow as card}
     <a class="card" href={`/posts/${card.slug}`} style={`background-image: url(${card.image})`}>
-      <div class="title {gridWidthClass}">
+      <div class="title {maxColsClass}">
         {card.title ?? ''}
       </div>
     </a>
@@ -52,7 +52,7 @@
       z-index: 1;
     }
 
-    &.gw-3 {
+    &.max-cols-3 {
       @media (min-width: 420px) {
         .title {
           @include little-title;
@@ -70,7 +70,7 @@
       }
     }
 
-    &.gw-4 {
+    &.max-cols-4 {
       @media (min-width: 420px) {
         grid-template-columns: repeat(2, 1fr);
         .title {
