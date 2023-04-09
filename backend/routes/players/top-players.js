@@ -47,7 +47,7 @@ router.get('/', async (req, res) => {
       avatar: player.avatar,
       name: player.name,
       score: player.pp,
-      change: weeklyChange(player.histories),
+      change: player.rank - player.lastWeekRank,
     }
   })
 
