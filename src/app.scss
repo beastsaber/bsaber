@@ -69,8 +69,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
-  line-height: 46px;
+  font-size: 1.5rem;
 }
 
 pre {
@@ -95,5 +94,9 @@ button:focus:not(:focus-visible) {
 @media (min-width: 720px) {
   h1 {
     font-size: 2.4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+    line-height: 46px;
   }
 }
