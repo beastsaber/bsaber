@@ -46,6 +46,7 @@
 
     .title {
       @include big-title;
+      font-family: $font-poppins;
       margin-top: auto;
       color: white;
       font-weight: bold;
