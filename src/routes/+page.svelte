@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { OrganizedPosts, Post } from 'src/types'
+  import AnnouncementHeader from '$lib/AnnouncementHeader.svelte'
   import QuickFilters from '$lib/QuickFilters.svelte'
   import Search from '$lib/Search.svelte'
   import Cards from '$lib/Cards.svelte'
@@ -11,8 +13,17 @@
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
 
-  export let data
-  let cards = data.cards
+  export let data: OrganizedPosts = {
+    announcements: [],
+    news: [],
+    musicPacks: [],
+    communityEvents: [],
+    mapsOfTheWeek: [],
+    others: [],
+  }
+
+  let { announcements, musicPacks } = data
+  let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
 </script>
 
 <svelte:head>
@@ -20,11 +31,16 @@
 </svelte:head>
 
 <section>
+  {#if announcement}
+    <div class="announcement">
+      <AnnouncementHeader {announcement} />
+    </div>
+  {/if}
   <div class="filters-search">
     <QuickFilters />
     <Search />
   </div>
-  <Cards {cards} />
+  <Cards cards={musicPacks} />
   <hr />
 
   <Header text="Latest News" icon={faNewspaper} />
@@ -50,6 +66,10 @@
     margin-bottom: 20px;
     border: none;
     background-color: #707070;
+  }
+
+  .announcement {
+    margin-bottom: 20px;
   }
 
   .leaderboards {

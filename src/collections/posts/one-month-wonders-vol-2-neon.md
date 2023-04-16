@@ -2,6 +2,7 @@
 title: 'One-Month-Wonders Vol. 2: Neon'
 publish: 2022-02-01T01:00:00.000Z
 image: /static/uploads/posts/omw2_cover.png
+section: music-packs
 ---
 
 After a successful first edition, the BSM Discord has decided to host the second edition of your favorite competition event on BSM! We are proud to present: “One Month Wonders Vol. 2: Neon”!

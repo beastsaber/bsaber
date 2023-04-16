@@ -4,7 +4,7 @@ export async function load() {
       const { metadata } = await module()
       const slug = path.split('/').reverse()[0].split('.')[0]
       const { image } = metadata
-      return { slug, ...metadata, image: image.replace('/static', '') }
+      return { slug, ...metadata, image: image?.replace('/static', '') }
     }),
   )
   return {
