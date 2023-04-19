@@ -6,6 +6,7 @@ export type Post = {
   slug: string
   homepageText?: string
   image?: string
+  category?: string
 }
 
 export type OrganizedPosts = {
@@ -15,4 +16,12 @@ export type OrganizedPosts = {
   communityEvents: Post[]
   mapsOfTheWeek: Post[]
   others: Post[]
+}
+
+export type CardData = {
+  slug: string
+  image: string
+  publish: string
+  title?: string
+  category?: string
 }

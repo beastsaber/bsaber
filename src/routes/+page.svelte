@@ -1,14 +1,15 @@
 <script lang="ts">
   import type { OrganizedPosts, Post } from 'src/types'
   import AnnouncementHeader from '$lib/AnnouncementHeader.svelte'
+
   import QuickFilters from '$lib/QuickFilters.svelte'
   import Search from '$lib/Search.svelte'
-  import Cards from '$lib/Cards.svelte'
+  import PostCards from '$lib/PostCards.svelte'
   import Header from '$lib/Header.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
 
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
-  import { faList } from '@fortawesome/free-solid-svg-icons/faList'
+  import { faRectangleList } from '@fortawesome/free-solid-svg-icons/faRectangleList'
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
@@ -22,8 +23,10 @@
     others: [],
   }
 
-  let { announcements, musicPacks } = data
+  let { announcements, communityEvents, mapsOfTheWeek, musicPacks, news } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
+  const maxNewsCards = 3
+  const maxFeaturedPackCards = 4
 </script>
 
 <svelte:head>
@@ -40,18 +43,27 @@
     <QuickFilters />
     <Search />
   </div>
-  <Cards cards={musicPacks} />
   <hr />
 
   <Header text="Latest News" icon={faNewspaper} />
+  <PostCards posts={news} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
 
-  <Header text="Featured Packs" icon={faList} />
+  <Header
+    text="Featured Packs"
+    icon={faRectangleList}
+    linkUrl="/posts"
+    linkText="See all curated packs"
+  />
+  <PostCards posts={musicPacks} maxColumns="4" maxCards={maxFeaturedPackCards} />
 
   <Header text="Community Events" icon={faCalendarDay} />
+  <PostCards posts={communityEvents} maxColumns="4" maxCards={maxFeaturedPackCards} />
 
-  <!-- map of the week section goes here -->
+  <Header text="Map of the Week" icon={faCalendarDay} />
+  <!-- new component goes here -->
 
   <Header text="Recently Curated Maps" icon={faAward} />
+  <!-- new component goes here -->
 
   <Header icon={faChartLine} text="Global Ranking Leaderboards" />
   <div class="leaderboards">
