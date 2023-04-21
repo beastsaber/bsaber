@@ -13,7 +13,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 12px;
+    padding: 20px 12px;
     width: 100%;
     margin-top: 75px;
     box-sizing: border-box;

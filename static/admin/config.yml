@@ -5,16 +5,36 @@ backend:
 collections:
   - name: posts
     label: Posts
-    folder: src/routes/posts
+    label_singular: Post
+    folder: src/collections/posts
     create: true
     fields:
       - name: title
+        label: Title
+      - name: section
+        label: Section
+        hint: This will decide which section the post appears in on the homepage and article collection pages.
+        widget: select
+        options:
+          - { label: 'Announcement', value: 'announcements' }
+          - { label: 'News', value: 'news' }
+          - { label: 'Music Pack', value: 'music-packs' }
+          - { label: 'Community Event', value: 'community-events' }
+          - { label: 'Map of the Week', value: 'maps-of-the-week' }
       - name: publish
+        label: Publish Date
         widget: datetime
+      - name: homepageText
+        label: Homepage Text
+        required: false
+        hint: This text is used when displaying this post as a component of the homepage. If not provided, the title will be used.
       - name: body
+        label: Body
         widget: markdown
       - name: image
+        label: Image
         widget: image
+        required: false
         media_folder: /static/uploads/posts
         choose_url: false
   - name: curation-team

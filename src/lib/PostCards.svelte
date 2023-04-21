@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { CardData } from '../types'
+  import type { Post } from '../types'
   type ValidNumColumns = `${'3' | '4'}`
 
   export let maxColumns: ValidNumColumns = '4'
-  export let cards: CardData[]
+  export let posts: Post[]
   export let maxCards: number | undefined = undefined // max amount of cards to show
   export let aspectRatio: number = 1
 
   const cardsToShow =
-    maxCards !== undefined && maxCards >= 0 ? cards.slice(0, Math.round(maxCards)) : cards
+    maxCards !== undefined && maxCards >= 0 ? posts.slice(0, Math.round(maxCards)) : posts
   const maxColsClass = `max-cols-${maxColumns}`
 </script>
 

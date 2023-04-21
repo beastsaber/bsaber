@@ -1,12 +1,10 @@
-@import '@fontsource/lato/400';
-@import '@fontsource/lato/700';
 @import '@fontsource/poppins/400';
 @import '@fontsource/poppins/600';
 @import '@fontsource/dm-sans/400';
 @import 'scss/variables';
 
 :root {
-  font-family: Lato, sans-serif;
+  font-family: $font-dm-sans;
 }
 
 * {
