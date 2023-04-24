@@ -39,10 +39,10 @@
       <AnnouncementHeader {announcement} />
     </div>
   {/if}
-  <div class="filters-search">
-    <QuickFilters />
-    <Search />
-  </div>
+  <QuickFilters />
+  <hr />
+  <!-- Search to be moved to Navbar later -->
+  <Search />
   <hr />
 
   <Header text="Latest News" icon={faNewspaper} />
