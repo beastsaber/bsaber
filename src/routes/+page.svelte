@@ -91,19 +91,6 @@
     gap: 20px;
   }
 
-  .filters-search {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    gap: 12px;
-  }
-
-  @media (max-width: 740px) {
-    .filters-search {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
-
   @media (min-width: 678px) {
     .leaderboards {
       grid-template-columns: repeat(2, 1fr);

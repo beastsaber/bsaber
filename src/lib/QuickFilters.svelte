@@ -13,7 +13,7 @@
     text="Newest Maps"
     icon={faClock}
     color="#e74c3c"
-    href="https://beatsaver.com/?ranked=true"
+    href="https://beatsaver.com/?order=Latest"
   />
   <QuickFilter
     text="All Ranked"
