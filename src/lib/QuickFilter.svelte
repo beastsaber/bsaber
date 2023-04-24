@@ -4,14 +4,19 @@
 
   export let text: string
   export let color: string
-  export let icon: IconDefinition
   export let href: string
+  export let icon: IconDefinition | undefined = undefined
+  export let iconPath: string | undefined = undefined // path to the icon, if not using fa icon
 </script>
 
 <a class="quick-filter" style="background-color: {color}" {href}>
   <div class="content">
     <div class="icon">
-      <Fa size="1.5x" {icon} />
+      {#if iconPath}
+        <img class="image-icon" alt="" src={iconPath} />
+      {:else}
+        <Fa size="1.5x" {icon} />
+      {/if}
     </div>
     <h4>{text}</h4>
   </div>
@@ -38,8 +43,14 @@
     }
 
     .icon {
-      padding-top: 1px; // fix for slight misalignment
+      display: flex;
+      justify-content: center;
+      align-items: center;
       opacity: 0.5;
+    }
+
+    .image-icon {
+      height: 24px;
     }
   }
 </style>

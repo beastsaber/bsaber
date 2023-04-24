@@ -4,8 +4,9 @@
   import { faStar } from '@fortawesome/free-solid-svg-icons/faStar'
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
   import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle'
-  import { faListSquares } from '@fortawesome/free-solid-svg-icons/faListSquares'
   import { faClock } from '@fortawesome/free-solid-svg-icons/faClock'
+
+  const squareListIcon = "/square-list.svg"
 </script>
 
 <div class="filters">
@@ -30,7 +31,7 @@
   <QuickFilter text="All Verified" icon={faCheckCircle} color="#3498db" href="#" />
   <QuickFilter
     text="All Playlists"
-    icon={faListSquares}
+    iconPath={squareListIcon}
     color="#454088"
     href="https://bsaber.com/category/official-playlists/"
   />
