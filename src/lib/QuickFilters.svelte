@@ -51,9 +51,9 @@
   @media (min-width: 420px) and (max-width: 839px) {
     .filters {
       grid-template-columns: repeat(2, 1fr);
-      
+
       // if odd number of items, last item goes full width
-      :global(:last-child:not(:only-child)) { 
+      :global(:last-child:not(:only-child)) {
         grid-column: 1 / -1;
       }
     }
