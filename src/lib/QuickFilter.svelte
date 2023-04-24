@@ -15,7 +15,7 @@
       {#if iconPath}
         <img class="image-icon" alt="" src={iconPath} />
       {:else}
-        <Fa size="1.5x" {icon} />
+        <Fa size="1.25x" {icon} />
       {/if}
     </div>
     <h4>{text}</h4>
@@ -31,6 +31,8 @@
     border-radius: 10px;
     overflow: hidden;
     text-transform: uppercase;
+    font-family: $font-poppins;
+    font-size: 1.25rem;
 
     .content {
       position: relative;

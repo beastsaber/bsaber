@@ -65,4 +65,10 @@
       grid-template-columns: repeat(5, 1fr);
     }
   }
+
+  @media (min-width: 1200px) {
+    .filters {
+      gap: 26px;
+    }
+  }
 </style>
