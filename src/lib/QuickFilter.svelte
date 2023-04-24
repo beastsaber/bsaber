@@ -6,7 +6,6 @@
   export let color: string
   export let icon: IconDefinition
   export let href: string
-  //
 </script>
 
 <a class="quick-filter" style="background-color: {color}" {href}>
