@@ -1,21 +1,24 @@
-<script>
+<script lang="ts">
+  import type { IconDefinition } from '@fortawesome/fontawesome-common-types'
   import Fa from 'svelte-fa/src/fa.svelte'
 
-  export let text
-  export let color
-  export let icon
-  export let href
+  export let text: string
+  export let color: string
+  export let href: string
+  export let icon: IconDefinition | undefined = undefined
+  export let iconPath: string | undefined = undefined // path to the icon, if not using fa icon
 </script>
 
 <a class="quick-filter" style="background-color: {color}" {href}>
   <div class="content">
-    <div class="background">
-      <Fa size="5x" {icon} />
+    <div class="icon">
+      {#if iconPath}
+        <img class="image-icon" alt="" src={iconPath} />
+      {:else}
+        <Fa size="1.25x" {icon} />
+      {/if}
     </div>
-    <div class="foreground">
-      <Fa size="1.5x" {icon} />
-      <h4>{text}</h4>
-    </div>
+    <h4>{text}</h4>
   </div>
 </a>
 
@@ -23,10 +26,13 @@
   @import 'src/scss/variables';
 
   .quick-filter {
-    height: 64px;
+    height: 40px;
     color: $color-primary-text;
-    border-radius: $rounding;
+    border-radius: 10px;
     overflow: hidden;
+    text-transform: uppercase;
+    font-family: $font-poppins;
+    font-size: 1.25rem;
 
     .content {
       position: relative;
@@ -35,36 +41,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 10px;
     }
 
-    .background {
-      position: absolute;
-      opacity: 20%;
+    .icon {
       display: flex;
-      place-content: center;
-      z-index: 0;
-      transition: 0.5s;
-      transform: scale(0.8);
-    }
-
-    .foreground {
-      display: flex;
-      flex-direction: column;
       justify-content: center;
-      transition: 0.5s;
+      align-items: center;
+      opacity: 0.5;
     }
 
-    &:hover {
-      text-decoration: none;
-
-      .background {
-        transform: scale(1);
-        opacity: 50%;
-      }
-
-      .foreground {
-        opacity: 0%;
-      }
+    .image-icon {
+      height: 24px;
     }
   }
 </style>

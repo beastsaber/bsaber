@@ -39,10 +39,10 @@
       <AnnouncementHeader {announcement} />
     </div>
   {/if}
-  <div class="filters-search">
-    <QuickFilters />
-    <Search />
-  </div>
+  <QuickFilters />
+  <hr />
+  <!-- Search to be moved to Navbar later -->
+  <Search />
   <hr />
 
   <Header text="Latest News" icon={faNewspaper} />
@@ -89,19 +89,6 @@
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
     gap: 20px;
-  }
-
-  .filters-search {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    gap: 12px;
-  }
-
-  @media (max-width: 740px) {
-    .filters-search {
-      grid-template-columns: repeat(1, 1fr);
-    }
   }
 
   @media (min-width: 678px) {
