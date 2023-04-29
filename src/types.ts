@@ -6,6 +6,7 @@ export type Post = {
   slug: string
   homepageText?: string
   image?: string
+  icon?: string
   category?: string
 }
 

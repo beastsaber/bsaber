@@ -1,10 +1,11 @@
 <script lang="ts">
-  import type { OrganizedPosts, Post } from 'src/types'
+  import type { OrganizedPosts } from '../../src/types'
   import AnnouncementHeader from '$lib/AnnouncementHeader.svelte'
 
   import QuickFilters from '$lib/QuickFilters.svelte'
   import Search from '$lib/Search.svelte'
   import PostCards from '$lib/PostCards.svelte'
+  import EventCards from '$lib/EventCards.svelte'
   import Header from '$lib/Header.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
 
@@ -27,6 +28,7 @@
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
+  const maxCommunityEventsCards = 6
 </script>
 
 <svelte:head>
@@ -57,7 +59,7 @@
   <PostCards posts={musicPacks} maxColumns="4" maxCards={maxFeaturedPackCards} />
 
   <Header text="Community Events" icon={faCalendarDay} />
-  <PostCards posts={communityEvents} maxColumns="4" maxCards={maxFeaturedPackCards} />
+  <EventCards posts={communityEvents} maxCards={maxCommunityEventsCards} />
 
   <Header text="Map of the Week" icon={faCalendarDay} />
   <!-- new component goes here -->
