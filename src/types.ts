@@ -10,6 +10,23 @@ export type Post = {
   category?: string
 }
 
+export type CommunityEvent = {
+  title: string
+  slug: string
+  publishDateISO: string
+  dateParams: EventDateParams
+  hostUsername: string
+  category: 'tournament' | 'social' | 'learning' | 'competition' | 'generic' // category determines icon
+}
+
+export type EventDateParams = {
+  startDateUTC: string;
+  endDateUTC?: string;
+  startTimeUTC?: string;
+  endTimeUTC?: string;
+};
+
+
 export type OrganizedPosts = {
   announcements: Post[]
   news: Post[]

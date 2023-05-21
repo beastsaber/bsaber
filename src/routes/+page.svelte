@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { OrganizedPosts } from '../../src/types'
+  import type { OrganizedPosts, CommunityEvent } from '../../src/types'
   import AnnouncementHeader from '$lib/AnnouncementHeader.svelte'
 
   import QuickFilters from '$lib/QuickFilters.svelte'
@@ -19,16 +19,85 @@
     announcements: [],
     news: [],
     musicPacks: [],
-    communityEvents: [],
     mapsOfTheWeek: [],
     others: [],
   }
 
-  let { announcements, communityEvents, mapsOfTheWeek, musicPacks, news } = data
+  let { announcements, mapsOfTheWeek, musicPacks, news } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
   const maxCommunityEventsCards = 6
+
+  // These are sample events to use for dev until the event storage/retrieval workflow is sorted out
+  const communityEvents = [
+    {
+      title: 'Awesome Tournament Title',
+      category: 'tournament' as const,
+      slug: 'test-event-1',
+      publishDateISO: '2023-05-21T19:23:25Z',
+      hostUsername: 'BeatKhana',
+      dateParams: {
+        startDateUTC: '2023-11-15',
+        endDateUTC: '2023-11-17',
+      },
+    },
+    {
+      title: 'Squatty Party Fitness Map Stream',
+      category: 'social' as const,
+      slug: 'test-event-2',
+      publishDateISO: '2023-05-21T19:23:25Z',
+      hostUsername: 'BeatKhana',
+      dateParams: {
+        startDateUTC: '2023-11-15',
+        startTimeUTC: '18:00:00',
+      },
+    },
+    {
+      title: 'Beginner Mapping Tutorial Stream',
+      category: 'learning' as const,
+      slug: 'test-event-3',
+      publishDateISO: '2023-05-21T19:23:25Z',
+      hostUsername: 'Beat Saber Mapping',
+      dateParams: {
+        startDateUTC: '2023-11-15',
+        endTimeUTC: '10:00:00',
+      },
+    },
+    {
+      title: 'Diamonds in the Rought, Vol. 5',
+      category: 'generic' as const,
+      slug: 'test-event-4',
+      publishDateISO: '2023-05-21T19:23:25Z',
+      hostUsername: 'Beat Saber Mapping',
+      dateParams: {
+        startDateUTC: '2023-06-01',
+        endDateUTC: '2023-08-04',
+      },
+    },
+    {
+      title: 'BSMG Halloween Contest',
+      category: 'competition' as const,
+      slug: 'test-event-5',
+      publishDateISO: '2023-05-21T19:23:25Z',
+      hostUsername: 'Beat Saber Modding Group',
+      dateParams: {
+        startDateUTC: '2023-10-01',
+        endDateUTC: '2023-10-31',
+      },
+    },
+    {
+      title: 'BeastSaber Mapping Awards Finalist Drop',
+      category: 'competition' as const,
+      slug: 'test-event-6',
+      publishDateISO: '2023-05-21T19:23:25Z',
+      hostUsername: 'BeastSaber',
+      dateParams: {
+        startDateUTC: '2023-12-31',
+        endTimeUTC: '21:00:00',
+      },
+    },
+  ]
 </script>
 
 <svelte:head>
@@ -58,8 +127,13 @@
   />
   <PostCards posts={musicPacks} maxColumns="4" maxCards={maxFeaturedPackCards} />
 
-  <Header text="Community Events" icon={faCalendarDay} />
-  <EventCards posts={communityEvents} maxCards={maxCommunityEventsCards} />
+  <Header
+    text="Community Events"
+    icon={faCalendarDay}
+    linkUrl="/community-events"
+    linkText="See all community events"
+  />
+  <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
 
   <Header text="Map of the Week" icon={faCalendarDay} />
   <!-- new component goes here -->

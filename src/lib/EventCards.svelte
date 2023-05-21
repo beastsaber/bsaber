@@ -1,37 +1,104 @@
 <script lang="ts">
-  import type { Post } from '../types'
+  import type { CommunityEvent } from '../types'
   import Fa from 'svelte-fa/src/fa.svelte'
-  import type { IconDefinition } from '@fortawesome/fontawesome-common-types'
+  import { faMedal } from '@fortawesome/free-solid-svg-icons/faMedal'
+  import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
+  import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
+  import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
 
-  export let posts: Post[]
+  export let events: CommunityEvent[]
   export let maxCards: number = 6 // max amount of cards to show, ideally divisble by 3
-  export let icon: IconDefinition | undefined = undefined
-  export let img: string | undefined = undefined
+  const eventData = events.slice(0, Math.round(maxCards))
 
-  const cardsToShow = posts.slice(0, Math.round(maxCards))
+  const createSlug = (username: string) => {
+    const lowercaseUsername = username.toLowerCase().trim()
+    const slug = lowercaseUsername.replace(/\s+/g, '-')
+    return slug
+  }
+
+  const createDateText = ({
+    dateParams: { startDateUTC, endDateUTC, startTimeUTC, endTimeUTC },
+  }: CommunityEvent): string => {
+    const startDate = new Date(startDateUTC)
+    const endDate = endDateUTC ? new Date(endDateUTC) : null
+
+    // using year 2000, cuz for this only the time matters, not going to use the yyyy/mm/dd
+    const startTime = startTimeUTC ? new Date(`2000-01-01T${startTimeUTC}Z`) : null
+    const endTime = endTimeUTC ? new Date(`2000-01-01T${endTimeUTC}Z`) : null
+
+    const options: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' }
+    const dateLocale = navigator.language;
+    const startDateText = startDate.toLocaleDateString(dateLocale, options)
+    const endDateText = endDate ? endDate.toLocaleDateString(dateLocale, options) : null
+    const startTimeText = startTime
+      ? startTime.toLocaleTimeString(dateLocale, { hour: 'numeric', minute: 'numeric', timeZoneName: 'short' })
+      : null
+    const endTimeText = endTime
+      ? endTime.toLocaleTimeString(dateLocale, { hour: 'numeric', minute: 'numeric', timeZoneName: 'short' })
+      : null
+
+    let finalDateText = ''
+    if (startDateText) {
+      finalDateText = startDateText
+      if (startTimeText) {
+        finalDateText += ` | ${startTimeText}`
+      }
+      if (endDateText) {
+        finalDateText += ` - ${endDateText}`
+        if (endTimeText) {
+          finalDateText += ` | ${endTimeText}`
+        }
+      }
+    }
+    return finalDateText
+  }
+
+  // process data to use correct type of icon for the community event
+  const processedEventData = eventData.map((event) => {
+    const { category } = event
+    let faIcon, customIcon
+    if (category === 'tournament') {
+      customIcon = './player-icon.svg'
+    } else if (category === 'competition') {
+      faIcon = faMedal
+    } else if (category === 'learning') {
+      faIcon = faGraduationCap
+    } else if (category === 'social') {
+      faIcon = faComments
+    } else {
+      faIcon = faCalendarCheck
+    }
+    return {
+      ...event,
+      faIcon,
+      customIcon,
+    }
+  })
 </script>
 
 <div class="cards">
-  {#each cardsToShow as card}
-    <a class="card" href={`/posts/${card.slug}`}>
-      <div class="title">
-        {card.title ?? ''}
-      </div>
+  {#each processedEventData as event}
+    <div class="card">
+      <a class="title" href={`/community-events/${event.slug}`}>
+        {event.title ?? ''}
+      </a>
       <div class="info-container">
         <div class="icon-circle">
-          {#if icon}
-            <Fa fw {icon} />
-          {:else if img}
-            <img class="img" src={img} alt="" />
+          {#if event.faIcon}
+            <Fa style="height: 25px; width: 25px;" fw icon={event.faIcon} />
+          {:else if event.customIcon}
+            <img class="icon" src={event.customIcon} alt="" />
           {/if}
         </div>
-
         <div class="text-container">
-          <span class="host">Hosted by <a href="#">host name</a></span>
-          <span class="date">October 1, 2022 - October 31, 2022</span>
+          <span class="host">
+            Hosted by <a href={`/members/${createSlug(event.hostUsername)}`}>{event.hostUsername}</a
+            >
+          </span>
+          <span class="date">{createDateText(event)}</span>
         </div>
       </div>
-    </a>
+    </div>
   {/each}
 </div>
 
@@ -46,6 +113,10 @@
     gap: 1.25rem;
 
     @media (min-width: 560px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -56,12 +127,11 @@
     flex-direction: column;
     font-family: $font-dm-sans;
     padding: 0.75rem;
-    gap: 10px;
+    gap: 5px;
     border-radius: $card-border-radius;
     background-color: #333333;
     background-size: 100%;
-    background-position: center;
-    transition: 0.5s;
+    background-position: center;    
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
@@ -86,7 +156,16 @@
     width: 39px;
     height: 39px;
     border-radius: 50%;
+    flex-shrink: 0;    
     background: #d9d9d9;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > img.icon {
+      height: 25px;
+      width: 25px;
+    }
   }
 
   .text-container {
@@ -98,5 +177,9 @@
 
   .date {
     color: $color-muted-text;
+  }
+
+  .host a {
+    color: $color-danger-red;
   }
 </style>
