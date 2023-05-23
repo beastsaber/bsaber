@@ -6,7 +6,7 @@
   import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle'
   import { faClock } from '@fortawesome/free-solid-svg-icons/faClock'
 
-  const squareListIcon = "/square-list.svg"
+  const squareListIcon = '/square-list.svg'
 </script>
 
 <div class="filters">

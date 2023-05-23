@@ -20,18 +20,16 @@ export type CommunityEvent = {
 }
 
 export type EventDateParams = {
-  startDateUTC: string;
-  endDateUTC?: string;
-  startTimeUTC?: string;
-  endTimeUTC?: string;
-};
-
+  startDateUTC: string
+  endDateUTC?: string
+  startTimeUTC?: string
+  endTimeUTC?: string
+}
 
 export type OrganizedPosts = {
   announcements: Post[]
   news: Post[]
   musicPacks: Post[]
-  communityEvents: Post[]
   mapsOfTheWeek: Post[]
   others: Post[]
 }

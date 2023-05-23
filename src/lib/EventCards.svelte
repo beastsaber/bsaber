@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { CommunityEvent } from '../types'
   import Fa from 'svelte-fa/src/fa.svelte'
+
   import { faMedal } from '@fortawesome/free-solid-svg-icons/faMedal'
   import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
   import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
@@ -21,32 +22,29 @@
   }: CommunityEvent): string => {
     const startDate = new Date(startDateUTC)
     const endDate = endDateUTC ? new Date(endDateUTC) : null
-
-    // using year 2000, cuz for this only the time matters, not going to use the yyyy/mm/dd
     const startTime = startTimeUTC ? new Date(`2000-01-01T${startTimeUTC}Z`) : null
     const endTime = endTimeUTC ? new Date(`2000-01-01T${endTimeUTC}Z`) : null
 
     const options: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' }
-    const dateLocale = navigator.language;
-    const startDateText = startDate.toLocaleDateString(dateLocale, options)
-    const endDateText = endDate ? endDate.toLocaleDateString(dateLocale, options) : null
+    const startDateText = startDate.toLocaleDateString(undefined, options)
+    const endDateText = endDate ? endDate.toLocaleDateString(undefined, options) : null
     const startTimeText = startTime
-      ? startTime.toLocaleTimeString(dateLocale, { hour: 'numeric', minute: 'numeric', timeZoneName: 'short' })
+      ? startTime.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
       : null
     const endTimeText = endTime
-      ? endTime.toLocaleTimeString(dateLocale, { hour: 'numeric', minute: 'numeric', timeZoneName: 'short' })
+      ? endTime.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
       : null
 
     let finalDateText = ''
     if (startDateText) {
       finalDateText = startDateText
       if (startTimeText) {
-        finalDateText += ` | ${startTimeText}`
+        finalDateText += ` | ${startTimeText} UTC`
       }
       if (endDateText) {
         finalDateText += ` - ${endDateText}`
         if (endTimeText) {
-          finalDateText += ` | ${endTimeText}`
+          finalDateText += ` | ${endTimeText} UTC`
         }
       }
     }
@@ -79,7 +77,8 @@
 <div class="cards">
   {#each processedEventData as event}
     <div class="card">
-      <a class="title" href={`/community-events/${event.slug}`}>
+      <!-- href to be updated with path e.g. '/community-events/event.slug' -->
+      <a class="title" href="#">
         {event.title ?? ''}
       </a>
       <div class="info-container">
@@ -91,9 +90,9 @@
           {/if}
         </div>
         <div class="text-container">
+          <!-- host href should be updated with future route, e.g. {`/members/createSlug(event.hostUsername)`}-->
           <span class="host">
-            Hosted by <a href={`/members/${createSlug(event.hostUsername)}`}>{event.hostUsername}</a
-            >
+            Hosted by <a href="#">{event.hostUsername}</a>
           </span>
           <span class="date">{createDateText(event)}</span>
         </div>
@@ -131,7 +130,7 @@
     border-radius: $card-border-radius;
     background-color: #333333;
     background-size: 100%;
-    background-position: center;    
+    background-position: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
@@ -156,7 +155,7 @@
     width: 39px;
     height: 39px;
     border-radius: 50%;
-    flex-shrink: 0;    
+    flex-shrink: 0;
     background: #d9d9d9;
     color: #333333;
     display: flex;

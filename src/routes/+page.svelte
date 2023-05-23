@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { OrganizedPosts, CommunityEvent } from '../../src/types'
+  import type { OrganizedPosts } from '../../src/types'
   import AnnouncementHeader from '$lib/AnnouncementHeader.svelte'
 
   import QuickFilters from '$lib/QuickFilters.svelte'
@@ -130,7 +130,7 @@
   <Header
     text="Community Events"
     icon={faCalendarDay}
-    linkUrl="/community-events"
+    linkUrl="#"
     linkText="See all community events"
   />
   <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
