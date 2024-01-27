@@ -1,0 +1,38 @@
+<script lang="ts">
+    import type {Playlist} from "../types"
+    import {onMount} from "svelte";
+
+    export let maxCards: number | undefined = undefined // max amount of cards to show
+
+    let playlists: Playlist[] = []
+
+    onMount(async () => {
+        await getPlaylists()
+    })
+
+    async function getPlaylists() {
+        let response = await fetch(
+            `${import.meta.env.BEATSAVER_API_BASE || 'https://api.beatsaver.com'}/playlists/search/0?sortOrder=Curated&curated=true`,
+        )
+        playlists = await response.json().then(json =>
+            json["docs"].slice(0, maxCards ?? 4) as Playlist[]
+        )
+        console.log(playlists)
+    }
+</script>
+
+<div class="cards max-cols-4" style="--aspect-ratio: 1">
+    {#each playlists as playlist}
+        <a class="card"
+           href={`${import.meta.env.BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${playlist.playlistId}`}
+           style={`background-image: url(${playlist.playlistImage512})`}>
+            <div class="title max-cols-4">
+                {playlist.name ?? ''}
+            </div>
+        </a>
+    {/each}
+</div>
+
+<style lang="scss">
+  @import "../scss/post-cards";
+</style>

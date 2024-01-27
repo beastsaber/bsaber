@@ -29,9 +29,25 @@ export type EventDateParams = {
 export type OrganizedPosts = {
   announcements: Post[]
   news: Post[]
-  musicPacks: Post[]
   mapsOfTheWeek: Post[]
   others: Post[]
+}
+
+export type Playlist = {
+  playlistId: number,
+  name: string,
+  description: string,
+  playlistImage512: string,
+  owner: Uploader
+}
+
+export type Uploader = {
+  id: number,
+  name: string,
+  avatar: string,
+  admin: boolean,
+  curator: boolean,
+  verifiedMapper: boolean
 }
 
 export type CardData = {
