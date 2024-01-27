@@ -85,11 +85,15 @@ $card-border-radius: 10px;
   transition: 0.5s;
   aspect-ratio: var(--aspect-ratio);
 
+  &.loading {
+    background-color: $background-secondary;
+  }
+
   &:hover {
     background-size: 110%;
   }
 
-  &:after {
+  &:not(.loading):after {
     content: '';
     position: absolute;
     width: 100%;

@@ -22,15 +22,21 @@
 </script>
 
 <div class="cards max-cols-4" style="--aspect-ratio: 1">
-    {#each playlists as playlist}
-        <a class="card"
-           href={`${import.meta.env.BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${playlist.playlistId}`}
-           style={`background-image: url(${playlist.playlistImage512})`}>
-            <div class="title max-cols-4">
-                {playlist.name ?? ''}
-            </div>
-        </a>
-    {/each}
+    {#if playlists.length !== 0}
+        {#each playlists as playlist}
+            <a class="card"
+               href={`${import.meta.env.BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${playlist.playlistId}`}
+               style={`background-image: url(${playlist.playlistImage512})`}>
+                <div class="title max-cols-4">
+                    {playlist.name ?? ''}
+                </div>
+            </a>
+        {/each}
+    {:else}
+        {#each Array(maxCards) as _}
+            <div class="card loading"/>
+        {/each}
+    {/if}
 </div>
 
 <style lang="scss">
