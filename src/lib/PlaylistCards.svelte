@@ -12,7 +12,7 @@
 
     async function getPlaylists() {
         let response = await fetch(
-            `${import.meta.env.BEATSAVER_API_BASE || 'https://api.beatsaver.com'}/playlists/search/0?sortOrder=Curated&curated=true`,
+            `${import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'}/playlists/search/0?sortOrder=Curated&curated=true`,
         )
         playlists = await response.json().then(json =>
             json["docs"].slice(0, maxCards ?? 4) as Playlist[]
@@ -25,7 +25,7 @@
     {#if playlists.length !== 0}
         {#each playlists as playlist}
             <a class="card"
-               href={`${import.meta.env.BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${playlist.playlistId}`}
+               href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${playlist.playlistId}`}
                style={`background-image: url(${playlist.playlistImage512})`}>
                 <div class="title max-cols-4">
                     {playlist.name ?? ''}

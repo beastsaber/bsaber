@@ -122,7 +122,7 @@
   <Header
     text="Featured Packs"
     icon={faRectangleList}
-    linkUrl="{`${import.meta.env.BEATSAVER_BASE || 'https://beatsaver.com'}/playlists?curated=true`}"
+    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists?curated=true`}"
     linkText="See all curated packs"
   />
   <PlaylistCards/>
