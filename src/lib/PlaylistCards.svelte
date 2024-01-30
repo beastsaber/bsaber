@@ -12,10 +12,10 @@
 
     async function getPlaylists() {
         let response = await fetch(
-            `${import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'}/playlists/search/0?sortOrder=Curated&curated=true`,
+            `${import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'}/playlists/latest?sort=CURATED&pageSize=${maxCards ?? 4}`,
         )
         playlists = await response.json().then(json =>
-            json["docs"].slice(0, maxCards ?? 4) as Playlist[]
+            json["docs"] as Playlist[]
         )
         console.log(playlists)
     }
