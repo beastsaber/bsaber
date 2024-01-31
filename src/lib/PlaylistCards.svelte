@@ -17,7 +17,6 @@
         playlists = await response.json().then(json =>
             json["docs"] as Playlist[]
         )
-        console.log(playlists)
     }
 </script>
 

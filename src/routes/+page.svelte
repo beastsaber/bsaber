@@ -8,6 +8,7 @@
   import EventCards from '$lib/EventCards.svelte'
   import Header from '$lib/Header.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
+  import PlaylistCards from "$lib/PlaylistCards.svelte";
 
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
   import { faRectangleList } from '@fortawesome/free-solid-svg-icons/faRectangleList'
