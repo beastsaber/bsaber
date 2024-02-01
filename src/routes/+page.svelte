@@ -9,6 +9,7 @@
   import Header from '$lib/Header.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
   import PlaylistCards from "$lib/PlaylistCards.svelte";
+  import MapCards from "$lib/MapCards.svelte";
 
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
   import { faRectangleList } from '@fortawesome/free-solid-svg-icons/faRectangleList'
@@ -138,8 +139,13 @@
   <Header text="Map of the Week" icon={faCalendarDay} />
   <!-- new component goes here -->
 
-  <Header text="Recently Curated Maps" icon={faAward} />
-  <!-- new component goes here -->
+  <Header
+    text="Recently Curated Maps"
+    icon={faAward}
+    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?order=Curated&curated=true`}"
+    linkText="See all curated maps"
+  />
+  <MapCards />
 
   <Header icon={faChartLine} text="Global Ranking Leaderboards" />
   <div class="leaderboards">

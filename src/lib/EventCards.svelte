@@ -103,7 +103,6 @@
 
 <style lang="scss">
   @import 'src/scss/variables';
-  $card-border-radius: 10px;
 
   .cards {
     display: grid;
