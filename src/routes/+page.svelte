@@ -15,7 +15,6 @@
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
-  import PlaylistCards from "$lib/PlaylistCards.svelte";
 
   export let data: OrganizedPosts = {
     announcements: [],
