@@ -35,7 +35,7 @@
     p {
       font-family: $font-poppins;
       color: #222222;
-      font-size: 20px;
+      font-size: 1rem;
       line-height: 24px;
     }
   }

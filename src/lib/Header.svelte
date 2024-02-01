@@ -62,12 +62,6 @@
     height: 1.5rem;
     width: 1.5rem;
     margin-right: 10px;
-
-    @media (min-width: 720px) {
-      height: 2.5rem;
-      width: 2.5rem;
-      margin-right: 20px;
-    }
   }
 
   h2 {
@@ -84,7 +78,7 @@
       flex-grow: 1;
 
       .line {
-        height: 5px;
+        height: 2px;
         width: 100%;
         background: linear-gradient(90deg, #999999 0%, rgba(153, 153, 153, 0) 100%);
       }
