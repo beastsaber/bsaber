@@ -8,6 +8,7 @@
   import EventCards from '$lib/EventCards.svelte'
   import Header from '$lib/Header.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
+  import PlaylistCards from "$lib/PlaylistCards.svelte";
 
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
   import { faRectangleList } from '@fortawesome/free-solid-svg-icons/faRectangleList'
@@ -18,12 +19,11 @@
   export let data: OrganizedPosts = {
     announcements: [],
     news: [],
-    musicPacks: [],
     mapsOfTheWeek: [],
     others: [],
   }
 
-  let { announcements, mapsOfTheWeek, musicPacks, news } = data
+  let { announcements, mapsOfTheWeek, news } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
@@ -122,10 +122,10 @@
   <Header
     text="Featured Packs"
     icon={faRectangleList}
-    linkUrl="/posts"
+    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists?curated=true`}"
     linkText="See all curated packs"
   />
-  <PostCards posts={musicPacks} maxColumns="4" maxCards={maxFeaturedPackCards} />
+  <PlaylistCards/>
 
   <Header
     text="Community Events"

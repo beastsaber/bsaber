@@ -14,7 +14,6 @@ export async function load() {
   const organizedPosts: OrganizedPosts = {
     announcements: [],
     news: [],
-    musicPacks: [],
     communityEvents: [],
     mapsOfTheWeek: [],
     others: [],
@@ -28,9 +27,6 @@ export async function load() {
         break
       case 'news':
         organizedPosts.news.push(post)
-        break
-      case 'music-packs':
-        organizedPosts.musicPacks.push(post)
         break
       case 'community-events':
         organizedPosts.communityEvents.push(post)
