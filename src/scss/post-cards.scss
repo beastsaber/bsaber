@@ -4,13 +4,13 @@ $card-border-radius: 10px;
 
 @mixin big-title {
   padding: 1.25rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 2.375rem;
 }
 
 @mixin little-title {
   padding: 0.75rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -26,6 +26,8 @@ $card-border-radius: 10px;
     margin-top: auto;
     color: white;
     font-weight: bold;
+    word-wrap: anywhere;
+    hyphens: auto; // For some reason this gets ignored on words with any capital letters
     z-index: 1;
   }
 
