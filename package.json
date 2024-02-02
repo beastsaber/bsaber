@@ -2,7 +2,8 @@
   "name": "bsaber",
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "concurrently --kill-others \"npm run dev:frontend\" \"npm run netlify-cms\"",
+    "dev:frontend": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
     "test": "playwright test",
@@ -24,6 +25,7 @@
     "@types/cookie": "^0.4.1",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
+    "concurrently": "^8.2.2",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^4.0.0",
