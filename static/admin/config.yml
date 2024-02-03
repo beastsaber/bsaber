@@ -62,5 +62,38 @@ collections:
         widget: image
         media_folder: /static/uploads/curators
         choose_url: false
+  - name: map-of-the-week
+    label: Map of the Week
+    folder: src/collections/map-of-the-week
+    slug: '{{year}}-{{week}}'
+    create: true
+    fields:
+      - name: mapId
+        label: Map  ID
+        hint: The BeatSaver ID of the map of the week. You can find this one in the URL of the map's page on beatsaver.com. For example, the ID of the map https://beatsaver.com/maps/8f is the last part 8f.
+      - name: nominatorId
+        label: Nominator ID
+        hint: The BeatSaver ID of the nominator. You can find this one in the URL of the user's profile on beatsaver.com. For example, symphonics profil link is https://beatsaver.com/profile/4292041, his ID would be the last part, so 4292041.
+      - name: remark
+        label: Remark
+        hint: "An accompanying text to the map of the week that should describe what made it the MOTW. Example \"This map has a fantastic lightshow on the new Lattice environment, a poodle diff and three other diffs accessible to a variety of players with great and unique usage of arcs.\""
+        widget: markdown
+      - name: remarkAuthorId
+        label: Remark Author ID
+        hint: The BeatSaver ID of the author of the remark. You can find this one in the URL of the user's profile on beatsaver.com. For example, symphonics profil link is https://beatsaver.com/profile/4292041, his ID would be the last part, so 4292041.
+      - name: year
+        label: Year
+        hint: The year when this map is map of the week.
+        default: 2024
+        widget: number
+        min: 2019 # Release Year of Beat Saber
+        step: 1
+      - name: week
+        label: Week
+        hint: "The week when this map is map of the week. For example, the first week of the year 2024 started on December 31, 2023, since Sunday is the marking point of the week. The map will still be shown on the next Monday. Confused what would be the right week number? See here: https://www.calendar-365.com/week-number.html"
+        widget: number
+        min: 1
+        max: 53
+        step: 1
 media_folder: 'static/uploads'
 public_folder: '/uploads'
