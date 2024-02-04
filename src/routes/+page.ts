@@ -1,4 +1,5 @@
-import type { Post, OrganizedPosts } from '../types'
+import { DayOfWeek, getWeekOfYear } from '$lib/getWeekOfYear'
+import type { Post, OrganizedPosts, MapOfTheWeek } from '../types'
 export async function load() {
   const posts: Post[] = await Promise.all(
     Object.entries(import.meta.glob('/src/collections/posts/**/*.md')).map(
@@ -11,11 +12,58 @@ export async function load() {
     ),
   )
 
+  const now = new Date();
+  const year = now.getFullYear();
+  const week = getWeekOfYear(now, DayOfWeek.Monday);
+  const pathToCurrentMapOfTheWeek = `/src/collections/map-of-the-week/${year}-${week}.md`;
+  
+  let motwData: MapOfTheWeek | undefined = undefined;
+  try {
+    const {metadata: motwCollectionData} = await import(pathToCurrentMapOfTheWeek);
+    const beatSaverMapData = await fetch(`https://api.beatsaver.com/maps/id/${motwCollectionData.mapId}`).then(res => res.json());
+    const beatSaverMapUploaderData = await fetch(`https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`).then(res => res.json());
+    const beatLeaderLeaderBoardData = await fetch(`https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`).then(res => res.json());
+    const fullResolutionImageUrl = beatLeaderLeaderBoardData.song.fullCoverImage;
+    const beatSaverNominatorData = await fetch(`https://api.beatsaver.com/users/id/${motwCollectionData.nominatorId}`).then(res => res.json());
+    const beatSaverRemarkerAuthorData = await fetch(`https://api.beatsaver.com/users/id/${motwCollectionData.remarkAuthorId}`).then(res => res.json());
+    
+    motwData = {
+      map: {
+        id: beatSaverMapData.id,
+        name: beatSaverMapData.name,
+        coverUrl: fullResolutionImageUrl,
+        uploader: {
+          id: beatSaverMapData.uploader.id,
+          name: beatSaverMapData.uploader.name,
+          avatarUrl: beatSaverMapData.uploader.avatar,
+          verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
+        },
+      },
+      remark: motwCollectionData.remark,
+      nominator: {
+        id: beatSaverNominatorData.id,
+        name: beatSaverNominatorData.name,
+        avatarUrl: beatSaverNominatorData.avatar,
+        verifiedMapper: beatSaverNominatorData.verifiedMapper,
+      },
+      remarkAuthor: {
+        id: beatSaverRemarkerAuthorData.id,
+        name: beatSaverRemarkerAuthorData.name,
+        avatarUrl: beatSaverRemarkerAuthorData.avatar,
+        verifiedMapper: beatSaverRemarkerAuthorData.verifiedMapper,
+      },
+      year: motwCollectionData.year,
+      week: motwCollectionData.week,
+    };
+
+  } catch (e) {
+    console.error(`Could not find map of the week for ${year} week ${week}`);
+  }
+
   const organizedPosts: OrganizedPosts = {
     announcements: [],
     news: [],
     communityEvents: [],
-    mapsOfTheWeek: [],
     others: [],
   }
 
@@ -46,5 +94,5 @@ export async function load() {
     organizedPosts[key as keyof OrganizedPosts] = value.sort(sortByPublishDate)
   }
 
-  return organizedPosts
+  return {currentMapOfTheWeek: motwData, ...organizedPosts}
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { OrganizedPosts } from '../../src/types'
+  import type { MapOfTheWeek, OrganizedPosts } from '../../src/types'
   import AnnouncementHeader from '$lib/AnnouncementHeader.svelte'
 
   import QuickFilters from '$lib/QuickFilters.svelte'
@@ -9,6 +9,7 @@
   import Header from '$lib/Header.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
   import PlaylistCards from "$lib/PlaylistCards.svelte";
+  import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
 
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
   import { faRectangleList } from '@fortawesome/free-solid-svg-icons/faRectangleList'
@@ -16,14 +17,14 @@
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
 
-  export let data: OrganizedPosts = {
+  export let data: OrganizedPosts & {currentMapOfTheWeek: MapOfTheWeek} = {
+    currentMapOfTheWeek: {} as MapOfTheWeek,
     announcements: [],
     news: [],
-    mapsOfTheWeek: [],
     others: [],
   }
 
-  let { announcements, mapsOfTheWeek, news } = data
+  let { announcements, currentMapOfTheWeek, news } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
@@ -135,9 +136,9 @@
   />
   <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
 
-  <Header text="Map of the Week" icon={faCalendarDay} />
-  <!-- new component goes here -->
-
+  <!-- This section is style-wise a bit different with the background so the header is to be found in the component-->
+  <MapOfTheWeekSection mapOfTheWeek={currentMapOfTheWeek} />
+  
   <Header text="Recently Curated Maps" icon={faAward} />
   <!-- new component goes here -->
 
