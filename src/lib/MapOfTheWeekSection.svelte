@@ -126,7 +126,9 @@
   .verified {
     height: 1rem;
     width: 1rem;
-    margin-left: 0.3rem;
+    /* Margin bottom to counter the illusion of it not being center */
+    margin: 0 0 0.15rem 0.2rem;
+    vertical-align: middle;
   }
 
   .map-link {
