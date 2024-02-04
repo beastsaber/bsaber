@@ -29,8 +29,37 @@ export type EventDateParams = {
 export type OrganizedPosts = {
   announcements: Post[]
   news: Post[]
-  mapsOfTheWeek: Post[]
   others: Post[]
+}
+
+export type MapOfTheWeekCollectionData = {
+  mapId: string;
+  nominatorId: string;
+  remark: string;
+  remarkAuthorId: string;
+  year: number;
+  week: number;
+}
+
+export type MapOfTheWeek = {
+  map: {
+    id: string;
+    name: string;
+    coverUrl: string;
+    uploader: BeatSaverUser;
+  },
+  remark: string;
+  nominator: BeatSaverUser;
+  remarkAuthor: BeatSaverUser;
+  year: number;
+  week: number;
+}
+
+export type BeatSaverUser = {
+  id: string;
+  name: string;
+  avatarUrl: string;
+  verifiedMapper: boolean;
 }
 
 export type Playlist = {
