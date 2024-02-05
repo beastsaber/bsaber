@@ -47,7 +47,9 @@ export async function load(): Promise<RootPageSSRData> {
         uploader: {
           id: beatSaverMapData.uploader.id,
           name: beatSaverMapData.uploader.name,
-          avatarUrl: beatSaverMapData.uploader.avatar,
+          avatar: beatSaverMapData.uploader.avatar,
+          admin: beatSaverMapUploaderData.admin,
+          curator: beatSaverMapUploaderData.curator,
           verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
         },
       },
