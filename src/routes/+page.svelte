@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { MapOfTheWeek, OrganizedPosts } from '../../src/types'
   import AnnouncementHeader from '$lib/AnnouncementHeader.svelte'
 
   import QuickFilters from '$lib/QuickFilters.svelte'
@@ -16,14 +15,10 @@
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
+    import type { RootPageSSRData } from '../types'
 
-  export let data: OrganizedPosts & {currentMapOfTheWeek: MapOfTheWeek} = {
-    currentMapOfTheWeek: {} as MapOfTheWeek,
-    announcements: [],
-    news: [],
-    others: [],
-  }
-
+  export let data: RootPageSSRData;
+  console.log(data);
   let { announcements, currentMapOfTheWeek, news } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
@@ -137,8 +132,9 @@
   <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
 
   <!-- This section is style-wise a bit different with the background so the header is to be found in the component-->
-  <MapOfTheWeekSection mapOfTheWeek={currentMapOfTheWeek} />
-  
+  {#if currentMapOfTheWeek != undefined}
+    <MapOfTheWeekSection mapOfTheWeek={currentMapOfTheWeek} />
+  {/if}
   <Header text="Recently Curated Maps" icon={faAward} />
   <!-- new component goes here -->
 

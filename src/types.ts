@@ -26,19 +26,10 @@ export type EventDateParams = {
   endTimeUTC?: string
 }
 
-export type OrganizedPosts = {
-  announcements: Post[]
-  news: Post[]
-  others: Post[]
-}
-
 export type MapOfTheWeekCollectionData = {
   mapId: string;
-  nominatorId: string;
-  remark: string;
-  remarkAuthorId: string;
-  year: number;
-  week: number;
+  review: string;
+  startDate: string;
 }
 
 export type MapOfTheWeek = {
@@ -46,21 +37,12 @@ export type MapOfTheWeek = {
     id: string;
     name: string;
     coverUrl: string;
-    uploader: BeatSaverUser;
+    uploader: Uploader;
   },
-  remark: string;
-  nominator: BeatSaverUser;
-  remarkAuthor: BeatSaverUser;
-  year: number;
-  week: number;
+  review: string;
+  startDate: Date;
 }
 
-export type BeatSaverUser = {
-  id: string;
-  name: string;
-  avatarUrl: string;
-  verifiedMapper: boolean;
-}
 
 export type Playlist = {
   playlistId: number,
@@ -85,4 +67,20 @@ export type CardData = {
   publish: string
   title?: string
   category?: string
+}
+
+type ImportModuleData<T> = {
+  metadata: T,
+}
+
+export type ImportPostModuleData = ImportModuleData<Omit<Post, 'slug'>>
+
+export type ImportMapOfTheWeekModuleData = ImportModuleData<MapOfTheWeekCollectionData>
+
+export type RootPageSSRData = {
+  announcements: Post[]
+  news: Post[]
+  others: Post[]
+  communityEvents: CommunityEvent[],
+  currentMapOfTheWeek: MapOfTheWeek | undefined,
 }

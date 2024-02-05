@@ -1,8 +1,16 @@
-import { DayOfWeek, getWeekOfYear } from '$lib/getWeekOfYear'
-import type { Post, OrganizedPosts, MapOfTheWeek } from '../types'
-export async function load() {
+import type { Post, MapOfTheWeek, CommunityEvent, ImportPostModuleData, ImportMapOfTheWeekModuleData } from '../types'
+export type RootPageSSRData = {
+  announcements: Post[]
+  news: Post[]
+  others: Post[]
+  communityEvents: CommunityEvent[],
+  currentMapOfTheWeek: MapOfTheWeek | undefined,
+}
+let i = 0;
+export async function load(): Promise<RootPageSSRData> {
+  console.log(i++);
   const posts: Post[] = await Promise.all(
-    Object.entries(import.meta.glob('/src/collections/posts/**/*.md')).map(
+    Object.entries(import.meta.glob<ImportPostModuleData>('/src/collections/posts/**/*.md')).map(
       async ([path, module]) => {
         const { metadata } = await module()
         const slug = path.split('/').reverse()[0].split('.')[0]
@@ -13,25 +21,29 @@ export async function load() {
   )
 
   const now = new Date();
-  const year = now.getFullYear();
-  const week = getWeekOfYear(now, DayOfWeek.Monday);
-  const pathToCurrentMapOfTheWeek = `/src/collections/map-of-the-week/${year}-${week}.md`;
   
-  let motwData: MapOfTheWeek | undefined = undefined;
+  let currentMapOfTheWeek: MapOfTheWeek | undefined = undefined;
   try {
-    const {metadata: motwCollectionData} = await import(pathToCurrentMapOfTheWeek);
-    const beatSaverMapData = await fetch(`https://api.beatsaver.com/maps/id/${motwCollectionData.mapId}`).then(res => res.json());
+    const mapsOfTheWeek = await Promise.all(Object.entries(import.meta.glob<ImportMapOfTheWeekModuleData>('/src/collections/map-of-the-week/*.md')).map(
+      async ([_, module]) => {
+        const { metadata } = await module();
+        return {...metadata, startDate: new Date(metadata.startDate)};
+      }));
+
+    const possibleCurrentMotws = mapsOfTheWeek.filter(motw => motw.startDate.getTime() <= now.getTime());
+    possibleCurrentMotws.sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+    // Since it's sorted it's last
+    const currentMOTWCollectionData = possibleCurrentMotws[possibleCurrentMotws.length - 1];
+
+    const beatSaverMapData = await fetch(`https://api.beatsaver.com/maps/id/${currentMOTWCollectionData.mapId}`).then(res => res.json());
     const beatSaverMapUploaderData = await fetch(`https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`).then(res => res.json());
     const beatLeaderLeaderBoardData = await fetch(`https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`).then(res => res.json());
-    const fullResolutionImageUrl = beatLeaderLeaderBoardData.song.fullCoverImage;
-    const beatSaverNominatorData = await fetch(`https://api.beatsaver.com/users/id/${motwCollectionData.nominatorId}`).then(res => res.json());
-    const beatSaverRemarkerAuthorData = await fetch(`https://api.beatsaver.com/users/id/${motwCollectionData.remarkAuthorId}`).then(res => res.json());
     
-    motwData = {
+    currentMapOfTheWeek = {
       map: {
         id: beatSaverMapData.id,
         name: beatSaverMapData.name,
-        coverUrl: fullResolutionImageUrl,
+        coverUrl: beatLeaderLeaderBoardData.song.fullCoverImage,
         uploader: {
           id: beatSaverMapData.uploader.id,
           name: beatSaverMapData.uploader.name,
@@ -39,31 +51,17 @@ export async function load() {
           verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
         },
       },
-      remark: motwCollectionData.remark,
-      nominator: {
-        id: beatSaverNominatorData.id,
-        name: beatSaverNominatorData.name,
-        avatarUrl: beatSaverNominatorData.avatar,
-        verifiedMapper: beatSaverNominatorData.verifiedMapper,
-      },
-      remarkAuthor: {
-        id: beatSaverRemarkerAuthorData.id,
-        name: beatSaverRemarkerAuthorData.name,
-        avatarUrl: beatSaverRemarkerAuthorData.avatar,
-        verifiedMapper: beatSaverRemarkerAuthorData.verifiedMapper,
-      },
-      year: motwCollectionData.year,
-      week: motwCollectionData.week,
+      review: currentMOTWCollectionData.review,
+      startDate: currentMOTWCollectionData.startDate,
     };
 
   } catch (e) {
-    console.error(`Could not find map of the week for ${year} week ${week}`);
+    console.error(`Could not find a suitable map of the week.`);
   }
 
-  const organizedPosts: OrganizedPosts = {
+  const rootPageSSRData: Omit<RootPageSSRData, 'currentMapOfTheWeek' | 'communityEvents'> = {
     announcements: [],
     news: [],
-    communityEvents: [],
     others: [],
   }
 
@@ -71,28 +69,26 @@ export async function load() {
     const { section } = post
     switch (section) {
       case 'announcements':
-        organizedPosts.announcements.push(post)
+        rootPageSSRData.announcements.push(post)
         break
       case 'news':
-        organizedPosts.news.push(post)
-        break
-      case 'community-events':
-        organizedPosts.communityEvents.push(post)
-        break
-      case 'maps-of-the-week':
-        organizedPosts.mapsOfTheWeek.push(post)
+        rootPageSSRData.news.push(post)
         break
       default:
-        organizedPosts.others.push(post)
+        rootPageSSRData.others.push(post)
         break
     }
   }
 
   // Sort all by publish data
   const sortByPublishDate = (a: Post, b: Post) => b.publish.localeCompare(a.publish)
-  for (const [key, value] of Object.entries(organizedPosts)) {
-    organizedPosts[key as keyof OrganizedPosts] = value.sort(sortByPublishDate)
+  for (const [key, value] of Object.entries(rootPageSSRData)) {
+    rootPageSSRData[key as keyof typeof rootPageSSRData] = value.sort(sortByPublishDate)
   }
 
-  return {currentMapOfTheWeek: motwData, ...organizedPosts}
+  return {
+    ...rootPageSSRData, 
+    communityEvents: [],
+    currentMapOfTheWeek,
+  };
 }

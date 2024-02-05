@@ -8,10 +8,7 @@
 <div class="motw-container">
   <div class="background-image" style="background-image: url({mapOfTheWeek.map.coverUrl});" />
   <div class="card">
-    <Header
-      text="Map of the Week"
-      icon={faCalendarDay}
-    />
+    <Header text="Map of the Week" icon={faCalendarDay} />
     <!-- ToDo: Implement this header link 
       linkText="See all maps of the week"
       linkUrl="/maps-of-the-week" 
@@ -20,7 +17,7 @@
       <a class="map-link" target="_blank" href="https://beatsaver.com/maps/{mapOfTheWeek.map.id}">
         <img class="map-cover" alt="Cover of the Map of the Week" src={mapOfTheWeek.map.coverUrl} />
       </a>
-      <!-- This container is used to float the content to the bottom so that it will push up bashed on the length of the remark -->
+      <!-- This container is used to float the content to the bottom so that it will push up bashed on the length of the review -->
       <div class="map-details-container">
         <div class="map-details">
           <h2 class="map-title">
@@ -44,40 +41,52 @@
               <img class="verified" src="/verified.svg" alt="Verified" title="Verified" />
             {/if}
           </p>
-          <p class="remark">{mapOfTheWeek.remark}</p>
+          <p class="review">{mapOfTheWeek.review}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<style>
+<style lang="scss">
+  @import 'src/scss/variables';
+
+  :global(.motw-container .container) {
+    padding-top: 0rem !important;
+  }
+
   .motw-container {
     position: relative;
-    margin-top: 2rem;
-    margin-bottom: -0.8rem;
+    margin-top: 3rem;
     width: 100%;
-    min-height: 18.5rem;
     overflow: hidden;
     box-shadow: 0px 3px 3px black;
     border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+    padding: 1.5rem 1.5rem 2rem 2.5rem;
   }
 
+  .motw-container:hover {
+    box-shadow: 0px 3px 3px $background-tertiary;
+  }
+
+  $blur-radius: 3px;
   .background-image {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    /* 
+      Choosing these non-zero values are used to not have the background color bleed into the banner. 
+      Basically, the idea of Pixelguy: draw large and have it crop to a smaller size
+    */ 
+    top: -$blur-radius - 1px;
+    left: -$blur-radius - 1px;
+    right: -$blur-radius - 1px;
+    bottom: -$blur-radius - 1px;
+    
     background-size: cover;
     background-position: center;
     z-index: -1;
-    filter: blur(3px);
-    transition: filter 0.3s;
-  }
-
-  .motw-container:hover > .background-image {
-    filter: blur(0);
+    filter: blur($blur-radius);
   }
 
   .background-image::after {
@@ -87,28 +96,30 @@
     left: 0;
     right: 0;
     height: 66%;
-    background: linear-gradient(to top, #323232 0%, #323232 24%, transparent 100%);
+    background: linear-gradient(to top, $background-secondary 0%, transparent 100%);
     z-index: 1;
   }
 
   .card {
-    padding-left: 2.3rem;
     position: relative;
     z-index: 2;
   }
 
+  $size-cover: 150px;
+
   .map-details-container {
-    /* The real left-margin is given by this value - the width of .map-cover*/
-    margin-left: 11rem;
+    // Need to consider the width of the cover which is left-floated, anything less or equal to the width will result in a zero margin
+    margin-left: $size-cover + 26px;
     display: flex;
     min-height: 150px;
     align-items: end;
   }
 
   .map-cover {
-    width: 150px;
-    height: 150px;
+    width: $size-cover;
+    height: $size-cover;
     float: left;
+    border-radius: 10px;
   }
 
   .map-title {
@@ -116,7 +127,7 @@
   }
 
   .profile-link {
-    color: #e74c3c;
+    color: $color-danger-red;
   }
 
   .map-uploader {
@@ -133,5 +144,9 @@
 
   .map-link {
     color: inherit;
+  }
+
+  .review {
+    white-space: pre;
   }
 </style>
