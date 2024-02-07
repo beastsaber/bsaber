@@ -27,7 +27,9 @@
     {#if maps.length !== 0}
         {#each maps as map}
             <div class="card">
-                <img src="{`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${map.versions[0].hash}.jpg`}" alt="{map.name}"/>
+                <a href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`} class="image-link">
+                    <img src="{`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${map.versions[0].hash}.jpg`}" alt="{map.name}"/>
+                </a>
                 <div class="content">
                     <div>
                         <a href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
@@ -76,11 +78,15 @@
       border-radius: $card-border-radius;
     }
 
-    img {
-      border-radius: $card-border-radius;
-      margin-right: 0.75rem;
+    .image-link {
       height: $image-size;
       flex: $image-size 0 0;
+      margin-right: 0.75rem;
+
+      img {
+        border-radius: $card-border-radius;
+        height: 100%;
+      }
     }
 
     .content {
