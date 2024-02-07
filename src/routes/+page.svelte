@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { OrganizedPosts } from '../../src/types'
   import AnnouncementHeader from '$lib/AnnouncementHeader.svelte'
 
   import QuickFilters from '$lib/QuickFilters.svelte'
@@ -16,15 +15,11 @@
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
+    import type { RootPageSSRData } from '../types'
 
-  export let data: OrganizedPosts = {
-    announcements: [],
-    news: [],
-    mapsOfTheWeek: [],
-    others: [],
-  }
-
-  let { announcements, mapsOfTheWeek, news } = data
+  export let data: RootPageSSRData;
+  console.log(data);
+  let { announcements, currentMapOfTheWeek, news } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
