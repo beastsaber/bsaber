@@ -2,7 +2,7 @@
   "name": "bsaber",
   "version": "0.0.1",
   "scripts": {
-    "dev": "concurrently --kill-others \"npm run dev:frontend\" \"npm run netlify-cms\"",
+    "dev": "concurrently --kill-others \"npm run dev:frontend\" \"npm run netlify-cms\" \"npm run server\"",
     "dev:frontend": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
