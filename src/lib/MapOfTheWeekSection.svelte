@@ -14,7 +14,7 @@
       linkUrl="/maps-of-the-week" 
     -->
     <div class="card-body">
-      <a class="map-link" target="_blank" href="https://beatsaver.com/maps/{mapOfTheWeek.map.id}">
+      <a class="map-link" href="https://beatsaver.com/maps/{mapOfTheWeek.map.id}">
         <img class="map-cover" alt="Cover of the Map of the Week" src={mapOfTheWeek.map.coverUrl} />
       </a>
       <!-- This container is used to float the content to the bottom so that it will push up bashed on the length of the review -->
@@ -23,7 +23,6 @@
           <h2 class="map-title">
             <a
               class="map-link"
-              target="_blank"
               href="https://beatsaver.com/maps/{mapOfTheWeek.map.id}"
             >
               {mapOfTheWeek.map.name}
@@ -33,7 +32,6 @@
             Mapped by
             <a
               class="profile-link"
-              target="_blank"
               href="https://beatsaver.com/profile/{mapOfTheWeek.map.uploader.id}"
               >{mapOfTheWeek.map.uploader.name}</a
             >
@@ -55,6 +53,7 @@
     padding-top: 0rem !important;
   }
 
+
   .motw-container {
     position: relative;
     margin-top: 3rem;
@@ -63,12 +62,6 @@
     box-shadow: 0px 3px 3px black;
     border-radius: 12px;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s ease;
-    padding: 1.5rem 1.5rem 2rem 2.5rem;
-  }
-
-  .motw-container:hover {
-    box-shadow: 0px 3px 3px $background-tertiary;
   }
 
   $blur-radius: 3px;
@@ -103,6 +96,7 @@
   .card {
     position: relative;
     z-index: 2;
+    padding: 1.5rem 1.5rem 2rem 2.5rem;
   }
 
   $size-cover: 150px;
