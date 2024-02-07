@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {genreTags, styleTags} from "../maps.js";
+    import {genreTags, styleTags} from "../maps";
 
     export let tags: string[]
 </script>
