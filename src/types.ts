@@ -41,6 +41,27 @@ export type Playlist = {
   owner: Uploader
 }
 
+export type Beatmap = {
+    id: number,
+    name: string,
+    description: string,
+    uploader: Uploader,
+    curator: Uploader | undefined,
+    versions: BeatmapVersion[],
+    tags: string[]
+}
+
+export type BeatmapVersion = {
+    hash: string
+    diffs: BeatmapDifficulty[]
+}
+
+
+export type BeatmapDifficulty = {
+    characteristic: "Standard" | "OneSaber" | "NoArrows" | "90Degree" | "360Degree" | "Lightshow" | "Lawless" | "Legacy"
+    difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus"
+}
+
 export type Uploader = {
   id: number,
   name: string,

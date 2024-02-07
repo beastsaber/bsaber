@@ -332,7 +332,7 @@
     align-items: center;
     height: $navbar-height;
     background: linear-gradient(90deg, #b52a1c 0%, #454088 27.08%, #454088 72.92%, #1268a1 100%);
-    z-index: 2;
+    z-index: 20;
   }
 
   .container {
