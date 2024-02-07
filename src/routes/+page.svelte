@@ -15,7 +15,8 @@
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
-    import type { RootPageSSRData } from '../types'
+  import type { RootPageSSRData } from '../types'
+  import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
 
   export let data: RootPageSSRData;
   console.log(data);
@@ -131,8 +132,7 @@
   />
   <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
 
-  <Header text="Map of the Week" icon={faCalendarDay} />
-  <!-- new component goes here -->
+  <MapOfTheWeekSection mapOfTheWeek={currentMapOfTheWeek} />
 
   <Header
     text="Recently Curated Maps"
