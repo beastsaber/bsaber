@@ -7,16 +7,17 @@
 </script>
 
 <div class="uploader">
-    <img src="{uploader.avatar}" alt="{uploader.name}">
-    <a href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${uploader.id}`}>
+    <a class="uploader-link" href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${uploader.id}`}>
+        <img src="{uploader.avatar}" alt="{uploader.name}">
         {uploader.name}
     </a>
     {#if uploader.verifiedMapper}
         <img class="verified" src="/verified.svg" alt="Verified" title="Verified"/>
     {/if}
     {#if curator !== undefined}
+        <span class="curator">-</span>
         <span class="curator">
-            - Curated by <a href="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${curator.id}`}">{curator.name}</a>
+            Curated by <a href="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${curator.id}`}">{curator.name}</a>
         </span>
     {/if}
 </div>
@@ -28,6 +29,12 @@
     display: flex;
     gap: 0.5rem;
     align-items: center;
+
+    .uploader-link {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
 
     img {
       border-radius: 50%;
