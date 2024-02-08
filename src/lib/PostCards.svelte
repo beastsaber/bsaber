@@ -10,11 +10,22 @@
   const cardsToShow =
     maxCards !== undefined && maxCards >= 0 ? posts.slice(0, Math.round(maxCards)) : posts
   const maxColsClass = `max-cols-${maxColumns}`
+
+  function getBackgroundImage(image: string | undefined) {
+    if (!image) {
+      return 'none'
+    }
+    return image
+  }
 </script>
 
 <div class="cards {maxColsClass}" style="--aspect-ratio:{aspectRatio}">
   {#each cardsToShow as card}
-    <a class="card" href={`/posts/${card.slug}`} style={`background-image: url(${card.image})`}>
+    <a
+      class="card"
+      href={`/posts/${card.slug}`}
+      style="background-image: ${getBackgroundImage(card.image)}"
+    >
       <div class="title {maxColsClass}">
         {card.title ?? ''}
       </div>
