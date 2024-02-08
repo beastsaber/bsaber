@@ -135,7 +135,7 @@
   <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
 
   {#if currentMapOfTheWeek != undefined}
-    <MapOfTheWeekSection mapOfTheWeek={currentMapOfTheWeek} />
+    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
   {/if}
 
   <Header

@@ -3,16 +3,19 @@
   import type { MapOfTheWeek } from '../types'
   import Header from './Header.svelte'
   export let mapOfTheWeek: MapOfTheWeek
+  export let showHeader = false;
 </script>
 
 <div class="motw-container">
   <div class="background-image" style="background-image: url({mapOfTheWeek.map.coverUrl});" />
   <div class="card">
-    <Header text="Map of the Week" icon={faCalendarDay} />
+    {#if showHeader}
+      <Header text="Map of the Week" icon={faCalendarDay} />
     <!-- ToDo: Implement this header link 
       linkText="See all maps of the week"
       linkUrl="/maps-of-the-week" 
     -->
+    {/if}
     <div class="card-body">
       <a class="map-link" href="https://beatsaver.com/maps/{mapOfTheWeek.map.id}">
         <img class="map-cover" alt="Cover of the Map of the Week" src={mapOfTheWeek.map.coverUrl} />
