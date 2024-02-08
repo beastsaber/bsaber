@@ -1,3 +1,4 @@
+import { getMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
 import type {
   Post,
   MapOfTheWeek,
@@ -28,14 +29,7 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
 
   let currentMapOfTheWeek: MapOfTheWeek | undefined = undefined
   try {
-    const mapsOfTheWeek = await Promise.all(
-      Object.entries(
-        import.meta.glob<ImportMapOfTheWeekModuleData>('/src/collections/map-of-the-week/*.md'),
-      ).map(async ([_, module]) => {
-        const { metadata } = await module()
-        return { ...metadata, startDate: new Date(metadata.startDate) }
-      }),
-    )
+    const mapsOfTheWeek = await getMapsOfTheWeekNetlifyData();
 
     const possibleCurrentMotws = mapsOfTheWeek.filter(
       (motw) => motw.startDate.getTime() <= now.getTime(),
