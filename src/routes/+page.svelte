@@ -15,6 +15,8 @@
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
+  import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+  
   import type { RootPageSSRData } from '../types'
   import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
 
@@ -140,7 +142,15 @@
     linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?order=Curated&curated=true`}"
     linkText="See all curated maps"
   />
-  <MapCards />
+  <MapCards sortOrder="CURATED"/>
+
+  <Header
+    text="Recent Maps by Verified Mappers"
+    icon={faCircleCheck}
+    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?verified=true`}"
+    linkText="See all maps by verified mappers"
+  />
+  <MapCards verified="{true}"/>
 
   <Header icon={faChartLine} text="Global Ranking Leaderboards" />
   <div class="leaderboards">

@@ -4,15 +4,17 @@
     export let tags: string[]
 </script>
 
-<div class="tags">
-    {#each tags as tag}
-        {#if tag in styleTags}
-            <span class="style tag" title="{styleTags[tag]}">{styleTags[tag]}</span>
-        {:else if tag in genreTags}
-            <span class="genre tag" title="{genreTags[tag]}">{genreTags[tag]}</span>
-        {/if}
-    {/each}
-</div>
+{#if tags.length !== 0}
+    <div class="tags">
+        {#each tags as tag}
+            {#if tag in styleTags}
+                <span class="style tag" title="{styleTags[tag]}">{styleTags[tag]}</span>
+            {:else if tag in genreTags}
+                <span class="genre tag" title="{genreTags[tag]}">{genreTags[tag]}</span>
+            {/if}
+        {/each}
+    </div>
+{/if}
 
 <style lang="scss">
   @import 'src/scss/variables';

@@ -5,6 +5,8 @@
     import Tags from "$lib/Tags.svelte";
     import Difficulties from "$lib/Difficulties.svelte";
 
+    export let sortOrder: "FIRST_PUBLISHED" | "UPDATED" | "LAST_PUBLISHED" | "CREATED" | "CURATED" = "LAST_PUBLISHED"
+    export let verified: boolean | undefined = undefined
     export let maxCards: number | undefined = undefined // max amount of cards to show
 
     let maps: Beatmap[] = []
@@ -13,10 +15,11 @@
         await getMaps()
     })
 
+    let baseUrl = import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
+    let url = `${baseUrl}/maps/latest?sort=${sortOrder}${(verified !== undefined) ? `&verified=${verified}` : ""}&pageSize=${maxCards ?? 6}`
+
     async function getMaps() {
-        let response = await fetch(
-            `${import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'}/maps/latest?sort=CURATED&pageSize=${maxCards ?? 6}`,
-        )
+        let response = await fetch(url)
         maps = await response.json().then(json =>
             json["docs"] as Beatmap[]
         )
