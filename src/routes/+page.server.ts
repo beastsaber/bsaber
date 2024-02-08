@@ -1,4 +1,4 @@
-import { getMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
+import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
 import type {
   Post,
   MapOfTheWeek,
@@ -29,12 +29,11 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
 
   let currentMapOfTheWeek: MapOfTheWeek | undefined = undefined
   try {
-    const mapsOfTheWeek = await getMapsOfTheWeekNetlifyData();
+    const mapsOfTheWeek = await getSortedMapsOfTheWeekNetlifyData();
 
     const possibleCurrentMotws = mapsOfTheWeek.filter(
       (motw) => motw.startDate.getTime() <= now.getTime(),
     )
-    possibleCurrentMotws.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
     // Since it's sorted it's last
     const currentMOTWCollectionData = possibleCurrentMotws[possibleCurrentMotws.length - 1]
 

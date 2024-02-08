@@ -1,7 +1,7 @@
 import type { ImportMapOfTheWeekModuleData, MapOfTheWeekCollectionData } from "../types"
 
-export const getMapsOfTheWeekNetlifyData = () => {
-    return Promise.all(
+export const getSortedMapsOfTheWeekNetlifyData = async () => {
+    const unsortedMapsOfTheWeeks = await Promise.all(
         Object.entries(
           import.meta.glob<ImportMapOfTheWeekModuleData>('/src/collections/map-of-the-week/*.md'),
         ).map(async ([_, module]) => {
@@ -9,4 +9,6 @@ export const getMapsOfTheWeekNetlifyData = () => {
           return { ...metadata, startDate: new Date(metadata.startDate) }
         }),
       )
+    
+    return unsortedMapsOfTheWeeks.sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
 }
