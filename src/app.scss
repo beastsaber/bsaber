@@ -1,7 +1,9 @@
 @import '@fontsource/poppins/400';
 @import '@fontsource/poppins/600';
 @import '@fontsource/dm-sans/400';
+@import '@fontsource/jetbrains-mono/400';
 @import 'scss/variables';
+@import "scss/articles";
 
 :root {
   font-family: $font-dm-sans;
@@ -9,6 +11,7 @@
 
 * {
   margin: 0;
+  scroll-padding: 5.5rem; // Nav height + some extra space
 }
 
 body {
