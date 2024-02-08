@@ -153,6 +153,6 @@
   }
 
   .review {
-    white-space: pre;
+    white-space: pre-wrap;
   }
 </style>
