@@ -13,6 +13,9 @@ export type PartialMapOfTheWeek = {
 
 export type MapsOfTheWeekPagePaginatedSSRData = {
     mapsOfTheWeek: PartialMapOfTheWeek[];
+    pageSize: number;
+    pageCount: number;
+    currentPage: number;
 }
 
 type LoadFunctionParameter = {
@@ -25,7 +28,7 @@ type LoadFunctionParameter = {
 export async function load({ fetch, params }: LoadFunctionParameter): Promise<MapsOfTheWeekPagePaginatedSSRData> {
     // Starts at 1
     const pageNumber = parseInt(params.page, 10);
-    if (isNaN(pageNumber) || pageNumber < 1 || isFinite(pageNumber) === false) {
+    if (isNaN(pageNumber) || pageNumber < 1 || !isFinite(pageNumber)) {
         throw new Error("Invalid page number");
     }
 
@@ -33,24 +36,25 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
     const endIndex = pageNumber * pageSize;
 
     const mapsOfTheWeek = await getSortedMapsOfTheWeekNetlifyData();
+
+    const pageCount = Math.ceil(mapsOfTheWeek.length / pageSize);
+
     const paginatedMapsOfTheWeek = mapsOfTheWeek.slice(startIndex, endIndex);
 
-    const result = [] as PartialMapOfTheWeek[];
-
-    for (const singleMapOfTheWeek of paginatedMapsOfTheWeek) {
+    const result = await Promise.all(paginatedMapsOfTheWeek.map(async (singleMapOfTheWeek) => {
         const beatLeaderLeaderBoardData = await fetch(
             `https://api.beatleader.xyz/leaderboard/${singleMapOfTheWeek.mapId}`,
         ).then((res) => res.json())
 
-        result.push({
+        return {
             map: {
                 id: singleMapOfTheWeek.mapId,
                 coverUrl: beatLeaderLeaderBoardData.song.fullCoverImage,
             },
             review: singleMapOfTheWeek.review,
             startDate: singleMapOfTheWeek.startDate,
-        });
-    }
+        };
+    }));
 
-    return {mapsOfTheWeek: result};
+    return {mapsOfTheWeek: result, pageSize, pageCount, currentPage: pageNumber};
 }

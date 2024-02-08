@@ -3,10 +3,12 @@
   import type { MapOfTheWeek } from '../../../types.ts'
     import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
     import { onMount } from 'svelte'
+    import PaginationBar from '$lib/PaginationBar.svelte'
 
   export let data: MapsOfTheWeekPagePaginatedSSRData;
   let mapsOfTheWeek: MapOfTheWeek[] = [];
   
+  const getPageLink = (page: number) => `/maps-of-the-week/${page}`;
   
   onMount(async () => {
     for (const singleMapOfTheWeek of data.mapsOfTheWeek) {
@@ -41,6 +43,8 @@
 {#each mapsOfTheWeek as singleMapOfTheWeek}
   <MapOfTheWeekSection mapOfTheWeek={singleMapOfTheWeek} showHeader={false} />
 {/each}
+
+<PaginationBar currentPage={data.currentPage} numberOfPages={data.pageCount} getPageLink={getPageLink} />
 
 <style>
     :global(.motw-container) {
