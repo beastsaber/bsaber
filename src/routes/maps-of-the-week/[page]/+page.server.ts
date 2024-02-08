@@ -1,6 +1,6 @@
 import { getSortedMapsOfTheWeekNetlifyData } from "$lib/getMapsOfTheWeekNetlifyData";
 
-const pageSize = 10;
+const pageSize = 5;
 
 export type PartialMapOfTheWeek = {
     map: {
