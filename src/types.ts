@@ -59,7 +59,7 @@ export type Beatmap = {
     uploader: Uploader,
     curator: Uploader | undefined,
     versions: BeatmapVersion[],
-    tags: string[]
+    tags: string[] | undefined
 }
 
 export type BeatmapVersion = {
