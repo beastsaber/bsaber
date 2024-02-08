@@ -50,16 +50,15 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
     const beatSaverMapUploaderData = await fetch(
       `https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`,
     ).then((res) => res.json())
-    // const beatLeaderLeaderBoardData = await fetch(
-    //   `https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`,
-    // ).then((res) => res.json())
+    const beatLeaderLeaderBoardData = await fetch(
+      `https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`,
+    ).then((res) => res.json())
 
     currentMapOfTheWeek = {
       map: {
         id: beatSaverMapData.id,
         name: beatSaverMapData.name,
-        // coverUrl: beatLeaderLeaderBoardData.song.fullCoverImage,
-        coverUrl: beatSaverMapData.versions[0].coverURL,
+        coverUrl: beatLeaderLeaderBoardData.song.fullCoverImage,
         uploader: {
           id: beatSaverMapData.uploader.id,
           name: beatSaverMapData.uploader.name,
