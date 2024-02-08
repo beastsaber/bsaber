@@ -1,14 +1,18 @@
-import type { Post, MapOfTheWeek, CommunityEvent, ImportPostModuleData, ImportMapOfTheWeekModuleData } from '../types'
+import type {
+  Post,
+  MapOfTheWeek,
+  CommunityEvent,
+  ImportPostModuleData,
+  ImportMapOfTheWeekModuleData,
+} from '../types'
 export type RootPageSSRData = {
   announcements: Post[]
   news: Post[]
   others: Post[]
-  communityEvents: CommunityEvent[],
-  currentMapOfTheWeek: MapOfTheWeek | undefined,
+  communityEvents: CommunityEvent[]
+  currentMapOfTheWeek: MapOfTheWeek | undefined
 }
-let i = 0;
-export async function load(): Promise<RootPageSSRData> {
-  console.log(i++);
+export async function load({ fetch }): Promise<RootPageSSRData> {
   const posts: Post[] = await Promise.all(
     Object.entries(import.meta.glob<ImportPostModuleData>('/src/collections/posts/**/*.md')).map(
       async ([path, module]) => {
@@ -20,25 +24,36 @@ export async function load(): Promise<RootPageSSRData> {
     ),
   )
 
-  const now = new Date();
-  
-  let currentMapOfTheWeek: MapOfTheWeek | undefined = undefined;
+  const now = new Date()
+
+  let currentMapOfTheWeek: MapOfTheWeek | undefined = undefined
   try {
-    const mapsOfTheWeek = await Promise.all(Object.entries(import.meta.glob<ImportMapOfTheWeekModuleData>('/src/collections/map-of-the-week/*.md')).map(
-      async ([_, module]) => {
-        const { metadata } = await module();
-        return {...metadata, startDate: new Date(metadata.startDate)};
-      }));
+    const mapsOfTheWeek = await Promise.all(
+      Object.entries(
+        import.meta.glob<ImportMapOfTheWeekModuleData>('/src/collections/map-of-the-week/*.md'),
+      ).map(async ([_, module]) => {
+        const { metadata } = await module()
+        return { ...metadata, startDate: new Date(metadata.startDate) }
+      }),
+    )
 
-    const possibleCurrentMotws = mapsOfTheWeek.filter(motw => motw.startDate.getTime() <= now.getTime());
-    possibleCurrentMotws.sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+    const possibleCurrentMotws = mapsOfTheWeek.filter(
+      (motw) => motw.startDate.getTime() <= now.getTime(),
+    )
+    possibleCurrentMotws.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
     // Since it's sorted it's last
-    const currentMOTWCollectionData = possibleCurrentMotws[possibleCurrentMotws.length - 1];
+    const currentMOTWCollectionData = possibleCurrentMotws[possibleCurrentMotws.length - 1]
 
-    const beatSaverMapData = await fetch(`https://api.beatsaver.com/maps/id/${currentMOTWCollectionData.mapId}`).then(res => res.json());
-    const beatSaverMapUploaderData = await fetch(`https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`).then(res => res.json());
-    const beatLeaderLeaderBoardData = await fetch(`https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`).then(res => res.json());
-    
+    const beatSaverMapData = await fetch(
+      `https://api.beatsaver.com/maps/id/${currentMOTWCollectionData.mapId}`,
+    ).then((res) => res.json())
+    const beatSaverMapUploaderData = await fetch(
+      `https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`,
+    ).then((res) => res.json())
+    const beatLeaderLeaderBoardData = await fetch(
+      `https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`,
+    ).then((res) => res.json())
+
     currentMapOfTheWeek = {
       map: {
         id: beatSaverMapData.id,
@@ -55,10 +70,9 @@ export async function load(): Promise<RootPageSSRData> {
       },
       review: currentMOTWCollectionData.review,
       startDate: currentMOTWCollectionData.startDate,
-    };
-
+    }
   } catch (e) {
-    console.error(`Could not find a suitable map of the week.`);
+    console.error(`Could not find a suitable map of the week.`)
   }
 
   const rootPageSSRData: Omit<RootPageSSRData, 'currentMapOfTheWeek' | 'communityEvents'> = {
@@ -89,8 +103,8 @@ export async function load(): Promise<RootPageSSRData> {
   }
 
   return {
-    ...rootPageSSRData, 
+    ...rootPageSSRData,
     communityEvents: [],
     currentMapOfTheWeek,
-  };
+  }
 }
