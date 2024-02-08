@@ -19,6 +19,8 @@
     >
       {singlePageNumber}
     </button>
+    <!-- These are used so the build process can parse that it exists -->
+    <a class="hidden-pagination-link-button" href={getPageLink(singlePageNumber)}>{singlePageNumber}</a>
   {/each}
 </div>
 
@@ -50,5 +52,9 @@
     border: 1px solid $color-primary-text;
     background-color: $background-tertiary;
     color: $color-primary-text;
+  }
+
+  .hidden-pagination-link-button {
+    display: none;
   }
 </style>
