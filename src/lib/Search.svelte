@@ -57,7 +57,6 @@
     clearTimeout(searchPreviewTimeout)
     lastQuery = searchQuery
     searchQuery = event ? event.target.value : searchQuery
-    console.log(`searchQuery ${searchQuery} lastQuery: ${lastQuery}`) // TOOD: Remove console.log
     searchPreviewTimeout = setTimeout(() => {
       // We're checking if the query is the same as the last query to avoid making unnecessary requests
       if (searchQuery === lastQuery && !force) {
@@ -81,7 +80,6 @@
                   image: song.versions.at(-1).coverURL,
                 }
               })
-              console.log(data) // TOOD: Remove console.log
             }
           })
       } else if (searchType === dropdownItems[1].name) {
@@ -97,7 +95,6 @@
                   image: playlist.playlistImage,
                 }
               })
-              console.log(data) // TOOD: Remove console.log
             }
           })
       } else if (searchType === dropdownItems[2].name) {
