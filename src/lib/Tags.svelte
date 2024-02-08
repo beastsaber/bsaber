@@ -1,19 +1,19 @@
 <script lang="ts">
-    import {genreTags, styleTags} from "../maps";
+  import { genreTags, styleTags } from '../maps'
 
-    export let tags: string[]
+  export let tags: string[]
 </script>
 
-{#if tags.length !== 0}
-    <div class="tags">
-        {#each tags as tag}
-            {#if tag in styleTags}
-                <span class="style tag" title="{styleTags[tag]}">{styleTags[tag]}</span>
-            {:else if tag in genreTags}
-                <span class="genre tag" title="{genreTags[tag]}">{genreTags[tag]}</span>
-            {/if}
-        {/each}
-    </div>
+{#if tags && tags.length !== 0}
+  <div class="tags">
+    {#each tags as tag}
+      {#if tag in styleTags}
+        <span class="style tag" title={styleTags[tag]}>{styleTags[tag]}</span>
+      {:else if tag in genreTags}
+        <span class="genre tag" title={genreTags[tag]}>{genreTags[tag]}</span>
+      {/if}
+    {/each}
+  </div>
 {/if}
 
 <style lang="scss">
@@ -25,7 +25,7 @@
     overflow: hidden;
 
     .tag {
-      font-size: .75rem;
+      font-size: 0.75rem;
       border-radius: 1.5rem;
       background-color: $background-secondary;
       border: 1px solid;
