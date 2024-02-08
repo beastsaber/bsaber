@@ -134,7 +134,9 @@
   />
   <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
 
-  <MapOfTheWeekSection mapOfTheWeek={currentMapOfTheWeek} />
+  {#if currentMapOfTheWeek != undefined}
+    <MapOfTheWeekSection mapOfTheWeek={currentMapOfTheWeek} />
+  {/if}
 
   <Header
     text="Recently Curated Maps"
