@@ -178,13 +178,13 @@
     gap: 20px;
   }
 
-  @media (min-width: 678px) {
+  @media (min-width: 768px) {
     .leaderboards {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (min-width: 1356px) {
+  @media (min-width: 992px) {
     .leaderboards {
       grid-template-columns: repeat(3, 1fr);
     }

@@ -53,39 +53,13 @@
       display: flex;
       gap: 8px;
       align-items: center;
-      width: 100%;
       margin-bottom: 10px;
     }
 
     .icon-link {
       display: flex;
       justify-content: end;
-      width: 100%;
       margin-bottom: 10px;
-    }
-  }
-
-  @media (min-width: 840px) or (max-width: 677px) {
-    .header {
-      .source {
-        width: unset;
-      }
-
-      .icon-link {
-        width: unset;
-      }
-    }
-  }
-
-  @media (min-width: 840px) {
-    .header {
-      .source {
-        width: unset;
-      }
-
-      .icon-link {
-        width: unset;
-      }
     }
   }
 
