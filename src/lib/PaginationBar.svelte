@@ -23,6 +23,8 @@
 
   .pagination-bar {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
     justify-content: center;
     align-items: center;
     
