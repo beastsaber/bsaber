@@ -103,17 +103,29 @@
 
   .map-details-container {
     // Need to consider the width of the cover which is left-floated, anything less or equal to the width will result in a zero margin
-    margin-left: $size-cover + 26px;
     display: flex;
     min-height: 150px;
     align-items: end;
   }
 
   .map-cover {
-    width: $size-cover;
-    height: $size-cover;
-    float: left;
-    border-radius: 10px;
+    width: 0;
+    height: 0;
+    display: hidden;
+  }
+
+  @media (min-width: 678px) {
+    .map-cover {
+      display: block;
+      width: $size-cover;
+      height: $size-cover;
+      float: left;
+      border-radius: 10px;
+    }
+
+    .map-details-container {
+      margin-left: $size-cover + 26px;  
+    }
   }
 
   .map-title {
