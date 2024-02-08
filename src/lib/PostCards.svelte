@@ -24,7 +24,7 @@
     <a
       class="card"
       href={`/posts/${card.slug}`}
-      style="background-image: ${getBackgroundImage(card.image)}"
+      style="background-image: {getBackgroundImage(card.image)}"
     >
       <div class="title {maxColsClass}">
         {card.title ?? ''}
