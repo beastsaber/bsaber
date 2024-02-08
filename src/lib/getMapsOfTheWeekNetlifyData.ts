@@ -10,5 +10,5 @@ export const getSortedMapsOfTheWeekNetlifyData = async () => {
         }),
       )
     
-    return unsortedMapsOfTheWeeks.sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+    return unsortedMapsOfTheWeeks.sort((a, b) => a.startDate.getTime() - b.startDate.getTime()).reverse();
 }
