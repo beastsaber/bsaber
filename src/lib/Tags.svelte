@@ -1,10 +1,10 @@
 <script lang="ts">
   import { genreTags, styleTags } from '../maps'
 
-  export let tags: string[]
+  export let tags: string[] | undefined
 </script>
 
-{#if tags && tags.length !== 0}
+{#if tags !== undefined && tags.length !== 0}
   <div class="tags">
     {#each tags as tag}
       {#if tag in styleTags}
