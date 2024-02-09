@@ -32,7 +32,7 @@
     "eslint-plugin-svelte3": "^4.0.0",
     "prettier": "^2.6.2",
     "prettier-plugin-svelte": "^2.7.0",
-    "sharp": "^0.30.2",
+    "sharp": "^0.33.2",
     "svelte": "^3.46.4",
     "svelte-check": "^2.7.1",
     "svelte-fa": "^2.4.0",
