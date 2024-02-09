@@ -1,18 +1,10 @@
 import { getSortedMapsOfTheWeekNetlifyData } from "$lib/getMapsOfTheWeekNetlifyData";
+import type { MapOfTheWeek } from "../../../types";
 
-const pageSize = 5;
-
-export type PartialMapOfTheWeek = {
-    map: {
-        id: string;
-        coverUrl: string;
-    }
-    review: string;
-    startDate: Date;
-};
+const pageSize = 10;
 
 export type MapsOfTheWeekPagePaginatedSSRData = {
-    mapsOfTheWeek: PartialMapOfTheWeek[];
+    mapsOfTheWeek: MapOfTheWeek[];
     pageSize: number;
     pageCount: number;
     currentPage: number;
@@ -35,26 +27,42 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
     const startIndex = (pageNumber - 1) * pageSize;
     const endIndex = pageNumber * pageSize;
 
-    const mapsOfTheWeek = await getSortedMapsOfTheWeekNetlifyData();
+    const allMapsOfTheWeekNetlifyData = await getSortedMapsOfTheWeekNetlifyData();
 
-    const pageCount = Math.ceil(mapsOfTheWeek.length / pageSize);
+    const pageCount = Math.ceil(allMapsOfTheWeekNetlifyData.length / pageSize);
 
-    const paginatedMapsOfTheWeek = mapsOfTheWeek.slice(startIndex, endIndex);
+    const paginatedMapsOfTheWeek = allMapsOfTheWeekNetlifyData.slice(startIndex, endIndex);
 
-    const result = await Promise.all(paginatedMapsOfTheWeek.map(async (singleMapOfTheWeek) => {
+    const paginatedFullMapsOfTheWeek = await Promise.all(paginatedMapsOfTheWeek.map(async (singleMapOfTheWeek) => {
         const beatLeaderLeaderBoardData = await fetch(
             `https://api.beatleader.xyz/leaderboard/${singleMapOfTheWeek.mapId}`,
+        ).then((res) => res.json())
+
+        const beatSaverMapData = await fetch(
+            `https://api.beatsaver.com/maps/id/${singleMapOfTheWeek.mapId}`,
+        ).then((res) => res.json())
+        const beatSaverMapUploaderData = await fetch(
+            `https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`,
         ).then((res) => res.json())
 
         return {
             map: {
                 id: singleMapOfTheWeek.mapId,
+                name: beatSaverMapData.name,
                 coverUrl: beatLeaderLeaderBoardData.song.fullCoverImage,
+                uploader: {
+                    id: beatSaverMapData.uploader.id,
+                    name: beatSaverMapData.uploader.name,
+                    avatar: beatSaverMapData.uploader.avatar,
+                    admin: beatSaverMapUploaderData.admin,
+                    curator: beatSaverMapUploaderData.curator,
+                    verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
+                },
             },
             review: singleMapOfTheWeek.review,
             startDate: singleMapOfTheWeek.startDate,
-        };
+        }
     }));
 
-    return {mapsOfTheWeek: result, pageSize, pageCount, currentPage: pageNumber};
+    return { mapsOfTheWeek: paginatedFullMapsOfTheWeek, pageSize, pageCount, currentPage: pageNumber };
 }
