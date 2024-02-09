@@ -34,10 +34,18 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
     const paginatedMapsOfTheWeek = allMapsOfTheWeekNetlifyData.slice(startIndex, endIndex);
 
     const paginatedFullMapsOfTheWeek = await Promise.all(paginatedMapsOfTheWeek.map(async (singleMapOfTheWeek) => {
-        const beatLeaderLeaderBoardData = await fetch(
-            `https://api.beatleader.xyz/leaderboard/${singleMapOfTheWeek.mapId}`,
-        ).then((res) => res.json())
 
+        let coverUrl = singleMapOfTheWeek.coverUrlOverwrite;
+        
+        // Fetch BeatLeader URL if not given
+        if(coverUrl == null) {
+            const beatLeaderLeaderBoardData = await fetch(
+                `https://api.beatleader.xyz/leaderboard/${singleMapOfTheWeek.mapId}`,
+            ).then((res) => res.json());
+
+            coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage;
+        }
+        
         const beatSaverMapData = await fetch(
             `https://api.beatsaver.com/maps/id/${singleMapOfTheWeek.mapId}`,
         ).then((res) => res.json())
@@ -49,7 +57,7 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
             map: {
                 id: singleMapOfTheWeek.mapId,
                 name: beatSaverMapData.name,
-                coverUrl: beatLeaderLeaderBoardData.song.fullCoverImage,
+                coverUrl: coverUrl,
                 uploader: {
                     id: beatSaverMapData.uploader.id,
                     name: beatSaverMapData.uploader.name,
