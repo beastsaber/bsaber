@@ -8,19 +8,13 @@
 
 <div class="pagination-bar">
   {#each pageNumbers as singlePageNumber}
-    <button
+    <a
       class="page-button"
       class:active={singlePageNumber === currentPage}
-      on:click={() => {
-        // Not great, but behaves the best I'm afraid - using an a-element with href doesn't update the page
-        // nor indicate loading
-        window.location.href = getPageLink(singlePageNumber)
-      }}
+      href={getPageLink(singlePageNumber)}
     >
       {singlePageNumber}
-    </button>
-    <!-- These are used so the build process can parse that it exists -->
-    <a class="hidden-pagination-link-button" href={getPageLink(singlePageNumber)}>{singlePageNumber}</a>
+    </a>
   {/each}
 </div>
 
