@@ -29,7 +29,7 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
 
   let currentMapOfTheWeek: MapOfTheWeek | undefined = undefined
   try {
-    const mapsOfTheWeek = await getSortedMapsOfTheWeekNetlifyData();
+    const mapsOfTheWeek = await getSortedMapsOfTheWeekNetlifyData()
 
     const possibleCurrentMotws = mapsOfTheWeek.filter(
       (motw) => motw.startDate.getTime() <= now.getTime(),
@@ -43,15 +43,24 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
     const beatSaverMapUploaderData = await fetch(
       `https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`,
     ).then((res) => res.json())
-    const beatLeaderLeaderBoardData = await fetch(
-      `https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`,
-    ).then((res) => res.json())
 
+    let coverUrl = currentMOTWCollectionData.coverUrlOverwrite
+    if (coverUrl == null) {
+      const beatLeaderLeaderBoardData = await fetch(
+        `https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`,
+      ).then((res) => res.json())
+      coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage
+    }
+
+    if(coverUrl == null) {
+      throw new Error('No cover URL found!');
+    }
+    
     currentMapOfTheWeek = {
       map: {
         id: beatSaverMapData.id,
         name: beatSaverMapData.name,
-        coverUrl: beatLeaderLeaderBoardData.song.fullCoverImage,
+        coverUrl: coverUrl,
         uploader: {
           id: beatSaverMapData.uploader.id,
           name: beatSaverMapData.uploader.name,
