@@ -1,7 +1,7 @@
 import { getSortedMapsOfTheWeekNetlifyData } from "$lib/getMapsOfTheWeekNetlifyData";
 import type { MapOfTheWeek } from "../../../types";
 
-const pageSize = 10;
+const pageSize = 15;
 
 export type MapsOfTheWeekPagePaginatedSSRData = {
     mapsOfTheWeek: MapOfTheWeek[];
