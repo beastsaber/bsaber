@@ -1,5 +1,8 @@
 import type { ImportMapOfTheWeekModuleData } from "../types"
 
+/**
+ * This function returns the maps of the week that are currently active and sorted by start date newest -> oldest.
+ */
 export const getSortedMapsOfTheWeekNetlifyData = async () => {
     const unsortedMapsOfTheWeeks = await Promise.all(
         Object.entries(
@@ -9,6 +12,10 @@ export const getSortedMapsOfTheWeekNetlifyData = async () => {
           return { ...metadata, startDate: new Date(metadata.startDate) }
         }),
       )
+
+    const mapsOfTheWeeksToShow = unsortedMapsOfTheWeeks.filter(
+      (motw) => motw.startDate.getTime() <= new Date().getTime(),
+    )
     
-    return unsortedMapsOfTheWeeks.sort((a, b) => a.startDate.getTime() - b.startDate.getTime()).reverse();
+    return mapsOfTheWeeksToShow.sort((a, b) => a.startDate.getTime() - b.startDate.getTime()).reverse();
 }

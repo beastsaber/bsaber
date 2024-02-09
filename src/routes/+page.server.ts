@@ -25,17 +25,12 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
     ),
   )
 
-  const now = new Date()
-
   let currentMapOfTheWeek: MapOfTheWeek | undefined = undefined
   try {
     const mapsOfTheWeek = await getSortedMapsOfTheWeekNetlifyData()
 
-    const possibleCurrentMotws = mapsOfTheWeek.filter(
-      (motw) => motw.startDate.getTime() <= now.getTime(),
-    )
     // Since it's sorted it's the first one
-    const currentMOTWCollectionData = possibleCurrentMotws[0]
+    const currentMOTWCollectionData = mapsOfTheWeek[0]
 
     const beatSaverMapData = await fetch(
       `https://api.beatsaver.com/maps/id/${currentMOTWCollectionData.mapId}`,
