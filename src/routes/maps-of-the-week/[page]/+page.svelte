@@ -12,16 +12,16 @@
   <MapOfTheWeekSection mapOfTheWeek={singleMapOfTheWeek} showHeader={false} />
 {/each}
 
-<PaginationBar currentPage={data.currentPage} numberOfPages={data.pageCount} {getPageLink} />
-
+<div class="pagination-bar-container">
+  <PaginationBar currentPage={data.currentPage} numberOfPages={data.pageCount} {getPageLink} />
+</div>
 <style>
   :global(.motw-container) {
     margin: 1rem 0 0.5rem 0 !important;
   }
 
-  .loading-text {
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    text-align: center;
+  .pagination-bar-container {
+    margin-top: 1.3rem;
   }
+
 </style>
