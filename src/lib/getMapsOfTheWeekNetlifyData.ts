@@ -1,4 +1,4 @@
-import type { ImportMapOfTheWeekModuleData, MapOfTheWeekCollectionData } from "../types"
+import type { ImportMapOfTheWeekModuleData } from "../types"
 
 export const getSortedMapsOfTheWeekNetlifyData = async () => {
     const unsortedMapsOfTheWeeks = await Promise.all(
