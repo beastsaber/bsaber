@@ -17,6 +17,8 @@ type LoadFunctionParameter = {
     fetch: typeof fetch,
 }
 
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export async function load({ fetch, params }: LoadFunctionParameter): Promise<MapsOfTheWeekPagePaginatedSSRData> {
     // Starts at 1
     const pageNumber = parseInt(params.page, 10);
@@ -33,7 +35,9 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
 
     const paginatedMapsOfTheWeek = allMapsOfTheWeekNetlifyData.slice(startIndex, endIndex);
 
-    const paginatedFullMapsOfTheWeek = await Promise.all(paginatedMapsOfTheWeek.map(async (singleMapOfTheWeek) => {
+    const paginatedFullMapsOfTheWeek = [];
+    // Not Promise.all'ing since that will just get you rate limited from beatsaver
+    for (const singleMapOfTheWeek of paginatedMapsOfTheWeek) {
 
         let coverUrl = singleMapOfTheWeek.coverUrlOverwrite;
         
@@ -45,15 +49,21 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
 
             coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage;
         }
-        
+
         const beatSaverMapData = await fetch(
             `https://api.beatsaver.com/maps/id/${singleMapOfTheWeek.mapId}`,
         ).then((res) => res.json())
+
         const beatSaverMapUploaderData = await fetch(
             `https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`,
         ).then((res) => res.json())
 
-        return {
+        // BeatSaver allows 10 per second - there are two requests - to play it safe we wait 220ms (200ms + 20ms for good measure)
+        // Not a perfect solution, but an easy one
+        // Since the pages are pre-rendered it will not be slow in the final deployment - but take longer to build
+        await sleep(220);
+
+        paginatedFullMapsOfTheWeek.push({
             map: {
                 id: singleMapOfTheWeek.mapId,
                 name: beatSaverMapData.name,
@@ -69,8 +79,8 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
             },
             review: singleMapOfTheWeek.review,
             startDate: singleMapOfTheWeek.startDate,
-        }
-    }));
+        });
+    }
 
     return { mapsOfTheWeek: paginatedFullMapsOfTheWeek, pageSize, pageCount, currentPage: pageNumber };
 }
