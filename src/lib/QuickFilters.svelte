@@ -26,14 +26,14 @@
     text="All Curated"
     icon={faAward}
     color="#00bc8c"
-    href="https://beatsaver.com/?curated=true"
+    href="https://beatsaver.com/?order=Curated&curated=true"
   />
   <QuickFilter text="All Verified" icon={faCheckCircle} color="#3498db" href="#" />
   <QuickFilter
     text="All Playlists"
     iconPath={squareListIcon}
     color="#454088"
-    href="https://bsaber.com/category/official-playlists/"
+    href="https://beatsaver.com/playlists?order=Curated&curated=true"
   />
 </div>
 

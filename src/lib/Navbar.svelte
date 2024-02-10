@@ -38,7 +38,7 @@
       Items: [
         {
           name: 'Curator Recommended',
-          href: 'https://beatsaver.com/?curated=true',
+          href: 'https://beatsaver.com/?order=Curated&curated=true',
         },
         {
           name: 'Verified Mappers',
@@ -48,18 +48,6 @@
           name: 'Ranked',
           href: 'https://beatsaver.com/?ranked=true',
         },
-        {
-          name: 'Browse by Genre',
-          href: '/browse', // future app page
-        },
-        {
-          name: 'Curated Playlists',
-          href: 'https://beatsaver.com/playlists?curated=true',
-        },
-        {
-          name: 'All Playlists',
-          href: 'https://beatsaver.com/playlists',
-        },
       ],
     },
     {
@@ -68,7 +56,7 @@
       Items: [
         {
           name: 'Curated Playlists',
-          href: 'https://beatsaver.com/playlists?curated=true',
+          href: 'https://beatsaver.com/playlists?order=Curated&curated=true',
         },
         {
           name: 'All Playlists',
@@ -82,19 +70,19 @@
       Items: [
         {
           name: 'Avatars',
-          href: '',
+          href: 'https://modelsaber.com/Avatars/',
         },
         {
           name: 'Sabers',
-          href: '',
+          href: 'https://modelsaber.com/Sabers/',
         },
         {
-          name: 'Blocks',
-          href: '',
+          name: 'Notes',
+          href: 'https://modelsaber.com/Bloqs/',
         },
         {
-          name: 'Walls',
-          href: '',
+          name: 'Platforms',
+          href: 'https://modelsaber.com/Platforms/',
         },
       ],
     },
@@ -104,36 +92,8 @@
       Items: [
         {
           name: 'News',
-          href: '',
+          href: '/posts',
         },
-        {
-          name: 'Interviews',
-          href: '',
-        },
-        {
-          name: 'Tutorials',
-          href: '',
-          Items: [
-            {
-              name: 'Mapping Resources',
-              href: '',
-            },
-          ],
-        },
-        {
-          name: 'Events',
-          href: '',
-        },
-        {
-          name: 'Videos',
-          href: '',
-        },
-      ],
-    },
-    {
-      name: 'Community Hub',
-      expanded: false,
-      Items: [
         {
           name: 'Mappers',
           href: 'https://beatsaver.com/mappers',
@@ -144,36 +104,27 @@
           Items: [
             {
               name: 'About Curation',
-              href: '',
-            },
-          ],
-        },
-        {
-          name: 'The Beasties',
-          href: '',
-          Items: [
-            {
-              name: 'Past Winners',
-              href: '',
+              href: '/curation',
             },
           ],
         },
       ],
     },
     {
-      name: 'Help',
+      name: 'Community Hub',
+      expanded: false,
       Items: [
         {
-          name: 'Terms of Service',
-          href: '#',
+          name: 'BSMG Discord',
+          href: 'https://discord.gg/beatsabermods',
+        },
+        {
+          name: 'BeastSaber Discord',
+          href: 'https://discord.gg/VJZHUbt',
         },
         {
           name: 'BSMG Wiki',
           href: 'https://bsmg.wiki',
-        },
-        {
-          name: 'BSMG Discord',
-          href: 'https://discord.gg/beatsabermods',
         },
       ],
     },
@@ -472,10 +423,6 @@
       > img {
         height: 1.75rem;
       }
-    }
-
-    .container {
-      justify-content: flex-start;
     }
 
     .navbar {
