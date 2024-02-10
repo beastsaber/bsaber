@@ -26,8 +26,8 @@
       href={`/posts/${card.slug}`}
       style="background-image: {getBackgroundImage(card.image)}"
     >
-      <div class="title {maxColsClass}">
-        {card.title ?? ''}
+      <div class="content {maxColsClass}">
+        <h2 class="title">{card.title ?? ''}</h2>
       </div>
     </a>
   {/each}

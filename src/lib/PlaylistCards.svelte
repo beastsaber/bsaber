@@ -1,6 +1,7 @@
 <script lang="ts">
     import type {Playlist} from "../types"
     import {onMount} from "svelte";
+    import Uploader from '$lib/Uploader.svelte'
 
     export let maxCards: number | undefined = undefined // max amount of cards to show
 
@@ -26,8 +27,9 @@
             <a class="card"
                href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${playlist.playlistId}`}
                style={`background-image: url(${playlist.playlistImage512})`}>
-                <div class="title max-cols-4">
-                    {playlist.name ?? ''}
+                <div class="content max-cols-4">
+                    <Uploader uploader="{playlist.owner}"/>
+                    <h3 class="title">{playlist.name ?? ''}</h3>
                 </div>
             </a>
         {/each}

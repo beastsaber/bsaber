@@ -2,14 +2,20 @@
 
 @mixin big-title {
   padding: 1.25rem;
-  font-size: 1.5rem;
-  line-height: 2.375rem;
+
+  .title {
+    font-size: 1.5rem;
+    line-height: 2.375rem;
+  }
 }
 
 @mixin little-title {
   padding: 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+
+  .title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 .cards {
@@ -18,20 +24,32 @@
   width: 100%;
   gap: 0.75rem;
 
-  .title {
+  .card:hover {
+    text-decoration: none;
+  }
+
+  .content {
     @include big-title;
-    font-family: $font-poppins;
     margin-top: auto;
-    color: white;
-    font-weight: bold;
-    word-wrap: anywhere;
-    hyphens: auto; // For some reason this gets ignored on words with any capital letters
     z-index: 1;
+
+    .title {
+      font-family: $font-poppins;
+      color: white;
+      font-weight: bold;
+      margin-top: 0.25rem;
+      word-wrap: anywhere;
+      hyphens: auto; // For some reason this gets ignored on words with any capital letters
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   &.max-cols-3 {
     @media (min-width: 420px) {
-      .title {
+      .content {
         @include little-title;
       }
     }
@@ -41,7 +59,7 @@
     }
 
     @media (min-width: 840px) {
-      .title {
+      .content {
         @include big-title;
       }
     }
@@ -50,26 +68,26 @@
   &.max-cols-4 {
     @media (min-width: 420px) {
       grid-template-columns: repeat(2, 1fr);
-      .title {
+      .content {
         @include little-title;
       }
     }
 
     @media (min-width: 640px) {
-      .title {
+      .content {
         @include big-title;
       }
     }
 
     @media (min-width: 840px) {
       grid-template-columns: repeat(4, 1fr);
-      .title {
+      .content {
         @include little-title;
       }
     }
 
     @media (min-width: 1100px) {
-      .title {
+      .content {
         @include big-title;
       }
     }
