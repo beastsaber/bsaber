@@ -15,7 +15,7 @@
     if (!image) {
       return 'none'
     }
-    return image
+    return `url(${image}`
   }
 </script>
 
