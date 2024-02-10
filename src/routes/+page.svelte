@@ -126,13 +126,15 @@
   />
   <PlaylistCards/>
 
-  <Header
-    text="Community Events"
-    icon={faCalendarDay}
-    linkUrl="#"
-    linkText="See all community events"
-  />
-  <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
+  {#if import.meta.env.VITE_HIDE_EVENTS !== "true"}
+    <Header
+      text="Community Events"
+      icon={faCalendarDay}
+      linkUrl="#"
+      linkText="See all community events"
+    />
+    <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
+  {/if}
 
   <MapOfTheWeekSection mapOfTheWeek={currentMapOfTheWeek} />
 
