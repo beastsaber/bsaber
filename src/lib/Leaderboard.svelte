@@ -13,6 +13,12 @@
 
   type RankColorType = 'info-blue' | 'warning-yellow' | 'success-green'
   export let rankColor: RankColorType
+
+  function contentFromChange(change: number): string {
+    if (change <= -1) return change.toString()
+    else if (change >= 1) return `+${change}`
+    else return "~"
+  }
 </script>
 
 <Listing {title} {img} {linkText} {linkUrl}>
@@ -22,8 +28,7 @@
         <div class="rank {rankColor}">{player.rank}</div>
         <img class="avatar" src={player.avatar} alt="" />
         <div class="name">{player.name}</div>
-        <div class="change-icon" class:up={player.change >= 1} class:down={player.change <= -1} />
-        <div class="change">{Math.abs(player.change)}</div>
+        <div class="change" class:up={player.change >= 1} class:down={player.change <= -1}>{contentFromChange(player.change)}</div>
       </div>
     </div>
   {/each}
@@ -43,21 +48,14 @@
     font-family: $font-primary-text;
     font-weight: 700;
     display: grid;
-    grid-template-columns: 34px 24px 1fr 24px 20px;
-    gap: 8px;
+    grid-template-columns: 10px 24px 1fr 20px;
+    gap: 16px;
     align-items: center;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px 5px;
   }
 
   .rank {
     color: $background-primary;
-    background: #ffffff; // fallback
-    width: 24px;
-    height: 24px;
-    border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,15 +63,15 @@
     font-weight: 600;
 
     &.warning-yellow {
-      background: $color-warning-yellow;
+      color: $color-warning-yellow;
     }
 
     &.info-blue {
-      background: $color-info-blue;
+      color: $color-info-blue;
     }
 
     &.success-green {
-      background: $color-success-green;
+      color: $color-success-green;
     }
   }
 
@@ -95,17 +93,14 @@
   }
 
   .change {
-    display: flex;
-    justify-content: end;
-  }
-  .change-icon {
-    justify-self: end;
-    content: url('/rank-neutral.svg');
+    color: $color-muted-text;
+    text-align: right;
+
     &.up {
-      content: url('/rank-up.svg');
+      color: $color-success-green;
     }
     &.down {
-      content: url('/rank-down.svg');
+      color: $color-danger-red;
     }
   }
 </style>
