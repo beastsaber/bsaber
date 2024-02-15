@@ -3,6 +3,10 @@ import type { MapOfTheWeek } from "../../../types";
 
 const pageSize = 15;
 
+if(pageSize > 50) {
+    throw new Error("Page sizes above 50 are not supported. You need to adjust the beatsaver call to accomodate that.");
+}
+
 export type MapsOfTheWeekPagePaginatedSSRData = {
     mapsOfTheWeek: MapOfTheWeek[];
     pageSize: number;
@@ -35,6 +39,18 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
 
     const paginatedMapsOfTheWeek = allMapsOfTheWeekNetlifyData.slice(startIndex, endIndex);
 
+    const mapIds = paginatedMapsOfTheWeek.map((map) => map.mapId).join(",");
+    // Data structure is an object with a key of the mapId and the value is the map data
+    const allBeatSaverMapData = await fetch(`https://api.beatsaver.com/maps/ids/${mapIds}`).then(x => x.json());
+
+    const uploaderIds = Array.from(new Set(Object.values(allBeatSaverMapData).map((map: any) => map.uploader.id))).join(",");
+    // this api endpoint work differently, so we need to convert it to a map ourselves 
+    const intermediaryAllBeatSaverMapperdata = await fetch(`https://api.beatsaver.com/users/ids/${uploaderIds}`).then(x => x.json());
+    const allBeatSaverMapperData = {} as Record<string, any>;
+    for (const mapper of intermediaryAllBeatSaverMapperdata) {
+        allBeatSaverMapperData[mapper.id] = mapper;
+    }
+
     const paginatedFullMapsOfTheWeek = [];
     // Not Promise.all'ing since that will just get you rate limited from beatsaver
     for (const singleMapOfTheWeek of paginatedMapsOfTheWeek) {
@@ -42,6 +58,7 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
         let coverUrl = singleMapOfTheWeek.coverUrlOverwrite;
         
         // Fetch BeatLeader URL if not given
+        // If this is happens to frequently it will get rate limited
         if(coverUrl == null) {
             const beatLeaderLeaderBoardData = await fetch(
                 `https://api.beatleader.xyz/leaderboard/${singleMapOfTheWeek.mapId}`,
@@ -50,18 +67,8 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
             coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage;
         }
 
-        const beatSaverMapData = await fetch(
-            `https://api.beatsaver.com/maps/id/${singleMapOfTheWeek.mapId}`,
-        ).then((res) => res.json())
-
-        const beatSaverMapUploaderData = await fetch(
-            `https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`,
-        ).then((res) => res.json())
-
-        // BeatSaver allows 10 per second - there are two requests - to play it safe we wait 220ms (200ms + 20ms for good measure)
-        // Not a perfect solution, but an easy one
-        // Since the pages are pre-rendered it will not be slow in the final deployment - but take longer to build
-        await sleep(220);
+        const beatSaverMapData = allBeatSaverMapData[singleMapOfTheWeek.mapId];
+        const beatSaverMapUploaderData = allBeatSaverMapperData[beatSaverMapData.uploader.id];
 
         paginatedFullMapsOfTheWeek.push({
             map: {
