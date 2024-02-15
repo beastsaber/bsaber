@@ -115,7 +115,12 @@
   <Search />
   <hr />
 
-  <Header text="Latest News" icon={faNewspaper} />
+  <Header
+    text="Latest News"
+    icon={faNewspaper}
+    linkUrl="/posts"
+    linkText="See all posts"
+  />
   <PostCards posts={news} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
 
   <Header

@@ -21,19 +21,19 @@
     {/if}
   </a>
   <div class="content">
-    <a class="title" href={`/posts/${post.slug}`}>{post.title}</a>
-    <p class="date">{date}</p>
-    <p class="short-description">{post.homepageText}</p>
     {#if section !== undefined}
       <span class="section" title={section}>{section}</span>
     {/if}
+    <a class="title" href={`/posts/${post.slug}`}>{post.title}</a>
+    <p class="date">{date}</p>
+    <p class="short-description">{post.homepageText}</p>
   </div>
 </div>
 
 <style lang="scss">
   @import 'src/scss/variables';
 
-  $image-size: 7.5rem;
+  $image-size: 8rem;
 
   .card {
     position: relative;
@@ -87,7 +87,7 @@
         display: -webkit-box;
         color: $color-muted-text;
         font-size: 0.75rem;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
@@ -98,7 +98,6 @@
         background-color: $background-secondary;
         border: 1px solid $color-danger-red;
         padding: 0.125rem 0.5rem;
-        margin-top: auto;
         max-width: fit-content;
         justify-self: end;
         white-space: nowrap;
