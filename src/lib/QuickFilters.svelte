@@ -28,7 +28,12 @@
     color="#00bc8c"
     href="https://beatsaver.com/?order=Curated&curated=true"
   />
-  <QuickFilter text="All Verified" icon={faCheckCircle} color="#3498db" href="#" />
+  <QuickFilter
+    text="All Verified"
+    icon={faCheckCircle}
+    color="#3498db"
+    href="https://beatsaver.com/?verified=true"
+  />
   <QuickFilter
     text="All Playlists"
     iconPath={squareListIcon}
