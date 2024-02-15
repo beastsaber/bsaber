@@ -21,7 +21,7 @@
   import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
 
   export let data: RootPageSSRData;
-  console.log(data);
+  
   let { announcements, currentMapOfTheWeek, news } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
@@ -134,7 +134,9 @@
   />
   <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
 
-  <MapOfTheWeekSection mapOfTheWeek={currentMapOfTheWeek} />
+  {#if currentMapOfTheWeek != undefined}
+    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
+  {/if}
 
   <Header
     text="Recently Curated Maps"

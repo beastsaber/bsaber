@@ -80,5 +80,10 @@ collections:
         hint: Starting when the map of the week should be displayed on the root page.
         default: 2024-01-01T00:00:00Z
         widget: datetime
+      - name: coverUrlOverwrite
+        label: Cover URL
+        required: false
+        hint: If you want to use a different cover image than the one fetched from BeatLeader, you can provide a URL here.
+        widget: string
 media_folder: 'static/uploads'
 public_folder: '/uploads'

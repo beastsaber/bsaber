@@ -1,3 +1,4 @@
+import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
 import type {
   Post,
   MapOfTheWeek,
@@ -24,25 +25,12 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
     ),
   )
 
-  const now = new Date()
-
   let currentMapOfTheWeek: MapOfTheWeek | undefined = undefined
   try {
-    const mapsOfTheWeek = await Promise.all(
-      Object.entries(
-        import.meta.glob<ImportMapOfTheWeekModuleData>('/src/collections/map-of-the-week/*.md'),
-      ).map(async ([_, module]) => {
-        const { metadata } = await module()
-        return { ...metadata, startDate: new Date(metadata.startDate) }
-      }),
-    )
+    const mapsOfTheWeek = await getSortedMapsOfTheWeekNetlifyData()
 
-    const possibleCurrentMotws = mapsOfTheWeek.filter(
-      (motw) => motw.startDate.getTime() <= now.getTime(),
-    )
-    possibleCurrentMotws.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
-    // Since it's sorted it's last
-    const currentMOTWCollectionData = possibleCurrentMotws[possibleCurrentMotws.length - 1]
+    // Since it's sorted it's the first one
+    const currentMOTWCollectionData = mapsOfTheWeek[0]
 
     const beatSaverMapData = await fetch(
       `https://api.beatsaver.com/maps/id/${currentMOTWCollectionData.mapId}`,
@@ -50,15 +38,24 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
     const beatSaverMapUploaderData = await fetch(
       `https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`,
     ).then((res) => res.json())
-    const beatLeaderLeaderBoardData = await fetch(
-      `https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`,
-    ).then((res) => res.json())
 
+    let coverUrl = currentMOTWCollectionData.coverUrlOverwrite
+    if (coverUrl == null) {
+      const beatLeaderLeaderBoardData = await fetch(
+        `https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`,
+      ).then((res) => res.json())
+      coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage
+    }
+
+    if(coverUrl == null) {
+      throw new Error('No cover URL found!');
+    }
+    
     currentMapOfTheWeek = {
       map: {
         id: beatSaverMapData.id,
         name: beatSaverMapData.name,
-        coverUrl: beatLeaderLeaderBoardData.song.fullCoverImage,
+        coverUrl: coverUrl,
         uploader: {
           id: beatSaverMapData.uploader.id,
           name: beatSaverMapData.uploader.name,

@@ -30,6 +30,7 @@ export type MapOfTheWeekCollectionData = {
   mapId: string;
   review: string;
   startDate: string;
+  coverUrlOverwrite?: string;
 }
 
 export type MapOfTheWeek = {
