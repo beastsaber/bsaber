@@ -8,15 +8,17 @@
   const getPageLink = (page: number) => `/maps-of-the-week/${page}`
 </script>
 
-{#each data.mapsOfTheWeek as singleMapOfTheWeek}
-  <MapOfTheWeekSection mapOfTheWeek={singleMapOfTheWeek} showHeader={false} />
-{/each}
+<div class="motw-list">
+  {#each data.mapsOfTheWeek as singleMapOfTheWeek}
+    <MapOfTheWeekSection mapOfTheWeek={singleMapOfTheWeek} showHeader={false} />
+  {/each}
+</div>
 
 <div class="pagination-bar-container">
   <PaginationBar currentPage={data.currentPage} numberOfPages={data.pageCount} {getPageLink} />
 </div>
 <style>
-  :global(.motw-container) {
+  :global(.motw-list > .motw-container) {
     margin: 1rem 0 0.5rem 0 !important;
   }
 

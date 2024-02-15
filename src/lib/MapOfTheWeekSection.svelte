@@ -50,7 +50,7 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
-  :global(.motw-container .container) {
+  :global(.motw-container > .card > .container) {
     padding-top: 0rem !important;
   }
 
