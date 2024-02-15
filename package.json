@@ -42,6 +42,7 @@
   "type": "module",
   "dependencies": {
     "@fontsource/dm-sans": "^4.5.9",
+    "@fontsource/jetbrains-mono": "^5.0.18",
     "@fontsource/poppins": "^4.5.10",
     "@opensearch-project/opensearch": "^1.0.2",
     "front-matter": "^4.0.2",
