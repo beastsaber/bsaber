@@ -28,107 +28,106 @@
       }[]
     }[]
   }[] = [
-    // REVERT: Put these back in
-    // {
-    //   name: 'Get Started',
-    //   href: '/getting-started',
-    // },
-    // {
-    //   name: 'Find Maps',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'Curator Recommended',
-    //       href: 'https://beatsaver.com/?order=Curated&curated=true',
-    //     },
-    //     {
-    //       name: 'Verified Mappers',
-    //       href: 'https://beatsaver.com/?verified=true',
-    //     },
-    //     {
-    //       name: 'Ranked',
-    //       href: 'https://beatsaver.com/?ranked=true',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'Find Playlists',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'Curated Playlists',
-    //       href: 'https://beatsaver.com/playlists?order=Curated&curated=true',
-    //     },
-    //     {
-    //       name: 'All Playlists',
-    //       href: 'https://beatsaver.com/playlists',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'Models',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'Avatars',
-    //       href: 'https://modelsaber.com/Avatars/',
-    //     },
-    //     {
-    //       name: 'Sabers',
-    //       href: 'https://modelsaber.com/Sabers/',
-    //     },
-    //     {
-    //       name: 'Notes',
-    //       href: 'https://modelsaber.com/Bloqs/',
-    //     },
-    //     {
-    //       name: 'Platforms',
-    //       href: 'https://modelsaber.com/Platforms/',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'News & Info',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'News',
-    //       href: '/posts',
-    //     },
-    //     {
-    //       name: 'Mappers',
-    //       href: 'https://beatsaver.com/mappers',
-    //     },
-    //     {
-    //       name: 'Curators',
-    //       href: '/curation-team',
-    //       Items: [
-    //         {
-    //           name: 'About Curation',
-    //           href: '/curation',
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'Community Hub',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'BSMG Discord',
-    //       href: 'https://discord.gg/beatsabermods',
-    //     },
-    //     {
-    //       name: 'BeastSaber Discord',
-    //       href: 'https://discord.gg/VJZHUbt',
-    //     },
-    //     {
-    //       name: 'BSMG Wiki',
-    //       href: 'https://bsmg.wiki',
-    //     },
-    //   ],
-    // },
+    {
+      name: 'Get Started',
+      href: '/getting-started',
+    },
+    {
+      name: 'Find Maps',
+      expanded: false,
+      Items: [
+        {
+          name: 'Curator Recommended',
+          href: 'https://beatsaver.com/?order=Curated&curated=true',
+        },
+        {
+          name: 'Verified Mappers',
+          href: 'https://beatsaver.com/?verified=true',
+        },
+        {
+          name: 'Ranked',
+          href: 'https://beatsaver.com/?ranked=true',
+        },
+      ],
+    },
+    {
+      name: 'Find Playlists',
+      expanded: false,
+      Items: [
+        {
+          name: 'Curated Playlists',
+          href: 'https://beatsaver.com/playlists?order=Curated&curated=true',
+        },
+        {
+          name: 'All Playlists',
+          href: 'https://beatsaver.com/playlists',
+        },
+      ],
+    },
+    {
+      name: 'Models',
+      expanded: false,
+      Items: [
+        {
+          name: 'Avatars',
+          href: 'https://modelsaber.com/Avatars/',
+        },
+        {
+          name: 'Sabers',
+          href: 'https://modelsaber.com/Sabers/',
+        },
+        {
+          name: 'Notes',
+          href: 'https://modelsaber.com/Bloqs/',
+        },
+        {
+          name: 'Platforms',
+          href: 'https://modelsaber.com/Platforms/',
+        },
+      ],
+    },
+    {
+      name: 'News & Info',
+      expanded: false,
+      Items: [
+        {
+          name: 'News',
+          href: '/posts',
+        },
+        {
+          name: 'Mappers',
+          href: 'https://beatsaver.com/mappers',
+        },
+        {
+          name: 'Curators',
+          href: '/curation-team',
+          Items: [
+            {
+              name: 'About Curation',
+              href: '/curation',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Community Hub',
+      expanded: false,
+      Items: [
+        {
+          name: 'BSMG Discord',
+          href: 'https://discord.gg/beatsabermods',
+        },
+        {
+          name: 'BeastSaber Discord',
+          href: 'https://discord.gg/VJZHUbt',
+        },
+        {
+          name: 'BSMG Wiki',
+          href: 'https://bsmg.wiki',
+        },
+      ],
+    },
   ]
 
   const toggleDropdown = (selectedItem: DropdownItem, dropdownId: string) => {
@@ -182,13 +181,11 @@
 />
 
 <nav class="navbar">
-  <!-- REVERT: Remove the style attribute from the div and a below -->
-  <div class="container" style="padding: 0; margin: 0; width: 100%; display: flex; justify-content: center; align-content: center;">
-    <a id="home-link" href="/" style="padding: 0; margin: 0;">
+  <div class="container">
+    <a id="home-link" href="/">
       <img alt="BeastSaber" src="/beastsaber-logo.svg" />
     </a>
-    <!-- REVERT: Comment all of this in - do note the actual comment lines inbetween -->
-    <!-- <button
+    <button
       type="button"
       class="navbar-toggler"
       on:click={() => (showMobileNavbar = !showMobileNavbar)}
@@ -211,9 +208,9 @@
           {#each navbarDropdownItems as item, index}
             {#if item.Items}
               <li class="nav-item">
-                <div class="nav-link"> -->
+                <div class="nav-link">
                   <!-- svelte-ignore a11y-invalid-attribute -->
-                  <!-- <a
+                  <a
                     href=""
                     on:click|preventDefault|stopPropagation={() =>
                       toggleDropdown(item, `dropdown-menu-${index}`)}
@@ -223,9 +220,9 @@
                     >
                   </a>
                 </div>
-                {#if item.expanded} -->
+                {#if item.expanded}
                   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-                  <!-- <div
+                  <div
                     transition:slide={{ duration: 150 }}
                     id="dropdown-menu-{index}"
                     class="dropdown-menu"
@@ -257,9 +254,9 @@
           {/each}
         </ul>
       </div>
-    {/if}-->
+    {/if}
   </div>
-</nav> 
+</nav>
 
 <style lang="scss">
   @import 'src/scss/variables';
