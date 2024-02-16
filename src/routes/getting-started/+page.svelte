@@ -13,8 +13,8 @@
     <h2>Finding and Playing Custom Maps</h2>
     <p>One of the first things most players seek is how to get the maps you have seen somewhere else. The instructions will depend on your platform.</p>
     <p>You do not need mods to play custom maps, but they certainly are the easiest way to download them (see the modding section).</p>
-    <p>If you prefer not installing any mods you can also download them yourself and put them in the appropriate game folder. See more details on the process <a href="/getting-started/custom-songs/">here</a></p>.
-    <p>Regardless of your method you will most likely be getting them from <a href="https://beatsaver.com">BeatSaver</a>. You can search and view maps on there as well.</p>
+    <p>If you prefer not installing any mods you can also download them yourself and put them in the appropriate game folder. See more details on the process <a href="/getting-started/custom-songs/">here</a>.</p>
+    <p>Regardless of your method, you will most likely be getting them from <a href="https://beatsaver.com">BeatSaver</a>. You can search and view maps on there as well.</p>
 
     <h2>Modding</h2>
     <p>Mods will allow you to download custom maps easily, compete in leaderboards, modify game outlook and many more. Some maps may require additional mods to be playable. Refer to the  <a href="https://bsmg.wiki/beginners-guide.html">BSMG (Beat Saber Modding Group) Wiki</a> for instructions on how to mod the game.</p>
@@ -22,8 +22,8 @@
     <h2>Finding Good Maps</h2>
     <p>Once you have broken out of beginner phase and regularly find yourself playing Expert+ maps you will find that the maps have quite a depth to them and distinct style to them.</p>
     <p>As BeastSaber, we want help you find great maps and such is the task of our curators.</p>
-    <p>Maps on BeatSaver can marked as curated which means one of the curators has deemed the maps particularly great. You can <a href="https://beatsaver.com/?curated=true">filter maps on BeatSaver</a> to only show curated maps.</p>
-    <p>Additionally, you can checkout the <a href="/maps-of-the-week/1">maps of the week</a> which are recent maps the curators have considered particularly noteworthy.</p>
+    <p>Maps on BeatSaver can marked as curated which means one of the curators considered them fun. You can <a href="https://beatsaver.com/?curated=true">filter maps on BeatSaver</a> to only show curated maps.</p>
+    <p>Additionally, you can checkout the <a href="/maps-of-the-week/1">maps of the week</a> which are recent maps the curator team has considered particularly noteworthy.</p>
     <p>On our frontpage we also feature playlists, which are collections of maps that are all great and reviewed by the curators.</p>
 
 
