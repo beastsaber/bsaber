@@ -13,7 +13,7 @@
     <h2>Finding and Playing Custom Maps</h2>
     <p>One of the first things most players seek is how to get the maps you have seen somewhere else. The instructions will depend on your platform.</p>
     <p>You do not need mods to play custom maps, but they certainly are the easiest way to download them (see the modding section).</p>
-    <p>If you prefer not installing any mods you can also download them yourself and put them in the appropriate game folder. See more details on the process <a href="/getting-started/custom-songs/">here</a></p>
+    <p>If you prefer not installing any mods you can also download them yourself and put them in the appropriate game folder. See more details on the process <a href="/getting-started/custom-songs/">here</a></p>.
     <p>Regardless of your method you will most likely be getting them from <a href="https://beatsaver.com">BeatSaver</a>. You can search and view maps on there as well.</p>
 
     <h2>Modding</h2>
