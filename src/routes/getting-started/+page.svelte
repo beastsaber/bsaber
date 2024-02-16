@@ -46,7 +46,6 @@
 
   $header-height: 30rem;
   .title-header-container {
-    margin-top: 4rem;
     position: relative;
     display: flex;
     justify-content: center;
