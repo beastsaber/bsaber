@@ -2,7 +2,7 @@
   "name": "bsaber",
   "version": "0.0.1",
   "scripts": {
-    "dev": "concurrently --kill-others \"npm run dev:frontend\" \"npm run netlify-cms\" \"npm run server\"",
+    "dev": "concurrently --kill-others \"npm run dev:frontend\" \"npm run netlify-cms\"",
     "dev:frontend": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
@@ -46,6 +46,7 @@
     "@fontsource/poppins": "^4.5.10",
     "@opensearch-project/opensearch": "^1.0.2",
     "front-matter": "^4.0.2",
+    "fuse.js": "^7.0.0",
     "js-yaml": "^4.1.0",
     "marked": "^11.2.0",
     "mdsvex": "^0.11.0"

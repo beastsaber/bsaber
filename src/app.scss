@@ -16,7 +16,8 @@
 
 body {
   max-width: 1356px;
-  min-height: 100vh;
+  // REVERT: Comment in this line - will still have an issue with the scroll bar though
+  // min-height: 100vh;
   margin: 0 auto;
   background-color: $background-primary;
   color: #fff;
