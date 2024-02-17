@@ -17,7 +17,8 @@
     <p>Regardless of your method, you will most likely be getting them from <a href="https://beatsaver.com">BeatSaver</a>. You can search and view maps on there as well.</p>
 
     <h2>Modding</h2>
-    <p>Mods will allow you to download custom maps easily, compete in leaderboards, modify game outlook and many more. Some maps may require additional mods to be playable. Refer to the  <a href="https://bsmg.wiki/beginners-guide.html">BSMG (Beat Saber Modding Group) Wiki</a> for instructions on how to mod the game.</p>
+    <p>Mods will allow you to download custom maps easily, compete in leaderboards, modify the game appearance and many more. Some maps may require additional mods to be playable. Refer to the  <a href="https://bsmg.wiki/beginners-guide.html">BSMG (Beat Saber Modding Group) Wiki</a> for instructions on how to mod the game.</p>
+    <p>Do note, that some maps can also require mods to play. These mods can be either <b>Chroma</b>, <b>Noodle Extensions</b> and <b>Mapping Extensions</b>. If you particularly want to seek out these kind of maps you can find filters for them under the "Requirements" section as well!</p>
 
     <h2>Finding Good Maps</h2>
     <p>Once you have broken out of beginner phase and regularly find yourself playing Expert+ maps you will find that the maps have quite a depth to them and distinct style to them.</p>
