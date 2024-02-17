@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Post } from "../../../types"
+  import type { Post } from "../../types"
   import PostPage from "$lib/PostPage.svelte"
   import type { CollectionDataTypeMap } from "$lib/retrieveCollectionData"
 

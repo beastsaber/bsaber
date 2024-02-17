@@ -20,7 +20,7 @@ Regardless of your method, you will most likely be getting them from [BeatSaver]
 
 # Modding
 
-Mods will allow you to download custom maps easily, compete in leaderboards, modify the game appearance and many more. Some maps may require additional mods to be playable. Refer to the [BSMG (Beat Saber Modding Group) Wiki](https://bsmg.wiki/beginners-guide.html) for instructions on how to mod the game.
+Mods will allow you to download custom maps easily, compete in leaderboards, modify the game appearance and many more. Some maps may require additional mods to be playable. Refer to the [BSMG (Beat Saber Modding Group) Wiki](https://bsmg.wiki/beginners-guide.html) for instructions on how to mod the game as well as [our short guide](/installing-the-mod-guide-necessary-for-any-custom-songs).
 
 Do note, that some maps can also require mods to play. These mods can be either **Chroma**, **Noodle Extensions** and **Mapping Extensions**. If you particularly want to seek out these kind of maps you can find filters for them under the "Requirements" section as well!
 
