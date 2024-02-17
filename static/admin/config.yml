@@ -13,7 +13,7 @@ collections:
         label: Title
       - name: section
         label: Section
-        hint: This will decide which section the post appears in on the homepage and article collection pages.
+        hint: This will decide which section the post appears in on the homepage and article collection pages. The None value is a specialty value to make pages like getting-started editable, but have them not appear in any list.
         widget: select
         options:
           - { label: 'Announcement', value: 'announcements' }
@@ -21,6 +21,7 @@ collections:
           - { label: 'Music Pack', value: 'music-packs' }
           - { label: 'Community Event', value: 'community-events' }
           - { label: 'Map of the Week', value: 'maps-of-the-week' }
+          - { label: 'None', value: 'none' }
       - name: publish
         label: Publish Date
         widget: datetime
@@ -37,6 +38,16 @@ collections:
         required: false
         media_folder: /static/uploads/posts
         choose_url: false
+      - name: author
+        label: Author
+        widget: relation
+        multiple: true
+        collection: authors
+        search_fields: [name]
+        value_field: "{{slug}}"
+        display_fields: [name]
+        required: true
+        hint: The author(s) of this article. You can select multiple! 
   - name: curation-team
     label: Curation Team
     slug: '{{name}}'
@@ -85,5 +96,30 @@ collections:
         required: false
         hint: If you want to use a different cover image than the one fetched from BeatLeader, you can provide a URL here.
         widget: string
+  - name: authors
+    label: Authors
+    folder: src/collections/authors
+    slug: '{{name}}'
+    create: true
+    fields:
+      - name: name
+        label: name
+      - name: bio
+        widget: markdown
+        required: false
+      - name: image
+        widget: image
+        media_folder: /static/uploads/authors
+        choose_url: false
+        required: false
+      - name: discord_name
+        label: Discord Name
+        required: false
+      - name: beatsaver_name
+        label: BeatSaver Name
+        required: false
+      - name: beatleader_name
+        label: BeatLeader Name
+        required: false
 media_folder: 'static/uploads'
 public_folder: '/uploads'
