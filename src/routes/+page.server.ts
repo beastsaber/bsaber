@@ -8,7 +8,7 @@ import type {
 } from '../types'
 export type RootPageSSRData = {
   announcements: Post[]
-  news: Post[]
+  articles: Post[]
   others: Post[]
   communityEvents: CommunityEvent[]
   currentMapOfTheWeek: MapOfTheWeek | undefined
@@ -74,8 +74,8 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
 
   const rootPageSSRData: Omit<RootPageSSRData, 'currentMapOfTheWeek' | 'communityEvents'> = {
     announcements: [],
-    news: [],
-    others: [],
+    articles: [],
+    others: []
   }
 
   for (const post of posts) {
@@ -84,8 +84,8 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
       case 'announcements':
         rootPageSSRData.announcements.push(post)
         break
-      case 'news':
-        rootPageSSRData.news.push(post)
+      case 'articles':
+        rootPageSSRData.articles.push(post)
         break
       default:
         rootPageSSRData.others.push(post)

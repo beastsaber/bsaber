@@ -87,11 +87,11 @@
       ],
     },
     {
-      name: 'News & Info',
+      name: 'Posts & Info',
       expanded: false,
       Items: [
         {
-          name: 'News',
+          name: 'Posts',
           href: '/posts',
         },
         {

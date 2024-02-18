@@ -2,11 +2,11 @@
   import type { Post } from '../types'
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
   import Fa from 'svelte-fa/src/fa.svelte'
-  import { postSections } from '../maps'
+  import { postCategories } from '../maps'
 
   export let post: Post
 
-  let section = postSections[post.section]
+  let section = postCategories[post.category]
   let date = new Date(post.publish).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 </script>
 
@@ -22,9 +22,9 @@
   </a>
   <div class="content">
     {#if section !== undefined}
-      <span class="section" title={section}>{section}</span>
+      <span class="category" title={section}>{section}</span>
     {/if}
-    <a class="title" href={`/posts/${post.slug}`}>{post.title}</a>
+    <a class="title" href={`/posts/${post.slug}`} title="{post.title}">{post.title}</a>
     <p class="date">{date}</p>
     <p class="short-description">{post.homepageText}</p>
   </div>
@@ -92,7 +92,7 @@
         overflow: hidden;
       }
 
-      .section {
+      .category {
         font-size: 0.75rem;
         border-radius: 1.5rem;
         background-color: $background-secondary;
