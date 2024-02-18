@@ -45,7 +45,7 @@
       h1 {
         font-size: 3rem;
         margin: 0;
-        border-radius: 0 $card-border-radius - 2px $card-border-radius - 2px; // Ensures the backdrop filter covers the entire image
+        border-radius: 0 0 $card-border-radius - 2px $card-border-radius - 2px; // Ensures the backdrop filter covers the entire image
       }
     }
   }
