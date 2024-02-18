@@ -17,9 +17,9 @@ npm install
 3. **Login:** Click on the login button. You should be granted access immediately. If prompted for a URL, enter the address of the proxy server.
 
 ### Notes
-- The `npm run dev:frontend` command runs your application and integrates netlify under the `/admin/index.html` routes. 
-- The CMS proxy server enables the use of the local strategy for content management, directly saving files to the local file system.
 
+- The `npm run dev:frontend` command runs your application and integrates netlify under the `/admin/index.html` routes.
+- The CMS proxy server enables the use of the local strategy for content management, directly saving files to the local file system.
 
 ## Contributing
 

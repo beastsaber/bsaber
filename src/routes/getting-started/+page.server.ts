@@ -1,2 +1,2 @@
-import { retrieveCollectionData } from "$lib/retrieveCollectionData";
-export const load = () => retrieveCollectionData('posts', 'getting-started'); 
+import { retrieveCollectionData } from '$lib/retrieveCollectionData'
+export const load = () => retrieveCollectionData('posts', 'getting-started')

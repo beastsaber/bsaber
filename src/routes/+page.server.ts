@@ -47,10 +47,10 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
       coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage
     }
 
-    if(coverUrl == null) {
-      throw new Error('No cover URL found!');
+    if (coverUrl == null) {
+      throw new Error('No cover URL found!')
     }
-    
+
     currentMapOfTheWeek = {
       map: {
         id: beatSaverMapData.id,
@@ -75,7 +75,7 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
   const rootPageSSRData: Omit<RootPageSSRData, 'currentMapOfTheWeek' | 'communityEvents'> = {
     announcements: [],
     articles: [],
-    others: []
+    others: [],
   }
 
   for (const post of posts) {
