@@ -1,10 +1,10 @@
 <script lang="ts">
-    import {marked} from "marked";
+    import {Renderer, marked} from "marked";
     import type { Post } from "../types"
 
     export let post: Post;
-    let {body, title, image} = post
-    let imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
+    const {body, title, image} = post
+    const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 </script>
 
 <article>

@@ -27,7 +27,7 @@ export const retrieveCollectionData = async <T extends keyof CollectionDataTypeM
         filename = filename.slice(0, -3);
     }
     
-    const markdown = await readFileSync(resolve(`./src/collections/posts/${filename}.md`), {
+    const markdown = readFileSync(resolve(`./src/collections/posts/${filename}.md`), {
         encoding: 'utf8',
       })
     
