@@ -16,11 +16,20 @@ collections:
         hint: This will decide which section the post appears in on the homepage and article collection pages.
         widget: select
         options:
-          - { label: 'Announcement', value: 'announcements' }
+          - { label: 'Announcements', value: 'announcements' }
+          - { label: 'Articles', value: 'articles' }
+          - { label: 'Speciality', value: 'speciality' }
+      - name: category
+        label: Category
+        hint: This will determine what label will show above the post title.
+        widget: select
+        options:
+          - { label: 'None', value: '' }
+          - { label: 'Announcement', value: 'announcement' }
           - { label: 'News', value: 'news' }
-          - { label: 'Music Pack', value: 'music-packs' }
-          - { label: 'Community Event', value: 'community-events' }
-          - { label: 'Map of the Week', value: 'maps-of-the-week' }
+          - { label: 'Guide', value: 'articles' }
+          - { label: 'Interview', value: 'interview' }
+          - { label: 'Event', value: 'event' }
       - name: publish
         label: Publish Date
         widget: datetime
