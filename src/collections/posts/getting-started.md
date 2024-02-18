@@ -4,6 +4,7 @@ section: none
 publish: 2024-02-17T00:00:00.000Z
 category: Specialty Page
 image: /static/uploads/posts/beat-saber-1024x576.jpg
+showInPostListing: true
 ---
 
 So you are new to Beat Saber? Maybe you have seen someone play a cool map on YouTube or TikTok but now that you bought the game you cannot find the map? Or maybe you just really like this game and would like to be part of the community? This guide is for you! We will explain to you the Beat Saber world and point you in the right direction to get started.

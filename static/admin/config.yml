@@ -37,6 +37,10 @@ collections:
         required: false
         media_folder: /static/uploads/posts
         choose_url: false
+      - name: showInPostListing
+        label: Show in post listing
+        widget: boolean
+        default: true
   - name: curation-team
     label: Curation Team
     slug: '{{name}}'
