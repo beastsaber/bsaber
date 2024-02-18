@@ -27,7 +27,7 @@ collections:
           - { label: 'None', value: '' }
           - { label: 'Announcement', value: 'announcement' }
           - { label: 'News', value: 'news' }
-          - { label: 'Guide', value: 'articles' }
+          - { label: 'Guide', value: 'guide' }
           - { label: 'Interview', value: 'interview' }
           - { label: 'Event', value: 'event' }
       - name: publish
