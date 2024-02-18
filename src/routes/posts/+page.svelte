@@ -9,7 +9,7 @@
 <h1>Recent Articles</h1>
 <div class="cards">
   {#each posts as post}
-    <PostListCard post="{post}"/>
+    <PostListCard {post} />
   {/each}
 </div>
 

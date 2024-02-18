@@ -7,16 +7,20 @@
   export let post: Post
 
   let section = postCategories[post.category]
-  let date = new Date(post.publish).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+  let date = new Date(post.publish).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  })
 </script>
 
 <div class="card">
   <a href={`/posts/${post.slug}`} class="image-link">
     {#if post.image !== undefined}
-      <img src="{post.image}" alt="{post.title}" />
+      <img src={post.image} alt={post.title} />
     {:else}
       <div class="image-placeholder">
-        <Fa style="height:2rem;width:2rem;" class="fa" fw icon="{faNewspaper}" />
+        <Fa style="height:2rem;width:2rem;" class="fa" fw icon={faNewspaper} />
       </div>
     {/if}
   </a>
@@ -24,7 +28,7 @@
     {#if section !== undefined}
       <span class="category" title={section}>{section}</span>
     {/if}
-    <a class="title" href={`/posts/${post.slug}`} title="{post.title}">{post.title}</a>
+    <a class="title" href={`/posts/${post.slug}`} title={post.title}>{post.title}</a>
     <p class="date">{date}</p>
     <p class="short-description">{post.homepageText}</p>
   </div>

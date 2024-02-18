@@ -17,6 +17,7 @@
 <div class="pagination-bar-container">
   <PaginationBar currentPage={data.currentPage} numberOfPages={data.pageCount} {getPageLink} />
 </div>
+
 <style>
   :global(.motw-list > .motw-container) {
     margin: 1rem 0 0.5rem 0 !important;
@@ -25,5 +26,4 @@
   .pagination-bar-container {
     margin-top: 1.3rem;
   }
-
 </style>

@@ -1,27 +1,29 @@
 <script lang="ts">
-    import {characteristics, difficulties} from "../maps";
-    import type {BeatmapDifficulty} from "../types";
+  import { characteristics, difficulties } from '../maps'
+  import type { BeatmapDifficulty } from '../types'
 
-    export let diffs: BeatmapDifficulty[]
+  export let diffs: BeatmapDifficulty[]
 
-    let firstCharacteristic = diffs[0].characteristic // Should always be Standard as long as the map has a Standard diff
-    let visibleDiffs = diffs.filter((d) => d.characteristic === firstCharacteristic)
-    let extraDiffs = diffs.length - visibleDiffs.length
+  let firstCharacteristic = diffs[0].characteristic // Should always be Standard as long as the map has a Standard diff
+  let visibleDiffs = diffs.filter((d) => d.characteristic === firstCharacteristic)
+  let extraDiffs = diffs.length - visibleDiffs.length
 </script>
 
 <div class="difficulties">
-    <img class="characteristic"
-         src="/characteristics/{characteristics[firstCharacteristic]}.svg"
-         alt="{firstCharacteristic}"
-         title="{firstCharacteristic}"/>
-    {#each visibleDiffs as diff}
-        <span class="{difficulties[diff.difficulty]?.slug} difficulty" title="{diff.difficulty}">
-            {difficulties[diff.difficulty]?.shortName}
-        </span>
-    {/each}
-    {#if extraDiffs > 0}
-        <span>+ {extraDiffs} more</span>
-    {/if}
+  <img
+    class="characteristic"
+    src="/characteristics/{characteristics[firstCharacteristic]}.svg"
+    alt={firstCharacteristic}
+    title={firstCharacteristic}
+  />
+  {#each visibleDiffs as diff}
+    <span class="{difficulties[diff.difficulty]?.slug} difficulty" title={diff.difficulty}>
+      {difficulties[diff.difficulty]?.shortName}
+    </span>
+  {/each}
+  {#if extraDiffs > 0}
+    <span>+ {extraDiffs} more</span>
+  {/if}
 </div>
 
 <style lang="scss">
@@ -31,7 +33,7 @@
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    font-size: .75rem;
+    font-size: 0.75rem;
 
     .characteristic {
       height: 1rem;

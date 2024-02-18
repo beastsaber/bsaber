@@ -1,33 +1,33 @@
 <script lang="ts">
-    import {Renderer, marked} from "marked";
-    import type { Post } from "../types"
+  import { Renderer, marked } from 'marked'
+  import type { Post } from '../types'
 
-    export let post: Post;
-    const {body, title, image} = post
-    const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
-    const h2HeaderStartRenderer = new marked.Renderer();
-    h2HeaderStartRenderer.heading = (text, level) => {
-        return `<h${level + 1}>${text}</h${level + 1}>`
-    }
+  export let post: Post
+  const { body, title, image } = post
+  const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
+  const h2HeaderStartRenderer = new marked.Renderer()
+  h2HeaderStartRenderer.heading = (text, level) => {
+    return `<h${level + 1}>${text}</h${level + 1}>`
+  }
 </script>
 
 <article>
-    {#if imageUrl !== undefined}
-        <header style="{`background-image: url(${imageUrl})`}">
-            <h1>
-                {title}
-            </h1>
-        </header>
-    {:else}
-        <h1>
-            {title}
-        </h1>
-    {/if}
-    {@html marked(body, {renderer: h2HeaderStartRenderer})}
+  {#if imageUrl !== undefined}
+    <header style={`background-image: url(${imageUrl})`}>
+      <h1>
+        {title}
+      </h1>
+    </header>
+  {:else}
+    <h1>
+      {title}
+    </h1>
+  {/if}
+  {@html marked(body, { renderer: h2HeaderStartRenderer })}
 </article>
 
 <style lang="scss">
-  @import "src/scss/variables";
+  @import 'src/scss/variables';
 
   header {
     margin: -20px -12px 1rem; // compensating for padding on <main>

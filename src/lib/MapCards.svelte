@@ -1,59 +1,71 @@
 <script lang="ts">
-    import type {Beatmap} from "../types"
-    import {onMount} from "svelte";
-    import Uploader from "$lib/Uploader.svelte";
-    import Tags from "$lib/Tags.svelte";
-    import Difficulties from "$lib/Difficulties.svelte";
+  import type { Beatmap } from '../types'
+  import { onMount } from 'svelte'
+  import Uploader from '$lib/Uploader.svelte'
+  import Tags from '$lib/Tags.svelte'
+  import Difficulties from '$lib/Difficulties.svelte'
 
-    export let sortOrder: "FIRST_PUBLISHED" | "UPDATED" | "LAST_PUBLISHED" | "CREATED" | "CURATED" = "LAST_PUBLISHED"
-    export let verified: boolean | undefined = undefined
-    export let maxCards: number | undefined = undefined // max amount of cards to show
+  export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
+    'LAST_PUBLISHED'
+  export let verified: boolean | undefined = undefined
+  export let maxCards: number | undefined = undefined // max amount of cards to show
 
-    let maps: Beatmap[] = []
+  let maps: Beatmap[] = []
 
-    onMount(async () => {
-        await getMaps()
-    })
+  onMount(async () => {
+    await getMaps()
+  })
 
-    let baseUrl = import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
-    let url = `${baseUrl}/maps/latest?sort=${sortOrder}${(verified !== undefined) ? `&verified=${verified}` : ""}&pageSize=${maxCards ?? 6}`
+  let baseUrl = import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
+  let url = `${baseUrl}/maps/latest?sort=${sortOrder}${
+    verified !== undefined ? `&verified=${verified}` : ''
+  }&pageSize=${maxCards ?? 6}`
 
-    async function getMaps() {
-        let response = await fetch(url)
-        maps = await response.json().then(json =>
-            json["docs"] as Beatmap[]
-        )
-    }
+  async function getMaps() {
+    let response = await fetch(url)
+    maps = await response.json().then((json) => json['docs'] as Beatmap[])
+  }
 </script>
 
 <div class="cards max-cols-3">
-    {#if maps.length !== 0}
-        {#each maps as map}
-            <div class="card">
-                <a href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`} class="image-link">
-                    <img src="{`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${map.versions[0].hash}.jpg`}" alt="{map.name}"/>
-                </a>
-                <div class="content">
-                    <div>
-                        <a href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
-                           class="title"
-                           title="{map.name}">
-                            {map.name}
-                        </a>
-                        <Uploader uploader="{map.uploader}" curator="{map.curator}"/>
-                    </div>
-                    <Tags tags="{map.tags}"/>
-                    <Difficulties diffs="{map.versions[0].diffs}"/>
-                </div>
-            </div>
-        {/each}
-    {:else}
-        {#each Array(maxCards ?? 6) as _}
-            <div class="card loading"/>
-        {/each}
-    {/if}
+  {#if maps.length !== 0}
+    {#each maps as map}
+      <div class="card">
+        <a
+          href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
+          class="image-link"
+        >
+          <img
+            src={`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${
+              map.versions[0].hash
+            }.jpg`}
+            alt={map.name}
+          />
+        </a>
+        <div class="content">
+          <div>
+            <a
+              href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
+                map.id
+              }`}
+              class="title"
+              title={map.name}
+            >
+              {map.name}
+            </a>
+            <Uploader uploader={map.uploader} curator={map.curator} />
+          </div>
+          <Tags tags={map.tags} />
+          <Difficulties diffs={map.versions[0].diffs} />
+        </div>
+      </div>
+    {/each}
+  {:else}
+    {#each Array(maxCards ?? 6) as _}
+      <div class="card loading" />
+    {/each}
+  {/if}
 </div>
-
 
 <style lang="scss">
   @import 'src/scss/variables';
