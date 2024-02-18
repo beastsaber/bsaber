@@ -5,6 +5,10 @@
     export let post: Post;
     const {body, title, image} = post
     const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
+    const h2HeaderStartRenderer = new marked.Renderer();
+    h2HeaderStartRenderer.heading = (text, level) => {
+        return `<h${level + 1}>${text}</h${level + 1}>`
+    }
 </script>
 
 <article>
@@ -19,7 +23,7 @@
             {title}
         </h1>
     {/if}
-    {@html marked(body)}
+    {@html marked(body, {renderer: h2HeaderStartRenderer})}
 </article>
 
 <style lang="scss">
