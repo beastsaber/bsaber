@@ -16,7 +16,7 @@
   }
 
   const scrollifyPerson = (person: Uploader) => {
-    return `<a href="#${person.name}" class="faux-scroll-link post-person-link">${person.name}</a></div>`
+    return `<a class="faux-scroll-link post-person-link">${person.name}</a></div>`
   }
 
   const prettyNameConcatenation = (people: Uploader[], transformationFunction = linkifyPerson) => {
@@ -234,5 +234,9 @@
 
   :global(.author-box-person-info > p) {
     margin-top: 1rem;
+  }
+
+  :global(a.faux-scroll-link) {
+    cursor: pointer;
   }
 </style>
