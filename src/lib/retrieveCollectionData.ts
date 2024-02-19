@@ -57,7 +57,7 @@ export const retrievePostDataWithAuthorAndContributors = async (filename: string
     }),
   );
 
-  const uploaderIds = [...attributes.authors, ...attributes.credits.flatMap((credit) => (credit.contributors ?? []))].join(',');
+  const uploaderIds = [...attributes.authors, ...(attributes.credits?.flatMap((credit) => (credit.contributors ?? [])) ?? [])].join(',');
   const intermediaryRelevantPeopleBeatSaverData = await fetch(
     `https://api.beatsaver.com/users/ids/${uploaderIds}`,
   ).then((x) => x.json())
