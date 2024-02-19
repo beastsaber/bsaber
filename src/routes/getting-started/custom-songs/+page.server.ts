@@ -1,2 +1,2 @@
-import { retrieveCollectionData } from '$lib/retrieveCollectionData'
-export const load = () => retrieveCollectionData('posts', 'getting-started_custom-songs')
+import { retrievePostDataWithAuthorAndContributors } from '$lib/retrieveCollectionData'
+export const load = () => retrievePostDataWithAuthorAndContributors('getting-started_custom-songs')
