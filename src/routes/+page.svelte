@@ -22,7 +22,7 @@
 
   export let data: RootPageSSRData;
   
-  let { announcements, currentMapOfTheWeek, news } = data
+  let { announcements, currentMapOfTheWeek, articles, events } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
@@ -116,12 +116,12 @@
   <hr />
 
   <Header
-    text="Latest News"
+    text="Latest Articles"
     icon={faNewspaper}
     linkUrl="/posts"
     linkText="See all posts"
   />
-  <PostCards posts={news} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
+  <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
 
   <Header
     text="Featured Packs"
@@ -129,7 +129,7 @@
     linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists?curated=true`}"
     linkText="See all curated packs"
   />
-  <PlaylistCards/>
+  <PlaylistCards maxCards="{maxFeaturedPackCards}"/>
 
   {#if import.meta.env.VITE_HIDE_EVENTS !== "true"}
     <Header

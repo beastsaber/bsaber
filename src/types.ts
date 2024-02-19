@@ -1,13 +1,13 @@
 export type Post = {
   title: string
-  section: string
+  section: 'announcements' | 'articles' | 'speciality'
   publish: string
   body: string
   slug: string
   homepageText?: string
   image?: string
   icon?: string
-  category?: string
+  category: '' | 'announcement' | 'news' | 'articles' | 'interview' | 'event'
 }
 
 export type CommunityEvent = {
@@ -101,7 +101,7 @@ export type ImportMapOfTheWeekModuleData = ImportModuleData<MapOfTheWeekCollecti
 
 export type RootPageSSRData = {
   announcements: Post[]
-  news: Post[]
+  articles: Post[]
   others: Post[]
   communityEvents: CommunityEvent[],
   currentMapOfTheWeek: MapOfTheWeek | undefined,
