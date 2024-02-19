@@ -6,7 +6,7 @@
 
   export let post: Post
 
-  let section = postCategories[post.category]
+  let category = postCategories[post.category]
   let date = new Date(post.publish).toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
@@ -25,8 +25,8 @@
     {/if}
   </a>
   <div class="content">
-    {#if section !== undefined}
-      <span class="category" title={section}>{section}</span>
+    {#if category !== undefined}
+      <span class="category" title={category}>{category}</span>
     {/if}
     <a class="title" href={`/posts/${post.slug}`} title={post.title}>{post.title}</a>
     <p class="date">{date}</p>
