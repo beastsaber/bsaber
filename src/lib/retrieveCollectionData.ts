@@ -1,7 +1,8 @@
 import { readFileSync } from 'fs'
 import frontmatter from 'front-matter'
 import { resolve } from 'path'
-import type { MapOfTheWeekCollectionData, Post } from '../types'
+import type { Author, ImportPersonModuleData, MapOfTheWeekCollectionData, Person, Post, PostWithAuthorAndContributor, Uploader } from '../types'
+import { async } from '../routes/maps-of-the-week/[page]/+page.server';
 
 type ConvertToAttributeKeyedObject<T> = {
   body?: string
@@ -39,4 +40,54 @@ export const retrieveCollectionData = async <T extends keyof CollectionDataTypeM
     attributes,
     body,
   } as CollectionDataTypeMap[T]
+}
+
+export const retrievePostDataWithAuthorAndContributors = async (filename: string): Promise<ConvertToAttributeKeyedObject<PostWithAuthorAndContributor>> => {
+  const { attributes, body } = await retrieveCollectionData('posts', filename);
+
+
+  // Could potentially be moved outside this function to prevent constantly re-reading the files
+  // However, might result in bugs in the dev setup when changing data
+  const allPeople = await Promise.all(
+    Object.entries(
+      import.meta.glob<ImportPersonModuleData>('/src/collections/people/*.md'),
+    ).map(async ([_, module]) => {
+      const { metadata } = await module()
+      return { ...metadata };
+    }),
+  );
+
+  const uploaderIds = [...attributes.authors, ...attributes.credits.flatMap((credit) => (credit.contributors ?? []))].join(',');
+  const intermediaryRelevantPeopleBeatSaverData = await fetch(
+    `https://api.beatsaver.com/users/ids/${uploaderIds}`,
+  ).then((x) => x.json())
+
+  const allAuthorData = {} as Record<string, Author>;
+  for (const beatSaverUser of intermediaryRelevantPeopleBeatSaverData) {
+    const personFromMarkdown = allPeople.find((person) => person.beatsaverId == beatSaverUser.id);
+    allAuthorData[beatSaverUser.id] = {
+      id: beatSaverUser.id,
+      name: beatSaverUser.name,
+      avatar: beatSaverUser.avatar,
+      admin: !!beatSaverUser.admin,
+      curator: !!beatSaverUser.curator,
+      verifiedMapper: !!beatSaverUser.verifiedMapper,
+      socialLinks: personFromMarkdown?.socialLinks,
+      bio: personFromMarkdown?.bio,
+    } as Author;
+  }
+
+  const newAttributes = {
+    ...attributes,
+    authors: attributes.authors.map((author: string) => allAuthorData[author]),
+    credits: attributes.credits?.map((credit) => ({
+      ...credit,
+      contributors: (credit.contributors?.map((contributor: string) => allAuthorData[contributor]) ?? []),
+    })),
+  };
+
+  return {
+    attributes: newAttributes,
+    body,
+  }
 }

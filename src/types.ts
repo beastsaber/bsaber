@@ -8,6 +8,18 @@ export type Post = {
   image?: string
   icon?: string
   category: '' | 'announcement' | 'news' | 'articles' | 'interview' | 'event'
+  authors: string[]
+  credits: { contributors: string[], contributon?: string }[]
+}
+
+export interface Author extends Uploader {
+  bio: Person['bio']
+  socialLinks: Person['socialLinks']
+}
+
+export type PostWithAuthorAndContributor = Omit<Post, 'authors' | 'credits'> & {
+  authors: Author[]
+  credits: { contributors: Uploader[], contributon?: string }[]
 }
 
 export type CommunityEvent = {
@@ -69,16 +81,27 @@ export type BeatmapVersion = {
 
 export type BeatmapDifficulty = {
   characteristic:
-    | 'Standard'
-    | 'OneSaber'
-    | 'NoArrows'
-    | '90Degree'
-    | '360Degree'
-    | 'Lightshow'
-    | 'Lawless'
-    | 'Legacy'
+  | 'Standard'
+  | 'OneSaber'
+  | 'NoArrows'
+  | '90Degree'
+  | '360Degree'
+  | 'Lightshow'
+  | 'Lawless'
+  | 'Legacy'
   difficulty: 'Easy' | 'Normal' | 'Hard' | 'Expert' | 'ExpertPlus'
 }
+
+export type Person = {
+  name: string;
+  beatsaverId: string;
+  bio?: string;
+  socialLinks: {
+    platform: 'discord' | 'twitter' | 'beatsaver';
+    id: string;
+  }[];
+}
+
 
 export type Uploader = {
   id: number
@@ -104,6 +127,7 @@ type ImportModuleData<T> = {
 export type ImportPostModuleData = ImportModuleData<Omit<Post, 'slug'>>
 
 export type ImportMapOfTheWeekModuleData = ImportModuleData<MapOfTheWeekCollectionData>
+export type ImportPersonModuleData = ImportModuleData<Person>;
 
 export type RootPageSSRData = {
   announcements: Post[]
