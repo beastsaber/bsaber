@@ -9,23 +9,26 @@
   <title>Curation Team - BeastSaber</title>
 </svelte:head>
 
-<section>
+<div class="cards">
   {#each curators as curator}
     <CuratorCard
       name={curator.name}
-      slug={curator.slug}
-      role={curator.role}
-      tags={curator.style_tags}
-      fav_map={curator.favorite_map}
-      bio={curator.bio}
-      image={curator.image}
+      id={curator.id}
+      roles={ {...curator} }
+      description={curator.description}
+      avatar={curator.avatar}
     />
   {/each}
-</section>
+</div>
 
 <style lang="scss">
-  section {
+  .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.25rem;
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>
