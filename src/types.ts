@@ -77,9 +77,11 @@ export type BeatmapDifficulty = {
 export type Uploader = {
   id: number,
   name: string,
+  description: string,
   avatar: string,
   admin: boolean,
   curator: boolean,
+  seniorCurator: boolean,
   verifiedMapper: boolean
 }
 

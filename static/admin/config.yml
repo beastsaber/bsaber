@@ -46,31 +46,6 @@ collections:
         required: false
         media_folder: /static/uploads/posts
         choose_url: false
-  - name: curation-team
-    label: Curation Team
-    slug: '{{name}}'
-    folder: src/collections/curation-team
-    create: true
-    fields:
-      - name: name
-      - name: slug
-      - name: role
-        widget: select
-        options: [Curator, Senior Curator]
-      - name: style_tags
-        widget: list
-        allow_add: true
-      - name: favorite_map
-        widget: object
-        fields:
-          - name: name
-          - name: url
-      - name: bio
-        widget: markdown
-      - name: image
-        widget: image
-        media_folder: /static/uploads/curators
-        choose_url: false
   - name: map-of-the-week
     label: Map of the Week
     folder: src/collections/map-of-the-week
