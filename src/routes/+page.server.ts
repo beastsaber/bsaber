@@ -6,6 +6,7 @@ import type {
   ImportPostModuleData,
   ImportMapOfTheWeekModuleData,
 } from '../types'
+
 export type RootPageSSRData = {
   announcements: Post[]
   articles: Post[]
@@ -13,7 +14,12 @@ export type RootPageSSRData = {
   communityEvents: CommunityEvent[]
   currentMapOfTheWeek: MapOfTheWeek | undefined
 }
-export async function load({ fetch }): Promise<RootPageSSRData> {
+
+interface LoadParameters {
+  fetch: typeof fetch
+}
+
+export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> {
   const posts: Post[] = await Promise.all(
     Object.entries(import.meta.glob<ImportPostModuleData>('/src/collections/posts/**/*.md')).map(
       async ([path, module]) => {
@@ -47,10 +53,10 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
       coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage
     }
 
-    if(coverUrl == null) {
-      throw new Error('No cover URL found!');
+    if (coverUrl == null) {
+      throw new Error('No cover URL found!')
     }
-    
+
     currentMapOfTheWeek = {
       map: {
         id: beatSaverMapData.id,
@@ -60,8 +66,10 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
           id: beatSaverMapData.uploader.id,
           name: beatSaverMapData.uploader.name,
           avatar: beatSaverMapData.uploader.avatar,
+          description: beatSaverMapUploaderData.description,
           admin: beatSaverMapUploaderData.admin,
-          curator: beatSaverMapUploaderData.curator,
+          curator: !!beatSaverMapUploaderData.curator,
+          seniorCurator: !!beatSaverMapUploaderData.seniorCurator,
           verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
         },
       },
@@ -75,7 +83,7 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
   const rootPageSSRData: Omit<RootPageSSRData, 'currentMapOfTheWeek' | 'communityEvents'> = {
     announcements: [],
     articles: [],
-    others: []
+    others: [],
   }
 
   for (const post of posts) {

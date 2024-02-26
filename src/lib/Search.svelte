@@ -21,7 +21,9 @@
   const mapsSearchApiEndpoint = `${beatsaverApiRoot}search/text/`
   const playlistsApiEndpoint = `${beatsaverApiRoot}playlists/search/`
 
-  let searchType: string = dropdownItems[0].name
+  export let forceSearchType: string | null = null
+
+  let searchType: string = forceSearchType ?? dropdownItems[0].name
   let searchQuery: string = ''
   let lastQuery: string = ''
 
@@ -35,22 +37,28 @@
   }[] = []
 
   let searchPreviewTimeout
+  let searchButton: HTMLAnchorElement
+  let searchUrl: string
+
+  const getSearchUrl = (inputSearchType: string, inputSearchQuery: string) => {
+    if (inputSearchType === dropdownItems[0].name) {
+      return `${beatsaverRoot}?q=${inputSearchQuery}`
+    } else if (inputSearchType === dropdownItems[1].name) {
+      return `${beatsaverRoot}playlists?q=${inputSearchQuery}`
+    }
+
+    return '/posts/search?q=' + searchQuery
+  }
+
+  $: searchUrl = getSearchUrl(searchType, searchQuery)
 
   // Search function that opens a new url in the browser
   function search() {
     if (searchQuery === '') {
       return
     }
-    if (searchType === dropdownItems[0].name) {
-      const url = `${beatsaverRoot}?q=${searchQuery}`
-      window.open(url, '_self')
-    } else if (searchType === dropdownItems[1].name) {
-      alert('Not yet implemented')
-    } else if (searchType === dropdownItems[2].name) {
-      alert('Not yet implemented')
-    } else {
-      alert('Unknown search type')
-    }
+
+    searchButton.click()
   }
 
   function searchPreview(event?, force?: boolean) {
@@ -98,7 +106,7 @@
             }
           })
       } else if (searchType === dropdownItems[2].name) {
-        alert('Not yet implemented')
+        // No Op
       } else {
         alert('Unknown search type')
       }
@@ -109,37 +117,39 @@
 <form on:submit|preventDefault={search}>
   <div class="row">
     <div class="searchForm">
-      <button
-        class="filter-dropdown btn btn-primary dropdown-toggle"
-        type="button"
-        on:click={() => (dropdownShown = !dropdownShown)}
-        id="dropdownMenuButton"
-        aria-expanded={dropdownShown}
-      >
-        <i class="fas fa-angle-up" />
-        <span class="d-none d-lg-inline">{searchType}</span>
-      </button>
-      <!-- </button> -->
-      {#if dropdownShown}
-        <div
-          transition:slide={{ duration: 150 }}
-          class="dropdown-menu filter"
-          aria-labelledby="dropdownMenuButton"
+      {#if forceSearchType == null}
+        <button
+          class="filter-dropdown btn btn-primary dropdown-toggle"
+          type="button"
+          on:click={() => (dropdownShown = !dropdownShown)}
+          id="dropdownMenuButton"
+          aria-expanded={dropdownShown}
         >
-          {#each dropdownItems as item}
-            <button
-              type="button"
-              class="dropdown-item"
-              on:click={() => {
-                searchType = item.name
-                dropdownShown = false
-                searchPreview(null, true)
-              }}
-            >
-              {item.name}</button
-            >
-          {/each}
-        </div>
+          <i class="fas fa-angle-up" />
+          <span class="d-none d-lg-inline">{searchType}</span>
+        </button>
+        <!-- </button> -->
+        {#if dropdownShown}
+          <div
+            transition:slide={{ duration: 150 }}
+            class="dropdown-menu filter"
+            aria-labelledby="dropdownMenuButton"
+          >
+            {#each dropdownItems as item}
+              <button
+                type="button"
+                class="dropdown-item"
+                on:click={() => {
+                  searchType = item.name
+                  dropdownShown = false
+                  searchPreview(null, true)
+                }}
+              >
+                {item.name}</button
+              >
+            {/each}
+          </div>
+        {/if}
       {/if}
       <input
         type="search"
@@ -165,7 +175,7 @@
         </div>
       {/if}
 
-      <button type="submit" class="btn btn-primary">Search</button>
+      <a class="btn btn-primary btn-search" href={searchUrl} bind:this={searchButton}>Search</a>
     </div>
   </div>
 </form>
@@ -290,7 +300,7 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
   div,
-  button,
+  a,
   input {
     overflow: visible;
   }
@@ -314,6 +324,11 @@
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
+
+  .btn-search {
+    max-width: 5rem;
+  }
+
   .btn-primary {
     color: #fff;
     background-color: #375a7f;
