@@ -3,12 +3,11 @@
   import PostListCard from '$lib/PostListCard.svelte'
   import { onMount } from 'svelte'
   import Fuse from 'fuse.js'
-  import Search from '$lib/Search.svelte'
 
   export let data
   let posts: Post[] = []
 
-  onMount(() => {
+  const updatePostsAccordingToSearchQuery = () => {
     const urlParams = new URLSearchParams(window.location.search)
     const searchQuery = urlParams.get('q')
     const fuse = new Fuse(data.posts, {
@@ -26,13 +25,14 @@
     } else {
       posts = data.posts
     }
+  }
+
+  onMount(() => {
+    updatePostsAccordingToSearchQuery()
   })
 </script>
 
 <h1>Article Search</h1>
-<div class="force-center">
-  <Search forceSearchType={'Content'} />
-</div>
 <div class="cards">
   {#each posts as post}
     <PostListCard {post} />
@@ -42,21 +42,6 @@
 <style lang="scss">
   h1 {
     margin-bottom: 1em;
-  }
-
-  .force-center {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 4rem;
-  }
-
-  // Very unwiedly component
-  // This will it will only take as much width as it needs and
-  // so it can be properly centered
-  :global(.force-center .row) {
-    width: 0;
-    margin: 0;
-    padding: 0;
   }
 
   .cards {
