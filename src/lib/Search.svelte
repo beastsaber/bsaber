@@ -50,9 +50,9 @@
     return '/posts/search?q=' + searchQuery
   }
 
-  // Search function that opens a new url in the browser
   $: searchUrl = getSearchUrl(searchType, searchQuery)
 
+  // Search function that opens a new url in the browser
   function search() {
     if (searchQuery === '') {
       return
