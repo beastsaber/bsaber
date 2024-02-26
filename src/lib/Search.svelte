@@ -263,7 +263,7 @@
     text-decoration: none;
   }
   .dropdown-item:hover {
-    background-color: rgb(42, 81, 121);
+    background-color: $color-bsaber-purple-highlight;
   }
   .dropdown-item-image {
     width: 2.5rem;
@@ -304,7 +304,7 @@
     overflow: visible;
   }
   input:hover {
-    color: #39699c;
+    color: $color-bsaber-purple-highlight;
   }
   .btn {
     display: inline-block;

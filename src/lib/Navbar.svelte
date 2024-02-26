@@ -329,7 +329,7 @@
 
     &:hover,
     &:focus {
-      background-color: #5f58b9;
+      background-color: $color-bsaber-purple-highlight;
     }
     &.sub-item {
       padding-left: 3rem;
