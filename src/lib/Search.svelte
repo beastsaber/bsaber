@@ -35,22 +35,24 @@
   }[] = []
 
   let searchPreviewTimeout
+  let searchButton: HTMLAnchorElement
+  let searchUrl: string = `${beatsaverRoot}?q=${searchQuery}`
+
+  $: if (searchType === dropdownItems[0].name) {
+    searchUrl = `${beatsaverRoot}?q=${searchQuery}`
+  } else if (searchType === dropdownItems[1].name) {
+    searchUrl = `${beatsaverRoot}playlists?q=${searchQuery}`
+  } else if (searchType === dropdownItems[2].name) {
+    searchUrl = '/posts?q=' + searchQuery
+  }
 
   // Search function that opens a new url in the browser
   function search() {
     if (searchQuery === '') {
       return
     }
-    if (searchType === dropdownItems[0].name) {
-      const url = `${beatsaverRoot}?q=${searchQuery}`
-      window.open(url, '_self')
-    } else if (searchType === dropdownItems[1].name) {
-      alert('Not yet implemented')
-    } else if (searchType === dropdownItems[2].name) {
-      alert('Not yet implemented')
-    } else {
-      alert('Unknown search type')
-    }
+
+    searchButton.click()
   }
 
   function searchPreview(event?, force?: boolean) {
@@ -98,7 +100,7 @@
             }
           })
       } else if (searchType === dropdownItems[2].name) {
-        alert('Not yet implemented')
+        // No Op
       } else {
         alert('Unknown search type')
       }
@@ -165,7 +167,7 @@
         </div>
       {/if}
 
-      <button type="submit" class="btn btn-primary">Search</button>
+      <a class="btn btn-primary" href={searchUrl} bind:this={searchButton}>Search</a>
     </div>
   </div>
 </form>
@@ -290,7 +292,7 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
   div,
-  button,
+  a,
   input {
     overflow: visible;
   }
