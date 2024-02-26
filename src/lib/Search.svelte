@@ -177,7 +177,9 @@
   <a class="btn btn-primary btn-search" href={searchUrl} bind:this={searchButton}>Search</a>
 </form>
 
-<style>
+<style lang="scss">
+  @import "src/scss/variables";
+
   form {
     position: relative;
     display: flex;
@@ -226,9 +228,9 @@
     color: #fff;
     text-align: left;
     list-style: none;
-    background-color: #222222;
+    background-color: $background-secondary;
     background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0.25rem;
   }
   .dropdown-menu-list {
@@ -242,7 +244,7 @@
   .dropdown-item {
     display: flex;
     width: 100%;
-    padding: 0.25rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     clear: both;
     font-weight: 400;
     color: #fff;
@@ -328,13 +330,13 @@
 
   .btn-primary {
     color: #fff;
-    background-color: #375a7f;
-    border-color: #375a7f;
+    background-color: $color-bsaber-purple;
+    border-color: $color-bsaber-purple;
   }
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
   }
   .btn:hover {
-    background-color: #39699c;
+    background-color: $color-bsaber-purple-highlight;
   }
 </style>

@@ -304,9 +304,9 @@
     padding: 1rem 0;
     margin-top: calc($navbar-height - 10px);
     margin-right: 0.75rem;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: $rounding;
-    background: $background-primary;
+    background: $background-secondary;
   }
 
   .dropdown-menu {
@@ -353,8 +353,7 @@
   }
 
   .nav-item {
-    font-size: 1.25rem;
-    line-height: 1.4375rem;
+    line-height: 1.25rem;
 
     .nav-link {
       display: block;
@@ -448,13 +447,13 @@
 
     .dropdown-menu {
       position: absolute;
-      padding: 1rem 0;
+      padding: 0.5rem 0;
       margin-top: 0.5rem;
       text-align: left;
       list-style: none;
-      background-color: #222222;
+      background-color: $background-secondary;
       background-clip: padding-box;
-      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: $rounding;
     }
 
