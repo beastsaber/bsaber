@@ -208,7 +208,7 @@
 
 <nav class="navbar">
   <div class="container">
-    <a id="home-link" href="/">
+    <a id="home-link" rel="external" href="/">
       <img alt="BeastSaber" src="/beastsaber-logo.svg" />
     </a>
     <button
@@ -238,6 +238,7 @@
                   <!-- svelte-ignore a11y-invalid-attribute -->
                   <a
                     href=""
+                    rel="external"
                     on:click|preventDefault|stopPropagation={() =>
                       toggleDropdown(item, `dropdown-menu-${index}`)}
                     ><span
@@ -254,13 +255,13 @@
                     class="dropdown-menu"
                   >
                     {#each item.Items as navItem}
-                      <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
+                      <a href={navItem.href} rel="external" class="dropdown-item">{navItem.name}</a>
                       {#if navItem.dividerAfter}
                         <div class="dropdown-divider" />
                       {/if}
                       {#if navItem.Items}
                         {#each navItem.Items as navSubItem}
-                          <a href={navSubItem.href} class="dropdown-item sub-item"
+                          <a href={navSubItem.href} rel="external" class="dropdown-item sub-item"
                             >{navSubItem.name}</a
                           >
                           {#if navSubItem.dividerAfter}
@@ -274,7 +275,7 @@
               </li>
             {:else}
               <li class="nav-item">
-                <a href={item.href} class="nav-link">{item.name}</a>
+                <a href={item.href} rel="external" class="nav-link">{item.name}</a>
               </li>
             {/if}
           {/each}

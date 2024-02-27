@@ -9,6 +9,7 @@
 <div class="pagination-bar">
   {#each pageNumbers as singlePageNumber}
     <a
+      rel="external"
       class="page-button"
       class:active={singlePageNumber === currentPage}
       href={getPageLink(singlePageNumber)}
