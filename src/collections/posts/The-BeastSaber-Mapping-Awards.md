@@ -5,6 +5,7 @@ category: event
 publish: 2024-02-01T00:00:00.000Z
 homepageText: " "
 image: /static/uploads/posts/2021.jpg
+showInPostListing: false
 ---
 
 ## The Beasties: By Mappers, for Mappers
@@ -43,7 +44,7 @@ We’ve received a lot of constructive community feedback on the 2022 awards and
 
 - [**2021 Winners**](/posts/The-Beasties-2021-Winners)
 - [**2022 Winners**](/posts/The-Beasties-2022-Winners)
-- [**2023 Winners**](/posts/The-Beasties-2023-Winners)
+- [**2023 Winners**](/posts/the-beasties-2023-winners)
 
 <div style="page-break-before:always">&nbsp;</div>
 <p></p>

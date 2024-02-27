@@ -5,6 +5,7 @@ category: news
 publish: 2024-02-25T00:00:00.000Z
 homepageText: ""
 image: /static/uploads/posts/2021.jpg
+showInPostListing: true
 ---
 
 # The BeastSaber Mapping Awards Winners: 2021

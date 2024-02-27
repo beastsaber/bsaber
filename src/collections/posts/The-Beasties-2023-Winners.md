@@ -5,6 +5,7 @@ category: news
 publish: 2024-02-27T01:32:32.689Z
 homepageText: ""
 image: /static/uploads/posts/square23-beastsaber-mapping-awards.png
+showInPostListing: true
 ---
 
 # The BeastSaber Mapping Awards Winners: 2023

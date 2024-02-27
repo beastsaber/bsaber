@@ -5,6 +5,7 @@ category: guide
 publish: 2024-01-31T00:00:00.000Z
 homepageText: Getting Started with Mapping Levels
 image: /static/uploads/posts/screenshot-2021-02-13-181525.jpg
+showInPostListing: true
 ---
 
 ## Too many anime maps? Not enough anime maps? Take matters into your own hands and make one!

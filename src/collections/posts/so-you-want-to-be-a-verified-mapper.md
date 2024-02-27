@@ -4,6 +4,7 @@ section: announcements
 category: guide
 publish: 2024-02-18T00:00:00.000Z
 homepageText: This is the homepage-text for an announcement that appears on the homepage.
+showInPostListing: true
 ---
 As you've probably noticed, different maps are marked in different ways on BeatSaver:
 

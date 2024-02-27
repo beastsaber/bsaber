@@ -5,6 +5,7 @@ category: news
 publish: 2024-02-25T00:01:00.000Z
 homepageText: ""
 image: /static/uploads/posts/square2022.png
+showInPostListing: true
 ---
 
 # The BeastSaber Mapping Awards Winners: 2022

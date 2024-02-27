@@ -70,7 +70,7 @@
       Items: [
         {
           name: 'About the Awards',
-          href: '/posts/The-BeastSaber-Mapping-Awards',
+          href: '/the-beastsaber-mapping-awards',
         },
         {
           name: 'Voting',
