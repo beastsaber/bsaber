@@ -8,7 +8,9 @@ export async function load() {
       const { image } = metadata
       return { slug, ...metadata, image: image?.replace('/static', ''), publishDate: Date.parse(metadata.publish) }
     }),
-  )).sort((a, b) => b.publishDate - a.publishDate)
+  ))
+  .filter(x => x.showInPostListing)
+  .sort((a, b) => b.publishDate - a.publishDate)
 
   return {
     posts,

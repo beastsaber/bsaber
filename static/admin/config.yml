@@ -46,6 +46,10 @@ collections:
         required: false
         media_folder: /static/uploads/posts
         choose_url: false
+      - name: showInPostListing
+        label: Show in post listing
+        widget: boolean
+        default: true
   - name: map-of-the-week
     label: Map of the Week
     folder: src/collections/map-of-the-week
