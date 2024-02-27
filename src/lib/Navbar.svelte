@@ -65,6 +65,32 @@
       ],
     },
     {
+      name: 'The Beasties',
+      expanded: false,
+      Items: [
+        {
+          name: 'About the Awards',
+          href: '/posts/The-BeastSaber-Mapping-Awards',
+        },
+        {
+          name: 'Voting',
+          href: 'https://forms.gle/v69wKinCfZzVHfZ17',
+        },
+        {
+          name: '2023 Winners',
+          href: '/posts/The-Beasties-2023-Winners',
+        },
+        {
+          name: '2022 Winners',
+          href: '/posts/The-Beasties-2022-Winners',
+        },
+        {
+          name: '2021 Winners',
+          href: '/posts/The-Beasties-2021-Winners',
+        },
+      ],
+    },
+    {
       name: 'Models',
       expanded: false,
       Items: [
