@@ -10,7 +10,7 @@
 </svelte:head>
 
 <div class="cards">
-  {#each curators as curator}
+  {#each curators as curator (curator.id)}
     <CuratorCard
       name={curator.name}
       id={curator.id}
