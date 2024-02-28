@@ -8,7 +8,7 @@ image: /static/uploads/posts/2021.jpg
 showInPostListing: false
 ---
 
-## The Beasties: By Mappers, for Mappers
+## AKA: The Beasties - By Mappers, for Mappers
 
 The BeastSaber Mapping Awards  were launched in 2021 to highlight the best of the best of the art (and science) of making custom Beat Saber maps. The first year featured 29 categories, garnered 760 nominated maps, resulting in 96 finalists, with more than 45 medals won.
 

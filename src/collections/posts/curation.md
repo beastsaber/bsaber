@@ -1,9 +1,9 @@
 ---
-title: "Curation"
+title: About Curation
 section: speciality
-publish: 2024-02-17T00:00:00.000Z
 category: ''
-image: /static/uploads/posts/beat-saber-1024x576.jpg
+publish: 2024-02-17T00:00:00.000Z
+image: /static/uploads/posts/curation.png
 showInPostListing: false
 ---
 
@@ -13,13 +13,19 @@ Curation highlights fun maps from across the style spectrum that our diverse tea
 
 > **Not every playable map is curation-worthy and not every curatable map will be curated. Think of us as reviewers recommending our favorite maps.**
 
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>
+
 ## The Curation Team
 
-Our Senior Curators (curator management) strive to maintain a diverse group of Curators with all kinds of tastes and preferences. If you notice a Curator has tastes and preferences that align with yours, you can follow their curations on BeatSaver! [Click here](https://docs.google.com/spreadsheets/d/1GdtxzwDB3e0fqwd3VodMLSnXdgv2yLDYb7EIiFOi62k/edit?usp=sharing) for a complete Team Roster, with skill levels and style preferences listed, as well as links to each team member’s Curations Tab on BeatSaver.
+Our Senior Curators (curator management) strive to maintain a diverse group of Curators with all kinds of tastes and preferences. If you notice a Curator has tastes and preferences that align with yours, you can follow their curations on BeatSaver! [Click here](/curation-team) for a complete Team Roster with their BeatSaver bios and links to each Curator's BeatSaver profile!
 
 ### How to Follow a Curator
 
 To follow a Curator you like, go to their BeatSaver profile page and click on the drop-down arrow next to the "Follow" button. From here, you can choose to Follow that Curator's Uploads or Curations (some of our Curators are also community mappers and even Official mappers). Once checked, you'll get notified each time they upload or curate a map (depending on your selection).
+
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>
 
 ## For Mappers
 
@@ -48,6 +54,12 @@ Maps with objective issues in the Curation Request Queue will be marked with an 
 
 > It should be noted that most of our Curators regularly keep an eye on the Latest feed on BeatSaver and will usually be able to find maps out in the wild.
 
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>
+
 ### Have a map you’d like to suggest to our Curation team?
 
 Fill out our [Curation Request Form](https://forms.gle/ppkhbA9TG4GmN3jS7) and then track the status of your request [here](https://docs.google.com/spreadsheets/d/1IBZNJUae94FjJGMmnc94JsH3SN7iBufW-CzrU2zJPEk/edit#gid=773434791).
+
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>

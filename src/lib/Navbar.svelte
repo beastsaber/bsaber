@@ -125,12 +125,12 @@
           href: 'https://beatsaver.com/mappers',
         },
         {
-          name: 'Curators',
-          href: '/curation-team',
+          name: 'About Curation',
+          href: '/curation',
           Items: [
             {
-              name: 'About Curation',
-              href: '/curation',
+              name: 'Curators',
+              href: '/curation-team',
             },
           ],
         },
@@ -141,6 +141,10 @@
       expanded: false,
       Items: [
         {
+          name: 'BSMG Wiki',
+          href: 'https://bsmg.wiki',
+        },
+        {
           name: 'BSMG Discord',
           href: 'https://discord.gg/beatsabermods',
         },
@@ -149,8 +153,16 @@
           href: 'https://discord.gg/VJZHUbt',
         },
         {
-          name: 'BSMG Wiki',
-          href: 'https://bsmg.wiki',
+          name: 'BeatSaver Discord',
+          href: 'https://discord.gg/rjVDapkMmj',
+        },
+        {
+          name: 'Beat Saber Mapping Discord',
+          href: 'https://discord.gg/ArT4BTQ',
+        },
+        {
+          name: 'BeatLeader Discord',
+          href: 'https://discord.gg/2RG5YVqtG6',
         },
       ],
     },

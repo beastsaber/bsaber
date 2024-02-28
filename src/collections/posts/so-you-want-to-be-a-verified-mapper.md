@@ -3,7 +3,8 @@ title: So you want to be a Verified Mapper?
 section: articles
 category: guide
 publish: 2024-02-18T00:00:00.000Z
-homepageText: This is the homepage-text for an announcement that appears on the homepage.
+homepageText: Learn how to become a Verified Mapper on BeatSaver with this guide!
+image: /static/uploads/posts/verified-square.png
 showInPostListing: true
 ---
 As you've probably noticed, different maps are marked in different ways on BeatSaver:
@@ -20,11 +21,17 @@ There are other sidebar colors such as curation (green), ranked (yellow), and qu
 
 You can access the latest feed of maps created by Verified Mappers on [BeatSaver](https://beatsaver.com/?order=Latest&verified=true). But what does that mean and how does one become a Verified Mapper?
 
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>
+
 ## What is a Verified Mapper?
 
 Verified Mappers are vetted to have been able to demonstrate the ability to regularly produce high-quality maps and are considered representatives of the community. As such, Verified Mappers are held to higher standards of behavior and professionalism.
 
-**As of writing this article, there were a total of about 450 Verified Mappers; 276 of those Verified Mappers uploaded maps in the past year; and among those 276, there were a total of 4,561 maps published!**
+> As of writing this article, there were a total of about 450 Verified Mappers; 276 of those Verified Mappers uploaded maps in the past year; and among those 276, there were a total of 4,561 maps published!
+
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>
 
 ## How does the verification process work?
 
@@ -44,11 +51,17 @@ Once you've made your submission, all you have to do is wait! Processing times c
 
 A member of the verification team will review your application and will always reach out to you at the end of the review with the outcome, whether being made a "moldy" Mapper or rejected.
 
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>
+
 ## What happens if I get rejected?
 
 ![rejected](/uploads/batman-we-fall-so-we-can-learn-to-pick-ourselves-up-1.gif)
 
 Failure is a part of learning! If everyone did everything right on their first try, how would we learn anything? The verification process is rigorous, with close to 50% of applications being rejected. The good news is that the verification team provides feedback to the applicant on what they need to improve on for their next request. As soon as they feel they have a better grasp of those concepts, they are welcome to resubmit their application!
+
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>
 
 ## What happens if I get accepted?
 
@@ -62,6 +75,9 @@ Congratulations, and welcome to the ranks of nearly 450 other quality mappers ju
 * The Verified Mapper role in the Beat Saber Mapping and BeastSaber Discord servers (if you're in there, too)
 
 > Retention of this status is dependent on being a good representative of the mapping community and the Beat Saber customs community as a whole. It is a *privilege*, not a right, that can be revoked at any time for cause.
+
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>
 
 ## Okay, so how do I actually apply?
 
@@ -80,3 +96,6 @@ Congratulations, and welcome to the ranks of nearly 450 other quality mappers ju
 Please do not submit more than 1 mapper application at a time. The team of veterans reviewing your application will always reach out to you no matter what when your application has been processed.
 
 ### Good luck!
+
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>

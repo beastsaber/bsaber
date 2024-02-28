@@ -3,7 +3,7 @@ title: The Beasties - 2023 Winners
 section: articles
 category: news
 publish: 2024-02-27T01:32:32.689Z
-homepageText: ""
+homepageText: "Your winners for the 2023 BeastSaber Mapping Awards announced!"
 image: /static/uploads/posts/square23-beastsaber-mapping-awards.png
 showInPostListing: true
 ---
@@ -246,7 +246,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 - Community Choice: [Joetastic](https://beatsaver.com/profile/58338)
 
-**Map of the Year - TIED**:
+**Map of the Year - TIE**:
 
 - Winner: [Camellia - LORELEI](https://beatsaver.com/maps/32420) – Mapped by Nolanimations, cerret, Gabriel, & Marsh
 

@@ -4,7 +4,7 @@ section: articles
 category: guide
 publish: 2024-01-31T00:00:00.000Z
 homepageText: Getting Started with Mapping Levels
-image: /static/uploads/posts/screenshot-2021-02-13-181525.jpg
+image: /static/uploads/posts/screenshot-2024-02-27-182942.png
 showInPostListing: true
 ---
 

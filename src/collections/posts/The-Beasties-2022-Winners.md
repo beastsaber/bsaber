@@ -3,7 +3,7 @@ title: The Beasties - 2022 Winners
 section: articles
 category: news
 publish: 2024-02-25T00:01:00.000Z
-homepageText: ""
+homepageText: "Your winners for the 2022 BeastSaber Mapping Awards announced!"
 image: /static/uploads/posts/square2022.png
 showInPostListing: true
 ---
