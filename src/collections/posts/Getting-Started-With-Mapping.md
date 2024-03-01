@@ -8,6 +8,8 @@ image: /static/uploads/posts/screenshot-2024-02-27-182942.png
 showInPostListing: true
 ---
 
+# Getting Started with Mapping Levels - A Guide
+
 ## Too many anime maps? Not enough anime maps? Take matters into your own hands and make one!
 
 There are more than 100,000 maps on [BeatSaver.com](https://beatsaver.com) but you still may not be able to find the song you want, or you find the song you want but it only has an ExpertPlus difficulty that is out of your reach. ***Anyone*** can learn to make their own maps with the resources available on this page!
@@ -80,7 +82,10 @@ The BSMG Discord is one of the largest servers in existence with more than 250,0
 
 Once you have your very own first map created and released you can request a role in the Mapping Discord. Here you’ll be able to go into a lot more detail on the various aspects of mapping, lighting, modded maps, chroma, and much more. This server also has a healthy social and voice chat scene for mappers.
 
-### *This page uses content from the BSMG Wiki which is licensed under Creative Commons (CC BY-NC-SA 4.0): https://creativecommons.org/licenses/by-nc-sa/4.0/
+<div style="page-break-before:always">&nbsp;</div>
+<p></p>
+
+**This page uses content from the BSMG Wiki which is licensed under Creative Commons (CC BY-NC-SA 4.0): https://creativecommons.org/licenses/by-nc-sa/4.0/**
 
 <div style="page-break-before:always">&nbsp;</div>
 <p></p>

@@ -7,6 +7,8 @@ image: /static/uploads/posts/curation.png
 showInPostListing: false
 ---
 
+# Let's Talk About Curation
+
 ## The Meaning of Curation
 
 Curation highlights fun maps from across the style spectrum that our diverse team hopes the community will enjoy as much as we do! Our Curation team strives to recommend maps that meet our minimum quality standards AND subjectively have that extra “fun factor” for that individual Curator.
@@ -20,7 +22,7 @@ Curation highlights fun maps from across the style spectrum that our diverse tea
 
 Our Senior Curators (curator management) strive to maintain a diverse group of Curators with all kinds of tastes and preferences. If you notice a Curator has tastes and preferences that align with yours, you can follow their curations on BeatSaver! [Click here](/curation-team) for a complete Team Roster with their BeatSaver bios and links to each Curator's BeatSaver profile!
 
-### How to Follow a Curator
+## How to Follow a Curator
 
 To follow a Curator you like, go to their BeatSaver profile page and click on the drop-down arrow next to the "Follow" button. From here, you can choose to Follow that Curator's Uploads or Curations (some of our Curators are also community mappers and even Official mappers). Once checked, you'll get notified each time they upload or curate a map (depending on your selection).
 
@@ -57,7 +59,7 @@ Maps with objective issues in the Curation Request Queue will be marked with an 
 <div style="page-break-before:always">&nbsp;</div>
 <p></p>
 
-### Have a map you’d like to suggest to our Curation team?
+## Have a map you’d like to suggest to our Curation team?
 
 Fill out our [Curation Request Form](https://forms.gle/ppkhbA9TG4GmN3jS7) and then track the status of your request [here](https://docs.google.com/spreadsheets/d/1IBZNJUae94FjJGMmnc94JsH3SN7iBufW-CzrU2zJPEk/edit#gid=773434791).
 

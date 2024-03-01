@@ -8,6 +8,8 @@ image: /static/uploads/posts/2021.jpg
 showInPostListing: false
 ---
 
+# The BeastSaber Mapping Awards
+
 ## AKA: The Beasties - By Mappers, for Mappers
 
 The BeastSaber Mapping Awards  were launched in 2021 to highlight the best of the best of the art (and science) of making custom Beat Saber maps. The first year featured 29 categories, garnered 760 nominated maps, resulting in 96 finalists, with more than 45 medals won.
@@ -40,7 +42,7 @@ We’ve received a lot of constructive community feedback on the 2022 awards and
 
 > Want to help support The Beasties? We rely on community donations for all the Awards that are sent out, and yes, we mean actually real awards! Between purchasing these awards and mailing them, any and all support is truly appreciated! Click Here -> [PayPal Donation](https://www.paypal.com/paypalme/helencarnateBS)
 
-### Check out each year's Winner pages below
+## Check out each year's Winners pages below
 
 - [**2021 Winners**](/posts/The-Beasties-2021-Winners)
 - [**2022 Winners**](/posts/The-Beasties-2022-Winners)

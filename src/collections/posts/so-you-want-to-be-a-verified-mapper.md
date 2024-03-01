@@ -4,7 +4,7 @@ section: articles
 category: guide
 publish: 2024-02-18T00:00:00.000Z
 homepageText: Learn how to become a Verified Mapper on BeatSaver with this guide!
-image: /static/uploads/posts/verified-square.png
+image: /static/uploads/posts/verified-square1.png
 showInPostListing: true
 ---
 As you've probably noticed, different maps are marked in different ways on BeatSaver:
@@ -95,7 +95,7 @@ Congratulations, and welcome to the ranks of nearly 450 other quality mappers ju
 
 Please do not submit more than 1 mapper application at a time. The team of veterans reviewing your application will always reach out to you no matter what when your application has been processed.
 
-### Good luck!
+### Good luck! 
 
 <div style="page-break-before:always">&nbsp;</div>
 <p></p>
