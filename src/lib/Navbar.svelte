@@ -65,6 +65,32 @@
       ],
     },
     {
+      name: 'The Beasties',
+      expanded: false,
+      Items: [
+        {
+          name: 'About the Awards',
+          href: '/the-beastsaber-mapping-awards',
+        },
+        {
+          name: 'Voting',
+          href: 'https://forms.gle/v69wKinCfZzVHfZ17',
+        },
+        {
+          name: '2023 Winners',
+          href: '/posts/The-Beasties-2023-Winners',
+        },
+        {
+          name: '2022 Winners',
+          href: '/posts/The-Beasties-2022-Winners',
+        },
+        {
+          name: '2021 Winners',
+          href: '/posts/The-Beasties-2021-Winners',
+        },
+      ],
+    },
+    {
       name: 'Models',
       expanded: false,
       Items: [
@@ -99,12 +125,12 @@
           href: 'https://beatsaver.com/mappers',
         },
         {
-          name: 'Curators',
-          href: '/curation-team',
+          name: 'About Curation',
+          href: '/curation',
           Items: [
             {
-              name: 'About Curation',
-              href: '/curation',
+              name: 'Curators',
+              href: '/curation-team',
             },
           ],
         },
@@ -115,6 +141,10 @@
       expanded: false,
       Items: [
         {
+          name: 'BSMG Wiki',
+          href: 'https://bsmg.wiki',
+        },
+        {
           name: 'BSMG Discord',
           href: 'https://discord.gg/beatsabermods',
         },
@@ -123,8 +153,16 @@
           href: 'https://discord.gg/VJZHUbt',
         },
         {
-          name: 'BSMG Wiki',
-          href: 'https://bsmg.wiki',
+          name: 'BeatSaver Discord',
+          href: 'https://discord.gg/rjVDapkMmj',
+        },
+        {
+          name: 'Beat Saber Mapping Discord',
+          href: 'https://discord.gg/ArT4BTQ',
+        },
+        {
+          name: 'BeatLeader Discord',
+          href: 'https://discord.gg/2RG5YVqtG6',
         },
       ],
     },
@@ -182,7 +220,7 @@
 
 <nav class="navbar">
   <div class="container">
-    <a id="home-link" href="/">
+    <a id="home-link" rel="external" href="/">
       <img alt="BeastSaber" src="/beastsaber-logo.svg" />
     </a>
     <button
@@ -212,6 +250,7 @@
                   <!-- svelte-ignore a11y-invalid-attribute -->
                   <a
                     href=""
+                    rel="external"
                     on:click|preventDefault|stopPropagation={() =>
                       toggleDropdown(item, `dropdown-menu-${index}`)}
                     ><span
@@ -228,13 +267,13 @@
                     class="dropdown-menu"
                   >
                     {#each item.Items as navItem}
-                      <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
+                      <a href={navItem.href} rel="external" class="dropdown-item">{navItem.name}</a>
                       {#if navItem.dividerAfter}
                         <div class="dropdown-divider" />
                       {/if}
                       {#if navItem.Items}
                         {#each navItem.Items as navSubItem}
-                          <a href={navSubItem.href} class="dropdown-item sub-item"
+                          <a href={navSubItem.href} rel="external" class="dropdown-item sub-item"
                             >{navSubItem.name}</a
                           >
                           {#if navSubItem.dividerAfter}
@@ -248,7 +287,7 @@
               </li>
             {:else}
               <li class="nav-item">
-                <a href={item.href} class="nav-link">{item.name}</a>
+                <a href={item.href} rel="external" class="nav-link">{item.name}</a>
               </li>
             {/if}
           {/each}

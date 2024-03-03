@@ -1,16 +1,10 @@
-import { readFileSync } from 'fs'
-import frontmatter from 'front-matter'
+import { retrieveCollectionData } from "$lib/retrieveCollectionData";
 
-import { resolve } from 'path'
+type LoadParameter = {
+  params: {
+    slug: string
+  },
+  fetch: typeof fetch,
+};
 
-export async function load({ params }) {
-  const markdown = await readFileSync(resolve(`./src/collections/posts/${params.slug}.md`), {
-    encoding: 'utf8',
-  })
-
-  const { attributes, body } = frontmatter(markdown)
-  return {
-    attributes,
-    body,
-  }
-}
+export const load = ({ params }: LoadParameter) => retrieveCollectionData('posts', params.slug); 
