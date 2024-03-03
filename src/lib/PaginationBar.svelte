@@ -14,7 +14,7 @@
   <a
     class="page-button"
     class:hidden-pagination-link-button={currentPage === 1}
-    href={getPageLink(currentPage - 1)}>
+    href={(currentPage === 1) ? "#" : getPageLink(currentPage - 1)}>
     <Fa icon={faAngleLeft}/>
   </a>
   {#each pageNumbers as singlePageNumber}
@@ -30,7 +30,7 @@
   <a
     class="page-button"
     class:hidden-pagination-link-button={currentPage === numberOfPages}
-    href={getPageLink(currentPage + 1)}>
+    href={(currentPage === numberOfPages) ? "#" : getPageLink(currentPage + 1)}>
     <Fa icon={faAngleRight}/>
   </a>
 </div>
