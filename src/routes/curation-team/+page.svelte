@@ -1,8 +1,13 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
+  import type { Uploader } from '../../types.js'
   import CuratorCard from '$lib/CuratorCard.svelte'
 
-  export let data
-  let curators = data.curators
+  let curators: Uploader[] = []
+
+  onMount(async () => {
+    curators = await fetch(`https://api.beatsaver.com/users/curators`).then((res) => res.json())
+  })
 </script>
 
 <svelte:head>
@@ -14,7 +19,7 @@
     <CuratorCard
       name={curator.name}
       id={curator.id}
-      roles={ {...curator} }
+      roles={{ ...curator }}
       description={curator.description}
       avatar={curator.avatar}
     />
