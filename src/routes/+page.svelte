@@ -110,10 +110,8 @@
     </div>
   {/if}
   <QuickFilters />
-  <hr />
   <!-- Search to be moved to Navbar later -->
   <Search />
-  <hr />
 
   <Header
     text="Latest Articles"
@@ -177,7 +175,7 @@
   }
 
   .announcement {
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
   }
 
   .leaderboards {

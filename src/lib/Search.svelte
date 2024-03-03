@@ -115,84 +115,83 @@
 </script>
 
 <form on:submit|preventDefault={search}>
-  <div class="row">
-    <div class="searchForm">
-      {#if forceSearchType == null}
-        <button
-          class="filter-dropdown btn btn-primary dropdown-toggle"
-          type="button"
-          on:click={() => (dropdownShown = !dropdownShown)}
-          id="dropdownMenuButton"
-          aria-expanded={dropdownShown}
-        >
-          <i class="fas fa-angle-up" />
-          <span class="d-none d-lg-inline">{searchType}</span>
-        </button>
-        <!-- </button> -->
-        {#if dropdownShown}
-          <div
-            transition:slide={{ duration: 150 }}
-            class="dropdown-menu filter"
-            aria-labelledby="dropdownMenuButton"
-          >
-            {#each dropdownItems as item}
-              <button
-                type="button"
-                class="dropdown-item"
-                on:click={() => {
-                  searchType = item.name
-                  dropdownShown = false
-                  searchPreview(null, true)
-                }}
-              >
-                {item.name}</button
-              >
-            {/each}
-          </div>
-        {/if}
-      {/if}
-      <input
-        type="search"
-        class="form-control"
-        placeholder="Enter Keywords"
-        on:input={searchPreview}
-      />
-      {#if previewResults.length > 0}
+  <div class="search">
+    {#if forceSearchType == null}
+      <button
+        class="filter-dropdown btn btn-primary dropdown-toggle"
+        type="button"
+        on:click={() => (dropdownShown = !dropdownShown)}
+        id="dropdownMenuButton"
+        aria-expanded={dropdownShown}
+      >
+        <i class="fas fa-angle-up" />
+        <span class="d-none d-lg-inline">{searchType}</span>
+      </button>
+      <!-- </button> -->
+      {#if dropdownShown}
         <div
           transition:slide={{ duration: 150 }}
-          class="dropdown-menu dropdown-menu-list"
+          class="dropdown-menu filter"
           aria-labelledby="dropdownMenuButton"
         >
-          {#each previewResults as preview}
-            <a class="dropdown-item" href={preview.url}>
-              <img src={preview.image} class="dropdown-item-image" alt="Map Thumbnail" />
-              <div class="dropdown-item-text">
-                {preview.name}<br />
-                <div class="dropdown-item-text2">{preview.uploader}</div>
-              </div></a
+          {#each dropdownItems as item}
+            <button
+              type="button"
+              class="dropdown-item"
+              on:click={() => {
+                searchType = item.name
+                dropdownShown = false
+                searchPreview(null, true)
+              }}
+            >
+              {item.name}</button
             >
           {/each}
         </div>
       {/if}
-
-      <a class="btn btn-primary btn-search" href={searchUrl} bind:this={searchButton}>Search</a>
-    </div>
+    {/if}
+    <input
+      type="search"
+      class="form-control"
+      placeholder="Enter Keywords"
+      on:input={searchPreview}
+    />
   </div>
+  {#if previewResults.length > 0}
+    <div
+      transition:slide={{ duration: 150 }}
+      class="dropdown-menu dropdown-menu-list"
+      aria-labelledby="dropdownMenuButton"
+    >
+      {#each previewResults as preview}
+        <a class="dropdown-item" href={preview.url}>
+          <img src={preview.image} class="dropdown-item-image" alt="Map Thumbnail" />
+          <div class="dropdown-item-text">
+            {preview.name}<br />
+            <div class="dropdown-item-text2">{preview.uploader}</div>
+          </div></a
+        >
+      {/each}
+    </div>
+  {/if}
+  <a class="btn btn-primary btn-search" href={searchUrl} bind:this={searchButton}>Search</a>
 </form>
 
-<style>
+<style lang="scss">
+  @import "src/scss/variables";
+
   form {
-    display: grid;
-    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     align-items: center;
+    justify-content: center;
     margin-bottom: 12px;
   }
-  .searchForm {
-    position: relative;
-    display: grid;
-    grid-template-columns: 0.3fr 6fr 0.3fr;
-    align-items: center;
-    justify-content: center;
+  .search {
+      display: flex;
+      flex-grow: 2;
   }
   .filter-dropdown {
     max-width: fit-content;
@@ -219,6 +218,7 @@
     max-width: 100%;
     position: absolute;
     top: 2rem;
+    left: 0;
     z-index: 1000;
     display: block;
     min-width: 10rem;
@@ -228,9 +228,9 @@
     color: #fff;
     text-align: left;
     list-style: none;
-    background-color: #222222;
+    background-color: $background-secondary;
     background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0.25rem;
   }
   .dropdown-menu-list {
@@ -244,7 +244,7 @@
   .dropdown-item {
     display: flex;
     width: 100%;
-    padding: 0.25rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     clear: both;
     font-weight: 400;
     color: #fff;
@@ -263,7 +263,7 @@
     text-decoration: none;
   }
   .dropdown-item:hover {
-    background-color: rgb(42, 81, 121);
+    background-color: $color-bsaber-purple-highlight;
   }
   .dropdown-item-image {
     width: 2.5rem;
@@ -284,10 +284,9 @@
   }
   .form-control {
     display: block;
-    width: 1fr;
+    flex-grow: 1;
     float: left;
     padding: 0.375rem 0.75rem;
-    margin-right: 0.25rem;
     font-size: 0.9375rem;
     font-weight: 400;
     line-height: 1.5;
@@ -305,7 +304,7 @@
     overflow: visible;
   }
   input:hover {
-    color: #39699c;
+    color: $color-bsaber-purple-highlight;
   }
   .btn {
     display: inline-block;
@@ -326,19 +325,18 @@
   }
 
   .btn-search {
-    max-width: 5rem;
+    flex: 1 1 5rem;
   }
 
   .btn-primary {
     color: #fff;
-    background-color: #375a7f;
-    border-color: #375a7f;
-    margin-left: 0.25rem;
+    background-color: $color-bsaber-purple;
+    border-color: $color-bsaber-purple;
   }
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
   }
   .btn:hover {
-    background-color: #39699c;
+    background-color: $color-bsaber-purple-highlight;
   }
 </style>
