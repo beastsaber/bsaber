@@ -26,8 +26,9 @@ Map curation is focused on maps that avoid objectively bad mapping and have a �
 
 > Stay tuned for any changes being made for 2024!
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
+
+<br />
 
 ## What's Changing for 2023?
 
@@ -48,8 +49,7 @@ We’ve received a lot of constructive community feedback on the 2022 awards and
 - [**2022 Winners**](/posts/The-Beasties-2022-Winners)
 - [**2023 Winners**](/posts/The-Beasties-2023-Winners)
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## 2023 Beasties Categories
 
@@ -153,8 +153,7 @@ We are always seeking and implementing feedback from mappers and the community o
 
 - **Best Chroma+ Lights**: Chroma+ adds environment enhancement to the overall chroma toolbox to create custom experiences that are out of this world.
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Frequently Asked Questions
 
@@ -188,5 +187,6 @@ We are always seeking and implementing feedback from mappers and the community o
 
 > Have a question that isn’t listed here? Ask us in the [BeastSaber Discord server](https://discord.gg/VJZHUbt)!
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
+
+<br />

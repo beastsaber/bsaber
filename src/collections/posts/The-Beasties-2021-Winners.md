@@ -16,8 +16,9 @@ If you’re not the reading type, you can watch the announcement video [here](ht
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XVPaXwd0Gq8?si=xqUk1pTPLsBbEF7h?rel =0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
+
+<br />
 
 ## Individual Awards
 
@@ -33,8 +34,7 @@ If you’re not the reading type, you can watch the announcement video [here](ht
 
 - **Rookie Lighter of the Year: [Nixie.Korten](https://beatsaver.com/profile/4286374)**
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Map Style Awards
 
@@ -50,8 +50,7 @@ If you’re not the reading type, you can watch the announcement video [here](ht
 
 - **Best Acc Style Map: [Avicii - The Nights](https://beatsaver.com/maps/16abf)** by Nolanimations
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Supporting Map Awards
 
@@ -77,8 +76,7 @@ If you’re not the reading type, you can watch the announcement video [here](ht
 
 - **Best 250+ BPM Map: [[Ranked] Camellia - KillerToy](https://beatsaver.com/maps/1a466)** by Jabob
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Lighting & Modded Mapping Awards
 
@@ -96,5 +94,4 @@ Lastly, we’ll take a look at maps that focus on more than just notes, adding s
 
 - **Best Modchart: [{Modchart} acloudyskye - Somewhere Out There](https://beatsaver.com/maps/1e6ff)** by Swifter, Mawntee, & Reddek
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />

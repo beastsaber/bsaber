@@ -16,8 +16,7 @@ There are more than 100,000 maps on [BeatSaver.com](https://beatsaver.com) but y
 
 Although the BeastSaber team is mostly focused on things like curation, map reviews, and other news, the following will give you a head-start on your mapping adventure!
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## [BSMG Mapping Quick Start](https://bsmg.wiki/mapping/)
 
@@ -29,8 +28,7 @@ Although the BeastSaber team is mostly focused on things like curation, map revi
 6. Get your map [playtested](https://bsmg.wiki/mapping/#playtesting)! Third-party playtesting via the [BSMG Discord](https://discord.gg/beatsabermods) is highly recommended to get constructive feedback and to get past your own "map blindness."
 7. Once your song has been mapped, lighted, and playtested you're ready to [release](https://bsmg.wiki/mapping/#publishing-songs) your song to the world on BeatSaver.
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## BSMG Mapping Wiki
 
@@ -38,8 +36,7 @@ The [BSMG Mapping Wiki](https://bsmg.wiki/mapping/) launched in December 2019 an
 
 For those who are new to mapping and just finding their way, or those who are “mapping-curious” and are looking for how to get started, the wiki has it all including a [glossary](https://bsmg.wiki/mapping/glossary.html) of mapping terms, helpful [quick starts](https://bsmg.wiki/mapping/#mapping-quick-start) (like the one above), basic/intermediate/advanced level information on [audio setup](https://bsmg.wiki/mapping/#audio-editing-resources), [mapping](https://bsmg.wiki/mapping/#mapping-practices), and the critical steps of [playtesting](https://bsmg.wiki/mapping/#playtesting) and [releasing](https://bsmg.wiki/mapping/#publishing-songs) your map.
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Tutorial Videos
 
@@ -67,8 +64,9 @@ If you’re more of a visual learner, the videos embedded below are all current 
 
 > Some of these tutorials use older editors. The UI and some processes have changed in the latest recommended editor, ChroMapper, but the rest of the content is great!
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
+
+<br />
 
 ## Real-Time Mapping Support & Socials
 
@@ -82,10 +80,8 @@ The BSMG Discord is one of the largest servers in existence with more than 250,0
 
 Once you have your very own first map created and released you can request a role in the Mapping Discord. Here you’ll be able to go into a lot more detail on the various aspects of mapping, lighting, modded maps, chroma, and much more. This server also has a healthy social and voice chat scene for mappers.
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 **This page uses content from the BSMG Wiki which is licensed under Creative Commons (CC BY-NC-SA 4.0): https://creativecommons.org/licenses/by-nc-sa/4.0/**
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />

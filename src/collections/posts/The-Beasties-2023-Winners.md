@@ -24,8 +24,9 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qMIiUZ7D8GU?si=B7-5jTWYWUr3fvPW?autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
+
+<br />
 
 ## Supporting Map Awards
 
@@ -67,8 +68,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 - Community Choice: [Spin Eternally (One Saber E+)](https://beatsaver.com/maps/35062) – Mapped by Pink
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Lighting & Modded Mapping Awards
 
@@ -120,8 +120,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 - Community Choice: [Camellia - GHOUL](https://beatsaver.com/maps/31809) – Mapped by Jevk
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Map Style Awards
 
@@ -201,8 +200,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 - Community Choice: [Käärijä - Cha Cha Cha (Camellia Remix) (Ex+)](https://beatsaver.com/maps/34f95) – Mapped by abcbadq
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Individual Awards
 
@@ -256,5 +254,4 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 - Community Choice: [Camellia - LORELEI](https://beatsaver.com/maps/32420) – Mapped by Nolanimations, cerret, Gabriel, & Marsh
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />

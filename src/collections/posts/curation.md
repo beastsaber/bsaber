@@ -15,8 +15,9 @@ Curation highlights fun maps from across the style spectrum that our diverse tea
 
 > **Not every playable map is curation-worthy and not every curatable map will be curated. Think of us as reviewers recommending our favorite maps.**
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
+
+<br />
 
 ## The Curation Team
 
@@ -26,8 +27,7 @@ Our Senior Curators (curator management) strive to maintain a diverse group of C
 
 To follow a Curator you like, go to their BeatSaver profile page and click on the drop-down arrow next to the "Follow" button. From here, you can choose to Follow that Curator's Uploads or Curations (some of our Curators are also community mappers and even Official mappers). Once checked, you'll get notified each time they upload or curate a map (depending on your selection).
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## For Mappers
 
@@ -56,12 +56,12 @@ Maps with objective issues in the Curation Request Queue will be marked with an 
 
 > It should be noted that most of our Curators regularly keep an eye on the Latest feed on BeatSaver and will usually be able to find maps out in the wild.
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
+
+<br />
 
 ## Have a map you’d like to suggest to our Curation team?
 
 Fill out our [Curation Request Form](https://forms.gle/ppkhbA9TG4GmN3jS7) and then track the status of your request [here](https://docs.google.com/spreadsheets/d/1IBZNJUae94FjJGMmnc94JsH3SN7iBufW-CzrU2zJPEk/edit#gid=773434791).
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />

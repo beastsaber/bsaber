@@ -13,8 +13,7 @@ showInPostListing: true
 
 Have you ever played a map that felt a bit unpolished? Perhaps it had offbeat notes or something that just felt uncomfortable. Better yet, maybe you’ve played something that blew you away with perfectly timed notes and a beautiful environment to compliment your favorite song. With the map review feature on [BeatSaver](https://beatsaver.com), this article will help you give mappers constructive feedback and share your recommendations with other players.
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Things to Consider 🤔
 
@@ -40,8 +39,7 @@ Once you’ve made your selection, you’ll need to add a comment backing up you
 
 - **Standards:** Mapping standards have evolved a lot over the years. A map made in 2018 when the game had just come out is probably going to feel and flow a lot different than a more recent map. Bashing a map because standards have changed several years later is not cool.
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Best Practices
 
@@ -67,12 +65,10 @@ Once you’ve made your selection, you’ll need to add a comment backing up you
 
 - Don’t review your own work. Obviously we have biases about our own work so leave the reviewing to players who aren’t you. And yes, this includes reviewing maps you collaborated on.
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Get Reviewing! ✍️
 
 Mapping is like an art-form and no one is perfect. Not to mention, some mappers spend upwards of 40+ hours on some maps! They have different styles, different tastes, different skill sets, etc. Providing mappers with constructive feedback on where to improve and what to keep doing is the most valuable feedback they can receive – far more valuable than upvotes and downvotes. Keep it in good taste, and remember, all reviews are subject to [BeatSaver TOS](https://beatsaver.com/policy/tos).
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
