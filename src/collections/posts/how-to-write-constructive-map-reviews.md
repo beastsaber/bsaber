@@ -1,6 +1,6 @@
 ---
 title: Writing Constructive Map Reviews
-section: articles
+section: speciality
 category: guide
 publish: 2024-02-17T00:00:00.000Z
 homepageText: Learn how to write and leave constructive map reviews that can
