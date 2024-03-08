@@ -70,5 +70,3 @@ Once you’ve made your selection, you’ll need to add a comment backing up you
 ## Get Reviewing! ✍️
 
 Mapping is like an art-form and no one is perfect. Not to mention, some mappers spend upwards of 40+ hours on some maps! They have different styles, different tastes, different skill sets, etc. Providing mappers with constructive feedback on where to improve and what to keep doing is the most valuable feedback they can receive – far more valuable than upvotes and downvotes. Keep it in good taste, and remember, all reviews are subject to [BeatSaver TOS](https://beatsaver.com/policy/tos).
-
-<br />

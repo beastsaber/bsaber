@@ -3,7 +3,7 @@ title: The Beasties - 2021 Winners
 section: articles
 category: news
 publish: 2024-02-25T00:00:00.000Z
-homepageText: "Your winners for the 2021 BeastSaber Mapping Awards announced!"
+homepageText: 'Your winners for the 2021 BeastSaber Mapping Awards announced!'
 image: /static/uploads/posts/2021.jpg
 showInPostListing: true
 ---
@@ -93,5 +93,3 @@ Lastly, we’ll take a look at maps that focus on more than just notes, adding s
 - **Best Artmap: [Codly - Lucy, The God Of Time [Wall Map]](https://beatsaver.com/maps/15b16)** by Shan_Man & Reddek
 
 - **Best Modchart: [{Modchart} acloudyskye - Somewhere Out There](https://beatsaver.com/maps/1e6ff)** by Swifter, Mawntee, & Reddek
-
-<br />

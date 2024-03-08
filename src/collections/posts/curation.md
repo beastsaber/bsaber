@@ -44,7 +44,6 @@ While Curation decisions are in large part subjective, the following major playa
   - Rapid dodge walls (full-height walls that the player must move to avoid within an unsafe amount of time)
   - Face punchers (cross-body top-row patterns on the same beat)
   - Challenge patterns (loloppes, vibro, etc.) are not curatable when in a standard difficulty but are OK to have in a lawless one.
-  
 - Vision Blocks (VBs) with insufficient time to react can be major playability issues. This determination is subjective, as it is dependent on factors including NJS and offset, the speed of the map, and the intended audience. The VBs must be noticeable during play, not just through editor checking. If a dispute arises about VBs in a curated map, a thread will be started so that other Curators can play the map and form a consensus as to whether they constitute major playability issues, and thus are objective errors.
 - Hot starts (less than 1.33 seconds of time before any interactable objects)
 - No lighting (maps must have basic lighting - at least from an autolighter)
@@ -63,5 +62,3 @@ Maps with objective issues in the Curation Request Queue will be marked with an 
 ## Have a map you’d like to suggest to our Curation team?
 
 Fill out our [Curation Request Form](https://forms.gle/ppkhbA9TG4GmN3jS7) and then track the status of your request [here](https://docs.google.com/spreadsheets/d/1IBZNJUae94FjJGMmnc94JsH3SN7iBufW-CzrU2zJPEk/edit#gid=773434791).
-
-<br />

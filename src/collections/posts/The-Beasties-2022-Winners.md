@@ -3,7 +3,7 @@ title: The Beasties - 2022 Winners
 section: articles
 category: news
 publish: 2024-02-25T00:01:00.000Z
-homepageText: "Your winners for the 2022 BeastSaber Mapping Awards announced!"
+homepageText: 'Your winners for the 2022 BeastSaber Mapping Awards announced!'
 image: /static/uploads/posts/square2022.png
 showInPostListing: true
 ---
@@ -269,5 +269,3 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 - Runner-Up: [Eliminate – BREAKSH!T](https://beatsaver.com/maps/27e38) – Mapped by Timeweaver
 
 - Community Choice: [Schwank – Deimos](https://beatsaver.com/maps/1f074) – Mapped by Jabob & That_Narwhal & Lit by Bullet
-
-<br />

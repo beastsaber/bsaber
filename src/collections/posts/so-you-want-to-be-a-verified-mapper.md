@@ -7,6 +7,7 @@ homepageText: Learn how to become a Verified Mapper on BeatSaver with this guide
 image: /static/uploads/posts/verified-square1.png
 showInPostListing: true
 ---
+
 As you've probably noticed, different maps are marked in different ways on BeatSaver:
 
 Specifically, a map published by a Verified Mapper will show a purple sidebar
@@ -39,13 +40,13 @@ Verified Mappers are vetted to have been able to demonstrate the ability to regu
 
 ### Requirements
 
-* Submit three (3) of your highest-quality maps to the review queue. The verification team is looking for maps that are above average, demonstrating mastery of mapping fundamentals and a solid grasp of intermediate concepts like consistency, emphasis, representation, and use of space and momentum.
-* BeatSage or other AI-generated or assisted maps are not accepted.
-* Challenge-style or meme/s\*\** post maps ("loloppe" notes, vibro, other unhittable patterns) and the use of "pauls" or "poodles" are not accepted.
-* Audio under 60 seconds and maps over 350 bpm or that contain extended sections of 350 "effective BPM" will be disregarded
-* Collaborations, where mappers split the work of placing notes in a single difficulty, are not eligible. Lights and/or walls from another contributor must be credited in the map description
-* Only one map where you created one or more full "guest difficulties" (mapping) will be accepted. Downmapping difficulties created by others in the same map will not be accepted. The BeatSaver description must credit you for each difficulty to which you contributed.
-* If you are submitting a map that is in the process of being ranked, do not delete the submitted key. Applications with deleted or unpublished maps at the time of review will be rejected.
+- Submit three (3) of your highest-quality maps to the review queue. The verification team is looking for maps that are above average, demonstrating mastery of mapping fundamentals and a solid grasp of intermediate concepts like consistency, emphasis, representation, and use of space and momentum.
+- BeatSage or other AI-generated or assisted maps are not accepted.
+- Challenge-style or meme/s\*\*\* post maps ("loloppe" notes, vibro, other unhittable patterns) and the use of "pauls" or "poodles" are not accepted.
+- Audio under 60 seconds and maps over 350 bpm or that contain extended sections of 350 "effective BPM" will be disregarded
+- Collaborations, where mappers split the work of placing notes in a single difficulty, are not eligible. Lights and/or walls from another contributor must be credited in the map description
+- Only one map where you created one or more full "guest difficulties" (mapping) will be accepted. Downmapping difficulties created by others in the same map will not be accepted. The BeatSaver description must credit you for each difficulty to which you contributed.
+- If you are submitting a map that is in the process of being ranked, do not delete the submitted key. Applications with deleted or unpublished maps at the time of review will be rejected.
 
 Once you've made your submission, all you have to do is wait! Processing times can vary depending on the time of the year and availability of the team, but patience is key! The estimated processing time is usually about 1 to 3 months.
 
@@ -67,12 +68,12 @@ Failure is a part of learning! If everyone did everything right on their first t
 
 Congratulations, and welcome to the ranks of nearly 450 other quality mappers just like you! Successfully passing through the verification process, whether it's your first try or your fifth, will grant you:
 
-* The purple Verified stripe on your maps and automatic listing in the Verified feed on BeatSaver
-* The small purple and white checkmark on BeastSaber
-* The Mapper role in the BSMG Discord server (if you're there)
-* The Verified Mapper role in the Beat Saber Mapping and BeastSaber Discord servers (if you're in there, too)
+- The purple Verified stripe on your maps and automatic listing in the Verified feed on BeatSaver
+- The small purple and white checkmark on BeastSaber
+- The Mapper role in the BSMG Discord server (if you're there)
+- The Verified Mapper role in the Beat Saber Mapping and BeastSaber Discord servers (if you're in there, too)
 
-> Retention of this status is dependent on being a good representative of the mapping community and the Beat Saber customs community as a whole. It is a *privilege*, not a right, that can be revoked at any time for cause.
+> Retention of this status is dependent on being a good representative of the mapping community and the Beat Saber customs community as a whole. It is a _privilege_, not a right, that can be revoked at any time for cause.
 
 <br />
 
@@ -94,6 +95,4 @@ Congratulations, and welcome to the ranks of nearly 450 other quality mappers ju
 
 Please do not submit more than 1 mapper application at a time. The team of veterans reviewing your application will always reach out to you no matter what when your application has been processed.
 
-### Good luck! 
-
-<br />
+### Good luck!

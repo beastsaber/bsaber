@@ -186,7 +186,3 @@ We are always seeking and implementing feedback from mappers and the community o
     Yes, within reason. We know that you might nominate something in September and then a new map comes out in November that you also want to nominate. This is perfectly acceptable as long as multiple nominations don’t get spammy. At the end of the day there can only be five finalists in a given category, so especially if you are nominating late in the year we recommend that you nominate what you think is the BEST map for the category out of all the ones you love.
 
 > Have a question that isn’t listed here? Ask us in the [BeastSaber Discord server](https://discord.gg/VJZHUbt)!
-
-<br />
-
-<br />

@@ -12,7 +12,7 @@ showInPostListing: true
 
 ## Too many anime maps? Not enough anime maps? Take matters into your own hands and make one!
 
-There are more than 100,000 maps on [BeatSaver.com](https://beatsaver.com) but you still may not be able to find the song you want, or you find the song you want but it only has an ExpertPlus difficulty that is out of your reach. ***Anyone*** can learn to make their own maps with the resources available on this page!
+There are more than 100,000 maps on [BeatSaver.com](https://beatsaver.com) but you still may not be able to find the song you want, or you find the song you want but it only has an ExpertPlus difficulty that is out of your reach. **_Anyone_** can learn to make their own maps with the resources available on this page!
 
 Although the BeastSaber team is mostly focused on things like curation, map reviews, and other news, the following will give you a head-start on your mapping adventure!
 
@@ -44,23 +44,23 @@ If you’re more of a visual learner, the videos embedded below are all current 
 
 - [Helen Carnate's Mapping Tutorial](https://www.youtube.com/watch?v=6O3sXmh-kAA) - A 17-minute guide to get started mapping using Mediocre Map Assistant 2!
 
-    [![Helen's Tutorial](https://img.youtube.com/vi/6O3sXmh-kAA/default.jpg)](https://www.youtube.com/watch?v=6O3sXmh-kAA)
+  [![Helen's Tutorial](https://img.youtube.com/vi/6O3sXmh-kAA/default.jpg)](https://www.youtube.com/watch?v=6O3sXmh-kAA)
 
 - [Fruhead's Beginners Guide to Mapping](https://www.youtube.com/playlist?list=PL5F3WJ0s0nscdpqiWlOpM_4tJcF-CnWbm) - A comprehensive lecture series on making your first map using Mediocre Map Assistant 2.
 
-    [![Fruhead's Tutorial](https://img.youtube.com/vi/7-rfsTJavY8/default.jpg)](https://www.youtube.com/playlist?list=PL5F3WJ0s0nscdpqiWlOpM_4tJcF-CnWbm)
+  [![Fruhead's Tutorial](https://img.youtube.com/vi/7-rfsTJavY8/default.jpg)](https://www.youtube.com/playlist?list=PL5F3WJ0s0nscdpqiWlOpM_4tJcF-CnWbm)
 
 - [ChroMapper Editor Guide](https://youtube.com/playlist?list=PLS0PknCDCujE3Tf1pkbkA_uUijkV6v52y) - A series of videos on how to use the core features of the ChroMapper Editor.
 
-    [![CM Tutorial](https://img.youtube.com/vi/6SixwKR43Zg/default.jpg)](https://youtube.com/playlist?list=PLS0PknCDCujE3Tf1pkbkA_uUijkV6v52y)
+  [![CM Tutorial](https://img.youtube.com/vi/6SixwKR43Zg/default.jpg)](https://youtube.com/playlist?list=PLS0PknCDCujE3Tf1pkbkA_uUijkV6v52y)
 
 - [Cyrix's Patterns to Avoid as a New Mapper](https://www.youtube.com/watch?v=mgGaqZ20Scw) - Covers the most common issues discussed in Basic Mapping.
 
-    [![Cyrix's Tutorial](https://img.youtube.com/vi/mgGaqZ20Scw/default.jpg)](https://www.youtube.com/watch?v=mgGaqZ20Scw)
+  [![Cyrix's Tutorial](https://img.youtube.com/vi/mgGaqZ20Scw/default.jpg)](https://www.youtube.com/watch?v=mgGaqZ20Scw)
 
 - [TranquillizeMe's Beat Saber Lighting Techniques Tutorial](https://www.youtube.com/watch?v=EDbPRN_u3jc) - Covers various lighting techniques and general lighting tips.
 
-    [![TranqulizeMe's Tutorial](https://img.youtube.com/vi/EDbPRN_u3jc/default.jpg)](https://www.youtube.com/watch?v=EDbPRN_u3jc)
+  [![TranqulizeMe's Tutorial](https://img.youtube.com/vi/EDbPRN_u3jc/default.jpg)](https://www.youtube.com/watch?v=EDbPRN_u3jc)
 
 > Some of these tutorials use older editors. The UI and some processes have changed in the latest recommended editor, ChroMapper, but the rest of the content is great!
 
@@ -83,5 +83,3 @@ Once you have your very own first map created and released you can request a rol
 <br />
 
 **This page uses content from the BSMG Wiki which is licensed under Creative Commons (CC BY-NC-SA 4.0): https://creativecommons.org/licenses/by-nc-sa/4.0/**
-
-<br />

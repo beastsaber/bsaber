@@ -3,7 +3,7 @@ title: The Beasties - 2023 Winners
 section: articles
 category: news
 publish: 2024-02-27T01:32:32.689Z
-homepageText: "Your winners for the 2023 BeastSaber Mapping Awards announced!"
+homepageText: 'Your winners for the 2023 BeastSaber Mapping Awards announced!'
 image: /static/uploads/posts/square23-beastsaber-mapping-awards.png
 showInPostListing: true
 ---
@@ -46,7 +46,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 **Best Full Spread Map**:
 
-- Winner: [Knock2 - dashstar*](https://beatsaver.com/maps/27e38) – Mapped by Phøenix, Timeweaver, Pixelguy
+- Winner: [Knock2 - dashstar\*](https://beatsaver.com/maps/27e38) – Mapped by Phøenix, Timeweaver, Pixelguy
 
 - Runner-Up: [Fall Out Boy - The Phoenix](https://beatsaver.com/maps/32693) – Mapped by Bytrius
 
@@ -126,7 +126,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 **Best Balanced Style Map**:
 
-- Winner: [P*Light - ADAM](https://beatsaver.com/maps/338fe) – Mapped by Timbo
+- Winner: [P\*Light - ADAM](https://beatsaver.com/maps/338fe) – Mapped by Timbo
 
 - Runner-Up: [Teminite & MDK - Space Invaders (E+)](https://beatsaver.com/maps/318da) – Mapped by DirtyAlex
 
@@ -253,5 +253,3 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 - Runner-Up: [Black Tiger Sex Machine x Lektrique - Religion](https://beatsaver.com/maps/2d4e6) – Mapped by A Jhintleman & GojiCrafter
 
 - Community Choice: [Camellia - LORELEI](https://beatsaver.com/maps/32420) – Mapped by Nolanimations, cerret, Gabriel, & Marsh
-
-<br />
