@@ -14,7 +14,7 @@ So you are new to Beat Saber? Maybe you have seen someone play a cool map on You
 
 One of the first things most players look for is how to access the custom maps they have seen elsewhere. The specific instructions will vary based on your gaming platform.
 
-Playing custom maps does not require mods, although using mods is generally the simplest method to download them. Alternatively, if you prefer not to install any mods, you can manually download the custom maps and place them in the appropriate folder within your game's directory. For this you need to find the map files and copy them to a specific location within your game's files. The mod approach is still recommended however.
+Playing custom maps does not require mods, although using mods is generally the simplest method to download them. Alternatively, if you prefer not to install any mods, you can manually download the custom maps and place them in the appropriate folder within your game's directory. For this you need to find the map files and copy them to a specific location within your game's files. However, the mod approach is still recommended.
 
 Regardless of your method, you will most likely be getting the maps from [BeatSaver](https://beatsaver.com), where you can search for and view various maps.
 
