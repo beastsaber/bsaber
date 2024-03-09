@@ -4,7 +4,7 @@ section: articles
 category: guide
 publish: 2024-01-31T00:00:00.000Z
 homepageText: Getting Started with Mapping Levels
-image: /static/uploads/posts/screenshot-2024-02-27-182942.png
+image: /static/uploads/posts/chromapper-square.png
 showInPostListing: true
 ---
 

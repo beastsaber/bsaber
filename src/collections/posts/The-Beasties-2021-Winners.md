@@ -2,7 +2,7 @@
 title: The Beasties - 2021 Winners
 section: articles
 category: news
-publish: 2024-02-25T00:00:00.000Z
+publish: 2022-01-23T00:00:00.000Z
 homepageText: 'Your winners for the 2021 BeastSaber Mapping Awards announced!'
 image: /static/uploads/posts/2021.jpg
 showInPostListing: true
