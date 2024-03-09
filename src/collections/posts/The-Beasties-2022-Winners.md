@@ -2,8 +2,8 @@
 title: The Beasties - 2022 Winners
 section: articles
 category: news
-publish: 2024-02-25T00:01:00.000Z
-homepageText: "Your winners for the 2022 BeastSaber Mapping Awards announced!"
+publish: 2023-02-11T00:01:00.000Z
+homepageText: 'Your winners for the 2022 BeastSaber Mapping Awards announced!'
 image: /static/uploads/posts/square2022.png
 showInPostListing: true
 ---
@@ -24,8 +24,9 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pt6ppxMmZoQ?si=UzETly5fRRfMoS2C?rel =0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
+
+<br />
 
 ## Supporting Map Awards
 
@@ -87,8 +88,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 - Community Choice: [Lucidin – Fallen Symphony (E+)](https://beatsaver.com/maps/1a209) – Mapped by abcbadq
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Lighting & Modded Mapping Awards
 
@@ -146,8 +146,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 - Community Choice: [Frums – Wavetapper](https://beatsaver.com/maps/26660) – Mapped by Mawntee
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Map Style Awards
 
@@ -219,8 +218,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 - Community Choice: [Camellia – Final-Boss-Chan (NoArrows H)](https://beatsaver.com/maps/2306b) – Mapped by Cake
 
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
+<br />
 
 ## Individual Awards
 
@@ -271,6 +269,3 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 - Runner-Up: [Eliminate – BREAKSH!T](https://beatsaver.com/maps/27e38) – Mapped by Timeweaver
 
 - Community Choice: [Schwank – Deimos](https://beatsaver.com/maps/1f074) – Mapped by Jabob & That_Narwhal & Lit by Bullet
-
-<div style="page-break-before:always">&nbsp;</div>
-<p></p>
