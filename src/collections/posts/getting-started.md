@@ -12,19 +12,17 @@ So you are new to Beat Saber? Maybe you have seen someone play a cool map on You
 
 # Finding and Playing Custom Maps
 
-One of the first things most players seek is how to get the maps you have seen somewhere else. The instructions will depend on your platform.
+One of the first things most players look for is how to access the custom maps they have seen elsewhere. The specific instructions will vary based on your gaming platform.
 
-You do not need mods to play custom maps, but they certainly are the easiest way to download them (see the modding section).
+Playing custom maps does not require mods, although using mods is generally the simplest method to download them. Alternatively, if you prefer not to install any mods, you can manually download the custom maps and place them in the appropriate folder within your game's directory. For this you need to find the map files and copy them to a specific location within your game's files. However, the mod approach is still recommended.
 
-If you prefer not installing any mods you can also download them yourself and put them in the appropriate game folder. See more details on the process [here](/getting-started/custom-songs/).
-
-Regardless of your method, you will most likely be getting them from [BeatSaver](https://beatsaver.com). You can search and view maps on there as well.
+Regardless of your method, you will most likely be getting the maps from [BeatSaver](https://beatsaver.com), where you can search for and view various maps.
 
 # Modding
 
-Mods will allow you to download custom maps easily, compete in leaderboards, modify the game appearance and many more. Some maps may require additional mods to be playable. Refer to the [BSMG (Beat Saber Modding Group) Wiki](https://bsmg.wiki/beginners-guide.html) for instructions on how to mod the game as well as [our short guide](/installing-the-mod-guide-necessary-for-any-custom-songs).
+Mods will allow you to download custom maps easily, compete in leaderboards, modify the game appearance, and many more. Some maps may require additional mods to be playable. For detailed modding instructions, refer to the [BSMG (Beat Saber Modding Group) Wiki](https://bsmg.wiki/beginners-guide.html) which includes a beginner's guide on how to mod the game.
 
-Do note, that some maps can also require mods to play. These mods can be either **Chroma**, **Noodle Extensions** and **Mapping Extensions**. If you particularly want to seek out these kind of maps you can find filters for them under the "Requirements" section as well!
+Note that certain maps may also require specific mods to play. These can include **Chroma**, **Noodle Extensions**, and **Mapping Extensions**. If you are interested in maps that require these mods, you can find them by using the "Requirements" filters on map selection pages.
 
 # Finding Good Maps
 
