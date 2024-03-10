@@ -4,7 +4,6 @@
   import QuickFilters from '$lib/QuickFilters.svelte'
   import Search from '$lib/Search.svelte'
   import PostCards from '$lib/PostCards.svelte'
-  import EventCards from '$lib/EventCards.svelte'
   import Header from '$lib/Header.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
   import PlaylistCards from '$lib/PlaylistCards.svelte'
@@ -19,6 +18,7 @@
 
   import type { RootPageSSRData } from '../types'
   import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
+  import MetaHead from '$lib/MetaHead.svelte'
 
   export let data: RootPageSSRData
 
@@ -29,9 +29,7 @@
   const maxCommunityEventsCards = 6
 </script>
 
-<svelte:head>
-  <title>BeastSaber</title>
-</svelte:head>
+<MetaHead />
 
 <section>
   {#if announcement}

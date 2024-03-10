@@ -20,7 +20,7 @@
   const emtpyRenderer = new marked.Renderer()
 </script>
 
-<MetaHead title={'BeatSaber | ' + title} {imageUrl} description={post.homepageText} />
+<MetaHead {title} {imageUrl} description={post.homepageText} />
 <article>
   {#if imageUrl !== undefined}
     <header style={`background-image: url(${imageUrl})`}>
