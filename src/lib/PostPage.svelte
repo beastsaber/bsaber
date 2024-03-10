@@ -16,9 +16,11 @@
   postRenderer.link = (href, title, text) => {
     return `<a href="${href}" title="${title}" rel="external">${text}</a>`
   }
+
+  const emtpyRenderer = new marked.Renderer()
 </script>
 
-<MetaHead title={'BeatSaber | ' + title} {imageUrl} description={body.substring(0, 160)} />
+<MetaHead title={'BeatSaber | ' + title} {imageUrl} description={post.homepageText} />
 <article>
   {#if imageUrl !== undefined}
     <header style={`background-image: url(${imageUrl})`}>
