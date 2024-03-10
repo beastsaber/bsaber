@@ -8,8 +8,7 @@
   export let imageUrl: string = '/beastsaber-logo-fullsize-square.jpg'
   export let keywords: string | undefined = undefined
 
-  // Hardcoded for now - should be changed or hardcoded to bsaber.com
-  const origin = import.meta.env.DEPLOY_PRIME_URL
+  const origin = import.meta.env.VITE_DEPLOY_PRIME_URL
 
   let normalizedImage = imageUrl
   if (normalizedImage && !normalizedImage.startsWith('http') && normalizedImage.startsWith('/')) {
