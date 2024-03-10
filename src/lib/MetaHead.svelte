@@ -9,7 +9,7 @@
   export let keywords: string | undefined = undefined
 
   // Hardcoded for now - should be changed or hardcoded to bsaber.com
-  const origin = import.meta.env.DEPLOY_PRIME_URL
+  const origin = 'https://deploy-preview-62--bsaber.netlify.app/'
 
   let normalizedImage = imageUrl
   if (normalizedImage && !normalizedImage.startsWith('http') && normalizedImage.startsWith('/')) {
