@@ -38,7 +38,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content={origin + $page.url.pathname} />
-  <meta property="og:title" content={finalTitle ?? 'Beast Saber'} />
+  <meta property="og:title" content={finalTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={normalizedImage} />
 </svelte:head>
