@@ -16,8 +16,6 @@
   postRenderer.link = (href, title, text) => {
     return `<a href="${href}" title="${title}" rel="external">${text}</a>`
   }
-
-  const emtpyRenderer = new marked.Renderer()
 </script>
 
 <MetaHead {title} {imageUrl} description={post.homepageText} />
