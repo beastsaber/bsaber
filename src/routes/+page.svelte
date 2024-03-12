@@ -61,6 +61,7 @@
       linkUrl="#"
       linkText="See all community events"
     />
+    <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
   {/if}
 
   {#if currentMapOfTheWeek != undefined}
