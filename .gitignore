@@ -4,7 +4,7 @@ node_modules
 /.svelte-kit
 /.idea
 /package
-#.env
+.env
 .env.*
 !.env.example
 .vercel
