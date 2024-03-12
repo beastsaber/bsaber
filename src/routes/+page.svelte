@@ -6,22 +6,23 @@
   import PostCards from '$lib/PostCards.svelte'
   import Header from '$lib/Header.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
-  import PlaylistCards from "$lib/PlaylistCards.svelte";
-  import MapCards from "$lib/MapCards.svelte";
+  import PlaylistCards from '$lib/PlaylistCards.svelte'
+  import MapCards from '$lib/MapCards.svelte'
 
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
   import { faRectangleList } from '@fortawesome/free-solid-svg-icons/faRectangleList'
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
-  import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-  
+  import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+
   import type { RootPageSSRData } from '../types'
   import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
   import MetaHead from '$lib/MetaHead.svelte'
+  import EventCards from '$lib/EventCards.svelte'
 
-  export let data: RootPageSSRData;
-  
+  export let data: RootPageSSRData
+
   let { announcements, currentMapOfTheWeek, articles, events } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
@@ -111,23 +112,20 @@
   <!-- Search to be moved to Navbar later -->
   <Search />
 
-  <Header
-    text="Latest Articles"
-    icon={faNewspaper}
-    linkUrl="/posts"
-    linkText="See all posts"
-  />
+  <Header text="Latest Articles" icon={faNewspaper} linkUrl="/posts" linkText="See all posts" />
   <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
 
   <Header
     text="Featured Packs"
     icon={faRectangleList}
-    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists?curated=true`}"
+    linkUrl={`${
+      import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'
+    }/playlists?curated=true`}
     linkText="See all curated packs"
   />
-  <PlaylistCards maxCards="{maxFeaturedPackCards}"/>
+  <PlaylistCards maxCards={maxFeaturedPackCards} />
 
-  {#if import.meta.env.VITE_HIDE_EVENTS !== "true"}
+  {#if import.meta.env.VITE_HIDE_EVENTS !== 'true'}
     <Header
       text="Community Events"
       icon={faCalendarDay}
@@ -144,18 +142,20 @@
   <Header
     text="Recently Curated Maps"
     icon={faAward}
-    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?order=Curated&curated=true`}"
+    linkUrl={`${
+      import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'
+    }/?order=Curated&curated=true`}
     linkText="See all curated maps"
   />
-  <MapCards sortOrder="CURATED"/>
+  <MapCards sortOrder="CURATED" />
 
   <Header
     text="Recent Maps by Verified Mappers"
     icon={faCircleCheck}
-    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?verified=true`}"
+    linkUrl={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?verified=true`}
     linkText="See all maps by verified mappers"
   />
-  <MapCards verified="{true}"/>
+  <MapCards verified={true} />
 
   <Header icon={faChartLine} text="Global Ranking Leaderboards" />
   <div class="leaderboards">
