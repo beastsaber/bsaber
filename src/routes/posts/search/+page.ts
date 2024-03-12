@@ -1,7 +1,6 @@
 import type { Post } from '../../../types'
 
 export async function load() {
-  console.log('DEPLOY_PRIME_URL', process.env.DEPLOY_PRIME_URL)
   const posts: Post[] = (
     await Promise.all(
       Object.entries(import.meta.glob('/src/collections/posts/*.md')).map(
