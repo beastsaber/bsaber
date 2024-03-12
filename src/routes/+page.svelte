@@ -26,6 +26,7 @@
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
+  const maxCommunityEventsCards = 6
 </script>
 
 <MetaHead />
@@ -52,6 +53,15 @@
     linkText="See all curated packs"
   />
   <PlaylistCards maxCards={maxFeaturedPackCards} />
+
+  {#if import.meta.env.VITE_HIDE_EVENTS !== 'true'}
+    <Header
+      text="Community Events"
+      icon={faCalendarDay}
+      linkUrl="#"
+      linkText="See all community events"
+    />
+  {/if}
 
   {#if currentMapOfTheWeek != undefined}
     <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
