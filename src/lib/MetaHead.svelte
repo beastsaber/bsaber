@@ -8,7 +8,7 @@
   export let imageUrl: string = '/beastsaber-logo-fullsize-square.jpg'
   export let keywords: string | undefined = undefined
 
-  const origin = import.meta.env.VITE_DEPLOY_PRIME_URL
+  const origin = DEPLOY_PRIME_URL || 'https://bsaber.com'
 
   let normalizedImage = imageUrl
   if (normalizedImage && !normalizedImage.startsWith('http') && normalizedImage.startsWith('/')) {
