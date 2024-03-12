@@ -1,0 +1,2 @@
+[build.environment]
+VITE_DEPLOY_PRIME_URL = "$DEPLOY_PRIME_URL"
