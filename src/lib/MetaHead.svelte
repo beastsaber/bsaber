@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores'
+    import { DEPLOY_PRIME_URL } from './environmentVariables'
 
   export let title: string | undefined = undefined
   const finalTitle = title != null ? title + ' - Beast Saber' : 'Beast Saber'
