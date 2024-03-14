@@ -112,8 +112,9 @@
   <!-- Search to be moved to Navbar later -->
   <Search />
 
-  <Header text="Latest Articles" icon={faNewspaper} linkUrl="/posts" linkText="See all posts" />
-  <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
+  {#if currentMapOfTheWeek != undefined}
+    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
+  {/if}
 
   <Header
     text="Featured Packs"
@@ -125,19 +126,13 @@
   />
   <PlaylistCards maxCards={maxFeaturedPackCards} />
 
-  {#if import.meta.env.VITE_HIDE_EVENTS !== 'true'}
-    <Header
-      text="Community Events"
-      icon={faCalendarDay}
-      linkUrl="#"
-      linkText="See all community events"
-    />
-    <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
-  {/if}
-
-  {#if currentMapOfTheWeek != undefined}
-    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
-  {/if}
+  <Header
+    text="Latest Articles"
+    icon={faNewspaper}
+    linkUrl="/posts"
+    linkText="See all posts"
+  />
+  <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
 
   <Header
     text="Recently Curated Maps"
@@ -156,6 +151,16 @@
     linkText="See all maps by verified mappers"
   />
   <MapCards verified={true} />
+
+  {#if import.meta.env.VITE_HIDE_EVENTS !== "true"}
+    <Header
+      text="Community Events"
+      icon={faCalendarDay}
+      linkUrl="#"
+      linkText="See all community events"
+    />
+    <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
+  {/if}
 
   <Header icon={faChartLine} text="Global Ranking Leaderboards" />
   <div class="leaderboards">
