@@ -16,7 +16,7 @@
     })
 
     let baseUrl = import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
-    let url = `${baseUrl}/maps/latest?sort=${sortOrder}${(verified !== undefined) ? `&verified=${verified}` : ""}&pageSize=${maxCards ?? 10}`
+    let url = `${baseUrl}/maps/latest?sort=${sortOrder}${(verified !== undefined) ? `&verified=${verified}` : ""}&pageSize=${maxCards ?? 8}`
 
     async function getMaps() {
         let response = await fetch(url)
@@ -48,7 +48,7 @@
             </div>
         {/each}
     {:else}
-        {#each Array(maxCards ?? 10) as _}
+        {#each Array(maxCards ??8) as _}
             <div class="card loading"/>
         {/each}
     {/if}

@@ -113,6 +113,10 @@
   <!-- Search to be moved to Navbar later -->
   <Search />
 
+  {#if currentMapOfTheWeek != undefined}
+    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
+  {/if}
+
   <Header
     text="Featured Packs"
     icon={faRectangleList}
@@ -120,18 +124,6 @@
     linkText="See all curated packs"
   />
   <PlaylistCards maxCards="{maxFeaturedPackCards}"/>
-
-  {#if currentMapOfTheWeek != undefined}
-    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
-  {/if}
-
-  <Header
-    text="Latest Articles"
-    icon={faNewspaper}
-    linkUrl="/posts"
-    linkText="See all posts"
-  />
-  <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
 
   <Header
     text="Recently Curated Maps"
@@ -148,6 +140,14 @@
     linkText="See all maps by verified mappers"
   />
   <MapCards verified="{true}"/>
+  
+  <Header
+    text="Latest Articles"
+    icon={faNewspaper}
+    linkUrl="/posts"
+    linkText="See all posts"
+  />
+  <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
 
   {#if import.meta.env.VITE_HIDE_EVENTS !== "true"}
     <Header
