@@ -126,6 +126,14 @@
   <PlaylistCards maxCards="{maxFeaturedPackCards}"/>
 
   <Header
+    text="Latest Articles"
+    icon={faNewspaper}
+    linkUrl="/posts"
+    linkText="See all posts"
+  />
+  <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
+
+  <Header
     text="Recently Curated Maps"
     icon={faAward}
     linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?order=Curated&curated=true`}"
@@ -140,14 +148,6 @@
     linkText="See all maps by verified mappers"
   />
   <MapCards verified="{true}"/>
-  
-  <Header
-    text="Latest Articles"
-    icon={faNewspaper}
-    linkUrl="/posts"
-    linkText="See all posts"
-  />
-  <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
 
   {#if import.meta.env.VITE_HIDE_EVENTS !== "true"}
     <Header
