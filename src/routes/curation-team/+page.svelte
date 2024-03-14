@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   import type { Uploader } from '../../types.js'
   import CuratorCard from '$lib/CuratorCard.svelte'
+  import MetaHead from '$lib/MetaHead.svelte'
 
   let curators: Uploader[] = []
 
@@ -10,9 +11,7 @@
   })
 </script>
 
-<svelte:head>
-  <title>Curation Team - BeastSaber</title>
-</svelte:head>
+<MetaHead title="Curation Team" />
 
 <div class="cards">
   {#each curators as curator (curator.id)}
