@@ -1,15 +1,18 @@
 <script lang="ts">
   import type { Post } from '../../types'
   import PostListCard from '$lib/PostListCard.svelte'
+  import MetaHead from '$lib/MetaHead.svelte'
 
   export let data
   let posts: Post[] = data.posts
 </script>
 
+<MetaHead />
+
 <h1>Recent Articles</h1>
 <div class="cards">
   {#each posts as post}
-    <PostListCard post="{post}"/>
+    <PostListCard {post} />
   {/each}
 </div>
 

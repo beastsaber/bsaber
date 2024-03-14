@@ -3,6 +3,7 @@
   import PostListCard from '$lib/PostListCard.svelte'
   import { onMount } from 'svelte'
   import Fuse from 'fuse.js'
+  import MetaHead from '$lib/MetaHead.svelte'
 
   export let data
   let posts: Post[] = []
@@ -31,6 +32,8 @@
     updatePostsAccordingToSearchQuery()
   })
 </script>
+
+<MetaHead />
 
 <h1>Article Search</h1>
 <div class="cards">
