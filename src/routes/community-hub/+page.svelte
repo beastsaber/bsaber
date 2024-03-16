@@ -196,7 +196,7 @@
 </div>
 <div class="grid">
   {#each filteredCommunities as community}
-    <div class="community-card">
+    <div class="community-card activity-{community.activityLevel}">
       <h2>{community.name}</h2>
       <div>
         <div class="community-image">
@@ -357,9 +357,21 @@
     border-radius: $card-border-radius;
     overflow: hidden;
     padding: 1.2rem;
-    h2 {
+    & h2 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
+    }
+
+    &.activity-high {
+      border: 3px solid #32cd32;
+    }
+
+    &.activity-medium {
+      border: 3px solid #ffd700;
+    }
+
+    &.activity-low {
+      border: 3px solid #fa8072;
     }
   }
 

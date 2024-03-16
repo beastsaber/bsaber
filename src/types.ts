@@ -142,6 +142,7 @@ export type Community = {
   name: string
   description: string
   image?: string
+  activityLevel: 'high' | 'medium' | 'low'
   labels: string[]
   socials: Social[]
 }

@@ -5,6 +5,7 @@ description: Learn how to mod Beat Saber, create custom content, and get
 image: /static/uploads/communities/45712684.png
 labels:
   - Modding
+activityLevel: high
 socials:
   - name: Discord
     url: https://discord.gg/beatsabermods

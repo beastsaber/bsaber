@@ -5,6 +5,7 @@ image: /static/uploads/communities/yes-i-am-chaeyoung-photobook-scans-documents-
 labels:
   - Chaeyoung
   - Modding
+activityLevel: high
 socials:
   - name: Facebook
     url: https://facebook.com

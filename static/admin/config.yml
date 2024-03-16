@@ -112,6 +112,13 @@ collections:
         search_fields: [label]
         value_field: label
         display_fields: [label]
+      - name: activityLevel
+        label: Activity Level
+        widget: select
+        options:
+          - { label: 'Low', value: 'low' }
+          - { label: 'Medium', value: 'medium' }
+          - { label: 'High', value: 'high' }
       - name: socials
         label: Socials
         widget: list
