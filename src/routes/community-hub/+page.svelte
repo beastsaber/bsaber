@@ -18,15 +18,28 @@
   const filterCommunities = (
     communities: CommunityHubSSRData['communities'],
     labelSettings: CommunityHubSSRData['availableLabels'],
+    filteredForSocials: string[],
   ) => {
     const activeLabels = labelSettings.filter((label) => label.activated)
-    return communities.filter((community) =>
-      activeLabels.every((activeLabel) => community.labels.includes(activeLabel.label)),
-    )
+    return communities.filter((community) => {
+      const hasAllActiveLabels = activeLabels.every((activeLabel) =>
+        community.labels.includes(activeLabel.label),
+      )
+      const hasAllFilteredSocials = filteredForSocials.every((social) =>
+        community.socials.some((x) => x.name === social),
+      )
+
+      return hasAllActiveLabels && hasAllFilteredSocials
+    })
   }
 
   export let data: CommunityHubSSRData
-  let filteredCommunities = filterCommunities(data.communities, data.availableLabels)
+  let filteredForSocials: string[] = []
+  let filteredCommunities = filterCommunities(
+    data.communities,
+    data.availableLabels,
+    filteredForSocials,
+  )
   let showFilterdropdown = false
 
   const iconMapping = {
@@ -53,7 +66,25 @@
       console.log(data.availableLabels)
     }
 
-    filteredCommunities = filterCommunities(data.communities, data.availableLabels)
+    filteredCommunities = filterCommunities(
+      data.communities,
+      data.availableLabels,
+      filteredForSocials,
+    )
+  }
+
+  const toggleSocialFilter = (social: string) => () => {
+    if (filteredForSocials.includes(social)) {
+      filteredForSocials = filteredForSocials.filter((x) => x !== social)
+    } else {
+      filteredForSocials = [...filteredForSocials, social]
+    }
+
+    filteredCommunities = filterCommunities(
+      data.communities,
+      data.availableLabels,
+      filteredForSocials,
+    )
   }
 
   // Located here to be able to remove the event listener
@@ -109,6 +140,17 @@
           {label.label}
         </div>
       {/each}
+      <div class="social-filter-bar">
+        {#each Object.entries(iconMapping) as [name, icon]}
+          <span
+            class="social-filter-button {filteredForSocials.includes(name) ? 'active' : 'inactive'}"
+            title={name}
+            on:click={toggleSocialFilter(name)}
+          >
+            <FontAwesomeIcon {icon} />
+          </span>
+        {/each}
+      </div>
     </div>
   </div>
 </div>
@@ -204,6 +246,31 @@
     border-bottom: 1px solid white;
     margin-bottom: 2rem;
     align-items: center;
+  }
+
+  .social-filter-bar {
+    margin-top: 1rem;
+  }
+
+  .social-filter-button {
+    display: inline-block;
+    padding: 1rem;
+    width: 1rem;
+    margin: 0.05rem;
+    color: #fff;
+    transition-property: background-color color;
+    transition-duration: 0.2s;
+    border-radius: $card-border-radius;
+
+    &.active {
+      background-color: $color-bsaber-purple;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #ccc;
+      background-color: $color-bsaber-purple;
+    }
   }
 
   h1 {
