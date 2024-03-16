@@ -367,18 +367,6 @@
         border: 3px solid #32cd32;
       }
     }
-
-    &.activity-medium {
-      .community-image img {
-        border: 3px solid #ffd700;
-      }
-    }
-
-    &.activity-low {
-      .community-image img {
-        border: 3px solid #fa8072;
-      }
-    }
   }
 
   .community-image img {
