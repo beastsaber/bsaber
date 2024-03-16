@@ -61,7 +61,7 @@ collections:
         hint: The BeatSaver ID of the map of the week. You can find this one in the URL of the map's page on beatsaver.com. For example, the ID of the map https://beatsaver.com/maps/8f is the last part 8f.
       - name: review
         label: Review
-        hint: "An accompanying text to the map of the week that should review and ideally describe what made it the MOTW. Example \"This map has a fantastic lightshow on the new Lattice environment, a poodle diff and three other diffs accessible to a variety of players with great and unique usage of arcs.\""
+        hint: 'An accompanying text to the map of the week that should review and ideally describe what made it the MOTW. Example "This map has a fantastic lightshow on the new Lattice environment, a poodle diff and three other diffs accessible to a variety of players with great and unique usage of arcs."'
         widget: text
       - name: startDate
         label: Start Date
@@ -73,5 +73,67 @@ collections:
         required: false
         hint: If you want to use a different cover image than the one fetched from BeatLeader, you can provide a URL here.
         widget: string
+  - name: community-labels
+    label: Community Labels
+    folder: src/collections/community-labels
+    slug: '{{label}}'
+    create: true
+    fields:
+      - name: label
+        label: Label
+        widget: string
+      - name: description
+        label: Description
+        widget: string
+      - name: color
+        label: Color
+        widget: color
+  - name: community
+    label: Community
+    folder: src/collections/communities
+    create: true
+    fields:
+      - name: name
+        label: Name
+      - name: description
+        label: Description
+        widget: text
+      - name: image
+        label: Image
+        widget: image
+        required: false
+        media_folder: /static/uploads/communities
+        choose_url: false
+      - name: labels
+        label: Labels
+        widget: relation
+        collection: community-labels
+        multiple: true
+        search_fields: [label]
+        value_field: label
+        display_fields: [label]
+      - name: socials
+        label: Socials
+        widget: list
+        multiple: true
+        fields:
+          - {
+              label: Name,
+              name: name,
+              widget: select,
+              options:
+                [
+                  'Discord',
+                  'Twitter/X',
+                  'Facebook',
+                  'Instagram',
+                  'Twitch',
+                  'YouTube',
+                  'Reddit',
+                  'GitHub',
+                  'Website',
+                ],
+            }
+          - { label: URL, name: url, widget: string }
 media_folder: 'static/uploads'
 public_folder: '/uploads'
