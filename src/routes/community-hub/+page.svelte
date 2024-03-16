@@ -12,7 +12,7 @@
     faReddit,
     faGithub,
   } from '@fortawesome/free-brands-svg-icons'
-  import { faLink } from '@fortawesome/free-solid-svg-icons'
+  import { faLink, faCaretDown } from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome'
   export let data: CommunityHubSSRData
   export let activatedLabelFilters: CommunityLabel[] = []
@@ -35,7 +35,10 @@
 
 <MetaHead title="Community Hub" />
 
-<h1>Community Hub</h1>
+<div class="header-line">
+  <h1>Community Hub</h1>
+  <div class="filter-button">Filter by Type &nbsp;&nbsp;<FontAwesomeIcon icon={faCaretDown} /></div>
+</div>
 <div class="grid">
   {#each data.communities as community}
     <div class="community-card">
@@ -76,11 +79,39 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
+  .header-line {
+    display: flex;
+    border-bottom: 1px solid white;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  h1 {
+    flex: 1;
+    flex-grow: 1;
+    margin-bottom: 0.3rem;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .filter-button {
+    background-color: $color-bsaber-purple-highlight;
+    border-radius: $card-border-radius;
+    padding: 0.3rem 1rem;
+
+    transition-property: background-color;
+    transition-duration: 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-bsaber-purple;
+    }
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
-    padding: 20px;
   }
 
   .community-card {
@@ -104,6 +135,7 @@
   }
 
   .community-info {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
