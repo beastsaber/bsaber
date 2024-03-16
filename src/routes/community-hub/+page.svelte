@@ -167,7 +167,7 @@
   <h1>Community Hub</h1>
   <div class="filter-dropdown-anchor">
     <div class="filter-button" on:click={() => toggleFilterDropdown()}>
-      Filter by Type &nbsp;&nbsp;<FontAwesomeIcon icon={faCaretDown} />
+      Filter &nbsp;&nbsp;<FontAwesomeIcon icon={faCaretDown} />
     </div>
     <div class="filter-dropdown" style={showFilterdropdown ? 'display: block' : 'display: none;'}>
       <input class="search-text-field" type="text" on:input={updateNameAndDescriptionFilter} />
@@ -246,7 +246,7 @@
   .filter-dropdown {
     position: absolute;
     top: 2.5rem;
-    left: -($dialogPadding * 2) - $dialogOverhangingWith;
+    left: -($dialogPadding * 2) - $dialogOverhangingWith - 4rem;
     width: 10rem + $dialogOverhangingWith;
     background-color: #777;
     box-shadow: 0px 1px 5px 0px #999;
