@@ -1,6 +1,7 @@
 <script lang="ts">
   import { marked } from 'marked'
   import type { Post } from '../types'
+  import MetaHead from './MetaHead.svelte'
 
   export let post: Post
   const { body, title, image } = post
@@ -17,6 +18,7 @@
   }
 </script>
 
+<MetaHead {title} {imageUrl} description={post.homepageText} />
 <article>
   {#if imageUrl !== undefined}
     <header style={`background-image: url(${imageUrl})`}>
