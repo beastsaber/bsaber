@@ -214,6 +214,7 @@
     z-index: 1;
 
     .label {
+      text-align: center;
       $backgroundActive: #999;
       $backgroundInactive: #555;
       margin-top: 0.5rem;
