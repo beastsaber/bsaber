@@ -363,15 +363,21 @@
     }
 
     &.activity-high {
-      border: 3px solid #32cd32;
+      .community-image img {
+        border: 3px solid #32cd32;
+      }
     }
 
     &.activity-medium {
-      border: 3px solid #ffd700;
+      .community-image img {
+        border: 3px solid #ffd700;
+      }
     }
 
     &.activity-low {
-      border: 3px solid #fa8072;
+      .community-image img {
+        border: 3px solid #fa8072;
+      }
     }
   }
 
