@@ -7,8 +7,21 @@ export type CommunityHubSSRData = {
 }
 
 export const load = async (): Promise<CommunityHubSSRData> => {
-  const communityCollections = await retrieveAllCollectionDataOfType('communities')
-  const communityLabelsCollections = await retrieveAllCollectionDataOfType('community-labels')
+  const communityCollections = (await retrieveAllCollectionDataOfType('communities')).sort(
+    (a, b) => {
+      return a.attributes.name.localeCompare(b.attributes.name)
+    },
+  )
+
+  communityCollections.forEach((community) =>
+    community.attributes.labels.sort((a, b) => a.localeCompare(b)),
+  )
+
+  const communityLabelsCollections = (
+    await retrieveAllCollectionDataOfType('community-labels')
+  ).sort((a, b) => {
+    return a.attributes.label.localeCompare(b.attributes.label)
+  })
 
   return {
     communities: communityCollections.map((community) => community.attributes),
