@@ -12,8 +12,11 @@ socials:
     url: https://github.com/bsmg
   - name: Website
     url: https://bsmg.wiki/
+    titleOverwrite: BSMG Wiki
   - name: Website
     url: https://www.patreon.com/beatsabermods
+    titleOverwrite: Patreon
   - name: Website
     url: https://bsmgstore.com/
+    titleOverwrite: BSMG Store
 ---

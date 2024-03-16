@@ -135,6 +135,7 @@ export type SocialMediaTypes =
 export type Social = {
   name: SocialMediaTypes
   url: string
+  titleOverwrite?: string
 }
 
 export type Community = {

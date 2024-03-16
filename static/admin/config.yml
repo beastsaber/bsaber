@@ -135,5 +135,14 @@ collections:
                 ],
             }
           - { label: URL, name: url, widget: string }
+          - {
+              label: Title Overwrite,
+              name: titleOverwrite,
+              widget: string,
+              hint: The title is the text that appears if you hover over the icon. If you want to overwrite it,
+              you can do so here. Otherwise,
+              the title will be the same as the name that has been selected.,
+              required: false,
+            }
 media_folder: 'static/uploads'
 public_folder: '/uploads'

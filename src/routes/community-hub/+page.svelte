@@ -223,7 +223,7 @@
           <p class="community-description">{community.description}</p>
           <div class="social-icons">
             {#each community.socials as social}
-              <a href={social.url} title={social.name}
+              <a href={social.url} title={social.titleOverwrite ?? social.name}
                 ><FontAwesomeIcon icon={iconMapping[social.name]} /></a
               >
             {/each}
