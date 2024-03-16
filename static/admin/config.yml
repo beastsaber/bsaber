@@ -109,6 +109,7 @@ collections:
         widget: relation
         collection: community-labels
         multiple: true
+        max: 2
         search_fields: [label]
         value_field: label
         display_fields: [label]
