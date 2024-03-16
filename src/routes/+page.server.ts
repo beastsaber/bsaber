@@ -6,14 +6,20 @@ import type {
   ImportPostModuleData,
   ImportMapOfTheWeekModuleData,
 } from '../types'
+
 export type RootPageSSRData = {
   announcements: Post[]
-  news: Post[]
+  articles: Post[]
   others: Post[]
   communityEvents: CommunityEvent[]
   currentMapOfTheWeek: MapOfTheWeek | undefined
 }
-export async function load({ fetch }): Promise<RootPageSSRData> {
+
+interface LoadParameters {
+  fetch: typeof fetch
+}
+
+export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> {
   const posts: Post[] = await Promise.all(
     Object.entries(import.meta.glob<ImportPostModuleData>('/src/collections/posts/**/*.md')).map(
       async ([path, module]) => {
@@ -47,10 +53,10 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
       coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage
     }
 
-    if(coverUrl == null) {
-      throw new Error('No cover URL found!');
+    if (coverUrl == null) {
+      throw new Error('No cover URL found!')
     }
-    
+
     currentMapOfTheWeek = {
       map: {
         id: beatSaverMapData.id,
@@ -60,8 +66,10 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
           id: beatSaverMapData.uploader.id,
           name: beatSaverMapData.uploader.name,
           avatar: beatSaverMapData.uploader.avatar,
+          description: beatSaverMapUploaderData.description,
           admin: beatSaverMapUploaderData.admin,
-          curator: beatSaverMapUploaderData.curator,
+          curator: !!beatSaverMapUploaderData.curator,
+          seniorCurator: !!beatSaverMapUploaderData.seniorCurator,
           verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
         },
       },
@@ -74,7 +82,7 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
 
   const rootPageSSRData: Omit<RootPageSSRData, 'currentMapOfTheWeek' | 'communityEvents'> = {
     announcements: [],
-    news: [],
+    articles: [],
     others: [],
   }
 
@@ -84,8 +92,8 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
       case 'announcements':
         rootPageSSRData.announcements.push(post)
         break
-      case 'news':
-        rootPageSSRData.news.push(post)
+      case 'articles':
+        rootPageSSRData.articles.push(post)
         break
       default:
         rootPageSSRData.others.push(post)

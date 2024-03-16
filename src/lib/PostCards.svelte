@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Post } from '../types'
-  import { postSections } from '../maps'
+  import { postCategories } from '../maps'
   type ValidNumColumns = `${'3' | '4'}`
 
   export let maxColumns: ValidNumColumns = '4'
@@ -10,8 +10,8 @@
 
   let cardsToShow =
     maxCards !== undefined && maxCards >= 0 ? posts.slice(0, Math.round(maxCards)) : posts
-  cardsToShow = cardsToShow.map(c => {
-    return {...c, section: postSections[c.section]}
+  let cardsWithLabel = cardsToShow.map(c => {
+    return {...c, categoryLabel: postCategories[c.category]}
   })
 
   const maxColsClass = `max-cols-${maxColumns}`
@@ -25,7 +25,7 @@
 </script>
 
 <div class="cards {maxColsClass}" style="--aspect-ratio:{aspectRatio}">
-  {#each cardsToShow as card}
+  {#each cardsWithLabel as card}
     <a
       class="card"
       href={`/posts/${card.slug}`}
@@ -33,7 +33,7 @@
     >
       <div class="content {maxColsClass}">
         {#if card.section !== undefined}
-          <span class="section" title={card.section}>{card.section}</span>
+          <span class="category" title={card.categoryLabel}>{card.categoryLabel}</span>
         {/if}
         <h3 class="title">{card.title ?? ''}</h3>
       </div>
@@ -44,7 +44,7 @@
 <style lang="scss">
   @import '../scss/post-cards';
 
-  .section {
+  .category {
     font-size: 0.75rem;
     border-radius: 1.5rem;
     background-color: $background-secondary;

@@ -37,6 +37,10 @@ article {
     margin-bottom: 1rem;
   }
 
+  & > :is(p, ol, ul, blockquote, pre, table):last-child {
+    margin-bottom: 0;
+  }
+
   li {
     margin-bottom: 0.5rem;
   }

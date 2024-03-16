@@ -50,8 +50,8 @@
     grid-template-rows: repeat(1, 1fr);
     grid-auto-rows: minmax(0, auto);
     width: 100%;
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
   }
 
   @media (min-width: 420px) and (max-width: 839px) {
@@ -68,12 +68,6 @@
   @media (min-width: 840px) {
     .filters {
       grid-template-columns: repeat(5, 1fr);
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .filters {
-      gap: 26px;
     }
   }
 </style>

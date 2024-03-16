@@ -1,13 +1,13 @@
 export type Post = {
   title: string
-  section: string
+  section: 'announcements' | 'articles' | 'speciality'
   publish: string
   body: string
   slug: string
   homepageText?: string
   image?: string
   icon?: string
-  category?: string
+  category: '' | 'announcement' | 'news' | 'articles' | 'interview' | 'event'
 }
 
 export type CommunityEvent = {
@@ -77,9 +77,11 @@ export type BeatmapDifficulty = {
 export type Uploader = {
   id: number,
   name: string,
+  description: string,
   avatar: string,
   admin: boolean,
   curator: boolean,
+  seniorCurator: boolean,
   verifiedMapper: boolean
 }
 
@@ -101,7 +103,7 @@ export type ImportMapOfTheWeekModuleData = ImportModuleData<MapOfTheWeekCollecti
 
 export type RootPageSSRData = {
   announcements: Post[]
-  news: Post[]
+  articles: Post[]
   others: Post[]
   communityEvents: CommunityEvent[],
   currentMapOfTheWeek: MapOfTheWeek | undefined,

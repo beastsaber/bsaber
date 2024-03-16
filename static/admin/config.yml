@@ -16,11 +16,20 @@ collections:
         hint: This will decide which section the post appears in on the homepage and article collection pages.
         widget: select
         options:
-          - { label: 'Announcement', value: 'announcements' }
+          - { label: 'Announcements', value: 'announcements' }
+          - { label: 'Articles', value: 'articles' }
+          - { label: 'Speciality', value: 'speciality' }
+      - name: category
+        label: Category
+        hint: This will determine what label will show above the post title.
+        widget: select
+        options:
+          - { label: 'None', value: '' }
+          - { label: 'Announcement', value: 'announcement' }
           - { label: 'News', value: 'news' }
-          - { label: 'Music Pack', value: 'music-packs' }
-          - { label: 'Community Event', value: 'community-events' }
-          - { label: 'Map of the Week', value: 'maps-of-the-week' }
+          - { label: 'Guide', value: 'guide' }
+          - { label: 'Interview', value: 'interview' }
+          - { label: 'Event', value: 'event' }
       - name: publish
         label: Publish Date
         widget: datetime
@@ -37,31 +46,10 @@ collections:
         required: false
         media_folder: /static/uploads/posts
         choose_url: false
-  - name: curation-team
-    label: Curation Team
-    slug: '{{name}}'
-    folder: src/collections/curation-team
-    create: true
-    fields:
-      - name: name
-      - name: slug
-      - name: role
-        widget: select
-        options: [Curator, Senior Curator]
-      - name: style_tags
-        widget: list
-        allow_add: true
-      - name: favorite_map
-        widget: object
-        fields:
-          - name: name
-          - name: url
-      - name: bio
-        widget: markdown
-      - name: image
-        widget: image
-        media_folder: /static/uploads/curators
-        choose_url: false
+      - name: showInPostListing
+        label: Show in post listing
+        widget: boolean
+        default: true
   - name: map-of-the-week
     label: Map of the Week
     folder: src/collections/map-of-the-week

@@ -66,10 +66,11 @@ export const difficulties: Record<string, {shortName: string, slug: string}> = {
     "ExpertPlus": { shortName: "X+", slug: "expert-plus" }
 }
 
-export const postSections: Record<string, string> = {
-  'announcements': 'Announcement',
-  'news': 'News',
-  'music-packs': 'Music Pack',
-  'community-events': 'Community Event',
-  'maps-of-the-week': 'Map of the Week'
+export const postCategories: Record<string, string> = {
+    'announcement': 'Announcement',
+    'news': 'News',
+    'guide': 'Guide',
+    'article': 'Article',
+    'interview': 'Interview',
+    'event': 'Event',
 }

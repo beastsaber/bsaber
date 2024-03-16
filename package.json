@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "concurrently --kill-others \"npm run dev:frontend\" \"npm run netlify-cms\"",
     "dev:frontend": "vite dev",
-    "build": "vite build",
+    "build": "envsubst < ./environmentVariables.ts.template > ./src/lib/environmentVariables.ts && vite build",
     "preview": "vite preview",
     "test": "playwright test",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

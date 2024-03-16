@@ -1,34 +1,28 @@
-<script>
-  export let name
-  export let slug
-  export let role
-  export let tags
-  export let bio
-  export let fav_map
-  export let image
+<script lang="ts">
+  import { marked } from 'marked'
+
+  export let name: string
+  export let id: number
+  export let roles: { verifiedMapper: boolean, curator: boolean, seniorCurator: boolean }
+  export let description: string
+  export let avatar: string
 </script>
 
 <div class="curator-card">
   <div class="header">
-    <img class="image" src={image} alt={slug} />
+    <img class="image" src={avatar} alt={name} />
     <div class="info">
-      <h3>{name}</h3>
-      <p class="role">{role}</p>
-      <div class="tags">
-        {#each tags as tag}
-          <span class="style-tag">{tag}</span>
-        {/each}
-      </div>
+      <a class="name"
+         href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${id}`}>{name}</a>
+      <p class="roles">{
+        (roles.seniorCurator ? "Senior Curator" : "Curator") + (roles.verifiedMapper ? ", Mapper" : "")
+      }</p>
     </div>
   </div>
   <div class="bottom">
-    <div>
-      <p class="bio">{bio}</p>
-    </div>
-    <div class="fav-map">
-      <h4>Favorite Map:</h4>
-      <p><a href={fav_map.url}>{fav_map.name}</a></p>
-    </div>
+    <article class="description">
+      {@html marked(description.replace(/\n/g, "  \n"))}
+    </article>
   </div>
 </div>
 
@@ -40,38 +34,30 @@
     border-radius: $rounding;
     overflow: hidden;
     flex-basis: 30%;
-    margin: 12px;
     display: flex;
     flex-direction: column;
 
     .header {
       display: flex;
       align-items: center;
-      background-color: $background-tertiary;
       padding: 0 12px;
 
       .image {
         border-radius: 50%;
-        height: 5rem;
+        height: 2.5rem;
         margin: 12px 12px 12px 0;
       }
 
       .info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .role {
-          color: $text-secondary;
+        .name {
+          display: block;
+          font-weight: bold;
+          color: white;
         }
 
-        .style-tag {
-          font-size: 0.75rem;
-          font-weight: bold;
-          border-radius: $rounding;
-          padding: 0 4px;
-          background-color: #1268a1;
-          margin-right: 8px;
+        .roles {
+          font-size: .75rem;
+          color: $text-secondary;
         }
       }
     }
@@ -82,11 +68,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
-      .bio {
-        margin: 0 0 12px 0;
-        text-align: justify;
-      }
     }
   }
 </style>
