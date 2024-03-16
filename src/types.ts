@@ -115,7 +115,7 @@ export type RootPageSSRData = {
   currentMapOfTheWeek: MapOfTheWeek | undefined
 }
 
-export type CommunityLabels = {
+export type CommunityLabel = {
   label: string
   description: string
   color: string

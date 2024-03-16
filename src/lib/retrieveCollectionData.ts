@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from 'fs'
 import frontmatter from 'front-matter'
 import { resolve } from 'path'
-import type { Community, CommunityLabels, MapOfTheWeekCollectionData, Post } from '../types'
+import type { Community, CommunityLabel, MapOfTheWeekCollectionData, Post } from '../types'
 
 type ConvertToAttributeKeyedObject<T> = {
   body?: string
@@ -16,7 +16,7 @@ type ConvertToAttributeKeyedObjectWithNoBody<T> = {
 export type CollectionDataTypeMap = {
   'map-of-the-week': ConvertToAttributeKeyedObjectWithNoBody<MapOfTheWeekCollectionData>
   communities: ConvertToAttributeKeyedObjectWithNoBody<Community>
-  'communty-labels': ConvertToAttributeKeyedObjectWithNoBody<CommunityLabels>
+  'communty-labels': ConvertToAttributeKeyedObjectWithNoBody<CommunityLabel>
   posts: ConvertToAttributeKeyedObject<Post>
 }
 /**
