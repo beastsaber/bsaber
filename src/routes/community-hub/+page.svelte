@@ -14,8 +14,21 @@
   } from '@fortawesome/free-brands-svg-icons'
   import { faLink, faCaretDown } from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome'
+
+  const filterCommunities = (
+    communities: CommunityHubSSRData['communities'],
+    labelSettings: CommunityHubSSRData['availableLabels'],
+  ) => {
+    const activeLabels = labelSettings.filter((label) => label.activated)
+    return communities.filter((community) =>
+      activeLabels.every((activeLabel) => community.labels.includes(activeLabel.label)),
+    )
+  }
+
   export let data: CommunityHubSSRData
-  export let activatedLabelFilters: CommunityLabel[] = []
+  let filteredCommunities = filterCommunities(data.communities, data.availableLabels)
+  let showFilterdropdown = false
+
   const iconMapping = {
     Discord: faDiscord,
     'Twitter/X': faXTwitter,
@@ -31,16 +44,76 @@
   const getLabelObject = (labelName: string) => {
     return data.availableLabels.find((label) => label.label === labelName)
   }
+
+  const toggleLabelFilter = (label: string) => () => {
+    const foundLabel = data.availableLabels.find((x) => x.label == label)
+    if (foundLabel) {
+      foundLabel.activated = !foundLabel.activated
+      data.availableLabels = [...data.availableLabels]
+      console.log(data.availableLabels)
+    }
+
+    filteredCommunities = filterCommunities(data.communities, data.availableLabels)
+  }
+
+  // Located here to be able to remove the event listener
+  const outsideDropdownClickEventListener = (event: MouseEvent) => {
+    const dropdown = document.querySelector('.filter-dropdown') as HTMLDivElement
+    const clickedOutside = !dropdown.contains(event.target as Node)
+
+    if (clickedOutside) {
+      document.body.removeEventListener('click', outsideDropdownClickEventListener)
+      showFilterdropdown = false
+    }
+  }
+
+  const openFilterDropdown = () => {
+    showFilterdropdown = true
+
+    // Requeueing the addition of the event listener to the next event loop
+    // Otherwise, it will not open the dropdown, as it triggers immediately after the click event
+    setTimeout(() => {
+      document.body.addEventListener('click', outsideDropdownClickEventListener)
+    }, 0)
+  }
+
+  const closeFilterDropdown = () => {
+    showFilterdropdown = false
+    document.body.removeEventListener('click', outsideDropdownClickEventListener)
+  }
+
+  const toggleFilterDropdown = () => {
+    if (showFilterdropdown) {
+      closeFilterDropdown()
+    } else {
+      openFilterDropdown()
+    }
+  }
 </script>
 
 <MetaHead title="Community Hub" />
 
 <div class="header-line">
   <h1>Community Hub</h1>
-  <div class="filter-button">Filter by Type &nbsp;&nbsp;<FontAwesomeIcon icon={faCaretDown} /></div>
+  <div class="filter-dropdown-anchor">
+    <div class="filter-button" on:click={() => toggleFilterDropdown()}>
+      Filter by Type &nbsp;&nbsp;<FontAwesomeIcon icon={faCaretDown} />
+    </div>
+    <div class="filter-dropdown" style={showFilterdropdown ? 'display: block' : 'display: none;'}>
+      {#each data.availableLabels as label}
+        <div
+          class={label.activated ? 'label active' : 'label inactive'}
+          style="border-color: {getLabelObject(label.label)?.color};"
+          on:click={toggleLabelFilter(label.label)}
+        >
+          {label.label}
+        </div>
+      {/each}
+    </div>
+  </div>
 </div>
 <div class="grid">
-  {#each data.communities as community}
+  {#each filteredCommunities as community}
     <div class="community-card">
       <h2>{community.name}</h2>
       <div>
@@ -57,8 +130,11 @@
         <div class="community-info">
           <div class="labels">
             {#each community.labels as label}
-              <span class="label" style="border-color: {getLabelObject(label)?.color};"
-                >{label}</span
+              <span
+                class={data.availableLabels.find((x) => x.label == label)?.activated
+                  ? 'label active'
+                  : 'label inactive'}
+                style="border-color: {getLabelObject(label)?.color};">{label}</span
               >
             {/each}
           </div>
@@ -78,6 +154,50 @@
 
 <style lang="scss">
   @import 'src/scss/variables';
+
+  .filter-dropdown-anchor {
+    position: relative;
+  }
+
+  $dialogPadding: 0.7rem;
+  .filter-dropdown {
+    position: absolute;
+    top: 2.5rem;
+    left: -($dialogPadding * 2);
+    width: 100%;
+    background-color: #777;
+    box-shadow: 0px 1px 5px 0px #999;
+    border-radius: $card-border-radius;
+    padding: $dialogPadding;
+    z-index: 1;
+
+    .label {
+      $backgroundActive: #999;
+      $backgroundInactive: #555;
+      margin-top: 0.5rem;
+
+      transition-property: background-color;
+      transition-duration: 0.2s;
+
+      &.active {
+        background-color: $backgroundActive;
+      }
+
+      &.inactive {
+        background-color: $backgroundInactive;
+      }
+
+      &.inactive:hover {
+        cursor: pointer;
+        background-color: $backgroundActive;
+      }
+
+      &.active:hover {
+        cursor: pointer;
+        background-color: $backgroundInactive;
+      }
+    }
+  }
 
   .header-line {
     display: flex;
@@ -144,14 +264,15 @@
   .labels {
     margin-bottom: 0.7rem;
     user-select: none;
-    .label {
-      padding: 1px 10px;
-      margin-right: 5px;
-      border: 2px solid transparent;
-      border-radius: 20px;
-      background-color: #555;
-      font-size: 0.8em;
-    }
+  }
+
+  .label {
+    padding: 1px 10px;
+    margin-right: 5px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-color: #555;
+    font-size: 0.8em;
   }
 
   .community-description {

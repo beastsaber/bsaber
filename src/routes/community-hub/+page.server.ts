@@ -3,7 +3,7 @@ import type { Community, CommunityLabel } from '../../types'
 
 export type CommunityHubSSRData = {
   communities: Community[]
-  availableLabels: CommunityLabel[]
+  availableLabels: (CommunityLabel & { activated: boolean })[]
 }
 
 export const load = async (): Promise<CommunityHubSSRData> => {
@@ -12,6 +12,9 @@ export const load = async (): Promise<CommunityHubSSRData> => {
 
   return {
     communities: communityCollections.map((community) => community.attributes),
-    availableLabels: communityLabelsCollections.map((community) => community.attributes),
+    availableLabels: communityLabelsCollections.map((community) => ({
+      ...community.attributes,
+      activated: false,
+    })),
   }
 }
