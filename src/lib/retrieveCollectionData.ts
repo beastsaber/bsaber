@@ -16,7 +16,7 @@ type ConvertToAttributeKeyedObjectWithNoBody<T> = {
 export type CollectionDataTypeMap = {
   'map-of-the-week': ConvertToAttributeKeyedObjectWithNoBody<MapOfTheWeekCollectionData>
   communities: ConvertToAttributeKeyedObjectWithNoBody<Community>
-  'communty-labels': ConvertToAttributeKeyedObjectWithNoBody<CommunityLabel>
+  'community-labels': ConvertToAttributeKeyedObjectWithNoBody<CommunityLabel>
   posts: ConvertToAttributeKeyedObject<Post>
 }
 /**
