@@ -14,14 +14,17 @@
   } from '@fortawesome/free-brands-svg-icons'
   import { faLink, faCaretDown } from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome'
+  import Fuse from 'fuse.js'
 
   const filterCommunities = (
     communities: CommunityHubSSRData['communities'],
     labelSettings: CommunityHubSSRData['availableLabels'],
     filteredForSocials: string[],
+    filterForNameAndDescription: string,
   ) => {
     const activeLabels = labelSettings.filter((label) => label.activated)
-    return communities.filter((community) => {
+
+    const hardFilteredCommunities = communities.filter((community) => {
       const hasAllActiveLabels = activeLabels.every((activeLabel) =>
         community.labels.includes(activeLabel.label),
       )
@@ -31,14 +34,31 @@
 
       return hasAllActiveLabels && hasAllFilteredSocials
     })
+    if (filterForNameAndDescription === '') {
+      return hardFilteredCommunities
+    }
+
+    const fuse = new Fuse(hardFilteredCommunities, {
+      keys: ['name', 'description'],
+      includeScore: true,
+      threshold: 0.3,
+    })
+
+    return fuse.search(filterForNameAndDescription).map(({ item }) => {
+      return {
+        ...item,
+      }
+    })
   }
 
   export let data: CommunityHubSSRData
+  let nameAndDescriptionFilter = ''
   let filteredForSocials: string[] = []
   let filteredCommunities = filterCommunities(
     data.communities,
     data.availableLabels,
     filteredForSocials,
+    nameAndDescriptionFilter,
   )
   let showFilterdropdown = false
 
@@ -70,6 +90,7 @@
       data.communities,
       data.availableLabels,
       filteredForSocials,
+      nameAndDescriptionFilter,
     )
   }
 
@@ -84,7 +105,25 @@
       data.communities,
       data.availableLabels,
       filteredForSocials,
+      nameAndDescriptionFilter,
     )
+  }
+
+  let debounceTimeout: any = null
+  const updateNameAndDescriptionFilter = (event: InputEvent) => {
+    if (debounceTimeout != null) {
+      clearTimeout(debounceTimeout)
+    }
+    nameAndDescriptionFilter = (event.target as HTMLInputElement).value
+    debounceTimeout = setTimeout(() => {
+      console.log(nameAndDescriptionFilter)
+      filteredCommunities = filterCommunities(
+        data.communities,
+        data.availableLabels,
+        filteredForSocials,
+        nameAndDescriptionFilter,
+      )
+    }, 300)
   }
 
   // Located here to be able to remove the event listener
@@ -131,6 +170,7 @@
       Filter by Type &nbsp;&nbsp;<FontAwesomeIcon icon={faCaretDown} />
     </div>
     <div class="filter-dropdown" style={showFilterdropdown ? 'display: block' : 'display: none;'}>
+      <input class="search-text-field" type="text" on:input={updateNameAndDescriptionFilter} />
       {#each data.availableLabels as label}
         <div
           class={label.activated ? 'label active' : 'label inactive'}
@@ -202,11 +242,12 @@
   }
 
   $dialogPadding: 0.7rem;
+  $dialogOverhangingWith: 3rem;
   .filter-dropdown {
     position: absolute;
     top: 2.5rem;
-    left: -($dialogPadding * 2);
-    width: 100%;
+    left: -($dialogPadding * 2) - $dialogOverhangingWith;
+    width: 10rem + $dialogOverhangingWith;
     background-color: #777;
     box-shadow: 0px 1px 5px 0px #999;
     border-radius: $card-border-radius;
@@ -240,6 +281,15 @@
         background-color: $backgroundInactive;
       }
     }
+  }
+
+  $searchPadding: 0.5rem;
+  .search-text-field {
+    width: 10rem + $dialogOverhangingWith - (2 * $searchPadding);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: $card-border-radius;
+    border: none;
   }
 
   .header-line {
