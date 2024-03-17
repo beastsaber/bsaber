@@ -1,5 +1,5 @@
 ---
 label: Modding
 description: Communities that are centered around modding Beat Saber.
-color: '#454088'
+color: '#b6b6dd'
 ---
