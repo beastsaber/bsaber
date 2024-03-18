@@ -138,6 +138,52 @@ export type Social = {
   titleOverwrite?: string
 }
 
+export type LanguageKeys =
+  | 'en'
+  | 'de'
+  | 'fr'
+  | 'es'
+  | 'it'
+  | 'ja'
+  | 'ko'
+  | 'nl'
+  | 'pl'
+  | 'pt'
+  | 'ru'
+  | 'zh'
+  | 'sv'
+  | 'no'
+  | 'da'
+  | 'fi'
+  | 'hu'
+  | 'cs'
+  | 'tr'
+  | 'th'
+  | 'ar'
+  | 'he'
+  | 'el'
+  | 'id'
+  | 'vi'
+  | 'ro'
+  | 'bg'
+  | 'uk'
+  | 'ms'
+  | 'hr'
+  | 'sk'
+  | 'sl'
+  | 'et'
+  | 'lv'
+  | 'lt'
+  | 'sr'
+  | 'tl'
+  | 'is'
+  | 'ga'
+  | 'sq'
+  | 'bs'
+  | 'mk'
+  | 'mt'
+  | 'cy'
+  | 'be'
 export type Community = {
   name: string
   description: string
@@ -145,4 +191,5 @@ export type Community = {
   activityLevel: 'high' | 'medium' | 'low'
   labels: string[]
   socials: Social[]
+  language: LanguageKeys[]
 }

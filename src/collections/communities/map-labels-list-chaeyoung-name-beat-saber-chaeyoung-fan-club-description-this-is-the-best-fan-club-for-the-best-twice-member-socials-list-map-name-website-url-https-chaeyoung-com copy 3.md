@@ -7,4 +7,6 @@ activityLevel: high
 socials:
   - name: Website
     url: https://chaeyoung.com
+languages:
+  - pl
 ---

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { CommunityLabel } from '../../types'
+  import type { CommunityLabel, LanguageKeys } from '../../types'
   import type { CommunityHubSSRData } from './+page.server'
   import MetaHead from '$lib/MetaHead.svelte'
   import {
@@ -159,6 +159,102 @@
       openFilterDropdown()
     }
   }
+
+  const FlagMapping: Record<LanguageKeys, string> = {
+    en: '🇬🇧',
+    de: '🇩🇪',
+    fr: '🇫🇷',
+    es: '🇪🇸',
+    it: '🇮🇹',
+    ja: '🇯🇵',
+    ko: '🇰🇷',
+    nl: '🇳🇱',
+    pl: '🇵🇱',
+    pt: '🇵🇹',
+    ru: '🇷🇺',
+    zh: '🇨🇳',
+    sv: '🇸🇪',
+    no: '🇳🇴',
+    da: '🇩🇰',
+    fi: '🇫🇮',
+    hu: '🇭🇺',
+    cs: '🇨🇿',
+    tr: '🇹🇷',
+    th: '🇹🇭',
+    ar: '🇸🇦',
+    he: '🇮🇱',
+    el: '🇬🇷',
+    id: '🇮🇩',
+    vi: '🇻🇳',
+    ro: '🇷🇴',
+    bg: '🇧🇬',
+    uk: '🇺🇦',
+    ms: '🇲🇾',
+    hr: '🇭🇷',
+    sk: '🇸🇰',
+    sl: '🇸🇮',
+    et: '🇪🇪',
+    lv: '🇱🇻',
+    lt: '🇱🇹',
+    sr: '🇷🇸',
+    tl: '🇵🇭',
+    is: '🇮🇸',
+    ga: '🇮🇪',
+    sq: '🇦🇱',
+    bs: '🇧🇦',
+    mk: '🇲🇰',
+    mt: '🇲🇹',
+    cy: '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+    be: '🇧🇾',
+  }
+
+  const LanguageName: Record<LanguageKeys, string> = {
+    en: 'English',
+    de: 'German',
+    fr: 'French',
+    es: 'Spanish',
+    it: 'Italian',
+    ja: 'Japanese',
+    ko: 'Korean',
+    nl: 'Dutch',
+    pl: 'Polish',
+    pt: 'Portuguese',
+    ru: 'Russian',
+    zh: 'Chinese',
+    sv: 'Swedish',
+    no: 'Norwegian',
+    da: 'Danish',
+    fi: 'Finnish',
+    hu: 'Hungarian',
+    cs: 'Czech',
+    tr: 'Turkish',
+    th: 'Thai',
+    ar: 'Arabic',
+    he: 'Hebrew',
+    el: 'Greek',
+    id: 'Indonesian',
+    vi: 'Vietnamese',
+    ro: 'Romanian',
+    bg: 'Bulgarian',
+    uk: 'Ukrainian',
+    ms: 'Malay',
+    hr: 'Croatian',
+    sk: 'Slovak',
+    sl: 'Slovenian',
+    et: 'Estonian',
+    lv: 'Latvian',
+    lt: 'Lithuanian',
+    sr: 'Serbian',
+    tl: 'Tagalog',
+    is: 'Icelandic',
+    ga: 'Irish',
+    sq: 'Albanian',
+    bs: 'Bosnian',
+    mk: 'Macedonian',
+    mt: 'Maltese',
+    cy: 'Welsh',
+    be: 'Belarusian',
+  }
 </script>
 
 <MetaHead title="Community Hub" />
@@ -197,7 +293,13 @@
 <div class="grid">
   {#each filteredCommunities as community}
     <div class="community-card activity-{community.activityLevel}">
-      <h2>{community.name}</h2>
+      <h2>
+        {community.name}
+
+        {#each community.languages as language}
+          &nbsp;<span title={LanguageName[language]} class="flag">{FlagMapping[language]}</span>
+        {/each}
+      </h2>
       <div>
         <div class="community-image">
           {#if community.image}
@@ -239,6 +341,10 @@
 
   .filter-dropdown-anchor {
     position: relative;
+  }
+
+  .flag {
+    cursor: default;
   }
 
   $dialogPadding: 0.7rem;

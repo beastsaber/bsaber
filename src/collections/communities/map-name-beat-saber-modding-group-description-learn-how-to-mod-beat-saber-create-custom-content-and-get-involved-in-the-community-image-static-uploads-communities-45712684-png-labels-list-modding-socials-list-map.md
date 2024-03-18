@@ -20,4 +20,6 @@ socials:
   - name: Website
     url: https://bsmgstore.com/
     titleOverwrite: BSMG Store
+languages:
+  - en
 ---

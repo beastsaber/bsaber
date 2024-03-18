@@ -9,4 +9,7 @@ activityLevel: high
 socials:
   - name: Facebook
     url: https://facebook.com
+languages:
+  - en
+  - ko
 ---

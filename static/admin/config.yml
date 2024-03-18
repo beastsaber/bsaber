@@ -152,5 +152,55 @@ collections:
               the title will be the same as the name that has been selected.,
               required: false,
             }
+      - name: languages
+        label: Languages
+        widget: select
+        multiple: true
+        options:
+          - { label: 'English', value: 'en' }
+          - { label: 'German', value: 'de' }
+          - { label: 'French', value: 'fr' }
+          - { label: 'Spanish', value: 'es' }
+          - { label: 'Italian', value: 'it' }
+          - { label: 'Japanese', value: 'ja' }
+          - { label: 'Korean', value: 'ko' }
+          - { label: 'Dutch', value: 'nl' }
+          - { label: 'Polish', value: 'pl' }
+          - { label: 'Portuguese', value: 'pt' }
+          - { label: 'Russian', value: 'ru' }
+          - { label: 'Chinese', value: 'zh' }
+          - { label: 'Swedish', value: 'sv' }
+          - { label: 'Norwegian', value: 'no' }
+          - { label: 'Danish', value: 'da' }
+          - { label: 'Finnish', value: 'fi' }
+          - { label: 'Hungarian', value: 'hu' }
+          - { label: 'Czech', value: 'cs' }
+          - { label: 'Turkish', value: 'tr' }
+          - { label: 'Thai', value: 'th' }
+          - { label: 'Arabic', value: 'ar' }
+          - { label: 'Hebrew', value: 'he' }
+          - { label: 'Greek', value: 'el' }
+          - { label: 'Indonesian', value: 'id' }
+          - { label: 'Vietnamese', value: 'vi' }
+          - { label: 'Romanian', value: 'ro' }
+          - { label: 'Bulgarian', value: 'bg' }
+          - { label: 'Ukrainian', value: 'uk' }
+          - { label: 'Malay', value: 'ms' }
+          - { label: 'Croatian', value: 'hr' }
+          - { label: 'Slovak', value: 'sk' }
+          - { label: 'Slovenian', value: 'sl' }
+          - { label: 'Estonian', value: 'et' }
+          - { label: 'Latvian', value: 'lv' }
+          - { label: 'Lithuanian', value: 'lt' }
+          - { label: 'Serbian', value: 'sr' }
+          - { label: 'Tagalog', value: 'tl' }
+          - { label: 'Icelandic', value: 'is' }
+          - { label: 'Irish', value: 'ga' }
+          - { label: 'Albanian', value: 'sq' }
+          - { label: 'Bosnian', value: 'bs' }
+          - { label: 'Macedonian', value: 'mk' }
+          - { label: 'Maltese', value: 'mt' }
+          - { label: 'Welsh', value: 'cy' }
+          - { label: 'Belarusian', value: 'be' }
 media_folder: 'static/uploads'
 public_folder: '/uploads'
