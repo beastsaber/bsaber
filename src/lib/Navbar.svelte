@@ -138,33 +138,7 @@
     },
     {
       name: 'Community Hub',
-      expanded: false,
-      Items: [
-        {
-          name: 'BSMG Wiki',
-          href: 'https://bsmg.wiki',
-        },
-        {
-          name: 'BSMG Discord',
-          href: 'https://discord.gg/beatsabermods',
-        },
-        {
-          name: 'BeastSaber Discord',
-          href: 'https://discord.gg/VJZHUbt',
-        },
-        {
-          name: 'BeatSaver Discord',
-          href: 'https://discord.gg/rjVDapkMmj',
-        },
-        {
-          name: 'Beat Saber Mapping Discord',
-          href: 'https://discord.gg/ArT4BTQ',
-        },
-        {
-          name: 'BeatLeader Discord',
-          href: 'https://discord.gg/2RG5YVqtG6',
-        },
-      ],
+      href: '/community-hub',
     },
   ]
 
