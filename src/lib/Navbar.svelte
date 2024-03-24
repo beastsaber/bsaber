@@ -33,14 +33,22 @@
       expanded: false,
       Items: [
         {
-          name: 'Getting Started with Beat Saber',
+          name: 'Get Started with Beat Saber',
           href: '/getting-started',
         },
         {
-          name: 'Getting Started with Custom Songs',
+          name: 'Get Started with Custom Songs',
           href: '/getting-started/custom-songs',
-        }
-      ]
+        },
+        {
+          name: 'Get Started With Custom Mods',
+          href: '/installing-the-mod-guide-necessary-for-any-custom-songs',
+        },
+        {
+          name: 'Get Started With Mapping',
+          href: '/posts/Getting-Started-With-Mapping',
+        },
+      ],
     },
     {
       name: 'Find Maps',
