@@ -30,7 +30,17 @@
   }[] = [
     {
       name: 'Get Started',
-      href: '/getting-started',
+      expanded: false,
+      Items: [
+        {
+          name: 'Getting Started with Beat Saber',
+          href: '/getting-started',
+        },
+        {
+          name: 'Getting Started with Custom Songs',
+          href: '/getting-started/custom-songs',
+        }
+      ]
     },
     {
       name: 'Find Maps',
