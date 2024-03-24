@@ -132,13 +132,13 @@ Once you have the right software installed, you have a couple of options on how 
 
 1. Make sure you have the latest BeatSaber mods available for your moddable game. Keep in mind that Quest modding is usually well behind PC modding so you will likely need to downgrade. You can find the latest mods by clicking [here](https://computerelite.github.io/tools/Beat_Saber/questmods.html)
 
-2. Using QuestPatcher, click Browse and open the mod pack you downloaded from the link above
+2. Using QuestPatcher, click "Browse" and open the mod pack you downloaded from the link above
 
 3. Now, from within the game, you can click on "MORE SONGS" to search and download songs
 
 You can also search for songs using the method listed above at **"Custom Songs with the Base Game (More difficult!)** and then manually load them into your headset using SideQuest and finding your custom songs folder there, however, we don't typically recommend this option.
 
-If you find videos more helpful, check out this video by XORoseGold on How To Get Custom Songs in BeatSaber, uploaded on March 7, 2024!
+If you find videos more helpful, check out this video by XoRoseGold on How To Get Custom Songs in BeatSaber, uploaded on March 7, 2024!
 
 !youtube[R6f7w-NBo4k]
 
