@@ -8,6 +8,7 @@ export type Post = {
   image?: string
   icon?: string
   category: '' | 'announcement' | 'news' | 'articles' | 'interview' | 'event'
+  showInPostListing: boolean
 }
 
 export type CommunityEvent = {
@@ -27,61 +28,67 @@ export type EventDateParams = {
 }
 
 export type MapOfTheWeekCollectionData = {
-  mapId: string;
-  review: string;
-  startDate: string;
-  coverUrlOverwrite?: string;
+  mapId: string
+  review: string
+  startDate: string
+  coverUrlOverwrite?: string
 }
 
 export type MapOfTheWeek = {
   map: {
-    id: string;
-    name: string;
-    coverUrl: string;
-    uploader: Uploader;
-  },
-  review: string;
-  startDate: Date;
+    id: string
+    name: string
+    coverUrl: string
+    uploader: Uploader
+  }
+  review: string
+  startDate: Date
 }
 
-
 export type Playlist = {
-  playlistId: number,
-  name: string,
-  description: string,
-  playlistImage512: string,
+  playlistId: number
+  name: string
+  description: string
+  playlistImage512: string
   owner: Uploader
 }
 
 export type Beatmap = {
-    id: number,
-    name: string,
-    description: string,
-    uploader: Uploader,
-    curator: Uploader | undefined,
-    versions: BeatmapVersion[],
-    tags: string[] | undefined
+  id: number
+  name: string
+  description: string
+  uploader: Uploader
+  curator: Uploader | undefined
+  versions: BeatmapVersion[]
+  tags: string[] | undefined
 }
 
 export type BeatmapVersion = {
-    hash: string
-    diffs: BeatmapDifficulty[]
+  hash: string
+  diffs: BeatmapDifficulty[]
 }
 
-
 export type BeatmapDifficulty = {
-    characteristic: "Standard" | "OneSaber" | "NoArrows" | "90Degree" | "360Degree" | "Lightshow" | "Lawless" | "Legacy"
-    difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus"
+  characteristic:
+    | 'Standard'
+    | 'OneSaber'
+    | 'NoArrows'
+    | '90Degree'
+    | '360Degree'
+    | 'Lightshow'
+    | 'Lawless'
+    | 'Legacy'
+  difficulty: 'Easy' | 'Normal' | 'Hard' | 'Expert' | 'ExpertPlus'
 }
 
 export type Uploader = {
-  id: number,
-  name: string,
-  description: string,
-  avatar: string,
-  admin: boolean,
-  curator: boolean,
-  seniorCurator: boolean,
+  id: number
+  name: string
+  description: string
+  avatar: string
+  admin: boolean
+  curator: boolean
+  seniorCurator: boolean
   verifiedMapper: boolean
 }
 
@@ -94,7 +101,7 @@ export type CardData = {
 }
 
 type ImportModuleData<T> = {
-  metadata: T,
+  metadata: T
 }
 
 export type ImportPostModuleData = ImportModuleData<Omit<Post, 'slug'>>
@@ -105,6 +112,6 @@ export type RootPageSSRData = {
   announcements: Post[]
   articles: Post[]
   others: Post[]
-  communityEvents: CommunityEvent[],
-  currentMapOfTheWeek: MapOfTheWeek | undefined,
+  communityEvents: CommunityEvent[]
+  currentMapOfTheWeek: MapOfTheWeek | undefined
 }
