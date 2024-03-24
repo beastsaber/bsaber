@@ -33,9 +33,9 @@ This will download a small `ModAssistant.exe` file that you can place anywhere o
 
 2. When you first launch Mod Assistant, it will also try to automatically locate where you installed your game. If it can’t find it, you will have to manually locate the folder.
 
-    - Oculus User folder paths tend to be: `C:\Program Files\Oculus\Software\Software\hyperbolic-magnetism-beat-saber\`
+    - Oculus user folder paths tend to be: `C:\Program Files\Oculus\Software\Software\hyperbolic-magnetism-beat-saber\`
 
-    - Steam User folder paths tend to be: `C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\`
+    - Steam user folder paths tend to be: `C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\`
 
 3. You’ll be prompted to agree to the terms of use. Please read through these carefully as they’re important, mainly for the health of our wonderful community and relationship with Beat Games.
 
@@ -51,7 +51,7 @@ This will download a small `ModAssistant.exe` file that you can place anywhere o
     <img src="/uploads/mod-assistant-mods-install.png">
 </p>
 
-5. That’s it! You can now launch your game and enjoy all the wonderful mods that the community has built! You can always open ModAssistant again later to install more mods. We recommend against installing every mod at first as you’ll likely be overwhelmed by all the new options - and you may run into issues. Instead, take the time to learn about what each mod does. Click on the “Mod Info” button after selecting a mod to read more about it.
+5. That’s it! You can now launch your game and enjoy all the wonderful mods that the community has built! You can always open ModAssistant again later to install more mods. We recommend against installing every mod at first as you’ll likely be overwhelmed by all the new options - and you may run into issues. Instead, take the time to learn about what each mod does. Click on the "Mod Info" button after selecting a mod to read more about it.
 
 ## Standalone Quest VR
 

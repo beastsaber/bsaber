@@ -46,7 +46,8 @@ Additionally, you can check out the [Maps of the Week](/maps-of-the-week/1) - wh
 
 - a level of quality and craftsmanship that demonstrates clear attention to detail in capturing the music
 
-We also feature playlists on our home page - which are collections of maps that are all great and reviewed by the curators.
+We also feature playlists on our home page! "Featured Packs" are reviewed by our team of Curators to be of minimum curation quality standards. You'll also find Packs for the Beasties, and other Curator Recommended packs! Want to learn more about Curation? [Click here!](/curation)
+
 
 # Competitive Play
 
@@ -54,4 +55,4 @@ Sometimes, the fun is in competing. If that's you then you will want the respect
 
 # Communities
 
-If you're here to mingle then you'll find many communities that might just be for you. We will be hosting a list of communities soon - so stay tuned! In the meantime, you can check out our smaller list of Community sites and servers at the top under "Community Hub".
+If you're here to mingle then you'll find many communities that might just be for you. We will be hosting a list of communities soon - so stay tuned! In the meantime, you can check out our smaller list of community sites and servers at the top under "Community Hub".
