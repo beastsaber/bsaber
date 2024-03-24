@@ -69,4 +69,4 @@ The [Beat Saber Modding Group Wiki](https://bsmg.wiki/quest-modding.html#install
 
 ### [Want to look at how to get more songs? Click here!](/getting-started/custom-songs)
 
-If you have any issues, join the Beat Saber Mod Discord Group and ask your question in either #pc-help or #quest-help. Be patient – thousands of people around the world just got VR headsets for the holidays and are all looking for the same resources. Happy Block Slicing!
+If you have any issues, join the [Beat Saber Modding Group Discord Server](https://discord.gg/beatsabermods) and ask your question in either #pc-help or #quest-help. Happy Block Slicing!
