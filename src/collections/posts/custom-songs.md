@@ -3,9 +3,7 @@ title: Getting Started with Custom Songs
 section: speciality
 category: guide
 publish: 2024-02-17T00:00:00.000Z
-homepageText: So you are new to Beat Saber? Maybe you have seen someone play a
-  cool map on YouTube or TikTok but now that you bought the game you cannot find
-  the map? Then this guide is for you!
+homepageText: You'll find every single published map at your fingertips by going to BeatSaver - but, there are so many new maps released every day… how do you know which ones to download? There are a few things to look for before you go wading through search results...
 image: /static/uploads/posts/beat-saber-1024x576.jpg
 showInPostListing: true
 ---
