@@ -3,8 +3,11 @@ title: Getting Started with Custom Songs
 section: speciality
 category: guide
 publish: 2024-03-22T00:00:00.000Z
-homepageText: You'll find every single published map at your fingertips by going to BeatSaver - but, there are so many new maps released every day… how do you know which ones to download? There are a few things to look for before you go wading through search results...
-image: /static/uploads/posts/beat-saber-1024x576.jpg
+homepageText: You'll find every single published map at your fingertips by going
+  to BeatSaver - but, there are so many new maps released every day… how do you
+  know which ones to download? There are a few things to look for before you go
+  wading through search results...
+image: /static/uploads/posts/beat-saber-square.jpg
 showInPostListing: true
 ---
 # Welcome to BEASTSABER! ❤️
@@ -104,8 +107,6 @@ The [Beat Saber Modding Group Wiki](https://bsmg.wiki/pc-modding.html#how-to-get
 4. The map will be downloaded, unzipped, and added to your CustomLevels folder
 
 ### Custom Songs with the Base Game (More difficult!)
-
-BeastSaber Download Button
 
 1. On BeatSaver, find a song you want to download and click Download Zip and a zip file of the song you want will be saved to your computer
 
