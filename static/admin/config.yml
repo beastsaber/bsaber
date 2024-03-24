@@ -91,6 +91,7 @@ collections:
   - name: community
     label: Community
     folder: src/collections/communities
+    slug: '{{name}}'
     create: true
     fields:
       - name: name
