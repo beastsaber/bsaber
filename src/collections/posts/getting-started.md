@@ -1,10 +1,12 @@
 ---
 title: Getting Started with Beat Saber
 section: speciality
-publish: 2024-02-17T00:00:00.000Z
 category: guide
-image: /static/uploads/posts/beat-saber-1024x576.jpg
-homepageText: So you are new to Beat Saber? Maybe you have seen someone play a cool map on YouTube or TikTok but now that you bought the game you cannot find the map? Then this guide is for you!
+publish: 2024-02-17T00:00:00.000Z
+homepageText: So you are new to Beat Saber? Maybe you have seen someone play a
+  cool map on YouTube or TikTok but now that you bought the game you cannot find
+  the map? Then this guide is for you!
+image: /static/uploads/posts/beat-saber-square.jpg
 showInPostListing: true
 ---
 

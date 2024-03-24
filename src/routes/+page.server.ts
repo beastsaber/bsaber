@@ -1,3 +1,4 @@
+import { RootPageSSRData } from './../types'
 import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
 import type {
   Post,
@@ -86,20 +87,18 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
     others: [],
   }
 
-  for (const post of posts) {
-    const { section } = post
-    switch (section) {
-      case 'announcements':
-        rootPageSSRData.announcements.push(post)
-        break
-      case 'articles':
-        rootPageSSRData.articles.push(post)
-        break
-      default:
-        rootPageSSRData.others.push(post)
-        break
-    }
-  }
+  rootPageSSRData.announcements = posts.filter((x) => x.section === 'announcements')
+  rootPageSSRData.articles = posts
+    .filter((x) => x.showInPostListing)
+    .sort((a, b) => new Date(b.publish).getTime() - new Date(a.publish).getTime())
+
+  const includedSlugs = [...rootPageSSRData.announcements, ...rootPageSSRData.articles].map(
+    (x) => x.slug,
+  )
+
+  rootPageSSRData.others = posts.filter((maybeNotIncluded) =>
+    includedSlugs.includes(maybeNotIncluded.slug),
+  )
 
   // Sort all by publish data
   const sortByPublishDate = (a: Post, b: Post) => b.publish.localeCompare(a.publish)

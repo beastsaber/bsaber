@@ -22,11 +22,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 ### Check out the video announcement [here](https://www.youtube.com/watch?v=pt6ppxMmZoQ)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pt6ppxMmZoQ?si=UzETly5fRRfMoS2C?rel =0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<br />
-
-<br />
+!youtube[pt6ppxMmZoQ]
 
 ## Supporting Map Awards
 

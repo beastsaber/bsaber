@@ -6,15 +6,34 @@
   export let post: Post
   const { body, title, image } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
+
   const postRenderer = new marked.Renderer()
   // This will make headings start at 2, because the title will be rendered as an h1
   postRenderer.heading = (text, level) => {
     return `<h${level + 1}>${text}</h${level + 1}>`
   }
 
-  // this will make links hard-reload instead of
+  // This will make links hard-reload instead of using SPA navigation
   postRenderer.link = (href, title, text) => {
     return `<a href="${href}" title="${title}" rel="external">${text}</a>`
+  }
+
+  // Injecting !youtube[video-id] tags with the respective iframe by using the paragraph renderer
+  // I did attempt using the tokenizer instead, but it just complicated things a lot
+  const youtubeRegex = /^!youtube\[([^\]]+)\]/g
+  const createYoutubeIFrameFromId = (videoId: string) => `
+  <iframe class="markdown-youtube-video" src="https://www.youtube.com/embed/${videoId}" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+        >
+        </iframe>
+  `
+  postRenderer.paragraph = (text) => {
+    const renderedText = text.replace(youtubeRegex, (_, videoId) => {
+      return createYoutubeIFrameFromId(videoId.trim())
+    })
+    return `<p>${renderedText}</p>`
   }
 </script>
 
