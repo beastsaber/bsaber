@@ -14,11 +14,7 @@ You’ve waited long enough, it’s time to finally announce the winners of the 
 
 If you’re not the reading type, you can watch the announcement video [here](https://www.youtube.com/watch?v=XVPaXwd0Gq8)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XVPaXwd0Gq8?si=xqUk1pTPLsBbEF7h?rel =0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<br />
-
-<br />
+!youtube[XVPaXwd0Gq8}]
 
 ## Individual Awards
 
