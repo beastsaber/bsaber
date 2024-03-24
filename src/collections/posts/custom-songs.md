@@ -130,7 +130,7 @@ You can also search for songs using the method listed above at **"Custom Songs w
 
 If you find videos more helpful, check out this video by XORoseGold on How To Get Custom Songs in BeatSaber, uploaded on March 7, 2024!
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/R6f7w-NBo4k?si=--4DItT6eQdi8nJX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe style="width: 100%; aspect-ratio: 16 / 9; max-width: 800px;" src="https://www.youtube-nocookie.com/embed/R6f7w-NBo4k?si=myh8Lo7SOijB6pgq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <br />
 
