@@ -3,7 +3,7 @@
 @import '@fontsource/dm-sans/400';
 @import '@fontsource/jetbrains-mono/400';
 @import 'scss/variables';
-@import "scss/articles";
+@import 'scss/articles';
 
 :root {
   font-family: $font-dm-sans;
@@ -84,4 +84,10 @@ button:focus:not(:focus-visible) {
   h2 {
     font-size: 1.5rem;
   }
+}
+
+iframe.markdown-youtube-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-width: 800px;
 }
