@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Custom Songs
-section: speciality
+section: specialty
 category: guide
 publish: 2024-03-22T00:00:00.000Z
 homepageText: You'll find every single published map at your fingertips by going to BeatSaver - but, there are so many new maps released every day… how do you know which ones to download? There are a few things to look for before you go wading through search results...
@@ -22,7 +22,7 @@ You'll find every single published map at your fingertips by going to [BeatSaver
   These maps have been reviewed by one of our curators and deemed to have met a minimum quality standard. **Look for the green bar on the left side of the map card.** You may even see a featured review (surrounded by a green glow) in the Review tab on the map page.
 * **Map Reviews**
   \
-  Not all maps have reviews, but if they do, you'll find them in the "Reviews" tab. Map reviews allow players to share a little more commentary on why you liked (or didn’t like) a map than a simple upvote or downvote (and mappers love them!).
+  Not all maps have reviews, but if they do, you'll find them in the "Reviews" tab. Map reviews allow players like you to share a little more commentary on why you liked (or didn’t like) a map than a simple upvote or downvote (and mappers love them!).
 * **Follow the Mapper or the Curator**
   \
   Once you’ve found some maps you really enjoy, look at who mapped or curated them, then click on their name to go to their profile page and check out their "Published" tab or "Curations" to find ALL of their maps in one place. To follow, simply click the blue "Follow" button just under their username on their profile page!
@@ -51,7 +51,7 @@ Some of the benefits of looking for songs on BeatSaver instead of in-game is a c
 
 - **Top Maps of the Year** - Maps with the most upvotes in a given year
 
-- [**Newest Maps**](https://beatsaver.com/?order=Latest) - Every single map, except for AI generated maps
+- [**Newest Maps**](https://beatsaver.com/?order=Latest) - Every single map, except for AI-generated maps
 
 You can also just use the site search in the top menu to find songs, artists, mappers, and more!
 
@@ -59,11 +59,19 @@ You can also just use the site search in the top menu to find songs, artists, ma
 
 ## Playlists and Map Packs
 
-Playlists and map packs are a great way to find themed groupings of fantastic maps. From BeastSaber’s own Curators' Picks, to curated packs for genres, artists, or albums; playlists allow you to easily use ModAssistant OneClick install to nab a bunch of quality songs all at once.
+Playlists and map packs are a great way to find themed groupings of fantastic maps. From BeastSaber’s own Curators' Picks to curated packs for genres, artists, or albums; playlists allow you to easily use ModAssistant OneClick install to nab a bunch of quality songs all at once.
+
+Take a look at the latest [Featured and Curated Packs](https://beatsaver.com/playlists?order=Curated). Featured Packs are reviewed by our team of Curators to be of minimum curation quality standards. You'll also find Packs for the Beasties, and other Curator Recommended packs! Want to learn more about Curation? [Click here!](/curation)
 
 <br />
 
-## Can’t Find What You Want? Start Mapping!
+## The BeastSaber Home Page
+
+The BeastSaber home page provides an excellent starting place to find recommended maps to download in an "easy on the eyes" appearance! Everything from Map of the Week, Featured Packs, Recently Curated Maps, and Recent Maps by Verified Mappers; we're sure you'll find something worth playing! These feeds are automatically pulled from BeatSaver.
+
+<br />
+
+## Still Can’t Find What You Want? Start Mapping!
 
 Sometimes you’re looking for a specific song, artist, or genre and getting no results, or you get results but the maps are outside of your skill level. Take matters into your own hands and learn to map! Most mappers in the community got started for this very reason and there are a wealth of resources available to get you started.
 
@@ -81,6 +89,8 @@ The [Beat Saber Modding Group Wiki](https://bsmg.wiki/pc-modding.html#how-to-get
 
 ### Custom Songs with ModAssistant (Easiest!)
 
+> Be sure you have all Core Mods installed! When a new release is pushed from Beat Games, mods will usually break and will take some time to update. Be patient, and keep an eye in the [Beat Saber Modding Group Discord Server](https://discord.gg/beatsabermods) #modding-announcements channel to know when it's safe to update.
+
 1. In [ModAssistant](https://bsmg.wiki/pc-modding.html#mod-assistant), go to OPTIONS and click Enable OneClick Installs
 
 2. Select at least BeatSaver (though you may want the other options as well) and close ModAssistant
@@ -89,7 +99,7 @@ The [Beat Saber Modding Group Wiki](https://bsmg.wiki/pc-modding.html#how-to-get
     <img src="/uploads/mod-assistant.png">
 </p>
 
-3. On BeatSaver, find a song you want to download and click OneClick Install button (the one that looks like a cloud with an arrow). You may see a confirmation box that your PC is trying to open ModAssistant.
+3. On BeatSaver, find a song you want to download and click the OneClick Install button (the one that looks like a cloud with an arrow). You may see a confirmation box that your PC is trying to open ModAssistant.
 
 4. The map will be downloaded, unzipped, and added to your CustomLevels folder
 
@@ -99,13 +109,13 @@ BeastSaber Download Button
 
 1. On BeatSaver, find a song you want to download and click Download Zip and a zip file of the song you want will be saved to your computer
 
-2. Extract the zip file as a folder. It should already be titled with the songs "key" or the unique identifier for the map, and the song name and mapper(s) in parenthesis
+2. Extract the zip file as a folder. It should already be titled with the map's "key" or the unique identifier for the map, and the song name and mapper(s) in parenthesis
 
 > 🗒️ NOTE that in the BeatSaver URL, you'll see beatsaver.com/maps/**KEY** - So you can always come back to the map page if you need to
 
   - You can either extract in place and then cut/paste the folder into your CustomLevels folder
 
-  - Or you can select the path directly to your Custom Levels  folder and extract directly there.
+  - Or you can select the path directly to your Custom Levels folder and extract it directly there.
 
 Oculus User folder paths tend to be: `C:\Program Files\Oculus\Software\Software\hyperbolic-magnetism-beat-saber\Beat Saber_Data\CustomLevels`
 
@@ -126,7 +136,7 @@ Once you have the right software installed, you have a couple of options on how 
 
 3. Now, from within the game, you can click on "MORE SONGS" to search and download songs
 
-You can also search for songs using the method listed above at **"Custom Songs with the Base Game (More difficult!)** and then manually load them in using SideQuest and finding your custom songs folder there, however, we don't typically recommend this option.
+You can also search for songs using the method listed above at **"Custom Songs with the Base Game (More difficult!)** and then manually load them into your headset using SideQuest and finding your custom songs folder there, however, we don't typically recommend this option.
 
 If you find videos more helpful, check out this video by XORoseGold on How To Get Custom Songs in BeatSaber, uploaded on March 7, 2024!
 
