@@ -101,7 +101,7 @@ BeastSaber Download Button
 
 2. Extract the zip file as a folder. It should already be titled with the songs "key" or the unique identifier for the map, and the song name and mapper(s) in parenthesis
 
-> Note that in the BeatSaver URL, you'll see beatsaver.com/maps/**KEY** - So you can always come back to the map page if you need to
+> 🗒️ NOTE that in the BeatSaver URL, you'll see beatsaver.com/maps/**KEY** - So you can always come back to the map page if you need to
 
   - You can either extract in place and then cut/paste the folder into your CustomLevels folder
 
@@ -114,11 +114,11 @@ Steam User folder paths tend to be: `C:\Program Files (x86)\Steam\steamapps\comm
 <br />
 
 ## Custom Songs for Quest VR Users
-Getting custom songs on the Quest requires a little more work than with its PC cousins. There are two pieces of software you’ll need: [SideQuest](https://sidequestvr.com/setup-howto) and [BMBF](https://bmbf.dev/stable). Once you have the right software installed, you have a couple of options on how to access songs.
+Getting custom songs on the Quest requires a little more work than with its PC cousins. There are two pieces of software you’ll need: [SideQuest](https://sidequestvr.com/setup-howto) and [BMBF](https://bmbf.dev/stable) or [QuestPatcher](https://github.com/Lauriethefish/QuestPatcher/releases).
 
-> **HINT: When downloading SideQuest, be sure to use the "Advanced Installer". This will greatly help you when adding songs!**
+> **💡 HINT: When downloading SideQuest, be sure to use the "Advanced Installer". This will greatly help you when adding songs!**
 
-The [Beat Saber Modding Group Wiki](https://bsmg.wiki/quest-modding.html#installing-songs) is the best place to get the latest information, but here’s a quick step-by-step:
+Once you have the right software installed, you have a couple of options on how to access songs. The [Beat Saber Modding Group Wiki](https://bsmg.wiki/quest-modding.html#installing-songs) is the best place to get the latest information, but here’s a quick step-by-step:
 
 1. Make sure you have the latest BeatSaber mods available for your moddable game. Keep in mind that Quest modding is usually well behind PC modding so you will likely need to downgrade. You can find the latest mods by clicking [here](https://computerelite.github.io/tools/Beat_Saber/questmods.html)
 
@@ -126,9 +126,9 @@ The [Beat Saber Modding Group Wiki](https://bsmg.wiki/quest-modding.html#install
 
 3. Now, from within the game, you can click on "MORE SONGS" to search and download songs
 
-You can also search for songs using the method listed above at [Custom Songs with the Base Game (More difficult!)](#custom-songs-with-the-base-game-more-difficult) and then manually load them in using SideQuest, however, we don't typically recommend this option.
+You can also search for songs using the method listed above at **"Custom Songs with the Base Game (More difficult!)** and then manually load them in using SideQuest and finding your custom songs folder there, however, we don't typically recommend this option.
 
-You can also check out this extremely helpful video by XORoseGold on How To Get Custom Songs in BeatSaber, uploaded on March 7, 2024!
+If you find videos more helpful, check out this video by XORoseGold on How To Get Custom Songs in BeatSaber, uploaded on March 7, 2024!
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/R6f7w-NBo4k?si=--4DItT6eQdi8nJX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
