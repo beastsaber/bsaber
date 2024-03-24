@@ -11,7 +11,7 @@ socials:
   - name: Website
     url: https://www.bsaber.com
   - name: YouTube
-    url: https://www.youtube.com/@beastsaberyt3757
+    url: https://www.youtube.com/@BeastSaberNews
   - name: Twitter/X
     url: https://twitter.com/BeastSaberNews
   - name: Discord
