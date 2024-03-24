@@ -41,11 +41,11 @@
           href: '/getting-started/custom-songs',
         },
         {
-          name: 'Get Started With Custom Mods',
+          name: 'Get Started with Custom Mods',
           href: '/installing-the-mod-guide-necessary-for-any-custom-songs',
         },
         {
-          name: 'Get Started With Mapping',
+          name: 'Get Started with Mapping',
           href: '/posts/Getting-Started-With-Mapping',
         },
       ],
