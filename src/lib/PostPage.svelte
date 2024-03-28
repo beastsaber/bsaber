@@ -21,18 +21,33 @@
   // Injecting !youtube[video-id] tags with the respective iframe by using the paragraph renderer
   // I did attempt using the tokenizer instead, but it just complicated things a lot
   const youtubeRegex = /^!youtube\[([^\]]+)\]/g
+  const youtubePlaylistRegex = /^!youtubepl\[([^\]]+)\]/g
+
   const createYoutubeIFrameFromId = (videoId: string) => `
   <iframe class="markdown-youtube-video" src="https://www.youtube.com/embed/${videoId}" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-        >
-        </iframe>
-  `
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+    >
+  </iframe>`
+
+  const createYoutubePlaylistIFrameFromId = (playlistId: string) => `
+  <iframe class="markdown-youtube-playlist" src="https://www.youtube.com/embed/videoseries?list=${playlistId}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+    >
+  </iframe>`
+
   postRenderer.paragraph = (text) => {
-    const renderedText = text.replace(youtubeRegex, (_, videoId) => {
+    let renderedText = text.replace(youtubeRegex, (_, videoId) => {
       return createYoutubeIFrameFromId(videoId.trim())
     })
+
+    renderedText = renderedText.replace(youtubePlaylistRegex, (_, playlistId) => {
+      return createYoutubePlaylistIFrameFromId(playlistId.trim())
+    })
+
     return `<p>${renderedText}</p>`
   }
 </script>
