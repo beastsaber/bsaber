@@ -26,6 +26,9 @@
       normalizedImage = $page.url.href + '/' + imageUrl
     }
   }
+
+  // Apparently cannot use $page in the {$if tag - hence this workaround}
+  const path = $page.url.pathname
 </script>
 
 <svelte:head>
@@ -43,7 +46,9 @@
   <meta property="og:description" content={description} />
   <meta property="og:image" content={normalizedImage} />
 
-  {#if canonicalUrl}
+  <!-- Put the canonical URL - which should be a the full URL according to google -->
+  <!-- Only put it down if we are not already on the conanical URL -->
+  {#if canonicalUrl && canonicalUrl !== path}
     <link rel="canonical" href={origin + canonicalUrl} />
   {/if}
 </svelte:head>
