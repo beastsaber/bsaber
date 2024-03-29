@@ -10,7 +10,7 @@
   export let keywords: string | undefined = undefined
   export let canonicalUrl: string | undefined = undefined
 
-  const origin = DEPLOY_PRIME_URL || 'https://bsaber.com'
+  const origin = DEPLOY_PRIME_URL || 'https://bsaber.info'
 
   let normalizedImage = imageUrl
   if (normalizedImage && !normalizedImage.startsWith('http') && normalizedImage.startsWith('/')) {
