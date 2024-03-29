@@ -351,10 +351,6 @@
     cursor: default;
   }
 
-  .community-card {
-    height: 75%;
-  }
-
   $dialogPadding: 0.7rem;
   $dialogOverhangingWith: 3rem;
   .filter-dropdown {
