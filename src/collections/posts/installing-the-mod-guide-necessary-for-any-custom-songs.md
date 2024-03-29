@@ -6,7 +6,9 @@ publish: 2024-03-22T00:00:00.000Z
 homepageText: null
 image: /static/uploads/posts/beat-saber-square.jpg
 showInPostListing: false
+linkToSpecialtyPage: '/installing-the-mod-guide-necessary-for-any-custom-songs'
 ---
+
 # If you haven’t played custom songs yet and are just getting started with Beat Saber, we’re excited for you!
 
 ## You’re about to experience a whole WORLD of new content and the ability to experience “inside” your favorite music like only VR allows! It’s really a magical experience.
@@ -15,7 +17,7 @@ The modding experience for computer-based VR (PCVR) and Meta/Oculus Quest standa
 
 ## PC VR:
 
-While mods are not *required* to play basic custom songs, mods can enhance your gameplay experience and unlock some nifty mapping effects. To get started, you’ll just need to download [**ModAssistant**](https://github.com/bsmg/ModAssistant/releases)
+While mods are not _required_ to play basic custom songs, mods can enhance your gameplay experience and unlock some nifty mapping effects. To get started, you’ll just need to download [**ModAssistant**](https://github.com/bsmg/ModAssistant/releases)
 
 <p align="center">
     <img src="/uploads/mod-assistant-mods.png">
@@ -33,9 +35,9 @@ This will download a small `ModAssistant.exe` file that you can place anywhere o
 
 2. When you first launch Mod Assistant, it will also try to automatically locate where you installed your game. If it can’t find it, you will have to manually locate the folder.
 
-    - Oculus user folder paths tend to be: `C:\Program Files\Oculus\Software\Software\hyperbolic-magnetism-beat-saber\`
+   - Oculus user folder paths tend to be: `C:\Program Files\Oculus\Software\Software\hyperbolic-magnetism-beat-saber\`
 
-    - Steam user folder paths tend to be: `C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\`
+   - Steam user folder paths tend to be: `C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\`
 
 3. You’ll be prompted to agree to the terms of use. Please read through these carefully as they’re important, mainly for the health of our wonderful community and relationship with Beat Games.
 
@@ -45,7 +47,7 @@ This will download a small `ModAssistant.exe` file that you can place anywhere o
 
 4. Once you agree, you’ll be able to click on the “Mods” button. All of the essential or “Core" mods will be pre-selected, but you can add as many other mods as you'd like in addition to the Core mods. When ready you can just click on the “Install or Update” button.
 
-    > ⚠️ IMPORTANT: You will need to have run Beat Saber at least once after installing the game before installing mods.
+   > ⚠️ IMPORTANT: You will need to have run Beat Saber at least once after installing the game before installing mods.
 
 <p align="center">
     <img src="/uploads/mod-assistant-mods-install.png">
