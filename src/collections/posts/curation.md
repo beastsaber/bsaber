@@ -5,6 +5,7 @@ category: ''
 publish: 2024-02-17T00:00:00.000Z
 image: /static/uploads/posts/curation.png
 showInPostListing: false
+linkToSpecialtyPage: '/curation'
 ---
 
 # Let's Talk About Curation

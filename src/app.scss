@@ -86,7 +86,8 @@ button:focus:not(:focus-visible) {
   }
 }
 
-iframe.markdown-youtube-video {
+iframe.markdown-youtube-video,
+iframe.markdown-youtube-playlist {
   width: 100%;
   aspect-ratio: 16 / 9;
   max-width: 800px;

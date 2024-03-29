@@ -50,6 +50,11 @@ collections:
         label: Show in post listing
         widget: boolean
         default: true
+      - name: linkToSpecialtyPage
+        label: Link to Specialty Page
+        required: false
+        hint: "If there is a specialty page for this post, provide the URL here. This is used to link it as canonical URL in the metadata (SEO). Only provide the path, not the full URL. Do: /speciality/your-speciality-page, Don't: https://bsaber.com/speciality/your-speciality-page"
+        widget: string
   - name: map-of-the-week
     label: Map of the Week
     folder: src/collections/map-of-the-week
@@ -61,7 +66,7 @@ collections:
         hint: The BeatSaver ID of the map of the week. You can find this one in the URL of the map's page on beatsaver.com. For example, the ID of the map https://beatsaver.com/maps/8f is the last part 8f.
       - name: review
         label: Review
-        hint: "An accompanying text to the map of the week that should review and ideally describe what made it the MOTW. Example \"This map has a fantastic lightshow on the new Lattice environment, a poodle diff and three other diffs accessible to a variety of players with great and unique usage of arcs.\""
+        hint: 'An accompanying text to the map of the week that should review and ideally describe what made it the MOTW. Example "This map has a fantastic lightshow on the new Lattice environment, a poodle diff and three other diffs accessible to a variety of players with great and unique usage of arcs."'
         widget: text
       - name: startDate
         label: Start Date

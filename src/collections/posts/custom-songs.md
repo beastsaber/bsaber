@@ -9,7 +9,9 @@ homepageText: You'll find every single published map at your fingertips by going
   wading through search results...
 image: /static/uploads/posts/beat-saber-square.jpg
 showInPostListing: true
+linkToSpecialtyPage: '/getting-started/custom-songs'
 ---
+
 # Welcome to BEASTSABER! ❤️
 
 ## How to find Custom Songs
@@ -20,13 +22,13 @@ You'll find every single published map at your fingertips by going to [BeatSaver
     <img src="/uploads/sot-map-page.png">
 </p>
 
-* **[Curated Maps](https://beatsaver.com/?order=Curated&curated=true)**
+- **[Curated Maps](https://beatsaver.com/?order=Curated&curated=true)**
   \
   These maps have been reviewed by one of our curators and deemed to have met a minimum quality standard. **Look for the green bar on the left side of the map card.** You may even see a featured review (surrounded by a green glow) in the Review tab on the map page.
-* **Map Reviews**
+- **Map Reviews**
   \
   Not all maps have reviews, but if they do, you'll find them in the "Reviews" tab. Map reviews allow players like you to share a little more commentary on why you liked (or didn’t like) a map than a simple upvote or downvote (and mappers love them!).
-* **Follow the Mapper or the Curator**
+- **Follow the Mapper or the Curator**
   \
   Once you’ve found some maps you really enjoy, look at who mapped or curated them, then click on their name to go to their profile page and check out their "Published" tab or "Curations" to find ALL of their maps in one place. To follow, simply click the blue "Follow" button just under their username on their profile page!
 
@@ -114,9 +116,9 @@ The [Beat Saber Modding Group Wiki](https://bsmg.wiki/pc-modding.html#how-to-get
 
 > 🗒️ NOTE that in the BeatSaver URL, you'll see beatsaver.com/maps/**KEY** - So you can always come back to the map page if you need to
 
-  - You can either extract in place and then cut/paste the folder into your CustomLevels folder
+- You can either extract in place and then cut/paste the folder into your CustomLevels folder
 
-  - Or you can select the path directly to your Custom Levels folder and extract it directly there.
+- Or you can select the path directly to your Custom Levels folder and extract it directly there.
 
 Oculus User folder paths tend to be: `C:\Program Files\Oculus\Software\Software\hyperbolic-magnetism-beat-saber\Beat Saber_Data\CustomLevels`
 
@@ -125,6 +127,7 @@ Steam User folder paths tend to be: `C:\Program Files (x86)\Steam\steamapps\comm
 <br />
 
 ## Custom Songs for Quest VR Users
+
 Getting custom songs on the Quest requires a little more work than with its PC cousins. There are two pieces of software you’ll need: [SideQuest](https://sidequestvr.com/setup-howto) and [BMBF](https://bmbf.dev/stable) or [QuestPatcher](https://github.com/Lauriethefish/QuestPatcher/releases).
 
 > **💡 HINT: When downloading SideQuest, be sure to use the "Advanced Installer". This will greatly help you when adding songs!**
