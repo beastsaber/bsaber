@@ -180,7 +180,7 @@ _Any categories that do not receive at least five qualified nominees will not be
 
 - **Can I nominate whatever I want for a category?**
 
-  The BeastSaber Mapping Awards are, well, _mapping_ awards. This means that the mapping needs to be of the highest quality. At a bare minimum, nominations need to meet [objective curation standards](https://bsaber.com/getting-started/curation/#donts), but our finalist review panel will be going way beyond what the curation team looks at and turning a critical eye toward timing, emphasis, representation, and much more. Nominations will be screened for major issues as they come in with everything that is finalist quality being intensely reviewed as we determine the five finalists in each category at the end of the year.
+  The BeastSaber Mapping Awards are, well, _mapping_ awards. This means that the mapping needs to be of the highest quality. At a bare minimum, nominations need to meet [objective curation standards](/curation), but our finalist review panel will be going way beyond what the curation team looks at and turning a critical eye toward timing, emphasis, representation, and much more. Nominations will be screened for major issues as they come in with everything that is finalist quality being intensely reviewed as we determine the five finalists in each category at the end of the year.
 
 - **Can I nominate more than one map for a single category?**
 
