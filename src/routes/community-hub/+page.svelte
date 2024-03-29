@@ -300,7 +300,7 @@
           &nbsp;<span title={LanguageName[language]} class="flag">{FlagMapping[language]}</span>
         {/each}
       </h2>
-      <div class="community-card">
+      <div class="community-content">
         <div class="community-image">
           {#if community.image}
             <img
@@ -471,6 +471,10 @@
     border-radius: $card-border-radius;
     overflow: hidden;
     padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px; // Add a minimum height for the cards
+
     & h2 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
@@ -483,23 +487,30 @@
     }
   }
 
-  .community-image img {
-    &.circle-radius-cut {
-      border-radius: 50%;
-      object-fit: cover;
-    }
+  .community-content {
+    display: flex;
+    flex-grow: 1;
+  }
 
-    width: 100px;
-    height: 100px;
+  .community-image {
     margin-right: 20px;
-    float: left;
+    flex-shrink: 0;
+
+    img {
+      &.circle-radius-cut {
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      width: 100px;
+      height: 100px;
+    }
   }
 
   .community-info {
-    height: 100%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
   .labels {
@@ -517,19 +528,17 @@
   }
 
   .community-description {
-    flex: 1;
     flex-grow: 1;
   }
 
   .social-icons {
-    margin-top: 1rem;
-    margin-bottom: 0.3rem;
+    margin-top: auto;
     display: flex;
-    align-content: end;
-    justify-content: end;
+    justify-content: flex-end;
     color: inherit;
+
     a {
-      margin-right: 10px;
+      margin-left: 10px;
       color: inherit;
     }
   }
