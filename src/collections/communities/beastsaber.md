@@ -4,6 +4,7 @@ description: >
   News, interviews, map curation, events, and more from around the Beat Saber
   community!
 image: /static/uploads/communities/aprilfools-beast-saber.png
+circleFrameImage: true
 labels:
   - General
   - Modding

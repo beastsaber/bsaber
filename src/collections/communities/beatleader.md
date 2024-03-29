@@ -3,6 +3,7 @@ name: BeatLeader
 description: In-game leaderboards for custom and OST maps | Score replays |
   Ranked, clans, events and much more
 image: /static/uploads/communities/untitled-2-виктор-радулов.png
+circleFrameImage: false
 labels:
   - Competition
 activityLevel: medium

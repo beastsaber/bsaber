@@ -2,6 +2,7 @@
 name: ScoreSaber
 description: ScoreSaber is Beat Saber's largest leaderboard system for custom songs.
 image: /static/uploads/communities/scoresaber-logo-reuben-afriendlypug-.png
+circleFrameImage: false
 labels:
   - Competition
   - Mapping

@@ -105,6 +105,12 @@ collections:
         required: false
         media_folder: /static/uploads/communities
         choose_url: false
+      - name: circleFrameImage
+        label: Circle Frame Image
+        widget: boolean
+        required: true
+        hint: If enabled, the image will be circularly cut. Some logos have transparenct background and look better without doing so while - for example ScoreSaber, Beat Saber League Japan, Acc Community look better without the circle frame cutout.
+        default: false
       - name: labels
         label: Labels
         widget: relation

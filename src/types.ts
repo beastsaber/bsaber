@@ -188,6 +188,7 @@ export type Community = {
   name: string
   description: string
   image?: string
+  circleFrameImage: boolean
   activityLevel: 'high' | 'medium' | 'low'
   labels: string[]
   socials: Social[]

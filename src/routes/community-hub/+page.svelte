@@ -300,10 +300,11 @@
           &nbsp;<span title={LanguageName[language]} class="flag">{FlagMapping[language]}</span>
         {/each}
       </h2>
-      <div>
+      <div class="community-card">
         <div class="community-image">
           {#if community.image}
             <img
+              class={community.circleFrameImage ? 'circle-radius-cut' : ''}
               src={community.image.substring(community.image.indexOf('/static/') + 7)}
               alt={community.name}
             />
@@ -345,6 +346,10 @@
 
   .flag {
     cursor: default;
+  }
+
+  .community-card {
+    height: 80%;
   }
 
   $dialogPadding: 0.7rem;
@@ -476,10 +481,13 @@
   }
 
   .community-image img {
-    border-radius: 50%;
+    &.circle-radius-cut {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
     width: 100px;
     height: 100px;
-    object-fit: cover;
     margin-right: 20px;
     float: left;
   }
