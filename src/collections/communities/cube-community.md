@@ -2,6 +2,7 @@
 name: Cube Community
 description: Cube Community is a group that uploads videos of top plays,
   community highlights, and more!
+image: /static/uploads/communities/cc-icon3.0-saera.png
 labels:
   - General
   - Competition

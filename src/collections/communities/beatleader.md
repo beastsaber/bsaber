@@ -1,7 +1,8 @@
 ---
 name: BeatLeader
-description: beatleader.xyz | In-game leaderboards for custom and OST maps |
-  Score replays | Ranked, clans, events and much more
+description: In-game leaderboards for custom and OST maps | Score replays |
+  Ranked, clans, events and much more
+image: /static/uploads/communities/untitled-2-виктор-радулов.png
 labels:
   - Competition
 activityLevel: medium

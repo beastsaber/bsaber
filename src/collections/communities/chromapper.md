@@ -1,6 +1,7 @@
 ---
 name: ChroMapper
 description: ChroMapper is a community maintained map editor for Beat Saber.
+image: /static/uploads/communities/chromapper_newglow-caeden-statia.png
 labels:
   - Mapping
 activityLevel: medium

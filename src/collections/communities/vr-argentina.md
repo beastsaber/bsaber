@@ -1,6 +1,7 @@
 ---
 name: VR Argentina
 description: Beat Saber Argentinian community!
+image: /static/uploads/communities/logo-cuadrado-matias-merayo.png
 labels:
   - Regional
 activityLevel: medium

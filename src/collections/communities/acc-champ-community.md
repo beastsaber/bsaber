@@ -1,8 +1,7 @@
 ---
 name: Acc Champ Community
-description: We are an Acc focused community that plans to be the new hub for
-  Acc related events, training, and a new ranking system to help give specific
-  info on each player's strengths and weaknesses in Acc categories.
+description: The new hub for Acc related events, training, and a new ranking system
+image: /static/uploads/communities/acc_default-1-brylanbbab.gif
 labels:
   - General
   - Competition

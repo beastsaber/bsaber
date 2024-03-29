@@ -2,6 +2,7 @@
 name: BeatSaver
 description: The source repository of all custom Beat Saber maps. Reviews,
   playlists, bookmarks, & more.
+image: /static/uploads/communities/android-chrome-512x512-mariel-warnock.png
 labels:
   - General
   - Mapping

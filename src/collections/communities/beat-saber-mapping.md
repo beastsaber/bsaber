@@ -1,6 +1,7 @@
 ---
 name: Beat Saber Mapping
 description: Your home for all things mapping & lighting. Great for newbies and vets alike!
+image: /static/uploads/communities/smooth_slow_bomb-mariel-warnock.gif
 labels:
   - Mapping
 activityLevel: medium
