@@ -50,6 +50,11 @@ collections:
         label: Show in post listing
         widget: boolean
         default: true
+      - name: linkToSpecialtyPage
+        label: Link to Specialty Page
+        required: false
+        hint: "If there is a specialty page for this post, provide the URL here. This is used to link it as canonical URL in the metadata (SEO). Only provide the path, not the full URL. Do: /speciality/your-speciality-page, Don't: https://bsaber.info/speciality/your-speciality-page"
+        widget: string
   - name: map-of-the-week
     label: Map of the Week
     folder: src/collections/map-of-the-week

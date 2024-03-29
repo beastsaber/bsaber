@@ -8,6 +8,8 @@ export type Post = {
   image?: string
   icon?: string
   category: '' | 'announcement' | 'news' | 'articles' | 'interview' | 'event'
+  showInPostListing: boolean
+  linkToSpecialtyPage?: string
 }
 
 export type CommunityEvent = {
