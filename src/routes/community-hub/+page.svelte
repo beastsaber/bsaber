@@ -349,7 +349,7 @@
   }
 
   .community-card {
-    height: 80%;
+    height: 75%;
   }
 
   $dialogPadding: 0.7rem;
@@ -520,6 +520,7 @@
 
   .social-icons {
     margin-top: 1rem;
+    margin-bottom: 0.3rem;
     display: flex;
     align-content: end;
     justify-content: end;
