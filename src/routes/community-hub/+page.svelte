@@ -160,52 +160,52 @@
     }
   }
 
-  const FlagMapping: Record<LanguageKeys, string> = {
-    en: '\u{1F1EC}\u{1F1E7}',
-    de: '\u{1F1E9}\u{1F1EA}',
-    fr: '\u{1F1EB}\u{1F1F7}',
-    es: '\u{1F1EA}\u{1F1F8}',
-    it: '\u{1F1EE}\u{1F1F9}',
-    ja: '\u{1F1EF}\u{1F1F5}',
-    ko: '\u{1F1F0}\u{1F1F7}',
-    nl: '\u{1F1F3}\u{1F1F1}',
-    pl: '\u{1F1F5}\u{1F1F1}',
-    pt: '\u{1F1F5}\u{1F1F9}',
-    ru: '\u{1F1F7}\u{1F1FA}',
-    zh: '\u{1F1E8}\u{1F1F3}',
-    sv: '\u{1F1F8}\u{1F1EA}',
-    no: '\u{1F1F3}\u{1F1F4}',
-    da: '\u{1F1E9}\u{1F1F0}',
-    fi: '\u{1F1EB}\u{1F1EE}',
-    hu: '\u{1F1ED}\u{1F1FA}',
-    cs: '\u{1F1E8}\u{1F1FF}',
-    tr: '\u{1F1F9}\u{1F1F7}',
-    th: '\u{1F1F9}\u{1F1ED}',
-    ar: '\u{1F1F8}\u{1F1E6}',
-    he: '\u{1F1EE}\u{1F1F1}',
-    el: '\u{1F1EC}\u{1F1F7}',
-    id: '\u{1F1EE}\u{1F1E9}',
-    vi: '\u{1F1FB}\u{1F1F3}',
-    ro: '\u{1F1F7}\u{1F1F4}',
-    bg: '\u{1F1E7}\u{1F1EC}',
-    uk: '\u{1F1FA}\u{1F1E6}',
-    ms: '\u{1F1F2}\u{1F1FE}',
-    hr: '\u{1F1ED}\u{1F1F7}',
-    sk: '\u{1F1F8}\u{1F1F0}',
-    sl: '\u{1F1F8}\u{1F1EE}',
-    et: '\u{1F1EA}\u{1F1EA}',
-    lv: '\u{1F1F1}\u{1F1FB}',
-    lt: '\u{1F1F1}\u{1F1F9}',
-    sr: '\u{1F1F7}\u{1F1F8}',
-    tl: '\u{1F1F5}\u{1F1ED}',
-    is: '\u{1F1EE}\u{1F1F8}',
-    ga: '\u{1F1EE}\u{1F1EA}',
-    sq: '\u{1F1E6}\u{1F1F1}',
-    bs: '\u{1F1E7}\u{1F1E6}',
-    mk: '\u{1F1F2}\u{1F1F0}',
-    mt: '\u{1F1F2}\u{1F1F9}',
-    cy: '\u{1F3F4}\u{E0067}\u{E0062}\u{E0077}\u{E006C}\u{E0073}\u{E007F}',
-    be: '\u{1F1E7}\u{1F1FE}',
+  const LanguageFlag: Record<LanguageKeys, string> = {
+    en: 'gb',
+    de: 'de',
+    fr: 'fr',
+    es: 'es',
+    it: 'it',
+    ja: 'jp',
+    ko: 'kr',
+    nl: 'nl',
+    pl: 'pl',
+    pt: 'pt',
+    ru: 'ru',
+    zh: 'cn',
+    sv: 'se',
+    no: 'no',
+    da: 'dk',
+    fi: 'fi',
+    hu: 'hu',
+    cs: 'cz',
+    tr: 'tr',
+    th: 'th',
+    ar: 'sa',
+    he: 'il',
+    el: 'gr',
+    id: 'id',
+    vi: 'vn',
+    ro: 'ro',
+    bg: 'bg',
+    uk: 'ua',
+    ms: 'my',
+    hr: 'hr',
+    sk: 'sk',
+    sl: 'si',
+    et: 'ee',
+    lv: 'lv',
+    lt: 'lt',
+    sr: 'rs',
+    tl: 'ph',
+    is: 'is',
+    ga: 'ie',
+    sq: 'al',
+    bs: 'ba',
+    mk: 'mk',
+    mt: 'mt',
+    cy: 'cy',
+    be: 'by',
   }
 
   const LanguageName: Record<LanguageKeys, string> = {
@@ -297,7 +297,12 @@
         {community.name}
 
         {#each community.languages as language}
-          &nbsp;<span title={LanguageName[language]} class="flag">{FlagMapping[language]}</span>
+          {#if language != 'en'}
+            &nbsp;<span
+              title="{LanguageName[language]} speaking server"
+              class="fi fi-{LanguageFlag[language]}"
+            />
+          {/if}
         {/each}
       </h2>
       <div class="community-content">
@@ -342,6 +347,7 @@
 
 <style lang="scss">
   @import 'src/scss/variables';
+  @import '/node_modules/flag-icons/css/flag-icons.min.css';
 
   .filter-dropdown-anchor {
     position: relative;
