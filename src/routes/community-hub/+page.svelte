@@ -291,7 +291,7 @@
   </div>
 </div>
 <div class="grid">
-  {#each filteredCommunities as community}
+  {#each filteredCommunities as community, communityIndex (community)}
     <div class="community-card activity-{community.activityLevel}">
       <h2>
         {community.name}
@@ -325,8 +325,11 @@
           </div>
           <p class="community-description">{community.description}</p>
           <div class="social-icons">
-            {#each community.socials as social}
-              <a href={social.url} title={social.titleOverwrite ?? social.name}
+            {#each community.socials as social, socialIndex (social)}
+              <a
+                id={`${communityIndex}-${socialIndex}-${social.name}`}
+                href={social.url}
+                title={social.titleOverwrite ?? social.name}
                 ><FontAwesomeIcon icon={iconMapping[social.name]} /></a
               >
             {/each}
