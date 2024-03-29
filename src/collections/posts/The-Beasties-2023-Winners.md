@@ -22,11 +22,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 ### Check out the video announcement [here](https://www.youtube.com/watch?v=qMIiUZ7D8GU)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qMIiUZ7D8GU?si=B7-5jTWYWUr3fvPW?autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<br />
-
-<br />
+!youtube[qMIiUZ7D8GU]
 
 ## Supporting Map Awards
 
@@ -46,7 +42,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 **Best Full Spread Map**:
 
-- Winner: [Knock2 - dashstar\*](https://beatsaver.com/maps/27e38) – Mapped by Phøenix, Timeweaver, Pixelguy
+- Winner: [Knock2 - dashstar\*](https://beatsaver.com/maps/2f187) – Mapped by Phøenix, Timeweaver, Pixelguy
 
 - Runner-Up: [Fall Out Boy - The Phoenix](https://beatsaver.com/maps/32693) – Mapped by Bytrius
 

@@ -6,19 +6,58 @@
   export let post: Post
   const { body, title, image } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
+
   const postRenderer = new marked.Renderer()
   // This will make headings start at 2, because the title will be rendered as an h1
   postRenderer.heading = (text, level) => {
     return `<h${level + 1}>${text}</h${level + 1}>`
   }
 
-  // this will make links hard-reload instead of
+  // This will make links hard-reload instead of using SPA navigation
   postRenderer.link = (href, title, text) => {
     return `<a href="${href}" title="${title}" rel="external">${text}</a>`
   }
+
+  // Injecting !youtube[video-id] tags with the respective iframe by using the paragraph renderer
+  // I did attempt using the tokenizer instead, but it just complicated things a lot
+  const youtubeRegex = /^!youtube\[([^\]]+)\]/g
+  const youtubePlaylistRegex = /^!youtubepl\[([^\]]+)\]/g
+
+  const createYoutubeIFrameFromId = (videoId: string) => `
+  <iframe class="markdown-youtube-video" src="https://www.youtube.com/embed/${videoId}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+    >
+  </iframe>`
+
+  const createYoutubePlaylistIFrameFromId = (playlistId: string) => `
+  <iframe class="markdown-youtube-playlist" src="https://www.youtube.com/embed/videoseries?list=${playlistId}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+    >
+  </iframe>`
+
+  postRenderer.paragraph = (text) => {
+    let renderedText = text.replace(youtubeRegex, (_, videoId) => {
+      return createYoutubeIFrameFromId(videoId.trim())
+    })
+
+    renderedText = renderedText.replace(youtubePlaylistRegex, (_, playlistId) => {
+      return createYoutubePlaylistIFrameFromId(playlistId.trim())
+    })
+
+    return `<p>${renderedText}</p>`
+  }
 </script>
 
-<MetaHead {title} {imageUrl} description={post.homepageText} />
+<MetaHead
+  {title}
+  {imageUrl}
+  description={post.homepageText}
+  canonicalUrl={post.linkToSpecialtyPage}
+/>
 <article>
   {#if imageUrl !== undefined}
     <header style={`background-image: url(${imageUrl})`}>
