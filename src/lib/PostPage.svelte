@@ -52,7 +52,12 @@
   }
 </script>
 
-<MetaHead {title} {imageUrl} description={post.homepageText} />
+<MetaHead
+  {title}
+  {imageUrl}
+  description={post.homepageText}
+  canonicalUrl={post.linkToSpecialtyPage}
+/>
 <article>
   {#if imageUrl !== undefined}
     <header style={`background-image: url(${imageUrl})`}>

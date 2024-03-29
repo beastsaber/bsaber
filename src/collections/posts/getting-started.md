@@ -8,6 +8,7 @@ homepageText: So you are new to Beat Saber? Maybe you have seen someone play a
   the map? Then this guide is for you!
 image: /static/uploads/posts/beat-saber-square.jpg
 showInPostListing: true
+linkToSpecialtyPage: '/getting-started'
 ---
 
 So you are new to Beat Saber? Maybe you saw someone play a cool map on YouTube or TikTok - but now that you bought the game you cannot find the map. Or maybe you just really like this game and would like to be part of the community? This guide is for you! We will explain and highlight the various parts of the Custom Beat Saber Community and point you in the right direction to get started.
@@ -47,7 +48,6 @@ Additionally, you can check out the [Maps of the Week](/maps-of-the-week/1) - wh
 - a level of quality and craftsmanship that demonstrates clear attention to detail in capturing the music
 
 We also feature playlists on our home page! "Featured Packs" are reviewed by our team of Curators to be of minimum curation quality standards. You'll also find Packs for the Beasties, and other Curator Recommended packs! Want to learn more about Curation? [Click here!](/curation)
-
 
 # Competitive Play
 

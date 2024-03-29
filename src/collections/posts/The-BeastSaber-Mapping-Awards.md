@@ -3,16 +3,17 @@ title: The BeastSaber Mapping Awards
 section: speciality
 category: event
 publish: 2024-02-01T00:00:00.000Z
-homepageText: " "
+homepageText: ' '
 image: /static/uploads/posts/2021.jpg
 showInPostListing: false
+linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 ---
 
 # The BeastSaber Mapping Awards
 
 ## AKA: The Beasties - By Mappers, for Mappers
 
-The BeastSaber Mapping Awards  were launched in 2021 to highlight the best of the best of the art (and science) of making custom Beat Saber maps. The first year featured 29 categories, garnered 760 nominated maps, resulting in 96 finalists, with more than 45 medals won.
+The BeastSaber Mapping Awards were launched in 2021 to highlight the best of the best of the art (and science) of making custom Beat Saber maps. The first year featured 29 categories, garnered 760 nominated maps, resulting in 96 finalists, with more than 45 medals won.
 
 Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.
 
@@ -22,7 +23,7 @@ Map curation is focused on maps that avoid objectively bad mapping and have a �
 
 **Nominations are currently closed**
 
-*Eligibility Period December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC*
+_Eligibility Period December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC_
 
 > Stay tuned for any changes being made for 2024!
 
@@ -55,29 +56,29 @@ We’ve received a lot of constructive community feedback on the 2022 awards and
 
 We are always seeking and implementing feedback from mappers and the community over prior years on how we can improve our categories.
 
-*Any categories that do not receive at least five qualified nominees will not be awarded at the end of the year.*
+_Any categories that do not receive at least five qualified nominees will not be awarded at the end of the year._
 
 ### Overall Categories
 
 - **Map of the Year**: The best unmodded map of the year. Full stop. It has it all – representation, emphasis, flow – everything coming together for an incredible playing experience to go with the song.
 
-    Example: [Teminite – Raise the Black Flag](https://beatsaver.com/maps/1c806)
+  Example: [Teminite – Raise the Black Flag](https://beatsaver.com/maps/1c806)
 
 - **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2023.
 
-    Example: Skrillex - Devil's Den (no we're not giving you a free copy of a DLC map :P)
+  Example: Skrillex - Devil's Den (no we're not giving you a free copy of a DLC map :P)
 
 - **Pack of the Year - TWEAKED**: The map pack that has it all: a tight theme, new high-quality maps, and a great presentation across all difficulties, all wrapped up in a beautiful `.bplist` bow.
 
-    Example Pack: [S3RL Pack](https://beatsaver.com/playlists/3930)
+  Example Pack: [S3RL Pack](https://beatsaver.com/playlists/3930)
 
-- **Best Full Spread Map**: This map has something for players at every level and does it with style and masterful mapping. To qualify, the map must have all five *true* difficulties — Easy, Normal, Hard, Expert, ExpertPlus.
+- **Best Full Spread Map**: This map has something for players at every level and does it with style and masterful mapping. To qualify, the map must have all five _true_ difficulties — Easy, Normal, Hard, Expert, ExpertPlus.
 
-    Example Map: [S3RL – To Your Beat (ft. Hannah Fortune)](https://beatsaver.com/maps/1d082)
+  Example Map: [S3RL – To Your Beat (ft. Hannah Fortune)](https://beatsaver.com/maps/1d082)
 
-- **Best Non-Standard Game Mode Map - TWEAKED**: This category celebrates the best of non-standard characteristics: Single Saber, No Arrows, and 360/90-Degree maps. *Maps must actually use the alt characteristic and not mods to simulate.*
+- **Best Non-Standard Game Mode Map - TWEAKED**: This category celebrates the best of non-standard characteristics: Single Saber, No Arrows, and 360/90-Degree maps. _Maps must actually use the alt characteristic and not mods to simulate._
 
-    Example Map: [Aero Chord – Drop It](https://beatsaver.com/maps/1c88d)
+  Example Map: [Aero Chord – Drop It](https://beatsaver.com/maps/1c88d)
 
 ### Individual Awards
 
@@ -85,47 +86,47 @@ We are always seeking and implementing feedback from mappers and the community o
 
 - **Lighter of the Year**: A lighter, vanilla or chroma, who not only excels in their art but also shares their experience, leads, and mentors as they are able.
 
-- **Rookie Mapper of the Year**: The best up-and-coming mapper whose first map was released during the nomination period. *Previously deleted maps count as first map releases.*
+- **Rookie Mapper of the Year**: The best up-and-coming mapper whose first map was released during the nomination period. _Previously deleted maps count as first map releases._
 
-- **Rookie Lighter of the Year**: The best up-and-coming lighter whose first map/lightshow was released during the nomination period. *Previously deleted maps count as first map releases.*
+- **Rookie Lighter of the Year**: The best up-and-coming lighter whose first map/lightshow was released during the nomination period. _Previously deleted maps count as first map releases._
 
 ### Map Style Categories
 
 - **Best Dance Style Map**: With a blend of big arm swings, high movement, and a bit lower density, the best map in the “Dance” category gets players of all ages grooving to the beat and sweating up a storm.
 
-    Example Map: Maroon5 – Moves Like Jagger
+  Example Map: Maroon5 – Moves Like Jagger
 
 - **Best Tech Style Map**: With more angles than a dodecahedron, the best map in the “Tech” category bends the concept of parity to its will to create a challenging sight-read that retains great flow.
 
-    Example Map: Kanaria – Envy Baby
+  Example Map: Kanaria – Envy Baby
 
 - **Best Fitness Style Map**: Build strength to the beat. The best fitness map forces constant natural movement in all dimensions with walls and bloqs that keep the flow until your legs give out.
 
-    Example Map: Stefflon Don – Sixteen Shots
+  Example Map: Stefflon Don – Sixteen Shots
 
 - **Best Balanced Style Map**: Look in the sky! Is it a tech map? Is it a dance map? Is it a speed map? WE DON’T KNOW! The Best Balanced Style Map is the mutt of the neighborhood – a little of this, a little of that – all combining into one fantastic map.
 
-    Example Map: The Kid Laroi & Justin Bieber – STAY,
+  Example Map: The Kid Laroi & Justin Bieber – STAY,
 
 - **Best Accuracy Style Map**: Chase that sweet high accuracy in a very, very careful dance. The best map in the Accuracy category has excellent rhythmic choice and well-placed emphasis with the fewest amount of notes.
 
-    Example Map: Avicii – The Nights
+  Example Map: Avicii – The Nights
 
 - **Best Speed Style Map**: Nothing screams “speed” more than that feeling of lactic acid setting in after tackling thousands of notes at mind-blowing BPMs, and the best map in the “Speed” category delivers an extra helping.
 
-    Example Map: Camellia – Knight Rider
+  Example Map: Camellia – Knight Rider
 
 - **Best Challenge Style Map**: Ranking Criteria? Curation? Mapping fundamentals? These are but chains to restrict the seemingly endless and wild imagination of challenge mappers. The best map in the “Challenge” category pushes the limits in every way.
 
-    Example Map: Destructive Tendencies Warface – Release the Kraken
+  Example Map: Destructive Tendencies Warface – Release the Kraken
 
 - **Best Gimmick Map - TWEAKED!**: The best “Gimmick” map shows off some of the wacky manipulations that play fast and loose with gameplay and have become community fan favorites. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here!
 
-    Example Map: MARENOL – LeaF
+  Example Map: MARENOL – LeaF
 
 - **Best Poodle Map - NEW!**: Poodles and Pauls. The best map in the Poodle category has excellent flow and well-placed emphasis with the long hold note swing style. Spirals, Switch-backs, and more!
 
-    Example Map: Disco Fries – Moonlight
+  Example Map: Disco Fries – Moonlight
 
 ### Ranked Categories - TWEAKED
 
@@ -137,7 +138,7 @@ We are always seeking and implementing feedback from mappers and the community o
 
 ### Modded Mapping
 
-- **Best Artmap - TWEAKED**: Formerly called “Modchart Visuals,” these maps use all the power of Noodle Extensions and  Chroma to convey the music and/or tell us a story through the creative use of mods and any notemods aren’t the main focus of the map.
+- **Best Artmap - TWEAKED**: Formerly called “Modchart Visuals,” these maps use all the power of Noodle Extensions and Chroma to convey the music and/or tell us a story through the creative use of mods and any notemods aren’t the main focus of the map.
 
 - **Best Modchart - TWEAKED!** Here? There? Where is the next note coming from?! This category includes maps that feature solid mapping AND alter the gameplay in mind-blowing ways through animation and manipulation of notes and obstacles.
 
@@ -159,30 +160,30 @@ We are always seeking and implementing feedback from mappers and the community o
 
 - **I am a mapper. Can I nominate my own work for an award?**
 
-    In 2023, yes, you can nominate your own map for the appropriate category. You are limited to self-nominating ONE of your maps for a given category so be sure you are truly focusing on your best work. Self-nominations are not permitted for Mapper/Lighter of the Year. Rookie Mappers/Lighters are free to self nominate for Rookie Mapper/Lighter of the Year.
+  In 2023, yes, you can nominate your own map for the appropriate category. You are limited to self-nominating ONE of your maps for a given category so be sure you are truly focusing on your best work. Self-nominations are not permitted for Mapper/Lighter of the Year. Rookie Mappers/Lighters are free to self nominate for Rookie Mapper/Lighter of the Year.
 
 - **Who chooses the finalists in each category?**
 
-    We will be lining up a team of Verified Mapper “Subject Matter Experts” spanning all of our categories. We will being looking for these volunteers in November. Our primary goal is to identify at least three “experts” in each area. For example, we have tech mappers and players screening tech maps; modcharters screening modcharts, experienced Chroma lighters screening lightshows, etc. We also get additional input from the BeastSaber curation team to supplement expert input.
+  We will be lining up a team of Verified Mapper “Subject Matter Experts” spanning all of our categories. We will being looking for these volunteers in November. Our primary goal is to identify at least three “experts” in each area. For example, we have tech mappers and players screening tech maps; modcharters screening modcharts, experienced Chroma lighters screening lightshows, etc. We also get additional input from the BeastSaber curation team to supplement expert input.
 
 - **What if one of the experts is also nominated in a category?**
 
-    With a limited pool of willing, skilled volunteers we are bound to have situations where a mapper may be nominated in the category they are assisting with screening. In these cases, the mapper must abstain from screening their own maps. For example, let’s say the Best Tech Map category gets 20 nominations and mapper “Moespastic” mapped two of them but they’re on the finalist team. They can screen the 28 other maps, but they cannot screen their own.
+  With a limited pool of willing, skilled volunteers we are bound to have situations where a mapper may be nominated in the category they are assisting with screening. In these cases, the mapper must abstain from screening their own maps. For example, let’s say the Best Tech Map category gets 20 nominations and mapper “Moespastic” mapped two of them but they’re on the finalist team. They can screen the 28 other maps, but they cannot screen their own.
 
 - **Can a mapper have more than one map as a finalist in a category?**
 
-    No. In a practice that we began 2 years ago, even if a mapper has multiple maps deemed to be “finalist quality” by our screening team, they can only have ONE map represented in the five finalists selected for a category. Likewise, a map can only be a finalist for ONE category in a given section (see the list above for the four sections). So a map can’t be a finalist for both Best Dance Map AND Best Acc Map but could be a nominee for Best Acc Map and Best Ranked Map under 4 Stars, for example.
+  No. In a practice that we began 2 years ago, even if a mapper has multiple maps deemed to be “finalist quality” by our screening team, they can only have ONE map represented in the five finalists selected for a category. Likewise, a map can only be a finalist for ONE category in a given section (see the list above for the four sections). So a map can’t be a finalist for both Best Dance Map AND Best Acc Map but could be a nominee for Best Acc Map and Best Ranked Map under 4 Stars, for example.
 
 - **What is the timeline for the 2023 awards?**
 
-    The eligibility period for maps and individuals is based on the date and time shown on BeatSaver. Hover over the “Uploaded” time to see the full UTC time stamp. Maps must have been released after December 1, 2022 at 00:00 UTC or before November 30, 2023 at 23:59 UTC. Beyond the nomination period, we expect finalist selection to occur in late December/early January with the awards show planned for late January/early February 2024.
+  The eligibility period for maps and individuals is based on the date and time shown on BeatSaver. Hover over the “Uploaded” time to see the full UTC time stamp. Maps must have been released after December 1, 2022 at 00:00 UTC or before November 30, 2023 at 23:59 UTC. Beyond the nomination period, we expect finalist selection to occur in late December/early January with the awards show planned for late January/early February 2024.
 
 - **Can I nominate whatever I want for a category?**
 
-    The BeastSaber Mapping Awards are, well, *mapping* awards. This means that the mapping needs to be of the highest quality. At a bare minimum, nominations need to meet [objective curation standards](https://bsaber.com/getting-started/curation/#donts), but our finalist review panel will be going way beyond what the curation team looks at and turning a critical eye toward timing, emphasis, representation, and much more. Nominations will be screened for major issues as they come in with everything that is finalist quality being intensely reviewed as we determine the five finalists in each category at the end of the year.
+  The BeastSaber Mapping Awards are, well, _mapping_ awards. This means that the mapping needs to be of the highest quality. At a bare minimum, nominations need to meet [objective curation standards](https://bsaber.com/getting-started/curation/#donts), but our finalist review panel will be going way beyond what the curation team looks at and turning a critical eye toward timing, emphasis, representation, and much more. Nominations will be screened for major issues as they come in with everything that is finalist quality being intensely reviewed as we determine the five finalists in each category at the end of the year.
 
 - **Can I nominate more than one map for a single category?**
 
-    Yes, within reason. We know that you might nominate something in September and then a new map comes out in November that you also want to nominate. This is perfectly acceptable as long as multiple nominations don’t get spammy. At the end of the day there can only be five finalists in a given category, so especially if you are nominating late in the year we recommend that you nominate what you think is the BEST map for the category out of all the ones you love.
+  Yes, within reason. We know that you might nominate something in September and then a new map comes out in November that you also want to nominate. This is perfectly acceptable as long as multiple nominations don’t get spammy. At the end of the day there can only be five finalists in a given category, so especially if you are nominating late in the year we recommend that you nominate what you think is the BEST map for the category out of all the ones you love.
 
 > Have a question that isn’t listed here? Ask us in the [BeastSaber Discord server](https://discord.gg/VJZHUbt)!
