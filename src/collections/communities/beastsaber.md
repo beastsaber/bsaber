@@ -3,7 +3,7 @@ name: BeastSaber
 description: >
   News, interviews, map curation, events, and more from around the Beat Saber
   community!
-image: /static/uploads/communities/aprilfools-beast-saber.png
+image: /static/uploads/communities/beastsaber-logo-fullsize-square.jpg
 circleFrameImage: true
 labels:
   - General
