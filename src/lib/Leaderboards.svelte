@@ -14,7 +14,7 @@
 
   async function getPlayers() {
     let response = await fetch(
-      `${import.meta.env.VITE_BSABER_API_BASE || 'https://api.bsaber.info'}/top-players`,
+      `${import.meta.env.VITE_BSABER_API_BASE || 'https://api.bsaber.com'}/top-players`,
     )
     let json = await response.json()
     players = json
