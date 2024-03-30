@@ -46,7 +46,7 @@
         },
         {
           name: 'Mapping',
-          href: '/posts/Getting-Started-With-Mapping',
+          href: '/posts/getting-started-with-mapping',
         },
       ],
     },
@@ -96,15 +96,15 @@
         },
         {
           name: '2023 Winners',
-          href: '/posts/The-Beasties-2023-Winners',
+          href: '/posts/the-beasties-2023-winners',
         },
         {
           name: '2022 Winners',
-          href: '/posts/The-Beasties-2022-Winners',
+          href: '/posts/the-beasties-2022-winners',
         },
         {
           name: '2021 Winners',
-          href: '/posts/The-Beasties-2021-Winners',
+          href: '/posts/the-beasties-2021-winners',
         },
       ],
     },
