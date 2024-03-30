@@ -11,7 +11,7 @@ socials:
   - name: Website
     url: https://scoresaber.com/
     titleOverwrite: ScoreSaber Website
-  - name: Website
+  - name: Documentation
     url: https://wiki.scoresaber.com/
     titleOverwrite: ScoreSaber Wiki
   - name: Twitter/X

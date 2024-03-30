@@ -11,7 +11,7 @@ activityLevel: medium
 socials:
   - name: Website
     url: https://beatsaver.com
-  - name: Website
+  - name: Documentation
     url: https://api.beatsaver.com/docs/index.html?url=./swagger.json
     titleOverwrite: BeatSaver API for Devs
   - name: GitHub
