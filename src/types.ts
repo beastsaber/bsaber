@@ -133,6 +133,7 @@ export type SocialMediaTypes =
   | 'Reddit'
   | 'GitHub'
   | 'Website'
+  | 'Documentation'
 
 export type Social = {
   name: SocialMediaTypes

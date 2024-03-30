@@ -12,7 +12,7 @@
     faReddit,
     faGithub,
   } from '@fortawesome/free-brands-svg-icons'
-  import { faLink, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+  import { faLink, faCaretDown, faBook } from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome'
   import Fuse from 'fuse.js'
 
@@ -72,6 +72,7 @@
     Reddit: faReddit,
     GitHub: faGithub,
     Website: faLink,
+    Documentation: faBook,
   }
 
   const getLabelObject = (labelName: string) => {

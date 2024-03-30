@@ -152,6 +152,7 @@ collections:
                   'Reddit',
                   'GitHub',
                   'Website',
+                  'Documentation'
                 ],
             }
           - { label: URL, name: url, widget: string }
