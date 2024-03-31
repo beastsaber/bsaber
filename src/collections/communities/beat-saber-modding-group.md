@@ -9,7 +9,7 @@ labels:
 activityLevel: medium
 socials:
   - name: Website
-    url: "https://beatmods.com/ "
+    url: https://beatmods.com/
     titleOverwrite: BeatMods (Mod Repository)
   - name: Website
     url: https://patreon.com/beatsabermods
@@ -30,7 +30,7 @@ socials:
     url: https://twitch.tv/beatsabermods
     titleOverwrite: BSMG Twitch
   - name: Discord
-    url: "discord.gg/beatsabermods "
+    url: https://discord.gg/beatsabermods
     titleOverwrite: BSMG Discord
 languages:
   - en
