@@ -121,6 +121,7 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
     z-index: 99;
   }
 
