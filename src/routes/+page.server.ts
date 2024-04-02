@@ -73,6 +73,7 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
           seniorCurator: !!beatSaverMapUploaderData.seniorCurator,
           verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
         },
+        collaborators: beatSaverMapData.collaborators
       },
       review: currentMOTWCollectionData.review,
       startDate: currentMOTWCollectionData.startDate,
