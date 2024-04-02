@@ -36,7 +36,11 @@
   // They can't download maps directly from the site, so we hide it
   .one-click-download-link {
     display: none;
-    color: lighten($color-beatsaver-pink, 20%);
+    color: #c5c5c5;
+
+    &:hover {
+      color: white;
+    }
   }
 
   @media (min-width: 678px) {
