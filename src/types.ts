@@ -34,7 +34,7 @@ export type MapOfTheWeekCollectionData = {
   startDate: string
   showcase: {
     id: string
-    type: 'youtube-short'
+    type: 'youtube-short' | 'youtube-video'
   }
   coverUrlOverwrite?: string
 }

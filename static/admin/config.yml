@@ -86,9 +86,9 @@ collections:
           - name: type
             label: ID Type
             widget: select
-            default: 'youtube-short'
             options:
               - { label: 'YouTube Short', value: 'youtube-short' }
+              - { label: 'YouTube Video', value: 'youtube-video' }
       - name: coverUrlOverwrite
         label: Cover URL
         required: false
