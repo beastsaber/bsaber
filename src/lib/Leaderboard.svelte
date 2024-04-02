@@ -48,7 +48,7 @@
     font-family: $font-primary-text;
     font-weight: 700;
     display: grid;
-    grid-template-columns: 10px 24px 1fr 20px;
+    grid-template-columns: 10px 24px auto auto;
     gap: 16px;
     align-items: center;
     padding: 10px 5px;

@@ -3,7 +3,7 @@
 @import '@fontsource/dm-sans/400';
 @import '@fontsource/jetbrains-mono/400';
 @import 'scss/variables';
-@import "scss/articles";
+@import 'scss/articles';
 
 :root {
   font-family: $font-dm-sans;
@@ -16,22 +16,9 @@
 
 body {
   max-width: 1356px;
-  // REVERT: Comment in this line - will still have an issue with the scroll bar though
-  // min-height: 100vh;
   margin: 0 auto;
   background-color: $background-primary;
   color: #fff;
-}
-
-body::before {
-  content: '';
-  width: 80vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 10vw;
-  z-index: -1;
-  opacity: 0.05;
 }
 
 #svelte {
@@ -97,4 +84,11 @@ button:focus:not(:focus-visible) {
   h2 {
     font-size: 1.5rem;
   }
+}
+
+iframe.markdown-youtube-video,
+iframe.markdown-youtube-playlist {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-width: 800px;
 }

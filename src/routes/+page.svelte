@@ -4,25 +4,26 @@
   import QuickFilters from '$lib/QuickFilters.svelte'
   import Search from '$lib/Search.svelte'
   import PostCards from '$lib/PostCards.svelte'
-  import EventCards from '$lib/EventCards.svelte'
   import Header from '$lib/Header.svelte'
   import Leaderboards from '$lib/Leaderboards.svelte'
-  import PlaylistCards from "$lib/PlaylistCards.svelte";
-  import MapCards from "$lib/MapCards.svelte";
+  import PlaylistCards from '$lib/PlaylistCards.svelte'
+  import MapCards from '$lib/MapCards.svelte'
 
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
   import { faRectangleList } from '@fortawesome/free-solid-svg-icons/faRectangleList'
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
-  import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-  
+  import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+
   import type { RootPageSSRData } from '../types'
   import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
+  import MetaHead from '$lib/MetaHead.svelte'
+  import EventCards from '$lib/EventCards.svelte'
 
-  export let data: RootPageSSRData;
-  
-  let { announcements, currentMapOfTheWeek, news } = data
+  export let data: RootPageSSRData
+
+  let { announcements, currentMapOfTheWeek, articles, events } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
@@ -99,9 +100,7 @@
   ]
 </script>
 
-<svelte:head>
-  <title>BeastSaber</title>
-</svelte:head>
+<MetaHead />
 
 <section>
   {#if announcement}
@@ -110,26 +109,48 @@
     </div>
   {/if}
   <QuickFilters />
-  <hr />
   <!-- Search to be moved to Navbar later -->
   <Search />
-  <hr />
 
-  <Header
-    text="Latest News"
-    icon={faNewspaper}
-    linkUrl="/posts"
-    linkText="See all posts"
-  />
-  <PostCards posts={news} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
+  {#if currentMapOfTheWeek != undefined}
+    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
+  {/if}
 
   <Header
     text="Featured Packs"
     icon={faRectangleList}
-    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists?curated=true`}"
+    linkUrl={`${
+      import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'
+    }/playlists?curated=true`}
     linkText="See all curated packs"
   />
-  <PlaylistCards/>
+  <PlaylistCards maxCards={maxFeaturedPackCards} />
+
+  <Header
+    text="Latest Articles"
+    icon={faNewspaper}
+    linkUrl="/posts"
+    linkText="See all posts"
+  />
+  <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
+
+  <Header
+    text="Recently Curated Maps"
+    icon={faAward}
+    linkUrl={`${
+      import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'
+    }/?order=Curated&curated=true`}
+    linkText="See all curated maps"
+  />
+  <MapCards sortOrder="CURATED" />
+
+  <Header
+    text="Recent Maps by Verified Mappers"
+    icon={faCircleCheck}
+    linkUrl={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?verified=true`}
+    linkText="See all maps by verified mappers"
+  />
+  <MapCards verified={true} />
 
   {#if import.meta.env.VITE_HIDE_EVENTS !== "true"}
     <Header
@@ -140,26 +161,6 @@
     />
     <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
   {/if}
-
-  {#if currentMapOfTheWeek != undefined}
-    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
-  {/if}
-
-  <Header
-    text="Recently Curated Maps"
-    icon={faAward}
-    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?order=Curated&curated=true`}"
-    linkText="See all curated maps"
-  />
-  <MapCards sortOrder="CURATED"/>
-
-  <Header
-    text="Recent Maps by Verified Mappers"
-    icon={faCircleCheck}
-    linkUrl="{`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?verified=true`}"
-    linkText="See all maps by verified mappers"
-  />
-  <MapCards verified="{true}"/>
 
   <Header icon={faChartLine} text="Global Ranking Leaderboards" />
   <div class="leaderboards">
@@ -177,7 +178,7 @@
   }
 
   .announcement {
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
   }
 
   .leaderboards {

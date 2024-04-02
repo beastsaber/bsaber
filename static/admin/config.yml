@@ -16,11 +16,20 @@ collections:
         hint: This will decide which section the post appears in on the homepage and article collection pages.
         widget: select
         options:
-          - { label: 'Announcement', value: 'announcements' }
+          - { label: 'Announcements', value: 'announcements' }
+          - { label: 'Articles', value: 'articles' }
+          - { label: 'Speciality', value: 'speciality' }
+      - name: category
+        label: Category
+        hint: This will determine what label will show above the post title.
+        widget: select
+        options:
+          - { label: 'None', value: '' }
+          - { label: 'Announcement', value: 'announcement' }
           - { label: 'News', value: 'news' }
-          - { label: 'Music Pack', value: 'music-packs' }
-          - { label: 'Community Event', value: 'community-events' }
-          - { label: 'Map of the Week', value: 'maps-of-the-week' }
+          - { label: 'Guide', value: 'guide' }
+          - { label: 'Interview', value: 'interview' }
+          - { label: 'Event', value: 'event' }
       - name: publish
         label: Publish Date
         widget: datetime
@@ -37,31 +46,15 @@ collections:
         required: false
         media_folder: /static/uploads/posts
         choose_url: false
-  - name: curation-team
-    label: Curation Team
-    slug: '{{name}}'
-    folder: src/collections/curation-team
-    create: true
-    fields:
-      - name: name
-      - name: slug
-      - name: role
-        widget: select
-        options: [Curator, Senior Curator]
-      - name: style_tags
-        widget: list
-        allow_add: true
-      - name: favorite_map
-        widget: object
-        fields:
-          - name: name
-          - name: url
-      - name: bio
-        widget: markdown
-      - name: image
-        widget: image
-        media_folder: /static/uploads/curators
-        choose_url: false
+      - name: showInPostListing
+        label: Show in post listing
+        widget: boolean
+        default: true
+      - name: linkToSpecialtyPage
+        label: Link to Specialty Page
+        required: false
+        hint: "If there is a specialty page for this post, provide the URL here. This is used to link it as canonical URL in the metadata (SEO). Only provide the path, not the full URL. Do: /speciality/your-speciality-page, Don't: https://bsaber.info/speciality/your-speciality-page"
+        widget: string
   - name: map-of-the-week
     label: Map of the Week
     folder: src/collections/map-of-the-week
@@ -73,7 +66,7 @@ collections:
         hint: The BeatSaver ID of the map of the week. You can find this one in the URL of the map's page on beatsaver.com. For example, the ID of the map https://beatsaver.com/maps/8f is the last part 8f.
       - name: review
         label: Review
-        hint: "An accompanying text to the map of the week that should review and ideally describe what made it the MOTW. Example \"This map has a fantastic lightshow on the new Lattice environment, a poodle diff and three other diffs accessible to a variety of players with great and unique usage of arcs.\""
+        hint: 'An accompanying text to the map of the week that should review and ideally describe what made it the MOTW. Example "This map has a fantastic lightshow on the new Lattice environment, a poodle diff and three other diffs accessible to a variety of players with great and unique usage of arcs."'
         widget: text
       - name: startDate
         label: Start Date
@@ -85,5 +78,142 @@ collections:
         required: false
         hint: If you want to use a different cover image than the one fetched from BeatLeader, you can provide a URL here.
         widget: string
+  - name: community-labels
+    label: Community Labels
+    folder: src/collections/community-labels
+    slug: '{{label}}'
+    create: true
+    fields:
+      - name: label
+        label: Label
+        widget: string
+      - name: description
+        label: Description
+        widget: string
+      - name: color
+        label: Color
+        widget: color
+  - name: community
+    label: Community
+    folder: src/collections/communities
+    slug: '{{name}}'
+    create: true
+    fields:
+      - name: name
+        label: Name
+      - name: description
+        label: Description
+        widget: text
+      - name: image
+        label: Image
+        widget: image
+        required: false
+        media_folder: /static/uploads/communities
+        choose_url: false
+      - name: circleFrameImage
+        label: Circle Frame Image
+        widget: boolean
+        required: true
+        hint: If enabled, the image will be circularly cut. Some logos have transparenct background and look better without doing so while - for example ScoreSaber, Beat Saber League Japan, Acc Community look better without the circle frame cutout.
+        default: false
+      - name: labels
+        label: Labels
+        widget: relation
+        collection: community-labels
+        multiple: true
+        max: 2
+        search_fields: [label]
+        value_field: label
+        display_fields: [label]
+      - name: activityLevel
+        label: Activity Level
+        widget: select
+        options:
+          - { label: 'Low', value: 'low' }
+          - { label: 'Medium', value: 'medium' }
+          - { label: 'High', value: 'high' }
+      - name: socials
+        label: Socials
+        widget: list
+        multiple: true
+        fields:
+          - {
+              label: Name,
+              name: name,
+              widget: select,
+              options:
+                [
+                  'Discord',
+                  'Twitter/X',
+                  'Facebook',
+                  'Instagram',
+                  'Twitch',
+                  'YouTube',
+                  'Reddit',
+                  'GitHub',
+                  'Website',
+                  'Documentation'
+                ],
+            }
+          - { label: URL, name: url, widget: string }
+          - {
+              label: Title Overwrite,
+              name: titleOverwrite,
+              widget: string,
+              hint: The title is the text that appears if you hover over the icon. If you want to overwrite it,
+              you can do so here. Otherwise,
+              the title will be the same as the name that has been selected.,
+              required: false,
+            }
+      - name: languages
+        label: Languages
+        widget: select
+        multiple: true
+        options:
+          - { label: 'English', value: 'en' }
+          - { label: 'German', value: 'de' }
+          - { label: 'French', value: 'fr' }
+          - { label: 'Spanish', value: 'es' }
+          - { label: 'Italian', value: 'it' }
+          - { label: 'Japanese', value: 'ja' }
+          - { label: 'Korean', value: 'ko' }
+          - { label: 'Dutch', value: 'nl' }
+          - { label: 'Polish', value: 'pl' }
+          - { label: 'Portuguese', value: 'pt' }
+          - { label: 'Russian', value: 'ru' }
+          - { label: 'Chinese', value: 'zh' }
+          - { label: 'Swedish', value: 'sv' }
+          - { label: 'Norwegian', value: 'no' }
+          - { label: 'Danish', value: 'da' }
+          - { label: 'Finnish', value: 'fi' }
+          - { label: 'Hungarian', value: 'hu' }
+          - { label: 'Czech', value: 'cs' }
+          - { label: 'Turkish', value: 'tr' }
+          - { label: 'Thai', value: 'th' }
+          - { label: 'Arabic', value: 'ar' }
+          - { label: 'Hebrew', value: 'he' }
+          - { label: 'Greek', value: 'el' }
+          - { label: 'Indonesian', value: 'id' }
+          - { label: 'Vietnamese', value: 'vi' }
+          - { label: 'Romanian', value: 'ro' }
+          - { label: 'Bulgarian', value: 'bg' }
+          - { label: 'Ukrainian', value: 'uk' }
+          - { label: 'Malay', value: 'ms' }
+          - { label: 'Croatian', value: 'hr' }
+          - { label: 'Slovak', value: 'sk' }
+          - { label: 'Slovenian', value: 'sl' }
+          - { label: 'Estonian', value: 'et' }
+          - { label: 'Latvian', value: 'lv' }
+          - { label: 'Lithuanian', value: 'lt' }
+          - { label: 'Serbian', value: 'sr' }
+          - { label: 'Tagalog', value: 'tl' }
+          - { label: 'Icelandic', value: 'is' }
+          - { label: 'Irish', value: 'ga' }
+          - { label: 'Albanian', value: 'sq' }
+          - { label: 'Bosnian', value: 'bs' }
+          - { label: 'Macedonian', value: 'mk' }
+          - { label: 'Maltese', value: 'mt' }
+          - { label: 'Welsh', value: 'cy' }
+          - { label: 'Belarusian', value: 'be' }
 media_folder: 'static/uploads'
 public_folder: '/uploads'

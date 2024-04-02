@@ -1,3 +1,4 @@
+import { RootPageSSRData } from './../types'
 import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
 import type {
   Post,
@@ -6,14 +7,20 @@ import type {
   ImportPostModuleData,
   ImportMapOfTheWeekModuleData,
 } from '../types'
+
 export type RootPageSSRData = {
   announcements: Post[]
-  news: Post[]
+  articles: Post[]
   others: Post[]
   communityEvents: CommunityEvent[]
   currentMapOfTheWeek: MapOfTheWeek | undefined
 }
-export async function load({ fetch }): Promise<RootPageSSRData> {
+
+interface LoadParameters {
+  fetch: typeof fetch
+}
+
+export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> {
   const posts: Post[] = await Promise.all(
     Object.entries(import.meta.glob<ImportPostModuleData>('/src/collections/posts/**/*.md')).map(
       async ([path, module]) => {
@@ -47,10 +54,10 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
       coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage
     }
 
-    if(coverUrl == null) {
-      throw new Error('No cover URL found!');
+    if (coverUrl == null) {
+      throw new Error('No cover URL found!')
     }
-    
+
     currentMapOfTheWeek = {
       map: {
         id: beatSaverMapData.id,
@@ -60,8 +67,10 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
           id: beatSaverMapData.uploader.id,
           name: beatSaverMapData.uploader.name,
           avatar: beatSaverMapData.uploader.avatar,
+          description: beatSaverMapUploaderData.description,
           admin: beatSaverMapUploaderData.admin,
-          curator: beatSaverMapUploaderData.curator,
+          curator: !!beatSaverMapUploaderData.curator,
+          seniorCurator: !!beatSaverMapUploaderData.seniorCurator,
           verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
         },
       },
@@ -74,24 +83,22 @@ export async function load({ fetch }): Promise<RootPageSSRData> {
 
   const rootPageSSRData: Omit<RootPageSSRData, 'currentMapOfTheWeek' | 'communityEvents'> = {
     announcements: [],
-    news: [],
+    articles: [],
     others: [],
   }
 
-  for (const post of posts) {
-    const { section } = post
-    switch (section) {
-      case 'announcements':
-        rootPageSSRData.announcements.push(post)
-        break
-      case 'news':
-        rootPageSSRData.news.push(post)
-        break
-      default:
-        rootPageSSRData.others.push(post)
-        break
-    }
-  }
+  rootPageSSRData.announcements = posts.filter((x) => x.section === 'announcements')
+  rootPageSSRData.articles = posts
+    .filter((x) => x.showInPostListing)
+    .sort((a, b) => new Date(b.publish).getTime() - new Date(a.publish).getTime())
+
+  const includedSlugs = [...rootPageSSRData.announcements, ...rootPageSSRData.articles].map(
+    (x) => x.slug,
+  )
+
+  rootPageSSRData.others = posts.filter((maybeNotIncluded) =>
+    includedSlugs.includes(maybeNotIncluded.slug),
+  )
 
   // Sort all by publish data
   const sortByPublishDate = (a: Post, b: Post) => b.publish.localeCompare(a.publish)

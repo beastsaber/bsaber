@@ -28,107 +28,136 @@
       }[]
     }[]
   }[] = [
-    // REVERT: Put these back in
-    // {
-    //   name: 'Get Started',
-    //   href: '/getting-started',
-    // },
-    // {
-    //   name: 'Find Maps',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'Curator Recommended',
-    //       href: 'https://beatsaver.com/?order=Curated&curated=true',
-    //     },
-    //     {
-    //       name: 'Verified Mappers',
-    //       href: 'https://beatsaver.com/?verified=true',
-    //     },
-    //     {
-    //       name: 'Ranked',
-    //       href: 'https://beatsaver.com/?ranked=true',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'Find Playlists',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'Curated Playlists',
-    //       href: 'https://beatsaver.com/playlists?order=Curated&curated=true',
-    //     },
-    //     {
-    //       name: 'All Playlists',
-    //       href: 'https://beatsaver.com/playlists',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'Models',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'Avatars',
-    //       href: 'https://modelsaber.com/Avatars/',
-    //     },
-    //     {
-    //       name: 'Sabers',
-    //       href: 'https://modelsaber.com/Sabers/',
-    //     },
-    //     {
-    //       name: 'Notes',
-    //       href: 'https://modelsaber.com/Bloqs/',
-    //     },
-    //     {
-    //       name: 'Platforms',
-    //       href: 'https://modelsaber.com/Platforms/',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'News & Info',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'News',
-    //       href: '/posts',
-    //     },
-    //     {
-    //       name: 'Mappers',
-    //       href: 'https://beatsaver.com/mappers',
-    //     },
-    //     {
-    //       name: 'Curators',
-    //       href: '/curation-team',
-    //       Items: [
-    //         {
-    //           name: 'About Curation',
-    //           href: '/curation',
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'Community Hub',
-    //   expanded: false,
-    //   Items: [
-    //     {
-    //       name: 'BSMG Discord',
-    //       href: 'https://discord.gg/beatsabermods',
-    //     },
-    //     {
-    //       name: 'BeastSaber Discord',
-    //       href: 'https://discord.gg/VJZHUbt',
-    //     },
-    //     {
-    //       name: 'BSMG Wiki',
-    //       href: 'https://bsmg.wiki',
-    //     },
-    //   ],
-    // },
+    {
+      name: 'Get Started',
+      expanded: false,
+      Items: [
+        {
+          name: 'Beat Saber',
+          href: '/getting-started',
+        },
+        {
+          name: 'Custom Songs',
+          href: '/getting-started/custom-songs',
+        },
+        {
+          name: 'Custom Mods',
+          href: '/installing-the-mod-guide-necessary-for-any-custom-songs',
+        },
+        {
+          name: 'Mapping',
+          href: '/posts/getting-started-with-mapping',
+        },
+      ],
+    },
+    {
+      name: 'Find Maps',
+      expanded: false,
+      Items: [
+        {
+          name: 'Curator Recommended',
+          href: 'https://beatsaver.com/?order=Curated&curated=true',
+        },
+        {
+          name: 'Verified Mappers',
+          href: 'https://beatsaver.com/?verified=true',
+        },
+        {
+          name: 'Ranked',
+          href: 'https://beatsaver.com/?ranked=true',
+        },
+      ],
+    },
+    {
+      name: 'Find Playlists',
+      expanded: false,
+      Items: [
+        {
+          name: 'Curated Playlists',
+          href: 'https://beatsaver.com/playlists?order=Curated&curated=true',
+        },
+        {
+          name: 'All Playlists',
+          href: 'https://beatsaver.com/playlists',
+        },
+      ],
+    },
+    {
+      name: 'The Beasties',
+      expanded: false,
+      Items: [
+        {
+          name: 'About the Awards',
+          href: '/the-beastsaber-mapping-awards',
+        },
+        {
+          name: 'Voting',
+          href: 'https://forms.gle/v69wKinCfZzVHfZ17',
+        },
+        {
+          name: '2023 Winners',
+          href: '/posts/the-beasties-2023-winners',
+        },
+        {
+          name: '2022 Winners',
+          href: '/posts/the-beasties-2022-winners',
+        },
+        {
+          name: '2021 Winners',
+          href: '/posts/the-beasties-2021-winners',
+        },
+      ],
+    },
+    {
+      name: 'Models',
+      expanded: false,
+      Items: [
+        {
+          name: 'Avatars',
+          href: 'https://modelsaber.com/Avatars/',
+        },
+        {
+          name: 'Sabers',
+          href: 'https://modelsaber.com/Sabers/',
+        },
+        {
+          name: 'Notes',
+          href: 'https://modelsaber.com/Bloqs/',
+        },
+        {
+          name: 'Platforms',
+          href: 'https://modelsaber.com/Platforms/',
+        },
+      ],
+    },
+    {
+      name: 'Posts & Info',
+      expanded: false,
+      Items: [
+        {
+          name: 'Posts',
+          href: '/posts',
+        },
+        {
+          name: 'Mappers',
+          href: 'https://beatsaver.com/mappers',
+        },
+        {
+          name: 'About Curation',
+          href: '/curation',
+          Items: [
+            {
+              name: 'Curators',
+              href: '/curation-team',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Community Hub',
+      href: '/community-hub',
+    },
   ]
 
   const toggleDropdown = (selectedItem: DropdownItem, dropdownId: string) => {
@@ -182,13 +211,11 @@
 />
 
 <nav class="navbar">
-  <!-- REVERT: Remove the style attribute from the div and a below -->
-  <div class="container" style="padding: 0; margin: 0; width: 100%; display: flex; justify-content: center; align-content: center;">
-    <a id="home-link" href="/" style="padding: 0; margin: 0;">
+  <div class="container">
+    <a id="home-link" rel="external" href="/">
       <img alt="BeastSaber" src="/beastsaber-logo.svg" />
     </a>
-    <!-- REVERT: Comment all of this in - do note the actual comment lines inbetween -->
-    <!-- <button
+    <button
       type="button"
       class="navbar-toggler"
       on:click={() => (showMobileNavbar = !showMobileNavbar)}
@@ -211,10 +238,11 @@
           {#each navbarDropdownItems as item, index}
             {#if item.Items}
               <li class="nav-item">
-                <div class="nav-link"> -->
+                <div class="nav-link">
                   <!-- svelte-ignore a11y-invalid-attribute -->
-                  <!-- <a
+                  <a
                     href=""
+                    rel="external"
                     on:click|preventDefault|stopPropagation={() =>
                       toggleDropdown(item, `dropdown-menu-${index}`)}
                     ><span
@@ -223,21 +251,21 @@
                     >
                   </a>
                 </div>
-                {#if item.expanded} -->
+                {#if item.expanded}
                   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-                  <!-- <div
+                  <div
                     transition:slide={{ duration: 150 }}
                     id="dropdown-menu-{index}"
                     class="dropdown-menu"
                   >
                     {#each item.Items as navItem}
-                      <a href={navItem.href} class="dropdown-item">{navItem.name}</a>
+                      <a href={navItem.href} rel="external" class="dropdown-item">{navItem.name}</a>
                       {#if navItem.dividerAfter}
                         <div class="dropdown-divider" />
                       {/if}
                       {#if navItem.Items}
                         {#each navItem.Items as navSubItem}
-                          <a href={navSubItem.href} class="dropdown-item sub-item"
+                          <a href={navSubItem.href} rel="external" class="dropdown-item sub-item"
                             >{navSubItem.name}</a
                           >
                           {#if navSubItem.dividerAfter}
@@ -251,15 +279,15 @@
               </li>
             {:else}
               <li class="nav-item">
-                <a href={item.href} class="nav-link">{item.name}</a>
+                <a href={item.href} rel="external" class="nav-link">{item.name}</a>
               </li>
             {/if}
           {/each}
         </ul>
       </div>
-    {/if}-->
+    {/if}
   </div>
-</nav> 
+</nav>
 
 <style lang="scss">
   @import 'src/scss/variables';
@@ -307,9 +335,9 @@
     padding: 1rem 0;
     margin-top: calc($navbar-height - 10px);
     margin-right: 0.75rem;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: $rounding;
-    background: $background-primary;
+    background: $background-secondary;
   }
 
   .dropdown-menu {
@@ -332,7 +360,7 @@
 
     &:hover,
     &:focus {
-      background-color: #5f58b9;
+      background-color: $color-bsaber-purple-highlight;
     }
     &.sub-item {
       padding-left: 3rem;
@@ -356,8 +384,7 @@
   }
 
   .nav-item {
-    font-size: 1.25rem;
-    line-height: 1.4375rem;
+    line-height: 1.25rem;
 
     .nav-link {
       display: block;
@@ -451,13 +478,13 @@
 
     .dropdown-menu {
       position: absolute;
-      padding: 1rem 0;
+      padding: 0.5rem 0;
       margin-top: 0.5rem;
       text-align: left;
       list-style: none;
-      background-color: #222222;
+      background-color: $background-secondary;
       background-clip: padding-box;
-      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: $rounding;
     }
 
