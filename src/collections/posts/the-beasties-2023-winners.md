@@ -52,7 +52,7 @@ Congratulations to all of the winners in this year’s BeastSaber Mapping Awards
 
 - Winner: [Dschinghis Khan - Moskau (Camellia's Handzup Bootleg)](https://beatsaver.com/maps/2e567) – Mapped by RetrX
 
-- Runner-Up: [KARD - ICKY (E+)](https://beatsaver.com/maps/36520) – Mapped by Fatalution
+- Runner-Up: [KARD - ICKY (E+)](https://beatsaver.com/maps/36520) – Mapped by minsiii
 
 - Community Choice: [Dschinghis Khan - Moskau (Camellia's Handzup Bootleg)](https://beatsaver.com/maps/2e567) – Mapped by RetrX
 
