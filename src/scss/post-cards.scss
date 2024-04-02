@@ -30,6 +30,7 @@
 
   .content {
     @include big-title;
+    width: 100%;
     margin-top: auto;
     z-index: 1;
 
@@ -44,6 +45,13 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    .last-row-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
     }
   }
 
