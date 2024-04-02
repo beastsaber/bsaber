@@ -36,9 +36,11 @@
           <Uploader uploader={playlist.owner} />
           <div class="last-row-container">
             <h3 class="title">{playlist.name ?? ''}</h3>
-            <OneClickDownloadButton
-              playlistUrl="https://api.beatsaver.com/playlists/id/{playlist.playlistId}/download"
-            />
+            <div class="one-click-downloa-button-container">
+              <OneClickDownloadButton
+                playlistUrl="https://api.beatsaver.com/playlists/id/{playlist.playlistId}/download"
+              />
+            </div>
           </div>
         </div>
       </a>
@@ -52,4 +54,7 @@
 
 <style lang="scss">
   @import '../scss/post-cards';
+  .one-click-downloa-button-container {
+    margin-bottom: 0.35rem;
+  }
 </style>
