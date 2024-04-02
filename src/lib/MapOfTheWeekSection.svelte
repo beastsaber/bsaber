@@ -40,9 +40,7 @@
       allowfullscreen
     />
   </div>
-  <button class="showcase-modal-close-button" on:click={() => hideShowcase()}
-    ><Fa icon={faClose} /></button
-  >
+  <div class="showcase-backdrop" on:click={hideShowcase} />
 {/if}
 <div class="motw-container">
   <div class="background-image" style="background-image: url({mapOfTheWeek.map.coverUrl});" />
@@ -106,33 +104,24 @@
 
   .showcase-modal {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: $background-secondary;
-    width: 100vw;
-    height: 100vh;
+    height: 90vh;
+    // Aspect ratio for youtube short videos
+    aspect-ratio: 9/16;
     z-index: 100;
   }
 
-  .showcase-modal-close-button {
+  .showcase-backdrop {
     position: fixed;
-    top: 5rem;
-    right: 5rem;
-    background: $background-secondary;
-    border-radius: 50%;
-    border: none;
-    color: $color-danger-red;
-    font-size: 2rem;
-    padding: 0.1;
-    margin: 0;
-    cursor: pointer;
-    z-index: 101;
-    &:hover {
-      background: $color-danger-red;
-      color: $background-secondary;
-    }
-    height: 3rem;
-    width: 3rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
   }
 
   .action-bar {
