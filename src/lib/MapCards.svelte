@@ -58,7 +58,9 @@
           </div>
           <Tags tags={map.tags} />
           <div class="last-row-container">
-            <Difficulties diffs={map.versions[0].diffs} /><OneClickDownloadButton mapId={map.id} />
+            <OneClickDownloadButton mapId={map.id + ''} /><Difficulties
+              diffs={map.versions[0].diffs}
+            />
           </div>
         </div>
       </div>
@@ -128,9 +130,8 @@
 
       .last-row-container {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        width: 100%;
+        gap: 0.7rem;
       }
     }
   }
