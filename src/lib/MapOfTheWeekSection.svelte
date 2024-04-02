@@ -5,6 +5,7 @@
   import Header from './Header.svelte'
   import { faClose, faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
   import { icon } from '@fortawesome/fontawesome-svg-core'
+  import OneClickButton from './OneClickDownloadButton.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
 
@@ -88,11 +89,7 @@
               <!--Either than conditionally injecting styles-->
               <div />
             {/if}
-            <a
-              title="OneClick Download via BeatSaver and ModAssistant"
-              href="beatsaver://{mapOfTheWeek.map.id}"
-              class="one-click-download-link"><Fa icon={faCloudDownloadAlt} /></a
-            >
+            <OneClickButton mapId={mapOfTheWeek.map.id} />
           </div>
         </div>
       </div>
@@ -142,11 +139,6 @@
     display: flex;
     justify-content: space-between;
     margin-top: 0.7rem;
-
-    & .one-click-download-link {
-      display: none;
-      color: lighten($color-beatsaver-pink, 20%);
-    }
 
     & .open-showcase-button {
       display: block;
@@ -233,10 +225,6 @@
 
     .map-details-container {
       margin-left: $size-cover + 26px;
-    }
-
-    .action-bar .one-click-download-link {
-      display: block;
     }
   }
 
