@@ -35,6 +35,7 @@
   // Smaller screen size will usually be smartphones
   // They can't download maps directly from the site, so we hide it
   .one-click-download-link {
+    font-size: 1.2rem;
     display: none;
     color: #c5c5c5;
 
