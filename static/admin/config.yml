@@ -73,6 +73,22 @@ collections:
         hint: Starting when the map of the week should be displayed on the root page.
         default: 2024-01-01T00:00:00Z
         widget: datetime
+      - name: showcase
+        label: Showcase
+        hint: "A video that will be embedded in a modal on the map of the week page. This should be a video that showcases the map in a good way. If you don't have a video, you can leave this empty."
+        required: false
+        widget: object
+        fields:
+          - name: id
+            label: ID
+            hint: The ID of the video. For YouTube videos and shorts, this is the last part of the URL. For example, the ID of the video https://www.youtube.com/shorts/ed8A3n49Gmg is the last part ed8A3n49Gmg.
+            widget: string
+          - name: type
+            label: ID Type
+            widget: select
+            default: 'youtube-short'
+            options:
+              - { label: 'YouTube Short', value: 'youtube-short' }
       - name: coverUrlOverwrite
         label: Cover URL
         required: false
@@ -152,7 +168,7 @@ collections:
                   'Reddit',
                   'GitHub',
                   'Website',
-                  'Documentation'
+                  'Documentation',
                 ],
             }
           - { label: URL, name: url, widget: string }

@@ -1,11 +1,48 @@
 <script lang="ts">
+  import Fa from 'svelte-fa/src/fa.svelte'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import type { MapOfTheWeek } from '../types'
   import Header from './Header.svelte'
+  import { faClose, faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
+  import { icon } from '@fortawesome/fontawesome-svg-core'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
+
+  let showShowcase = false
+
+  const closeModalOnEsc = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      hideShowcase()
+    }
+    document.removeEventListener('keydown', closeModalOnEsc)
+  }
+
+  const openShowcase = () => {
+    showShowcase = true
+    document.body.addEventListener('keydown', closeModalOnEsc)
+  }
+
+  const hideShowcase = () => {
+    showShowcase = false
+    document.body.removeEventListener('keydown', closeModalOnEsc)
+  }
 </script>
 
+{#if showShowcase && mapOfTheWeek.showcase != null}
+  <div class="showcase-modal">
+    <iframe
+      width="100%"
+      height="100%"
+      src="https://www.youtube.com/embed/{mapOfTheWeek?.showcase.id}?rel=0&autoplay=1&loop=1"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+  </div>
+  <button class="showcase-modal-close-button" on:click={() => hideShowcase()}
+    ><Fa icon={faClose} /></button
+  >
+{/if}
 <div class="motw-container">
   <div class="background-image" style="background-image: url({mapOfTheWeek.map.coverUrl});" />
   <div class="card">
@@ -41,6 +78,18 @@
             {/if}
           </p>
           <p class="review">{mapOfTheWeek.review}</p>
+          <div class="action-bar">
+            {#if mapOfTheWeek.showcase != null}
+              <button class="open-showcase-button" on:click={() => openShowcase()}>
+                Watch the showcase
+              </button>
+            {/if}
+            <a
+              title="OneClick Download via BeatSaver and ModAssistant"
+              href="beatsaver://{mapOfTheWeek.map.id}"
+              class="one-click-download-link"><Fa icon={faCloudDownloadAlt} /></a
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -54,6 +103,61 @@
     padding-top: 0rem !important;
   }
 
+  .showcase-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $background-secondary;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+  }
+
+  .showcase-modal-close-button {
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    background: $background-secondary;
+    border-radius: 50%;
+    border: none;
+    color: $color-danger-red;
+    font-size: 2rem;
+    padding: 0.1;
+    margin: 0;
+    cursor: pointer;
+    z-index: 101;
+    &:hover {
+      background: $color-danger-red;
+      color: $background-secondary;
+    }
+    aspect-ratio: 1/1;
+    height: 3rem;
+  }
+
+  .action-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+
+    & .one-click-download-link {
+      display: none;
+      color: lighten($color-beatsaver-pink, 20%);
+    }
+
+    & .open-showcase-button {
+      display: block;
+      color: $accent-color;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
   .motw-container {
     position: relative;
     margin-top: 3rem;
@@ -125,6 +229,10 @@
 
     .map-details-container {
       margin-left: $size-cover + 26px;
+    }
+
+    .action-bar .one-click-download-link {
+      display: block;
     }
   }
 

@@ -74,6 +74,7 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
           verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
         },
       },
+      showcase: currentMOTWCollectionData.showcase,
       review: currentMOTWCollectionData.review,
       startDate: currentMOTWCollectionData.startDate,
     }

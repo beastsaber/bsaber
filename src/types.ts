@@ -32,6 +32,10 @@ export type MapOfTheWeekCollectionData = {
   mapId: string
   review: string
   startDate: string
+  showcase: {
+    id: string
+    type: 'youtube-short'
+  }
   coverUrlOverwrite?: string
 }
 
@@ -43,6 +47,10 @@ export type MapOfTheWeek = {
     uploader: Uploader
   }
   review: string
+  showcase: {
+    id: string
+    type: 'youtube-short'
+  }
   startDate: Date
 }
 
