@@ -83,6 +83,10 @@
               <button class="open-showcase-button" on:click={() => openShowcase()}>
                 Watch the showcase
               </button>
+            {:else}
+              <!--Putting a div here so the OneClick Download URL stays in place-->
+              <!--Either than conditionally injecting styles-->
+              <div />
             {/if}
             <a
               title="OneClick Download via BeatSaver and ModAssistant"
@@ -130,8 +134,8 @@
       background: $color-danger-red;
       color: $background-secondary;
     }
-    aspect-ratio: 1/1;
     height: 3rem;
+    width: 3rem;
   }
 
   .action-bar {
