@@ -12,6 +12,8 @@
   let aspectRatio = mapOfTheWeek.showcase?.type === 'youtube-short' ? '9/16' : '16/9'
   let sizeDeterminer =
     mapOfTheWeek.showcase?.type === 'youtube-short' ? 'height: 90vh' : 'width: 90vw'
+  let sizeLimiter =
+    mapOfTheWeek.showcase?.type === 'youtube-short' ? 'max-height: 50,625vw' : 'max-width: 160vh'
 
   let showShowcase = false
 
@@ -34,7 +36,7 @@
 </script>
 
 {#if showShowcase && mapOfTheWeek.showcase != null}
-  <div class="showcase-modal" style="aspect-ratio: {aspectRatio}; {sizeDeterminer};">
+  <div class="showcase-modal" style="aspect-ratio: {aspectRatio}; {sizeDeterminer}; {sizeLimiter};">
     <iframe
       width="100%"
       height="100%"
@@ -112,7 +114,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: $background-secondary;
-    // Aspect ratio for youtube short videos
     z-index: 100;
   }
 
