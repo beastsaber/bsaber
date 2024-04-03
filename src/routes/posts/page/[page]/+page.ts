@@ -1,3 +1,4 @@
+import { paginateArray } from '$lib/paginateArray'
 import type { Post } from '../../../../types'
 
 const pageSize = 10
@@ -39,10 +40,11 @@ export async function load({ params: { page } }: LoadParameter): Promise<PostPag
     .filter((x) => x.showInPostListing)
     .sort((a, b) => b.publishDate - a.publishDate)
 
-  const startIndex = (pageNumber - 1) * pageSize
-  const endIndex = pageNumber * pageSize
-  const paginatedPosts = allPostData.slice(startIndex, endIndex)
-  const pageCount = Math.ceil(allPostData.length / pageSize)
+  const { paginatedArray: paginatedPosts, pageCount } = paginateArray(
+    allPostData,
+    pageSize,
+    pageNumber,
+  )
 
   return {
     posts: paginatedPosts,
