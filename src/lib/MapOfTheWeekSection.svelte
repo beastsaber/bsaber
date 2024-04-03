@@ -198,6 +198,10 @@
     align-items: end;
   }
 
+  .map-details {
+    flex-grow: 1;
+  }
+
   .map-cover {
     width: 0;
     height: 0;
