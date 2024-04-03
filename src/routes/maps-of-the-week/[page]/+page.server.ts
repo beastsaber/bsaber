@@ -74,15 +74,18 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
             map: {
                 id: singleMapOfTheWeek.mapId,
                 name: beatSaverMapData.name,
-                coverUrl: coverUrl,
+                coverUrl: coverUrl!!,
                 uploader: {
                     id: beatSaverMapData.uploader.id,
                     name: beatSaverMapData.uploader.name,
                     avatar: beatSaverMapData.uploader.avatar,
+                    description: beatSaverMapUploaderData.description,
                     admin: beatSaverMapUploaderData.admin,
                     curator: beatSaverMapUploaderData.curator,
+                    seniorCurator: beatSaverMapUploaderData.seniorCurator,
                     verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
                 },
+                collaborators: beatSaverMapData.collaborators
             },
             review: singleMapOfTheWeek.review,
             startDate: singleMapOfTheWeek.startDate,

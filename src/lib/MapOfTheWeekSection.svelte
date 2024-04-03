@@ -6,7 +6,9 @@
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
 
-  const uploaders = [mapOfTheWeek.map.uploader, ...mapOfTheWeek.map.collaborators]
+  const collaborators = mapOfTheWeek.map.collaborators ?? []
+
+  const uploaders = [mapOfTheWeek.map.uploader, ...collaborators]
 </script>
 
 <div class="motw-container">

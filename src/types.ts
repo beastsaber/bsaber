@@ -41,7 +41,7 @@ export type MapOfTheWeek = {
     name: string
     coverUrl: string
     uploader: Uploader
-    collaborators: Uploader[]
+    collaborators: Uploader[] | undefined
   }
   review: string
   startDate: Date
