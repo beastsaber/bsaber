@@ -12,7 +12,7 @@
 
 <h1>Recent Articles</h1>
 <div class="cards">
-  {#each data.posts as post}
+  {#each data.posts as post (post.slug)}
     <PostListCard {post} />
   {/each}
 </div>
