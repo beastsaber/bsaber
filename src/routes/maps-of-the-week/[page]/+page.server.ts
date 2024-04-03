@@ -43,14 +43,6 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
     // Data structure is an object with a key of the mapId and the value is the map data
     const allBeatSaverMapData = await fetch(`https://api.beatsaver.com/maps/ids/${mapIds}`).then(x => x.json());
 
-    const uploaderIds = Array.from(new Set(Object.values(allBeatSaverMapData).map((map: any) => map.uploader.id))).join(",");
-    // this api endpoint work differently, so we need to convert it to a map ourselves 
-    const intermediaryAllBeatSaverMapperdata = await fetch(`https://api.beatsaver.com/users/ids/${uploaderIds}`).then(x => x.json());
-    const allBeatSaverMapperData = {} as Record<string, any>;
-    for (const mapper of intermediaryAllBeatSaverMapperdata) {
-        allBeatSaverMapperData[mapper.id] = mapper;
-    }
-
     const paginatedFullMapsOfTheWeek = [];
     // Not Promise.all'ing since that will just get you rate limited from beatsaver
     for (const singleMapOfTheWeek of paginatedMapsOfTheWeek) {
@@ -68,7 +60,6 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
         }
 
         const beatSaverMapData = allBeatSaverMapData[singleMapOfTheWeek.mapId];
-        const beatSaverMapUploaderData = allBeatSaverMapperData[beatSaverMapData.uploader.id];
 
         paginatedFullMapsOfTheWeek.push({
             map: {
@@ -79,11 +70,11 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
                     id: beatSaverMapData.uploader.id,
                     name: beatSaverMapData.uploader.name,
                     avatar: beatSaverMapData.uploader.avatar,
-                    description: beatSaverMapUploaderData.description,
-                    admin: beatSaverMapUploaderData.admin,
-                    curator: beatSaverMapUploaderData.curator,
-                    seniorCurator: beatSaverMapUploaderData.seniorCurator,
-                    verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
+                    description: beatSaverMapData.uploader.description,
+                    admin: beatSaverMapData.uploader.admin,
+                    curator: beatSaverMapData.uploader.curator,
+                    seniorCurator: beatSaverMapData.uploader.seniorCurator,
+                    verifiedMapper: beatSaverMapData.uploader.verifiedMapper,
                 },
                 collaborators: beatSaverMapData.collaborators
             },
