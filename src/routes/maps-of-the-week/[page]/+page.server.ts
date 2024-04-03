@@ -33,14 +33,11 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
         throw new Error("Invalid page number");
     }
 
-    const startIndex = (pageNumber - 1) * pageSize;
-    const endIndex = pageNumber * pageSize;
-
     const allMapsOfTheWeekNetlifyData = await getSortedMapsOfTheWeekNetlifyData();
-
-    const pageCount = Math.ceil(allMapsOfTheWeekNetlifyData.length / pageSize);
-
-    const paginatedMapsOfTheWeek = allMapsOfTheWeekNetlifyData.slice(startIndex, endIndex);
+    const {
+        paginatedArray: paginatedMapsOfTheWeek,
+        pageCount,
+    } = paginateArray(allMapsOfTheWeekNetlifyData, pageSize, pageNumber);
 
     const mapIds = paginatedMapsOfTheWeek.map((map) => map.mapId).join(",");
     // Data structure is an object with a key of the mapId and the value is the map data
