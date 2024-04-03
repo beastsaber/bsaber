@@ -1,10 +1,7 @@
 <script lang="ts">
-  import Fa from 'svelte-fa/src/fa.svelte'
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import type { MapOfTheWeek } from '../types'
   import Header from './Header.svelte'
-  import { faClose, faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
-  import { icon } from '@fortawesome/fontawesome-svg-core'
   import OneClickButton from './OneClickDownloadButton.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
