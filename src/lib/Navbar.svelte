@@ -136,7 +136,7 @@
       Items: [
         {
           name: 'Posts',
-          href: '/posts',
+          href: '/posts/page/1',
         },
         {
           name: 'Mappers',

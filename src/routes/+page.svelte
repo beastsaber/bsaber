@@ -129,7 +129,7 @@
   <Header
     text="Latest Articles"
     icon={faNewspaper}
-    linkUrl="/posts"
+    linkUrl="/posts/page/1"
     linkText="See all posts"
   />
   <PostCards posts={articles} maxColumns="3" maxCards={maxNewsCards} aspectRatio={21 / 16} />
@@ -152,7 +152,7 @@
   />
   <MapCards verified={true} />
 
-  {#if import.meta.env.VITE_HIDE_EVENTS !== "true"}
+  {#if import.meta.env.VITE_HIDE_EVENTS !== 'true'}
     <Header
       text="Community Events"
       icon={faCalendarDay}
