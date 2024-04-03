@@ -2,8 +2,13 @@
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import type { MapOfTheWeek } from '../types'
   import Header from './Header.svelte'
+
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
+
+  const collaborators = mapOfTheWeek.map.collaborators ?? []
+
+  const uploaders = [mapOfTheWeek.map.uploader, ...collaborators]
 </script>
 
 <div class="motw-container">
@@ -29,17 +34,28 @@
               {mapOfTheWeek.map.name}
             </a>
           </h2>
+          <!-- eslint-disable -->
+          <!-- prettier-ignore-start -->
+          <!-- @formatter:off -->
           <p class="map-uploader">
-            Mapped by
-            <a
-              class="profile-link"
-              href="https://beatsaver.com/profile/{mapOfTheWeek.map.uploader.id}"
-              >{mapOfTheWeek.map.uploader.name}</a
-            >
-            {#if mapOfTheWeek.map.uploader.verifiedMapper}
-              <img class="verified" src="/verified.svg" alt="Verified" title="Verified" />
-            {/if}
+            By
+            {#each uploaders as uploader, i}
+              <a class="profile-link" href="https://beatsaver.com/profile/{uploader.id}">
+                {uploader.name}</a><!--
+           -->{#if uploader.verifiedMapper}
+                <img class="verified" src="/verified.svg" alt="Verified" title="Verified" /><!--
+           -->{/if}<!--
+
+           -->{#if i < uploaders.length - 2}
+                {", "}
+              {:else if i === uploaders.length - 2}
+                {" and "}
+              {/if}
+            {/each}
           </p>
+          <!-- @formatter:on -->
+          <!-- prettier-ignore-end -->
+          <!-- eslint-enable -->
           <p class="review">{mapOfTheWeek.review}</p>
         </div>
       </div>
@@ -144,7 +160,7 @@
     height: 1rem;
     width: 1rem;
     /* Margin bottom to counter the illusion of it not being center */
-    margin: 0 0 0.15rem 0.2rem;
+    margin: 0 0 0.15rem 0.3rem;
     vertical-align: middle;
   }
 

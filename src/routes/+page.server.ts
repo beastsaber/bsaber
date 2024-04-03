@@ -42,9 +42,6 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
     const beatSaverMapData = await fetch(
       `https://api.beatsaver.com/maps/id/${currentMOTWCollectionData.mapId}`,
     ).then((res) => res.json())
-    const beatSaverMapUploaderData = await fetch(
-      `https://api.beatsaver.com/users/id/${beatSaverMapData.uploader.id}`,
-    ).then((res) => res.json())
 
     let coverUrl = currentMOTWCollectionData.coverUrlOverwrite
     if (coverUrl == null) {
@@ -67,12 +64,13 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
           id: beatSaverMapData.uploader.id,
           name: beatSaverMapData.uploader.name,
           avatar: beatSaverMapData.uploader.avatar,
-          description: beatSaverMapUploaderData.description,
-          admin: beatSaverMapUploaderData.admin,
-          curator: !!beatSaverMapUploaderData.curator,
-          seniorCurator: !!beatSaverMapUploaderData.seniorCurator,
-          verifiedMapper: beatSaverMapUploaderData.verifiedMapper,
+          description: beatSaverMapData.uploader.description,
+          admin: beatSaverMapData.uploader.admin,
+          curator: beatSaverMapData.uploader.curator,
+          seniorCurator: beatSaverMapData.uploader.seniorCurator,
+          verifiedMapper: beatSaverMapData.uploader.verifiedMapper,
         },
+        collaborators: beatSaverMapData.collaborators
       },
       review: currentMOTWCollectionData.review,
       startDate: currentMOTWCollectionData.startDate,
