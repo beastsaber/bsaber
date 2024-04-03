@@ -1,4 +1,4 @@
-export const paginateArray = (inputArray: any[], pageSize: number, pageNumber: number) => {
+export const paginateArray = <T>(inputArray: T[], pageSize: number, pageNumber: number) => {
   if (isNaN(pageNumber) || pageNumber < 1 || !isFinite(pageNumber)) {
     throw new Error('Invalid page number')
   }
