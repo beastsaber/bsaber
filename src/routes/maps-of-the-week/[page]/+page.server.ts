@@ -62,81 +62,58 @@ export async function load({
     allBeatSaverMapperData[mapper.id] = mapper
   }
 
-  const paginatedFullMapsOfTheWeek = []
+  const paginatedFullMapsOfTheWeek = [] as MapOfTheWeek[]
   // Not Promise.all'ing since that will just get you rate limited from beatsaver
   for (const singleMapOfTheWeek of paginatedMapsOfTheWeek) {
-    let coverUrl = singleMapOfTheWeek.coverUrlOverwrite
+    try {
+      let coverUrl = singleMapOfTheWeek.coverUrlOverwrite
 
-    // Fetch BeatLeader URL if not given
-    // If this is happens to frequently it will get rate limited
-    if (coverUrl == null) {
-      const beatLeaderLeaderBoardData = await fetch(
-        `https://api.beatleader.xyz/leaderboard/${singleMapOfTheWeek.mapId}`,
-      ).then((res) => res.json())
+      // Fetch BeatLeader URL if not given
+      // If this is happens to frequently it will get rate limited
+      if (coverUrl == null) {
+        const beatLeaderLeaderBoardData = await fetch(
+          `https://api.beatleader.xyz/leaderboard/${singleMapOfTheWeek.mapId}`,
+        ).then((res) => res.json())
 
-      coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage
+        coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage
+      }
+
+      if (coverUrl == null) {
+        throw new Error('No cover URL found!')
+      }
+
+      const beatSaverMapData = allBeatSaverMapData[singleMapOfTheWeek.mapId]
+
+      paginatedFullMapsOfTheWeek.push({
+        map: {
+          id: singleMapOfTheWeek.mapId,
+          name: beatSaverMapData.name,
+          coverUrl: coverUrl,
+          uploader: {
+            id: beatSaverMapData.uploader.id,
+            name: beatSaverMapData.uploader.name,
+            avatar: beatSaverMapData.uploader.avatar,
+            description: beatSaverMapData.uploader.description,
+            admin: beatSaverMapData.uploader.admin,
+            curator: beatSaverMapData.uploader.curator,
+            seniorCurator: beatSaverMapData.uploader.seniorCurator,
+            verifiedMapper: beatSaverMapData.uploader.verifiedMapper,
+          },
+          collaborators: beatSaverMapData.collaborators,
+        },
+        review: singleMapOfTheWeek.review,
+        startDate: singleMapOfTheWeek.startDate,
+        showcase: singleMapOfTheWeek.showcase,
+      })
+    } catch (e) {
+      console.error(`Something went wrong fetching info for map ${singleMapOfTheWeek.mapId}.`)
     }
-    
-    const startIndex = (pageNumber - 1) * pageSize;
-    const endIndex = pageNumber * pageSize;
+  }
 
-    const allMapsOfTheWeekNetlifyData = await getSortedMapsOfTheWeekNetlifyData();
-
-    const pageCount = Math.ceil(allMapsOfTheWeekNetlifyData.length / pageSize);
-
-    const paginatedMapsOfTheWeek = allMapsOfTheWeekNetlifyData.slice(startIndex, endIndex);
-
-    const mapIds = paginatedMapsOfTheWeek.map((map) => map.mapId).join(",");
-    // Data structure is an object with a key of the mapId and the value is the map data
-    const allBeatSaverMapData = await fetch(`https://api.beatsaver.com/maps/ids/${mapIds}`).then(x => x.json());
-
-    const paginatedFullMapsOfTheWeek = [];
-    // Not Promise.all'ing since that will just get you rate limited from beatsaver
-    for (const singleMapOfTheWeek of paginatedMapsOfTheWeek) {
-        try {
-            let coverUrl = singleMapOfTheWeek.coverUrlOverwrite;
-
-            // Fetch BeatLeader URL if not given
-            // If this is happens to frequently it will get rate limited
-            if (coverUrl == null) {
-                const beatLeaderLeaderBoardData = await fetch(
-                  `https://api.beatleader.xyz/leaderboard/${singleMapOfTheWeek.mapId}`,
-                ).then((res) => res.json());
-
-                coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage;
-            }
-
-            if (coverUrl == null) {
-                throw new Error('No cover URL found!')
-            }
-
-            const beatSaverMapData = allBeatSaverMapData[singleMapOfTheWeek.mapId];
-
-            paginatedFullMapsOfTheWeek.push({
-                map: {
-                    id: singleMapOfTheWeek.mapId,
-                    name: beatSaverMapData.name,
-                    coverUrl: coverUrl,
-                    uploader: {
-                        id: beatSaverMapData.uploader.id,
-                        name: beatSaverMapData.uploader.name,
-                        avatar: beatSaverMapData.uploader.avatar,
-                        description: beatSaverMapData.uploader.description,
-                        admin: beatSaverMapData.uploader.admin,
-                        curator: beatSaverMapData.uploader.curator,
-                        seniorCurator: beatSaverMapData.uploader.seniorCurator,
-                        verifiedMapper: beatSaverMapData.uploader.verifiedMapper,
-                    },
-                    collaborators: beatSaverMapData.collaborators
-                },
-                review: singleMapOfTheWeek.review,
-                startDate: singleMapOfTheWeek.startDate,
-                showcase: singleMapOfTheWeek.showcase,
-            });
-        } catch (e) {
-            console.error(`Something went wrong fetching info for map ${singleMapOfTheWeek.mapId}.`)
-        }
-    }
-
-    return { mapsOfTheWeek: paginatedFullMapsOfTheWeek, pageSize, pageCount, currentPage: pageNumber };
+  return {
+    mapsOfTheWeek: paginatedFullMapsOfTheWeek,
+    pageSize,
+    pageCount,
+    currentPage: pageNumber,
+  }
 }
