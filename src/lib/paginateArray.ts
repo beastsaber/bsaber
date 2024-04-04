@@ -4,7 +4,7 @@ export const paginateArray = <T>(inputArray: T[], pageSize: number, pageNumber: 
   }
 
   const startIndex = (pageNumber - 1) * pageSize
-  const endIndex = pageNumber * pageSize
+  const endIndex = startIndex + pageSize
   const pageCount = Math.ceil(inputArray.length / pageSize)
   const paginatedArray = inputArray.slice(startIndex, endIndex)
 
