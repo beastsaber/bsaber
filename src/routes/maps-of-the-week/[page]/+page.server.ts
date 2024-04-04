@@ -82,6 +82,7 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
                 },
                 review: singleMapOfTheWeek.review,
                 startDate: singleMapOfTheWeek.startDate,
+                showcase: singleMapOfTheWeek.showcase,
             });
         } catch (e) {
             console.error(`Something went wrong fetching info for map ${singleMapOfTheWeek.mapId}.`)
