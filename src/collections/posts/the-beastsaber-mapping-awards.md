@@ -3,7 +3,7 @@ title: The BeastSaber Mapping Awards
 section: speciality
 category: event
 publish: 2024-02-01T00:00:00.000Z
-homepageText: ' '
+homepageText: The BeastSaber Mapping Awards dig deep into mapping theory and practices to highlight the maps that have incredible representation, emphasis, and flow to truly capture the feel of the song.
 image: /static/uploads/posts/2021.jpg
 showInPostListing: false
 linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
