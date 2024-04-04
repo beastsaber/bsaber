@@ -72,6 +72,7 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
         },
         collaborators: beatSaverMapData.collaborators
       },
+      showcase: currentMOTWCollectionData.showcase,
       review: currentMOTWCollectionData.review,
       startDate: currentMOTWCollectionData.startDate,
     }
