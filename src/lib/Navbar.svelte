@@ -360,7 +360,7 @@
 
     &:hover,
     &:focus {
-      background-color: $color-bsaber-purple-highlight;
+      background-color: lighten($color-bsaber-purple, 5%);
     }
     &.sub-item {
       padding-left: 3rem;

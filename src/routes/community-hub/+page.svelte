@@ -450,16 +450,15 @@
   }
 
   .filter-button {
-    background-color: $color-bsaber-purple-highlight;
-    border-radius: $rounding-large;
+    background-color: $color-bsaber-purple;
+    border-radius: $rounding-small;
     padding: 0.3rem 1rem;
 
-    transition-property: background-color;
-    transition-duration: 0.2s;
+    transition: background-color 0.15s;
 
     &:hover {
       cursor: pointer;
-      background-color: $color-bsaber-purple;
+      background-color: lighten($color-bsaber-purple, 5%);
     }
   }
 

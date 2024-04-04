@@ -263,7 +263,7 @@
     text-decoration: none;
   }
   .dropdown-item:hover {
-    background-color: $color-bsaber-purple-highlight;
+    background-color: lighten($color-bsaber-purple, 5%);
   }
   .dropdown-item-image {
     width: 2.5rem;
@@ -304,7 +304,7 @@
     overflow: visible;
   }
   input:hover {
-    color: $color-bsaber-purple-highlight;
+    color: lighten($color-bsaber-purple, 5%);
   }
   .btn {
     display: inline-block;
@@ -332,11 +332,13 @@
     color: #fff;
     background-color: $color-bsaber-purple;
     border-color: $color-bsaber-purple;
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: lighten($color-bsaber-purple, 5%);
+    }
   }
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
-  }
-  .btn:hover {
-    background-color: $color-bsaber-purple-highlight;
   }
 </style>
