@@ -24,8 +24,6 @@ type LoadFunctionParameter = {
   fetch: typeof fetch
 }
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export async function load({ fetch, params }: LoadFunctionParameter): Promise<MapsOfTheWeekPagePaginatedSSRData> {
     // Starts at 1
     const pageNumber = parseInt(params.page, 10);
