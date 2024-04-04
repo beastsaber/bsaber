@@ -27,8 +27,8 @@
 
   .quick-filter {
     height: 40px;
-    color: $color-primary-text;
     border-radius: 10px;
+    color: $color-text-primary;
     overflow: hidden;
     text-transform: uppercase;
     font-family: $font-poppins;

@@ -38,14 +38,14 @@
   @import 'src/scss/variables';
 
   .player-container {
-    border-bottom: 1px solid $color-card-headers;
+    border-bottom: 1px solid $color-background-tertiary;
     &:last-child {
       border-bottom: 1px solid $color-muted-text;
     }
   }
 
   .player {
-    font-family: $font-primary-text;
+    font-family: $font-primary;
     font-weight: 700;
     display: grid;
     grid-template-columns: 10px 24px auto auto;
@@ -55,11 +55,11 @@
   }
 
   .rank {
-    color: $background-primary;
+    color: $color-background-primary;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: $font-header-text;
+    font-family: $font-header;
     font-weight: 600;
 
     &.warning-yellow {
@@ -78,7 +78,7 @@
   .avatar {
     width: 24px;
     height: 24px;
-    border-radius: $rounding;
+    border-radius: $rounding-small;
   }
 
   .name {

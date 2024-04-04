@@ -105,7 +105,7 @@
     left: 0;
     right: 0;
     height: 66%;
-    background: linear-gradient(to top, $background-secondary 0%, transparent 100%);
+    background: linear-gradient(to top, $color-background-secondary 0%, transparent 100%);
     z-index: 1;
   }
 

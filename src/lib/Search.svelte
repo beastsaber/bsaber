@@ -228,7 +228,7 @@
     color: #fff;
     text-align: left;
     list-style: none;
-    background-color: $background-secondary;
+    background-color: $color-background-secondary;
     background-clip: padding-box;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0.25rem;

@@ -367,7 +367,7 @@
     width: 10rem + $dialogOverhangingWith;
     background-color: #777;
     box-shadow: 0px 1px 5px 0px #999;
-    border-radius: $card-border-radius;
+    border-radius: $rounding-large;
     padding: $dialogPadding;
     z-index: 1;
 
@@ -405,7 +405,7 @@
     width: 10rem + $dialogOverhangingWith - (2 * $searchPadding);
     padding: 0.5rem;
     margin-bottom: 1rem;
-    border-radius: $card-border-radius;
+    border-radius: $rounding-large;
     border: none;
   }
 
@@ -428,7 +428,7 @@
     color: #fff;
     transition-property: background-color color;
     transition-duration: 0.2s;
-    border-radius: $card-border-radius;
+    border-radius: $rounding-large;
 
     &.active {
       background-color: $color-bsaber-purple;
@@ -451,7 +451,7 @@
 
   .filter-button {
     background-color: $color-bsaber-purple-highlight;
-    border-radius: $card-border-radius;
+    border-radius: $rounding-large;
     padding: 0.3rem 1rem;
 
     transition-property: background-color;
@@ -470,8 +470,8 @@
   }
 
   .community-card {
-    background: $background-tertiary;
-    border-radius: $card-border-radius;
+    background: $color-background-tertiary;
+    border-radius: $rounding-large;
     overflow: hidden;
     padding: 1.2rem;
     display: flex;
