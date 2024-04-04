@@ -48,10 +48,7 @@ export type MapOfTheWeek = {
     collaborators: Uploader[] | undefined
   }
   review: string
-  showcase: {
-    id: string
-    type: 'youtube-short'
-  }
+  showcase: MapOfTheWeekCollectionData['showcase']
   startDate: Date
 }
 
