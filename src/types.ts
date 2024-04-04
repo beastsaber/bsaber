@@ -45,6 +45,7 @@ export type MapOfTheWeek = {
     name: string
     coverUrl: string
     uploader: Uploader
+    collaborators: Uploader[] | undefined
   }
   review: string
   showcase: {
@@ -70,6 +71,7 @@ export type Beatmap = {
   curator: Uploader | undefined
   versions: BeatmapVersion[]
   tags: string[] | undefined
+  collaborators: Uploader[]
 }
 
 export type BeatmapVersion = {

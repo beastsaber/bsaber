@@ -1,8 +1,9 @@
 ---
 title: About Curation
 section: speciality
-category: ''
+category: guide
 publish: 2024-02-17T00:00:00.000Z
+homepageText: The meaning behind BeastSaber Curation and a guide to the objective issues that bar a map from being curated.
 image: /static/uploads/posts/curation.png
 showInPostListing: false
 linkToSpecialtyPage: '/curation'
