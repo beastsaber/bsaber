@@ -24,8 +24,6 @@ type LoadFunctionParameter = {
   fetch: typeof fetch
 }
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export async function load({ fetch, params }: LoadFunctionParameter): Promise<MapsOfTheWeekPagePaginatedSSRData> {
     // Starts at 1
     const pageNumber = parseInt(params.page, 10);
@@ -84,6 +82,7 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
                 },
                 review: singleMapOfTheWeek.review,
                 startDate: singleMapOfTheWeek.startDate,
+                showcase: singleMapOfTheWeek.showcase,
             });
         } catch (e) {
             console.error(`Something went wrong fetching info for map ${singleMapOfTheWeek.mapId}.`)
