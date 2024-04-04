@@ -15,7 +15,15 @@
 
   // This will make links hard-reload instead of using SPA navigation
   postRenderer.link = (href, title, text) => {
-    return `<a href="${href}" title="${title}" rel="external">${text}</a>`
+    if (text == null) {
+      text = href
+    }
+
+    if (title != null) {
+      return `<a href="${href}" title=${title} rel="external">${text}</a>`
+    }
+
+    return `<a href="${href}" rel="external">${text}</a>`
   }
 
   // Injecting !youtube[video-id] tags with the respective iframe by using the paragraph renderer
