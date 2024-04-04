@@ -2,15 +2,53 @@
   import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay'
   import type { MapOfTheWeek } from '../types'
   import Header from './Header.svelte'
-
+  import OneClickButton from './OneClickDownloadButton.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
+
+  let aspectRatio = mapOfTheWeek.showcase?.type === 'youtube-short' ? '9/16' : '16/9'
+  let sizeDeterminer =
+    mapOfTheWeek.showcase?.type === 'youtube-short' ? 'height: 90vh' : 'width: 90vw'
+  let sizeLimiter =
+    mapOfTheWeek.showcase?.type === 'youtube-short' ? 'max-height: 50,625vw' : 'max-width: 160vh'
+
+  let showShowcase = false
+
+  const closeModalOnEsc = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      hideShowcase()
+    }
+    document.removeEventListener('keydown', closeModalOnEsc)
+  }
+
+  const openShowcase = () => {
+    showShowcase = true
+    document.body.addEventListener('keydown', closeModalOnEsc)
+  }
+
+  const hideShowcase = () => {
+    showShowcase = false
+    document.body.removeEventListener('keydown', closeModalOnEsc)
+  }
 
   const collaborators = mapOfTheWeek.map.collaborators ?? []
 
   const uploaders = [mapOfTheWeek.map.uploader, ...collaborators]
 </script>
 
+{#if showShowcase && mapOfTheWeek.showcase != null}
+  <div class="showcase-modal" style="aspect-ratio: {aspectRatio}; {sizeDeterminer}; {sizeLimiter};">
+    <iframe
+      width="100%"
+      height="100%"
+      src="https://www.youtube.com/embed/{mapOfTheWeek?.showcase.id}?rel=0&autoplay=1&loop=1"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+  </div>
+  <div class="showcase-backdrop" on:click={hideShowcase} />
+{/if}
 <div class="motw-container">
   <div class="background-image" style="background-image: url({mapOfTheWeek.map.coverUrl});" />
   <div class="card">
@@ -57,6 +95,16 @@
           <!-- prettier-ignore-end -->
           <!-- eslint-enable -->
           <p class="review">{mapOfTheWeek.review}</p>
+          <div class="action-bar">
+            {#if mapOfTheWeek.showcase != null}
+              <button class="open-showcase-button" on:click={() => openShowcase()}>
+                Watch the showcase
+              </button>
+            {/if}
+            <div class="one-click-download-button-container">
+              <OneClickButton mapId={mapOfTheWeek.map.id} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -70,6 +118,45 @@
     padding-top: 0rem !important;
   }
 
+  .showcase-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $background-secondary;
+    z-index: 100;
+  }
+
+  .showcase-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    z-index: 99;
+  }
+
+  .action-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+
+    & .open-showcase-button {
+      display: block;
+      color: $accent-color;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
   .motw-container {
     position: relative;
     margin-top: 3rem;
@@ -124,6 +211,10 @@
     align-items: end;
   }
 
+  .map-details {
+    flex-grow: 1;
+  }
+
   .map-cover {
     width: 0;
     height: 0;
@@ -170,5 +261,9 @@
 
   .review {
     white-space: pre-wrap;
+  }
+
+  .one-click-download-button-container {
+    margin-left: auto;
   }
 </style>
