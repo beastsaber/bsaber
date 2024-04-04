@@ -85,12 +85,10 @@
               <button class="open-showcase-button" on:click={() => openShowcase()}>
                 Watch the showcase
               </button>
-            {:else}
-              <!--Putting a div here so the OneClick Download URL stays in place-->
-              <!--Either than conditionally injecting styles-->
-              <div />
             {/if}
-            <OneClickButton mapId={mapOfTheWeek.map.id} />
+            <div class="one-click-download-button-container">
+              <OneClickButton mapId={mapOfTheWeek.map.id} />
+            </div>
           </div>
         </div>
       </div>
@@ -248,5 +246,9 @@
 
   .review {
     white-space: pre-wrap;
+  }
+
+  .one-click-download-button-container {
+    margin-left: auto;
   }
 </style>
