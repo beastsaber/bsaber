@@ -32,15 +32,15 @@
         }`}
         style={`background-image: url(${playlist.playlistImage512})`}
       >
+        <div class="one-click-downloa-button-container">
+          <OneClickDownloadButton
+            playlistUrl="https://api.beatsaver.com/playlists/id/{playlist.playlistId}/download"
+          />
+        </div>
         <div class="content max-cols-4">
           <Uploader uploader={playlist.owner} />
           <div class="last-row-container">
             <h3 class="title">{playlist.name ?? ''}</h3>
-            <div class="one-click-downloa-button-container">
-              <OneClickDownloadButton
-                playlistUrl="https://api.beatsaver.com/playlists/id/{playlist.playlistId}/download"
-              />
-            </div>
           </div>
         </div>
       </a>
@@ -55,6 +55,13 @@
 <style lang="scss">
   @import '../scss/post-cards';
   .one-click-downloa-button-container {
-    margin-bottom: 0.35rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    z-index: 1;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    padding: 0.3rem;
+    border-radius: 50%;
+    overflow: visible;
   }
 </style>
