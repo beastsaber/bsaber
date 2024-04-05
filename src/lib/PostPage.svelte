@@ -100,12 +100,12 @@
   @media (min-width: 992px) {
     header {
       margin: -20px 0 1rem;
-      border-radius: 0 0 $card-border-radius $card-border-radius;
+      border-radius: 0 0 $rounding-large $rounding-large;
 
       h1 {
         font-size: 3rem;
         margin: 0;
-        border-radius: 0 0 $card-border-radius - 2px $card-border-radius - 2px; // Ensures the backdrop filter covers the entire image
+        border-radius: 0 0 $rounding-large - 2px $rounding-large - 2px; // Ensures the backdrop filter covers the entire image
       }
     }
   }

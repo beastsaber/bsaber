@@ -48,27 +48,27 @@
       margin-left: -1.5rem;
 
       &.easy {
-        background-color: $difficulty-green;
+        background-color: $color-difficulty-green;
         z-index: 5;
       }
 
       &.normal {
-        background-color: $difficulty-blue;
+        background-color: $color-difficulty-blue;
         z-index: 4;
       }
 
       &.hard {
-        background-color: $difficulty-orange;
+        background-color: $color-difficulty-orange;
         z-index: 3;
       }
 
       &.expert {
-        background-color: $difficulty-red;
+        background-color: $color-difficulty-red;
         z-index: 2;
       }
 
       &.expert-plus {
-        background-color: $difficulty-purple;
+        background-color: $color-difficulty-purple;
         z-index: 1;
       }
     }

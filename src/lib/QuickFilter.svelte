@@ -3,13 +3,13 @@
   import Fa from 'svelte-fa/src/fa.svelte'
 
   export let text: string
-  export let color: string
+  export let type: string
   export let href: string
   export let icon: IconDefinition | undefined = undefined
   export let iconPath: string | undefined = undefined // path to the icon, if not using fa icon
 </script>
 
-<a class="quick-filter" style="background-color: {color}" {href}>
+<a class="quick-filter {type}" {href}>
   <div class="content">
     <div class="icon">
       {#if iconPath}
@@ -27,12 +27,13 @@
 
   .quick-filter {
     height: 40px;
-    color: $color-primary-text;
-    border-radius: 10px;
+    border-radius: $rounding-small;
+    color: $color-text-primary;
     overflow: hidden;
     text-transform: uppercase;
     font-family: $font-poppins;
     font-size: 1rem;
+    transition: background-color 0.15s;
 
     .content {
       position: relative;
@@ -53,6 +54,24 @@
 
     .image-icon {
       height: 1rem;
+    }
+  }
+
+  $colors: (
+    newest: darken($color-danger-red, 5%),
+    ranked: darken($color-warning-yellow, 5%),
+    curated: darken($color-success-green, 5%),
+    verified: darken($color-info-blue, 5%),
+    playlists: $color-bsaber-purple
+  );
+
+  @each $name, $color in $colors {
+    .#{$name} {
+      background-color: $color;
+
+      &:hover {
+        background-color: lighten($color, 5%);
+      }
     }
   }
 

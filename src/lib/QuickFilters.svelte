@@ -13,31 +13,31 @@
   <QuickFilter
     text="Newest Maps"
     icon={faClock}
-    color="#e74c3c"
+    type="newest"
     href="https://beatsaver.com/?order=Latest"
   />
   <QuickFilter
     text="All Ranked"
     icon={faStar}
-    color="#f39c12"
+    type="ranked"
     href="https://beatsaver.com/?ranked=true"
   />
   <QuickFilter
     text="All Curated"
     icon={faAward}
-    color="#00bc8c"
+    type="curated"
     href="https://beatsaver.com/?order=Curated&curated=true"
   />
   <QuickFilter
     text="All Verified"
     icon={faCheckCircle}
-    color="#3498db"
+    type="verified"
     href="https://beatsaver.com/?verified=true"
   />
   <QuickFilter
     text="All Playlists"
     iconPath={squareListIcon}
-    color="#454088"
+    type="playlists"
     href="https://beatsaver.com/playlists?order=Curated&curated=true"
   />
 </div>

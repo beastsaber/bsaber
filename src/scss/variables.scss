@@ -1,29 +1,29 @@
-$background-primary: #222222;
-$background-secondary: #303030;
-$background-tertiary: #444444;
-$accent-color: #00a87e;
-$text-secondary: #aeaeae;
-$rounding: 4px;
-$card-border-radius: 10px;
-$color-danger-red: #e95d4e;
+$color-background-primary: #222222;
+$color-background-secondary: #303030;
+$color-background-tertiary: #444444;
+$color-text-primary: #ffffff;
+$color-text-secondary: #aeaeae;
 $color-muted-text: #999999;
+$color-accent: #00a87e;
+$color-danger-red: #e95d4e;
 $color-warning-yellow: #f39c12;
 $color-info-blue: #3498db;
 $color-success-green: #00bc8c;
 $color-bsaber-purple: #454088;
-$color-bsaber-purple-highlight: #5f58b9;
-$color-card-headers: #444444;
-$color-primary-text: #ffffff;
+
+$color-difficulty-green: #008055;
+$color-difficulty-blue: #1268a1;
+$color-difficulty-orange: #bd5500;
+$color-difficulty-red: #b52a1c;
+$color-difficulty-purple: #7646af;
 $color-beatsaver-pink: #ff008f;
-$navbar-height: 75px;
+
 $font-poppins: Poppins, sans-serif;
 $font-dm-sans: DM Sans, sans-serif;
 
-$font-primary-text: $font-dm-sans;
-$font-header-text: $font-poppins;
+$rounding-small: 4px;
+$rounding-large: 10px;
+$navbar-height: 75px;
 
-$difficulty-green: #008055;
-$difficulty-blue: #1268a1;
-$difficulty-orange: #bd5500;
-$difficulty-red: #b52a1c;
-$difficulty-purple: #7646af;
+$font-primary: $font-dm-sans;
+$font-header: $font-poppins;

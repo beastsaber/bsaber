@@ -17,7 +17,7 @@
 body {
   max-width: 1356px;
   margin: 0 auto;
-  background-color: $background-primary;
+  background-color: $color-background-primary;
   color: #fff;
 }
 
@@ -31,12 +31,12 @@ h1,
 h2,
 h3 {
   font-weight: 600;
-  font-family: $font-header-text;
+  font-family: $font-header;
 }
 
 p {
   font-weight: 400;
-  color: $color-primary-text;
+  color: $color-text-primary;
 }
 
 p {
@@ -44,7 +44,7 @@ p {
 }
 
 a {
-  color: $accent-color;
+  color: $color-accent;
   text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ pre {
   box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
   padding: 0.5em;
   overflow-x: auto;
-  color: $color-primary-text;
+  color: $color-text-primary;
 }
 
 input,

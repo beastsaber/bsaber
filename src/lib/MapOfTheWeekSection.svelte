@@ -123,7 +123,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: $background-secondary;
+    background: $color-background-secondary;
     z-index: 100;
   }
 
@@ -145,7 +145,7 @@
 
     & .open-showcase-button {
       display: block;
-      color: $accent-color;
+      color: $color-accent;
       cursor: pointer;
       background: none;
       border: none;
@@ -192,7 +192,7 @@
     left: 0;
     right: 0;
     height: 66%;
-    background: linear-gradient(to top, $background-secondary 0%, transparent 100%);
+    background: linear-gradient(to top, $color-background-secondary 0%, transparent 100%);
     z-index: 1;
   }
 
