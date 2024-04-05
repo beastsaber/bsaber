@@ -331,18 +331,18 @@
             {/each}
           </div>
           <p class="community-description">{community.description}</p>
-          <div class="social-icons">
-            {#each community.socials as social, socialIndex (social)}
-              <a
-                id={`${communityIndex}-${socialIndex}-${social.name}`}
-                href={social.url}
-                title={social.titleOverwrite ?? social.name}
-              >
-                <Fa icon={iconMapping[social.name]} />
-              </a>
-            {/each}
-          </div>
         </div>
+      </div>
+      <div class="social-icons">
+        {#each community.socials as social, socialIndex (social)}
+          <a
+            id={`${communityIndex}-${socialIndex}-${social.name}`}
+            href={social.url}
+            title={social.titleOverwrite ?? social.name}
+          >
+            <Fa icon={iconMapping[social.name]} />
+          </a>
+        {/each}
       </div>
     </div>
   {/each}
@@ -475,7 +475,7 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
     gap: 0.75rem;
   }
 
@@ -486,7 +486,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    min-height: 12rem;
+    gap: 0.5rem;
 
     & h2 {
       font-size: 1.2rem;
