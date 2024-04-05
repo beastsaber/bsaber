@@ -369,6 +369,7 @@
     width: 10rem + $dialogOverhangingWith;
     background-color: $color-background-secondary;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid $color-background-tertiary;
     border-radius: $rounding-small;
     padding: $dialogPadding;
     z-index: 1;
