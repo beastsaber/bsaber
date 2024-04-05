@@ -30,8 +30,8 @@
   @import 'src/scss/variables';
 
   .curator-card {
-    background-color: $background-secondary;
-    border-radius: $rounding;
+    background-color: $color-background-secondary;
+    border-radius: $rounding-small;
     overflow: hidden;
     flex-basis: 30%;
     display: flex;
@@ -57,7 +57,7 @@
 
         .roles {
           font-size: .75rem;
-          color: $text-secondary;
+          color: $color-text-secondary;
         }
       }
     }

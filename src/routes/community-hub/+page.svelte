@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { CommunityLabel, LanguageKeys } from '../../types'
+  import type { LanguageKeys } from '../../types'
   import type { CommunityHubSSRData } from './+page.server'
   import MetaHead from '$lib/MetaHead.svelte'
   import {
@@ -12,8 +12,8 @@
     faReddit,
     faGithub,
   } from '@fortawesome/free-brands-svg-icons'
-  import { faLink, faCaretDown, faBook } from '@fortawesome/free-solid-svg-icons'
-  import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome'
+  import { faLink, faBook } from '@fortawesome/free-solid-svg-icons'
+  import Fa from 'svelte-fa/src/fa.svelte'
   import Fuse from 'fuse.js'
 
   const filterCommunities = (
@@ -260,23 +260,25 @@
 
 <MetaHead title="Community Hub" />
 
-<div class="header-line">
+<div class="header">
   <h1>Community Hub</h1>
   <div class="filter-dropdown-anchor">
     <div class="filter-button" on:click={() => toggleFilterDropdown()}>
-      Filter &nbsp;&nbsp;<FontAwesomeIcon icon={faCaretDown} />
+      Filter
     </div>
     <div class="filter-dropdown" style={showFilterdropdown ? 'display: block' : 'display: none;'}>
-      <input class="search-text-field" type="text" on:input={updateNameAndDescriptionFilter} />
-      {#each data.availableLabels as label}
-        <div
-          class={label.activated ? 'label active' : 'label inactive'}
-          style="border-color: {getLabelObject(label.label)?.color};"
-          on:click={toggleLabelFilter(label.label)}
-        >
-          {label.label}
-        </div>
-      {/each}
+      <input class="search-text-field" type="text" placeholder="Search" on:input={updateNameAndDescriptionFilter} />
+      <div class="labels">
+        {#each data.availableLabels as label}
+          <div
+            class={label.activated ? 'label active' : 'label'}
+            style="border-color: {getLabelObject(label.label)?.color};"
+            on:click={toggleLabelFilter(label.label)}
+          >
+            {label.label}
+          </div>
+        {/each}
+      </div>
       <div class="social-filter-bar">
         {#each Object.entries(iconMapping) as [name, icon]}
           <span
@@ -284,13 +286,14 @@
             title={name}
             on:click={toggleSocialFilter(name)}
           >
-            <FontAwesomeIcon {icon} />
+            <Fa {icon} />
           </span>
         {/each}
       </div>
     </div>
   </div>
 </div>
+<hr class="fade" />
 <div class="grid">
   {#each filteredCommunities as community, communityIndex (community)}
     <div class="community-card activity-{community.activityLevel}">
@@ -322,25 +325,24 @@
           <div class="labels">
             {#each community.labels as label}
               <span
-                class={data.availableLabels.find((x) => x.label == label)?.activated
-                  ? 'label active'
-                  : 'label inactive'}
+                class="label"
                 style="border-color: {getLabelObject(label)?.color};">{label}</span
               >
             {/each}
           </div>
           <p class="community-description">{community.description}</p>
-          <div class="social-icons">
-            {#each community.socials as social, socialIndex (social)}
-              <a
-                id={`${communityIndex}-${socialIndex}-${social.name}`}
-                href={social.url}
-                title={social.titleOverwrite ?? social.name}
-                ><FontAwesomeIcon icon={iconMapping[social.name]} /></a
-              >
-            {/each}
-          </div>
         </div>
+      </div>
+      <div class="social-icons">
+        {#each community.socials as social, socialIndex (social)}
+          <a
+            id={`${communityIndex}-${socialIndex}-${social.name}`}
+            href={social.url}
+            title={social.titleOverwrite ?? social.name}
+          >
+            <Fa icon={iconMapping[social.name]} />
+          </a>
+        {/each}
       </div>
     </div>
   {/each}
@@ -365,37 +367,32 @@
     top: 2.5rem;
     left: -($dialogPadding * 2) - $dialogOverhangingWith - 4rem;
     width: 10rem + $dialogOverhangingWith;
-    background-color: #777;
-    box-shadow: 0px 1px 5px 0px #999;
-    border-radius: $card-border-radius;
+    background-color: $color-background-secondary;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid $color-background-tertiary;
+    border-radius: $rounding-small;
     padding: $dialogPadding;
     z-index: 1;
 
-    .label {
-      text-align: center;
-      $backgroundActive: #999;
-      $backgroundInactive: #555;
-      margin-top: 0.5rem;
+    .labels {
+      flex-wrap: wrap;
 
-      transition-property: background-color;
-      transition-duration: 0.2s;
+      .label {
+        text-align: center;
+        background-color: $color-background-secondary;
+        margin: 0;
+        flex-grow: 1;
 
-      &.active {
-        background-color: $backgroundActive;
-      }
+        transition: background-color 0.15s;
 
-      &.inactive {
-        background-color: $backgroundInactive;
-      }
+        &:hover {
+          cursor: pointer;
+          background-color: mix($color-background-secondary, $color-background-tertiary, 50%);
+        }
 
-      &.inactive:hover {
-        cursor: pointer;
-        background-color: $backgroundActive;
-      }
-
-      &.active:hover {
-        cursor: pointer;
-        background-color: $backgroundInactive;
+        &.active {
+          background-color: $color-background-tertiary;
+        }
       }
     }
   }
@@ -404,79 +401,93 @@
   .search-text-field {
     width: 10rem + $dialogOverhangingWith - (2 * $searchPadding);
     padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: $card-border-radius;
+    margin-bottom: 0.75rem;
+    border-radius: $rounding-small;
     border: none;
   }
 
-  .header-line {
+  .header {
     display: flex;
-    border-bottom: 1px solid white;
-    margin-bottom: 2rem;
     align-items: center;
   }
 
+  hr.fade {
+    border: none;
+    height: 2px;
+    margin-block: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, #999999 0%, rgba(153, 153, 153, 0) 100%);
+  }
+
   .social-filter-bar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     margin-top: 1rem;
+    gap: 0.5rem
   }
 
   .social-filter-button {
-    display: inline-block;
-    padding: 1rem;
-    width: 1rem;
-    margin: 0.05rem;
-    color: #fff;
-    transition-property: background-color color;
-    transition-duration: 0.2s;
-    border-radius: $card-border-radius;
-
-    &.active {
-      background-color: $color-bsaber-purple;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    color: $color-text-primary;
+    transition: background-color 0.15s;
+    border-radius: $rounding-small;
 
     &:hover {
       cursor: pointer;
-      color: #ccc;
-      background-color: $color-bsaber-purple;
+      background-color: mix($color-background-secondary, $color-background-tertiary, 50%);
+    }
+
+    &.active {
+      background-color: $color-background-tertiary;
     }
   }
 
   h1 {
     flex: 1;
-    flex-grow: 1;
-    margin-bottom: 0.3rem;
     font-size: 2rem;
     text-align: left;
   }
 
   .filter-button {
-    background-color: $color-bsaber-purple-highlight;
-    border-radius: $card-border-radius;
+    background-color: $color-bsaber-purple;
+    border-radius: $rounding-small;
     padding: 0.3rem 1rem;
 
-    transition-property: background-color;
-    transition-duration: 0.2s;
+    transition: background-color 0.15s;
+
+    &::after {
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.15em;
+      content: '';
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+    }
 
     &:hover {
       cursor: pointer;
-      background-color: $color-bsaber-purple;
+      background-color: lighten($color-bsaber-purple, 5%);
     }
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+    gap: 0.75rem;
   }
 
   .community-card {
-    background: $background-tertiary;
-    border-radius: $card-border-radius;
+    background: $color-background-secondary;
+    border-radius: $rounding-large;
     overflow: hidden;
-    padding: 1.2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    min-height: 200px; // Add a minimum height for the cards
+    gap: 0.5rem;
 
     & h2 {
       font-size: 1.2rem;
@@ -517,17 +528,21 @@
   }
 
   .labels {
-    margin-bottom: 0.7rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
     user-select: none;
   }
 
   .label {
-    padding: 1px 10px;
-    margin-right: 5px;
-    border: 2px solid transparent;
-    border-radius: 20px;
-    background-color: #555;
-    font-size: 0.8em;
+    font-size: 0.75rem;
+    border-radius: 1.5rem;
+    background-color: $color-background-tertiary;
+    border: 1px solid;
+    padding: 0.125rem 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .community-description {
@@ -539,10 +554,22 @@
     display: flex;
     justify-content: flex-end;
     color: inherit;
+    gap: 0.25rem;
 
     a {
-      margin-left: 10px;
-      color: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-text-primary;
+      border-radius: $rounding-small;
+      width: 2em;
+      aspect-ratio: 1;
+
+      transition: background-color 0.15s;
+
+      &:hover {
+        background-color: mix($color-background-secondary, $color-background-tertiary, 50%);
+      }
     }
   }
 </style>

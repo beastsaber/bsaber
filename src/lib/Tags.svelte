@@ -27,7 +27,7 @@
     .tag {
       font-size: 0.75rem;
       border-radius: 1.5rem;
-      background-color: $background-secondary;
+      background-color: $color-background-secondary;
       border: 1px solid;
       padding: 0.125rem 0.5rem;
       white-space: nowrap;

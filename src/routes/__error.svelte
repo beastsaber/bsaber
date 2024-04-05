@@ -103,8 +103,8 @@
   }
   .message {
     width: 100%;
-    border-radius: $rounding;
-    background-color: $background-secondary;
+    border-radius: $rounding-small;
+    background-color: $color-background-secondary;
   }
   p,
   ul {

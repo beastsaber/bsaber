@@ -97,14 +97,14 @@
 .card {
   position: relative;
   display: flex;
-  border-radius: $card-border-radius;
+  border-radius: $rounding-large;
   background-size: 100%;
   background-position: center;
   transition: 0.5s;
   aspect-ratio: var(--aspect-ratio);
 
   &.loading {
-    background-color: $background-secondary;
+    background-color: $color-background-secondary;
   }
 
   &:hover {
@@ -116,7 +116,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: $card-border-radius;
+    border-radius: $rounding-large;
     background: linear-gradient(180deg, rgba(69, 64, 136, 0) 0%, #000000 100%);
   }
 }

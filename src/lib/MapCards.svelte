@@ -76,9 +76,9 @@
     overflow: hidden;
 
     &.loading {
-      background-color: $background-secondary;
+      background-color: $color-background-secondary;
       height: $image-size;
-      border-radius: $card-border-radius;
+      border-radius: $rounding-large;
     }
 
     .image-link {
@@ -87,7 +87,7 @@
       margin-right: 0.75rem;
 
       img {
-        border-radius: $card-border-radius;
+        border-radius: $rounding-large;
         height: 100%;
       }
     }

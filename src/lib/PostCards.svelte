@@ -47,7 +47,7 @@
   .category {
     font-size: 0.75rem;
     border-radius: 1.5rem;
-    background-color: $background-secondary;
+    background-color: $color-background-secondary;
     color: white;
     border: 1px solid $color-danger-red;
     padding: 0.125rem 0.5rem;
