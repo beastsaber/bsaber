@@ -1,27 +1,28 @@
-import { getSortedMapsOfTheWeekNetlifyData } from "$lib/getMapsOfTheWeekNetlifyData";
-import type { MapOfTheWeek } from "../../../types";
+import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
+import type { MapOfTheWeek } from '../../../types'
+import { paginateArray } from '$lib/paginateArray'
 
-const pageSize = 15;
+const pageSize = 15
 
-if(pageSize > 50) {
-    throw new Error("Page sizes above 50 are not supported. You need to adjust the beatsaver call to accomodate that.");
+if (pageSize > 50) {
+  throw new Error(
+    'Page sizes above 50 are not supported. You need to adjust the beatsaver call to accomodate that.',
+  )
 }
 
 export type MapsOfTheWeekPagePaginatedSSRData = {
-    mapsOfTheWeek: MapOfTheWeek[];
-    pageSize: number;
-    pageCount: number;
-    currentPage: number;
+  mapsOfTheWeek: MapOfTheWeek[]
+  pageSize: number
+  pageCount: number
+  currentPage: number
 }
 
 type LoadFunctionParameter = {
-    params: {
-        page: string;
-    },
-    fetch: typeof fetch,
+  params: {
+    page: string
+  }
+  fetch: typeof fetch
 }
-
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function load({ fetch, params }: LoadFunctionParameter): Promise<MapsOfTheWeekPagePaginatedSSRData> {
     // Starts at 1
@@ -30,14 +31,11 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
         throw new Error("Invalid page number");
     }
 
-    const startIndex = (pageNumber - 1) * pageSize;
-    const endIndex = pageNumber * pageSize;
-
     const allMapsOfTheWeekNetlifyData = await getSortedMapsOfTheWeekNetlifyData();
-
-    const pageCount = Math.ceil(allMapsOfTheWeekNetlifyData.length / pageSize);
-
-    const paginatedMapsOfTheWeek = allMapsOfTheWeekNetlifyData.slice(startIndex, endIndex);
+    const {
+        paginatedArray: paginatedMapsOfTheWeek,
+        pageCount,
+    } = paginateArray(allMapsOfTheWeekNetlifyData, pageSize, pageNumber);
 
     const mapIds = paginatedMapsOfTheWeek.map((map) => map.mapId).join(",");
     // Data structure is an object with a key of the mapId and the value is the map data
@@ -84,6 +82,7 @@ export async function load({ fetch, params }: LoadFunctionParameter): Promise<Ma
                 },
                 review: singleMapOfTheWeek.review,
                 startDate: singleMapOfTheWeek.startDate,
+                showcase: singleMapOfTheWeek.showcase,
             });
         } catch (e) {
             console.error(`Something went wrong fetching info for map ${singleMapOfTheWeek.mapId}.`)
