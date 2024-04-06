@@ -40,6 +40,8 @@ collections:
       - name: body
         label: Body
         widget: markdown
+        modes:
+          - raw
       - name: image
         label: Image
         widget: image
