@@ -13,7 +13,7 @@ You’ve waited long enough, it’s time to finally announce the winners of the 
 
 If you’re not the reading type, you can watch the announcement video [here](https://www.youtube.com/watch?v=XVPaXwd0Gq8)
 
-!youtube\[XVPaXwd0Gq8}]
+!youtube\[XVPaXwd0Gq8]
 
 ## Individual Awards
 
@@ -29,7 +29,7 @@ If you’re not the reading type, you can watch the announcement video [here](ht
 ## Map Style Awards
 
 * **Best Tech Style Map: [\#Beat220DidNothingWrong ------- Kanaria - Envy Baby (Will Stetson Cover)](https://beatsaver.com/maps/16ac1)** by CoolingCloset & Nolanimations
-* **Best Speed Map: [\[Ranked] Knight Rider](https://beatsaver.com/maps/16991)** by Fvrwvrd
+* **Best Speed Map: \[[Ranked] Knight Rider](https://beatsaver.com/maps/16991)** by Fvrwvrd
 * **Best Dance Map: [Maroon 5 - Moves Like Jagger ft. Christina Aguilera](https://beatsaver.com/maps/17627)** by ETAN
 * **Best Balanced Style Map: [STAY - The Kid LAROI, Justin Bieber](https://beatsaver.com/maps/1acce)** by RFCaps & FatBeanzoop
 * **Best Challenge Style Map: [Destructive TEndencies Warface - Release the Kraken](https://beatsaver.com/maps/121b0)** by LOBSTERRR
@@ -40,16 +40,16 @@ If you’re not the reading type, you can watch the announcement video [here](ht
 ## Supporting Map Awards
 
 * **Best Single Saber Map: [Ori and the Blind Forest - Main Theme](https://beatsaver.com/maps/1cb68)** by Sp234
-* **Best No Arrows Map: [\[OSUinBS] Canta Bille - Real or Lie](https://beatsaver.com/maps/126e4)** by Pixelguy
-* **Best 360/90-Degree Map: [\[RN2H] Aero Chord - Drop It \[90 Degree Map]](https://beatsaver.com/maps/1c88d)** by Checkthepan
-* **Best Full Spread Map: [\[Ranked] Pegboard Nerds - Purple People Eater](https://beatsaver.com/maps/11b49)** by FatBeanzoop & ExUnReal
+* **Best No Arrows Map: \[[OSUinBS] Canta Bille - Real or Lie](https://beatsaver.com/maps/126e4)** by Pixelguy
+* **Best 360/90-Degree Map: \[[RN2H] Aero Chord - Drop It \[90 Degree Map]](https://beatsaver.com/maps/1c88d)** by Checkthepan
+* **Best Full Spread Map: \[[Ranked] Pegboard Nerds - Purple People Eater](https://beatsaver.com/maps/11b49)** by FatBeanzoop & ExUnReal
 * **Best Collaboration Map: [Camellia feat. Nanahira - Bassline Yatteru W](https://beatsaver.com/maps/15b6e)** by Joshabi & altrewin
-* **Best Ranked Map under 9 Stars: [\[Ranked] Pegboard Nerds - Purple People Eater](https://beatsaver.com/maps/11b49)** by FatBeanzoop & ExUnReal
-* **Best Ranked Map 9 Stars and up: [UNO\[R]](https://beatsaver.com/maps/13b17)** by Schwank & that_narwhal
-* **Best Sub-120 BPM Map: [Crystal Skies & Danny Olson - Like Water (feat. Jadelyn) \[Chroma 2.4]](https://beatsaver.com/maps/1a019)** by Fatalution
+* **Best Ranked Map under 9 Stars: \[[Ranked] Pegboard Nerds - Purple People Eater](https://beatsaver.com/maps/11b49)** by FatBeanzoop & ExUnReal
+* **Best Ranked Map 9 Stars and up: \[UNO[R]](https://beatsaver.com/maps/13b17)** by Schwank & that_narwhal
+* **Best Sub-120 BPM Map: \[Crystal Skies & Danny Olson - Like Water (feat. Jadelyn) [Chroma 2.4]](https://beatsaver.com/maps/1a019)** by Fatalution
 * **Best 120-174 BPM Map: [\#Beat220DidNothingWrong ------- Kanaria - Envy Baby (Will Stetson Cover)](https://beatsaver.com/maps/16ac1)** by CoolingCloset & Nolanimations
-* **Best 175-249 BPM Map: [USAO - You & DIE \[Ranked]](https://beatsaver.com/maps/18958)** by Timbo & eZconfirmed
-* **Best 250+ BPM Map: [\[Ranked] Camellia - KillerToy](https://beatsaver.com/maps/1a466)** by Jabob
+* **Best 175-249 BPM Map: \[USAO - You & DIE [Ranked]](https://beatsaver.com/maps/18958)** by Timbo & eZconfirmed
+* **Best 250+ BPM Map: \[[Ranked] Camellia - KillerToy](https://beatsaver.com/maps/1a466)** by Jabob
 
 <br />
 
@@ -59,7 +59,7 @@ Lastly, we’ll take a look at maps that focus on more than just notes, adding s
 
 * **Best Vanilla Lights: [Sail Away - Teminite](https://beatsaver.com/maps/1e110)** by Bytrius & DirtyAlex
 * **Best Vanilla+ Lights: [Phantom's Wonderland - Kazmasa (feat. Hatsune Miku & IA)](https://beatsaver.com/maps/11bde)** by Skeelie, ETAN, & AaltopahWi
-* **Best Chroma Lights: [\[Chroma] Raise The Black Flag - Teminite](https://beatsaver.com/maps/1c806)** by Bytrius & Reddek
+* **Best Chroma Lights: \[[Chroma] Raise The Black Flag - Teminite](https://beatsaver.com/maps/1c806)** by Bytrius & Reddek
 * **Best Chroma+ Lights: [Rolling Contact - Loud Chimera](https://beatsaver.com/maps/1731f)** by AaltopahWi & Kival Evan
-* **Best Artmap: [Codly - Lucy, The God Of Time \[Wall Map]](https://beatsaver.com/maps/15b16)** by Shan_Man & Reddek
+* **Best Artmap: \[Codly - Lucy, The God Of Time [Wall Map]](https://beatsaver.com/maps/15b16)** by Shan_Man & Reddek
 * **Best Modchart: [{Modchart} acloudyskye - Somewhere Out There](https://beatsaver.com/maps/1e6ff)** by Swifter, Mawntee, & Reddek
