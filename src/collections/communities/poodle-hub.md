@@ -9,14 +9,14 @@ labels:
   - Mapping
 activityLevel: medium
 socials:
-  - name: Discord
-    url: https://discord.gg/xXsc46BQVf
   - name: Website
     url: https://hitbloq.com/map_pool/poodles
     titleOverwrite: Hitbloq Ranked Pool
   - name: Website
     url: https://hitbloq.com/map_pool/casual_poodles
     titleOverwrite: Hitbloq Casual Pool
+  - name: Discord
+    url: https://discord.gg/xXsc46BQVf
 languages:
   - en
 ---

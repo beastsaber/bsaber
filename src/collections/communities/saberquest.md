@@ -8,14 +8,14 @@ labels:
   - Competition
 activityLevel: medium
 socials:
-  - name: Discord
-    url: https://discord.gg/Ak4Ge7d2A9
   - name: Website
     url: https://saberquest.xyz
   - name: Twitter/X
     url: https://twitter.com/SSaberQuest
   - name: GitHub
     url: https://github.com/Saber-Quest
+  - name: Discord
+    url: https://discord.gg/Ak4Ge7d2A9
 languages:
   - en
 ---
