@@ -1,6 +1,6 @@
 ---
 name: Poodle Hub
-description: A group devoted to the making and playing of Poodles with a completive
+description: A group devoted to the making and playing of Poodles with a competitive
   ranked pool.
 image: /static/uploads/communities/poodle-hub.png
 circleFrameImage: true
