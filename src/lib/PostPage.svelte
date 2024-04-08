@@ -84,7 +84,7 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
-  :global(article > p) {
+  :global(article > p, article > ul, article > ol, article > blockquote) {
     font-size: 1.1rem;
   }
 
