@@ -54,7 +54,10 @@
 
 <style lang="scss">
   @import '../scss/post-cards';
-  .one-click-downloa-button-container {
+  a .one-click-downloa-button-container {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+
     position: absolute;
     top: 0.3rem;
     right: 0.3rem;
@@ -63,5 +66,9 @@
     padding: 0.3rem;
     border-radius: 50%;
     overflow: visible;
+  }
+
+  a:hover .one-click-downloa-button-container {
+    opacity: 1;
   }
 </style>
