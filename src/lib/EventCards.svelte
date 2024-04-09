@@ -126,7 +126,7 @@
     font-family: $font-dm-sans;
     padding: 0.75rem;
     gap: 5px;
-    border-radius: $card-border-radius;
+    border-radius: $rounding-large;
     background-color: #333333;
     background-size: 100%;
     background-position: center;

@@ -36,7 +36,7 @@
   @import 'src/scss/variables';
 
   .listing {
-    border-radius: $rounding;
+    border-radius: $rounding-small;
   }
 
   .header {

@@ -207,7 +207,7 @@
   .dropdown-toggle::after {
     display: inline-block;
     margin-left: 0.255em;
-    vertical-align: 0.255em;
+    vertical-align: 0.15em;
     content: '';
     border-top: 0.3em solid;
     border-right: 0.3em solid transparent;
@@ -228,7 +228,7 @@
     color: #fff;
     text-align: left;
     list-style: none;
-    background-color: $background-secondary;
+    background-color: $color-background-secondary;
     background-clip: padding-box;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0.25rem;
@@ -263,7 +263,7 @@
     text-decoration: none;
   }
   .dropdown-item:hover {
-    background-color: $color-bsaber-purple-highlight;
+    background-color: lighten($color-bsaber-purple, 5%);
   }
   .dropdown-item-image {
     width: 2.5rem;
@@ -304,7 +304,7 @@
     overflow: visible;
   }
   input:hover {
-    color: $color-bsaber-purple-highlight;
+    color: lighten($color-bsaber-purple, 5%);
   }
   .btn {
     display: inline-block;
@@ -332,11 +332,13 @@
     color: #fff;
     background-color: $color-bsaber-purple;
     border-color: $color-bsaber-purple;
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: lighten($color-bsaber-purple, 5%);
+    }
   }
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
-  }
-  .btn:hover {
-    background-color: $color-bsaber-purple-highlight;
   }
 </style>

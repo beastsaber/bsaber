@@ -12,7 +12,7 @@
 <MetaHead />
 
 <div class="motw-list">
-  {#each data.mapsOfTheWeek as singleMapOfTheWeek}
+  {#each data.mapsOfTheWeek as singleMapOfTheWeek (singleMapOfTheWeek.startDate)}
     <MapOfTheWeekSection mapOfTheWeek={singleMapOfTheWeek} showHeader={false} />
   {/each}
 </div>

@@ -15,7 +15,15 @@
 
   // This will make links hard-reload instead of using SPA navigation
   postRenderer.link = (href, title, text) => {
-    return `<a href="${href}" title="${title}" rel="external">${text}</a>`
+    if (text == null) {
+      text = href
+    }
+
+    if (title != null) {
+      return `<a href="${href}" title=${title} rel="external">${text}</a>`
+    }
+
+    return `<a href="${href}" rel="external">${text}</a>`
   }
 
   // Injecting !youtube[video-id] tags with the respective iframe by using the paragraph renderer
@@ -76,6 +84,10 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
+  :global(article > p, article > ul, article > ol, article > blockquote) {
+    font-size: 1.1rem;
+  }
+
   header {
     margin: -20px -12px 1rem; // compensating for padding on <main>
     background-size: cover;
@@ -92,12 +104,12 @@
   @media (min-width: 992px) {
     header {
       margin: -20px 0 1rem;
-      border-radius: 0 0 $card-border-radius $card-border-radius;
+      border-radius: 0 0 $rounding-large $rounding-large;
 
       h1 {
         font-size: 3rem;
         margin: 0;
-        border-radius: 0 0 $card-border-radius - 2px $card-border-radius - 2px; // Ensures the backdrop filter covers the entire image
+        border-radius: 0 0 $rounding-large - 2px $rounding-large - 2px; // Ensures the backdrop filter covers the entire image
       }
     }
   }

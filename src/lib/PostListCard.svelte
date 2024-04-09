@@ -46,7 +46,7 @@
       margin-right: 0.75rem;
 
       img {
-        border-radius: $card-border-radius;
+        border-radius: $rounding-large;
         height: 100%;
         width: 100%;
         object-fit: cover;
@@ -56,7 +56,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: $card-border-radius;
+        border-radius: $rounding-large;
         height: 100%;
         width: 100%;
         background-color: $color-bsaber-purple;
@@ -95,7 +95,7 @@
       .category {
         font-size: 0.75rem;
         border-radius: 1.5rem;
-        background-color: $background-secondary;
+        background-color: $color-background-secondary;
         border: 1px solid $color-danger-red;
         padding: 0.125rem 0.5rem;
         max-width: fit-content;

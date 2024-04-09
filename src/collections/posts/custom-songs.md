@@ -3,10 +3,7 @@ title: Getting Started with Custom Songs
 section: speciality
 category: guide
 publish: 2024-03-22T00:00:00.000Z
-homepageText: You'll find every single published map at your fingertips by going
-  to BeatSaver - but, there are so many new maps released every day… how do you
-  know which ones to download? There are a few things to look for before you go
-  wading through search results...
+homepageText: Learn how to find and install high quality custom songs for Beat Saber!
 image: /static/uploads/posts/beat-saber-square.jpg
 showInPostListing: true
 linkToSpecialtyPage: '/getting-started/custom-songs'

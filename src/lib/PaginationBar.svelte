@@ -54,12 +54,12 @@
     cursor: pointer;
 
     &:hover {
-      color: $color-primary-text;
+      color: $color-text-primary;
     }
   }
 
   .page-button.active {
-    color: $color-primary-text;
+    color: $color-text-primary;
   }
 
   .hidden-pagination-link-button {

@@ -136,7 +136,7 @@
       Items: [
         {
           name: 'Posts',
-          href: '/posts',
+          href: '/posts/page/1',
         },
         {
           name: 'Mappers',
@@ -336,8 +336,8 @@
     margin-top: calc($navbar-height - 10px);
     margin-right: 0.75rem;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: $rounding;
-    background: $background-secondary;
+    border-radius: $rounding-small;
+    background: $color-background-secondary;
   }
 
   .dropdown-menu {
@@ -345,8 +345,8 @@
     display: flex;
     flex-direction: column;
     min-width: 10rem;
-    color: $color-primary-text;
-    background-color: $background-primary;
+    color: $color-text-primary;
+    background-color: $color-background-primary;
     list-style: none;
     z-index: 2;
   }
@@ -354,13 +354,13 @@
   .dropdown-item {
     width: 100%;
     font-weight: 400;
-    color: $color-primary-text;
+    color: $color-text-primary;
     text-decoration: none;
     padding: 0.5rem 2rem;
 
     &:hover,
     &:focus {
-      background-color: $color-bsaber-purple-highlight;
+      background-color: lighten($color-bsaber-purple, 5%);
     }
     &.sub-item {
       padding-left: 3rem;
@@ -395,9 +395,9 @@
       text-decoration: none;
       transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out;
-      color: $color-primary-text;
+      color: $color-text-primary;
       a {
-        color: $color-primary-text;
+        color: $color-text-primary;
       }
       box-sizing: content-box;
 
@@ -482,10 +482,10 @@
       margin-top: 0.5rem;
       text-align: left;
       list-style: none;
-      background-color: $background-secondary;
+      background-color: $color-background-secondary;
       background-clip: padding-box;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: $rounding;
+      border-radius: $rounding-small;
     }
 
     .dropdown-item {
