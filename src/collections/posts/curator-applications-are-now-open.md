@@ -8,11 +8,11 @@ showInPostListing: false
 ---
 # Curation Recruitment is Currently Open!
 
-**We are re-opening our curator applications! We’re looking for 3 outstanding applicants of any skill level. These applicants should be people who:**
+**We are re-opening our curator applications! We're looking for 3 outstanding applicants of any skill level. These applicants should be people who:**
 
 - have plenty of free time, enthusiasm, and passion for playing and curation,
 
-- are able to demonstrate familiarity with the “Objective Issues” which bar a map from curation as listed in our BeastSaber Curation Team Handbook,
+- are able to demonstrate familiarity with the “Objective Issues” which bar a map from curation as listed in our [BeastSaber Curation Team Handbook](https://docs.google.com/document/d/1uh7INNp2piEoGphpTEoZBSy3cUe12HFwLJT1MFmhZww/edit#heading=h.nj23sjpj5u97),
 
 - are mature and have a good attitude!
 
