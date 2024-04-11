@@ -32,12 +32,11 @@
     width: auto;
     background: #ffffff;
     border-radius: 10px;
-    padding: 5px 15px;
+    padding: 6px 15px;
     p {
       font-family: $font-poppins;
       color: #222222;
-      font-size: 1.20rem;
-      max-height: fit-content;
+      font-size: 1.2rem;
       line-height: 24px;
     }
   }
@@ -45,10 +44,8 @@
   .icon {
     display: block;
     width: 30px;
-    min-width: 24px;
     height: auto;
     color: #222222;
-    margin-right: 9px;
     padding-top: 6px;
     padding-bottom: 6px;
   }
