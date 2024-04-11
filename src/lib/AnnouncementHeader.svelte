@@ -46,8 +46,7 @@
     width: 30px;
     height: auto;
     color: #222222;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding: 6px;
   }
 
   .start {
