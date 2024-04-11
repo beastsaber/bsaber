@@ -26,29 +26,31 @@
 
   .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: start;
     width: auto;
-    background: #eeeeee;
+    background: #ffffff;
     border-radius: 10px;
-    padding: 8px 30px;
+    padding: 5px 15px;
     p {
       font-family: $font-poppins;
       color: #222222;
-      font-size: 1rem;
+      font-size: 1.20rem;
+      max-height: fit-content;
       line-height: 24px;
     }
   }
 
   .icon {
     display: block;
-    align-self: start;
-    width: 24px;
+    width: 30px;
     min-width: 24px;
     height: auto;
-    color: #777777;
+    color: #222222;
     margin-right: 9px;
-    padding-top: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 
   .start {
