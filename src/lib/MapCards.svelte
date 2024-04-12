@@ -78,7 +78,7 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
-  $image-size: 7.5rem;
+  $image-size: 8.5rem;
 
   .cards {
     display: grid;
@@ -122,7 +122,7 @@
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
-      margin: 4px 2px 4px 0px;
+      margin: 7px 2px 7px 0px;
 
       .title {
         display: block;
