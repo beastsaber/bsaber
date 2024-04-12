@@ -17,7 +17,6 @@
 
   // Initially hiding it and only showing it at a certain screen size
   // Smaller screen size will usually be smartphones
-  // They can't download maps directly from the site, so we hide it
   .zip-download-link {
     font-size: 1.2rem;
     display: none;
