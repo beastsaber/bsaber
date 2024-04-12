@@ -5,6 +5,7 @@
   import Tags from '$lib/Tags.svelte'
   import Difficulties from '$lib/Difficulties.svelte'
   import OneClickDownloadButton from './OneClickDownloadButton.svelte'
+  import ZipDownloadButton from './ZipDownloadButton.svelte'
 
   export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
     'FIRST_PUBLISHED'
@@ -56,11 +57,13 @@
             </a>
             <Uploader uploader={map.uploader} curator={map.curator} />
           </div>
-          <Tags tags={map.tags} />
+          <div class="tag-row-container">
+            <Tags tags={map.tags}></Tags><div class="zip-download-button-container"><ZipDownloadButton downloadURL={map.versions[0].downloadURL}/></div>
+          </div>
           <div class="last-row-container">
-            <OneClickDownloadButton mapId={map.id + ''} /><Difficulties
-              diffs={map.versions[0].diffs}
-            />
+            <Difficulties
+              diffs={map.versions[0].diffs}></Difficulties><OneClickDownloadButton mapId={map.id + ''}
+              />
           </div>
         </div>
       </div>
@@ -80,7 +83,7 @@
   .cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 1.25rem 4rem;
+    gap: 1.25rem;
     width: 100%;
 
     @media (min-width: 992px) {
@@ -89,10 +92,12 @@
   }
 
   .card {
-    width: 100%;
     position: relative;
     display: flex;
     overflow: hidden;
+    background: #333333;
+    border-radius: 10px;
+    padding: 2px 8px 2px 2px;
 
     &.loading {
       background-color: $color-background-secondary;
@@ -117,6 +122,7 @@
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
+      margin: 4px 2px 4px 0px;
 
       .title {
         display: block;
@@ -130,8 +136,20 @@
 
       .last-row-container {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 0.7rem;
+        width: 100%;
+      }
+
+      .tag-row-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 2px;
+      }
+
+      .zip-download-button-container {
+        margin-left: auto;
       }
     }
   }
