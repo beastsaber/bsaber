@@ -68,7 +68,9 @@
     overflow: visible;
   }
 
-  a:hover .one-click-download-button-container {
-    opacity: 1;
+  @media (min-width: 678px) {
+    a:hover .one-click-download-button-container {
+      opacity: 1;
+    }
   }
 </style>
