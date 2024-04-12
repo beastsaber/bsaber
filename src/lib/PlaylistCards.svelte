@@ -32,7 +32,7 @@
         }`}
         style={`background-image: url(${playlist.playlistImage512})`}
       >
-        <div class="one-click-downloa-button-container">
+        <div class="one-click-download-button-container">
           <OneClickDownloadButton
             playlistUrl="https://api.beatsaver.com/playlists/id/{playlist.playlistId}/download"
           />
@@ -54,7 +54,7 @@
 
 <style lang="scss">
   @import '../scss/post-cards';
-  a .one-click-downloa-button-container {
+  a .one-click-download-button-container {
     transition: opacity 0.5s ease-in-out;
     opacity: 0;
 
@@ -68,7 +68,7 @@
     overflow: visible;
   }
 
-  a:hover .one-click-downloa-button-container {
+  a:hover .one-click-download-button-container {
     opacity: 1;
   }
 </style>
