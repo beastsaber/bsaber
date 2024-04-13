@@ -3,7 +3,7 @@
 
 [[redirects]]
   from = "/cms/admin/*"
-  to = "/admin/:splat"
+  to = "cms/admin/:splat"
   force = true
   status = 200
   conditions = {Role = ["admin"]}
