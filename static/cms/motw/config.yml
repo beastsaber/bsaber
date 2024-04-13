@@ -44,5 +44,5 @@ collections:
         required: false
         hint: If you want to use a different cover image than the one fetched from BeatLeader, you can provide a URL here.
         widget: string
-media_folder: 'static/uploads'
-public_folder: '/uploads'
+media_folder: 'static/uploads/motw'
+public_folder: '/uploads/motw'
