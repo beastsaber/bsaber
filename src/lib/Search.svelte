@@ -34,6 +34,9 @@
     uploader: string
     url: string
     image: string
+    upvotes: number
+    downvotes: number
+    score: number
   }[] = []
 
   let searchPreviewTimeout
@@ -104,6 +107,9 @@
                   uploader: playlist.owner.name,
                   url: `${beatsaverRoot}${searchType.toLowerCase()}/${playlist.playlistId}`,
                   image: playlist.playlistImage,
+                  upvotes: playlist.stats.upVotes,
+                  downvotes: playlist.stats.downVotes,
+                  score: playlist.stats.avgScore,
                 }
               })
             }
