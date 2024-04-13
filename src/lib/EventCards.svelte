@@ -31,15 +31,14 @@
       ? endDate.toLocaleDateString('en-US', options)
       : new Intl.DateTimeFormat('en-US', options).format(endDate)
     const startTimeText = startTimeUTC
-      ? startDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' })
+      ? startDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
       : null
     const endTimeText = endTimeUTC
-      ? endDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' })
+      ? endDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
       : null
 
     let finalDateText = startDateText
     if (startTimeText) {
-      const d = new Date()
       finalDateText += ` | ${startTimeText}`
     }
     if (endDateUTC) {
