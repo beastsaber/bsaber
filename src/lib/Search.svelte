@@ -178,7 +178,7 @@
           <div class="dropdown-item-text">
             {preview.name}<br />
             <div class="dropdown-item-text2">Uploaded by: {preview.uploader}</div>
-            <div class="dropdown-item-text3">Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {preview.score *100}%</div>
+            <div class="dropdown-item-text3">Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(preview.score *100).toFixed(2)}%</div>
           </div></a
         >
       {/each}
