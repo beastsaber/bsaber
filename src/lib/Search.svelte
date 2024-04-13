@@ -292,6 +292,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-top: 5.5px;
   }
   .dropdown-item-stats {
     padding-top: 0.15rem;
@@ -299,6 +300,7 @@
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
+    padding-top: 4.5px;
   }
   .form-control {
     display: block;
