@@ -244,7 +244,7 @@
     border-radius: 0.25rem;
   }
   .dropdown-menu-list {
-    height: 25rem;
+    max-height: 25rem;
     width: 100%;
     overflow-y: auto;
   }
