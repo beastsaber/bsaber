@@ -86,6 +86,9 @@
                   uploader: song.uploader.name,
                   url: `${beatsaverRoot}${searchType.toLowerCase()}/${song.id}`,
                   image: song.versions.at(-1).coverURL,
+                  upvotes: song.stats.upvotes,
+                  downvotes: song.stats.downvotes,
+                  score: song.stats.score,
                 }
               })
             }
@@ -168,7 +171,8 @@
           <img src={preview.image} class="dropdown-item-image" alt="Map Thumbnail" />
           <div class="dropdown-item-text">
             {preview.name}<br />
-            <div class="dropdown-item-text2">{preview.uploader}</div>
+            <div class="dropdown-item-text2">Uploaded by: {preview.uploader}</div>
+            <div class="dropdown-item-text3">Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {preview.score *100}%</div>
           </div></a
         >
       {/each}
@@ -222,6 +226,7 @@
     z-index: 1000;
     display: block;
     min-width: 10rem;
+    min-height: 25rem;
     padding: 0.5rem 0;
     margin: 0.125rem 0 0;
     font-size: 1rem;
@@ -266,8 +271,8 @@
     background-color: lighten($color-bsaber-purple, 5%);
   }
   .dropdown-item-image {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4rem;
+    height: 4rem;
     margin-right: 0.5rem;
   }
   .dropdown-item-text {
@@ -280,6 +285,13 @@
     font-size: small;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dropdown-item-text3 {
+    padding-top: 0.15rem;
+    font-size: small;
+    overflow: hidden;
+    text-overflow:ellipsis;
     white-space: nowrap;
   }
   .form-control {
