@@ -175,10 +175,10 @@
       {#each previewResults as preview}
         <a class="dropdown-item" href={preview.url}>
           <img src={preview.image} class="dropdown-item-image" alt="Map Thumbnail" />
-          <div class="dropdown-item-text">
+          <div class="dropdown-item-map-name">
             {preview.name}<br />
-            <div class="dropdown-item-text2">Uploaded by: {preview.uploader}</div>
-            <div class="dropdown-item-text3">Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(preview.score *100).toFixed(2)}%</div>
+            <div class="dropdown-item-uploader">Uploaded by: {preview.uploader}</div>
+            <div class="dropdown-item-stats">Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(preview.score *100).toFixed(2)}%</div>
           </div></a
         >
       {/each}
@@ -281,19 +281,19 @@
     border-radius: 5px;
     margin-right: 0.5rem;
   }
-  .dropdown-item-text {
+  .dropdown-item-map-name {
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .dropdown-item-text2 {
+  .dropdown-item-uploader {
     padding-top: 0.15rem;
     font-size: small;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .dropdown-item-text3 {
+  .dropdown-item-stats {
     padding-top: 0.15rem;
     font-size: small;
     overflow: hidden;
