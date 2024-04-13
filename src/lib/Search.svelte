@@ -232,7 +232,6 @@
     z-index: 1000;
     display: block;
     min-width: 10rem;
-    min-height: 25rem;
     padding: 0.5rem 0;
     margin: 0.125rem 0 0;
     font-size: 1rem;
@@ -245,7 +244,7 @@
     border-radius: 0.25rem;
   }
   .dropdown-menu-list {
-    height: 10rem;
+    height: 25rem;
     width: 100%;
     overflow-y: auto;
   }
