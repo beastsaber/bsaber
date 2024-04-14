@@ -61,7 +61,7 @@ export type Playlist = {
 }
 
 export type Beatmap = {
-  id: number
+  id: string
   name: string
   description: string
   uploader: Uploader
@@ -74,6 +74,9 @@ export type Beatmap = {
 export type BeatmapVersion = {
   hash: string
   diffs: BeatmapDifficulty[]
+  downloadURL: string
+  coverURL: string
+  previewURL: string
 }
 
 export type BeatmapDifficulty = {
