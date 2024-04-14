@@ -115,7 +115,6 @@
     .image-link {
       height: $image-size;
       flex: $image-size 0 0;
-      margin-right: 0.75rem;
 
       img {
         border-radius: $rounding-large;
@@ -128,8 +127,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      overflow: hidden;
-      margin: 7px 2px 7px 0px;
+      margin: 7px 2px 7px 12px;
 
       .title {
         display: block;

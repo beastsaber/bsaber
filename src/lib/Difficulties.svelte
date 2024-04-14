@@ -168,7 +168,6 @@
 
     .difficulties {
       position: relative;
-      overflow: hidden;
     }
 
     .difficulties.hovered .difficulty.short {
@@ -198,6 +197,14 @@
 
     .difficulties.hovered .more-hint {
       animation: blink 0.5s ease-in-out;
+    }
+
+    .characteristic {
+      transition: transform 0.3s ease-out;
+    }
+
+    .difficulties.hovered .characteristic {
+      transform: rotate(360deg) scale(1.1);
     }
   }
 </style>
