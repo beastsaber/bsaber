@@ -58,12 +58,14 @@
             <Uploader uploader={map.uploader} curator={map.curator} />
           </div>
           <div class="tag-row-container">
-            <Tags tags={map.tags}></Tags><div class="zip-download-button-container"><ZipDownloadButton downloadURL={map.versions[0].downloadURL}/></div>
+            <Tags tags={map.tags} />
+            <div class="zip-download-button-container show-on-hover">
+              <ZipDownloadButton downloadURL={map.versions[0].downloadURL} />
+            </div>
           </div>
           <div class="last-row-container">
-            <Difficulties
-              diffs={map.versions[0].diffs}></Difficulties><OneClickDownloadButton mapId={map.id + ''}
-              />
+            <Difficulties diffs={map.versions[0].diffs} />
+            <div class="show-on-hover"><OneClickDownloadButton mapId={map.id} /></div>
           </div>
         </div>
       </div>
@@ -152,5 +154,12 @@
         margin-left: auto;
       }
     }
+  }
+  .card:hover .show-on-hover {
+    opacity: 1;
+  }
+  .show-on-hover {
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
   }
 </style>
