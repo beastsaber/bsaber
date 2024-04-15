@@ -16,7 +16,7 @@ npm install
 
 ### Previewing the Website
 
-You can now navigate to [http://localhost:3000](http://localhost:3000) to see a local preview of the website including your changes. The port may change when 3000 is taken - to check the console for any hint of that.
+You can now navigate to http://localhost:3000 to see a local preview of the website including your changes. The port may change when 3000 is taken - so check the console for any hint of that.
 
 ### Accessing the CMS
 
@@ -33,15 +33,15 @@ You can now navigate to [http://localhost:3000](http://localhost:3000) to see a 
 
 ```txt
 .
-├── environmentVariables.ts.template // Template file to inject .env variables. Will be filed wit envsubst in the build step. See "Building Details" for more info.
+├── environmentVariables.ts.template // Template file to inject .env variables. Will be filled with envsubst in the build step. See "Building Details" for more info.
 ├── migration-from-bsaber.com // Scripts used to transfer MotW from the old page - can be ignored
 ├── README.md
 ├── src
 │   ├── app.html // Entry point for the application - contains placeholder for special tags such as <svelte:head> as well
 │   ├── app.scss // Global styles
-│   ├── collections // Actual data for the collection per their model definiton. One folder = One Collection
+│   ├── collections // Actual data for the collection per their model definiton. One folder = one collection
 │   ├── lib // Components and functions that can be accessed with the $lib path
-│   ├── maps.ts // Central point for enums, that are shared across multiple components
+│   ├── maps.ts // Central point for constants that encode shared mappings of all kinds
 │   ├── routes // Svelte(kit) routing - these are the pages of our website. See the "Project Routing" section for more details
 │   │   ├── 404.svelte
 │   ├── scss // Styles that are shared across multiple components
@@ -60,7 +60,7 @@ You can now navigate to [http://localhost:3000](http://localhost:3000) to see a 
 
 ## Project Routing
 
-The routes are determined by file path starting at `src/routes`. For example, (`src/routes/community-hub/+page.svelte`)[src/routes/community-hub/+page.svelte] renders under (https://bsaber.com/community-hub)[https://bsaber.com/community-hub] or in the local development environment under (http://localhost:3000/community-hub)[http://localhost:3000/community-hub].
+The routes are determined by file path starting at `src/routes`. For example, [`src/routes/community-hub/+page.svelte`](src/routes/community-hub/+page.svelte) renders under [https://bsaber.com/community-hub](https://bsaber.com/community-hub) or in the local development environment under [http://localhost:3000/community-hub](http://localhost:3000/community-hub).
 
 Note the following when it comes to those:
 
@@ -78,16 +78,16 @@ Note the following when it comes to those:
 
 We are available for question, support and discussion on our (Discord server)[https://discord.gg/VJZHUbt].
 
-We would hate for you to spend valuable time on something that we end up not using. Here are some infos on how to increase the likelihood of us merging your changes:
+We would hate for you to spend valuable time on something that we end up not using. Here is some information on how to increase the likelihood of us merging your changes:
 
-- You can see the tasks that we decided to work and which are not worked on by anyone else as (approved, but non-assigned Issues)[https://github.com/beastsaber/bsaber/issues?q=is%3Aopen+is%3Aissue+label%3Aapproved+no%3Aassignee]. Do watch the labels!
+- You can find tasks that are planned but not in active development as (approved, but non-assigned issues)[https://github.com/beastsaber/bsaber/issues?q=is%3Aopen+is%3Aissue+label%3Aapproved+no%3Aassignee]. Do watch the labels!
 
-- If you are unsure if you can work on a task or what it entails: Do contact us. Either comment on the issue or drop by on the Discord. We are for most questions and any doubt on your part!
+- If you are unsure if you can work on a task or what it entails: Do contact us. Either comment on the issue or drop by on the Discord. We are happy to answer your questions and concerns.
 
-- Make us aware, that you'd like to work on the issue. We'll assign it to you and avoid the work being done twice!
+- Make us aware that you'd like to work on the issue. We'll assign it to you and avoid the work being done twice!
 
 ## Making a Pull Request?
 
-When you are about to make a pull request please check that the linter throws no error and do run it if you haven't. Also, check whether the preview - that will be created with a pull request - is rendered properly.
+When you are about to make a pull request please check that the linter throws no error and do run it if you haven't. Also, check whether the preview - which will be created with a pull request - is rendered properly.
 
 We will see your PR - feel free to poke us if it has gone unreviewed for more than a week though!
