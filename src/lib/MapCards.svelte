@@ -135,6 +135,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         margin-bottom: 0.25rem;
+        max-width: max-content;
       }
 
       .last-row-container {
