@@ -122,9 +122,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin: 7px 2px 7px 0;
+      margin: 7px 2px 0 0;
       // Adding padding so the characteristic icon does not get cut off when scaled up
       padding-left: 12px;
+      padding-bottom: 7px;
       overflow: hidden;
 
       .title {
