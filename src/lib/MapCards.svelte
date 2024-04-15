@@ -27,17 +27,12 @@
     let response = await fetch(url)
     maps = await response.json().then((json) => json['docs'] as Beatmap[])
   }
-  let hoveredIndex = -1
 </script>
 
 <div class="cards max-cols-3">
   {#if maps.length !== 0}
     {#each maps as map, mapCardIndex}
-      <div
-        class="card"
-        on:mouseenter={() => (hoveredIndex = mapCardIndex)}
-        on:mouseleave={() => (hoveredIndex = -1)}
-      >
+      <div class="card">
         <a
           href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
           class="image-link"
@@ -69,7 +64,7 @@
             </div>
           </div>
           <div class="last-row-container">
-            <Difficulties diffs={map.versions[0].diffs} hovered={hoveredIndex === mapCardIndex} />
+            <Difficulties diffs={map.versions[0].diffs} />
             <div class="show-on-hover"><OneClickDownloadButton mapId={map.id} /></div>
           </div>
         </div>

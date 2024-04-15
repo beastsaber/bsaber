@@ -3,14 +3,13 @@
   import type { BeatmapDifficulty } from '../types'
 
   export let diffs: BeatmapDifficulty[]
-  export let hovered = false
 
   let firstCharacteristic = diffs[0].characteristic // Should always be Standard as long as the map has a Standard diff
   let visibleDiffs = diffs.filter((d) => d.characteristic === firstCharacteristic)
   let extraDiffs = diffs.length - visibleDiffs.length
 </script>
 
-<div class="difficulties" class:hovered>
+<div class="difficulties">
   <img
     class="characteristic"
     src="/characteristics/{characteristics[firstCharacteristic]}.svg"
@@ -119,9 +118,9 @@
     }
   }
 
-  @keyframes test {
+  @keyframes retractDifficulty {
     0% {
-      padding-right: 3rem;
+      padding-right: 3.5rem;
     }
     100% {
       padding-right: 0.5rem;
@@ -158,7 +157,7 @@
 
   @media (min-width: 1300px), (max-width: 992px) and (min-width: 678px) {
     .difficulty.short {
-      animation: test 0.3s ease-out;
+      animation: retractDifficulty 0.3s ease-out;
     }
 
     .difficulty.long {
@@ -170,11 +169,11 @@
       position: relative;
     }
 
-    .difficulties.hovered .difficulty.short {
+    :global(.card:hover .difficulties .difficulty.short) {
       display: none;
     }
 
-    .difficulties.hovered .difficulty.long {
+    :global(.card:hover .difficulties .difficulty.long) {
       display: block;
       animation: expandDifficulty 0.3s ease-out;
       &:nth-of-type(4) {
@@ -195,7 +194,7 @@
       animation: blink-not-hovered 0.5s ease-in-out;
     }
 
-    .difficulties.hovered .more-hint {
+    :global(.card:hover .difficulties .more-hint) {
       animation: blink 0.5s ease-in-out;
     }
 
@@ -203,8 +202,8 @@
       transition: transform 0.3s ease-out;
     }
 
-    .difficulties.hovered .characteristic {
-      transform: rotate(360deg) scale(1.1);
+    :global(.card:hover .difficulties .characteristic) {
+      transform: rotate(10deg) scale(1.1);
     }
   }
 </style>
