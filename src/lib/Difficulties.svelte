@@ -110,11 +110,9 @@
   @keyframes expandDifficulty {
     0% {
       transform: scaleX(0.2);
-      opacity: 0;
     }
     100% {
       transform: scaleX(1);
-      opacity: 1;
     }
   }
 
