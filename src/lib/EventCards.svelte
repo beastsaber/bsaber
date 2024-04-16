@@ -11,12 +11,6 @@
   export let maxCards: number = 6 // max amount of cards to show, ideally divisble by 3
   const eventData = events.slice(0, Math.round(maxCards))
 
-  const createSlug = (username: string) => {
-    const lowercaseUsername = username.toLowerCase().trim()
-    const slug = lowercaseUsername.replace(/\s+/g, '-')
-    return slug
-  }
-
   const createDateText = ({
     dateParams: { startDateUTC, endDateUTC, startTimeUTC, endTimeUTC },
   }: CommunityEvent): string => {
@@ -56,8 +50,6 @@
     let faIcon, customIcon
     if (category === 'tournament') {
       customIcon = './player-icon.svg'
-    } else if (category === 'competition') {
-      faIcon = faMedal
     } else if (category === 'learning') {
       faIcon = faGraduationCap
     } else if (category === 'social') {
@@ -77,7 +69,7 @@
   {#each processedEventData as event}
     <div class="card">
       <!-- href to be updated with path e.g. '/community-events/event.slug' -->
-      <a class="title" href="#">
+      <a class="title" href={event.url}>
         {event.title ?? ''}
       </a>
       <div class="info-container">
@@ -91,7 +83,7 @@
         <div class="text-container">
           <!-- host href should be updated with future route, e.g. {`/members/createSlug(event.hostUsername)`}-->
           <span class="host">
-            Hosted by <a href="#">{event.hostUsername}</a>
+            Hosted by <a href={event.host.url}>{event.host.name}</a>
           </span>
           <span class="date" title={Intl.DateTimeFormat().resolvedOptions().timeZone}
             >{createDateText(event)}</span
