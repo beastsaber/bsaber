@@ -49,7 +49,7 @@
     const { category } = event
     let faIcon, customIcon
     if (category === 'tournament') {
-      customIcon = './player-icon.svg'
+      faIcon = faMedal
     } else if (category === 'learning') {
       faIcon = faGraduationCap
     } else if (category === 'social') {
