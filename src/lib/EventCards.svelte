@@ -9,6 +9,7 @@
 
   export let events: CommunityEvent[]
   export let maxCards: number = 6 // max amount of cards to show, ideally divisble by 3
+  export let keyPrefix: string = ''
   const eventData = events.slice(0, Math.round(maxCards))
 
   const createDateText = ({
@@ -66,8 +67,8 @@
 </script>
 
 <div class="cards">
-  {#each processedEventData as event}
-    <div class="card">
+  {#each processedEventData as event, index (keyPrefix + '-' + index)}
+    <div class="card" id={keyPrefix + '-' + index}>
       <!-- href to be updated with path e.g. '/community-events/event.slug' -->
       <a class="title" href={event.url}>
         {event.title ?? ''}

@@ -82,7 +82,12 @@
   />
   <MapCards verified={true} />
 
-  <Header text="Community Events" icon={faCalendarDay} />
+  <Header
+    text="Community Events"
+    icon={faCalendarDay}
+    linkUrl="/community-events/1"
+    linkText="See all events"
+  />
   <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
 
   <Header icon={faChartLine} text="Global Ranking Leaderboards" />
