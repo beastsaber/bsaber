@@ -110,6 +110,11 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
   const eventCollectionData = await retrieveAllCollectionDataOfType('events')
   const eventHostCollectionData = await retrieveAllCollectionDataOfType('event-hosts')
   const communityEvents = []
+  eventCollectionData.sort(
+    (a, b) =>
+      new Date(b.attributes.startDateTime).getTime() -
+      new Date(a.attributes.startDateTime).getTime(),
+  )
   for (const singleEvent of eventCollectionData) {
     const startDateTime = new Date(singleEvent.attributes.startDateTime)
     const endDateTime = singleEvent.attributes.endDateTime
