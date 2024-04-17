@@ -11,7 +11,7 @@ labels:
 activityLevel: medium
 socials:
   - name: Website
-    url: https://www.bsaber.info
+    url: https://www.bsaber.com
   - name: YouTube
     url: https://www.youtube.com/@BeastSaberNews
   - name: Twitter/X
