@@ -9,6 +9,8 @@ import type {
 } from '../types'
 import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+dayjs.extend(utc)
 
 export type RootPageSSRData = {
   announcements: Post[]
@@ -121,15 +123,15 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
       ? new Date(singleEvent.attributes.endDateTime)
       : undefined
     const dateParams: EventDateParams = {
-      startDateUTC: dayjs(startDateTime).format('YYYY-MM-DD'),
+      startDateUTC: dayjs(startDateTime).utc().format('YYYY-MM-DD'),
     }
     if (singleEvent.attributes.ignoreStartTime !== true) {
-      dateParams.startTimeUTC = dayjs(startDateTime).format('HH:mm:ss')
+      dateParams.startTimeUTC = dayjs(startDateTime).utc().format('HH:mm:ss')
     }
     if (endDateTime != null) {
-      dateParams.endDateUTC = dayjs(endDateTime).format('YYYY-MM-DD')
+      dateParams.endDateUTC = dayjs(endDateTime).utc().format('YYYY-MM-DD')
       if (singleEvent.attributes.ignoreEndTime !== true) {
-        dateParams.endTimeUTC = dayjs(endDateTime).format('HH:mm:ss')
+        dateParams.endTimeUTC = dayjs(endDateTime).utc().format('HH:mm:ss')
       }
     }
     const host = eventHostCollectionData.find(

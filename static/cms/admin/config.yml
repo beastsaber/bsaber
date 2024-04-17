@@ -257,9 +257,8 @@ collections:
       - name: startDateTime
         label: Start Date/Time
         widget: datetime
-        format: YYYY-MM-DDTHH:mm:ss
-        picker_utc: true
         default:
+        format: YYYY-MM-DDTHH:mm:ssZ
       - name: ignoreStartTime
         label: Ignore Start Time
         widget: boolean
@@ -268,9 +267,8 @@ collections:
         label: End Date/Time
         widget: datetime
         required: false
-        format: YYYY-MM-DDTHH:mm:ss
-        picker_utc: true
         default:
+        format: YYYY-MM-DDTHH:mm:ssZ
       - name: ignoreEndTime
         label: Ignore End Time
         widget: boolean
