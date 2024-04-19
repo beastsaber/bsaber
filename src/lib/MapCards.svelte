@@ -72,7 +72,7 @@
     {/each}
   {:else}
     {#each Array(maxCards ?? 8) as _}
-      <div class="card loading" />
+      <div class="card-wrapper loading" />
     {/each}
   {/if}
 </div>
@@ -94,8 +94,8 @@
   }
 
   .card-wrapper {
-    background: linear-gradient(90deg, $color-background-primary 50%, $color-background-tertiary 100%);
-    background-size: 200%;
+    background: linear-gradient(90deg, $color-background-primary 66.7%, $color-background-tertiary 100%);
+    background-size: 150%;
     padding: 2px;
     border-radius: $rounding-large + 2px;
     transition: background-position $transition-long;
@@ -103,6 +103,17 @@
 
     &:hover {
       background-position-x: 100%;
+
+      > .card {
+          background-position-x: 100%;
+      }
+    }
+
+    &.loading {
+      background-image: none;
+      background-color: $color-background-secondary;
+      height: calc($image-size + 4px);
+      border-radius: $rounding-large;
     }
   }
 
@@ -110,26 +121,14 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    background: linear-gradient(90deg, $color-background-primary 50%, $color-background-secondary 100%);
-    background-size: 200%;
+    background: linear-gradient(90deg, $color-background-primary 66.7%, $color-background-secondary 100%);
+    background-size: 150%;
     border-radius: $rounding-large;
     transition: background-position $transition-long;
-
-    &:hover {
-      background-position-x: 100%;
-    }
-
-    &.loading {
-      background-image: none;
-      background-color: $color-background-secondary;
-      height: $image-size;
-      border-radius: $rounding-large;
-    }
 
     .image-link {
       height: $image-size;
       flex: $image-size 0 0;
-      margin-right: 0.75rem;
 
       img {
         border-radius: $rounding-large;
@@ -143,7 +142,7 @@
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
-      padding: 0.25rem 0.75rem 0.25rem 0;
+      padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 
       .title {
         display: block;
