@@ -58,13 +58,13 @@
             </div>
             <div class="tag-row-container">
               <Tags tags={map.tags}></Tags>
-              <div class="zip-download-button-container">
-                <ZipDownloadButton downloadURL={map.versions[0].downloadURL}/>
-              </div>
             </div>
             <div class="last-row-container">
               <Difficulties diffs={map.versions[0].diffs}/>
-              <OneClickDownloadButton mapId={map.id + ''} />
+              <div class="download-button-container">
+                <ZipDownloadButton downloadURL={map.versions[0].downloadURL}/>
+                <OneClickDownloadButton mapId={map.id} />
+              </div>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
-  $image-size: 8.5rem;
+  $image-size: 8rem;
 
   .cards {
     display: grid;
@@ -93,19 +93,36 @@
     }
   }
 
+  $gradient-coverage: 60%;
+  // Don't touch these two
+  $background-size: 100% + $gradient-coverage;
+  $gradient-start: percentage(100% / $background-size);
+
   .card-wrapper {
-    background: linear-gradient(90deg, $color-background-primary 66.7%, $color-background-tertiary 100%);
-    background-size: 150%;
+    background: linear-gradient(90deg, $color-background-primary $gradient-start, $color-background-tertiary 100%);
+    background-size: $background-size;
     padding: 2px;
     border-radius: $rounding-large + 2px;
     transition: background-position $transition-long;
     overflow: hidden;
+
+    .download-button-container {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      opacity: 0;
+      transition: opacity $transition-long;
+    }
 
     &:hover {
       background-position-x: 100%;
 
       > .card {
           background-position-x: 100%;
+      }
+
+      .download-button-container {
+        opacity: 100%;
       }
     }
 
@@ -121,8 +138,8 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    background: linear-gradient(90deg, $color-background-primary 66.7%, $color-background-secondary 100%);
-    background-size: 150%;
+    background: linear-gradient(90deg, $color-background-primary $gradient-start, $color-background-secondary 100%);
+    background-size: $background-size;
     border-radius: $rounding-large;
     transition: background-position $transition-long;
 
@@ -142,7 +159,7 @@
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
-      padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+      padding: 0.375rem 0.75rem;
 
       .title {
         display: block;
@@ -166,10 +183,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-      }
-
-      .zip-download-button-container {
-        margin-left: auto;
       }
     }
   }

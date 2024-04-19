@@ -59,7 +59,7 @@
       display: none;
 
       @media (min-width: 992px) {
-        visibility: visible;
+        display: inline-block;
       }
     }
   }

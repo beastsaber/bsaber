@@ -9,8 +9,10 @@
 <a
   title="Zip Download via BeatSaver"
   href={downloadURL}
-  class="zip-download-link"><Fa icon={faDownload} /></a
+  class="zip-download-link"
 >
+  <Fa icon={faDownload} />
+</a>
 
 <style lang="scss">
   @import 'src/scss/variables';
@@ -18,12 +20,12 @@
   // Initially hiding it and only showing it at a certain screen size
   // Smaller screen size will usually be smartphones
   .zip-download-link {
-    font-size: 1.2rem;
     display: none;
-    color: #c5c5c5;
+    color: $color-text-secondary;
+    transition: color $transition-short;
 
     &:hover {
-      color: white;
+      color: $color-text-primary;
     }
   }
 
