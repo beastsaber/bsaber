@@ -316,7 +316,7 @@
     border: 1px solid #222;
     appearance: none;
     border-radius: 0 0.25rem 0.25rem 0;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color $transition-short ease-in-out, box-shadow $transition-short ease-in-out;
   }
   div,
   a,
@@ -340,8 +340,8 @@
     padding: 0.375rem 0.75rem;
     font-size: 0.9375rem;
     border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color $transition-short ease-in-out, background-color $transition-short ease-in-out,
+      border-color $transition-short ease-in-out, box-shadow $transition-short ease-in-out;
   }
 
   .btn-search {
@@ -352,7 +352,7 @@
     color: #fff;
     background-color: $color-bsaber-purple;
     border-color: $color-bsaber-purple;
-    transition: background-color 0.15s;
+    transition: background-color $transition-short;
 
     &:hover {
       background-color: lighten($color-bsaber-purple, 5%);
