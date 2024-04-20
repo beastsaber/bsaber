@@ -109,8 +109,8 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
     rootPageSSRData[key as keyof typeof rootPageSSRData] = value.sort(sortByPublishDate)
   }
 
-  const eventCollectionData = await retrieveAllCollectionDataOfType('events')
-  const eventHostCollectionData = await retrieveAllCollectionDataOfType('event-hosts')
+  const eventCollectionData = await retrieveAllCollectionDataOfType('community-events')
+  const eventHostCollectionData = await retrieveAllCollectionDataOfType('community-event-hosts')
   const communityEvents = []
   eventCollectionData.sort(
     (a, b) =>
