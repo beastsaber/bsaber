@@ -57,7 +57,7 @@ collections:
       - name: linkToSpecialtyPage
         label: Link to Specialty Page
         required: false
-        hint: "If there is a specialty page for this post, provide the URL here. This is used to link it as canonical URL in the metadata (SEO). Only provide the path, not the full URL. Do: /speciality/your-speciality-page, Don't: https://bsaber.info/speciality/your-speciality-page"
+        hint: "If there is a specialty page for this post, provide the URL here. This is used to link it as canonical URL in the metadata (SEO). Only provide the path, not the full URL. Do: /speciality/your-speciality-page, Don't: https://bsaber.com/speciality/your-speciality-page"
         widget: string
   - name: map-of-the-week
     label: Map of the Week
@@ -235,13 +235,20 @@ collections:
           - { label: 'Maltese', value: 'mt' }
           - { label: 'Welsh', value: 'cy' }
           - { label: 'Belarusian', value: 'be' }
-  - name: events
-    label: Events
-    label_singular: Event
-    folder: src/collections/events
+  - name: community-events
+    label: Community Events
+    label_singular: Community Event
+    folder: src/collections/community-events
     slug: '{{title}}'
     create: true
     fields:
+      - name: host
+        label: Host
+        widget: relation
+        collection: community-event-hosts
+        search_fields: [name]
+        value_field: name
+        display_fields: [name]
       - name: title
         label: Title
       - name: url
@@ -257,34 +264,25 @@ collections:
       - name: startDateTime
         label: Start Date/Time
         widget: datetime
-        format: YYYY-MM-DDTHH:mm:ss
-        picker_utc: true
         default:
-      - name: ignoreStartTime
-        label: Ignore Start Time
+        format: YYYY-MM-DDTHH:mm:ssZ
+      - name: useStartTime
+        label: Use Start Time
         widget: boolean
-        required: false
+        default: false
       - name: endDateTime
         label: End Date/Time
         widget: datetime
         required: false
-        format: YYYY-MM-DDTHH:mm:ss
-        picker_utc: true
         default:
-      - name: ignoreEndTime
-        label: Ignore End Time
+        format: YYYY-MM-DDTHH:mm:ssZ
+      - name: useEndTime
+        label: Use End Time
         widget: boolean
-        required: false
-      - name: host
-        label: Host
-        widget: relation
-        collection: event-hosts
-        search_fields: [name]
-        value_field: name
-        display_fields: [name]
-  - name: event-hosts
-    label: Event Hosts
-    folder: src/collections/event-hosts
+        default: false
+  - name: community-event-hosts
+    label: Community Event Hosts
+    folder: src/collections/community-event-hosts
     slug: '{{name}}'
     create: true
     fields:

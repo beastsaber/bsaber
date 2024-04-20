@@ -16,16 +16,20 @@
 
 {#if mapId}
   <a
-    title="OneClick Download via BeatSaver and ModAssistant"
+    title="OneClick&trade; Install via BeatSaver and ModAssistant"
     href="beatsaver://{mapId}"
-    class="one-click-download-link"><Fa icon={faCloudDownloadAlt} /></a
+    class="one-click-download-link"
   >
+    <Fa icon={faCloudDownloadAlt} />
+  </a>
 {:else if playlistUrl}
   <a
-    title="OneClick Download via BeatSaver and ModAssistant"
+    title="OneClick&trade; Install via BeatSaver and ModAssistant"
     href="bsplaylist://playlist/{playlistUrl}"
-    class="one-click-download-link"><Fa icon={faCloudDownloadAlt} /></a
+    class="one-click-download-link"
   >
+    <Fa icon={faCloudDownloadAlt} />
+  </a>
 {/if}
 
 <style lang="scss">
@@ -35,12 +39,12 @@
   // Smaller screen size will usually be smartphones
   // They can't download maps directly from the site, so we hide it
   .one-click-download-link {
-    font-size: 1.2rem;
     display: none;
-    color: #c5c5c5;
+    color: $color-text-secondary;
+    transition: color $transition-short;
 
     &:hover {
-      color: white;
+      color: $color-text-primary;
     }
   }
 
