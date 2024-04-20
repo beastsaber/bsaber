@@ -19,9 +19,9 @@ export type CommunityEventCollectionData = {
   url: string
   category: CommunityEventCategory
   startDateTime: string
-  ignoreStartTime?: boolean
+  useStartTime: boolean
   endDateTime?: string
-  ignoreEndTime?: boolean
+  useEndTime: boolean
   host: string
 }
 

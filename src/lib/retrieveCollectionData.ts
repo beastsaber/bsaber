@@ -25,8 +25,8 @@ export type CollectionDataTypeMap = {
   communities: ConvertToAttributeKeyedObjectWithNoBody<Community>
   'community-labels': ConvertToAttributeKeyedObjectWithNoBody<CommunityLabel>
   posts: ConvertToAttributeKeyedObject<Post>
-  events: ConvertToAttributeKeyedObject<CommunityEventCollectionData>
-  'event-hosts': ConvertToAttributeKeyedObject<CommunityEventHostCollectionData>
+  'community-events': ConvertToAttributeKeyedObject<CommunityEventCollectionData>
+  'community-event-hosts': ConvertToAttributeKeyedObject<CommunityEventHostCollectionData>
 }
 /**
  * Retrieve collection data from the markdown files. It will infer the type of the collection based on the collection parameter.

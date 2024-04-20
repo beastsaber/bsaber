@@ -125,12 +125,12 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
     const dateParams: EventDateParams = {
       startDateUTC: dayjs(startDateTime).utc().format('YYYY-MM-DD'),
     }
-    if (singleEvent.attributes.ignoreStartTime !== true) {
+    if (singleEvent.attributes.useStartTime) {
       dateParams.startTimeUTC = dayjs(startDateTime).utc().format('HH:mm:ss')
     }
     if (endDateTime != null) {
       dateParams.endDateUTC = dayjs(endDateTime).utc().format('YYYY-MM-DD')
-      if (singleEvent.attributes.ignoreEndTime !== true) {
+      if (singleEvent.attributes.useEndTime) {
         dateParams.endTimeUTC = dayjs(endDateTime).utc().format('HH:mm:ss')
       }
     }

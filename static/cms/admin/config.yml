@@ -242,8 +242,6 @@ collections:
     slug: '{{title}}'
     create: true
     fields:
-      - name: title
-        label: Title
       - name: host
         label: Host
         widget: relation
@@ -251,6 +249,8 @@ collections:
         search_fields: [name]
         value_field: name
         display_fields: [name]
+      - name: title
+        label: Title
       - name: url
         label: URL
       - name: category
@@ -269,8 +269,7 @@ collections:
       - name: useStartTime
         label: Use Start Time
         widget: boolean
-        default: true
-        required: false
+        default: false
       - name: endDateTime
         label: End Date/Time
         widget: datetime
@@ -280,8 +279,7 @@ collections:
       - name: useEndTime
         label: Use End Time
         widget: boolean
-        default: true
-        required: false
+        default: false
   - name: community-event-hosts
     label: Community Event Hosts
     folder: src/collections/community-event-hosts
