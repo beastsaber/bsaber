@@ -12,7 +12,7 @@ npm install
 
 ## Local Development
 
-**Start the Development Server:** Use the command `npm run dev` to launch `npm run dev:frontend` and `netlify-cms` concurrently.
+**Start the Development Server:** Use the command `npm run dev` to launch `npm run dev:frontend` and `descap-server` concurrently.
 
 ### Previewing the Website
 
@@ -20,13 +20,13 @@ You can now navigate to http://localhost:3000 to see a local preview of the webs
 
 ### Accessing the CMS
 
-1. **Access the CMS:** Navigate to [http://localhost:8888/admin/index.html](http://localhost:8888/cms/admin/index.html) in your web browser to open the Netlify CMS interface.
+1. **Access the CMS:** Navigate to [http://localhost:8888/admin/index.html](http://localhost:8888/cms/admin/index.html) in your web browser to open the Decap CMS interface.
 
 2. **Login:** Click on the login button. You should be granted access immediately. If prompted for a URL, enter the address of the proxy server - this shouldn't usually happen though.
 
 ### Additional Background Information on the Setup
 
-- The `npm run dev:frontend` command runs your application and integrates netlify under the `/admin/index.html` routes.
+- The `npm run dev:frontend` command runs your application and integrates Decap under the `/admin/index.html` routes.
 - The CMS proxy server enables the use of the local strategy for content management, directly saving files to the local file system.
 
 ## Short File Tree Description
