@@ -1,0 +1,48 @@
+local_backend: true
+backend:
+  name: git-gateway
+  branch: master
+  squash_merges: true
+collections:
+  - name: map-of-the-week
+    label: Map of the Week
+    folder: src/collections/map-of-the-week
+    slug: '{{startDate}}'
+    create: true
+    fields:
+      - name: mapId
+        label: Map  ID
+        hint: The BeatSaver ID of the map of the week. You can find this one in the URL of the map's page on beatsaver.com. For example, the ID of the map https://beatsaver.com/maps/8f is the last part 8f.
+      - name: review
+        label: Review
+        hint: 'An accompanying text to the map of the week that should review and ideally describe what made it the MOTW. Example "This map has a fantastic lightshow on the new Lattice environment, a poodle diff and three other diffs accessible to a variety of players with great and unique usage of arcs."'
+        widget: text
+      - name: startDate
+        label: Start Date
+        hint: Starting when the map of the week should be displayed on the root page.
+        default: 2024-01-01T00:00:00Z
+        widget: datetime
+        picker_utc: true
+      - name: showcase
+        label: Showcase
+        hint: "A video that will be embedded in a modal on the map of the week page. This should be a video that showcases the map in a good way. If you don't have a video, you can leave this empty."
+        required: false
+        widget: object
+        fields:
+          - name: id
+            label: ID
+            hint: The ID of the video. For YouTube videos and shorts, this is the last part of the URL. For example, the ID of the video https://www.youtube.com/shorts/ed8A3n49Gmg is the last part ed8A3n49Gmg.
+            widget: string
+          - name: type
+            label: ID Type
+            widget: select
+            options:
+              - { label: 'YouTube Short', value: 'youtube-short' }
+              - { label: 'YouTube Video', value: 'youtube-video' }
+      - name: coverUrlOverwrite
+        label: Cover URL
+        required: false
+        hint: If you want to use a different cover image than the one fetched from BeatLeader, you can provide a URL here.
+        widget: string
+media_folder: 'static/uploads/motw'
+public_folder: '/uploads/motw'

@@ -10,14 +10,12 @@ $color-warning-yellow: #f39c12;
 $color-info-blue: #3498db;
 $color-success-green: #00bc8c;
 $color-bsaber-purple: #454088;
-
 $color-difficulty-green: #008055;
 $color-difficulty-blue: #1268a1;
 $color-difficulty-orange: #bd5500;
 $color-difficulty-red: #b52a1c;
 $color-difficulty-purple: #7646af;
 $color-beatsaver-pink: #ff008f;
-
 $font-poppins: Poppins, sans-serif;
 $font-dm-sans: DM Sans, sans-serif;
 
@@ -27,3 +25,6 @@ $navbar-height: 75px;
 
 $font-primary: $font-dm-sans;
 $font-header: $font-poppins;
+
+$transition-short: 0.15s;
+$transition-long: 0.5s;

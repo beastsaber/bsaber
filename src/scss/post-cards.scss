@@ -30,6 +30,7 @@
 
   .content {
     @include big-title;
+    width: 100%;
     margin-top: auto;
     z-index: 1;
 
@@ -44,6 +45,13 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    .last-row-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      width: 100%;
     }
   }
 
@@ -100,7 +108,7 @@
   border-radius: $rounding-large;
   background-size: 100%;
   background-position: center;
-  transition: 0.5s;
+  transition: $transition-long;
   aspect-ratio: var(--aspect-ratio);
 
   &.loading {

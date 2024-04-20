@@ -2,10 +2,10 @@
   "name": "bsaber",
   "version": "0.0.1",
   "scripts": {
-    "dev": "concurrently --kill-others \"npm run dev:frontend\" \"npm run netlify-cms\"",
+    "dev": "concurrently --kill-others \"npm run dev:frontend\" \"npm run decap-server\"",
     "dev:frontend": "vite dev",
     "build": "envsubst < ./environmentVariables.ts.template > ./src/lib/environmentVariables.ts && vite build && npm run generate:sitemap",
-    "generate:sitemap": "svelte-sitemap --domain https://bsaber.info -i '/admin'",
+    "generate:sitemap": "svelte-sitemap --domain https://bsaber.com -i '/admin'",
     "preview": "vite preview",
     "test": "playwright test",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -14,7 +14,7 @@
     "format": "prettier --plugin-search-dir . --write .",
     "create-indices": "node create-indices",
     "server": "node backend/server",
-    "netlify-cms": "npx netlify-cms-proxy-server"
+    "decap-server": "npx decap-server"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",

@@ -20,7 +20,7 @@ You can now navigate to http://localhost:3000 to see a local preview of the webs
 
 ### Accessing the CMS
 
-1. **Access the CMS:** Navigate to [http://localhost:3000/admin/index.html](http://localhost:3000/admin/index.html) in your web browser to open the Netlify CMS interface.
+1. **Access the CMS:** Navigate to [http://localhost:8888/admin/index.html](http://localhost:8888/cms/admin/index.html) in your web browser to open the Netlify CMS interface.
 
 2. **Login:** Click on the login button. You should be granted access immediately. If prompted for a URL, enter the address of the proxy server - this shouldn't usually happen though.
 

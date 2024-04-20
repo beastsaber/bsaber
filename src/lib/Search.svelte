@@ -34,6 +34,9 @@
     uploader: string
     url: string
     image: string
+    upvotes: number
+    downvotes: number
+    score: number
   }[] = []
 
   let searchPreviewTimeout
@@ -86,6 +89,9 @@
                   uploader: song.uploader.name,
                   url: `${beatsaverRoot}${searchType.toLowerCase()}/${song.id}`,
                   image: song.versions.at(-1).coverURL,
+                  upvotes: song.stats.upvotes,
+                  downvotes: song.stats.downvotes,
+                  score: song.stats.score,
                 }
               })
             }
@@ -101,6 +107,9 @@
                   uploader: playlist.owner.name,
                   url: `${beatsaverRoot}${searchType.toLowerCase()}/${playlist.playlistId}`,
                   image: playlist.playlistImage,
+                  upvotes: playlist.stats.upVotes,
+                  downvotes: playlist.stats.downVotes,
+                  score: playlist.stats.avgScore,
                 }
               })
             }
@@ -166,9 +175,10 @@
       {#each previewResults as preview}
         <a class="dropdown-item" href={preview.url}>
           <img src={preview.image} class="dropdown-item-image" alt="Map Thumbnail" />
-          <div class="dropdown-item-text">
+          <div class="dropdown-item-map-name">
             {preview.name}<br />
-            <div class="dropdown-item-text2">{preview.uploader}</div>
+            <div class="dropdown-item-uploader">Uploaded by: {preview.uploader}</div>
+            <div class="dropdown-item-stats">Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(preview.score *100).toFixed(2)}%</div>
           </div></a
         >
       {/each}
@@ -234,7 +244,7 @@
     border-radius: 0.25rem;
   }
   .dropdown-menu-list {
-    height: 10rem;
+    max-height: 25rem;
     width: 100%;
     overflow-y: auto;
   }
@@ -244,7 +254,7 @@
   .dropdown-item {
     display: flex;
     width: 100%;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     clear: both;
     font-weight: 400;
     color: #fff;
@@ -266,21 +276,31 @@
     background-color: lighten($color-bsaber-purple, 5%);
   }
   .dropdown-item-image {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 5px;
     margin-right: 0.5rem;
   }
-  .dropdown-item-text {
+  .dropdown-item-map-name {
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .dropdown-item-text2 {
+  .dropdown-item-uploader {
     padding-top: 0.15rem;
     font-size: small;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-top: 5.5px;
+  }
+  .dropdown-item-stats {
+    padding-top: 0.15rem;
+    font-size: small;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    padding-top: 4.5px;
   }
   .form-control {
     display: block;
@@ -296,7 +316,7 @@
     border: 1px solid #222;
     appearance: none;
     border-radius: 0 0.25rem 0.25rem 0;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color $transition-short ease-in-out, box-shadow $transition-short ease-in-out;
   }
   div,
   a,
@@ -320,8 +340,8 @@
     padding: 0.375rem 0.75rem;
     font-size: 0.9375rem;
     border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color $transition-short ease-in-out, background-color $transition-short ease-in-out,
+      border-color $transition-short ease-in-out, box-shadow $transition-short ease-in-out;
   }
 
   .btn-search {
@@ -332,7 +352,7 @@
     color: #fff;
     background-color: $color-bsaber-purple;
     border-color: $color-bsaber-purple;
-    transition: background-color 0.15s;
+    transition: background-color $transition-short;
 
     &:hover {
       background-color: lighten($color-bsaber-purple, 5%);
