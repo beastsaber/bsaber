@@ -6,4 +6,5 @@ category: tournament
 startDateTime: 2024-05-30T13:00:00-05:00
 useStartTime: true
 endDateTime: ''
+useEndTime: false
 ---
