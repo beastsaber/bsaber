@@ -16,7 +16,7 @@ The goal of this event is to match interested Verified mappers up with Novice ma
 
 > Stay tuned for the next DITR event info!
 
-Check out the playlists from past events: DITR1, DITR2, DITR3, DITR4, DITR5.
+Check out the playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036).
 
 <br />
 
@@ -72,9 +72,9 @@ Participants must have a Basic, Verified, or Veteran mapper role on the [Beat Sa
 
 There will be a lot of interest in this event and not everyone will get a spot.
 
-- **COACHES:** Complete the Coaching Application by (TBD)
+- **COACHES:** Complete the [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8) by (TBD)
 
-- **NOVICES:** Complete the Novice Application by (TBD)
+- **NOVICES:** Complete the [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8) by (TBD)
 
 ## Frequently Asked Questions:
 
