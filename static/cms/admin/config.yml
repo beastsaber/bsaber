@@ -247,7 +247,7 @@ collections:
       - name: host
         label: Host
         widget: relation
-        collection: event-hosts
+        collection: community-event-hosts
         search_fields: [name]
         value_field: name
         display_fields: [name]
@@ -266,9 +266,10 @@ collections:
         widget: datetime
         default:
         format: YYYY-MM-DDTHH:mm:ssZ
-      - name: ignoreStartTime
-        label: Ignore Start Time
+      - name: useStartTime
+        label: Use Start Time
         widget: boolean
+        default: true
         required: false
       - name: endDateTime
         label: End Date/Time
@@ -276,9 +277,10 @@ collections:
         required: false
         default:
         format: YYYY-MM-DDTHH:mm:ssZ
-      - name: ignoreEndTime
-        label: Ignore End Time
+      - name: useEndTime
+        label: Use End Time
         widget: boolean
+        default: true
         required: false
   - name: community-event-hosts
     label: Community Event Hosts
