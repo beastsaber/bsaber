@@ -56,10 +56,10 @@
     .curator {
       font-size: 0.75rem;
       color: $color-muted-text;
-      visibility: hidden;
+      display: none;
 
       @media (min-width: 992px) {
-        visibility: visible;
+        display: inline-block;
       }
     }
   }

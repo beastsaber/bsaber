@@ -55,7 +55,7 @@
 <style lang="scss">
   @import '../scss/post-cards';
   a .one-click-download-button-container {
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity $transition-long ease-in-out;
     opacity: 0;
 
     position: absolute;

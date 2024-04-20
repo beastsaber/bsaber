@@ -33,7 +33,7 @@
     text-transform: uppercase;
     font-family: $font-poppins;
     font-size: 1rem;
-    transition: background-color 0.15s;
+    transition: background-color $transition-short;
 
     .content {
       position: relative;

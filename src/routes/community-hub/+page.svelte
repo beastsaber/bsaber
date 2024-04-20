@@ -383,7 +383,7 @@
         margin: 0;
         flex-grow: 1;
 
-        transition: background-color 0.15s;
+        transition: background-color $transition-short;
 
         &:hover {
           cursor: pointer;
@@ -431,7 +431,7 @@
     align-items: center;
     aspect-ratio: 1;
     color: $color-text-primary;
-    transition: background-color 0.15s;
+    transition: background-color $transition-short;
     border-radius: $rounding-small;
 
     &:hover {
@@ -455,7 +455,7 @@
     border-radius: $rounding-small;
     padding: 0.3rem 1rem;
 
-    transition: background-color 0.15s;
+    transition: background-color $transition-short;
 
     &::after {
       display: inline-block;
@@ -565,7 +565,7 @@
       width: 2em;
       aspect-ratio: 1;
 
-      transition: background-color 0.15s;
+      transition: background-color $transition-short;
 
       &:hover {
         background-color: mix($color-background-secondary, $color-background-tertiary, 50%);

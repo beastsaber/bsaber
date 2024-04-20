@@ -32,45 +32,47 @@
 <div class="cards max-cols-3">
   {#if maps.length !== 0}
     {#each maps as map}
-      <div class="card">
-        <a
-          href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
-          class="image-link"
-        >
-          <img
-            src={`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${
-              map.versions[0].hash
-            }.jpg`}
-            alt={map.name}
-          />
-        </a>
-        <div class="content">
-          <div>
-            <a
-              href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
-                map.id
-              }`}
-              class="title"
-              title={map.name}
-            >
-              {map.name}
-            </a>
-            <Uploader uploader={map.uploader} curator={map.curator} />
-          </div>
-          <div class="tag-row-container">
-            <Tags tags={map.tags}></Tags><div class="zip-download-button-container"><ZipDownloadButton downloadURL={map.versions[0].downloadURL}/></div>
-          </div>
-          <div class="last-row-container">
-            <Difficulties
-              diffs={map.versions[0].diffs}></Difficulties><OneClickDownloadButton mapId={map.id + ''}
-              />
+      <div class="card-wrapper">
+        <div class="card">
+          <a
+            href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
+            class="image-link"
+          >
+            <img
+              src={`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${
+                map.versions[0].hash
+              }.jpg`}
+              alt={map.name}
+            />
+          </a>
+          <div class="content">
+            <div>
+              <a
+                href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
+                class="title"
+                title={map.name}
+              >
+                {map.name}
+              </a>
+              <Uploader uploader={map.uploader} curator={map.curator} />
+            </div>
+            <div class="tag-row-container">
+              <Tags tags={map.tags}></Tags>
+            </div>
+            <div class="last-row-container">
+              <Difficulties diffs={map.versions[0].diffs}/>
+              <div class="download-button-container">
+                <ZipDownloadButton downloadURL={map.versions[0].downloadURL}/>
+                <OneClickDownloadButton mapId={map.id} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     {/each}
   {:else}
     {#each Array(maxCards ?? 8) as _}
-      <div class="card loading" />
+      <div class="card-wrapper loading" />
     {/each}
   {/if}
 </div>
@@ -78,7 +80,7 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
-  $image-size: 8.5rem;
+  $image-size: 8rem;
 
   .cards {
     display: grid;
@@ -91,24 +93,59 @@
     }
   }
 
+  $gradient-coverage: 60%;
+  // Don't touch these two
+  $background-size: 100% + $gradient-coverage;
+  $gradient-start: percentage(100% / $background-size);
+
+  .card-wrapper {
+    background: linear-gradient(90deg, $color-background-primary $gradient-start, $color-background-tertiary 100%);
+    background-size: $background-size;
+    padding: 2px;
+    border-radius: $rounding-large + 2px;
+    transition: background-position $transition-long;
+    overflow: hidden;
+
+    .download-button-container {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      opacity: 0;
+      transition: opacity $transition-long;
+    }
+
+    &:hover {
+      background-position-x: 100%;
+
+      > .card {
+          background-position-x: 100%;
+      }
+
+      .download-button-container {
+        opacity: 100%;
+      }
+    }
+
+    &.loading {
+      background-image: none;
+      background-color: $color-background-secondary;
+      height: calc($image-size + 4px);
+      border-radius: $rounding-large;
+    }
+  }
+
   .card {
     position: relative;
     display: flex;
     overflow: hidden;
-    background: #333333;
-    border-radius: 10px;
-    padding: 2px 8px 2px 2px;
-
-    &.loading {
-      background-color: $color-background-secondary;
-      height: $image-size;
-      border-radius: $rounding-large;
-    }
+    background: linear-gradient(90deg, $color-background-primary $gradient-start, $color-background-secondary 100%);
+    background-size: $background-size;
+    border-radius: $rounding-large;
+    transition: background-position $transition-long;
 
     .image-link {
       height: $image-size;
       flex: $image-size 0 0;
-      margin-right: 0.75rem;
 
       img {
         border-radius: $rounding-large;
@@ -122,10 +159,11 @@
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
-      margin: 7px 2px 7px 0px;
+      padding: 0.375rem 0.75rem;
 
       .title {
         display: block;
+        max-width: fit-content;
         font-weight: bold;
         color: white;
         white-space: nowrap;
@@ -145,11 +183,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-right: 2px;
-      }
-
-      .zip-download-button-container {
-        margin-left: auto;
       }
     }
   }
