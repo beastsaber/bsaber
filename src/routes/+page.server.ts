@@ -1,4 +1,3 @@
-import { RootPageSSRData } from './../types'
 import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
 import type {
   Post,
@@ -70,7 +69,7 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
           seniorCurator: beatSaverMapData.uploader.seniorCurator,
           verifiedMapper: beatSaverMapData.uploader.verifiedMapper,
         },
-        collaborators: beatSaverMapData.collaborators
+        collaborators: beatSaverMapData.collaborators,
       },
       showcase: currentMOTWCollectionData.showcase,
       review: currentMOTWCollectionData.review,

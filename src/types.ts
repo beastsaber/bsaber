@@ -90,6 +90,7 @@ export type BeatmapDifficulty = {
     | 'Lawless'
     | 'Legacy'
   difficulty: 'Easy' | 'Normal' | 'Hard' | 'Expert' | 'ExpertPlus'
+  nps: number
 }
 
 export type Uploader = {
