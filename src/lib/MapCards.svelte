@@ -31,48 +31,52 @@
 
 <div class="cards max-cols-3">
   {#if maps.length !== 0}
-    {#each maps as map, mapCardIndex}
-      <div class="card">
-        <a
-          href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
-          class="image-link"
-        >
-          <img
-            src={`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${
-              map.versions[0].hash
-            }.jpg`}
-            alt={map.name}
-          />
-        </a>
-        <div class="content">
-          <div>
-            <a
-              href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
-                map.id
-              }`}
-              class="title"
-              title={map.name}
-            >
-              {map.name}
-            </a>
-            <Uploader uploader={map.uploader} curator={map.curator} />
-          </div>
-          <div class="tag-row-container">
-            <Tags tags={map.tags} />
-            <div class="zip-download-button-container show-on-hover">
-              <ZipDownloadButton downloadURL={map.versions[0].downloadURL} />
+    {#each maps as map}
+      <div class="card-wrapper">
+        <div class="card">
+          <a
+            href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
+              map.id
+            }`}
+            class="image-link"
+          >
+            <img
+              src={`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${
+                map.versions[0].hash
+              }.jpg`}
+              alt={map.name}
+            />
+          </a>
+          <div class="content">
+            <div>
+              <a
+                href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
+                  map.id
+                }`}
+                class="title"
+                title={map.name}
+              >
+                {map.name}
+              </a>
+              <Uploader uploader={map.uploader} curator={map.curator} />
             </div>
-          </div>
-          <div class="last-row-container">
-            <Difficulties diffs={map.versions[0].diffs} />
-            <div class="show-on-hover"><OneClickDownloadButton mapId={map.id} /></div>
+            <div class="tag-row-container">
+              <Tags tags={map.tags} />
+            </div>
+            <div class="last-row-container">
+              <Difficulties diffs={map.versions[0].diffs} />
+              <div class="download-button-container">
+                <ZipDownloadButton downloadURL={map.versions[0].downloadURL} />
+                <OneClickDownloadButton mapId={map.id} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     {/each}
   {:else}
     {#each Array(maxCards ?? 8) as _}
-      <div class="card loading" />
+      <div class="card-wrapper loading" />
     {/each}
   {/if}
 </div>
@@ -80,7 +84,7 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
-  $image-size: 8.5rem;
+  $image-size: 8rem;
 
   .cards {
     display: grid;
@@ -93,19 +97,63 @@
     }
   }
 
+  $gradient-coverage: 60%;
+  // Don't touch these two
+  $background-size: 100% + $gradient-coverage;
+  $gradient-start: percentage(100% / $background-size);
+
+  .card-wrapper {
+    background: linear-gradient(
+      90deg,
+      $color-background-primary $gradient-start,
+      $color-background-tertiary 100%
+    );
+    background-size: $background-size;
+    padding: 2px;
+    border-radius: $rounding-large + 2px;
+    transition: background-position $transition-long;
+    overflow: hidden;
+
+    .download-button-container {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      opacity: 0;
+      transition: opacity $transition-long;
+    }
+
+    &:hover {
+      background-position-x: 100%;
+
+      > .card {
+        background-position-x: 100%;
+      }
+
+      .download-button-container {
+        opacity: 100%;
+      }
+    }
+
+    &.loading {
+      background-image: none;
+      background-color: $color-background-secondary;
+      height: calc($image-size + 4px);
+      border-radius: $rounding-large;
+    }
+  }
+
   .card {
     position: relative;
     display: flex;
     overflow: hidden;
-    background: #333333;
-    border-radius: 10px;
-    padding: 2px 8px 2px 2px;
-
-    &.loading {
-      background-color: $color-background-secondary;
-      height: $image-size;
-      border-radius: $rounding-large;
-    }
+    background: linear-gradient(
+      90deg,
+      $color-background-primary $gradient-start,
+      $color-background-secondary 100%
+    );
+    background-size: $background-size;
+    border-radius: $rounding-large;
+    transition: background-position $transition-long;
 
     .image-link {
       height: $image-size;
@@ -122,21 +170,18 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin: 7px 2px 0 0;
-      // Adding padding so the characteristic icon does not get cut off when scaled up
-      padding-left: 12px;
-      padding-bottom: 7px;
       overflow: hidden;
+      padding: 0.375rem 0.75rem;
 
       .title {
         display: block;
+        max-width: fit-content;
         font-weight: bold;
         color: white;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         margin-bottom: 0.25rem;
-        max-width: max-content;
       }
 
       .last-row-container {
@@ -150,27 +195,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-right: 2px;
-      }
-
-      .zip-download-button-container {
-        margin-left: auto;
       }
     }
-  }
-  .card {
-    transition: box-shadow 0.2s ease-in;
-  }
-  .card:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
-      rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-      rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  }
-  .card:hover .show-on-hover {
-    opacity: 1;
-  }
-  .show-on-hover {
-    opacity: 0;
-    transition: opacity 0.2s ease-in;
   }
 </style>

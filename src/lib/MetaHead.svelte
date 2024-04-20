@@ -10,7 +10,7 @@
   export let keywords: string | undefined = undefined
   export let canonicalUrl: string | undefined = undefined
 
-  const origin = DEPLOY_PRIME_URL || 'https://bsaber.info'
+  const origin = DEPLOY_PRIME_URL || 'https://bsaber.com'
 
   let normalizedImage = imageUrl
   if (normalizedImage && !normalizedImage.startsWith('http') && normalizedImage.startsWith('/')) {
@@ -52,6 +52,7 @@
     <link rel="canonical" href={origin + canonicalUrl} />
   {/if}
 
+  <!-- fix incoming links from netlify emails -->
   <!-- fix incoming links from netlify emails -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>

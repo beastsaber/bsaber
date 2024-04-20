@@ -189,11 +189,11 @@
     }
 
     .more-hint {
-      animation: blink-not-hovered 0.5s ease-in-out;
+      animation: blink-not-hovered $transition-long ease-in-out;
     }
 
     :global(.card:hover .difficulties .more-hint) {
-      animation: blink 0.5s ease-in-out;
+      animation: blink $transition-long ease-in-out;
     }
 
     .characteristic {
