@@ -12,7 +12,7 @@ npm install
 
 ## Local Development
 
-**Start the Development Server:** Use the command `npm run dev` to launch `npm run dev:frontend` and `descap-server` concurrently.
+**Start the Development Server:** Use the command `npm run dev` to launch `npm run dev:frontend` and `decap-server` concurrently.
 
 ### Previewing the Website
 
@@ -20,13 +20,13 @@ You can now navigate to http://localhost:3000 to see a local preview of the webs
 
 ### Accessing the CMS
 
-1. **Access the CMS:** Navigate to [http://localhost:8888/admin/index.html](http://localhost:8888/cms/admin/index.html) in your web browser to open the Decap CMS interface.
+1. **Access the CMS:** Navigate to [http://localhost:3000/cms/admin/index.html](http://localhost:3000/cms/admin/index.html) in your web browser to open the Decap CMS interface.
 
 2. **Login:** Click on the login button. You should be granted access immediately. If prompted for a URL, enter the address of the proxy server - this shouldn't usually happen though.
 
 ### Additional Background Information on the Setup
 
-- The `npm run dev:frontend` command runs your application and integrates Decap under the `/admin/index.html` routes.
+- The `npm run dev:frontend` command runs your application and integrates Decap under the `/cms/admin/index.html` routes.
 - The CMS proxy server enables the use of the local strategy for content management, directly saving files to the local file system.
 
 ## Short File Tree Description
@@ -49,11 +49,11 @@ You can now navigate to http://localhost:3000 to see a local preview of the webs
 │   └── types.ts // A central place for types - if types are specific for a component (or similar) and not shared across the project, put them in the respective component file
 ├── static // These files will be mounted on the root. For example, ./static/example.jpg will later be accessible under https://bsaber.com/example.jpg
 │   ├── admin
-│   │   ├── config.yml // This file defines the config and data model for Netlify CMS - if you want to edit, add or remove a collection some changes will happen here
-│   │   └── index.html // Entry point for the Netlify CMS page for admins
+│   │   ├── config.yml // This file defines the config and data model for Decap CMS - if you want to edit, add or remove a collection some changes will happen here
+│   │   └── index.html // Entry point for the Decap CMS page for admins
 │   ├── characteristics // Folder containing the images for the diffs on the map cards
 │   ├── favicon.png // This file is the favicon of the website
-│   ├── uploads // Directory that contains uploaded images from netlify CMS
+│   ├── uploads // Directory that contains uploaded images from Decap CMS
 ├── svelte.config.js // Svelte(kit) configuration - contains the configurations for crawling and SSG as well
 ├── update-cover-url-overwrites.sh // See "Utility Scripts" for info
 ```
