@@ -35,7 +35,9 @@
       <div class="card-wrapper">
         <div class="card">
           <a
-            href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
+            href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
+              map.id
+            }`}
             class="image-link"
           >
             <img
@@ -48,7 +50,9 @@
           <div class="content">
             <div>
               <a
-                href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${map.id}`}
+                href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
+                  map.id
+                }`}
                 class="title"
                 title={map.name}
               >
@@ -57,12 +61,12 @@
               <Uploader uploader={map.uploader} curator={map.curator} />
             </div>
             <div class="tag-row-container">
-              <Tags tags={map.tags}></Tags>
+              <Tags tags={map.tags} />
             </div>
             <div class="last-row-container">
-              <Difficulties diffs={map.versions[0].diffs}/>
+              <Difficulties diffs={map.versions[0].diffs} />
               <div class="download-button-container">
-                <ZipDownloadButton downloadURL={map.versions[0].downloadURL}/>
+                <ZipDownloadButton downloadURL={map.versions[0].downloadURL} />
                 <OneClickDownloadButton mapId={map.id} />
               </div>
             </div>
@@ -99,7 +103,11 @@
   $gradient-start: percentage(100% / $background-size);
 
   .card-wrapper {
-    background: linear-gradient(90deg, $color-background-primary $gradient-start, $color-background-tertiary 100%);
+    background: linear-gradient(
+      90deg,
+      $color-background-primary $gradient-start,
+      $color-background-tertiary 100%
+    );
     background-size: $background-size;
     padding: 2px;
     border-radius: $rounding-large + 2px;
@@ -118,7 +126,7 @@
       background-position-x: 100%;
 
       > .card {
-          background-position-x: 100%;
+        background-position-x: 100%;
       }
 
       .download-button-container {
@@ -138,7 +146,11 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    background: linear-gradient(90deg, $color-background-primary $gradient-start, $color-background-secondary 100%);
+    background: linear-gradient(
+      90deg,
+      $color-background-primary $gradient-start,
+      $color-background-secondary 100%
+    );
     background-size: $background-size;
     border-radius: $rounding-large;
     transition: background-position $transition-long;

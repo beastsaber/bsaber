@@ -18,6 +18,159 @@ The goal of this event is to match interested Verified mappers up with Novice ma
 
 Check out the playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036).
 
+**Check out who's participated previously!**
+\
+_\*Click on each category to learn more_
+
+<details>
+<summary><b>DITR 1 - Winter of 2020</b></summary>
+
+| Coach:         | Novice:         | Status:        |
+| -------------- | --------------- | -------------- |
+| SkylerWallace  | LadFive         | Finished       |
+| That_Narwhal   | Ezconfirmed     | Novice dropped |
+| Rayman         | BrightKnight    | Finished       |
+| FoxiBoi        | Isaac7EVEN      | Novice dropped |
+| ETAN           | Jamman360       | Finished       |
+| Pyrowarfare    | Gassertall      | Finished       |
+| Alzaraf        | Albernu/Kansas  | Finished       |
+| Caeden117      | EmotionalFlight | Finished       |
+| xScaramouche   | Mahidrian       | Finished       |
+| Scrappy        | Velheor         | Finished       |
+| Wolf34b        | Bloo            | Finished       |
+| Schwank        | NotSteve        | Finished       |
+| Stumi          | Scoop           | Novice dropped |
+| MeezoNugget    | Jaiden          | Novice dropped |
+| TranquillizeMe | SanguinePanda   | Finished       |
+| JohnnyDee      | GalaxyMaster    | Finished       |
+
+</details>
+
+<details>
+<summary><b>DITR 2 - Summer of 2021</b></summary>
+
+| Coach:           | Novice:                | Status:        |
+| ---------------- | ---------------------- | -------------- |
+| AJhintleman      | ThyYeet/Astrophel      | Finished       |
+| Vasili           | Harp                   | Finished       |
+| ComplexFrequency | Shan_Man               | Novice dropped |
+| AaltopahWi       | PanSalsa               | Coach dropped  |
+| OfficialMECH     | Danrabomb              | Finished       |
+| Dfeth            | SpicyBaguette          | Finished       |
+| ThySpoon         | Vincent                | Novice dropped |
+| SlimyBlob        | IDaDarknezzI           | Finished       |
+| CatUsingAToaster | SanicStudios           | Novice dropped |
+| BrightKnight     | TrevorSmithy           | Novice dropped |
+| KikaeAeon        | AimedHades             | Novice dropped |
+| vaser888         | theAstra               | Finished       |
+| Schwank          | Lone                   | Novice dropped |
+| Caeden117        | JohnnySilverhams       | Finished       |
+| Cyrix            | Sk4venger              | Finished       |
+| Cyrix            | Vazyriqx               | Finished       |
+| Jafdy            | BlackJack              | Finished       |
+| Jafdy            | TommytheTom/TeaDrinker | Finished       |
+| Jamman360        | MrMrow                 | Finished       |
+| Jamman360        | ExpoDev                | Novice dropped |
+| Rayman           | GojiGrafter            | Finished       |
+| Rayman           | Volaerii               | Finished       |
+| Rayman           | ChainedTrap            | Finished       |
+| ETAN             | Sailor Sphur           | Finished       |
+| ConnorJC         | Phoenix                | Coach dropped  |
+| Bloodcloak       | RemieGino              | Finished       |
+| Bloodcloak       | 3Stans                 | Finished       |
+| Atomosphere      | Smay                   | Finished       |
+| Zyxi             | Ryth                   | Novice dropped |
+| Abcbadq          | Ezconfirmed            | Novice dropped |
+| [CANA]Dan        | FalseRender            | Finished       |
+| [CANA]Dan        | AkaBaka                | Novice dropped |
+| Moriik           | Travelling_Gamer90     | Finished       |
+| Shappy           | Purp1e                 | Finished       |
+
+</details>
+
+<details>
+<summary><b>DITR 3 - Winter of 2021</b></summary>
+
+| Coach:          | Novice:         | Status:        |
+| --------------- | --------------- | -------------- |
+| Fatalution      | Sage            | Finished       |
+| Alice           | MadGuns22       | Finished       |
+| Timbo           | Judoyo          | Finished       |
+| Skeelie         | Cadavren        | Finished       |
+| Qwasyx          | SasukeYaki      | Novice dropped |
+| CyanSnow        | Tera            | Finished       |
+| Kansas          | BombardToo      | Finished       |
+| Shappy          | Jaxolotl        | Finished       |
+| Phoenix         | moneyruns       | Novice dropped |
+| EmotionalFlight | iswimfly        | Finished       |
+| Xhera           | OneEyed         | Finished       |
+| officialMECH    | DeeDee          | Finished       |
+| AimedHades      | Irish           | Novice dropped |
+| Cyrix           | Taragon123      | Finished       |
+| SlimyBlob       | riasuh          | Finished       |
+| 3Stans          | Zeph            | Finished       |
+| FoxyBoi         | Romen           | Finished       |
+| BrightKnight    | Soundwave       | Finished       |
+| Zyxi            | HotlineMacDaddy | Finished       |
+| Rayman          | Spinny          | Finished       |
+
+</details>
+
+<details>
+<summary><b>DITR 4 - Summer of 2022</b></summary>
+
+| Coach:          | Novice:         | Status:        |
+| --------------- | --------------- | -------------- |
+| 3Stans          | [Sen]           | Finished       |
+| Jabob           | Soggynan        | Finished       |
+| Vasili          | Blyg999         | Finished       |
+| officialMECH    | symphonic       | Finished       |
+| Yabje           | Hypercube       | Finished       |
+| abcbadq         | Abimn Orrsty    | TBD!           |
+| Egg Boi         | RaccoonVR       | Finished       |
+| Skyler Wallace  | AceofAlmonds    | Finished       |
+| ThySpoon        | Shrimp          | Finished       |
+| GojiCrafter     | IlluminatiSalad | Novice dropped |
+| EmotionalFlight | swukpuff        | Finished       |
+| Scarladore      | chriscrow3      | Finished       |
+| Shark           | MJ33ZY          | Finished       |
+| DeeDee          | heypoppyseeds   | Novice dropped |
+| SyndicateVR     | Semdol          | Finished       |
+| Kansas          | vivry           | Finished       |
+| Astrophel       | Sloth.          | Finished       |
+| Tocxx           | fatahkent       | Finished       |
+| Qwasyx          | PGfromYT        | Finished       |
+
+</details>
+
+<details>
+<summary><b>DITR 5 - Summer of 2023</b></summary>
+
+| Coach:         | Novice:           | Status:        |
+| -------------- | ----------------- | -------------- |
+| 3Stans         | ChromiaCat        | Finished       |
+| A Jhintleman   | SneakySpeckMan    | Finished       |
+| Acubens        | tainted_bread     | Finished       |
+| AllPoland      | EerieWolf         | Finished       |
+| DeeDee         | lemin             | Finished       |
+| Dereknalox123  | SynthVenom        | Finished       |
+| Emy            | Mandalark         | Finished       |
+| GalaxyMaster   | pebbles           | Finished       |
+| GojiCrafter    | Matgenius04       | Finished       |
+| Hades          | Kaxle             | Finished       |
+| Kansas         | winteredge        | Finished       |
+| Maple          | cordatusludus     | Finished/swap  |
+| OneSpookyBoi   | Kinz              | Finished       |
+| Ramenator05    | LaidBackAries     | Finished       |
+| Skyler Wallace | SaberBunnie       | Finished       |
+| Spinvvy        | NTBased           | Finished       |
+| Symphonic      | Krakenmeister     | Finished       |
+| Tocxx          | meoaww            | Finished       |
+| Undeceiver     | 23raining         | Finished       |
+| Yabje          | DieEneSchrodinger | Novice dropped |
+
+</details>
+
 <br />
 
 ## How does the event work?
@@ -44,9 +197,11 @@ The Verified mapper works with their Novice in a one-on-one coaching capacity ov
 
 Maps will all be released by the Novices at the designated date/time with their "Coach" acknowledged in both the map description and the "Contributors" tab. The description will also include a short copy/pasted blurb about the pack (see FAQs).
 
+<br />
+
 ## What are the requirements?
 
-Participants must have a Basic, Verified, or Veteran mapper role on the [Beat Saber Mapping discord](https://discord.gg/ArT4BTQ) by application deadline.
+Participants must have a basic Mapper or Verified Mapper role on the [Beat Saber Mapping discord](https://discord.gg/ArT4BTQ) by application deadline.
 
 ### Novice mappers must:
 
@@ -58,7 +213,7 @@ Participants must have a Basic, Verified, or Veteran mapper role on the [Beat Sa
 
 ### Coaches must:
 
-- Have the Verified OR Veteran Mapper role on the Beat Saber Mapping discord.
+- Have the Verified Mapper role on the Beat Saber Mapping discord.
 
 - Have a minimum of three (3) maps curated on BeatSaver or ranked on ScoreSaber.
 
@@ -68,6 +223,8 @@ Participants must have a Basic, Verified, or Veteran mapper role on the [Beat Sa
 
 - Be able to commit to the process for ONE map in the listed time frame. That's it. Obviously life stuff happens, but each map is a team effort. If you know that your time is going to be consumed by school/work during the event period, we ask that you not apply for the event. It's a real gut punch to have your coach or novice drop out part way through...
 
+<br />
+
 ## What do I need to do to get started?
 
 There will be a lot of interest in this event and not everyone will get a spot.
@@ -75,6 +232,8 @@ There will be a lot of interest in this event and not everyone will get a spot.
 - **COACHES:** Complete the [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8) by (TBD)
 
 - **NOVICES:** Complete the [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8) by (TBD)
+
+<br />
 
 ## Frequently Asked Questions:
 
