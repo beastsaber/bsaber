@@ -3,14 +3,9 @@
   import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
   export let downloadURL: string
-  
 </script>
 
-<a
-  title="Zip Download via BeatSaver"
-  href={downloadURL}
-  class="zip-download-link"
->
+<a title="Zip Download via BeatSaver" href={downloadURL} class="zip-download-link">
   <Fa icon={faDownload} />
 </a>
 
