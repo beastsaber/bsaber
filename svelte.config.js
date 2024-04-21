@@ -22,7 +22,9 @@ const config = {
   ],
 
   kit: {
-    adapter: adapter({}),
+    adapter: adapter({
+      fallback: '404.html',
+    }),
 
     prerender: {
       crawl: true,
@@ -32,7 +34,7 @@ const config = {
     // csp: {
     //   mode: 'auto',
     //   directives: {
-    //     'default-src': ['self', 'https://api.bsaber.info/'],
+    //     'default-src': ['self', 'https://api.bsaber.com/'],
     //     'script-src': [''],
     //     'style-src': ['self'],
     //     'img-src': ['self', 'https://cdn.scoresaber.com/avatars/', 'data:'],
@@ -40,7 +42,7 @@ const config = {
     //     'frame-ancestors': ['self', 'https://questmodding.com'],
     //     'object-src': ['none'],
     //     'base-uri': ['self'],
-    //     'connect-src': ['self', 'https://api.bsaber.info/', 'https://api.beatsaver.info'],
+    //     'connect-src': ['self', 'https://api.bsaber.com/', 'https://api.beatsaver.info'],
     //   },
     // },
   },
