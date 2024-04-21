@@ -393,8 +393,8 @@
       font-family: $font-poppins;
       text-transform: uppercase;
       text-decoration: none;
-      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out;
+      transition: color $transition-short ease-in-out, background-color $transition-short ease-in-out,
+        border-color $transition-short ease-in-out;
       color: $color-text-primary;
       a {
         color: $color-text-primary;
@@ -427,7 +427,7 @@
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0.25rem;
-    transition: box-shadow 0.15s ease-in-out;
+    transition: box-shadow $transition-short ease-in-out;
     color: rgba(255, 255, 255, 0.55);
 
     &:focus {

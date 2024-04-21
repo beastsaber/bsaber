@@ -108,7 +108,7 @@
   border-radius: $rounding-large;
   background-size: 100%;
   background-position: center;
-  transition: 0.5s;
+  transition: $transition-long;
   aspect-ratio: var(--aspect-ratio);
 
   &.loading {
