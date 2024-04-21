@@ -51,7 +51,7 @@ _\*Click on each category to learn more_
 
 | Coach:           | Novice:                | Status:        |
 | ---------------- | ---------------------- | -------------- |
-| AJhintleman      | ThyYeet/Astropehl      | Finished       |
+| AJhintleman      | ThyYeet/Astrophel      | Finished       |
 | Vasili           | Harp                   | Finished       |
 | ComplexFrequency | Shan_Man               | Novice dropped |
 | AaltopahWi       | PanSalsa               | Coach dropped  |
@@ -170,11 +170,6 @@ _\*Click on each category to learn more_
 | Yabje          | DieEneSchrodinger | Novice dropped |
 
 </details>
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
 
 <br />
 
