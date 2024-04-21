@@ -139,6 +139,10 @@
           href: '/posts/page/1',
         },
         {
+          name: 'Community Events',
+          href: '/community-events/1',
+        },
+        {
           name: 'Mappers',
           href: 'https://beatsaver.com/mappers',
         },
@@ -393,8 +397,8 @@
       font-family: $font-poppins;
       text-transform: uppercase;
       text-decoration: none;
-      transition: color $transition-short ease-in-out, background-color $transition-short ease-in-out,
-        border-color $transition-short ease-in-out;
+      transition: color $transition-short ease-in-out,
+        background-color $transition-short ease-in-out, border-color $transition-short ease-in-out;
       color: $color-text-primary;
       a {
         color: $color-text-primary;

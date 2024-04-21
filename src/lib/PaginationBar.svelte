@@ -5,6 +5,7 @@
 
   export let currentPage: number
   export let numberOfPages: number
+  export let forceExternal = false
   export let getPageLink: (page: number) => string
 
   const pageNumbers = Array.from({ length: numberOfPages }, (_, i) => i + 1)
@@ -14,14 +15,17 @@
   <a
     class="page-button"
     class:hidden-pagination-link-button={currentPage === 1}
-    href={(currentPage === 1) ? "#" : getPageLink(currentPage - 1)}>
-    <Fa icon={faAngleLeft}/>
+    href={currentPage === 1 ? '#' : getPageLink(currentPage - 1)}
+    rel={forceExternal ? 'external' : undefined}
+  >
+    <Fa icon={faAngleLeft} />
   </a>
   {#each pageNumbers as singlePageNumber}
     <a
       class="page-button"
       class:active={singlePageNumber === currentPage}
       href={getPageLink(singlePageNumber)}
+      rel={forceExternal ? 'external' : undefined}
     >
       {singlePageNumber}
     </a>
@@ -29,8 +33,10 @@
   <a
     class="page-button"
     class:hidden-pagination-link-button={currentPage === numberOfPages}
-    href={(currentPage === numberOfPages) ? "#" : getPageLink(currentPage + 1)}>
-    <Fa icon={faAngleRight}/>
+    href={currentPage === numberOfPages ? '#' : getPageLink(currentPage + 1)}
+    rel={forceExternal ? 'external' : undefined}
+  >
+    <Fa icon={faAngleRight} />
   </a>
 </div>
 
