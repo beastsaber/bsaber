@@ -1,7 +1,14 @@
 import { readFileSync, readdirSync } from 'fs'
 import frontmatter from 'front-matter'
 import { resolve } from 'path'
-import type { Community, CommunityLabel, MapOfTheWeekCollectionData, Post } from '../types'
+import type {
+  Community,
+  CommunityEventCollectionData,
+  CommunityEventHostCollectionData,
+  CommunityLabel,
+  MapOfTheWeekCollectionData,
+  Post,
+} from '../types'
 
 type ConvertToAttributeKeyedObject<T> = {
   body?: string
@@ -18,6 +25,8 @@ export type CollectionDataTypeMap = {
   communities: ConvertToAttributeKeyedObjectWithNoBody<Community>
   'community-labels': ConvertToAttributeKeyedObjectWithNoBody<CommunityLabel>
   posts: ConvertToAttributeKeyedObject<Post>
+  'community-events': ConvertToAttributeKeyedObject<CommunityEventCollectionData>
+  'community-event-hosts': ConvertToAttributeKeyedObject<CommunityEventHostCollectionData>
 }
 /**
  * Retrieve collection data from the markdown files. It will infer the type of the collection based on the collection parameter.

@@ -12,13 +12,32 @@ export type Post = {
   linkToSpecialtyPage?: string
 }
 
+export type CommunityEventCategory = 'tournament' | 'social' | 'learning' | 'generic'
+
+export type CommunityEventCollectionData = {
+  title: string
+  url: string
+  category: CommunityEventCategory
+  startDateTime: string
+  useStartTime: boolean
+  endDateTime?: string
+  useEndTime: boolean
+  host: string
+}
+
+export type CommunityEventHostCollectionData = {
+  name: string
+  url: string
+}
+
+export type CommunityEventHost = CommunityEventHostCollectionData
+
 export type CommunityEvent = {
   title: string
-  slug: string
-  publishDateISO: string
+  url: string
   dateParams: EventDateParams
-  hostUsername: string
-  category: 'tournament' | 'social' | 'learning' | 'competition' | 'generic' // category determines icon
+  host: CommunityEventHost
+  category: CommunityEventCategory
 }
 
 export type EventDateParams = {

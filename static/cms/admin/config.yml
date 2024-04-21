@@ -235,5 +235,61 @@ collections:
           - { label: 'Maltese', value: 'mt' }
           - { label: 'Welsh', value: 'cy' }
           - { label: 'Belarusian', value: 'be' }
+  - name: community-events
+    label: Community Events
+    label_singular: Community Event
+    folder: src/collections/community-events
+    slug: '{{title}}'
+    create: true
+    fields:
+      - name: host
+        label: Host
+        widget: relation
+        collection: community-event-hosts
+        search_fields: [name]
+        value_field: name
+        display_fields: [name]
+      - name: title
+        label: Title
+      - name: url
+        label: URL
+      - name: category
+        label: Category
+        widget: select
+        options:
+          - { label: 'Tournament', value: 'tournament' }
+          - { label: 'Social', value: 'social' }
+          - { label: 'Learning', value: 'learning' }
+          - { label: 'Generic', value: 'generic' }
+      - name: startDateTime
+        label: Start Date/Time
+        widget: datetime
+        default:
+        format: YYYY-MM-DDTHH:mm:ssZ
+      - name: useStartTime
+        label: Use Start Time
+        widget: boolean
+        default: false
+      - name: endDateTime
+        label: End Date/Time
+        widget: datetime
+        required: false
+        default:
+        format: YYYY-MM-DDTHH:mm:ssZ
+      - name: useEndTime
+        label: Use End Time
+        widget: boolean
+        default: false
+  - name: community-event-hosts
+    label: Community Event Hosts
+    folder: src/collections/community-event-hosts
+    slug: '{{name}}'
+    create: true
+    fields:
+      - name: name
+        label: Name
+      - name: url
+        label: URL
+        widget: string
 media_folder: 'static/uploads'
 public_folder: '/uploads'
