@@ -178,7 +178,11 @@
           <div class="dropdown-item-map-name">
             {preview.name}<br />
             <div class="dropdown-item-uploader">Uploaded by: {preview.uploader}</div>
-            <div class="dropdown-item-stats">Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(preview.score *100).toFixed(2)}%</div>
+            <div class="dropdown-item-stats">
+              Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(
+                preview.score * 100
+              ).toFixed(2)}%
+            </div>
           </div></a
         >
       {/each}
@@ -188,7 +192,7 @@
 </form>
 
 <style lang="scss">
-  @import "src/scss/variables";
+  @import 'src/scss/variables';
 
   form {
     position: relative;
@@ -200,8 +204,8 @@
     margin-bottom: 12px;
   }
   .search {
-      display: flex;
-      flex-grow: 2;
+    display: flex;
+    flex-grow: 2;
   }
   .filter-dropdown {
     max-width: fit-content;
@@ -298,7 +302,7 @@
     padding-top: 0.15rem;
     font-size: small;
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
     padding-top: 4.5px;
   }

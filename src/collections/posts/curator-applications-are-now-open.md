@@ -6,6 +6,7 @@ publish: 2024-04-07T18:37:19.983Z
 image: /static/beastsaber-logo-fullsize-square.jpg
 showInPostListing: false
 ---
+
 # Curation Recruitment is Currently Open!
 
 **We are re-opening our curator applications! We're looking for 3 outstanding applicants of any skill level. These applicants should be people who:**

@@ -18,7 +18,7 @@ Although the BeastSaber team is mostly focused on things like curation, playlist
 
 <br />
 
-## BSMG Mapping Wiki 
+## BSMG Mapping Wiki
 
 The [BSMG Mapping Wiki](https://bsmg.wiki/mapping/) was launched in December 2019 and combined information from more than 30 different separate guides to become the holy grail of mapping knowledge.
 \
@@ -55,7 +55,7 @@ Once you've got the audio and map editor set up, you're ready to start mapping! 
 
 2. [BSMG's Basic Lighting Practices](https://bsmg.wiki/mapping/basic-lighting.html) - Simple manual lighting is easier than you think!
 
-3. [BSMG's Playtesting Guide](https://bsmg.wiki/mapping/#playtesting) - Playtest your map early and often, especially as you get started. We also recommend joining the [BSMG Discord Server](https://discord.gg/beatsabermods) where you can use their #testplays channel to get real-time community feedback! *Be sure to read and follow the pinned messages in the channel **before** posting to the #testplays channel!*
+3. [BSMG's Playtesting Guide](https://bsmg.wiki/mapping/#playtesting) - Playtest your map early and often, especially as you get started. We also recommend joining the [BSMG Discord Server](https://discord.gg/beatsabermods) where you can use their #testplays channel to get real-time community feedback! _Be sure to read and follow the pinned messages in the channel **before** posting to the #testplays channel!_
 
 Finally, once your song has been mapped, lighted, and playtested you're ready to [publish](https://bsmg.wiki/mapping/#publishing-songs) your map to the world on BeatSaver.
 
@@ -63,7 +63,7 @@ Finally, once your song has been mapped, lighted, and playtested you're ready to
 
 ## Tutorial Videos
 
-If you’re more of a visual learner, the videos below are all excellent resources and follow the same practices detailed in the Wiki. 
+If you’re more of a visual learner, the videos below are all excellent resources and follow the same practices detailed in the Wiki.
 
 > 🗒️ **NOTE:** Some of these tutorials use older editors. The UI and some processes have changed slightly but the rest of the content is great!
 

@@ -79,15 +79,21 @@
             By
             {#each uploaders as uploader, i}
               <a class="profile-link" href="https://beatsaver.com/profile/{uploader.id}">
-                {uploader.name}</a><!--
+                {uploader.name}</a
+              ><!--
            -->{#if uploader.verifiedMapper}
-                <img class="verified" src="/verified.svg" alt="Verified" title="Verified" /><!--
+                <img
+                  class="verified"
+                  src="/verified.svg"
+                  alt="Verified"
+                  title="Verified"
+                /><!--
            -->{/if}<!--
 
            -->{#if i < uploaders.length - 2}
-                {", "}
+                {', '}
               {:else if i === uploaders.length - 2}
-                {" and "}
+                {' and '}
               {/if}
             {/each}
           </p>

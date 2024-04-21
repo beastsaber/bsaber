@@ -54,5 +54,6 @@
 
   <!-- fix incoming links from netlify emails -->
   <!-- fix incoming links from netlify emails -->
+  <!-- fix incoming links from netlify emails -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>
