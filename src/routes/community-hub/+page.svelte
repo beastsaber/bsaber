@@ -263,11 +263,14 @@
 <div class="header">
   <h1>Community Hub</h1>
   <div class="filter-dropdown-anchor">
-    <div class="filter-button" on:click={() => toggleFilterDropdown()}>
-      Filter
-    </div>
+    <div class="filter-button" on:click={() => toggleFilterDropdown()}>Filter</div>
     <div class="filter-dropdown" style={showFilterdropdown ? 'display: block' : 'display: none;'}>
-      <input class="search-text-field" type="text" placeholder="Search" on:input={updateNameAndDescriptionFilter} />
+      <input
+        class="search-text-field"
+        type="text"
+        placeholder="Search"
+        on:input={updateNameAndDescriptionFilter}
+      />
       <div class="labels">
         {#each data.availableLabels as label}
           <div
@@ -324,9 +327,8 @@
         <div class="community-info">
           <div class="labels">
             {#each community.labels as label}
-              <span
-                class="label"
-                style="border-color: {getLabelObject(label)?.color};">{label}</span
+              <span class="label" style="border-color: {getLabelObject(label)?.color};"
+                >{label}</span
               >
             {/each}
           </div>
@@ -422,7 +424,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     margin-top: 1rem;
-    gap: 0.5rem
+    gap: 0.5rem;
   }
 
   .social-filter-button {

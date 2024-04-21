@@ -3,7 +3,7 @@
 
   export let name: string
   export let id: number
-  export let roles: { verifiedMapper: boolean, curator: boolean, seniorCurator: boolean }
+  export let roles: { verifiedMapper: boolean; curator: boolean; seniorCurator: boolean }
   export let description: string
   export let avatar: string
 </script>
@@ -12,16 +12,20 @@
   <div class="header">
     <img class="image" src={avatar} alt={name} />
     <div class="info">
-      <a class="name"
-         href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${id}`}>{name}</a>
-      <p class="roles">{
-        (roles.seniorCurator ? "Senior Curator" : "Curator") + (roles.verifiedMapper ? ", Mapper" : "")
-      }</p>
+      <a
+        class="name"
+        href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${id}`}
+        >{name}</a
+      >
+      <p class="roles">
+        {(roles.seniorCurator ? 'Senior Curator' : 'Curator') +
+          (roles.verifiedMapper ? ', Mapper' : '')}
+      </p>
     </div>
   </div>
   <div class="bottom">
     <article class="description">
-      {@html marked(description.replace(/\n/g, "  \n"))}
+      {@html marked(description.replace(/\n/g, '  \n'))}
     </article>
   </div>
 </div>
@@ -56,7 +60,7 @@
         }
 
         .roles {
-          font-size: .75rem;
+          font-size: 0.75rem;
           color: $color-text-secondary;
         }
       }

@@ -10,8 +10,8 @@
 
   let cardsToShow =
     maxCards !== undefined && maxCards >= 0 ? posts.slice(0, Math.round(maxCards)) : posts
-  let cardsWithLabel = cardsToShow.map(c => {
-    return {...c, categoryLabel: postCategories[c.category]}
+  let cardsWithLabel = cardsToShow.map((c) => {
+    return { ...c, categoryLabel: postCategories[c.category] }
   })
 
   const maxColsClass = `max-cols-${maxColumns}`

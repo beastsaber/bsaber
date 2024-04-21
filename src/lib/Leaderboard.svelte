@@ -17,7 +17,7 @@
   function contentFromChange(change: number): string {
     if (change <= -1) return change.toString()
     else if (change >= 1) return `+${change}`
-    else return "~"
+    else return '~'
   }
 </script>
 
@@ -28,7 +28,9 @@
         <div class="rank {rankColor}">{player.rank}</div>
         <img class="avatar" src={player.avatar} alt="" />
         <div class="name">{player.name}</div>
-        <div class="change" class:up={player.change >= 1} class:down={player.change <= -1}>{contentFromChange(player.change)}</div>
+        <div class="change" class:up={player.change >= 1} class:down={player.change <= -1}>
+          {contentFromChange(player.change)}
+        </div>
       </div>
     </div>
   {/each}

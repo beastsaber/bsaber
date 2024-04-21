@@ -62,7 +62,7 @@
     ranked: darken($color-warning-yellow, 5%),
     curated: darken($color-success-green, 5%),
     verified: darken($color-info-blue, 5%),
-    playlists: $color-bsaber-purple
+    playlists: $color-bsaber-purple,
   );
 
   @each $name, $color in $colors {
