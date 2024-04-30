@@ -23,9 +23,6 @@
   ]
 </script>
 
-<svelte:head>
-  <title>Error {title}</title>
-</svelte:head>
 <section>
   <body id="error-page" class="error">
     <div class="message">
