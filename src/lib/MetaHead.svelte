@@ -3,7 +3,7 @@
   import { DEPLOY_PRIME_URL } from './environmentVariables'
 
   export let title: string | undefined = undefined
-  const finalTitle = title != null ? title + ' - Beast Saber' : 'Beast Saber'
+  const finalTitle = title != null ? title + ' - BeastSaber' : 'BeastSaber'
   export let description: string =
     'The hub of the Beat Saber community: your guide to top-tier map recommendations and essential insights. Uncover a rich selection of curated maps and learn more about Beat Saber and its community through our articles to enhance your gaming experience.'
   export let imageUrl: string = '/beastsaber-logo-fullsize-square.jpg'
@@ -52,6 +52,7 @@
     <link rel="canonical" href={origin + canonicalUrl} />
   {/if}
 
+  <!-- fix incoming links from netlify emails -->
   <!-- fix incoming links from netlify emails -->
   <!-- fix incoming links from netlify emails -->
   <!-- fix incoming links from netlify emails -->

@@ -9,7 +9,10 @@
   const getPageLink = (page: number) => `/community-events/${page}`
 </script>
 
-<MetaHead />
+<MetaHead
+  title="Community Events"
+  description="See a listing of highlighted events from across the Beat Saber community including tournaments, training sessions, social events, contests, and more!"
+/>
 
 <h1 class="page-header">Community Events</h1>
 <EventCards
