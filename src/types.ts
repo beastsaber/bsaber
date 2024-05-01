@@ -41,10 +41,10 @@ export type CommunityEvent = {
 }
 
 export type EventDateParams = {
-  startDateUTC: string
-  endDateUTC?: string
-  startTimeUTC?: string
-  endTimeUTC?: string
+  startDateTimeUTC: Date
+  endDateTimeUTC?: Date
+  useStartTime: boolean
+  useEndTime: boolean
 }
 
 export type MapOfTheWeekCollectionData = {

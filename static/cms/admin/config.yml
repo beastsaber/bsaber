@@ -269,6 +269,7 @@ collections:
       - name: useStartTime
         label: Use Start Time
         widget: boolean
+        required: false
         default: false
       - name: endDateTime
         label: End Date/Time
@@ -279,6 +280,7 @@ collections:
       - name: useEndTime
         label: Use End Time
         widget: boolean
+        required: false
         default: false
   - name: community-event-hosts
     label: Community Event Hosts
