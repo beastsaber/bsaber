@@ -131,7 +131,7 @@
     background-color: #333333;
 
     &.passed {
-      filter: brightness(0.8);
+      filter: brightness(0.6);
     }
   }
 
