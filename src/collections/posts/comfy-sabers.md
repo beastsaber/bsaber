@@ -6,9 +6,11 @@ publish: 2024-04-24T19:00:00.000Z
 showInPostListing: false
 ---
 
-<p align="center">
-    <img src="/uploads/banner.png">
-</p>
+<div class="image">
+    <p>
+        <img src="/uploads/banner.png">
+    </p>
+</div>
 
 **Event Name:** Comfy Sabers - Season 3
 \
@@ -25,7 +27,7 @@ There will be two divisions, a lower and a higher division, to allow for a more 
 **Additional Information:** Join the [Comfy Sabers Discord Server](https://discord.gg/DP2d9kAzga) and check the #announcements channel
 
 <style>
-img {
+.image {
   float: left;
   padding: 0px 20px 20px 0px;
 }
