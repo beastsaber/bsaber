@@ -48,12 +48,14 @@
         ? endDateTimeUTC.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
         : null
 
-    let finalEndDateTimeText = endDateText
+    let finalEndDateTimeText = ''
     if (endDateText) {
       finalEndDateTimeText += `${endDateText}`
       if (endTimeText) {
         finalEndDateTimeText += ` | ${endTimeText}`
       }
+    } else {
+      return null
     }
 
     return finalEndDateTimeText
