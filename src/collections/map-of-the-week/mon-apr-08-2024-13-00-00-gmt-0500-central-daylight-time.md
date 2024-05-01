@@ -5,4 +5,5 @@ startDate: 2024-04-08T18:00:00.000Z
 showcase:
   id: 4kGk4LTai8Q
   type: youtube-short
+coverUrlOverwrite: https://cdn.assets.beatleader.xyz/songcover-3b40d-full.webp
 ---

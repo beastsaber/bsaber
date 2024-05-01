@@ -20,11 +20,14 @@
   import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
   import MetaHead from '$lib/MetaHead.svelte'
   import EventCards from '$lib/EventCards.svelte'
+  import { isCurrentEvent } from '$lib/isCurrentEvent'
 
   export let data: RootPageSSRData
 
   let { announcements, currentMapOfTheWeek, articles, communityEvents } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
+
+  const currentEvents = communityEvents.filter(isCurrentEvent).reverse()
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
   const maxCommunityEventsCards = 6
@@ -88,7 +91,7 @@
     linkUrl="/community-events/1"
     linkText="See all events"
   />
-  <EventCards events={communityEvents} maxCards={maxCommunityEventsCards} />
+  <EventCards events={currentEvents} maxCards={maxCommunityEventsCards} />
 
   <Header icon={faChartLine} text="Global Ranking Leaderboards" />
   <div class="leaderboards">

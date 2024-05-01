@@ -6,6 +6,7 @@
   import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
   import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
   import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
+  import { isCurrentEvent } from './isCurrentEvent'
 
   export let events: CommunityEvent[]
   export let maxCards: number = 6 // max amount of cards to show, ideally divisble by 3
@@ -54,17 +55,24 @@
     } else {
       faIcon = faCalendarCheck
     }
+
     return {
       ...event,
       faIcon,
       customIcon,
+      isCurrent: isCurrentEvent(event),
     }
   })
 </script>
 
 <div class="cards">
   {#each processedEventData as event, index (keyPrefix + '-' + index)}
-    <div class="card" id={keyPrefix + '-' + index}>
+    <div
+      class="card"
+      class:current={event.isCurrent}
+      class:passed={!event.isCurrent}
+      id={keyPrefix + '-' + index}
+    >
       <!-- href to be updated with path e.g. '/community-events/event.slug' -->
       <a class="title" href={event.url}>
         {event.title ?? ''}
@@ -117,10 +125,14 @@
     padding: 0.75rem;
     gap: 5px;
     border-radius: $rounding-large;
-    background-color: #333333;
     background-size: 100%;
     background-position: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #333333;
+
+    &.passed {
+      filter: brightness(0.6);
+    }
   }
 
   .title {
