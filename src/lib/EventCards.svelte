@@ -130,13 +130,10 @@
     background-size: 100%;
     background-position: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    &.current {
-      background-color: #333333;
-    }
+    background-color: #333333;
 
     &.passed {
-      background-color: #111111;
+      filter: brightness(0.8);
     }
   }
 
