@@ -3,9 +3,13 @@
   import PaginationBar from '$lib/PaginationBar.svelte'
   import MetaHead from '$lib/MetaHead.svelte'
   import EventCards from '$lib/EventCards.svelte'
+  import { isCurrentEvent } from '$lib/isCurrentEvent'
 
   export let data: CommunityEventsPagePaginatedSSRData
+  const currentEvents = data.communityEvents.filter(isCurrentEvent).reverse()
+  const passedEvents = data.communityEvents.filter((x) => !isCurrentEvent(x))
 
+  const resortedCommunityEvents = [...currentEvents, ...passedEvents]
   const getPageLink = (page: number) => `/community-events/${page}`
 </script>
 
@@ -16,7 +20,7 @@
 
 <h1 class="page-header">Community Events</h1>
 <EventCards
-  events={data.communityEvents}
+  events={resortedCommunityEvents}
   maxCards={data.pageSize}
   keyPrefix={'page-' + data.currentPage}
 />
