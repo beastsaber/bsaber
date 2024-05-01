@@ -213,7 +213,6 @@
 
   .date-second-row {
     margin-top: -0.4rem;
-    margin-left: 0.5rem;
   }
 
   .host a {
