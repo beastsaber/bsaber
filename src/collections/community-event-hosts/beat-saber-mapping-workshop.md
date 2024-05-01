@@ -1,4 +1,4 @@
 ---
 name: Beat Saber Mapping Workshop
-url: https://www.twitch.tv/bsmappingworkshop
+url: https://discord.gg/QUNxWtayxs
 ---
