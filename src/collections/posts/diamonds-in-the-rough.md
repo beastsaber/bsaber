@@ -5,7 +5,7 @@ category: event
 publish: 2024-04-19T17:43:00.000Z
 homepageText: DITR allows new mappers to pair up with an experienced mapper to
   learn how to make a high-quality beginner map!
-image: /static/uploads/posts/ditr5.png
+image: /static/uploads/posts/ditr5-square.png
 showInPostListing: false
 linkToSpecialtyPage: speciality/diamonds-in-the-rough
 ---
