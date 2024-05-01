@@ -13,33 +13,50 @@
   export let keyPrefix: string = ''
   const eventData = events.slice(0, Math.round(maxCards))
 
-  const createDateText = ({
+  const timeFormatOptions: Intl.DateTimeFormatOptions = {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  }
+
+  const createStartDateTimeText = ({
     dateParams: { startDateTimeUTC, endDateTimeUTC, useStartTime, useEndTime },
   }: CommunityEvent): string => {
-    const options: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' }
     const startDateText = useStartTime
-      ? startDateTimeUTC.toLocaleDateString('en-US', options)
-      : new Intl.DateTimeFormat('en-US', options).format(startDateTimeUTC)
-    const endDateText = endDateTimeUTC ? endDateTimeUTC.toLocaleDateString('en-US', options) : null
+      ? startDateTimeUTC.toLocaleDateString('en-US', timeFormatOptions)
+      : new Intl.DateTimeFormat('en-US', timeFormatOptions).format(startDateTimeUTC)
     const startTimeText = useStartTime
       ? startDateTimeUTC.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
+      : null
+
+    let finalStartDateTimeText = startDateText
+    if (startTimeText) {
+      finalStartDateTimeText += ` | ${startTimeText}`
+    }
+
+    return finalStartDateTimeText
+  }
+
+  const createEndDateTimeText = ({
+    dateParams: { endDateTimeUTC, useEndTime },
+  }: CommunityEvent): string | null => {
+    const endDateText = endDateTimeUTC
+      ? endDateTimeUTC.toLocaleDateString('en-US', timeFormatOptions)
       : null
     const endTimeText =
       useEndTime && endDateTimeUTC
         ? endDateTimeUTC.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
         : null
 
-    let finalDateText = startDateText
-    if (startTimeText) {
-      finalDateText += ` | ${startTimeText}`
-    }
+    let finalEndDateTimeText = endDateText
     if (endDateText) {
-      finalDateText += ` - ${endDateText}`
+      finalEndDateTimeText += `${endDateText}`
       if (endTimeText) {
-        finalDateText += ` | ${endTimeText}`
+        finalEndDateTimeText += ` | ${endTimeText}`
       }
     }
-    return finalDateText
+
+    return finalEndDateTimeText
   }
 
   // process data to use correct type of icon for the community event
@@ -61,6 +78,8 @@
       faIcon,
       customIcon,
       isCurrent: isCurrentEvent(event),
+      startDateText: createStartDateTimeText(event),
+      endDateText: createEndDateTimeText(event),
     }
   })
 </script>
@@ -90,9 +109,14 @@
           <span class="host">
             Hosted by <a href={event.host.url}>{event.host.name}</a>
           </span>
-          <span class="date" title={Intl.DateTimeFormat().resolvedOptions().timeZone}
-            >{createDateText(event)}</span
-          >
+          <span class="date" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
+            {event.startDateText}
+            {#if event.endDateText}
+              {#if event.dateParams.useStartTime || event.dateParams.useEndTime}
+                <br />
+              {/if}- {event.endDateText}
+            {/if}
+          </span>
         </div>
       </div>
     </div>
