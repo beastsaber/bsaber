@@ -63,8 +63,6 @@
       isCurrent: isCurrentEvent(event),
     }
   })
-
-  console.log(processedEventData)
 </script>
 
 <div class="cards">
