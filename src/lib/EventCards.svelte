@@ -111,14 +111,19 @@
           <span class="host">
             Hosted by <a href={event.host.url}>{event.host.name}</a>
           </span>
-          <span class="date" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
-            {event.startDateText}
-            {#if event.endDateText}
-              {#if event.dateParams.useStartTime || event.dateParams.useEndTime}
-                <br />
-              {/if}- {event.endDateText}
-            {/if}
-          </span>
+          {#if event.endDateText && event.dateParams.useStartTime && event.dateParams.useEndTime}
+            <div class="date-first-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
+              {event.startDateText}
+            </div>
+            <div class="date-second-row">- {event.endDateText}</div>
+          {:else}
+            <div class="date-first-row">
+              {event.startDateText}
+              {#if event.endDateText}
+                - {event.endDateText}
+              {/if}
+            </div>
+          {/if}
         </div>
       </div>
     </div>
@@ -201,8 +206,14 @@
     line-height: 1.5625rem;
   }
 
-  .date {
+  .date-first-row,
+  .date-second-row {
     color: $color-muted-text;
+  }
+
+  .date-second-row {
+    margin-top: -0.4rem;
+    margin-left: 0.5rem;
   }
 
   .host a {
