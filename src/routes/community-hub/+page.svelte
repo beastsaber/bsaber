@@ -84,7 +84,6 @@
     if (foundLabel) {
       foundLabel.activated = !foundLabel.activated
       data.availableLabels = [...data.availableLabels]
-      console.log(data.availableLabels)
     }
 
     filteredCommunities = filterCommunities(
@@ -117,7 +116,6 @@
     }
     nameAndDescriptionFilter = (event.target as HTMLInputElement).value
     debounceTimeout = setTimeout(() => {
-      console.log(nameAndDescriptionFilter)
       filteredCommunities = filterCommunities(
         data.communities,
         data.availableLabels,

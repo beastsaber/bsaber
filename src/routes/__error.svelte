@@ -19,13 +19,10 @@
   // Having the message in a variable as it seems they get seperated on each line that starts with a html tag
   let helpfullMessages = [
     `<b>Verify url and typos</b> - The web page you were attempting to view may not exist or may have moved - try <em>checking the web address for typos</em>.`,
-    `<b>Visit our Discord</b> - If you followed a link from somewhere, please let us know at <code>#site-bugs</code> on the <a href=\"https://discord.gg/VJZHUbt\">BeastSaber Discord</a>. Tell us where you came from and what you were looking for, and we'll do our best to fix it.`,
+    `<b>Visit our Discord</b> - If you followed a link from somewhere, please let us know at <code>#site-development</code> on the <a href=\"https://discord.gg/VJZHUbt\">BeastSaber Discord</a>. Tell us where you came from and what you were looking for, and we'll do our best to fix it.`,
   ]
 </script>
 
-<svelte:head>
-  <title>Error {title}</title>
-</svelte:head>
 <section>
   <body id="error-page" class="error">
     <div class="message">

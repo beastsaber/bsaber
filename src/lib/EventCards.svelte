@@ -6,6 +6,7 @@
   import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
   import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
   import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
+  import { isCurrentEvent } from './isCurrentEvent'
 
   export let events: CommunityEvent[]
   export let maxCards: number = 6 // max amount of cards to show, ideally divisble by 3
@@ -13,30 +14,26 @@
   const eventData = events.slice(0, Math.round(maxCards))
 
   const createDateText = ({
-    dateParams: { startDateUTC, endDateUTC, startTimeUTC, endTimeUTC },
+    dateParams: { startDateTimeUTC, endDateTimeUTC, useStartTime, useEndTime },
   }: CommunityEvent): string => {
-    const startDate = new Date(`${startDateUTC}T${startTimeUTC ?? '00:00:00'}Z`)
-    const endDate = new Date(`${endDateUTC ?? '2000-01-01'}T${endTimeUTC ?? '00:00:00'}Z`)
-
     const options: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' }
-    const startDateText = startTimeUTC
-      ? startDate.toLocaleDateString('en-US', options)
-      : new Intl.DateTimeFormat('en-US', options).format(startDate)
-    const endDateText = endTimeUTC
-      ? endDate.toLocaleDateString('en-US', options)
-      : new Intl.DateTimeFormat('en-US', options).format(endDate)
-    const startTimeText = startTimeUTC
-      ? startDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
+    const startDateText = useStartTime
+      ? startDateTimeUTC.toLocaleDateString('en-US', options)
+      : new Intl.DateTimeFormat('en-US', options).format(startDateTimeUTC)
+    const endDateText = endDateTimeUTC ? endDateTimeUTC.toLocaleDateString('en-US', options) : null
+    const startTimeText = useStartTime
+      ? startDateTimeUTC.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
       : null
-    const endTimeText = endTimeUTC
-      ? endDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
-      : null
+    const endTimeText =
+      useEndTime && endDateTimeUTC
+        ? endDateTimeUTC.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
+        : null
 
     let finalDateText = startDateText
     if (startTimeText) {
       finalDateText += ` | ${startTimeText}`
     }
-    if (endDateUTC) {
+    if (endDateText) {
       finalDateText += ` - ${endDateText}`
       if (endTimeText) {
         finalDateText += ` | ${endTimeText}`
@@ -58,17 +55,24 @@
     } else {
       faIcon = faCalendarCheck
     }
+
     return {
       ...event,
       faIcon,
       customIcon,
+      isCurrent: isCurrentEvent(event),
     }
   })
 </script>
 
 <div class="cards">
   {#each processedEventData as event, index (keyPrefix + '-' + index)}
-    <div class="card" id={keyPrefix + '-' + index}>
+    <div
+      class="card"
+      class:current={event.isCurrent}
+      class:passed={!event.isCurrent}
+      id={keyPrefix + '-' + index}
+    >
       <!-- href to be updated with path e.g. '/community-events/event.slug' -->
       <a class="title" href={event.url}>
         {event.title ?? ''}
@@ -121,10 +125,14 @@
     padding: 0.75rem;
     gap: 5px;
     border-radius: $rounding-large;
-    background-color: #333333;
     background-size: 100%;
     background-position: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #333333;
+
+    &.passed {
+      filter: brightness(0.6);
+    }
   }
 
   .title {
