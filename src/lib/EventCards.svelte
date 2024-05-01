@@ -135,11 +135,21 @@
     color: white;
     font-weight: bold;
     z-index: 1;
+    @media (max-width: 560px) {
+      text-align: center;
+    }
   }
 
   .info-container {
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 560px) {
+      margin-top: 0.5rem;
+      flex-direction: column;
+      text-align: center;
+    }
+
     align-items: center;
     gap: 10px;
   }
