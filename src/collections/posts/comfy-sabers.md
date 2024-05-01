@@ -3,6 +3,7 @@ title: Comfy Sabers
 section: articles
 category: event
 publish: 2024-04-24T19:00:00.000Z
+image: /static/uploads/posts/comfy-sabers-no-text.png
 showInPostListing: false
 ---
 
