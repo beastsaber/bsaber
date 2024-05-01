@@ -8,9 +8,7 @@ showInPostListing: false
 ---
 
 <div class="image">
-    <p>
-        <img src="/uploads/banner.png">
-    </p>
+    <img src="/uploads/banner.png">
 </div>
 
 **Event Name:** Comfy Sabers - Season 3
