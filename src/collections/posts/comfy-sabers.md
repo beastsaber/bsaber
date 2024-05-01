@@ -23,3 +23,10 @@ showInPostListing: false
 There will be two divisions, a lower and a higher division, to allow for a more equal playing field. The qualifier deadline is Sunday, the 12th of May.
 
 **Additional Information:** Join the [Comfy Sabers Discord Server](https://discord.gg/DP2d9kAzga) and check the #announcements channel
+
+<style>
+img {
+  float: left;
+  padding: 0px 20px 20px 0px;
+}
+</style>
