@@ -19,8 +19,7 @@
     const startDateText = useStartTime
       ? startDateTimeUTC.toLocaleDateString('en-US', options)
       : new Intl.DateTimeFormat('en-US', options).format(startDateTimeUTC)
-    const endDateText =
-      useEndTime && endDateTimeUTC ? endDateTimeUTC.toLocaleDateString('en-US', options) : null
+    const endDateText = endDateTimeUTC ? endDateTimeUTC.toLocaleDateString('en-US', options) : null
     const startTimeText = useStartTime
       ? startDateTimeUTC.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' })
       : null
