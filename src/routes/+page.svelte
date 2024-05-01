@@ -27,7 +27,7 @@
   let { announcements, currentMapOfTheWeek, articles, communityEvents } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
 
-  const currentEvents = communityEvents.filter(isCurrentEvent)
+  const currentEvents = communityEvents.filter(isCurrentEvent).reverse()
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
   const maxCommunityEventsCards = 6
