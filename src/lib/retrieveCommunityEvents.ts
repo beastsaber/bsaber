@@ -1,8 +1,5 @@
 import type { CommunityEvent, EventDateParams } from '../types'
 import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-dayjs.extend(utc)
 
 export const retrieveCommunityEvents = async (): Promise<CommunityEvent[]> => {
   const eventCollectionData = await retrieveAllCollectionDataOfType('community-events')
@@ -18,18 +15,17 @@ export const retrieveCommunityEvents = async (): Promise<CommunityEvent[]> => {
     const endDateTime = singleEvent.attributes.endDateTime
       ? new Date(singleEvent.attributes.endDateTime)
       : undefined
+
     const dateParams: EventDateParams = {
-      startDateUTC: dayjs(startDateTime).utc().format('YYYY-MM-DD'),
+      startDateTimeUTC: startDateTime,
+      useStartTime: singleEvent.attributes.useStartTime,
+      useEndTime: singleEvent.attributes.useEndTime,
     }
-    if (singleEvent.attributes.useStartTime) {
-      dateParams.startTimeUTC = dayjs(startDateTime).utc().format('HH:mm:ss')
-    }
+
     if (endDateTime != null) {
-      dateParams.endDateUTC = dayjs(endDateTime).utc().format('YYYY-MM-DD')
-      if (singleEvent.attributes.useEndTime) {
-        dateParams.endTimeUTC = dayjs(endDateTime).utc().format('HH:mm:ss')
-      }
+      dateParams.endDateTimeUTC = endDateTime
     }
+
     const host = eventHostCollectionData.find(
       (singleEventHost) => singleEventHost.attributes.name === singleEvent.attributes.host,
     )
