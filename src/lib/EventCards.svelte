@@ -181,6 +181,8 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .icon-circle {
