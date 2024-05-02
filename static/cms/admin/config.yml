@@ -241,6 +241,23 @@ collections:
     folder: src/collections/community-events
     slug: '{{title}}'
     create: true
+    view_filters:
+      - label: BSWC
+        field: host
+        pattern: Beat Saber World Cup
+      - label: BeastSaber
+        field: host
+        pattern: BeastSaber
+      - label: Beat Khana
+        field: host
+        pattern: Beat Khana
+      - label: Beat Saber Mapping Workshop
+        field: host
+        pattern: Beat Saber Mapping Workshop
+      - label: Beat Saber Mapping Server
+        field: host
+        pattern: Beat Saber Mapping Server
+    sortable_fields: ['host', 'title']
     fields:
       - name: host
         label: Host
