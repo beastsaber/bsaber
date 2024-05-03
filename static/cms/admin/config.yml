@@ -277,6 +277,7 @@ collections:
           - { label: 'Tournament', value: 'tournament' }
           - { label: 'Social', value: 'social' }
           - { label: 'Learning', value: 'learning' }
+          - { label: 'Awards', value: 'awards' }
           - { label: 'Generic', value: 'generic' }
       - name: startDateTime
         label: Start Date/Time

@@ -12,7 +12,7 @@ export type Post = {
   linkToSpecialtyPage?: string
 }
 
-export type CommunityEventCategory = 'tournament' | 'social' | 'learning' | 'generic'
+export type CommunityEventCategory = 'tournament' | 'social' | 'learning' | 'awards' | 'generic'
 
 export type CommunityEventCollectionData = {
   title: string
