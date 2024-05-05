@@ -25,7 +25,7 @@ After an event has passed, the event will be pushed to the bottom of the upcomin
 
 ## Where do these events come from?
 
-The events listed on our homepage and our [Community](/community-events/1) Events page](/community-events/1) are compiled from various community members, Discord servers, and the community Calendar that the "Beat Saber Tournaments" group maintains. We try to do all the searching for you and bring it to you all in one "easy to find and read" place - with that added bonus of not needing to join Discord servers!
+The events listed on our homepage and our [Community Events page](/community-events/1) are compiled from various community members, Discord servers, and the community Calendar that the "Beat Saber Tournaments" group maintains. We try to do all the searching for you and bring it to you all in one "easy to find and read" place - with that added bonus of not needing to join Discord servers!
 
 ## How do I get my event on the site?
 
