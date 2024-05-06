@@ -7,6 +7,7 @@
   import OneClickDownloadButton from './OneClickDownloadButton.svelte'
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import MapPreview from './MapPreview.svelte'
+  import MapPreviewModal from '$lib/MapPreviewModal.svelte'
 
   export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
     'FIRST_PUBLISHED'
@@ -14,6 +15,10 @@
   export let maxCards: number | undefined = undefined // max amount of cards to show
 
   let maps: Beatmap[] = []
+
+  let previewKey: string | null = null
+
+  const setPreviewKey = (key: string | null) => (previewKey = key)
 
   onMount(async () => {
     await getMaps()
@@ -31,6 +36,10 @@
 </script>
 
 <div class="cards max-cols-3">
+  {#if previewKey != null}
+    <MapPreviewModal key={previewKey} {setPreviewKey} />
+  {/if}
+
   {#if maps.length !== 0}
     {#each maps as map}
       <div class="card-wrapper">
@@ -64,7 +73,7 @@
             <div class="tag-row-container">
               <Tags tags={map.tags} />
               <div class="map-preview">
-                <MapPreview mapId={map.id} />
+                <MapPreview mapId={map.id} {setPreviewKey} />
               </div>
             </div>
             <div class="last-row-container">
@@ -132,6 +141,7 @@
       align-items: center;
       opacity: 0;
       transition: opacity $transition-long;
+      margin-left: auto;
     }
 
     &:hover {
