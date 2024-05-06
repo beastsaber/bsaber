@@ -6,6 +6,7 @@
   import Difficulties from '$lib/Difficulties.svelte'
   import OneClickDownloadButton from './OneClickDownloadButton.svelte'
   import ZipDownloadButton from './ZipDownloadButton.svelte'
+  import MapPreview from './MapPreview.svelte'
 
   export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
     'FIRST_PUBLISHED'
@@ -62,6 +63,9 @@
             </div>
             <div class="tag-row-container">
               <Tags tags={map.tags} />
+              <div class="map-preview">
+                <MapPreview mapId={map.id} />
+              </div>
             </div>
             <div class="last-row-container">
               <Difficulties diffs={map.versions[0].diffs} />
@@ -122,6 +126,14 @@
       transition: opacity $transition-long;
     }
 
+    .map-preview {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      opacity: 0;
+      transition: opacity $transition-long;
+    }
+
     &:hover {
       background-position-x: 100%;
 
@@ -130,6 +142,10 @@
       }
 
       .download-button-container {
+        opacity: 100%;
+      }
+
+      .map-preview {
         opacity: 100%;
       }
     }
