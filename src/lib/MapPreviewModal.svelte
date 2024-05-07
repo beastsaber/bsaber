@@ -41,12 +41,13 @@
       width: 100vw;
       background-color: #000c;
     }
+    $fill-percentage: 80;
+    $aspect-ratio: 16/9;
     .content {
       z-index: 101;
-      aspect-ratio: 16/9;
-      width: 100vw;
-      height: 100vh;
-      scale: 0.7;
+      aspect-ratio: $aspect-ratio;
+      max-width: calc(#{$fill-percentage} * $aspect-ratio * 1vh);
+      width: #{$fill-percentage}vw;
     }
   }
 </style>
