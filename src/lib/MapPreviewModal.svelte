@@ -16,7 +16,6 @@
       title="Map Preview"
       height="100%"
       width="100%"
-      aspect-ratio="16/9"
       allowfullscreen="true"
     />
   </div>
@@ -31,8 +30,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 
     .backdrop {
       position: fixed;
@@ -44,8 +43,10 @@
     }
     .content {
       z-index: 101;
-      width: 1200px;
-      height: 800px;
+      aspect-ratio: 16/9;
+      width: 100vw;
+      height: 100vh;
+      scale: 0.7;
     }
   }
 </style>
