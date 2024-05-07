@@ -16,6 +16,7 @@
       title="Map Preview"
       height="100%"
       width="100%"
+      aspect-ratio="16/9"
     />
   </div>
 </div>
