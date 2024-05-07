@@ -1,14 +1,17 @@
 <script lang="ts">
-  export let key: string
+  export let key: string | null = null
 
-  export let setPreviewKey: ((key: string | null) => void) | undefined
-
-  // @ts-ignore
-  const close = () => setPreviewKey?.call(this, null)
+  const close = () => (key = null)
+  const onKeydown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      close()
+      document.removeEventListener('keydown', onKeydown)
+    }
+  }
+  document.addEventListener('keydown', onKeydown)
 </script>
 
 <div class="preview-container">
-  <!-- TODO: close when pressing escape -->
   <div class="backdrop" on:click={close} />
   <div class="content">
     <iframe

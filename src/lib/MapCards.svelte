@@ -37,7 +37,7 @@
 
 <div class="cards max-cols-3">
   {#if previewKey != null}
-    <MapPreviewModal key={previewKey} {setPreviewKey} />
+    <MapPreviewModal bind:key={previewKey} />
   {/if}
 
   {#if maps.length !== 0}
