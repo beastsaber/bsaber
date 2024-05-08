@@ -242,21 +242,36 @@ collections:
     slug: '{{title}}'
     create: true
     view_filters:
-      - label: BSWC
+      - label: Beat Saber Modding Group
         field: host
-        pattern: Beat Saber World Cup
+        pattern: Beat Saber Modding Group
+      - label: Cube Community
+        field: host
+        pattern: Cube Community
       - label: BeastSaber
         field: host
         pattern: BeastSaber
       - label: Beat Khana
         field: host
         pattern: Beat Khana
-      - label: Beat Saber Mapping Workshop
-        field: host
-        pattern: Beat Saber Mapping Workshop
       - label: Beat Saber Mapping Server
         field: host
         pattern: Beat Saber Mapping Server
+      - label: Beat Saber Mapping Workshop
+        field: host
+        pattern: Beat Saber Mapping Workshop
+      - label: Beat Saber Tourneys
+        field: host
+        pattern: Beat Saber Tourneys
+      - label: Beat Saber World Cup
+        field: host
+        pattern: Beat Saber World Cup
+      - label: BeatLeader
+        field: host
+        pattern: BeatLeader
+      - label: Comfy Sabers
+        field: host
+        pattern: Comfy Sabers
     sortable_fields: ['host', 'title']
     fields:
       - name: host
