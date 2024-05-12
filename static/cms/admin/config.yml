@@ -263,6 +263,9 @@ collections:
       - label: Beat Saber Tourneys
         field: host
         pattern: Beat Saber Tourneys
+      - label: Beat Saber University League
+        field: host
+        pattern: Beat Saber University League
       - label: Beat Saber World Cup
         field: host
         pattern: Beat Saber World Cup
