@@ -2,10 +2,11 @@
   import type { CommunityEvent } from '../types'
   import Fa from 'svelte-fa/src/fa.svelte'
 
-  import { faMedal } from '@fortawesome/free-solid-svg-icons/faMedal'
+  import { faTrophy } from '@fortawesome/free-solid-svg-icons'
   import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
   import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
   import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
+  import { faAward } from '@fortawesome/free-solid-svg-icons'
   import { isCurrentEvent } from './isCurrentEvent'
 
   export let events: CommunityEvent[]
@@ -66,11 +67,13 @@
     const { category } = event
     let faIcon, customIcon
     if (category === 'tournament') {
-      faIcon = faMedal
+      faIcon = faTrophy
     } else if (category === 'learning') {
       faIcon = faGraduationCap
     } else if (category === 'social') {
       faIcon = faComments
+    } else if (category === 'awards') {
+      faIcon = faAward
     } else {
       faIcon = faCalendarCheck
     }
