@@ -25,6 +25,8 @@ There will be two divisions, a lower and a higher division, to allow for a more 
 
 **Additional Information:** Join the [Comfy Sabers Discord Server](https://discord.gg/DP2d9kAzga) and check the #announcements channel
 
+[**Watch the event here**](https://www.twitch.tv/comfysabers)
+
 <style>
 .image {
   float: left;
