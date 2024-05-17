@@ -29,6 +29,16 @@
     >
       {singlePageNumber}
     </a>
+    {#if forceExternal}
+      <!-- 
+        Solves issue #133.
+        Adding an invisible link to ensure the pages are all crawled - anchors with rel="external" are not crawled 
+        Ideally you'd want to try to avoid using force external, but in case of community events no other working solution was found
+      -->
+      <a style="display: none" href={getPageLink(singlePageNumber)}>
+        {singlePageNumber}
+      </a>
+    {/if}
   {/each}
   <a
     class="page-button"
