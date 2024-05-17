@@ -1,16 +1,25 @@
+import { writable, type Writable } from 'svelte/store'
+
 class AudioPlayer {
-  audioElement: HTMLAudioElement = document.createElement('audio')
-  playingId: string | null = null
+  audioElement: HTMLAudioElement | null = null
+  // Making this a writable so it will update in the UI efficiently
+  playingId: Writable<string | null> = writable(null)
 
   play(url: string, id?: string) {
+    if (!this.audioElement) {
+      this.audioElement = document.createElement('audio')
+    }
     this.audioElement.src = url
     this.audioElement.play()
-    this.playingId = id || null
+    this.audioElement.onended = () => {
+      this.playingId.set(null)
+    }
+    this.playingId.set(id || null)
   }
 
   pause() {
-    this.audioElement.pause()
-    this.playingId = null
+    this.audioElement?.pause()
+    this.playingId.set(null)
   }
 }
 
