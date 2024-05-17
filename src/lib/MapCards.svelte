@@ -65,7 +65,6 @@
                   audioPlayer.pause()
                 } else {
                   audioPlayer.play(map.versions[0].previewURL, map.id)
-                  console.log(audioPlayer.playingId)
                 }
               }}
             >
