@@ -229,26 +229,6 @@
           opacity: 1;
         }
       }
-
-      .Fpla {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        font-size: 2rem;
-        opacity: 0;
-        transition: opacity 0.3s;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
     }
 
     .content {
