@@ -14,7 +14,17 @@ linkToSpecialtyPage: speciality/diamonds-in-the-rough
 
 The goal of this event is to match interested Verified mappers up with Novice mappers in a "coaching" relationship to create one high-quality, curateable map with at least three difficulties. At the end of the event, the novice-made maps will be released as a pack on BeatSaver and featured on BeastSaber, showcasing up-and-coming "undiscovered" mapping talent!
 
-> Stay tuned for the next DITR event info!
+> 📢 **Apps are open from May 17th to May 31st**
+
+**Important Dates:**
+
+- Coaching & Novice Apps Close: May 24, 2024
+
+- Pairings Announced: June 7, 2023
+
+- Event Start Date: June 8, 2024
+
+- Release Date: August 8, 2024 at 17:00 UTC
 
 Check out the playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036).
 
@@ -229,9 +239,9 @@ Participants must have a basic Mapper or Verified Mapper role on the [Beat Saber
 
 There will be a lot of interest in this event and not everyone will get a spot.
 
-- **COACHES:** Complete the [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8) by (TBD)
+- **COACHES:** Complete the [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8) by May 24, 2024
 
-- **NOVICES:** Complete the [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8) by (TBD)
+- **NOVICES:** Complete the [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8) by May 24, 2024
 
 <br />
 
