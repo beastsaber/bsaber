@@ -8,6 +8,9 @@
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import MapPreview from './MapPreview.svelte'
   import MapPreviewModal from '$lib/MapPreviewModal.svelte'
+  import Fa from 'svelte-fa/src/fa.svelte'
+  import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
+  import { audioPlayer } from '$lib/audio-player'
 
   export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
     'FIRST_PUBLISHED'
@@ -33,6 +36,17 @@
     let response = await fetch(url)
     maps = await response.json().then((json) => json['docs'] as Beatmap[])
   }
+
+  // Having it in a class is a bit trickier to handle. So we're pulling it out there.
+  const playingId = audioPlayer.playingId
+
+  const togglePlayingAudio = (mapId: string, previewUrl: string) => {
+    if ($playingId === mapId) {
+      audioPlayer.pause()
+    } else {
+      audioPlayer.play(previewUrl, mapId)
+    }
+  }
 </script>
 
 <div class="cards max-cols-3">
@@ -44,19 +58,26 @@
     {#each maps as map}
       <div class="card-wrapper">
         <div class="card">
-          <a
-            href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
-              map.id
-            }`}
-            class="image-link"
-          >
+          <div class="image-container">
             <img
               src={`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${
                 map.versions[0].hash
               }.jpg`}
               alt={map.name}
             />
-          </a>
+
+            <div
+              class="button-overlay"
+              class:force-show={$playingId === map.id}
+              on:click={() => togglePlayingAudio(map.id, map.versions[0].previewURL)}
+            >
+              {#if $playingId === map.id}
+                <Fa icon={faPause} />
+              {:else}
+                <Fa icon={faPlay} />
+              {/if}
+            </div>
+          </div>
           <div class="content">
             <div>
               <a
@@ -181,13 +202,41 @@
     border-radius: $rounding-large;
     transition: background-position $transition-long;
 
-    .image-link {
+    .image-container {
+      position: relative;
       height: $image-size;
       flex: $image-size 0 0;
 
       img {
-        border-radius: $rounding-large;
         height: 100%;
+        border-radius: $rounding-large;
+      }
+
+      .button-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 2rem;
+        border-radius: $rounding-large;
+
+        opacity: 0;
+        transition: opacity 0.3s;
+        @media (hover: hover) {
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        &.force-show {
+          opacity: 1;
+        }
       }
     }
 
