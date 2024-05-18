@@ -208,8 +208,8 @@
       flex: $image-size 0 0;
 
       img {
-        border-radius: $rounding-large;
         height: 100%;
+        border-radius: $rounding-large;
       }
 
       .button-overlay {
@@ -224,6 +224,7 @@
         background: rgba(0, 0, 0, 0.5);
         color: white;
         font-size: 2rem;
+        border-radius: $rounding-large;
 
         opacity: 0;
         transition: opacity 0.3s;
