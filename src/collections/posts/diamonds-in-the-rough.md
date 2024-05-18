@@ -16,9 +16,17 @@ The goal of this event is to match interested Verified mappers up with Novice ma
 
 > 📢 **Apps are open from May 17th to May 31st**
 
+## What do I need to do to get started?
+
+There will be a lot of interest in this event and not everyone will get a spot.
+
+- **COACHES:** Complete the [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8) by May 31, 2024
+
+- **NOVICES:** Complete the [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8) by May 31, 2024
+
 **Important Dates:**
 
-- Coaching & Novice Apps Close: May 24, 2024
+- Coaching & Novice Apps Close: May 31, 2024
 
 - Pairings Announced: June 7, 2023
 
@@ -232,16 +240,6 @@ Participants must have a basic Mapper or Verified Mapper role on the [Beat Saber
 - Be capable of providing constructive feedback, have lots of patience, and an understanding of what makes a curation-quality map without micromanaging the Novice and turning it into "your" map.
 
 - Be able to commit to the process for ONE map in the listed time frame. That's it. Obviously life stuff happens, but each map is a team effort. If you know that your time is going to be consumed by school/work during the event period, we ask that you not apply for the event. It's a real gut punch to have your coach or novice drop out part way through...
-
-<br />
-
-## What do I need to do to get started?
-
-There will be a lot of interest in this event and not everyone will get a spot.
-
-- **COACHES:** Complete the [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8) by May 24, 2024
-
-- **NOVICES:** Complete the [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8) by May 24, 2024
 
 <br />
 
