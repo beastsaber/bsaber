@@ -10,7 +10,7 @@ class AudioPlayer {
       this.audioElement = document.createElement('audio')
     }
     this.audioElement.src = url
-    this.audioElement.volume = 0.75
+    this.audioElement.volume = 0.35
     this.audioElement.play()
     this.audioElement.onended = () => {
       this.playingId.set(null)
