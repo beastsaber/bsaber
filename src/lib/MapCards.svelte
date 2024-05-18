@@ -70,8 +70,6 @@
               class="button-overlay"
               class:force-show={$playingId === map.id}
               on:click={() => togglePlayingAudio(map.id, map.versions[0].previewURL)}
-              on:touchend|preventDefault={() =>
-                togglePlayingAudio(map.id, map.versions[0].previewURL)}
             >
               {#if $playingId === map.id}
                 <Fa icon={faPause} />
