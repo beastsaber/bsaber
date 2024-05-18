@@ -39,6 +39,14 @@
 
   // Having it in a class is a bit trickier to handle. So we're pulling it out there.
   const playingId = audioPlayer.playingId
+
+  const togglePlayingAudio = (mapId: string, previewUrl: string) => {
+    if ($playingId === mapId) {
+      audioPlayer.pause()
+    } else {
+      audioPlayer.play(previewUrl, mapId)
+    }
+  }
 </script>
 
 <div class="cards max-cols-3">
@@ -60,13 +68,10 @@
 
             <div
               class="button-overlay"
-              on:click={() => {
-                if ($playingId === map.id) {
-                  audioPlayer.pause()
-                } else {
-                  audioPlayer.play(map.versions[0].previewURL, map.id)
-                }
-              }}
+              class:force-show={$playingId === map.id}
+              on:click={() => togglePlayingAudio(map.id, map.versions[0].previewURL)}
+              on:touchend|preventDefault={() =>
+                togglePlayingAudio(map.id, map.versions[0].previewURL)}
             >
               {#if $playingId === map.id}
                 <Fa icon={faPause} />
@@ -224,7 +229,8 @@
         opacity: 0;
         transition: opacity 0.3s;
 
-        &:hover {
+        &:hover,
+        &.force-show {
           opacity: 1;
         }
       }
