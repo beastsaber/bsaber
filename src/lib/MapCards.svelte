@@ -226,10 +226,15 @@
         background: rgba(0, 0, 0, 0.5);
         color: white;
         font-size: 2rem;
+
         opacity: 0;
         transition: opacity 0.3s;
+        @media (hover: hover) {
+          &:hover {
+            opacity: 1;
+          }
+        }
 
-        &:hover,
         &.force-show {
           opacity: 1;
         }
