@@ -148,7 +148,7 @@
     <div class="author-box-content" bind:this={authorBox}>
       {#each authors as author}
         <div class="author-box-person">
-          <img src={author.avatar} alt={author.name} />
+          <img class="author-profile-picture" src={author.avatar} alt={author.name} />
           <div class="author-box-person-info">
             <div class="header-line">
               <h4 class="author-name">
@@ -165,6 +165,12 @@
             {:else}
               <p>Writting for Beast Saber as a guest.</p>
             {/if}
+
+            <div class="social-links-mobile">
+              {#each author.socialLinks ?? [] as social}
+                <SocialIcon social={social.platform} id={social.id} />
+              {/each}
+            </div>
           </div>
         </div>
       {/each}
@@ -233,9 +239,10 @@
     }
     .author-box-content {
       padding: 0rem 1.5rem 1rem 1rem;
+      text-align: justify;
       .author-box-person {
         display: flex;
-        img {
+        .author-profile-picture {
           width: $pfp-diameter;
           height: $pfp-diameter;
           border-radius: 50%;
@@ -254,13 +261,6 @@
     display: flex;
     justify-content: space-between;
     height: 1.2rem;
-    .social-links {
-      display: flex;
-      justify-content: end;
-      a {
-        margin-left: 2rem;
-      }
-    }
   }
   :global(.author-box-person-info > p) {
     margin-top: 1rem;
@@ -283,6 +283,41 @@
         margin: 0;
         border-radius: 0 0 $rounding-large - 2px $rounding-large - 2px; // Ensures the backdrop filter covers the entire image
       }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: end;
+  }
+
+  .social-links-mobile {
+    display: none;
+  }
+
+  @media (max-width: 500px) {
+    .social-links {
+      display: none;
+    }
+
+    .author-box-person {
+      flex-direction: column;
+      align-items: center;
+
+      .header-line {
+        h4 {
+          font-size: 1.3rem !important;
+        }
+        margin-top: 1rem;
+        justify-content: center;
+      }
+    }
+
+    .social-links-mobile {
+      height: 1.2rem;
+      display: flex;
+      margin-top: 1.5rem;
+      justify-content: center;
     }
   }
 </style>
