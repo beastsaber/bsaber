@@ -13,7 +13,7 @@
     if (!noLink && !link && id) {
       switch (social) {
         case 'Discord':
-          finalLink = `https://discord.gg/${id}`
+          finalLink = `https://discord.com/users/${id}`
           break
         case 'Twitter/X':
           finalLink = `https://twitter.com/${id}`
