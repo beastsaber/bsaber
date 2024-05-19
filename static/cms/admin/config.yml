@@ -50,6 +50,36 @@ collections:
         required: false
         media_folder: /static/uploads/posts
         choose_url: false
+      - name: authors
+        label: Author(s)
+        widget: relation
+        multiple: true
+        collection: people
+        search_fields: [name]
+        value_field: '{{beatsaverId}}'
+        display_fields: [name]
+        required: true
+        hint: The author(s) of this article. You can select multiple, but must select at least one!
+      - name: credits
+        label: Credits
+        required: false
+        widget: list
+        summary: 'Thanks to {{fields.contributor}} for {{fields.contribution}}.'
+        fields:
+          - name: contributors
+            label: Contributor(s)
+            widget: relation
+            collection: people
+            search_fields: [name]
+            value_field: '{{beatsaverId}}'
+            display_fields: [name]
+            multiple: true
+            hint: The contributor(s) of this article. You can select multiple if they have contributed in the same way.
+          - name: contribution
+            label: Contribution
+            widget: string
+            hint: "The contribution of the contributor(s) to this article. If provided it will be inserted into the articles as 'Thanks to {{Contributor}} for {{Contribution}}.' If not provided, the contributor's name will be used without any further specification. Example: 'the feedback and proofreading the article'."
+            required: false
       - name: showInPostListing
         label: Show in post listing
         widget: boolean
@@ -329,5 +359,40 @@ collections:
       - name: url
         label: URL
         widget: string
+  - name: people
+    label: People
+    folder: src/collections/people
+    slug: '{{name}}'
+    create: true
+    fields:
+      - name: name
+        label: name
+      - name: beatsaverId
+        label: BeatSaver ID
+        hint: "The BeatSaver ID of the user. You can find this one in the URL of the user's page on beatsaver.com which will look like this: https://beatsaver.com/profile/${beatsaverId}. The ID is the last part of the URL."
+      - name: bio
+        label: Bio
+        widget: markdown
+        required: false
+        hint: A short bio of the user. Only used for authors on posts.
+      - name: socialLinks
+        label: Social Links
+        widget: list
+        multiple: true
+        required: false
+        hint: The social links of the user. Only used for authors on posts. The BeatSaver ID is given above as well, but if you want this to be listed as your social links you need to re-enter it here.
+        summary: '{{fields.platform}}: {{fields.id}}'
+        fields:
+          - name: platform
+            label: Platform
+            widget: select
+            options:
+              - label: BeatSaver
+                value: beatsaver
+              - label: Discord
+                value: discord
+          - name: id
+            label: ID
+            widget: string
 media_folder: 'static/uploads'
 public_folder: '/uploads'
