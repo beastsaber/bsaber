@@ -215,6 +215,77 @@
     }
   }
 
+  .meta-data-line {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 3px $color-background-tertiary;
+    width: 100%;
+  }
+  // Needs to be global so because it's rendered in with @html
+  :global(a.post-person-link) {
+    color: $color-danger-red;
+  }
+  .author-information {
+    margin-right: 0.5rem;
+  }
+  .publication-time {
+    margin-left: 0.5rem;
+    color: $color-muted-text;
+  }
+  $pfp-diameter: 128px;
+  .author-box {
+    margin-top: 2rem;
+    border-radius: $rounding-small;
+    background-color: $color-background-secondary;
+    .author-box-header {
+      margin-bottom: 1rem;
+      padding: 0.4rem 1.5rem 0.4rem 1rem;
+      border-radius: $rounding-small $rounding-small 0 0;
+      background-color: $color-background-tertiary;
+    }
+    .author-box-content {
+      padding: 0rem 1.5rem 1rem 1rem;
+      .author-box-person {
+        img {
+          float: left;
+          width: $pfp-diameter;
+          height: $pfp-diameter;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 1.5rem;
+        }
+        .author-box-person-info {
+          margin-left: $pfp-diameter + 30px;
+          h4 {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+  .header-line {
+    display: flex;
+    justify-content: space-between;
+    height: 1.2rem;
+    .social-links {
+      display: flex;
+      justify-content: end;
+      a {
+        margin-left: 2rem;
+      }
+    }
+  }
+  :global(.author-box-person-info > p) {
+    margin-top: 1rem;
+  }
+  :global(a.faux-scroll-link) {
+    cursor: pointer;
+  }
+
+  .credit-line {
+    margin-top: 1rem;
+  }
+
   @media (min-width: 992px) {
     header {
       margin: -20px 0 1rem;
@@ -226,75 +297,5 @@
         border-radius: 0 0 $rounding-large - 2px $rounding-large - 2px; // Ensures the backdrop filter covers the entire image
       }
     }
-    .meta-data-line {
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: solid 3px $color-background-tertiary;
-      width: 100%;
-    }
-    // Needs to be global so because it's rendered in with @html
-    :global(a.post-person-link) {
-      color: $color-danger-red;
-    }
-    .author-information {
-      margin-right: 0.5rem;
-    }
-    .publication-time {
-      margin-left: 0.5rem;
-      color: $color-muted-text;
-    }
-    $pfp-diameter: 128px;
-    .author-box {
-      margin-top: 2rem;
-      border-radius: $rounding-small;
-      background-color: $color-background-secondary;
-      .author-box-header {
-        margin-bottom: 1rem;
-        padding: 0.4rem 1.5rem 0.4rem 1rem;
-        border-radius: $rounding-small $rounding-small 0 0;
-        background-color: $color-background-tertiary;
-      }
-      .author-box-content {
-        padding: 0rem 1.5rem 1rem 1rem;
-        .author-box-person {
-          img {
-            float: left;
-            width: $pfp-diameter;
-            height: $pfp-diameter;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-          }
-          .author-box-person-info {
-            margin-left: $pfp-diameter + 30px;
-            h4 {
-              font-size: 1.1rem;
-            }
-          }
-        }
-      }
-    }
-    .header-line {
-      display: flex;
-      justify-content: space-between;
-      height: 1.2rem;
-      .social-links {
-        display: flex;
-        justify-content: end;
-        a {
-          margin-left: 2rem;
-        }
-      }
-    }
-    :global(.author-box-person-info > p) {
-      margin-top: 1rem;
-    }
-    :global(a.faux-scroll-link) {
-      cursor: pointer;
-    }
-  }
-
-  .credit-line {
-    margin-top: 1rem;
   }
 </style>
