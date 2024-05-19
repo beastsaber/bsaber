@@ -58,8 +58,8 @@ collections:
         search_fields: [name]
         value_field: '{{beatsaverId}}'
         display_fields: [name]
-        required: true
-        hint: The author(s) of this article. You can select multiple, but must select at least one!
+        required: false
+        hint: The author(s) of this article. You can select multiple, but you don't have to specify any!
       - name: credits
         label: Credits
         required: false
@@ -78,7 +78,7 @@ collections:
           - name: contribution
             label: Contribution
             widget: string
-            hint: "The contribution of the contributor(s) to this article. If provided it will be inserted into the articles as 'Thanks to {{Contributor}} for {{Contribution}}.' If not provided, the contributor's name will be used without any further specification. Example: 'the feedback and proofreading the article'."
+            hint: 'The contribution of the contributor(s) to this article. If provided it will be inserted into the articles as "Thanks to {{Contributor}} for {{Contribution}}." If not provided, {{Contribution}} will default to "for their contribution". Example: ''the feedback and proofreading the article''.'
             required: false
       - name: showInPostListing
         label: Show in post listing
