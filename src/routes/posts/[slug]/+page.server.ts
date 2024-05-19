@@ -7,4 +7,5 @@ type LoadParameter = {
   fetch: typeof fetch
 }
 
-export const load = ({ params }: LoadParameter) => retrieveCollectionData('posts', params.slug)
+export const load = ({ params }: LoadParameter) =>
+  retrievePostDataWithAuthorAndContributors(params.slug)

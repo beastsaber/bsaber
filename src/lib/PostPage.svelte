@@ -116,63 +116,65 @@
     </h1>
   {/if}
   <div class="meta-data-line">
-    <span class="author-information"
-      >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}</span
-    >
-    |
+    {#if authors.length > 0}
+      <span class="author-information"
+        >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}</span
+      >
+      |{/if}
     <span class="publication-time">{formatDate(publish)}</span>
     <!-- ToDo: Put Post Category Tags here - might make a good component as they are used in three locations including this one -->
     <!-- <span class="category-labels"></span> -->
   </div>
   {@html marked(body, { renderer: postRenderer })}
 </article>
-
-<div class="author-box">
-  <div class="author-box-header">
-    {#if authors.length > 2}
-      <h3>About the Authors</h3>
-    {:else}
-      <h3>About the Author</h3>
-    {/if}
-  </div>
-  <div class="author-box-content" bind:this={authorBox}>
-    {#each authors as author}
-      <div class="author-box-person">
-        <img src={author.avatar} alt={author.name} />
-        <div class="author-box-person-info">
-          <div class="header-line">
-            <h4 class="author-name">
-              {author.name}
-            </h4>
-            <div class="social-links">
-              {#each author.socialLinks ?? [] as social}
-                {#if social.platform === 'beatsaver'}
-                  <a href="https://beatsaver.com/profile/{social.id}">
-                    <!-- ToDo: Provide BeatSaver icon -->
-                    <!-- <img src={'/beat-saver.svg'} alt="BeatSaver" /> -->
-                    BeatSaver
-                  </a>
-                {/if}
-                {#if social.platform === 'discord'}
-                  <a href="https://discordapp.com/users/{social.id}">
-                    <!-- ToDo: Provide Discord icon -->
-                    <!-- <img src={'/discord.svg'} alt="Discord" /> -->
-                    Discord
-                  </a>
-                {/if}
-              {/each}
+{#if authors.length > 0}
+  <div class="author-box">
+    <div class="author-box-header">
+      {#if authors.length > 2}
+        <h3>About the Authors</h3>
+      {:else}
+        <h3>About the Author</h3>
+      {/if}
+    </div>
+    <div class="author-box-content" bind:this={authorBox}>
+      {#each authors as author}
+        <div class="author-box-person">
+          <img src={author.avatar} alt={author.name} />
+          <div class="author-box-person-info">
+            <div class="header-line">
+              <h4 class="author-name">
+                {author.name}
+              </h4>
+              <div class="social-links">
+                {#each author.socialLinks ?? [] as social}
+                  {#if social.platform === 'beatsaver'}
+                    <a href="https://beatsaver.com/profile/{social.id}">
+                      <!-- ToDo: Provide BeatSaver icon -->
+                      <!-- <img src={'/beat-saver.svg'} alt="BeatSaver" /> -->
+                      BeatSaver
+                    </a>
+                  {/if}
+                  {#if social.platform === 'discord'}
+                    <a href="https://discordapp.com/users/{social.id}">
+                      <!-- ToDo: Provide Discord icon -->
+                      <!-- <img src={'/discord.svg'} alt="Discord" /> -->
+                      Discord
+                    </a>
+                  {/if}
+                {/each}
+              </div>
             </div>
+            {#if author.bio !== undefined}
+              {@html marked(author.bio)}
+            {:else}
+              <p>Writting for Beast Saber as guest.</p>
+            {/if}
           </div>
-          {#if author.bio !== undefined}
-            {@html marked(author.bio)}
-          {:else}
-            <p>Writting for Beast Saber as guest.</p>
-          {/if}
         </div>
-      </div>
-    {/each}
+      {/each}
+    </div>
   </div>
-</div>
+{/if}
 
 <style lang="scss">
   @import 'src/scss/variables';
@@ -225,12 +227,12 @@
     $pfp-diameter: 128px;
     .author-box {
       margin-top: 2rem;
-      border-radius: $rounding-large;
+      border-radius: $rounding-small;
       background-color: $color-background-secondary;
       .author-box-header {
         margin-bottom: 1rem;
         padding: 0.4rem 1.5rem 0.4rem 1rem;
-        border-radius: $rounding-large $rounding-large 0 0;
+        border-radius: $rounding-small $rounding-small 0 0;
         background-color: $color-background-tertiary;
       }
       .author-box-content {

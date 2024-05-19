@@ -87,36 +87,40 @@ export const retrievePostDataWithAuthorAndContributors = async (
   )
 
   const uploaderIds = [
-    ...attributes.authors,
+    ...(attributes.authors ?? []),
     ...(attributes.credits?.flatMap((credit) => credit.contributors ?? []) ?? []),
   ].join(',')
-  const intermediaryRelevantPeopleBeatSaverData = await fetch(
-    `https://api.beatsaver.com/users/ids/${uploaderIds}`,
-  ).then((x) => x.json())
 
   const allAuthorData = {} as Record<string, Author>
-  for (const beatSaverUser of intermediaryRelevantPeopleBeatSaverData) {
-    const personFromMarkdown = allPeople.find((person) => person.beatsaverId == beatSaverUser.id)
-    allAuthorData[beatSaverUser.id] = {
-      id: beatSaverUser.id,
-      name: beatSaverUser.name,
-      avatar: beatSaverUser.avatar,
-      admin: !!beatSaverUser.admin,
-      curator: !!beatSaverUser.curator,
-      verifiedMapper: !!beatSaverUser.verifiedMapper,
-      socialLinks: personFromMarkdown?.socialLinks,
-      bio: personFromMarkdown?.bio,
-    } as Author
+  if (uploaderIds.length > 0) {
+    const intermediaryRelevantPeopleBeatSaverData = await fetch(
+      `https://api.beatsaver.com/users/ids/${uploaderIds}`,
+    ).then((x) => x.json())
+
+    for (const beatSaverUser of intermediaryRelevantPeopleBeatSaverData) {
+      const personFromMarkdown = allPeople.find((person) => person.beatsaverId == beatSaverUser.id)
+      allAuthorData[beatSaverUser.id] = {
+        id: beatSaverUser.id,
+        name: beatSaverUser.name,
+        avatar: beatSaverUser.avatar,
+        admin: !!beatSaverUser.admin,
+        curator: !!beatSaverUser.curator,
+        verifiedMapper: !!beatSaverUser.verifiedMapper,
+        socialLinks: personFromMarkdown?.socialLinks,
+        bio: personFromMarkdown?.bio,
+      } as Author
+    }
   }
 
   const newAttributes = {
     ...attributes,
-    authors: attributes.authors.map((author: string) => allAuthorData[author]),
-    credits: attributes.credits?.map((credit) => ({
-      ...credit,
-      contributors:
-        credit.contributors?.map((contributor: string) => allAuthorData[contributor]) ?? [],
-    })),
+    authors: attributes.authors?.map((author: string) => allAuthorData[author]) ?? [],
+    credits:
+      attributes.credits?.map((credit) => ({
+        ...credit,
+        contributors:
+          credit.contributors?.map((contributor: string) => allAuthorData[contributor]) ?? [],
+      })) ?? [],
   }
 
   return {
