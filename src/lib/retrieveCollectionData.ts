@@ -123,8 +123,6 @@ export const retrievePostDataWithAuthorAndContributors = async (
       })) ?? [],
   }
 
-  console.log(newAttributes)
-
   return {
     attributes: newAttributes,
     body,
