@@ -1,8 +1,7 @@
 <script lang="ts">
   import { marked } from 'marked'
-  import type { Author, PostWithAuthorAndContributor } from '../types'
+  import type { Author, PostWithAuthorAndContributor, Uploader } from '../types'
   import MetaHead from './MetaHead.svelte'
-  import Uploader from './Uploader.svelte'
 
   export let post: PostWithAuthorAndContributor
   const { body, title, image, authors, credits, publish } = post
@@ -60,13 +59,13 @@
     return `<p>${renderedText}</p>`
   }
 
-  const linkifyPerson = (person: Author) => {
+  const linkifyPerson = (person: Uploader) => {
     return `<a class="post-person-link" href="https://beatsaver.com/profile/${person.id}">${person.name}</a>`
   }
-  const scrollifyPerson = (person: Author) => {
+  const scrollifyPerson = (person: Uploader) => {
     return `<a class="faux-scroll-link post-person-link">${person.name}</a></div>`
   }
-  const prettyNameConcatenation = (people: Author[], transformationFunction = linkifyPerson) => {
+  const prettyNameConcatenation = (people: Uploader[], transformationFunction = linkifyPerson) => {
     // Special cases
     if (people.length === 0) return ''
     if (people.length === 1) return transformationFunction(people[0])
@@ -175,6 +174,17 @@
     </div>
   </div>
 {/if}
+{#if credits.length > 0}
+  {#each credits as singleCredit}
+    <div class="credit-line">
+      Thanks to
+      {@html prettyNameConcatenation(singleCredit.contributors)}
+      {#if singleCredit.contribution}
+        for {singleCredit.contribution}
+      {/if}.
+    </div>
+  {/each}
+{/if}
 
 <style lang="scss">
   @import 'src/scss/variables';
@@ -273,5 +283,9 @@
     :global(a.faux-scroll-link) {
       cursor: pointer;
     }
+  }
+
+  .credit-line {
+    margin-top: 1rem;
   }
 </style>

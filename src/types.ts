@@ -11,7 +11,7 @@ export type Post = {
   showInPostListing: boolean
   linkToSpecialtyPage?: string
   authors: string[]
-  credits: { contributors: string[]; contributon?: string }[]
+  credits: { contributors: string[]; contribution?: string }[]
 }
 
 export type Person = {
@@ -31,7 +31,7 @@ export interface Author extends Uploader {
 
 export type PostWithAuthorAndContributor = Omit<Post, 'authors' | 'credits'> & {
   authors: Author[]
-  credits: { contributors: Uploader[]; contributon?: string }[]
+  credits: { contributors: Uploader[]; contribution?: string }[]
 }
 
 export type CommunityEventCategory = 'tournament' | 'social' | 'learning' | 'awards' | 'generic'
