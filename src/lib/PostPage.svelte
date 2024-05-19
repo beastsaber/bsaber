@@ -2,6 +2,7 @@
   import { marked } from 'marked'
   import type { Author, PostWithAuthorAndContributor, Uploader } from '../types'
   import MetaHead from './MetaHead.svelte'
+  import { onMount } from 'svelte'
 
   export let post: PostWithAuthorAndContributor
   const { body, title, image, authors, credits, publish } = post
@@ -92,8 +93,16 @@
     return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
   }
   let authorBox: HTMLElement
-
-  //          authorBox.scrollIntoView({ behavior: 'smooth' })
+  onMount(() => {
+    if (authorBox) {
+      document.querySelectorAll('.faux-scroll-link').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault()
+          authorBox.scrollIntoView({ behavior: 'smooth' })
+        })
+      })
+    }
+  })
 </script>
 
 <MetaHead
