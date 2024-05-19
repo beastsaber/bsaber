@@ -183,8 +183,10 @@
       Thanks to
       {@html prettyNameConcatenation(singleCredit.contributors)}
       {#if singleCredit.contribution}
-        for {singleCredit.contribution}
-      {/if}.
+        for {singleCredit.contribution}.
+      {:else}
+        for their contribution.
+      {/if}
     </div>
   {/each}
 {/if}
