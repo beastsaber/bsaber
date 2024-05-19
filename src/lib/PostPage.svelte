@@ -3,6 +3,7 @@
   import type { Author, PostWithAuthorAndContributor, Uploader } from '../types'
   import MetaHead from './MetaHead.svelte'
   import { onMount } from 'svelte'
+  import SocialIcon from './SocialIcon.svelte'
 
   export let post: PostWithAuthorAndContributor
   const { body, title, image, authors, credits, publish } = post
@@ -155,20 +156,7 @@
               </h4>
               <div class="social-links">
                 {#each author.socialLinks ?? [] as social}
-                  {#if social.platform === 'beatsaver'}
-                    <a href="https://beatsaver.com/profile/{social.id}">
-                      <!-- ToDo: Provide BeatSaver icon -->
-                      <!-- <img src={'/beat-saver.svg'} alt="BeatSaver" /> -->
-                      BeatSaver
-                    </a>
-                  {/if}
-                  {#if social.platform === 'discord'}
-                    <a href="https://discordapp.com/users/{social.id}">
-                      <!-- ToDo: Provide Discord icon -->
-                      <!-- <img src={'/discord.svg'} alt="Discord" /> -->
-                      Discord
-                    </a>
-                  {/if}
+                  <SocialIcon social={social.platform} id={social.id} />
                 {/each}
               </div>
             </div>

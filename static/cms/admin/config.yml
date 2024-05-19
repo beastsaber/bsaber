@@ -387,10 +387,19 @@ collections:
             label: Platform
             widget: select
             options:
-              - label: BeatSaver
-                value: beatsaver
-              - label: Discord
-                value: discord
+              [
+                'Discord',
+                'Twitter/X',
+                'Facebook',
+                'Instagram',
+                'Twitch',
+                'YouTube',
+                'Reddit',
+                'GitHub',
+                'Website',
+                'Documentation',
+                'BeatSaver',
+              ]
           - name: id
             label: ID
             widget: string

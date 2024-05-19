@@ -27,12 +27,15 @@
         case 'Twitch':
           finalLink = `https://twitch.tv/${id}`
           break
+        case 'BeatSaver':
+          finalLink = `https://beatsaver.com/profile/${id}`
+          break
         case 'YouTube':
-          finalLink = `https://youtube.com/${id}`
-          break
         case 'Reddit':
-          finalLink = `https://reddit.com/${id}`
-          break
+        case 'GitHub':
+        case 'Website':
+        case 'Documentation':
+          finalLink = id
       }
     }
   }

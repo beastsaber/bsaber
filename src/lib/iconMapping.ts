@@ -21,4 +21,5 @@ export const iconMapping = {
   GitHub: faGithub,
   Website: faLink,
   Documentation: faBook,
+  BeatSaver: faLink,
 }

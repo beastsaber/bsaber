@@ -1,3 +1,5 @@
+import type { iconMapping } from "$lib/iconMapping"
+
 export type Post = {
   title: string
   section: 'announcements' | 'articles' | 'speciality'
@@ -19,7 +21,7 @@ export type Person = {
   beatsaverId: string
   bio?: string
   socialLinks: {
-    platform: 'discord' | 'twitter' | 'beatsaver'
+    platform: keyof typeof iconMapping
     id: string
   }[]
 }

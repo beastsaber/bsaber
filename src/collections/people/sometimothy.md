@@ -7,8 +7,8 @@ bio: >-
   now.
   If you have any feedback or suggestions on any of my articles, please do reach out! You'll find my socials linked above - they're are there for this purpose!
 socialLinks:
-  - platform: beatsaver
+  - platform: BeatSaver
     id: '139574'
-  - platform: discord
+  - platform: Discord
     id: '270250238420189184'
 ---
