@@ -234,16 +234,15 @@
     .author-box-content {
       padding: 0rem 1.5rem 1rem 1rem;
       .author-box-person {
+        display: flex;
         img {
-          float: left;
           width: $pfp-diameter;
           height: $pfp-diameter;
           border-radius: 50%;
           object-fit: cover;
-          margin-bottom: 1.5rem;
         }
         .author-box-person-info {
-          margin-left: $pfp-diameter + 30px;
+          margin-left: 1rem;
           h4 {
             font-size: 1.1rem;
           }
