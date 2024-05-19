@@ -10,6 +10,28 @@ export type Post = {
   category: '' | 'announcement' | 'news' | 'articles' | 'interview' | 'event'
   showInPostListing: boolean
   linkToSpecialtyPage?: string
+  authors: string[]
+  credits: { contributors: string[]; contributon?: string }[]
+}
+
+export type Person = {
+  name: string
+  beatsaverId: string
+  bio?: string
+  socialLinks: {
+    platform: 'discord' | 'twitter' | 'beatsaver'
+    id: string
+  }[]
+}
+
+export interface Author extends Uploader {
+  bio: Person['bio']
+  socialLinks: Person['socialLinks']
+}
+
+export type PostWithAuthorAndContributor = Omit<Post, 'authors' | 'credits'> & {
+  authors: Author[]
+  credits: { contributors: Uploader[]; contributon?: string }[]
 }
 
 export type CommunityEventCategory = 'tournament' | 'social' | 'learning' | 'awards' | 'generic'
@@ -138,6 +160,8 @@ type ImportModuleData<T> = {
 export type ImportPostModuleData = ImportModuleData<Omit<Post, 'slug'>>
 
 export type ImportMapOfTheWeekModuleData = ImportModuleData<MapOfTheWeekCollectionData>
+
+export type ImportPersonModuleData = ImportModuleData<Person>
 
 export type RootPageSSRData = {
   announcements: Post[]
