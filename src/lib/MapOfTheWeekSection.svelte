@@ -37,7 +37,7 @@
   const uploaders = [mapOfTheWeek.map.uploader, ...collaborators]
 </script>
 
-{#if showShowcase && mapOfTheWeek.showcase != null && mapOfTheWeek.showcase.id != null && mapOfTheWeek.showcase.type !== null}
+{#if showShowcase && mapOfTheWeek.showcase != null && mapOfTheWeek.showcase.id != null && mapOfTheWeek.showcase.type != null}
   <div class="showcase-modal" style="aspect-ratio: {aspectRatio}; {sizeDeterminer}; {sizeLimiter};">
     <iframe
       width="100%"
@@ -103,7 +103,7 @@
           <!-- eslint-enable -->
           <p class="review">{mapOfTheWeek.review}</p>
           <div class="action-bar">
-            {#if mapOfTheWeek.showcase != null}
+            {#if mapOfTheWeek.showcase != null && mapOfTheWeek.showcase.id != null && mapOfTheWeek.showcase.type != null}
               <button class="open-showcase-button" on:click={() => openShowcase()}>
                 Watch the showcase
               </button>
