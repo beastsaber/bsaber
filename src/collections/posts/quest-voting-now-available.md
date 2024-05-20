@@ -1,13 +1,13 @@
 ---
 title: Quest Voting Is Now Available!
 section: articles
-category: announcement
+category: news
 publish: 2024-05-18T17:28:00.000Z
 homepageText: We already know you've always wanted to submit upvotes and
   downvotes on Quest - well now you can! Check out this article to learn more!
 image: /static/uploads/posts/questvoting1.jpg
 authors:
-  - '4285984'
+  - "4285984"
 showInPostListing: true
 ---
 
