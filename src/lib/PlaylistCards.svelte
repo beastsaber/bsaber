@@ -60,31 +60,26 @@
 
 <style lang="scss">
   @import '../scss/post-cards';
-  a .one-click-download-button-container {
+  a .one-click-download-button-container,
+  a .zip-download-button-container {
     transition: opacity $transition-long ease-in-out;
-    opacity: 1;
-
+    opacity: 0;
     position: absolute;
     top: 0.3rem;
-    right: 0.3rem;
     z-index: 1;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-    padding: 0.3rem;
     border-radius: 50%;
     overflow: visible;
   }
 
+  a .one-click-download-button-container {
+    right: 0.3rem;
+    padding: 0.3rem;
+  }
+
   a .zip-download-button-container {
-    transition: opacity $transition-long ease-in-out;
-    opacity: 1;
-    position: absolute;
-    top: 0.3rem;
     right: 2.5rem;
-    z-index: 1;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-    border-radius: 50%;
     padding: 0.3em 0.45em;
-    overflow: visible;
   }
 
   @media (min-width: 678px) {
