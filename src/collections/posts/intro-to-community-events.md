@@ -6,6 +6,8 @@ publish: 2024-05-02T19:40:00.000Z
 homepageText: Learn about how the Community Events are displayed at BeastSaber
   and how you can get your well-structured events added!
 image: /static/uploads/posts/calender-2389150_1920.png
+authors:
+  - "4285984"
 showInPostListing: true
 ---
 

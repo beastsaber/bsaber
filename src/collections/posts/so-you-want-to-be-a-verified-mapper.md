@@ -5,6 +5,8 @@ category: guide
 publish: 2024-02-18T00:00:00.000Z
 homepageText: Learn how to become a Verified Mapper on BeatSaver with this guide!
 image: /static/uploads/posts/verified-square1.png
+authors:
+  - "4285984"
 showInPostListing: true
 ---
 

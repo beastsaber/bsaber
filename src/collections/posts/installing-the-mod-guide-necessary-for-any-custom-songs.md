@@ -5,8 +5,10 @@ category: guide
 publish: 2024-03-22T00:00:00.000Z
 homepageText: Learn how to install new custom songs and mods on Beat Saber with this guide!
 image: /static/uploads/posts/beat-saber-square.jpg
+authors:
+  - "4285984"
 showInPostListing: false
-linkToSpecialtyPage: '/installing-the-mod-guide-necessary-for-any-custom-songs'
+linkToSpecialtyPage: /installing-the-mod-guide-necessary-for-any-custom-songs
 ---
 
 # If you haven’t played custom songs yet and are just getting started with Beat Saber, we’re excited for you!
