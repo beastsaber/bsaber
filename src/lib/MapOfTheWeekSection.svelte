@@ -281,6 +281,6 @@
   .zip-download-button-container {
     position: absolute;
     bottom: 2rem;
-    right: 3.4rem;
+    right: 3.8rem;
   }
 </style>
