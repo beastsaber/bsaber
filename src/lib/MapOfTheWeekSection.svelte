@@ -3,6 +3,7 @@
   import type { MapOfTheWeek } from '../types'
   import Header from './Header.svelte'
   import OneClickButton from './OneClickDownloadButton.svelte'
+  import ZipDownloadButton from './ZipDownloadButton.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
 
@@ -107,8 +108,11 @@
                 Watch the showcase
               </button>
             {/if}
+            <div class="zip-download-button-container">
+              <ZipDownloadButton downloadURL={mapOfTheWeek.map.versions[0].downloadURL} />
+            </div>
             <div class="one-click-download-button-container">
-              <OneClickButton mapId={mapOfTheWeek.map.id} />
+              <OneClickButton mapId="[mapOfTheWeek.map.id]" />
             </div>
           </div>
         </div>
@@ -271,5 +275,11 @@
 
   .one-click-download-button-container {
     margin-left: auto;
+  }
+
+  .zip-download-button-container {
+    position: absolute;
+    bottom: 2rem;
+    right: 3.4rem;
   }
 </style>

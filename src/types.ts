@@ -63,6 +63,8 @@ export type MapOfTheWeek = {
     id: string
     name: string
     coverUrl: string
+    downloadURL: string
+    versions: BeatmapVersion[]
     uploader: Uploader
     collaborators: Uploader[] | undefined
   }
