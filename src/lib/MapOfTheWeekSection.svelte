@@ -150,7 +150,6 @@
 
   .action-bar {
     display: flex;
-    justify-content: space-between;
     margin-top: 0.7rem;
 
     & .open-showcase-button {
@@ -274,7 +273,9 @@
   }
 
   .one-click-download-button-container {
-    margin-left: auto;
+    position: absolute;
+    bottom: 2rem;
+    right: 1.5rem;
   }
 
   .zip-download-button-container {
