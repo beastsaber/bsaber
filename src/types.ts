@@ -51,9 +51,9 @@ export type MapOfTheWeekCollectionData = {
   mapId: string
   review: string
   startDate: string
-  showcase: {
-    id: string
-    type: 'youtube-short' | 'youtube-video'
+  showcase?: {
+    id?: string
+    type?: 'youtube-short' | 'youtube-video'
   }
   coverUrlOverwrite?: string
 }
