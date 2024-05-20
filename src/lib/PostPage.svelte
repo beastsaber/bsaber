@@ -177,19 +177,7 @@
     </div>
   </div>
 {/if}
-{#if credits.length > 0}
-  {#each credits as singleCredit}
-    <div class="credit-line">
-      Thanks to
-      {@html prettyNameConcatenation(singleCredit.contributors)}
-      {#if singleCredit.contribution}
-        for {singleCredit.contribution}.
-      {:else}
-        for their contribution.
-      {/if}
-    </div>
-  {/each}
-{/if}
+
 
 <style lang="scss">
   @import 'src/scss/variables';
