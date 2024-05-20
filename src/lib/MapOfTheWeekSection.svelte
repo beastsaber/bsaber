@@ -37,7 +37,7 @@
   const uploaders = [mapOfTheWeek.map.uploader, ...collaborators]
 </script>
 
-{#if showShowcase && mapOfTheWeek.showcase != null}
+{#if showShowcase && mapOfTheWeek.showcase != null && mapOfTheWeek.showcase.id != null && mapOfTheWeek.showcase.type !== null}
   <div class="showcase-modal" style="aspect-ratio: {aspectRatio}; {sizeDeterminer}; {sizeLimiter};">
     <iframe
       width="100%"
