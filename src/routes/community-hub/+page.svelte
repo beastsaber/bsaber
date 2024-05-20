@@ -15,6 +15,8 @@
   import { faLink, faBook } from '@fortawesome/free-solid-svg-icons'
   import Fa from 'svelte-fa/src/fa.svelte'
   import Fuse from 'fuse.js'
+  import SocialIcon from '$lib/SocialIcon.svelte'
+  import { iconMapping } from '$lib/iconMapping'
 
   const filterCommunities = (
     communities: CommunityHubSSRData['communities'],
@@ -61,19 +63,6 @@
     nameAndDescriptionFilter,
   )
   let showFilterdropdown = false
-
-  const iconMapping = {
-    Discord: faDiscord,
-    'Twitter/X': faXTwitter,
-    Facebook: faFacebook,
-    Instagram: faInstagram,
-    Twitch: faTwitch,
-    YouTube: faYoutube,
-    Reddit: faReddit,
-    GitHub: faGithub,
-    Website: faLink,
-    Documentation: faBook,
-  }
 
   const getLabelObject = (labelName: string) => {
     return data.availableLabels.find((label) => label.label === labelName)
@@ -287,7 +276,7 @@
             title={name}
             on:click={toggleSocialFilter(name)}
           >
-            <Fa {icon} />
+            <SocialIcon social={name} noLink={true} />
           </span>
         {/each}
       </div>
@@ -334,14 +323,8 @@
         </div>
       </div>
       <div class="social-icons">
-        {#each community.socials as social, socialIndex (social)}
-          <a
-            id={`${communityIndex}-${socialIndex}-${social.name}`}
-            href={social.url}
-            title={social.titleOverwrite ?? social.name}
-          >
-            <Fa icon={iconMapping[social.name]} />
-          </a>
+        {#each community.socials as social, socialIndex (`${communityIndex}-${socialIndex}-${social.name}`)}
+          <SocialIcon social={social.name} link={social.url} titleOverwrite={social.title} />
         {/each}
       </div>
     </div>
@@ -555,21 +538,5 @@
     justify-content: flex-end;
     color: inherit;
     gap: 0.25rem;
-
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: $color-text-primary;
-      border-radius: $rounding-small;
-      width: 2em;
-      aspect-ratio: 1;
-
-      transition: background-color $transition-short;
-
-      &:hover {
-        background-color: mix($color-background-secondary, $color-background-tertiary, 50%);
-      }
-    }
   }
 </style>
