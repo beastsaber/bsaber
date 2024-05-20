@@ -5,8 +5,10 @@ category: guide
 publish: 2024-03-22T00:00:00.000Z
 homepageText: Learn how to find and install high quality custom songs for Beat Saber!
 image: /static/uploads/posts/beat-saber-square.jpg
+authors:
+  - "4285984"
 showInPostListing: true
-linkToSpecialtyPage: '/getting-started/custom-songs'
+linkToSpecialtyPage: /getting-started/custom-songs
 ---
 
 # Welcome to BEASTSABER! ❤️

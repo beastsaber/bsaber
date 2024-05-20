@@ -3,8 +3,12 @@ title: Getting Started with Mapping Levels
 section: articles
 category: guide
 publish: 2024-01-31T00:00:00.000Z
-homepageText: There are more than 100,000 maps on BeatSaver but you still may not be able to find the song you want. Anyone can learn to make their own maps with the resources available on this page!
+homepageText: There are more than 100,000 maps on BeatSaver but you still may
+  not be able to find the song you want. Anyone can learn to make their own maps
+  with the resources available on this page!
 image: /static/uploads/posts/chromapper-square.png
+authors:
+  - "4285984"
 showInPostListing: true
 ---
 

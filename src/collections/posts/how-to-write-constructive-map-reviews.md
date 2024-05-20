@@ -6,8 +6,10 @@ publish: 2024-02-17T00:00:00.000Z
 homepageText: Learn how to write and leave constructive map reviews that can
   actually have a positive impact for mappers with this guide!
 image: /static/uploads/posts/istock-1214680656-square.png
+authors:
+  - "4285984"
 showInPostListing: true
-linkToSpecialtyPage: '/how-to-write-constructive-map-reviews'
+linkToSpecialtyPage: /how-to-write-constructive-map-reviews
 ---
 
 # Learn how to write constructive map reviews 📝
