@@ -51,7 +51,7 @@
   <div class="showcase-backdrop" on:click={hideShowcase} />
 {/if}
 <div class="motw-container">
-  <div class="background-image" style="background-image: url({mapOfTheWeek.map.coverUrl});" />
+  <div class="background-image" style="background-image: url({mapOfTheWeek.coverUrl});" />
   <div class="card">
     {#if showHeader}
       <Header
@@ -63,7 +63,7 @@
     {/if}
     <div class="card-body">
       <a class="map-link" href="https://beatsaver.com/maps/{mapOfTheWeek.map.id}">
-        <img class="map-cover" alt="Cover of the Map of the Week" src={mapOfTheWeek.map.coverUrl} />
+        <img class="map-cover" alt="Cover of the Map of the Week" src={mapOfTheWeek.coverUrl} />
       </a>
       <!-- This container is used to float the content to the bottom so that it will push up bashed on the length of the review -->
       <div class="map-details-container">

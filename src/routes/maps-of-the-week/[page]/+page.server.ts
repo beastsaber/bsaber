@@ -70,22 +70,8 @@ export async function load({
       const beatSaverMapData = allBeatSaverMapData[singleMapOfTheWeek.mapId]
 
       paginatedFullMapsOfTheWeek.push({
-        map: {
-          id: singleMapOfTheWeek.mapId,
-          name: beatSaverMapData.name,
-          coverUrl: coverUrl,
-          uploader: {
-            id: beatSaverMapData.uploader.id,
-            name: beatSaverMapData.uploader.name,
-            avatar: beatSaverMapData.uploader.avatar,
-            description: beatSaverMapData.uploader.description,
-            admin: beatSaverMapData.uploader.admin,
-            curator: beatSaverMapData.uploader.curator,
-            seniorCurator: beatSaverMapData.uploader.seniorCurator,
-            verifiedMapper: beatSaverMapData.uploader.verifiedMapper,
-          },
-          collaborators: beatSaverMapData.collaborators,
-        },
+        map: beatSaverMapData,
+        coverUrl: coverUrl,
         review: singleMapOfTheWeek.review,
         startDate: singleMapOfTheWeek.startDate,
         showcase: singleMapOfTheWeek.showcase,
