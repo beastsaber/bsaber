@@ -3,6 +3,7 @@
   import type { MapOfTheWeek } from '../types'
   import Header from './Header.svelte'
   import OneClickButton from './OneClickDownloadButton.svelte'
+  import ZipDownloadButton from './ZipDownloadButton.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
 
@@ -50,7 +51,7 @@
   <div class="showcase-backdrop" on:click={hideShowcase} />
 {/if}
 <div class="motw-container">
-  <div class="background-image" style="background-image: url({mapOfTheWeek.map.coverUrl});" />
+  <div class="background-image" style="background-image: url({mapOfTheWeek.coverUrl});" />
   <div class="card">
     {#if showHeader}
       <Header
@@ -62,7 +63,7 @@
     {/if}
     <div class="card-body">
       <a class="map-link" href="https://beatsaver.com/maps/{mapOfTheWeek.map.id}">
-        <img class="map-cover" alt="Cover of the Map of the Week" src={mapOfTheWeek.map.coverUrl} />
+        <img class="map-cover" alt="Cover of the Map of the Week" src={mapOfTheWeek.coverUrl} />
       </a>
       <!-- This container is used to float the content to the bottom so that it will push up bashed on the length of the review -->
       <div class="map-details-container">
@@ -107,8 +108,11 @@
                 Watch the showcase
               </button>
             {/if}
+            <div class="zip-download-button-container">
+              <ZipDownloadButton downloadURL={mapOfTheWeek.map.versions[0].downloadURL} />
+            </div>
             <div class="one-click-download-button-container">
-              <OneClickButton mapId={mapOfTheWeek.map.id} />
+              <OneClickButton mapId="[mapOfTheWeek.map.id]" />
             </div>
           </div>
         </div>
@@ -271,5 +275,11 @@
 
   .one-click-download-button-container {
     margin-left: auto;
+  }
+
+  .zip-download-button-container {
+    position: absolute;
+    bottom: 2rem;
+    right: 3.4rem;
   }
 </style>

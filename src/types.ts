@@ -59,13 +59,8 @@ export type MapOfTheWeekCollectionData = {
 }
 
 export type MapOfTheWeek = {
-  map: {
-    id: string
-    name: string
-    coverUrl: string
-    uploader: Uploader
-    collaborators: Uploader[] | undefined
-  }
+  map: Beatmap
+  coverUrl: string
   review: string
   showcase: MapOfTheWeekCollectionData['showcase']
   startDate: Date
