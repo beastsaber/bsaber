@@ -1,10 +1,12 @@
 <script lang="ts">
   import { marked } from 'marked'
-  import type { Post } from '../types'
+  import type { Author, PostWithAuthorAndContributor, Uploader } from '../types'
   import MetaHead from './MetaHead.svelte'
+  import { onMount } from 'svelte'
+  import SocialIcon from './SocialIcon.svelte'
 
-  export let post: Post
-  const { body, title, image } = post
+  export let post: PostWithAuthorAndContributor
+  const { body, title, image, authors, credits, publish } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
   const postRenderer = new marked.Renderer()
@@ -58,6 +60,50 @@
 
     return `<p>${renderedText}</p>`
   }
+
+  const linkifyPerson = (person: Uploader) => {
+    return `<a class="post-person-link" href="https://beatsaver.com/profile/${person.id}">${person.name}</a>`
+  }
+  const scrollifyPerson = (person: Uploader) => {
+    return `<a class="faux-scroll-link post-person-link">${person.name}</a></div>`
+  }
+  const prettyNameConcatenation = (people: Uploader[], transformationFunction = linkifyPerson) => {
+    // Special cases
+    if (people.length === 0) return ''
+    if (people.length === 1) return transformationFunction(people[0])
+    // Usual case: First n-1 people concatenaded with commas, and the last one with an "and"
+    const lastPerson = people.pop()!
+    return `${people.map(linkifyPerson).join(', ')} and ${transformationFunction(lastPerson)}`
+  }
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]
+  function formatDate(dateTimeString: string): string {
+    const date = new Date(dateTimeString)
+    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+  }
+  let authorBox: HTMLElement
+  onMount(() => {
+    if (authorBox) {
+      document.querySelectorAll('.faux-scroll-link').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault()
+          authorBox.scrollIntoView({ behavior: 'smooth' })
+        })
+      })
+    }
+  })
 </script>
 
 <MetaHead
@@ -78,8 +124,59 @@
       {title}
     </h1>
   {/if}
+  <div class="meta-data-line">
+    {#if authors.length > 0}
+      <span class="author-information"
+        >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}</span
+      >
+      |{/if}
+    <span class="publication-time">{formatDate(publish)}</span>
+    <!-- ToDo: Put Post Category Tags here - might make a good component as they are used in three locations including this one -->
+    <!-- <span class="category-labels"></span> -->
+  </div>
   {@html marked(body, { renderer: postRenderer })}
 </article>
+{#if authors.length > 0}
+  <div class="author-box">
+    <div class="author-box-header">
+      {#if authors.length > 2}
+        <h3>About the Authors</h3>
+      {:else}
+        <h3>About the Author</h3>
+      {/if}
+    </div>
+    <div class="author-box-content" bind:this={authorBox}>
+      {#each authors as author}
+        <div class="author-box-person">
+          <img class="author-profile-picture" src={author.avatar} alt={author.name} />
+          <div class="author-box-person-info">
+            <div class="header-line">
+              <h4 class="author-name">
+                {author.name}
+              </h4>
+              <div class="social-links">
+                {#each author.socialLinks ?? [] as social}
+                  <SocialIcon social={social.platform} id={social.id} />
+                {/each}
+              </div>
+            </div>
+            {#if author.bio !== undefined}
+              {@html marked(author.bio)}
+            {:else}
+              <p>Writting for Beast Saber as a guest.</p>
+            {/if}
+
+            <div class="social-links-mobile">
+              {#each author.socialLinks ?? [] as social}
+                <SocialIcon social={social.platform} id={social.id} />
+              {/each}
+            </div>
+          </div>
+        </div>
+      {/each}
+    </div>
+  </div>
+{/if}
 
 <style lang="scss">
   @import 'src/scss/variables';
@@ -101,6 +198,77 @@
     }
   }
 
+  .meta-data-line {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 3px $color-background-tertiary;
+    width: 100%;
+  }
+  // Needs to be global so because it's rendered in with @html
+  :global(a.post-person-link) {
+    color: $color-danger-red;
+  }
+  .author-information {
+    margin-right: 0.5rem;
+  }
+  .publication-time {
+    margin-left: 0.5rem;
+    color: $color-muted-text;
+  }
+  $pfp-diameter: 128px;
+  .author-box {
+    margin-top: 2rem;
+    border-radius: $rounding-small;
+    background-color: $color-background-secondary;
+    .author-box-header {
+      margin-bottom: 1rem;
+      padding: 0.4rem 1.5rem 0.4rem 1rem;
+      border-radius: $rounding-small $rounding-small 0 0;
+      background-color: $color-background-tertiary;
+    }
+    .author-box-content {
+      padding: 0rem 1.5rem 1rem 1rem;
+      text-align: justify;
+      .author-box-person {
+        display: flex;
+        .author-profile-picture {
+          width: $pfp-diameter;
+          height: $pfp-diameter;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        .author-box-person-info {
+          margin-left: 1rem;
+          h4 {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+  .header-line {
+    display: flex;
+    justify-content: space-between;
+    height: 1.2rem;
+  }
+  :global(.author-box-person-info > p) {
+    margin-top: 1rem;
+  }
+  :global(a.faux-scroll-link) {
+    cursor: pointer;
+  }
+
+  .credit-line {
+    margin-top: 1rem;
+  }
+
+  // Separation between different authors
+  .author-box-person + .author-box-person {
+    padding-top: 1.2rem;
+    margin-top: 1.4rem;
+    border-top: 1px solid $color-background-tertiary;
+  }
+
   @media (min-width: 992px) {
     header {
       margin: -20px 0 1rem;
@@ -111,6 +279,41 @@
         margin: 0;
         border-radius: 0 0 $rounding-large - 2px $rounding-large - 2px; // Ensures the backdrop filter covers the entire image
       }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: end;
+  }
+
+  .social-links-mobile {
+    display: none;
+  }
+
+  @media (max-width: 500px) {
+    .social-links {
+      display: none;
+    }
+
+    .author-box-person {
+      flex-direction: column;
+      align-items: center;
+
+      .header-line {
+        h4 {
+          font-size: 1.3rem !important;
+        }
+        margin-top: 1rem;
+        justify-content: center;
+      }
+    }
+
+    .social-links-mobile {
+      height: 1.2rem;
+      display: flex;
+      margin-top: 1.5rem;
+      justify-content: center;
     }
   }
 </style>

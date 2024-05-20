@@ -1,3 +1,5 @@
+import type { iconMapping } from "$lib/iconMapping"
+
 export type Post = {
   title: string
   section: 'announcements' | 'articles' | 'speciality'
@@ -10,6 +12,28 @@ export type Post = {
   category: '' | 'announcement' | 'news' | 'articles' | 'interview' | 'event'
   showInPostListing: boolean
   linkToSpecialtyPage?: string
+  authors: string[]
+  credits: { contributors: string[]; contribution?: string }[]
+}
+
+export type Person = {
+  name: string
+  beatsaverId: string
+  bio?: string
+  socialLinks: {
+    platform: keyof typeof iconMapping
+    id: string
+  }[]
+}
+
+export interface Author extends Uploader {
+  bio: Person['bio']
+  socialLinks: Person['socialLinks']
+}
+
+export type PostWithAuthorAndContributor = Omit<Post, 'authors' | 'credits'> & {
+  authors: Author[]
+  credits: { contributors: Uploader[]; contribution?: string }[]
 }
 
 export type CommunityEventCategory = 'tournament' | 'social' | 'learning' | 'awards' | 'generic'
@@ -51,21 +75,16 @@ export type MapOfTheWeekCollectionData = {
   mapId: string
   review: string
   startDate: string
-  showcase: {
-    id: string
-    type: 'youtube-short' | 'youtube-video'
+  showcase?: {
+    id?: string
+    type?: 'youtube-short' | 'youtube-video'
   }
   coverUrlOverwrite?: string
 }
 
 export type MapOfTheWeek = {
-  map: {
-    id: string
-    name: string
-    coverUrl: string
-    uploader: Uploader
-    collaborators: Uploader[] | undefined
-  }
+  map: Beatmap
+  coverUrl: string
   review: string
   showcase: MapOfTheWeekCollectionData['showcase']
   startDate: Date
@@ -138,6 +157,8 @@ type ImportModuleData<T> = {
 export type ImportPostModuleData = ImportModuleData<Omit<Post, 'slug'>>
 
 export type ImportMapOfTheWeekModuleData = ImportModuleData<MapOfTheWeekCollectionData>
+
+export type ImportPersonModuleData = ImportModuleData<Person>
 
 export type RootPageSSRData = {
   announcements: Post[]

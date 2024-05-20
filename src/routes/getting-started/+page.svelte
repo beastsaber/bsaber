@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { Post } from '../../types'
+  import type { PostWithAuthorAndContributor } from '../../types'
   import PostPage from '$lib/PostPage.svelte'
-  import type { CollectionDataTypeMap } from '$lib/retrieveCollectionData'
+  import type { ConvertToAttributeKeyedObject } from '$lib/retrieveCollectionData'
 
-  export let data: CollectionDataTypeMap['posts']
+  export let data: ConvertToAttributeKeyedObject<PostWithAuthorAndContributor>
   if (data.body === undefined) throw new Error('No body found in post data')
-  const post: Post = { ...data.attributes, body: data.body }
+  const post: PostWithAuthorAndContributor = { ...data.attributes, body: data.body }
 </script>
 
 <PostPage {post} />

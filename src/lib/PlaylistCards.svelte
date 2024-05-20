@@ -3,6 +3,7 @@
   import { onMount } from 'svelte'
   import Uploader from '$lib/Uploader.svelte'
   import OneClickDownloadButton from './OneClickDownloadButton.svelte'
+  import ZipDownloadButton from './ZipDownloadButton.svelte'
 
   export let maxCards: number | undefined = undefined // max amount of cards to show
 
@@ -32,6 +33,11 @@
         }`}
         style={`background-image: url(${playlist.playlistImage512})`}
       >
+        <div class="zip-download-button-container">
+          <ZipDownloadButton
+            downloadURL="https://api.beatsaver.com/playlists/id/{playlist.playlistId}/download"
+          />
+        </div>
         <div class="one-click-download-button-container">
           <OneClickDownloadButton
             playlistUrl="https://api.beatsaver.com/playlists/id/{playlist.playlistId}/download"
@@ -54,22 +60,34 @@
 
 <style lang="scss">
   @import '../scss/post-cards';
-  a .one-click-download-button-container {
+  a .one-click-download-button-container,
+  a .zip-download-button-container {
     transition: opacity $transition-long ease-in-out;
     opacity: 0;
-
     position: absolute;
     top: 0.3rem;
-    right: 0.3rem;
     z-index: 1;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-    padding: 0.3rem;
     border-radius: 50%;
     overflow: visible;
   }
 
+  a .one-click-download-button-container {
+    right: 0.3rem;
+    padding: 0.3rem;
+  }
+
+  a .zip-download-button-container {
+    right: 2.5rem;
+    padding: 0.3em 0.45em;
+  }
+
   @media (min-width: 678px) {
     a:hover .one-click-download-button-container {
+      opacity: 1;
+    }
+
+    a:hover .zip-download-button-container {
       opacity: 1;
     }
   }

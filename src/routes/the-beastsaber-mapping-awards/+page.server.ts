@@ -1,2 +1,2 @@
-import { retrieveCollectionData } from '$lib/retrieveCollectionData'
-export const load = () => retrieveCollectionData('posts', 'the-beastsaber-mapping-awards')
+import { retrievePostDataWithAuthorAndContributors } from '$lib/retrieveCollectionData'
+export const load = () => retrievePostDataWithAuthorAndContributors('the-beastsaber-mapping-awards')

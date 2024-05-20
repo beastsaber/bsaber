@@ -1,2 +1,3 @@
-import { retrieveCollectionData } from '$lib/retrieveCollectionData'
-export const load = () => retrieveCollectionData('posts', 'how-to-write-constructive-map-reviews')
+import { retrievePostDataWithAuthorAndContributors } from '$lib/retrieveCollectionData'
+export const load = () =>
+  retrievePostDataWithAuthorAndContributors('how-to-write-constructive-map-reviews')
