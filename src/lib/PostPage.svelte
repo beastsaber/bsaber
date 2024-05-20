@@ -178,7 +178,6 @@
   </div>
 {/if}
 
-
 <style lang="scss">
   @import 'src/scss/variables';
 
@@ -261,6 +260,13 @@
 
   .credit-line {
     margin-top: 1rem;
+  }
+
+  // Separation between different authors
+  .author-box-person + .author-box-person {
+    padding-top: 1.2rem;
+    margin-top: 1.4rem;
+    border-top: 1px solid $color-background-tertiary;
   }
 
   @media (min-width: 992px) {
