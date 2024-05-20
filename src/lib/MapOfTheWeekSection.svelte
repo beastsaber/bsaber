@@ -112,7 +112,7 @@
               <ZipDownloadButton downloadURL={mapOfTheWeek.map.versions[0].downloadURL} />
             </div>
             <div class="one-click-download-button-container">
-              <OneClickButton mapId="[mapOfTheWeek.map.id]" />
+              <OneClickButton mapId={mapOfTheWeek.map.id} />
             </div>
           </div>
         </div>
