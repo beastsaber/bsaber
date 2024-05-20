@@ -51,21 +51,16 @@ export type MapOfTheWeekCollectionData = {
   mapId: string
   review: string
   startDate: string
-  showcase: {
-    id: string
-    type: 'youtube-short' | 'youtube-video'
+  showcase?: {
+    id?: string
+    type?: 'youtube-short' | 'youtube-video'
   }
   coverUrlOverwrite?: string
 }
 
 export type MapOfTheWeek = {
-  map: {
-    id: string
-    name: string
-    coverUrl: string
-    uploader: Uploader
-    collaborators: Uploader[] | undefined
-  }
+  map: Beatmap
+  coverUrl: string
   review: string
   showcase: MapOfTheWeekCollectionData['showcase']
   startDate: Date

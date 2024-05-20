@@ -3,6 +3,7 @@
   import type { MapOfTheWeek } from '../types'
   import Header from './Header.svelte'
   import OneClickButton from './OneClickDownloadButton.svelte'
+  import ZipDownloadButton from './ZipDownloadButton.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
 
@@ -36,7 +37,7 @@
   const uploaders = [mapOfTheWeek.map.uploader, ...collaborators]
 </script>
 
-{#if showShowcase && mapOfTheWeek.showcase != null}
+{#if showShowcase && mapOfTheWeek.showcase != null && mapOfTheWeek.showcase.id != null && mapOfTheWeek.showcase.type != null}
   <div class="showcase-modal" style="aspect-ratio: {aspectRatio}; {sizeDeterminer}; {sizeLimiter};">
     <iframe
       width="100%"
@@ -50,7 +51,7 @@
   <div class="showcase-backdrop" on:click={hideShowcase} />
 {/if}
 <div class="motw-container">
-  <div class="background-image" style="background-image: url({mapOfTheWeek.map.coverUrl});" />
+  <div class="background-image" style="background-image: url({mapOfTheWeek.coverUrl});" />
   <div class="card">
     {#if showHeader}
       <Header
@@ -62,7 +63,7 @@
     {/if}
     <div class="card-body">
       <a class="map-link" href="https://beatsaver.com/maps/{mapOfTheWeek.map.id}">
-        <img class="map-cover" alt="Cover of the Map of the Week" src={mapOfTheWeek.map.coverUrl} />
+        <img class="map-cover" alt="Cover of the Map of the Week" src={mapOfTheWeek.coverUrl} />
       </a>
       <!-- This container is used to float the content to the bottom so that it will push up bashed on the length of the review -->
       <div class="map-details-container">
@@ -102,11 +103,14 @@
           <!-- eslint-enable -->
           <p class="review">{mapOfTheWeek.review}</p>
           <div class="action-bar">
-            {#if mapOfTheWeek.showcase != null}
+            {#if mapOfTheWeek.showcase != null && mapOfTheWeek.showcase.id != null && mapOfTheWeek.showcase.type != null}
               <button class="open-showcase-button" on:click={() => openShowcase()}>
                 Watch the showcase
               </button>
             {/if}
+            <div class="zip-download-button-container">
+              <ZipDownloadButton downloadURL={mapOfTheWeek.map.versions[0].downloadURL} />
+            </div>
             <div class="one-click-download-button-container">
               <OneClickButton mapId={mapOfTheWeek.map.id} />
             </div>
@@ -146,7 +150,6 @@
 
   .action-bar {
     display: flex;
-    justify-content: space-between;
     margin-top: 0.7rem;
 
     & .open-showcase-button {
@@ -270,6 +273,14 @@
   }
 
   .one-click-download-button-container {
-    margin-left: auto;
+    position: absolute;
+    bottom: 2rem;
+    right: 1.5rem;
+  }
+
+  .zip-download-button-container {
+    position: absolute;
+    bottom: 2rem;
+    right: 3.8rem;
   }
 </style>

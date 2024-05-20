@@ -87,9 +87,11 @@ collections:
             label: ID
             hint: The ID of the video. For YouTube videos and shorts, this is the last part of the URL. For example, the ID of the video https://www.youtube.com/shorts/ed8A3n49Gmg is the last part ed8A3n49Gmg.
             widget: string
+            required: false
           - name: type
             label: ID Type
             widget: select
+            required: false
             options:
               - { label: 'YouTube Short', value: 'youtube-short' }
               - { label: 'YouTube Video', value: 'youtube-video' }
