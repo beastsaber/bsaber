@@ -242,8 +242,6 @@
       transition: 0.6s ease;
 
       &:hover {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
         transform: scale(1.1);
         transition: 0.3s ease;
       }

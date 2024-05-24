@@ -33,8 +33,6 @@
 
     &:hover {
       color: $color-text-primary;
-      -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
       transform: scale(1.2);
       transition: 0.3s ease;
     }
