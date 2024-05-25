@@ -12,6 +12,10 @@ authors:
   - '139574'
 showInPostListing: true
 linkToSpecialtyPage: /getting-started
+credits:
+  - contribution: adding to this list and providing feedback on the article
+    contributors:
+      - '57657'
 ---
 
 [BeatSaver](https://beatsaver.com) is the place to get and distribute maps. If you are using a custom song mod it is more than likely that it retrieves from there. Some of BeatSaver's features can be a bit hidden or undocumented or only become apparent in specific cases.
