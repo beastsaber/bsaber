@@ -16,6 +16,7 @@ bio: >-
       display: none;
     }
   }
+  </style>
 socialLinks:
   - platform: BeatSaver
     id: '139574'
