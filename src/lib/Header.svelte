@@ -50,18 +50,21 @@
     display: flex;
     align-items: center;
     width: 100%;
+    text-shadow: $color-background-primary 1px 0 10px;
   }
 
   .link-container {
     padding: 0;
     margin: 0;
     white-space: nowrap;
+    text-shadow: $color-background-primary 1px 0 10px;
   }
 
   .icon {
     height: 1.5rem;
     width: 1.5rem;
     margin-right: 10px;
+    text-shadow: $color-background-primary 1px 0 10px;
   }
 
   h2 {

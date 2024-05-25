@@ -160,6 +160,7 @@
       border: none;
       padding: 0;
       margin: 0;
+      text-shadow: $color-background-primary 1px 0 10px;
 
       &:hover {
         text-decoration: underline;
@@ -237,6 +238,13 @@
       height: $size-cover;
       float: left;
       border-radius: 10px;
+      filter: drop-shadow(5px 5px 5px $color-background-primary);
+      transition: 0.6s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.3s ease;
+      }
     }
 
     .map-details-container {
@@ -246,6 +254,7 @@
 
   .map-title {
     margin-bottom: 0rem;
+    text-shadow: $color-background-primary 1px 0 10px;
   }
 
   .profile-link {
@@ -254,6 +263,7 @@
 
   .map-uploader {
     margin-bottom: 1rem;
+    text-shadow: $color-background-primary 1px 0 10px;
   }
 
   .verified {
@@ -262,6 +272,7 @@
     /* Margin bottom to counter the illusion of it not being center */
     margin: 0 0 0.15rem 0.3rem;
     vertical-align: middle;
+    text-shadow: $color-background-primary 1px 0 10px;
   }
 
   .map-link {
@@ -270,6 +281,7 @@
 
   .review {
     white-space: pre-wrap;
+    text-shadow: $color-background-primary 1px 0 10px;
   }
 
   .one-click-download-button-container {
