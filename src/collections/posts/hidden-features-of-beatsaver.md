@@ -11,7 +11,6 @@ image: /static/uploads/posts/uncovering-beatsaber-features-cover.png
 authors:
   - '139574'
 showInPostListing: true
-linkToSpecialtyPage: /getting-started
 credits:
   - contribution: adding to this list and providing feedback on the article
     contributors:
