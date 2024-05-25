@@ -58,7 +58,7 @@ Do not let that fool you! Just add a `/add` to the end of your bookmark URL and 
 
 You can also add `/edit` to the URL, but this will not do a lot for you since the API will not allow editing the playlist.
 
-# `key:` keyword in search
+# "key:" keyword in search
 
 If you know the key of a map, you can navigate to the map page directly by typing
 
