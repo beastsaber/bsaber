@@ -17,13 +17,13 @@ credits:
       - '57657'
 ---
 
-[BeatSaver](https://beatsaver.com) is the place to get and distribute maps. If you are using a custom song mod it is more than likely that it retrieves from there. Some of BeatSaver's features can be a bit hidden or undocumented or only become apparent in specific cases.
+[BeatSaver](https://beatsaver.com) is the place to get and distribute maps. If you are using a custom song mod, it is more than likely retrieving the maps from there. Some of BeatSaver's features can be a bit hidden, undocumented, or only become apparent in specific cases.
 
 The following features are from the view of "normal users" and will thus go into aspects that are relevant when you are simply using the website to view and find maps or upload your own maps.
 
 # Excluding Tags
 
-By opening the filter dropdown you gain the ability to filter for tags. For example, if you are into Tech maps, you can search for Tech maps specifically.
+By opening the filter dropdown you gain the ability to filter by tags. For example, if you are into Tech maps, you can search for Tech maps specifically.
 
 ![](/uploads/posts/uncovering-beatsaber-features-1.png)
 
@@ -57,9 +57,9 @@ When it comes to your bookmarks, you will not find buttons like that.
 
 ![](/uploads/posts/uncovering-beatsaber-features-6.png)
 
-Do not let that fool you! Just add a `/add` to the end of your bookmark URL and you can still multi-add! For example, `https://beatsaver.com/playlists/97886/add` (this link will not work for you though).
+Do not let that fool you! Just add a `/add` to the end of your bookmark URL and you can still multi-add! For example, if I wanted to do this to my bookmarks, I would end up with: `https://beatsaver.com/playlists/97886/add` (your URL will have a different playlist ID in the URL so this link will not work for you).
 
-You can also add `/edit` to the URL, but this will not do a lot for you since the API will not allow editing the playlist.
+You can also add `/edit` to the URL, but this will not do a lot for you since the API will not allow you to save edits to the bookmarks playlist.
 
 # "key:" and "mapper:" Keywords in the Search
 
@@ -85,19 +85,19 @@ If you only have the hash of a map you can find the map by putting the hash in t
 
 # No Double Upload
 
-When you try to upload a map that has already been uploaded it will not allow you to do so and tell you that the Map has already been uploaded. This is checked via the map hash. The upload will also generally verify, that your map file is valid and will work in-game.
+When you try to upload a map that has already been uploaded, it will not allow you to do so and will tell you that the map has already been uploaded. This is checked via the map hash. The upload will also generally verify that your map file is valid and will work in-game.
 
 ![](/uploads/posts/uncovering-beatsaber-features-8.png)
 
 # Review Curations
 
-You may be aware that maps can be curated by our curators. However, Reviews can also be curated. This is sometimes also being referred to as being "featured". Curators and Admins can click a button to feature a given review. The review will then be shown above all uncurated reviews and have a green border. There is by the way no notification for getting your review curated.
+You may be aware that maps can be curated by our curators. However, Reviews can also be curated. This is sometimes also being referred to as being "featured". Curators and Admins can click a button to feature a given review. The review will then be shown above all uncurated reviews and have a green border. There is, however, no notification that you review has been curated.
 
 ![](/uploads/posts/uncovering-beatsaber-features-9.png)
 
 # Showing Bot Maps
 
-If you ever wondered where all the bot maps are that people talk about, then you may not be aware of the fact, that BeatSaver - by default - hides bot maps. If you want to see bot maps as well, you will need to enable that in the filters!
+If you ever wondered where all the bot maps are that people talk about, then you may not be aware of the fact that BeatSaver, by default, hides bot maps. If you want to see bot maps as well, you will need to enable that in the filters!
 
 ![](/uploads/posts/uncovering-beatsaber-features-10.png)
 
