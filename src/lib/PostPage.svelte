@@ -185,6 +185,13 @@
     font-size: 1.1rem;
   }
 
+  :global(article kbd) {
+    font-size: 0.95rem;
+    padding: 0.25rem;
+    border-radius: $rounding-small;
+    background-color: $color-background-tertiary;
+  }
+
   header {
     margin: -20px -12px 1rem; // compensating for padding on <main>
     background-size: cover;

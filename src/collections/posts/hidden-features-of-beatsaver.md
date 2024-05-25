@@ -26,19 +26,19 @@ By opening the filter dropdown you gain the ability to filter for tags. For exam
 
 At first glance, it appears to only allow for positive filtering; meaning you can only declare "I want to only be shown maps that have the XYZ tag".
 
-But what if you are having a lazy day and want to avoid Fitbeat maps? Just press the `[Alt]` button while clicking the tag that you want to exclude. You will find that the tag turns red, and maps with such a tag will no longer appear in your search!
+But what if you are having a lazy day and want to avoid Fitbeat maps? Just press the <kbd>Alt</kbd> button while clicking the tag that you want to exclude. You will find that the tag turns red, and maps with such a tag will no longer appear in your search!
 
 ![](/uploads/posts/uncovering-beatsaber-features-2.png)
 
 # Selecting Multiple Tags
 
-When playing with the tag filters, you will notice that you can only select one of the blue tags and one of the green tags. Selecting another of the same category will result in the previous selection being deleted. However, it is possible to select multiple tags by pressing `[Shift]` while clicking the additional tags.
+When playing with the tag filters, you will notice that you can only select one of the blue tags and one of the green tags. Selecting another of the same category will result in the previous selection being deleted. However, it is possible to select multiple tags by pressing <kbd>Shift</kbd> while clicking the additional tags.
 
 ![](/uploads/posts/uncovering-beatsaber-features-3.png)
 
 The results from the image above will now show you maps that either have the "Fitness" or "Tech" or both tags. If you were trying to find maps that are techy Fitbeat maps you cannot find them this way though.
 
-However, you can combine it with the tag exclusion feature and find your techy Fitbeat maps by excluding every tag that is not "Tech" and "Fitness" by pressing `[Shift]` and `[Alt]` together while clicking the tags.
+However, you can combine it with the tag exclusion feature and find your techy Fitbeat maps by excluding every tag that is not "Tech" and "Fitness" by pressing <kbd>Shift</kbd> + <kbd>Alt</kbd> together while clicking the tags.
 
 ![](/uploads/posts/uncovering-beatsaber-features-4.png)
 
@@ -74,13 +74,11 @@ The `mapper:` keyword can also be used multiple times allowing to, for example, 
 
 ![](/uploads/posts/uncovering-beatsaber-features-12.png)
 
-
 # Finding a Map by it's Hash
 
 If you only have the hash of a map you can find the map by putting the hash in the search bar and clicking "Search". This will open the respective map's page similar to `key:` keyword.
 
 ![](/uploads/posts/uncovering-beatsaber-features-13.png)
-
 
 # No Double Upload
 
