@@ -58,15 +58,29 @@ Do not let that fool you! Just add a `/add` to the end of your bookmark URL and 
 
 You can also add `/edit` to the URL, but this will not do a lot for you since the API will not allow editing the playlist.
 
-# "key:" keyword in search
+# "key:" and "mapper:" Keyword in the Search
 
-If you know the key of a map, you can navigate to the map page directly by typing
-
-`key:{your map key}`
-
-in the search bar and then clicking "Search".
+If you know the key of a map, you can navigate to the map page directly by typing `key:{your map key}` in the search bar and then clicking "Search".
 
 ![](/uploads/posts/uncovering-beatsaber-features-7.png)
+
+Similarly, you can use the `mapper:{mapper name}` keyword to reduce the results to those of a mapper.
+
+![](/uploads/posts/uncovering-beatsaber-features-11.png)
+
+Using the `mapper:` keyword will only show maps uploaded by the mapper and not collaborations. This can you allow to search maps of a given mapper with the the filters and search terms.
+
+The `mapper:` keyword can also be used multiple times allowing to, for example, search across alt accounts too.
+
+![](/uploads/posts/uncovering-beatsaber-features-12.png)
+
+
+# Finding a Map by it's Hash
+
+If you only have the hash of a map you can find the map by putting the hash in the search bar and clicking "Search". This will open the respective map's page similar to `key:` keyword.
+
+![](/uploads/posts/uncovering-beatsaber-features-13.png)
+
 
 # No Double Upload
 
