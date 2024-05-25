@@ -3,6 +3,9 @@ title: Download Shrek Saber
 section: speciality
 category: news
 publish: 2024-05-24T23:46:00.000Z
+homepageText: The entire feature length movie in Beat Saber! Download Shrek
+  Saber by KingPeuche and experience all 83 minutes of Shrek epicness in Beat
+  Saber!
 image: null
 showInPostListing: false
 linkToSpecialtyPage: /downloadshreksaber
