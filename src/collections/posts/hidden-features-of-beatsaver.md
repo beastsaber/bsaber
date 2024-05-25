@@ -44,11 +44,9 @@ When playing with the tag filters, you will notice that you can only select one 
 
 The results from the image above will now show you maps that either have the "Fitness" or "Tech" or both tags. If you were trying to find maps that are techy Fitbeat maps you cannot find them this way though.
 
-However, you can combine it with the tag exclusion feature and find your techy Fitbeat maps by excluding every tag that is not "Tech" and "Fitness" by pressing <kbd>Shift</kbd> + <kbd>Alt</kbd> together while clicking the tags.
+You can do the same with the tag exclusions by pressing <kbd>Shift</kbd> + <kbd>Alt</kbd> together while clicking the tags. Other than the positive filters, it will be interpreted as "Neither X, Y, nor Z, nor any combination of these".
 
 ![](/uploads/posts/uncovering-beatsaber-features-4.png)
-
-This works because multiple negative filters will - other than the positive filters - result in being interpreted as "Neither X, Y, nor Z or any combination of those".
 
 # Multi-Adding to Bookmarks
 
