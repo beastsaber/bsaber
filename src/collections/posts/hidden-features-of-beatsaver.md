@@ -15,7 +15,7 @@ credits:
   - contribution: adding to this list and providing feedback on the article
     contributors:
       - '57657'
-  - contribution: proof reading and reviewing the article
+  - contribution: proofreading and reviewing the article
     contributors:
       - '4285984'
 ---
