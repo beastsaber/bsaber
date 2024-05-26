@@ -24,7 +24,7 @@ The historic moment in history has arrived!
 <br />
 Experience all 83 minutes of Shrek epicness in Beat Saber!</div>
     <a class="btn" href="https://drive.usercontent.google.com/download?id=1FJ4Zk4ta_TNd19CM0vxqRhn_Mwdk4XFb&export=download" target="_blank" title="Will not work on latest Beat Saber versions">Download Original V1 Format</a>
-    <a class="btn2" href="https://drive.usercontent.google.com/download?id=18Uc3oJl0TbygSnnX9iS27G5t9Pk0ZcbK&export=download" target="_blank">Download V3 Format (Recommended)</a>
+    <a class="btn2" href="https://drive.usercontent.google.com/download?id=18Uc3oJl0TbygSnnX9iS27G5t9Pk0ZcbK&export=download" target="_blank">Download V2 Format (Recommended)</a>
     </div>
     </div>
     </body>
@@ -72,6 +72,13 @@ Experience all 83 minutes of Shrek epicness in Beat Saber!</div>
       position: absolute;
       border-radius: 5px;
       text-align: center;
+    }
+
+    @media (max-width: 678px) {
+      .btn,
+      .btn2 {
+        width: 75%;
+      }
     }
 
     .btn:hover,
