@@ -2,7 +2,7 @@
 title: Uncovering Hidden Features of BeatSaver
 section: articles
 category: guide
-publish: 2024-05-25T00:00:00.000Z
+publish: 2024-06-01T00:00:00.000Z
 homepageText: Not all BeatSaver features are apparent at first sight. This
   article reveals hidden aspects of the BeatSaver platform such as tag
   filtering, multi-tag selection, multi-adding to bookmarks, direct map search
