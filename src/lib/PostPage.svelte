@@ -163,7 +163,7 @@
             {#if author.bio !== undefined}
               {@html marked(author.bio)}
             {:else}
-              <p>Writting for Beast Saber as a guest.</p>
+              <p>Writing for BeastSaber as a guest.</p>
             {/if}
 
             <div class="social-links-mobile">
