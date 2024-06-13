@@ -30,6 +30,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1.25rem;
+    word-wrap: break-word;
 
     @media (min-width: 992px) {
       grid-template-columns: repeat(2, 1fr);

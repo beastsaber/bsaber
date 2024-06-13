@@ -19,7 +19,7 @@
       >
       <p class="roles">
         {(roles.seniorCurator ? 'Senior Curator' : 'Curator') +
-          (roles.verifiedMapper ? ', Mapper' : '')}
+          (roles.verifiedMapper ? ', Verified Mapper' : '')}
       </p>
     </div>
   </div>
