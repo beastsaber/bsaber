@@ -1,5 +1,5 @@
 ---
-title: We're looking for Authors!
+title: We're Looking For Authors!
 section: announcements
 category: announcement
 publish: 2024-06-10T18:20:00.000Z
