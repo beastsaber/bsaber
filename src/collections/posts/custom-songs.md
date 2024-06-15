@@ -2,20 +2,20 @@
 title: Getting Started with Custom Songs
 section: speciality
 category: guide
-publish: 2024-03-22T00:00:00.000Z
+publish: 2024-06-15T00:00:00.000Z
 homepageText: Learn how to find and install high quality custom songs for Beat Saber!
 image: /static/uploads/posts/beat-saber-square.jpg
 authors:
-  - "4285984"
+  - '4285984'
 showInPostListing: true
 linkToSpecialtyPage: /getting-started/custom-songs
 ---
 
-# Welcome to BEASTSABER! ❤️
+<h1 style="text-align: center">Welcome to BEASTSABER! ❤️</h1>
 
-## How to find Custom Songs
+## Where to find Custom Songs
 
-You'll find every single published map at your fingertips by going to [BeatSaver.com](https://beatsaver.com/). But, there are so many new maps released every day… how do you know which ones to download? There are a few things to look for before you go wading through search results:
+You'll find every single published map/song at your fingertips by going to [BeatSaver.com](https://beatsaver.com/). But, there are so many new maps released every day… how do you know which ones to download? There are a few things to look for before you go wading through search results:
 
 <p align="center">
     <img src="/uploads/sot-map-page.png">
@@ -33,7 +33,7 @@ You'll find every single published map at your fingertips by going to [BeatSaver
 
 <br />
 
-## BeatSaver Search Options
+### BeatSaver Search Options
 
 Some of the benefits of looking for songs on BeatSaver instead of in-game is a clearer look at curation, ratings, genres, difficulties, and more. There are several built-in search queries OR you can set your own filters!
 
@@ -61,7 +61,7 @@ You can also just use the site search in the top menu to find songs, artists, ma
 
 <br />
 
-## Playlists and Map Packs
+### Playlists and Map Packs
 
 Playlists and map packs are a great way to find themed groupings of fantastic maps. From BeastSaber’s own Curators' Picks to curated packs for genres, artists, or albums; playlists allow you to easily use ModAssistant OneClick install to nab a bunch of quality songs all at once.
 
@@ -69,13 +69,13 @@ Take a look at the latest [Featured and Curated Packs](https://beatsaver.com/pla
 
 <br />
 
-## The BeastSaber Home Page
+### The BeastSaber Home Page
 
 The BeastSaber home page provides an excellent starting place to find recommended maps to download in an "easy on the eyes" appearance! Everything from Map of the Week, Featured Packs, Recently Curated Maps, and Recent Maps by Verified Mappers; we're sure you'll find something worth playing! These feeds are automatically pulled from BeatSaver.
 
 <br />
 
-## Still Can’t Find What You Want? Start Mapping!
+### Still Can’t Find What You Want? Start Mapping!
 
 Sometimes you’re looking for a specific song, artist, or genre and getting no results, or you get results but the maps are outside of your skill level. Take matters into your own hands and learn to map! Most mappers in the community got started for this very reason and there are a wealth of resources available to get you started.
 
@@ -83,68 +83,60 @@ Sometimes you’re looking for a specific song, artist, or genre and getting no 
 
 <br />
 
-## How to Install Beat Saber Custom Songs
+## How to Install Custom Songs in Beat Saber
 
-### Custom Songs for PC VR Users
+> ⚠️ Be sure you have all Core Mods installed! When a new release is pushed from Beat Games, mods will usually break and will take some time to update. Be patient, and keep an eye in the [Beat Saber Modding Group Discord Server](https://discord.gg/beatsabermods) #modding-announcements channel to know when it's safe to update. **Don't have your mods installed yet? [Click here](/installing-the-mod-guide-necessary-for-any-custom-songs) to learn how to get and install custom mods!**
 
-Did you know that you can access custom songs with the base game? Literally no mods necessary! There are optional mods available via ModAssistant that add features to your song acquisition experience making it easier, faster, or more convenient to shoot the maps you want straight into your bloodstream.
+<br />
 
-The [Beat Saber Modding Group Wiki](https://bsmg.wiki/pc-modding.html#how-to-get-more-songs) is the best place to get the latest information, but here’s a quick step-by-step:
+### Custom Songs for PCVR Users:
 
-### Custom Songs with ModAssistant (Easiest!)
+1. In [ModAssistant](https://bsmg.wiki/pc-modding.html#mod-assistant), on the left-hand side, go to Options and click Enable OneClick Installs.
 
-> Be sure you have all Core Mods installed! When a new release is pushed from Beat Games, mods will usually break and will take some time to update. Be patient, and keep an eye in the [Beat Saber Modding Group Discord Server](https://discord.gg/beatsabermods) #modding-announcements channel to know when it's safe to update.
-
-1. In [ModAssistant](https://bsmg.wiki/pc-modding.html#mod-assistant), go to OPTIONS and click Enable OneClick Installs
-
-2. Select at least BeatSaver (though you may want the other options as well) and close ModAssistant
+2. Select at least BeatSaver (though you may want the other options as well) and close ModAssistant.
 
 <p align="center">
     <img src="/uploads/mod-assistant.png">
 </p>
 
-3. On BeatSaver, find a song you want to download and click the OneClick Install button (the one that looks like a cloud with an arrow). You may see a confirmation box that your PC is trying to open ModAssistant.
+3. On [BeatSaver](https://beatsaver.com/), find a song you want to download and click the OneClick Install button (the one that looks like a cloud with an arrow). You may see a confirmation box that your PC is trying to open ModAssistant.
 
-4. The map will be downloaded, unzipped, and added to your CustomLevels folder
+4. The map will be downloaded, unzipped, and added to your CustomLevels folder.
 
-### Custom Songs with the Base Game (More difficult!)
+**You're done!** You can now go in-game and play the map!
 
-1. On BeatSaver, find a song you want to download and click Download Zip and a zip file of the song you want will be saved to your computer
-
-2. Extract the zip file as a folder. It should already be titled with the map's "key" or the unique identifier for the map, and the song name and mapper(s) in parenthesis
-
-> 🗒️ NOTE that in the BeatSaver URL, you'll see beatsaver.com/maps/**KEY** - So you can always come back to the map page if you need to
-
-- You can either extract in place and then cut/paste the folder into your CustomLevels folder
-
-- Or you can select the path directly to your Custom Levels folder and extract it directly there.
-
-Oculus User folder paths tend to be: `C:\Program Files\Oculus\Software\Software\hyperbolic-magnetism-beat-saber\Beat Saber_Data\CustomLevels`
-
-Steam User folder paths tend to be: `C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\CustomLevels`
+> 💡 **Pro-Tip:** You can use OneClick with the game open! Follow the steps above and then go to your game window and press <kbd>Ctrl</kbd> + <kbd>R</kbd> to refresh your songs and playlists!
 
 <br />
 
-## Custom Songs for Quest VR Users
+<br />
 
-Getting custom songs on the Quest requires a little more work than with its PC cousins. There are two pieces of software you’ll need: [SideQuest](https://sidequestvr.com/setup-howto) and [BMBF](https://bmbf.dev/stable) or [QuestPatcher](https://github.com/Lauriethefish/QuestPatcher/releases).
+### Custom Songs with the Base Game (No Mods):
 
-> **💡 HINT: When downloading SideQuest, be sure to use the "Advanced Installer". This will greatly help you when adding songs!**
+If you don't want to install any mods, you can still play custom songs without them. Keep in mind, many maps recommend various mods and gameplay is usually better with mods.
 
-Once you have the right software installed, you have a couple of options on how to access songs. The [Beat Saber Modding Group Wiki](https://bsmg.wiki/quest-modding.html#installing-songs) is the best place to get the latest information, but here’s a quick step-by-step:
+1. On BeatSaver, find a song you want to download and click Download Zip. A zip file of the song you want will be saved to your computer.
 
-1. Make sure you have the latest BeatSaber mods available for your moddable game. Keep in mind that Quest modding is usually well behind PC modding so you will likely need to downgrade. You can find the latest mods by clicking [here](https://computerelite.github.io/tools/Beat_Saber/questmods.html)
+2. Extract the zip file as a folder. It should already be titled with the map's "key" or the unique identifier for the map, and the song name and mapper(s) in parenthesis.
 
-2. Using QuestPatcher, click "Browse" and open the mod pack you downloaded from the link above
+You can either extract in place and then cut/paste the folder into your CustomLevels folder, or you can select the path directly to your Custom Levels folder and extract it directly there.
 
-3. Now, from within the game, you can click on "MORE SONGS" to search and download songs
+> **Oculus User** folder paths tend to be: `C:\Program Files\Oculus\Software\Software\hyperbolic-magnetism-beat-saber\Beat Saber_Data\CustomLevels`
+>
+> **Steam User** folder paths tend to be: `C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\CustomLevels`
 
-You can also search for songs using the method listed above at **"Custom Songs with the Base Game (More difficult!)** and then manually load them into your headset using SideQuest and finding your custom songs folder there, however, we don't typically recommend this option.
+<br />
 
-If you find videos more helpful, check out this video by XoRoseGold on How To Get Custom Songs in BeatSaber, uploaded on March 7, 2024!
+<br />
 
-!youtube[R6f7w-NBo4k]
+## Custom Songs for Quest VR Users:
+
+If you have your core Quest mods installed, adding songs and maps is extremely simple! Just open the game and look to the left where your mods are. You should have an option for "Song Downloader". Click on that and you'll find a search bar, as well as other filter options.
+
+You can also manually install songs by downloading them from [BeatSaver](https://beatsaver.com/) and then using [ModsBeforeFriday (MBF)](https://mbf.bsquest.xyz/). Not familiar with MBF? [Read the Wiki here!](https://bsmg.wiki/quest/modding-with-mbf.html)
 
 ### You're all set!
 
 If you have any questions or need help, feel free to join the Beat Saber Modding Group [Discord Server](https://discord.gg/beatsabermods) and ask your questions in either the #pc-help or #quest-help channels!
+
+### Did you know Quest users can vote in-game on maps now? [Click here](/posts/quest-voting-now-available) to learn more!
