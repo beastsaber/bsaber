@@ -18,7 +18,7 @@ Fortunately, thanks to the tremendous work by our Developers, we tried our best 
 
 # Where Do I Find My Old Bookmarks?
 
-Thanks to [TopCat](), the owner of [BeatSaver](https://beatsaver.com/), you can navigate to https://bookmarks.topc.at/ where you can access your legacy BeastSaber bookmarks! This page includes a basic initial listing of accounts and a search bar at the top.
+Thanks to [TopCat](https://beatsaver.com/profile/53608), the owner of [BeatSaver](https://beatsaver.com/), you can navigate to https://bookmarks.topc.at/ where you can access your legacy BeastSaber bookmarks! This page includes a basic initial listing of accounts and a search bar at the top.
 
 <p align="center">
     <a href="https://bookmarks.topc.at/"><img src="/uploads/bookmarks1.png"></a>
@@ -36,7 +36,7 @@ To download your list, just click on the name. In your Downloads, you'll get a `
     <img src="/uploads/bookmarks3.png">
 </p>
 
-> 💡 **What's a `.bplist` file?**
+> 🤔 **What's a `.bplist` file?**
 >
 > > A `.bplist` is a type of text file which stores information for BeatSaber Playlists. If you open the file in Notepad, you'll see the information inside. In this case, you'll find the playlist title, author, description, image, and songs; with the songs including the key, hash, and song name.
 
@@ -68,7 +68,7 @@ You'll now have an empty playlist waiting for maps! On the top, select the purpl
     <img src="/uploads/bookmarks7.png">
 </div>
 
-The maps will be collected from the hashes and you'll be redirected to your playlist page, now with all your bookmarks there!
+The maps will be collected from the hashes and you'll be redirected to your playlist page, now with all your bookmarks there! It should be noted that some maps may have been deleted from BeatSaver since the time your bookmarks were created. In those cases, the deleted map(s) will not populate as they no longer exist.
 
 <p align="center">
     <img src="/uploads/bookmarks8.png">
