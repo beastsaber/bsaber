@@ -37,17 +37,9 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
       `https://api.beatsaver.com/maps/id/${currentMOTWCollectionData.mapId}`,
     ).then((res) => res.json())
 
-    let coverUrl = currentMOTWCollectionData.coverUrlOverwrite
-    if (coverUrl == null) {
-      const beatLeaderLeaderBoardData = await fetch(
-        `https://api.beatleader.xyz/leaderboard/${beatSaverMapData.id}`,
-      ).then((res) => res.json())
-      coverUrl = beatLeaderLeaderBoardData.song.fullCoverImage
-    }
-
-    if (coverUrl == null) {
-      throw new Error('No cover URL found!')
-    }
+    let coverUrl =
+      currentMOTWCollectionData.coverUrlOverwrite ??
+      `https://cdn.assets.beatleader.xyz/songcover-${currentMOTWCollectionData.mapId}-full.webp`
 
     currentMapOfTheWeek = {
       map: beatSaverMapData,
