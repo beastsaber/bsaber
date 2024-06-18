@@ -18,7 +18,7 @@ Fortunately, thanks to the tremendous work by our Developers, we tried our best 
 
 # Where Do I Find My Old Bookmarks?
 
-Thanks to [TopCat](https://beatsaver.com/profile/53608), the owner of [BeatSaver](https://beatsaver.com/), you can navigate to https://bookmarks.topc.at/ where you can access your legacy BeastSaber bookmarks! This page includes a basic initial listing of accounts and a search bar at the top.
+Thanks to [Top_Cat](https://beatsaver.com/profile/53608), the owner of [BeatSaver](https://beatsaver.com/), you can navigate to https://bookmarks.topc.at/ where you can access your legacy BeastSaber bookmarks! This page includes a basic initial listing of accounts and a search bar at the top.
 
 <p align="center">
     <a href="https://bookmarks.topc.at/"><img src="/uploads/bookmarks1.png"></a>
@@ -31,6 +31,8 @@ Using the search bar at the top, type in your username. This will filter out the
 </p>
 
 To download your list, just click on the name. In your Downloads, you'll get a `.bplist` file which contains the hashes (or the unique identifier) for each of the maps that were in your bookmarks.
+
+> 💡 **Hint:** If you have a slower internet connection, your username may not populate immediately. Please wait for it to filter the results.
 
 <p align="center">
     <img src="/uploads/bookmarks3.png">
@@ -45,7 +47,7 @@ To download your list, just click on the name. In your Downloads, you'll get a `
 
 # Import the ".bplist" file to BeatSaver!
 
-Once you've got your legacy bookmarks file, you'll want to create an account or log in over at [BeatSaver](), which is the main repository for all custom Beat Saber maps.
+Once you've got your legacy bookmarks file, you'll want to create an account or log in over at [BeatSaver](https://beatsaver.com/), which is the main repository for all custom Beat Saber maps.
 
 Click the Login button in the top right corner to log in or "Sign up new account". Once you're in, click the + icon and select "Create Playlist".
 
@@ -76,7 +78,12 @@ The maps will be collected from the hashes and you'll be redirected to your play
 
 Now you can edit the playlist, add more songs and maps, download the updated `.bplist` file, OneClick download it if you're on PC, or if you're on standalone Quest, you can make it Public and then go in-game to download it directly from inside the game!
 
-Need help with modding the game? [Click here!](/installing-the-mod-guide-necessary-for-any-custom-songs)
+> ❤️ [Top_Cat](https://beatsaver.com/profile/53608) invests a lot of his personal time to voluntarily develop and maintain various areas of the custom Beat Saber community. Consider dropping by his [Patreon](https://www.patreon.com/top__cat) or [Kofi](https://ko-fi.com/top_cat) and showing some love!
+
+<br />
+<br />
+
+### Need help with modding the game? [Click here!](/installing-the-mod-guide-necessary-for-any-custom-songs)
 
 <style>
   .multi-add {
