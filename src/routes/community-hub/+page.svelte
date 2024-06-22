@@ -285,7 +285,7 @@
 </div>
 <hr class="fade" />
 <p>
-  Want to featured in our Community Hub? <a
+  Want to be featured in our Community Hub? <a
     href="https://docs.google.com/forms/d/e/1FAIpQLSdX7t87EOWahI_n8Tlhi_bkaq1xcp-55po-gNtYSbyPiBQK5w/viewform"
     >Fill out this form!</a
   >
