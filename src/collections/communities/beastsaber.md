@@ -8,7 +8,7 @@ circleFrameImage: true
 labels:
   - General
   - Modding
-activityLevel: medium
+activityLevel: high
 socials:
   - name: Website
     url: https://www.bsaber.com

@@ -486,7 +486,37 @@
 
     &.activity-high {
       .community-image img {
-        border: 3px solid #32cd32;
+        position: relative;
+        animation: rotateShadow 4s infinite linear;
+      }
+      @keyframes rotateShadow {
+        0% {
+          box-shadow: 10px 0 20px #7646af;
+        }
+        12.5% {
+          box-shadow: 7.07px 7.07px 20px #7646af;
+        }
+        25% {
+          box-shadow: 0 10px 20px #7646af;
+        }
+        37.5% {
+          box-shadow: -7.07px 7.07px 20px #7646af;
+        }
+        50% {
+          box-shadow: -10px 0 20px #7646af;
+        }
+        62.5% {
+          box-shadow: -7.07px -7.07px 20px #7646af;
+        }
+        75% {
+          box-shadow: 0 -10px 20px #7646af;
+        }
+        87.5% {
+          box-shadow: 7.07px -7.07px 20px #7646af;
+        }
+        100% {
+          box-shadow: 10px 0 20px #7646af;
+        }
       }
     }
   }
