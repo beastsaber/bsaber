@@ -6,6 +6,7 @@ image: /static/uploads/communities/bsmanager-bs-manager.png
 circleFrameImage: true
 labels:
   - General
+  - Modding
 activityLevel: medium
 socials:
   - name: Website
