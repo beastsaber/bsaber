@@ -16,6 +16,8 @@ socials:
     url: https://www.youtube.com/@BeastSaberNews
   - name: Twitter/X
     url: https://twitter.com/BeastSaberNews
+  - name: GitHub
+    url: https://github.com/beastsaber/bsaber
   - name: Discord
     url: https://discord.gg/VJZHUbt
 languages:
