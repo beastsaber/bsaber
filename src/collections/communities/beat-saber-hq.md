@@ -1,6 +1,6 @@
 ---
 name: Beat Saber HQ
-description: Facebook group for all things Beat Saber related. modded/unmodded
+description: Facebook group for all things Beat Saber related. Modded/unmodded
   and any platform players welcome.
 image: /static/uploads/communities/hq-exelgen.jpg
 circleFrameImage: true

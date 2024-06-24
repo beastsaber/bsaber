@@ -1,6 +1,6 @@
 ---
 title: We're Looking For Authors!
-section: announcements
+section: articles
 category: announcement
 publish: 2024-06-10T18:20:00.000Z
 homepageText: The BeastSaber Team is looking for additional Authors to write articles for the BeastSaber site! Recruitment is on-going!
