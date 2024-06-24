@@ -1,19 +1,18 @@
 <script>
   import MetaHead from '$lib/MetaHead.svelte'
-  import MapCards from '$lib/MapCards.svelte'
-  export let title = 'BSMG 5th Anniversary'
-  export let subtitle = 'Celebrating 5 years of Beat Saber Modding Group!'
 </script>
 
-<MetaHead title="BSMG 5th Anniversary" />
+<MetaHead
+  title="BSMG 5th Anniversary"
+  description="Celebrating 5 years of the Beat Saber Modding Group, this pack features a variety of maps and songs to get you grooving!"
+/>
 
 <section class="hero">
-  <div class="overlay" />
   <div class="content">
     <p><img src="/ModSaberWhite.svg" alt="BSMG Logo" width="100" height="100" /></p>
     BSMG Presents
-    <h1>{title}</h1>
-    <p>{subtitle}</p>
+    <h1>BSMG <span class="pink">5th</span> Anniversary</h1>
+    <p>Celebrating 5 years of the Beat Saber Modding Group!</p>
     <div class="buttons">
       <a class="btn" href="https://api.beatsaver.com/playlists/id/89418/download" target="_blank"
         >PLAYLIST</a
@@ -26,10 +25,11 @@
     </div>
   </div>
 </section>
-<br />
-<MapCards sortOrder="CURATED" />
 
 <style>
+  .pink {
+    color: #e18da9;
+  }
   .hero {
     position: relative;
     height: 70vh;
@@ -38,27 +38,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
     text-align: center;
-    backdrop-filter: blur(5px) brightness(-40%) !important;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 
   .content {
     position: relative;
     z-index: 1;
+    bottom: 6rem;
   }
 
   h1 {
     font-size: 2.5rem;
-    margin: 0;
+    margin: 0.5rem;
   }
 
   p {
@@ -83,11 +74,11 @@
     cursor: pointer;
     font-size: 15px;
     position: absolute;
-    border-radius: 5px;
     text-align: center;
     font-family: sans-serif;
     width: 200px;
     justify-content: center;
+    transition: background-color 0.5s ease;
   }
 
   .btn:hover {
@@ -107,7 +98,7 @@
   }
 
   .btn2 {
-    top: 150%;
+    top: 145%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
