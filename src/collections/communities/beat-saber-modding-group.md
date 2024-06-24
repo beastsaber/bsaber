@@ -6,7 +6,7 @@ image: /static/uploads/communities/bsmg-logo-beat-saber-modding-group.png
 circleFrameImage: true
 labels:
   - Modding
-activityLevel: medium
+activityLevel: high
 socials:
   - name: Website
     url: https://beatmods.com/

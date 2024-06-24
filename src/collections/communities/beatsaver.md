@@ -7,7 +7,7 @@ circleFrameImage: false
 labels:
   - General
   - Mapping
-activityLevel: medium
+activityLevel: high
 socials:
   - name: Website
     url: https://beatsaver.com

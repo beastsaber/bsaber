@@ -284,6 +284,13 @@
   </div>
 </div>
 <hr class="fade" />
+<p>
+  Want to be featured in our Community Hub? <a
+    href="https://docs.google.com/forms/d/e/1FAIpQLSdX7t87EOWahI_n8Tlhi_bkaq1xcp-55po-gNtYSbyPiBQK5w/viewform"
+    >Fill out this form!</a
+  >
+</p>
+<br />
 <div class="grid">
   {#each filteredCommunities as community, communityIndex (community)}
     <div class="community-card activity-{community.activityLevel}">
@@ -478,8 +485,16 @@
     }
 
     &.activity-high {
-      .community-image img {
-        border: 3px solid #32cd32;
+      animation: colorTransition 3s linear infinite alternate;
+    }
+
+    @keyframes colorTransition {
+      0%,
+      100% {
+        box-shadow: 0 0 15px 5px $color-bsaber-purple;
+      }
+      50% {
+        box-shadow: 0 0 15px 5px $color-difficulty-purple;
       }
     }
   }
