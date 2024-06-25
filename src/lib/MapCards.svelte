@@ -16,6 +16,7 @@
     'FIRST_PUBLISHED'
   export let verified: boolean | undefined = undefined
   export let maxCards: number | undefined = undefined // max amount of cards to show
+  export let playlistId: number | undefined = undefined
 
   let maps: Beatmap[] = []
 
@@ -28,13 +29,22 @@
   })
 
   let baseUrl = import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
-  let url = `${baseUrl}/maps/latest?sort=${sortOrder}${
-    verified !== undefined ? `&verified=${verified}` : ''
-  }&pageSize=${maxCards ?? 8}`
+  let url: string
+  if (playlistId != null) {
+    url = `${baseUrl}/playlists/id/${playlistId}/0`
+  } else {
+    url = `${baseUrl}/maps/latest?sort=${sortOrder}${
+      verified !== undefined ? `&verified=${verified}` : ''
+    }&pageSize=${maxCards ?? 8}`
+  }
 
   async function getMaps() {
     let response = await fetch(url)
-    maps = await response.json().then((json) => json['docs'] as Beatmap[])
+    if (playlistId != null) {
+      maps = await response.json().then((json) => json.maps.map((x) => x.map) as Beatmap[])
+    } else {
+      maps = await response.json().then((json) => json['docs'] as Beatmap[])
+    }
   }
 
   // Having it in a class is a bit trickier to handle. So we're pulling it out there.
