@@ -82,18 +82,6 @@
   p {
     margin: 0.5rem 0.5rem 0;
   }
-  .buttons {
-    display: flex;
-    flex-direction: column;
-  }
-  .btn {
-    background-color: #efd6dc;
-    color: black;
-  }
-  .btn2 {
-    background-color: #3951ab;
-    color: white;
-  }
   .btn,
   .btn2 {
     border: none;
@@ -119,12 +107,16 @@
   }
 
   .btn {
+    background-color: #efd6dc;
+    color: black;
     top: 125%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .btn2 {
+    background-color: #3951ab;
+    color: white;
     top: 145%;
     left: 50%;
     transform: translate(-50%, -50%);
