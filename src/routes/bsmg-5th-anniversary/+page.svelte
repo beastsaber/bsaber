@@ -39,6 +39,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-top: -28px;
+  }
+
+  img {
+    padding-bottom: 10px;
   }
 
   .content {
@@ -48,12 +53,29 @@
   }
 
   h1 {
-    font-size: 2.5rem;
-    margin: 0.5rem;
+    font-size: 3.5rem;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 2rem;
+  }
+  @media (max-width: 678px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    .content {
+      bottom: 4rem;
+    }
   }
 
   p {
-    margin: 0.5rem 0 0;
+    margin: 0.5rem 0.5rem 0;
   }
   .buttons {
     display: flex;
@@ -75,8 +97,8 @@
     font-size: 15px;
     position: absolute;
     text-align: center;
-    font-family: sans-serif;
-    width: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 165px;
     justify-content: center;
     transition: background-color 0.5s ease;
   }
