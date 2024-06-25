@@ -38,7 +38,7 @@
   .hero {
     position: relative;
     height: 70vh;
-    background: url('BSMG_Pack_bg_v3.png') no-repeat center center;
+    background: url('/BSMG_Pack_bg_v3.png') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
