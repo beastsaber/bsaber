@@ -13,7 +13,10 @@
     <p><img src="/ModSaberWhite.svg" alt="BSMG Logo" width="100" height="100" /></p>
     BSMG Presents
     <h1>BSMG <span class="pink">5th</span> Anniversary</h1>
-    <p>Celebrating 5 years of the Beat Saber Modding Group!</p>
+    <p>
+      Celebrating 5 years of the Beat Saber Modding Group, this pack features a variety of maps and
+      songs to get you grooving!
+    </p>
     <div class="buttons">
       <a class="btn" href="https://api.beatsaver.com/playlists/id/89418/download" target="_blank"
         >PLAYLIST</a
@@ -37,6 +40,7 @@
   }
   .hero {
     position: relative;
+    min-height: 45rem;
     height: 70vh;
     background: url('/BSMG_Pack_bg_v3.png') no-repeat center center;
     background-size: cover;
@@ -73,9 +77,6 @@
   @media (max-width: 400px) {
     h1 {
       font-size: 1.5rem;
-    }
-    .content {
-      bottom: 4rem;
     }
   }
 
