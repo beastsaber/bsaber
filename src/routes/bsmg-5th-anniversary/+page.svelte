@@ -1,5 +1,6 @@
 <script>
   import MetaHead from '$lib/MetaHead.svelte'
+  import MapCards from '$lib/MapCards.svelte'
 </script>
 
 <MetaHead
@@ -25,6 +26,10 @@
     </div>
   </div>
 </section>
+<br />
+<h2>Download the maps below!</h2>
+<hr class="fade" />
+<MapCards playlistId="89418" />
 
 <style>
   .pink {
@@ -123,5 +128,12 @@
     top: 145%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  hr.fade {
+    border: none;
+    height: 2px;
+    margin-block: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, #999999 0%, rgba(153, 153, 153, 0) 100%);
   }
 </style>
