@@ -218,7 +218,8 @@
       flex: $image-size 0 0;
 
       img {
-        height: 100%;
+        height: 128px;
+        width: 128px;
         border-radius: $rounding-large;
       }
 
