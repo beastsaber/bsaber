@@ -66,7 +66,6 @@
     width: 100%;
     justify-content: center;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 2rem;
   }
   @media (max-width: 678px) {
@@ -91,10 +90,11 @@
     font-size: 15px;
     position: absolute;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 165px;
     justify-content: center;
     transition: background-color 0.5s ease;
+    border-radius: 5px;
+    font-weight: bolder;
   }
 
   .btn:hover {
