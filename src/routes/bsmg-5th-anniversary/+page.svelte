@@ -49,6 +49,7 @@
     justify-content: center;
     text-align: center;
     margin-top: -28px;
+    overflow: hidden;
   }
 
   .hero::before {
