@@ -6,7 +6,7 @@
   import SocialIcon from './SocialIcon.svelte'
 
   export let post: PostWithAuthorAndContributor
-  const { body, title, image, authors, credits, publish } = post
+  const { body, title, image, authors, credits, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
   const postRenderer = new marked.Renderer()
@@ -125,12 +125,19 @@
     </h1>
   {/if}
   <div class="meta-data-line">
-    {#if authors.length > 0}
-      <span class="author-information"
-        >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}</span
+    <span>
+      {#if authors.length > 0}
+        <span class="author-information"
+          >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}</span
+        >
+        |{/if}
+      <span class="publication-time"
+        ><span class="hide-on-small">Published on </span>{formatDate(publish)}</span
       >
-      |{/if}
-    <span class="publication-time">{formatDate(publish)}</span>
+    </span>
+    {#if lastUpdated}
+      <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
+    {/if}
     <!-- ToDo: Put Post Category Tags here - might make a good component as they are used in three locations including this one -->
     <!-- <span class="category-labels"></span> -->
   </div>
@@ -222,6 +229,18 @@
     margin-left: 0.5rem;
     color: $color-muted-text;
   }
+  .last-updated-time {
+    color: $color-muted-text;
+  }
+
+  .meta-data-line {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
   $pfp-diameter: 128px;
   .author-box {
     margin-top: 2rem;
@@ -269,6 +288,10 @@
     margin-top: 1rem;
   }
 
+  .hide-on-small {
+    display: none;
+  }
+
   // Separation between different authors
   .author-box-person + .author-box-person {
     padding-top: 1.2rem;
@@ -286,6 +309,17 @@
         margin: 0;
         border-radius: 0 0 $rounding-large - 2px $rounding-large - 2px; // Ensures the backdrop filter covers the entire image
       }
+    }
+    .last-updated-time {
+      float: right;
+    }
+
+    .hide-on-small {
+      display: auto;
+    }
+
+    .meta-data-line {
+      display: block;
     }
   }
 
