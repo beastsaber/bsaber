@@ -315,7 +315,7 @@
     }
 
     .hide-on-small {
-      display: auto;
+      display: inline;
     }
 
     .meta-data-line {
