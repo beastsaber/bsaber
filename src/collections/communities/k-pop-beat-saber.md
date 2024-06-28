@@ -1,7 +1,6 @@
 ---
 name: "K-Pop Beat Saber "
-description: K-pop Beat Saber mapping, feedback, and chatting. All are welcome,
-  even if you don't map K-pop!
+description: KPOP, chatting, mapping. Love any of these? Come jam and map with us! KPOP not strictly required!
 image: /static/uploads/communities/kpop-lain.gif
 circleFrameImage: true
 labels:
