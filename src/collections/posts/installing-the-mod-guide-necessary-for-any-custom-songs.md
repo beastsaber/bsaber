@@ -2,7 +2,8 @@
 title: How To Download And Install Mods On Beat Saber
 section: speciality
 category: guide
-publish: 2024-06-15T00:00:00.000Z
+publish: 2024-03-22T00:00:00.000Z
+lastUpdated: 2024-06-15T00:00:00.000Z
 homepageText: Learn how to install new custom songs and mods on Beat Saber with this guide!
 image: /static/uploads/posts/beat-saber-square.jpg
 authors:

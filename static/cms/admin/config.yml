@@ -35,6 +35,10 @@ collections:
       - name: publish
         label: Publish Date
         widget: datetime
+      - name: lastUpdated
+        label: Last Updated
+        widget: datetime
+        required: false
       - name: homepageText
         label: Homepage Text
         required: false

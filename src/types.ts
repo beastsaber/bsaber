@@ -1,9 +1,10 @@
-import type { iconMapping } from "$lib/iconMapping"
+import type { iconMapping } from '$lib/iconMapping'
 
 export type Post = {
   title: string
   section: 'announcements' | 'articles' | 'speciality'
   publish: string
+  lastUpdated?: string
   body: string
   slug: string
   homepageText?: string
