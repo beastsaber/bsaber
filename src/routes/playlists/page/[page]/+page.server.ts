@@ -1,6 +1,7 @@
 import { paginateArray } from '$lib/paginateArray'
 import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
 import type { FeaturedPlaylistOverwriteCollectionData, Playlist } from '../../../../types'
+import { getFeaturedPlaylistCount } from '$lib/getFeaturedPlaylistCount'
 
 const pageSize = 20
 
@@ -28,16 +29,12 @@ export const load = async ({
   }
 
   const featuredMapsForPage = await fetch(
-    `${
-      import.meta.env.VITE_BSABER_API_BASE ?? 'https://api.beatsaver.com'
-    }/playlists/search/${pageNumber}?sortOrder=Latest&curated=true`,
-  ).then((x: any) => x.json())
-
-  const { paginatedArray: paginatedFeaturedPlaylists, pageCount } = paginateArray(
-    featuredMapsForPage,
-    pageSize,
-    pageNumber,
+    `${import.meta.env.VITE_BSABER_API_BASE ?? 'https://api.beatsaver.com'}/playlists/search/${
+      pageNumber - 1
+    }?sortOrder=Curated&curated=true`,
   )
+    .then((x: any) => x.json())
+    .then((x) => x.docs)
 
   const featuredPlaylistOverwrites = await retrieveAllCollectionDataOfType(
     'featured-playlist-overwrites',
@@ -46,8 +43,10 @@ export const load = async ({
     featuredPlaylistOverwrites.map((x) => [x.attributes.id, x.attributes]),
   )
 
+  const pageCount = await getFeaturedPlaylistCount()
+
   return {
-    playlists: paginatedFeaturedPlaylists as Playlist[],
+    playlists: featuredMapsForPage as Playlist[],
     currentPage: pageNumber,
     pageSize,
     pageCount,
