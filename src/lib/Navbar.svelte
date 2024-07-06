@@ -73,8 +73,8 @@
       expanded: false,
       Items: [
         {
-          name: 'Curated Playlists',
-          href: 'https://beatsaver.com/playlists?order=Curated&curated=true',
+          name: 'Featured Packs',
+          href: '/playlists/page/1',
         },
         {
           name: 'All Playlists',
