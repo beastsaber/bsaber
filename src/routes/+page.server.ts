@@ -87,9 +87,11 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
 
   const communityEvents = await retrieveCommunityEvents()
 
-  const featuredPlaylistOverwrites = retrieveAllCollectionDataOfType('featured-playlist-overwrites')
+  const featuredPlaylistOverwrites = await retrieveAllCollectionDataOfType(
+    'featured-playlist-overwrites',
+  )
   const featuredPlaylistOverwriteMap = Object.fromEntries(
-    (await featuredPlaylistOverwrites).map((x) => [x.attributes.id, x.attributes]),
+    featuredPlaylistOverwrites.map((x) => [x.attributes.id, x.attributes]),
   )
 
   return {
