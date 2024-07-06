@@ -8,13 +8,14 @@
   export let maxCards: number | undefined = undefined // max amount of cards to show
   export let overwriteMap: Record<string, FeaturedPlaylistOverwriteCollectionData> = {}
 
-  let playlists: Playlist[] = []
+  export let playlists: Playlist[] = []
 
   onMount(async () => {
     await getPlaylists()
   })
 
   async function getPlaylists() {
+    if (playlists.length > 0) return
     let response = await fetch(
       `${
         import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
