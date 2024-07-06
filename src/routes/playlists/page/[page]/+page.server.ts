@@ -1,5 +1,6 @@
 import { paginateArray } from '$lib/paginateArray'
-import type { Playlist } from '../../../../types'
+import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
+import type { FeaturedPlaylistOverwriteCollectionData, Playlist } from '../../../../types'
 
 const pageSize = 20
 
@@ -8,6 +9,7 @@ export type FeaturedPlaylistOverviewPageData = {
   currentPage: number
   pageSize: number
   pageCount: number
+  featuredPlaylistOverwriteMap: Record<string, FeaturedPlaylistOverwriteCollectionData>
 }
 type LoadFunctionParameter = {
   params: {
@@ -37,10 +39,18 @@ export const load = async ({
     pageNumber,
   )
 
+  const featuredPlaylistOverwrites = await retrieveAllCollectionDataOfType(
+    'featured-playlist-overwrites',
+  )
+  const featuredPlaylistOverwriteMap = Object.fromEntries(
+    featuredPlaylistOverwrites.map((x) => [x.attributes.id, x.attributes]),
+  )
+
   return {
     playlists: paginatedFeaturedPlaylists as Playlist[],
     currentPage: pageNumber,
     pageSize,
     pageCount,
+    featuredPlaylistOverwriteMap,
   }
 }
