@@ -19,7 +19,7 @@
     let response = await fetch(
       `${
         import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
-      }/playlists/latest?sort=Curated&pageSize=${maxCards ?? 4}`,
+      }/playlists/latest?sort=CURATED&pageSize=${maxCards ?? 4}`,
     )
     playlists = await response.json().then((json) => json['docs'] as Playlist[])
   }
