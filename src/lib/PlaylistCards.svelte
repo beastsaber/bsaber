@@ -31,6 +31,7 @@
       <!-- Default to beatsaver playlist page - if url overwrite is given apply that -->
       <a
         class="card"
+        class:overridden={overwriteMap[playlist.playlistId] != null}
         href={overwriteMap[playlist.playlistId] == null ||
         overwriteMap[playlist.playlistId].linkOverwrite == null
           ? `${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${
@@ -96,5 +97,9 @@
     a:hover .zip-download-button-container {
       opacity: 1;
     }
+  }
+
+  .overridden {
+    box-shadow: 0 0 80px 1px rgba(255, 215, 0, 0.4);
   }
 </style>
