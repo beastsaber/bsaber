@@ -2,6 +2,7 @@
   import type { FeaturedPlaylistOverviewPageData } from './+page.server'
   import PlaylistCards from '$lib/PlaylistCards.svelte'
   import PaginationBar from '$lib/PaginationBar.svelte'
+  import MetaHead from '$lib/MetaHead.svelte'
 
   export let data: FeaturedPlaylistOverviewPageData
 
@@ -11,6 +12,8 @@
     return `/playlists/page/${page}`
   }
 </script>
+
+<MetaHead title="Featured Playlists" />
 
 <h1 class="page-title">Featured Playlists</h1>
 
