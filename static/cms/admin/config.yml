@@ -409,5 +409,18 @@ collections:
           - name: id
             label: ID
             widget: string
+  - name: featured-playlist-overwrites
+    label: Featured Playlist Overwrites
+    folder: src/collections/featured-playlist-overwrites
+    slug: '{{id}}'
+    create: true
+    fields:
+      - name: id
+        label: BeatSaver Playlist ID
+      - name: linkOverwrite
+        label: Link Overwrite
+        required: false
+        hint: If you want to direct the playlist link to a different location than the BeatSaver playlist page write down the URL here. You should start it with "/" if you intend to put a BeastSaber site.
+        widget: string
 media_folder: 'static/uploads'
 public_folder: '/uploads'
