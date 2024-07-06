@@ -58,9 +58,7 @@
   <Header
     text="Featured Packs"
     icon={faRectangleList}
-    linkUrl={`${
-      import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'
-    }/playlists?curated=true`}
+    linkUrl={'/playlists/page/1'}
     linkText="See all curated packs"
   />
   <PlaylistCards maxCards={maxFeaturedPackCards} overwriteMap={featuredPlaylistOverwriteMap} />
