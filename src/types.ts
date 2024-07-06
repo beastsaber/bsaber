@@ -100,6 +100,7 @@ export type Playlist = {
   playlistId: number
   name: string
   description: string
+  playlistImage: string
   playlistImage512: string
   owner: Uploader
 }

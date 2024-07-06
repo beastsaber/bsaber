@@ -37,7 +37,7 @@
               playlist.playlistId
             }`
           : overwriteMap[playlist.playlistId].linkOverwrite}
-        style={`background-image: url(${playlist.playlistImage512})`}
+        style={`background-image: url(${playlist.playlistImage512 ?? playlist.playlistImage})`}
       >
         <div class="zip-download-button-container">
           <ZipDownloadButton
