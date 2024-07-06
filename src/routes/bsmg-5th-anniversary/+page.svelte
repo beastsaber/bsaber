@@ -6,12 +6,12 @@
 <MetaHead
   title="BSMG 5th Anniversary"
   description="Celebrating 5 years of the Beat Saber Modding Group, this pack features a variety of maps and songs to get you grooving!"
-  imageUrl="/89418.jpg"
+  imageUrl="/uploads/playlists/bsmg-5th-anniversary.jpg"
 />
 
 <section class="hero">
   <div class="content">
-    <p><img src="/ModSaberWhite.svg" alt="BSMG Logo" width="100" height="100" /></p>
+    <p><img src="/uploads/playlists/BSMG-logo.svg" alt="BSMG Logo" width="100" height="100" /></p>
     BSMG Presents
     <h1>BSMG <span class="pink">5th</span> Anniversary</h1>
     <p>
@@ -59,7 +59,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/89418.jpg') no-repeat center center;
+    background: url('/uploads/playlists/bsmg-5th-anniversary.jpg') no-repeat center center;
     background-size: cover;
     filter: brightness(30%) blur(5px);
     z-index: -1;
