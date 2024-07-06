@@ -19,10 +19,10 @@ export const getFeaturedPlaylistCount = async (): Promise<number> => {
     if (response.status === 200) {
       const data = await response.json()
       if (data.docs.length === 0) {
-        featuredPlaylistCount = currentTestPage - 1
+        featuredPlaylistCount = currentTestPage
         break
       } else if (data.docs.length < 20) {
-        featuredPlaylistCount = currentTestPage
+        featuredPlaylistCount = currentTestPage + 1
         break
       } else {
         currentTestPage += 1
