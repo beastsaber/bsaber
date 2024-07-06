@@ -83,6 +83,11 @@ export type MapOfTheWeekCollectionData = {
   coverUrlOverwrite?: string
 }
 
+export type FeaturedPlaylistOverwriteCollectionData = {
+  id: string
+  linkOverwrite?: string
+}
+
 export type MapOfTheWeek = {
   map: Beatmap
   coverUrl: string
@@ -160,14 +165,6 @@ export type ImportPostModuleData = ImportModuleData<Omit<Post, 'slug'>>
 export type ImportMapOfTheWeekModuleData = ImportModuleData<MapOfTheWeekCollectionData>
 
 export type ImportPersonModuleData = ImportModuleData<Person>
-
-export type RootPageSSRData = {
-  announcements: Post[]
-  articles: Post[]
-  others: Post[]
-  communityEvents: CommunityEvent[]
-  currentMapOfTheWeek: MapOfTheWeek | undefined
-}
 
 export type CommunityLabel = {
   label: string
