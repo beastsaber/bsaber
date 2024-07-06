@@ -19,7 +19,7 @@
     let response = await fetch(
       `${
         import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
-      }/playlists/latest?sort=CURATED&pageSize=${maxCards ?? 4}`,
+      }/playlists/latest?sort=Curated&pageSize=${maxCards ?? 4}`,
     )
     playlists = await response.json().then((json) => json['docs'] as Playlist[])
   }
@@ -27,7 +27,7 @@
 
 <div class="cards max-cols-4" style="--aspect-ratio: 1">
   {#if playlists.length !== 0}
-    {#each playlists as playlist}
+    {#each playlists as playlist (playlist.playlistId)}
       <!-- Default to beatsaver playlist page - if url overwrite is given apply that -->
       <a
         class="card"
