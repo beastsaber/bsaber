@@ -1,6 +1,13 @@
 import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
-import type { Post, MapOfTheWeek, CommunityEvent, ImportPostModuleData } from '../types'
+import type {
+  Post,
+  MapOfTheWeek,
+  CommunityEvent,
+  ImportPostModuleData,
+  FeaturedPlaylistOverwriteCollectionData,
+} from '../types'
 import { retrieveCommunityEvents } from '$lib/retrieveCommunityEvents'
+import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
 
 export type RootPageSSRData = {
   announcements: Post[]
@@ -8,6 +15,7 @@ export type RootPageSSRData = {
   others: Post[]
   communityEvents: CommunityEvent[]
   currentMapOfTheWeek: MapOfTheWeek | undefined
+  featuredPlaylistOverwriteMap: Record<string, FeaturedPlaylistOverwriteCollectionData>
 }
 
 interface LoadParameters {
@@ -79,9 +87,15 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
 
   const communityEvents = await retrieveCommunityEvents()
 
+  const featuredPlaylistOverwrites = retrieveAllCollectionDataOfType('featured-playlist-overwrites')
+  const featuredPlaylistOverwriteMap = Object.fromEntries(
+    (await featuredPlaylistOverwrites).map((x) => [x.attributes.id, x.attributes]),
+  )
+
   return {
     ...rootPageSSRData,
     communityEvents: communityEvents,
     currentMapOfTheWeek,
+    featuredPlaylistOverwriteMap,
   }
 }

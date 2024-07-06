@@ -1,11 +1,12 @@
 <script lang="ts">
-  import type { Playlist } from '../types'
+  import type { FeaturedPlaylistOverwriteCollectionData, Playlist } from '../types'
   import { onMount } from 'svelte'
   import Uploader from '$lib/Uploader.svelte'
   import OneClickDownloadButton from './OneClickDownloadButton.svelte'
   import ZipDownloadButton from './ZipDownloadButton.svelte'
 
   export let maxCards: number | undefined = undefined // max amount of cards to show
+  export let overwriteMap: Record<string, FeaturedPlaylistOverwriteCollectionData> = {}
 
   let playlists: Playlist[] = []
 
@@ -26,11 +27,15 @@
 <div class="cards max-cols-4" style="--aspect-ratio: 1">
   {#if playlists.length !== 0}
     {#each playlists as playlist}
+      <!-- Default to beatsaver playlist page - if url overwrite is given apply that -->
       <a
         class="card"
-        href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${
-          playlist.playlistId
-        }`}
+        href={overwriteMap[playlist.playlistId] == null ||
+        overwriteMap[playlist.playlistId].linkOverwrite == null
+          ? `${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${
+              playlist.playlistId
+            }`
+          : overwriteMap[playlist.playlistId].linkOverwrite}
         style={`background-image: url(${playlist.playlistImage512})`}
       >
         <div class="zip-download-button-container">
