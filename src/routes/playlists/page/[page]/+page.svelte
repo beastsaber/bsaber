@@ -17,7 +17,7 @@
 <PlaylistCards {playlists} overwriteMap={featuredPlaylistOverwriteMap} />
 
 <div class="pagination-bar">
-  <PaginationBar {currentPage} numberOfPages={pageCount} {getPageLink} />
+  <PaginationBar {currentPage} numberOfPages={pageCount} {getPageLink} forceExternal={true} />
 </div>
 
 <style lang="scss">
