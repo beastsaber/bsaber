@@ -95,8 +95,6 @@
 
   p {
     margin: 0.5rem 0.5rem 0;
-    font-weight: 600;
-    font-size: large;
   }
   .btn,
   .btn2 {
@@ -114,13 +112,14 @@
   }
 
   .btn:hover {
-    background-color: #414160;
+    background-color: #4c0000;
     text-decoration: none;
     color: white;
   }
   .btn2:hover {
-    background-color: #122975;
+    background-color: #4c0000;
     text-decoration: none;
+    color: white;
   }
 
   .btn {
@@ -132,8 +131,8 @@
   }
 
   .btn2 {
-    background-color: #3951ab;
-    color: white;
+    background-color: #fffdfd;
+    color: black;
     top: 140%;
     left: 50%;
     transform: translate(-50%, -50%);
