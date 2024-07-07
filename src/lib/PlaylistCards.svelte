@@ -100,6 +100,16 @@
   }
 
   .overridden {
-    box-shadow: 0 0 80px 1px rgba(255, 215, 0, 0.4);
+    animation: colorTransition 3s linear infinite alternate;
+  }
+
+  @keyframes colorTransition {
+    0%,
+    100% {
+      box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 15px 5px rgba(255, 217, 0, 0.635);
+    }
   }
 </style>
