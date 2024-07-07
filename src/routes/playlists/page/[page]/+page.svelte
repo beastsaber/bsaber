@@ -15,7 +15,8 @@
 
 <MetaHead title="Featured Playlists" />
 
-<h1 class="page-title">Featured Playlists</h1>
+<h1 class="page-title">Featured Packs</h1>
+<br />
 
 <PlaylistCards {playlists} overwriteMap={featuredPlaylistOverwriteMap} />
 

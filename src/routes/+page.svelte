@@ -59,7 +59,7 @@
     text="Featured Packs"
     icon={faRectangleList}
     linkUrl={'/playlists/page/1'}
-    linkText="See all curated packs"
+    linkText="See all featured packs"
   />
   <PlaylistCards maxCards={maxFeaturedPackCards} overwriteMap={featuredPlaylistOverwriteMap} />
 
