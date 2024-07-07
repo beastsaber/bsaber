@@ -1,4 +1,4 @@
-import type { ImportPersonModuleData } from './../types'
+import type { FeaturedPlaylistOverwriteCollectionData, ImportPersonModuleData } from './../types'
 import { readFileSync, readdirSync } from 'fs'
 import frontmatter from 'front-matter'
 import { resolve } from 'path'
@@ -30,6 +30,7 @@ export type CollectionDataTypeMap = {
   posts: ConvertToAttributeKeyedObject<Post>
   'community-events': ConvertToAttributeKeyedObject<CommunityEventCollectionData>
   'community-event-hosts': ConvertToAttributeKeyedObject<CommunityEventHostCollectionData>
+  'featured-playlist-overwrites': ConvertToAttributeKeyedObjectWithNoBody<FeaturedPlaylistOverwriteCollectionData>
 }
 /**
  * Retrieve collection data from the markdown files. It will infer the type of the collection based on the collection parameter.

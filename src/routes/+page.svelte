@@ -16,7 +16,7 @@
   import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
   import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 
-  import type { RootPageSSRData } from '../types'
+  import type { RootPageSSRData } from './+page.server.ts'
   import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
   import MetaHead from '$lib/MetaHead.svelte'
   import EventCards from '$lib/EventCards.svelte'
@@ -24,7 +24,13 @@
 
   export let data: RootPageSSRData
 
-  let { announcements, currentMapOfTheWeek, articles, communityEvents } = data
+  let {
+    announcements,
+    currentMapOfTheWeek,
+    articles,
+    communityEvents,
+    featuredPlaylistOverwriteMap,
+  } = data
   let announcement = data.announcements?.length > 0 ? announcements[0] : undefined
 
   const currentEvents = communityEvents.filter(isCurrentEvent).reverse()
@@ -57,7 +63,7 @@
     }/playlists?curated=true`}
     linkText="See all curated packs"
   />
-  <PlaylistCards maxCards={maxFeaturedPackCards} />
+  <PlaylistCards maxCards={maxFeaturedPackCards} overwriteMap={featuredPlaylistOverwriteMap} />
 
   <Header
     text="Latest Articles"
