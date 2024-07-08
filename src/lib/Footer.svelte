@@ -21,6 +21,11 @@
 
 <style lang="scss">
   @import 'src/scss/variables';
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
   .footer-content {
     position: relative;
     text-align: center;
