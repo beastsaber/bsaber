@@ -9,11 +9,13 @@
     <div class="links">
       <p>
         <a class="btn" href="https://discord.gg/VJZHUbt" target="_blank">Discord</a> <br />
-        <a class="btn" href="https://www.patreon.com/user/membership?u=119426555" target="_blank"
-          >Support Us</a
+        <a
+          class="btn"
+          href="https://patreon.com/user?u=119426555&utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
+          target="_blank">Patreon</a
         > <br />
-        <a class="btn" href="https://www.bsaber.com" target="_blank">Privacy Policy</a> <br />
-        <a class="btn" href="https://www.bsaber.com" target="_blank">Chaeyoung</a> <br />
+        <a class="btn" href="https://youtube.com/@BeastSaberNews" target="_blank">YouTube</a> <br />
+        <a class="btn" href="https://x.com/BeastSaberNews" target="_blank">Twitter</a> <br />
       </p>
     </div>
   </div>
