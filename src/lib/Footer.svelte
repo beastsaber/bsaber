@@ -1,8 +1,10 @@
 <footer>
   <hr />
   <div class="footer-content">
-    <div class="logo">
-      <a href="https://bsaber.com"> <img alt="BeastSaber" src="/BeastSaber-LogoW.webp" /></a>
+    <div>
+      <a href="https://bsaber.com">
+        <img class="logo" alt="BeastSaber" src="/BeastSaber-LogoW.webp" /></a
+      >
     </div>
     <div class="links">
       <p>
@@ -31,6 +33,10 @@
     filter: brightness(45%);
   }
 
+  .links {
+    margin: 0.5rem;
+  }
+
   .btn {
     color: white;
     font-family: $font-poppins;
@@ -39,6 +45,6 @@
   }
 
   .logo {
-    scale: 54%;
+    height: 30px;
   }
 </style>
