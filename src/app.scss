@@ -19,6 +19,7 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100vw;
+  justify-content: center;
 }
 
 body {
