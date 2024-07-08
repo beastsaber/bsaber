@@ -6,17 +6,17 @@
         <img class="logo" alt="BeastSaber" src="/BeastSaber-LogoW.webp" /></a
       >
     </div>
-    <div class="links">
-      <p>
-        <a class="btn" href="https://discord.gg/VJZHUbt" target="_blank">Discord</a> <br />
-        <a
-          class="btn"
-          href="https://patreon.com/user?u=119426555&utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
-          target="_blank">Patreon</a
-        > <br />
-        <a class="btn" href="https://youtube.com/@BeastSaberNews" target="_blank">YouTube</a> <br />
-        <a class="btn" href="https://x.com/BeastSaberNews" target="_blank">Twitter</a> <br />
-      </p>
+    <div class="links-container">
+      <ul>
+        <li><a class="links" href="https://discord.gg/VJZHUbt" target="_blank">Discord</a></li>
+        <li>
+          <a class="links" href="https://www.patreon.com/BeastSaberNews" target="_blank">Patreon</a>
+        </li>
+        <li>
+          <a class="links" href="https://youtube.com/@BeastSaberNews" target="_blank">YouTube</a>
+        </li>
+        <li><a class="links" href="https://x.com/BeastSaberNews" target="_blank">X/Twitter</a></li>
+      </ul>
     </div>
   </div>
 </footer>
@@ -40,15 +40,21 @@
     filter: brightness(45%);
   }
 
-  .links {
+  .links-container {
     margin: 0.5rem;
   }
 
-  .btn {
+  .links {
     color: white;
     font-family: $font-poppins;
     font-size: 1.1rem;
     line-height: 1.5;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
 
   .logo {
