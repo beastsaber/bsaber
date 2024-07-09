@@ -1,12 +1,14 @@
 <script lang="ts">
   import '../app.scss'
   import Navbar from '$lib/Navbar.svelte'
+  import Footer from '$lib/Footer.svelte'
 </script>
 
 <Navbar />
 <main>
   <slot />
 </main>
+<Footer />
 
 <style lang="scss">
   main {

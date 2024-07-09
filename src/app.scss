@@ -14,6 +14,14 @@
   scroll-padding: 5.5rem; // Nav height + some extra space
 }
 
+.main-section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  justify-content: center;
+}
+
 body {
   max-width: 1356px;
   margin: 0 auto;
