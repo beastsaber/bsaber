@@ -8,13 +8,14 @@
   export let maxCards: number | undefined = undefined // max amount of cards to show
   export let overwriteMap: Record<string, FeaturedPlaylistOverwriteCollectionData> = {}
 
-  let playlists: Playlist[] = []
+  export let playlists: Playlist[] = []
 
   onMount(async () => {
     await getPlaylists()
   })
 
   async function getPlaylists() {
+    if (playlists.length > 0) return
     let response = await fetch(
       `${
         import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
@@ -26,17 +27,18 @@
 
 <div class="cards max-cols-4" style="--aspect-ratio: 1">
   {#if playlists.length !== 0}
-    {#each playlists as playlist}
+    {#each playlists as playlist (playlist.playlistId)}
       <!-- Default to beatsaver playlist page - if url overwrite is given apply that -->
       <a
         class="card"
+        class:overridden={overwriteMap[playlist.playlistId] != null}
         href={overwriteMap[playlist.playlistId] == null ||
         overwriteMap[playlist.playlistId].linkOverwrite == null
           ? `${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${
               playlist.playlistId
             }`
           : overwriteMap[playlist.playlistId].linkOverwrite}
-        style={`background-image: url(${playlist.playlistImage512})`}
+        style={`background-image: url(${playlist.playlistImage512 ?? playlist.playlistImage})`}
       >
         <div class="zip-download-button-container">
           <ZipDownloadButton
@@ -94,6 +96,20 @@
 
     a:hover .zip-download-button-container {
       opacity: 1;
+    }
+  }
+
+  .overridden {
+    animation: colorTransition 5s linear infinite alternate;
+  }
+
+  @keyframes colorTransition {
+    0%,
+    100% {
+      box-shadow: 0 0 7px 3px rgba(255, 215, 0, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 7px 3px rgba(255, 217, 0, 0.635);
     }
   }
 </style>
