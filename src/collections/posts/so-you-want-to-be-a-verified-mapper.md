@@ -4,9 +4,9 @@ section: articles
 category: guide
 publish: 2024-02-18T00:00:00.000Z
 homepageText: Learn how to become a Verified Mapper on BeatSaver with this guide!
-image: /static/uploads/posts/verified-square1.png
+image: /static/uploads/posts/so-you-want-to-be-a-verified-mapper/verified-square1.png
 authors:
-  - "4285984"
+  - '4285984'
 showInPostListing: true
 ---
 
@@ -14,11 +14,11 @@ As you've probably noticed, different maps are marked in different ways on BeatS
 
 Specifically, a map published by a Verified Mapper will show a purple sidebar
 
-![Verified Card](/uploads/verified-card.png)
+![Verified Card](/uploads/posts/so-you-want-to-be-a-verified-mapper/verified-card.png)
 
 You'll even see a small purple and white checkmark across the BeastSaber site next to verified mappers' names
 
-![bsaber verified card](/uploads/bsaber-verified-card.png)
+![bsaber verified card](/uploads/posts/so-you-want-to-be-a-verified-mapper/bsaber-verified-card.png)
 
 There are other sidebar colors such as curation (green), ranked (yellow), and qualified for rank (light blue).
 
@@ -38,7 +38,7 @@ Verified Mappers are vetted to have been able to demonstrate the ability to regu
 
 ## How does the verification process work?
 
-![investigating](/uploads/daffy-duck-investigating-1.gif)
+![investigating](/uploads/posts/so-you-want-to-be-a-verified-mapper/daffy-duck-investigating-1.gif)
 
 ### Requirements
 
@@ -58,7 +58,7 @@ A member of the verification team will review your application and will always r
 
 ## What happens if I get rejected?
 
-![rejected](/uploads/batman-we-fall-so-we-can-learn-to-pick-ourselves-up-1.gif)
+![rejected](/uploads/posts/so-you-want-to-be-a-verified-mapper/batman-we-fall-so-we-can-learn-to-pick-ourselves-up-1.gif)
 
 Failure is a part of learning! If everyone did everything right on their first try, how would we learn anything? The verification process is rigorous, with close to 50% of applications being rejected. The good news is that the verification team provides feedback to the applicant on what they need to improve on for their next request. As soon as they feel they have a better grasp of those concepts, they are welcome to resubmit their application!
 
@@ -66,7 +66,7 @@ Failure is a part of learning! If everyone did everything right on their first t
 
 ## What happens if I get accepted?
 
-![accepted](/uploads/ron-swanson-success-1.gif)
+![accepted](/uploads/posts/so-you-want-to-be-a-verified-mapper/ron-swanson-success-1.gif)
 
 Congratulations, and welcome to the ranks of nearly 450 other quality mappers just like you! Successfully passing through the verification process, whether it's your first try or your fifth, will grant you:
 
@@ -83,7 +83,7 @@ Congratulations, and welcome to the ranks of nearly 450 other quality mappers ju
 
 ## Okay, so how do I actually apply?
 
-![Lets do this](/uploads/of-course-i-want-to-be-in-this-mtv-movie-and-tv-awards-1.gif)
+![Lets do this](/uploads/posts/so-you-want-to-be-a-verified-mapper/of-course-i-want-to-be-in-this-mtv-movie-and-tv-awards-1.gif)
 
 1. Visit https://bsmg.dev/roleapps to get started.
 2. Click the **Discord** button on the login page to log in to the system/create an account.

@@ -19,7 +19,7 @@ linkToSpecialtyPage: /getting-started/custom-songs
 You'll find every single published map/song at your fingertips by going to [BeatSaver.com](https://beatsaver.com/). But, there are so many new maps released every day… how do you know which ones to download? There are a few things to look for before you go wading through search results:
 
 <p align="center">
-    <img src="/uploads/sot-map-page.png">
+    <img src="/uploads/posts/get-started-custom-songs/sot-map-page.png">
 </p>
 
 - **[Curated Maps](https://beatsaver.com/?order=Curated&curated=true)**
@@ -39,7 +39,7 @@ You'll find every single published map/song at your fingertips by going to [Beat
 Some of the benefits of looking for songs on BeatSaver instead of in-game is a clearer look at curation, ratings, genres, difficulties, and more. There are several built-in search queries OR you can set your own filters!
 
 <p align="center">
-    <img src="/uploads/beatsaver-search-options.png">
+    <img src="/uploads/posts/get-started-custom-songs/beatsaver-search-options.png">
 </p>
 
 **Dynamic search feeds include:**
@@ -97,7 +97,7 @@ Sometimes you’re looking for a specific song, artist, or genre and getting no 
 2. Select at least BeatSaver (though you may want the other options as well) and close ModAssistant.
 
 <p align="center">
-    <img src="/uploads/mod-assistant.png">
+    <img src="/uploads/posts/get-started-custom-songs/mod-assistant.png">
 </p>
 
 3. On [BeatSaver](https://beatsaver.com/), find a song you want to download and click the OneClick Install button (the one that looks like a cloud with an arrow). You may see a confirmation box that your PC is trying to open ModAssistant.
