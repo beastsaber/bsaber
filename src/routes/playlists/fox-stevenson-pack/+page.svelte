@@ -88,7 +88,7 @@
   }
   .card {
     height: 700px;
-    background: rgba(48, 208, 232, 0);
+    background: rgba(0, 0, 0, 0);
     flex: 1;
     width: 45rem;
   }
