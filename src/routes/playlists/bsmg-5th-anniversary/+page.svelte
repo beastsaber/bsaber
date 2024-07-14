@@ -11,16 +11,26 @@
 
 <section class="hero">
   <div class="content">
-    <p><img src="/uploads/playlists/BSMG-logo.svg" alt="BSMG Logo" width="100" height="100" /></p>
-    BSMG Presents
-    <h1>BSMG <span class="pink">5th</span> Anniversary</h1>
-    <p>
-      Celebrating 5 years of the Beat Saber Modding Group, this pack features a variety of maps and
-      songs to get you grooving!
-    </p>
+    <div class="card-container">
+      <div class="card">
+        <a href="https://beatsaver.com/profile/4329735" target="_blank"
+          ><img src="/uploads/playlists/BSMG-logo.svg" alt="BSMG" />
+        </a>
+      </div>
+    </div>
+    <div class="uploader-container">
+      <a class="uploader" href="https://beatsaver.com/profile/4329735" target="_blank">BSMG</a> Presents
+    </div>
+    <div class="body">
+      <h1>BSMG <span class="pink">5th</span> Anniversary</h1>
+      <p>
+        Celebrating 5 years of the Beat Saber Modding Group, this pack features a variety of maps
+        and songs to get you grooving!
+      </p>
+    </div>
     <div class="buttons">
       <a class="btn" href="https://api.beatsaver.com/playlists/id/89418/download" target="_blank"
-        >PLAYLIST</a
+        >ZIP DOWNLOAD</a
       >
       <a
         class="btn2"
@@ -44,19 +54,12 @@
     min-height: 45rem;
     height: 70vh;
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: -28px;
+    margin-top: -20px;
     overflow: hidden;
   }
-
   .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background: url('/uploads/playlists/bsmg-5th-anniversary.jpg') no-repeat center center;
@@ -65,14 +68,45 @@
     z-index: -1;
   }
 
-  img {
-    padding-bottom: 10px;
+  .content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
   }
 
-  .content {
-    position: relative;
-    z-index: 1;
-    bottom: 6rem;
+  .card-container {
+    display: flex;
+    gap: 2.5rem;
+    height: 200px;
+    transform: scale(15%);
+    margin-top: -5rem;
+  }
+  .card {
+    height: 700px;
+    background: rgba(0, 0, 0, 0);
+    flex: 1;
+    width: 45rem;
+  }
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+
+  .uploader {
+    color: white;
+    font-weight: 1000;
+  }
+
+  .body {
+    padding-bottom: 2.5rem;
   }
 
   h1 {
@@ -80,7 +114,7 @@
     width: 100%;
     justify-content: center;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   @media (max-width: 678px) {
     h1 {
@@ -96,19 +130,23 @@
   p {
     margin: 0.5rem 0.5rem 0;
   }
+
+  .buttons {
+    display: grid;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+  }
   .btn,
   .btn2 {
-    border: none;
     padding: 12px 30px;
     cursor: pointer;
     font-size: 15px;
-    position: absolute;
     text-align: center;
-    width: 165px;
-    justify-content: center;
     transition: background-color 0.5s ease;
     border-radius: 5px;
     font-weight: bolder;
+    width: 165px;
   }
 
   .btn:hover {
@@ -119,22 +157,17 @@
   .btn2:hover {
     background-color: #122975;
     text-decoration: none;
+    color: white;
   }
 
   .btn {
     background-color: #efd6dc;
     color: black;
-    top: 125%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   .btn2 {
     background-color: #3951ab;
     color: white;
-    top: 145%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   hr.fade {

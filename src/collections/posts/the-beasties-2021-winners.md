@@ -4,7 +4,7 @@ section: articles
 category: news
 publish: 2022-01-23T00:00:00.000Z
 homepageText: 'Your winners for the 2021 BeastSaber Mapping Awards announced!'
-image: /static/uploads/posts/2021.jpg
+image: /static/uploads/posts/beasties/beasties-medals.jpg
 showInPostListing: true
 ---
 

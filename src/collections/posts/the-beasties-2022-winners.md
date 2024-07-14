@@ -4,7 +4,7 @@ section: articles
 category: news
 publish: 2023-02-11T00:01:00.000Z
 homepageText: 'Your winners for the 2022 BeastSaber Mapping Awards announced!'
-image: /static/uploads/posts/square2022.png
+image: /static/uploads/posts/beasties/2022-hero.png
 showInPostListing: true
 ---
 

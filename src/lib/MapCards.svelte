@@ -16,7 +16,7 @@
     'FIRST_PUBLISHED'
   export let verified: boolean | undefined = undefined
   export let maxCards: number | undefined = undefined // max amount of cards to show
-  export let playlistId: number | undefined = undefined
+  export let playlistId: string | undefined = undefined
 
   let maps: Beatmap[] = []
 
