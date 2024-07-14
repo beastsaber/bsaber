@@ -1,14 +1,29 @@
+<script lang="ts">
+  import MemberProfileCard from './MemberProfileCard.svelte'
+  import MemberProfileCardSide from './MemberProfileCardSide.svelte'
+  import MemberProfileCardSwag from './MemberProfileCardSwag.svelte'
+</script>
+
 <img class="header-logo" src="/playlists/tripleS/tripleS-logo.png" />
-<img class="header-logo" src="/playlists/tripleS/vertical-line.svg" />
 <div class="timeline">
-  <div class="timeline-unit">
-    <div class="timeline-left">Left</div>
-    <div class="timeline-line">
-      <div class="icon" />
-      <div class="date left">2021-01-01</div>
-    </div>
-    <div class="timeline-right">Right</div>
+  <div class="timeline-left">
+    <MemberProfileCard
+      sNumber={1}
+      name="Seoyeon"
+      image="/playlists/tripleS/yooyeon.png"
+      date="2022-05-01"
+    />
+    <MemberProfileCardSwag
+      sNumber={1}
+      name="Seoyeon"
+      image="/playlists/tripleS/yooyeon.png"
+      date="1st May 2022"
+    />
   </div>
+  <div class="timeline-line">
+    <div class="icon" />
+  </div>
+  <div class="timeline-right">Right</div>
 </div>
 
 <style lang="scss">
@@ -20,20 +35,7 @@
 
   .timeline {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .timeline-unit {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100px;
+    grid-template-columns: 1fr 1rem 1fr;
   }
 
   .timeline-line {
@@ -74,11 +76,12 @@
 
   .timeline-left {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 1rem;
     justify-content: center;
     width: 50%;
     height: 100%;
+    background-color: red;
   }
 
   .timeline-right {
@@ -88,5 +91,6 @@
     justify-content: center;
     width: 50%;
     height: 100%;
+    background-color: blue;
   }
 </style>
