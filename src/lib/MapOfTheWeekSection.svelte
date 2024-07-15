@@ -6,6 +6,7 @@
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
+  import { marked } from 'marked'
 
   let aspectRatio = mapOfTheWeek.showcase?.type === 'youtube-short' ? '9/16' : '16/9'
   let sizeDeterminer =
@@ -35,6 +36,14 @@
   const collaborators = mapOfTheWeek.map.collaborators ?? []
 
   const uploaders = [mapOfTheWeek.map.uploader, ...collaborators]
+
+  const renderer = new marked.Renderer()
+  renderer.paragraph = (text) => text
+
+  // Set the renderer to the marked options
+  marked.setOptions({
+    renderer: renderer,
+  })
 </script>
 
 {#if showShowcase && mapOfTheWeek.showcase != null && mapOfTheWeek.showcase.id != null && mapOfTheWeek.showcase.type != null}
@@ -101,7 +110,7 @@
           <!-- @formatter:on -->
           <!-- prettier-ignore-end -->
           <!-- eslint-enable -->
-          <p class="review">{mapOfTheWeek.review}</p>
+          <p class="review">{@html marked(mapOfTheWeek.review)}</p>
           <div class="action-bar">
             {#if mapOfTheWeek.showcase != null && mapOfTheWeek.showcase.id != null && mapOfTheWeek.showcase.type != null}
               <button class="open-showcase-button" on:click={() => openShowcase()}>
