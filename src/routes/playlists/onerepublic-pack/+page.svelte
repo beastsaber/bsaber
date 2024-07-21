@@ -1,6 +1,9 @@
 <script>
   import MetaHead from '$lib/MetaHead.svelte'
   import MapCards from '$lib/MapCards.svelte'
+  import Fa from 'svelte-fa/src/fa.svelte'
+  import { faDownload } from '@fortawesome/free-solid-svg-icons'
+  import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <MetaHead
@@ -46,9 +49,21 @@
         <a class="uploader" href="https://beatsaver.com/profile/4284947">Phøenix</a>
       </p>
     </div>
+    <div class="zip-one">
+      <a
+        class="zip"
+        href="https://api.beatsaver.com/playlists/id/621068/download"
+        title="Zip Download via BeatSaver"><Fa icon={faDownload} /></a
+      >
+      <a
+        class="one"
+        href="bsplaylist://playlist/https://api.beatsaver.com/playlists/id/621068/download"
+        title="OneClick&trade; Install via BeatSaver and ModAssistant"
+        ><Fa icon={faCloudDownloadAlt} /></a
+      >
+    </div>
     <div class="buttons">
-      <a class="btn" href="https://api.beatsaver.com/playlists/id/621068/download">ZIP DOWNLOAD</a>
-      <a class="btn2" href="https://beatsaver.com/playlists/621068">BEATSAVER</a>
+      <a class="btn" href="https://beatsaver.com/playlists/621068">BEATSAVER</a>
     </div>
   </div>
 </section>
@@ -149,28 +164,50 @@
   p {
     margin: 0.5rem 0.5rem 0;
   }
-
-  .buttons {
-    display: grid;
-    gap: 0.5rem;
-    justify-content: center;
-    width: 100%;
+  .zip-one {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    padding-bottom: 0.3rem;
   }
-  .btn,
-  .btn2 {
-    padding: 12px 30px;
+  .zip,
+  .one {
+    padding: 12px;
     cursor: pointer;
     font-size: 15px;
     text-align: center;
     transition: background-color 0.5s ease;
     border-radius: 5px;
     font-weight: bolder;
-    width: 165px;
+    width: 84.5px;
     background-color: #fffdfd;
     color: black;
   }
-  .btn:hover,
-  .btn2:hover {
+  .zip:hover,
+  .one:hover {
+    background-color: #00014a;
+    text-decoration: none;
+    color: white;
+  }
+  .buttons {
+    display: grid;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+  }
+  .btn {
+    padding: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    transition: background-color 0.5s ease;
+    border-radius: 5px;
+    font-weight: bolder;
+    width: 197px;
+    background-color: #fffdfd;
+    color: black;
+  }
+  .btn:hover {
     background-color: #00014a;
     text-decoration: none;
     color: white;
