@@ -4,6 +4,7 @@
   import Fa from 'svelte-fa/src/fa.svelte'
   import { faDownload } from '@fortawesome/free-solid-svg-icons'
   import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
+  import { faMap } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <MetaHead
@@ -68,7 +69,7 @@
   </div>
 </section>
 <br />
-<h2>Download the maps below!</h2>
+<h2><Fa icon={faMap} />&nbsp;Download the maps below!</h2>
 <hr class="fade" />
 <MapCards playlistId="621068" />
 
@@ -139,10 +140,6 @@
     font-weight: 1000;
   }
 
-  .body {
-    padding-bottom: 2.5rem;
-  }
-
   h1 {
     font-size: 3.5rem;
     width: 100%;
@@ -179,7 +176,7 @@
     transition: background-color 0.5s ease;
     border-radius: 5px;
     font-weight: bolder;
-    width: 84.5px;
+    width: 84px;
     background-color: #fffdfd;
     color: black;
   }
