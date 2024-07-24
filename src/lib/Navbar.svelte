@@ -92,7 +92,7 @@
         },
         {
           name: 'Voting',
-          href: 'https://forms.gle/v69wKinCfZzVHfZ17',
+          href: 'https://mappingawards.saeraphinx.dev/',
         },
         {
           name: '2023 Winners',
