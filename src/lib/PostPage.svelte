@@ -12,6 +12,13 @@
   const postRenderer = new marked.Renderer()
   // This will make headings start at 2, because the title will be rendered as an h1
   postRenderer.heading = (text, level) => {
+    const idMatch = text.match(/ {\$([a-zA-Z0-9]+)}/)
+    const finalText = idMatch ? text.replace(idMatch[0], '') : text
+    const id = idMatch ? idMatch[1] : undefined
+    if (id) {
+      return `<h${level + 1} id="${id}" class="header-smooth-scroll">${finalText}</h${level + 1}>`
+    }
+
     return `<h${level + 1}>${text}</h${level + 1}>`
   }
 
@@ -112,7 +119,7 @@
   description={post.homepageText}
   canonicalUrl={post.linkToSpecialtyPage}
 />
-<article>
+<article class="post-article">
   {#if imageUrl !== undefined}
     <header style={`background-image: url(${imageUrl})`}>
       <h1>
