@@ -12,7 +12,7 @@
   const postRenderer = new marked.Renderer()
   // This will make headings start at 2, because the title will be rendered as an h1
   postRenderer.heading = (text, level) => {
-    const idMatch = text.match(/ {\$([a-zA-Z0-9]+)}/)
+    const idMatch = text.match(/ {\$([a-zA-Z0-9\-_]+)}/)
     const finalText = idMatch ? text.replace(idMatch[0], '') : text
     const id = idMatch ? idMatch[1] : undefined
     if (id) {
