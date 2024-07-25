@@ -20,7 +20,8 @@
     border-radius: 5px;
     height: 20rem;
     width: 15rem;
-    justify-content: end;
+    justify-content: space-between;
+    transform: rotate(-6deg);
   }
 
   h2 {
@@ -38,18 +39,14 @@
   }
 
   .date {
-    // margin-top: 0.5rem;
-    // border-radius: 5px 5px 0 0;
     margin: 0 auto;
-    transform: translateX(-6rem) translateY(1rem) rotateZ(10deg);
-    // gold
     color: #ffd700;
+    transform: translateY(1rem) translateX(5rem) rotate(-12deg);
   }
 
   .name {
     margin: 0 auto;
-    transform: translateX(6rem) translateY(3rem) rotateZ(-14deg);
     border-radius: 5px;
-    // margin-bottom: 0.5rem;
+    transform: translateY(-1rem) translateX(-5rem) rotate(-18deg);
   }
 </style>

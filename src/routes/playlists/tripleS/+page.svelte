@@ -4,15 +4,19 @@
   import MemberProfileCardSwag from './MemberProfileCardSwag.svelte'
 </script>
 
-<img class="header-logo" src="/playlists/tripleS/tripleS-logo.png" />
+<div class="header-line">
+  <img class="header-logo" src="/playlists/tripleS/tripleS-logo.png" />
+  <div class="right-hand-side">
+    <h1>tripleS Pack</h1>
+    <a
+      href="bsplaylist://playlist/https://api.beatsaver.com/playlists/id/545227/download/beatsaver-545227.bplist"
+      class="download-button"
+      download>Download</a
+    >
+  </div>
+</div>
 <div class="timeline">
   <div class="timeline-left">
-    <MemberProfileCard
-      sNumber={1}
-      name="Seoyeon"
-      image="/playlists/tripleS/yooyeon.png"
-      date="2022-05-01"
-    />
     <MemberProfileCardSwag
       sNumber={1}
       name="Seoyeon"
@@ -27,7 +31,53 @@
 </div>
 
 <style lang="scss">
-  $logo-size: 4rem;
+  .header-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+
+  .right-hand-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-grow: 1;
+    gap: 1rem;
+
+    h1 {
+      font-size: 6rem;
+      margin-bottom: 3rem;
+    }
+
+    a.download-button {
+      text-decoration: none;
+      cursor: pointer;
+      color: white;
+
+      transition-property: all;
+      transition-duration: 0.5s;
+
+      font-size: 3rem;
+    }
+
+    a.download-button:hover {
+      background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+      -ms-background-clip: text;
+      -ms-text-fill-color: transparent;
+      -o-background-clip: text;
+      -o-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+  }
+
+  $logo-size: 26rem;
   .header-logo {
     height: $logo-size;
     width: $logo-size;
