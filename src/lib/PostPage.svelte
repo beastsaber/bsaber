@@ -119,7 +119,7 @@
   description={post.homepageText}
   canonicalUrl={post.linkToSpecialtyPage}
 />
-<article class="post-article">
+<article>
   {#if imageUrl !== undefined}
     <header style={`background-image: url(${imageUrl})`}>
       <h1>
