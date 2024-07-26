@@ -52,7 +52,7 @@
       positionName="top-right"
       rotationDeg={-6}
     />
-
+    <div style="height: 20rem" />
     <MemberProfileCardSwag
       sNumber={3}
       name={members.Jiwoo}
