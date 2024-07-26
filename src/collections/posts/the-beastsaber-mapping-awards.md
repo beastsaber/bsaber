@@ -89,7 +89,7 @@ We’ve received a lot of constructive community feedback on the 2023 awards and
 
 <br />
 
-## 2023 Beasties Categories [🔗](#categories) {$categories}
+## 2024 Beasties Categories [🔗](#categories) {$categories}
 
 We are always seeking and implementing feedback from mappers and the community over prior years on how we can improve our categories.
 
