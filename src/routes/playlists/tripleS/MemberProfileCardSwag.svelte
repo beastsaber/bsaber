@@ -1,16 +1,37 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
+
+  type PositionName =
+    | 'top-left'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'top-center'
+    | 'bottom-center'
+
   export let date: string
   export let image: string
   export let name: string
   export let sNumber: number
+  export let rotationDeg = 0
+  export let positionName: PositionName = 'top-center'
+  export let positionDate: PositionName = 'bottom-center'
+  const height = '20rem'
+  const width = '15rem'
+
+  // set width and height css variables
+  onMount(() => {
+    window.document.documentElement.style.setProperty('--triples-card-width', width)
+    window.document.documentElement.style.setProperty('--triples-card-height', height)
+  })
 </script>
 
 <div
-  class="member-box"
-  style={`background: url(${image}); background-size: 15rem 20rem; background-repeat: no-repeat; background-position: center;`}
+  class={`member-box`}
+  style={`background: url(${image}); background-size: ${width} ${height}; height: ${height}; width: ${width}; background-repeat: no-repeat; background-position: center; transform: rotate(${rotationDeg}deg);`}
 >
-  <div class="name">S{sNumber} {name}</div>
-  <div class="date">{date}</div>
+  <div class={`name ${positionName}`}>S{sNumber} {name}</div>
+  <div class={`date ${positionDate}`}>{date}</div>
 </div>
 
 <style lang="scss">
@@ -18,10 +39,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    height: 20rem;
-    width: 15rem;
     justify-content: space-between;
-    transform: rotate(-6deg);
   }
 
   h2 {
@@ -41,12 +59,58 @@
   .date {
     margin: 0 auto;
     color: #ffd700;
-    transform: translateY(1rem) translateX(5rem) rotate(-12deg);
+
+    &.bottom-right {
+      transform: translateY(1rem) translateX(5rem) rotate(-16deg);
+    }
+
+    &.top-left {
+      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem)) translateX(-5rem) rotate(-16deg);
+    }
+
+    &.top-right {
+      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem)) translateX(5rem) rotate(16deg);
+    }
+
+    &.bottom-left {
+      transform: translateY(1rem) translateX(-5rem) rotate(16deg);
+    }
+
+    &.top-center {
+      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem));
+    }
+
+    &.bottom-center {
+      transform: translateY(1rem);
+    }
   }
 
   .name {
     margin: 0 auto;
     border-radius: 5px;
-    transform: translateY(-1rem) translateX(-5rem) rotate(-18deg);
+
+    &.bottom-right {
+      transform: translateY(calc((var(--triples-card-height)) - 1rem)) translateX(5rem) rotate(-18deg);
+    }
+
+    &.top-left {
+      transform: translateY(-1rem) translateX(-5rem) rotate(-18deg);
+    }
+
+    &.top-right {
+      transform: translateY(-1rem) translateX(5rem) rotate(18deg);
+    }
+
+    &.bottom-left {
+      transform: translateY(calc((var(--triples-card-height)) - 1rem)) translateX(-5rem) rotate(18deg);
+    }
+
+    &.top-center {
+      transform: translateY(-1rem);
+    }
+
+    &.bottom-center {
+      transform: translateY(calc((var(--triples-card-height)) - 1rem));
+    }
   }
 </style>
