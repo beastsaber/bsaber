@@ -58,7 +58,7 @@
       {/if}
     </div>
     <div class="beasties">
-      <a href="/the-beastsaber-mapping-awards"
+      <a href="/the-beastsaber-mapping-awards" target="_blank"
         ><img src="/uploads/posts/beasties/BeastiesNomsOpen2.png" alt="Beasties Nominations Open" />
       </a>
     </div>
