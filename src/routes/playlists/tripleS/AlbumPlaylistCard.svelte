@@ -50,7 +50,7 @@
 <style lang="scss">
   @import 'src/scss/variables';
   .playlist-card {
-    width: 90%;
+    width: 100%;
   }
 
   .header {

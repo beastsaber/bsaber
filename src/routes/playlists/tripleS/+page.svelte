@@ -41,6 +41,7 @@
     >
   </div>
 </div>
+<div class="mobile-hint">This site looks better on a larger screen.</div>
 <div class="timeline">
   <div class="timeline-side timeline-left">
     <MemberProfileCardSwag
@@ -401,6 +402,8 @@
 </div>
 
 <style lang="scss">
+  @import 'src/scss/variables';
+
   .header-line {
     display: flex;
     justify-content: space-between;
@@ -454,9 +457,41 @@
   }
 
   @media (max-width: 1099px) {
+    .mobile-hint {
+      display: block;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-radius: $rounding-small;
+      background-color: hsla(45, 100%, 50%, 0.2);
+    }
+
+    .timeline-side {
+      display: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .timeline {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline-center {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+      width: 100%;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
   }
 
   @media (min-width: 1100px) {
+    .mobile-hint {
+      display: none;
+    }
+
     .timeline {
       width: 100%;
       display: grid;
@@ -472,6 +507,7 @@
     }
 
     .timeline-center {
+      margin: 0 3rem;
       display: flex;
       flex-direction: column;
       gap: 3rem;
