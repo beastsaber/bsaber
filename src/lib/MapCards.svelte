@@ -17,6 +17,7 @@
   export let verified: boolean | undefined = undefined
   export let maxCards: number | undefined = undefined // max amount of cards to show
   export let playlistId: number | undefined = undefined
+  export let forceColumnCount: number | undefined = undefined
 
   let maps: Beatmap[] = []
 
@@ -59,7 +60,12 @@
   }
 </script>
 
-<div class="cards max-cols-3">
+<div
+  class="cards max-cols-3"
+  style={forceColumnCount != null
+    ? `grid-template-columns: repeat(${forceColumnCount}, 1fr) !important;`
+    : ''}
+>
   {#if previewKey != null}
     <MapPreviewModal bind:key={previewKey} />
   {/if}
