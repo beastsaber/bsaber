@@ -61,9 +61,17 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
   }
 </style>
 <br />
+
+## Quick Navigation
+
+- [**What's Changing for 2024**](#whats-changing)
+- [**Check out each year's Winners pages**](#winners)
+- [**2024 Categories**](#categories)
+- [**Frequently Asked Questions**](#faq)
+
 <br />
 
-## What's Changing for 2024?
+## What's Changing for 2024? [🔗](#whats-changing) {$whats-changing}
 
 We’ve received a lot of constructive community feedback on the 2023 awards and already have a few tweaks planned for 2024! While most of the changes are actually internal and won't be seen as much on the public side, we do have the following external changes:
 
@@ -73,7 +81,7 @@ We’ve received a lot of constructive community feedback on the 2023 awards and
 
 > ❤️ If you want to help us provide a steady form of support for The Beasties and towards site costs, please consider visiting our [Patreon page](https://www.patreon.com/BeastSaberNews) and join either tier!
 
-## Check out each year's Winners pages below
+## Check out each year's Winners pages below [🔗](#winners) {$winners}
 
 - [**2021 Winners**](/posts/the-beasties-2021-winners)
 - [**2022 Winners**](/posts/the-beasties-2022-winners)
@@ -81,7 +89,7 @@ We’ve received a lot of constructive community feedback on the 2023 awards and
 
 <br />
 
-## 2023 Beasties Categories
+## 2023 Beasties Categories [🔗](#categories) {$categories}
 
 We are always seeking and implementing feedback from mappers and the community over prior years on how we can improve our categories.
 
@@ -197,7 +205,7 @@ _Any categories that do not receive at least five qualified nominees will not be
 
 <br />
 
-## Frequently Asked Questions
+## Frequently Asked Questions [🔗](#faq) {$faq}
 
 - **I am a mapper. Can I nominate my own work for an award?**
 
@@ -228,3 +236,5 @@ _Any categories that do not receive at least five qualified nominees will not be
   Yes, within reason. We know that you might nominate something in September and then a new map comes out in November that you also want to nominate. This is perfectly acceptable as long as multiple nominations don’t get spammy. At the end of the day there can only be five finalists in a given category, so especially if you are nominating late in the year we recommend that you nominate what you think is the BEST map for the category out of all the ones you love.
 
 > Have a question that isn’t listed here? Ask us in the [BeastSaber Discord server](https://discord.gg/VJZHUbt)!
+
+## [Go back to top](#)
