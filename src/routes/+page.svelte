@@ -58,7 +58,7 @@
       {/if}
     </div>
     <div class="beasties">
-      <a href="/the-beastsaber-mapping-awards" target="_blank"
+      <a href="/the-beastsaber-mapping-awards"
         ><img src="/uploads/posts/beasties/BeastiesNomsOpen2.png" alt="Beasties Nominations Open" />
       </a>
     </div>
@@ -158,9 +158,15 @@
   }
 
   .beasties img {
-    height: 240px;
+    height: 275px;
     box-shadow: 0px 3px 3px black;
     border-radius: 12px;
     background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(0.93);
+    transition: 0.2s ease-in-out;
+  }
+
+  .beasties img:hover {
+    transform: scale(1);
   }
 </style>
