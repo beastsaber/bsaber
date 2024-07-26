@@ -3,7 +3,7 @@ title: The BeastSaber Mapping Awards
 section: speciality
 category: event
 publish: 2024-02-01T00:00:00.000Z
-lastUpdated: 2024-07-23T00:00:00.000Z
+lastUpdated: 2024-07-26T00:00:00.000Z
 homepageText: The BeastSaber Mapping Awards dig deep into mapping theory and practices to highlight the maps that have incredible representation, emphasis, and flow to truly capture the feel of the song.
 image: /static/uploads/posts/beasties/beasties-medals.jpg
 showInPostListing: false
@@ -18,7 +18,7 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 <br />
 <p>Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.</p>
 <br />
-<h2>Submit your Nominations</h2>
+<h2>Submit your Nominations 🏆</h2>
 
 > **[Click here to submit your nominations!](https://mappingawards.saeraphinx.dev/)** <br /> _Eligibility Period December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC_
 
@@ -65,7 +65,6 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 ## Quick Navigation
 
 - [**What's Changing for 2024**](#whats-changing)
-- [**Check out each year's Winners pages**](#winners)
 - [**2024 Categories**](#categories)
 - [**Frequently Asked Questions**](#faq)
 
@@ -75,25 +74,20 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 
 We’ve received a lot of constructive community feedback on the 2023 awards and already have a few tweaks planned for 2024! While most of the changes are actually internal and won't be seen as much on the public side, we do have the following external changes:
 
-- **We've revamped our nomination form!** We are trying to move away from Google Forms, and thanks to Saeraphinx, we have a new form now available! If you encounter any issues, please reach out in the [**BeastSaber Discord Server**](https://discord.gg/VJZHUbt) in [#beasties-public](https://discord.com/channels/452928402203344908/1226010390190887012)
+- **We've revamped our nomination form!** We are trying to move away from Google Forms, and thanks to Saeraphinx, we have a [new form](https://mappingawards.saeraphinx.dev/) now available! You will be required to login with your [BeatLeader](https://beatleader.xyz) account in order to make your submissions. If you encounter any issues, please reach out and let us know in the [**BeastSaber Discord Server**](https://discord.gg/VJZHUbt) in the [#beasties-public](https://discord.com/channels/452928402203344908/1226010390190887012) channel.
 - **BeatLeader Star Rating Ranked!** BeatLeader and ScoreSaber will continue to be combined unless we receive enough nominations to justify separating the two.
 - **Winners and runners-up awards** Last year, thanks to the extremely generous donations of the community, we raised enough funds (more than $1000) to provide gold medals to the winners and silver medals to the runner-ups in each category, as well as medals for community choice winners!
 
-> ❤️ If you want to help us provide a steady form of support for The Beasties and towards site costs, please consider visiting our [Patreon page](https://www.patreon.com/BeastSaberNews) and join either tier!
+> ❤️ If you want to help provide a steady form of support for The Beasties and towards site costs, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and join either tier!
 
-## Check out each year's Winners pages below [🔗](#winners) {$winners}
-
-- [**2021 Winners**](/posts/the-beasties-2021-winners)
-- [**2022 Winners**](/posts/the-beasties-2022-winners)
-- [**2023 Winners**](/posts/the-beasties-2023-winners)
-
+<br />
 <br />
 
 ## 2024 Beasties Categories [🔗](#categories) {$categories}
 
 We are always seeking and implementing feedback from mappers and the community over prior years on how we can improve our categories.
-
-_Any categories that do not receive at least five qualified nominees will not be awarded at the end of the year._
+\
+_\*Any categories that do not receive at least five qualified nominees will not be awarded at the end of the year._
 
 ### Overall Categories
 
