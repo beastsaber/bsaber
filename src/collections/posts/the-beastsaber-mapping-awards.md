@@ -95,7 +95,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example: [Teminite / Skybreak - Accelerate](https://beatsaver.com/maps/340c2)
 
-- **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2023.
+- **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2024.
 
   Example: Imagine Dragons - Bones – Mapped by ETAN & Kolezan (no we're not giving you a free copy of a DLC map :P)
 
