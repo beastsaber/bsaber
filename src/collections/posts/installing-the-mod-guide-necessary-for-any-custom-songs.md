@@ -27,7 +27,7 @@ While mods are not required to play basic custom songs, mods usually enhance you
 1. First, [click here to get ModAssistant](https://github.com/bsmg/ModAssistant/releases) and find the Latest release of the `ModAssistant.exe` file to download
 
 <p align="center">
-    <img src="/uploads/mod-assistant-github.png">
+    <img src="/uploads/posts/get-started-custom-mods/mod-assistant-github.png">
 </p>
 
 This will download a small `ModAssistant.exe` file that you can place anywhere on your computer for future use and doesn’t require installing.
@@ -41,13 +41,13 @@ This will download a small `ModAssistant.exe` file that you can place anywhere o
 3. You’ll be prompted to agree to the terms of use. Please read through these carefully as they’re important, mainly for the health of our wonderful community and relationship with Beat Games.
 
 <p align="center">
-    <img src="/uploads/mod-assistant-agreement.png">
+    <img src="/uploads/posts/get-started-custom-mods/mod-assistant-agreement.png">
 </p>
 
 4. Once you agree, you’ll be able to click on the “Mods” button. All of the essential or “Core" mods will be pre-selected, but you can add as many other mods as you'd like in addition to the Core mods. When ready, you can click the “Install or Update” button.
 
 <p align="center">
-    <img src="/uploads/mod-assistant-mods-install.png">
+    <img src="/uploads/posts/get-started-custom-mods/mod-assistant-mods-install.png">
 </p>
 
 5. That’s it! You can now launch your game and enjoy all the wonderful mods that the community has built! You can always open ModAssistant again later to install more mods. We recommend against installing every mod at first as you’ll likely be overwhelmed by all the new options - and you may run into issues. Instead, take the time to learn about what each mod does. Click on the "Mod Info" button after selecting a mod to read more about it.
