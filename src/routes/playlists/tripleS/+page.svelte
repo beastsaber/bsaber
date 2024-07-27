@@ -3,6 +3,7 @@
   import MemberProfileCardSwag from './MemberProfileCardSwag.svelte'
   import OneClickDownloadButton from '$lib/OneClickDownloadButton.svelte'
   import ZipDownloadButton from '$lib/ZipDownloadButton.svelte'
+  import MetaHead from '$lib/MetaHead.svelte'
 
   const members = {
     Seoyeon: 'Seoyeon',
@@ -31,6 +32,12 @@
     Jiyeon: 'Jiyeon',
   } as const
 </script>
+
+<MetaHead
+  title="tripleS Pack"
+  description="We are presenting the 'tripleS Pack'! A comprehensive Beat Saber map pack containing the entire discography of tripleS up until August 2024!"
+  imageUrl="/playlists/tripleS/tripleS-logo.png"
+/>
 
 <div class="header-line">
   <img class="header-logo" src="/playlists/tripleS/tripleS-logo.png" />
