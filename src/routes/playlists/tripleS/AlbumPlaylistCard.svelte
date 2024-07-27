@@ -51,6 +51,11 @@
   @import 'src/scss/variables';
   .playlist-card {
     width: 100%;
+
+    &:hover .header,
+    &:hover .footer {
+      background-color: $color-background-tertiary;
+    }
   }
 
   .header {
@@ -58,6 +63,9 @@
     padding: 1rem;
     background-color: $color-background-secondary;
     border-radius: $rounding-small $rounding-small 0 0;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
   }
 
   .header-line {
@@ -71,6 +79,9 @@
     padding: 1rem;
     background-color: $color-background-secondary;
     border-radius: 0 0 $rounding-small $rounding-small;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
   }
 
   .second-line {
