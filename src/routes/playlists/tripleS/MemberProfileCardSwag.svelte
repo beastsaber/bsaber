@@ -24,11 +24,16 @@
     window.document.documentElement.style.setProperty('--triples-card-width', width)
     window.document.documentElement.style.setProperty('--triples-card-height', height)
   })
+  let hovering = false
 </script>
 
 <div
   class={`member-box`}
-  style={`background: url(${image}); background-size: ${width} ${height}; height: ${height}; width: ${width}; background-repeat: no-repeat; background-position: center; transform: rotate(${rotationDeg}deg);`}
+  style={`background: url(${image}); background-size: ${width} ${height}; height: ${height}; width: ${width}; background-repeat: no-repeat; background-position: center; transform: ${
+    hovering ? 'scale(1.1) ' : ''
+  }rotate(${hovering ? '0' : rotationDeg}deg);`}
+  on:mouseenter={() => (hovering = true)}
+  on:mouseleave={() => (hovering = false)}
 >
   <div class={`name ${positionName}`}>S{sNumber} {name}</div>
   <div class={`date ${positionDate}`}>{date}</div>
@@ -40,6 +45,10 @@
     flex-direction: column;
     border-radius: 5px;
     justify-content: space-between;
+
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
   }
 
   h2 {
@@ -65,11 +74,13 @@
     }
 
     &.top-left {
-      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem)) translateX(-5rem) rotate(-16deg);
+      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem)) translateX(-5rem)
+        rotate(-16deg);
     }
 
     &.top-right {
-      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem)) translateX(5rem) rotate(16deg);
+      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem)) translateX(5rem)
+        rotate(16deg);
     }
 
     &.bottom-left {
@@ -90,7 +101,8 @@
     border-radius: 5px;
 
     &.bottom-right {
-      transform: translateY(calc((var(--triples-card-height)) - 1rem)) translateX(5rem) rotate(-18deg);
+      transform: translateY(calc((var(--triples-card-height)) - 1rem)) translateX(5rem)
+        rotate(-18deg);
     }
 
     &.top-left {
@@ -102,7 +114,8 @@
     }
 
     &.bottom-left {
-      transform: translateY(calc((var(--triples-card-height)) - 1rem)) translateX(-5rem) rotate(18deg);
+      transform: translateY(calc((var(--triples-card-height)) - 1rem)) translateX(-5rem)
+        rotate(18deg);
     }
 
     &.top-center {
