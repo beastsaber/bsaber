@@ -1,6 +1,8 @@
 <script lang="ts">
   import AlbumPlaylistCard from './AlbumPlaylistCard.svelte'
   import MemberProfileCardSwag from './MemberProfileCardSwag.svelte'
+  import OneClickDownloadButton from '$lib/OneClickDownloadButton.svelte'
+  import ZipDownloadButton from '$lib/ZipDownloadButton.svelte'
 
   const members = {
     Seoyeon: 'Seoyeon',
@@ -34,11 +36,25 @@
   <img class="header-logo" src="/playlists/tripleS/tripleS-logo.png" />
   <div class="right-hand-side">
     <h1>tripleS Pack</h1>
-    <a
-      href="bsplaylist://playlist/https://api.beatsaver.com/playlists/id/545227/download/beatsaver-545227.bplist"
-      class="download-button"
-      download>Download</a
-    >
+    <div class="description">
+      We are presenting the "tripleS Pack"!<br />A comprehensive Beat Saber map pack containing the
+      entire discography of tripleS up until August 2024!
+    </div>
+    <div class="download">
+      <a href="https://beatsaver.com/playlists/545227" class="playlist-button" download
+        >Full Playlist</a
+      >
+      <div class="download_buttons">
+        <ZipDownloadButton
+          downloadURL="https://api.beatsaver.com/playlists/id/545227/download/beatsaver-545227.bplist"
+          fontSize="2rem"
+        />
+        <OneClickDownloadButton
+          playlistUrl="https://api.beatsaver.com/playlists/id/545227/download/beatsaver-545227.bplist"
+          fontSize="2rem"
+        />
+      </div>
+    </div>
   </div>
 </div>
 <div class="mobile-hint">This site looks better on a larger screen.</div>
@@ -421,10 +437,28 @@
 
     h1 {
       font-size: 6rem;
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
     }
 
-    a.download-button {
+    .description {
+      font-size: 1.5rem;
+      text-align: center;
+      max-width: 48rem;
+      margin-bottom: 2rem;
+    }
+
+    .download {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .download_buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    a.playlist-button {
       text-decoration: none;
       cursor: pointer;
       color: white;
