@@ -542,6 +542,12 @@
       background-color: hsla(45, 100%, 50%, 0.2);
     }
 
+    .header-logo {
+      display: none;
+      margin: 0;
+      padding: 0;
+    }
+
     .timeline-side {
       display: none;
       margin: 0;
