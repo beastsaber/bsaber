@@ -40,7 +40,16 @@
   }
 
   async function getMaps() {
+    let retries = 0
     let response = await fetch(url)
+      .then((givenResponse) => givenResponse)
+      .catch(() => ({ status: 429 }))
+    console.log('status', response.status)
+    while (response.status === 429 && retries < 3) {
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+      response = await fetch(url)
+      retries++
+    }
     if (playlistId != null) {
       maps = await response.json().then((json) => json.maps.map((x) => x.map) as Beatmap[])
     } else {
