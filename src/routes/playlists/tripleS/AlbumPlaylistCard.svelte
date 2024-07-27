@@ -56,6 +56,11 @@
     &:hover .footer {
       background-color: $color-background-tertiary;
     }
+
+    &:hover .map-cards-containers {
+      border-left: 1.5px dashed $color-background-tertiary;
+      border-right: 1px dashed $color-background-tertiary;
+    }
   }
 
   .header {
@@ -134,7 +139,7 @@
   .map-cards-containers {
     margin: 0;
     padding: 1rem;
-    border-left: 1.5px dashed $color-background-tertiary;
-    border-right: 1px dashed $color-background-tertiary;
+    border-left: 1.5px dashed $color-background-secondary;
+    border-right: 1px dashed $color-background-secondary;
   }
 </style>
