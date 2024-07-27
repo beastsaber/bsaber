@@ -518,7 +518,7 @@
       font-size: 3rem;
     }
 
-    a.download-button:hover {
+    a.playlist-button:hover {
       background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
