@@ -61,6 +61,9 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
     .content {
       gap: 0;
     }
+    .iframe {
+      display: none;
+    }
   }
 </style>
 <br />
@@ -96,7 +99,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Map of the Year**: The best unmodded map of the year. Full stop. It has it all – representation, emphasis, flow – everything coming together for an incredible playing experience to go with the song.
 
-  Example: [Teminite / Skybreak - Accelerate](https://beatsaver.com/maps/340c2)
+  Example: [Teminite / Skybreak - Accelerate](https://beatsaver.com/maps/340c2)<br /><iframe class="iframe" src="https://beatsaver.com/maps/340c2/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2024.
 
@@ -108,11 +111,11 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Best Full Spread Map**: This map has something for players at every level and does it with style and masterful mapping. To qualify, the map must have all five _true_ difficulties — Easy, Normal, Hard, Expert, ExpertPlus.
 
-  Example Map: [Knock2 - dashstar\*](https://beatsaver.com/maps/2f187)
+  Example Map: [Knock2 - dashstar\*](https://beatsaver.com/maps/2f187)<br /><iframe class="iframe" src="https://beatsaver.com/maps/2f187/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Non-Standard Game Mode Map**: This category celebrates the best of non-standard characteristics: Single Saber, No Arrows, and 360/90-Degree maps. _Maps must actually use the alt characteristic and not mods to simulate._
 
-  Example Map: [JVKE - Golden Hour](https://beatsaver.com/maps/333d8)
+  Example Map: [JVKE - Golden Hour](https://beatsaver.com/maps/333d8)<br /><iframe class="iframe" src="https://beatsaver.com/maps/333d8/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 ### Individual Awards
 
@@ -128,39 +131,39 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Best Dance Style Map**: With a blend of big arm swings, high movement, and a bit lower density, the best map in the “Dance” category gets players of all ages grooving to the beat and sweating up a storm.
 
-  Example Map: [Aethoro - Spiritdance](https://beatsaver.com/maps/379bc)
+  Example Map: [Aethoro - Spiritdance](https://beatsaver.com/maps/379bc)<br /><iframe class="iframe" src="https://beatsaver.com/maps/379bc/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Tech Style Map**: With more angles than a dodecahedron, the best map in the “Tech” category bends the concept of parity to its will to create a challenging sight-read that retains great flow.
 
-  Example Map: [MYUKKE. - The 89's Momentum](https://beatsaver.com/maps/2f386)
+  Example Map: [MYUKKE. - The 89's Momentum](https://beatsaver.com/maps/2f386)<br /><iframe class="iframe" src="https://beatsaver.com/maps/2f386/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Fitness Style Map**: Build strength to the beat. The best fitness map forces constant natural movement in all dimensions with walls and bloqs that keep the flow until your legs give out.
 
-  Example Map: [Saint Punk - Warning](https://beatsaver.com/maps/2fb9d)
+  Example Map: [Saint Punk - Warning](https://beatsaver.com/maps/2fb9d)<br /><iframe class="iframe" src="https://beatsaver.com/maps/2fb9d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Balanced Style Map**: Look in the sky! Is it a tech map? Is it a dance map? Is it a speed map? WE DON’T KNOW! The Best Balanced Style Map is the mutt of the neighborhood – a little of this, a little of that – all combining into one fantastic map.
 
-  Example Map: [P\*Light - ADAM](https://beatsaver.com/maps/338fe)
+  Example Map: [P\*Light - ADAM](https://beatsaver.com/maps/338fe)<br /><iframe class="iframe" src="https://beatsaver.com/maps/338fe/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Accuracy Style Map**: Chase that sweet high accuracy in a very, very careful dance. The best map in the Accuracy category has excellent rhythmic choice and well-placed emphasis with the fewest amount of notes.
 
-  Example Map: [NOTD, Astrid S - I Don't Know Why (Ellis Remix)](https://beatsaver.com/maps/2fbdb)
+  Example Map: [NOTD, Astrid S - I Don't Know Why (Ellis Remix)](https://beatsaver.com/maps/2fbdb)<br /><iframe class="iframe" src="https://beatsaver.com/maps/2fbdb/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Speed Style Map**: Nothing screams “speed” more than that feeling of lactic acid setting in after tackling thousands of notes at mind-blowing BPMs, and the best map in the “Speed” category delivers an extra helping.
 
-  Example Map: [Booths of Fighters (Camellia's "Barrage of Flurries" Remix) feat. DD"Nakata"Metal](https://beatsaver.com/maps/2e4bf)
+  Example Map: [Booths of Fighters (Camellia's "Barrage of Flurries" Remix) feat. DD"Nakata"Metal](https://beatsaver.com/maps/2e4bf)<br /><iframe class="iframe" src="https://beatsaver.com/maps/2e4bf/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Challenge Style Map**: Ranking Criteria? Curation? Mapping fundamentals? These are but chains to restrict the seemingly endless and wild imagination of challenge mappers. The best map in the “Challenge” category pushes the limits in every way.
 
-  Example Map: [Black Tiger Sex Machine x Lektrique - Religion (Lawless E+)](https://beatsaver.com/maps/2d4e6)
+  Example Map: [Black Tiger Sex Machine x Lektrique - Religion (Lawless E+)](https://beatsaver.com/maps/2d4e6)<br /><iframe class="iframe" src="https://beatsaver.com/maps/2d4e6/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Gimmick Map**: The best “Gimmick” map shows off some of the wacky manipulations that play fast and loose with gameplay and have become community fan favorites. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here!
 
-  Example Map: [Teruo Taniguchi - Tetris 99 Main Theme (Lawless E+)](https://beatsaver.com/maps/3688b)
+  Example Map: [Teruo Taniguchi - Tetris 99 Main Theme (Lawless E+)](https://beatsaver.com/maps/3688b)<br /><iframe class="iframe" src="https://beatsaver.com/maps/3688b/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Poodle Map**: Poodles and Pauls. The best map in the Poodle category has excellent flow and well-placed emphasis with the long hold note swing style. Spirals, Switch-backs, and more!
 
-  Example Map: [Coldplay ft. Beyoncé - Hymn for the Weekend (E+)](https://beatsaver.com/maps/36758)
+  Example Map: [Coldplay ft. Beyoncé - Hymn for the Weekend (E+)](https://beatsaver.com/maps/36758)<br /><iframe class="iframe" src="https://beatsaver.com/maps/36758/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 ### Ranked Categories
 
@@ -174,11 +177,11 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Best Artmap**: Formerly called “Modchart Visuals,” these maps use all the power of Noodle Extensions and Chroma to convey the music and/or tell us a story through the creative use of mods and any notemods aren’t the main focus of the map.
 
-  Example Map: [modus - Superluminal](https://beatsaver.com/maps/358a7)
+  Example Map: [modus - Superluminal](https://beatsaver.com/maps/358a7)<br /><iframe class="iframe" src="https://beatsaver.com/maps/358a7/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Modchart** Here? There? Where is the next note coming from?! This category includes maps that feature solid mapping AND alter the gameplay in mind-blowing ways through animation and manipulation of notes and obstacles.
 
-  Example Map: [Camellia - GHOUL](https://beatsaver.com/maps/31809)
+  Example Map: [Camellia - GHOUL](https://beatsaver.com/maps/31809)<br /><iframe class="iframe" src="https://beatsaver.com/maps/31809/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 ### Lighting Categories
 
@@ -186,19 +189,19 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Best Vanilla Lights**: The Best Vanilla Lights use ONLY base game V1 and V2 lighting mechanics and not only perfectly represent the music, but also add that ‘WOW’ factor when playing.
 
-  Example Map: [Teminite & MDK - Space Invaders](https://beatsaver.com/maps/318da)
+  Example Map: [Teminite & MDK - Space Invaders](https://beatsaver.com/maps/318da)<br /><iframe class="iframe" src="https://beatsaver.com/maps/318da/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Vanilla+ Map**: This category highlights maps that make amazing use of the new enhanced V3 lighting system available when using the new Official Editor.
 
-  Example Map: [Aethoro - Spiritdance](https://beatsaver.com/maps/379bc)
+  Example Map: [Aethoro - Spiritdance](https://beatsaver.com/maps/379bc)<br /><iframe class="iframe" src="https://beatsaver.com/maps/379bc/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Chroma Lights**: The Best Chroma Lighting category is full of any and all light shows that might make you drop the Full Combo to marvel at the beauty in the background using RGB color, precise component control, and Light ID.
 
-  Example Map: [Ludicin - Everlasting Eternity](https://beatsaver.com/maps/34e3b)
+  Example Map: [Ludicin - Everlasting Eternity](https://beatsaver.com/maps/34e3b)<br /><iframe class="iframe" src="https://beatsaver.com/maps/34e3b/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Chroma+ Lights**: Chroma+ adds environment enhancement to the overall chroma toolbox to create custom experiences that are out of this world.
 
-  Example Map: [ReeK & Asatsumei (ft. L4hee) - Deity Mode](https://beatsaver.com/maps/34a3d)
+  Example Map: [ReeK & Asatsumei (ft. L4hee) - Deity Mode](https://beatsaver.com/maps/34a3d)<br /><iframe class="iframe" src="https://beatsaver.com/maps/34a3d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 <br />
 
