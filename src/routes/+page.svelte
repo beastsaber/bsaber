@@ -51,18 +51,9 @@
   <!-- Search to be moved to Navbar later -->
   <Search />
 
-  <div class="motw-beasties">
-    <div class="motw">
-      {#if currentMapOfTheWeek != undefined}
-        <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
-      {/if}
-    </div>
-    <div class="beasties">
-      <a href="/the-beastsaber-mapping-awards" target="_blank"
-        ><img src="/uploads/posts/beasties/BeastiesNomsOpen2.png" alt="Beasties Nominations Open" />
-      </a>
-    </div>
-  </div>
+  {#if currentMapOfTheWeek != undefined}
+    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
+  {/if}
 
   <Header
     text="Featured Packs"
@@ -142,31 +133,5 @@
     .leaderboards {
       grid-template-columns: repeat(3, 1fr);
     }
-  }
-
-  .motw-beasties {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
-    margin-top: 3rem;
-  }
-
-  .motw {
-    flex: 1;
-  }
-
-  .beasties img {
-    height: 275px;
-    box-shadow: 0px 3px 3px black;
-    border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.5);
-    transform: scale(0.93);
-    transition: 0.2s ease-in-out;
-  }
-
-  .beasties img:hover {
-    transform: scale(1);
   }
 </style>
