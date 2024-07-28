@@ -58,6 +58,9 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
     .pa-carousel-widget {
       width: 0;
     }
+    .content {
+      gap: 0;
+    }
   }
 </style>
 <br />
