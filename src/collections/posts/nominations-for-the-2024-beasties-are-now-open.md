@@ -11,7 +11,7 @@ showInPostListing: false
 
 <h1 class="centered">Nominations for the 2024 Beasties Awards are NOW OPEN!</h1>
 <h2 class="centered">
-    <a href="https://bsaber.com/the-beastsaber-mapping-awards">Click here for more information</a>
+    <a href="/the-beastsaber-mapping-awards" rel="external">Click here for more information</a>
 </h2>
 
 <style>
