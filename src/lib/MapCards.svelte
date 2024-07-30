@@ -43,8 +43,11 @@
     let retries = 0
     let response = await fetch(url)
       .then((givenResponse) => givenResponse)
-      .catch(() => ({ status: 429 }))
-    console.log('status', response.status)
+      // Currently, BeatSaver doesn't send CORS headers on 429 responses
+      // So we're catching it here and returning a fake response
+      // Not ideal - ticket has been opened: https://github.com/beatmaps-io/beatsaver-main/issues/387
+      .catch(() => ({ status: 429 } as Response))
+
     while (response.status === 429 && retries < 3) {
       await new Promise((resolve) => setTimeout(resolve, 1000))
       response = await fetch(url)
