@@ -540,6 +540,10 @@
   }
 
   @media (max-width: 1099px) {
+    .right-hand-side .download_buttons {
+      display: none;
+    }
+
     .mobile-hint {
       display: block;
       text-align: center;
