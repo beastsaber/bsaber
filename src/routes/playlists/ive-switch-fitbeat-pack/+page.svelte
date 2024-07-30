@@ -40,7 +40,7 @@
 <br />
 <h2>Download the maps below!</h2>
 <hr class="fade" />
-<MapCards playlistId="528396" />
+<MapCards playlistId={528396} />
 
 <style>
   .hero {

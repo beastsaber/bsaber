@@ -43,7 +43,7 @@
 <br />
 <h2>Download the maps below!</h2>
 <hr class="fade" />
-<MapCards playlistId="89418" />
+<MapCards playlistId={89418} />
 
 <style>
   .pink {
