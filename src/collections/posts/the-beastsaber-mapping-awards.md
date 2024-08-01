@@ -30,7 +30,6 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
   <object data="https://lh3.googleusercontent.com/pw/AP1GczOxXQyVuxD68CqEOe6O_wbaTwsfhV90AP6qoIRJuY3qJUDlMa-z0Foq4wb8Q9fpqCWMYtNmCdjL2owIWEbvtygzud9NN7oBNNRINVJIdtXn0SJG7nY=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczOKKxJ3p8B4LdokaMpvIWfO3RFKU_TTLqYJOrO10-EKn2F1c47quSV1AvrzyqSKjmgOd7MBs0vykgGrlm7bLjjiAefih-CLvjOmU197Tjq4dEmno0Y=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczM4ZwApDlHoBbTmeSHOYQ5X0ZPAlnXhdYLnpolcUBC2f2ozQDqdwtCPXRvM70XuFsT8IFTk33_jaQNtUo8t0AG2JL0lo8vyutjQhm1B5B_9D2xX6-4=w1920-h1080"></object>
-  <object data="https://lh3.googleusercontent.com/pw/AP1GczOcGte0CQr2lfFO14DnkVS31Ph2F0DyJHk-3CRoOFeSacpFM0tbxDZQ4HmT9nfwZFEJvh87lfoWOZyEZcJhezwa1ZEbliTWPknLGj5emyztD4qFbLs=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczPbne3R_PkIP5IIMTxnxD6GLrS_n-4_eaqp2iv_GyK8riNtUw6EcHfmj9dgdbX-3RHqDSshk8ObdRdBh6kSIyQOV_b0xecFHF2HOu9De8Jfs8OEL2I=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczPcLqAK-vIrNLT4ui0bsUQ6je5zzKc1ilSSn_0mN7iZrBKzK6HBBOrf6142LkabD6e_BQuaw7Umpeo9omrsr6ctcToucthNLFZXw7w4ueCH4lhXqDQ=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczMCxR5Ex7HU5Ux36UUq8Cwt_Epwm8WR3g0DLLnaOy_LpmA3fSI_2pecODl8UnjmcEBRYTa73AJsSjq9FGbGW1xkBDsXeDSOMo_3wY_0x-x7XuxVP5E=w1920-h1080"></object>
