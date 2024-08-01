@@ -81,6 +81,11 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 We’ve received a lot of constructive community feedback on the 2023 awards and already have a few tweaks planned for 2024! While most of the changes are actually internal and won't be seen as much on the public side, we do have the following external changes:
 
 - **We've revamped our nomination form!** We are trying to move away from Google Forms, and thanks to Saeraphinx, we have a [new form](https://mappingawards.saeraphinx.dev/) now available! You will be required to login with your [BeatLeader](https://beatleader.xyz) account in order to make your submissions. If you encounter any issues, please reach out and let us know in the [**BeastSaber Discord Server**](https://discord.gg/VJZHUbt) in the [#beasties-public](https://discord.com/channels/452928402203344908/1226010390190887012) channel.
+- **2021 Winners Update** Due to previously unknown circumstances, the 2021 Rookie Lighter of the Year has been removed from the Winner's page to reflect that no one nominated (the previously noted winner or any runner up) was qualified to receive an award.
+- **Alternate Account Disclosure** To prevent future issues of alternate accounts winning awards where they should not have won awards, if you are nominated for an award under an alternate account, you are required to notify a BeastSaber Admin (either Helen, RateGyro, or TheCzar1994) to properly assess if the alternate account would conflict with winning an award in the category.
+
+  \*If you know of an alternate account that is nominated and believe that the Admin team is unaware, we encourage you to notify us. Keep in mind, alternate accounts are allowed to be nominated, they (the alternate account and main account) just are not allowed to win more than 1 award in a single category together or win an award in a category designated for Rookie when their main account is ineligible.
+
 - **BeatLeader Star Rating Ranked!** BeatLeader and ScoreSaber will continue to be combined unless we receive enough nominations to justify separating the two.
 - **Winners and runners-up awards** Last year, thanks to the extremely generous donations of the community, we raised enough funds (more than $1000) to provide gold medals to the winners and silver medals to the runner-ups in each category, as well as medals for community choice winners!
 
