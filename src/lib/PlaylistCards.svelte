@@ -4,6 +4,7 @@
   import Uploader from '$lib/Uploader.svelte'
   import OneClickDownloadButton from './OneClickDownloadButton.svelte'
   import ZipDownloadButton from './ZipDownloadButton.svelte'
+  import { beatSaverClientFactory } from './beatsaver-client'
 
   export let maxCards: number | undefined = undefined // max amount of cards to show
   export let overwriteMap: Record<string, FeaturedPlaylistOverwriteCollectionData> = {}
@@ -14,12 +15,12 @@
     await getPlaylists()
   })
 
+  const beatSaverClient = beatSaverClientFactory.create()
+
   async function getPlaylists() {
     if (playlists.length > 0) return
-    let response = await fetch(
-      `${
-        import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
-      }/playlists/latest?sort=CURATED&pageSize=${maxCards ?? 4}`,
+    let response = await beatSaverClient.fetch(
+      `/playlists/latest?sort=CURATED&pageSize=${maxCards ?? 4}`,
     )
     playlists = await response.json().then((json) => json['docs'] as Playlist[])
   }
@@ -42,12 +43,14 @@
       >
         <div class="zip-download-button-container">
           <ZipDownloadButton
-            downloadURL="https://api.beatsaver.com/playlists/id/{playlist.playlistId}/download"
+            downloadURL="{import.meta.env.VITE_BSABER_API_BASE ??
+              'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
           />
         </div>
         <div class="one-click-download-button-container">
           <OneClickDownloadButton
-            playlistUrl="https://api.beatsaver.com/playlists/id/{playlist.playlistId}/download"
+            playlistUrl="{import.meta.env.VITE_BSABER_API_BASE ??
+              'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
           />
         </div>
         <div class="content max-cols-4">

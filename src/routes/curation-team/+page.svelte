@@ -3,11 +3,13 @@
   import type { Uploader } from '../../types.js'
   import CuratorCard from '$lib/CuratorCard.svelte'
   import MetaHead from '$lib/MetaHead.svelte'
+  import { beatSaverClientFactory } from '$lib/beatsaver-client.js'
 
   let curators: Uploader[] = []
 
   onMount(async () => {
-    curators = await fetch(`https://api.beatsaver.com/users/curators`).then((res) => res.json())
+    const beatSaverClient = beatSaverClientFactory.create()
+    curators = await beatSaverClient.fetch(`/users/curators`).then((res) => res.json())
   })
 </script>
 

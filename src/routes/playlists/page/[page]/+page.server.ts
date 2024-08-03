@@ -2,6 +2,7 @@ import { paginateArray } from '$lib/paginateArray'
 import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
 import type { FeaturedPlaylistOverwriteCollectionData, Playlist } from '../../../../types'
 import { getFeaturedPlaylistCount } from '$lib/getFeaturedPlaylistCount'
+import { beatSaverClientFactory } from '$lib/beatsaver-client'
 
 const pageSize = 20
 
@@ -28,17 +29,16 @@ export const load = async ({
     throw new Error('Invalid page number')
   }
 
-  const featuredMapsForPage = await fetch(
-    `${import.meta.env.VITE_BSABER_API_BASE ?? 'https://api.beatsaver.com'}/playlists/search/${
-      pageNumber - 1
-    }?sortOrder=Curated&curated=true`,
-  )
+  const beatSaverClient = beatSaverClientFactory.create(fetch)
+  const featuredMapsForPage = await beatSaverClient
+    .fetch(`/playlists/search/${pageNumber - 1}?sortOrder=Curated&curated=true`)
     .then((x: any) => x.json())
     .then((x) => x.docs)
 
   const featuredPlaylistOverwrites = await retrieveAllCollectionDataOfType(
     'featured-playlist-overwrites',
   )
+
   const featuredPlaylistOverwriteMap = Object.fromEntries(
     featuredPlaylistOverwrites.map((x) => [x.attributes.id, x.attributes]),
   )
