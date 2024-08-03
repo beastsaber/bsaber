@@ -8,6 +8,7 @@ import type {
 } from '../types'
 import { retrieveCommunityEvents } from '$lib/retrieveCommunityEvents'
 import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
+import { beatSaverClientFactory } from '$lib/beatsaver-client'
 
 export type RootPageSSRData = {
   announcements: Post[]
@@ -41,9 +42,10 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
     // Since it's sorted it's the first one
     const currentMOTWCollectionData = mapsOfTheWeek[0]
 
-    const beatSaverMapData = await fetch(
-      `https://api.beatsaver.com/maps/id/${currentMOTWCollectionData.mapId}`,
-    ).then((res) => res.json())
+    const beatSaverClient = beatSaverClientFactory.create(fetch)
+    const beatSaverMapData = await beatSaverClient
+      .fetch(`/maps/id/${currentMOTWCollectionData.mapId}`)
+      .then((res) => res.json())
 
     let coverUrl =
       currentMOTWCollectionData.coverUrlOverwrite ??

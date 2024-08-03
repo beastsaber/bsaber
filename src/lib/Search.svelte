@@ -15,8 +15,9 @@
     },
   ]
 
-  const beatsaverRoot = 'https://beatsaver.com/'
-  const beatsaverApiRoot = 'https://api.beatsaver.com/'
+  const beatsaverRoot = import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com' + '/'
+  const beatsaverApiRoot =
+    import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com' + '/'
 
   const mapsSearchApiEndpoint = `${beatsaverApiRoot}search/text/`
   const playlistsApiEndpoint = `${beatsaverApiRoot}playlists/search/`

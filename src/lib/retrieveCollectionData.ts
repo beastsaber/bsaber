@@ -12,6 +12,7 @@ import type {
   Post,
   PostWithAuthorAndContributor,
 } from '../types'
+import { beatSaverClientFactory } from './beatsaver-client'
 
 export type ConvertToAttributeKeyedObject<T> = {
   body?: string
@@ -94,9 +95,10 @@ export const retrievePostDataWithAuthorAndContributors = async (
 
   const allAuthorData = {} as Record<string, Author>
   if (uploaderIds.length > 0) {
-    const intermediaryRelevantPeopleBeatSaverData = await fetch(
-      `https://api.beatsaver.com/users/ids/${uploaderIds}`,
-    ).then((x) => x.json())
+    const beatsaverClient = beatSaverClientFactory.create()
+    const intermediaryRelevantPeopleBeatSaverData = await beatsaverClient
+      .fetch(`/users/ids/${uploaderIds}`)
+      .then((x) => x.json())
 
     for (const beatSaverUser of intermediaryRelevantPeopleBeatSaverData) {
       const personFromMarkdown = allPeople.find((person) => person.beatsaverId == beatSaverUser.id)

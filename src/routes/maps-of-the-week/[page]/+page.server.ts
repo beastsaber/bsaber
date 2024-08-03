@@ -1,6 +1,7 @@
 import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
 import type { MapOfTheWeek } from '../../../types'
 import { paginateArray } from '$lib/paginateArray'
+import { beatSaverClientFactory } from '$lib/beatsaver-client'
 
 const pageSize = 15
 
@@ -41,11 +42,12 @@ export async function load({
     pageNumber,
   )
 
+  const beatSaverClient = beatSaverClientFactory.create(fetch)
   const mapIds = paginatedMapsOfTheWeek.map((map) => map.mapId).join(',')
   // Data structure is an object with a key of the mapId and the value is the map data
-  const allBeatSaverMapData = await fetch(`https://api.beatsaver.com/maps/ids/${mapIds}`).then(
-    (x) => x.json(),
-  )
+  const allBeatSaverMapData = await beatSaverClient
+    .fetch(`/maps/ids/${mapIds}`)
+    .then((x) => x.json())
 
   const paginatedFullMapsOfTheWeek = []
   for (const singleMapOfTheWeek of paginatedMapsOfTheWeek) {
