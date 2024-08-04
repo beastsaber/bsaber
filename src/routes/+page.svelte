@@ -195,7 +195,7 @@
           padding: 0.5rem 1rem;
           background-color: $color-accent;
           color: var(--button-primary-text);
-          border-radius: 0.5rem;
+          border-radius: $rounding-small;
           text-decoration: none;
           transition: background-color 0.2s;
           &:hover {
