@@ -47,6 +47,21 @@
       <AnnouncementHeader {announcement} />
     </div>
   {/if}
+
+  <div class="beasties-banner">
+    <div class="left-side-beasties-banner">
+      <img src="/beastie-trophy.png" alt="Beasties Trophy" />
+    </div>
+    <div class="right-side-beasties-banner">
+      <h1>Beasties are Coming</h1>
+      <p>What map deserves to be nominated this year? Make it happen!</p>
+      <div class="cta-row">
+        <a href="/playlists" class="button-link">Vote now!</a>
+        <a href="/beasties" class="text-link">Learn more</a>
+      </div>
+    </div>
+  </div>
+
   <QuickFilters />
   <!-- Search to be moved to Navbar later -->
   <Search />
@@ -104,6 +119,8 @@
 </section>
 
 <style lang="scss">
+  @import 'src/scss/variables';
+
   hr {
     height: 1px;
     margin-top: 20px;
@@ -132,6 +149,60 @@
   @media (min-width: 992px) {
     .leaderboards {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .beasties-banner {
+    max-height: 10rem;
+    display: flex;
+    margin-bottom: 1.5rem;
+    width: 100%;
+
+    .left-side-beasties-banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      img {
+        height: 9rem;
+      }
+    }
+
+    .right-side-beasties-banner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      padding: 1rem;
+      width: 100%;
+
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .cta-row {
+        display: flex;
+        gap: 1rem;
+
+        align-items: center;
+
+        .button-link {
+          font-size: 1rem;
+          padding: 0.5rem 1rem;
+          background-color: $color-accent;
+          color: var(--button-primary-text);
+          border-radius: 0.5rem;
+          text-decoration: none;
+          transition: background-color 0.2s;
+          &:hover {
+            background-color: var(--button-primary-hover);
+          }
+        }
+      }
     }
   }
 </style>
