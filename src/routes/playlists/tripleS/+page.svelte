@@ -67,6 +67,7 @@
 <div class="mobile-hint">This site looks better on a larger screen.</div>
 <div class="timeline">
   <div class="timeline-side timeline-left">
+    <div style="height: 3rem" />
     <MemberProfileCardSwag
       sNumber={1}
       name={members.Seoyeon}
@@ -76,7 +77,7 @@
       positionName="top-right"
       rotationDeg={-6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 31rem" />
     <MemberProfileCardSwag
       sNumber={3}
       name={members.Jiwoo}
@@ -84,9 +85,9 @@
       date="June 1, 2022"
       positionDate="bottom-left"
       positionName="top-right"
-      rotationDeg={6}
+      rotationDeg={10}
     />
-    <div style="height: 20rem" />
+    <div style="height: 25rem" />
     <MemberProfileCardSwag
       sNumber={5}
       name={members.Yooyeon}
@@ -94,9 +95,9 @@
       date="July 15, 2022"
       positionDate="bottom-left"
       positionName="top-right"
-      rotationDeg={-12}
+      rotationDeg={-8}
     />
-    <div style="height: 20rem" />
+    <div style="height: 35rem" />
     <MemberProfileCardSwag
       sNumber={7}
       name={members.Nakyoung}
@@ -104,9 +105,9 @@
       date="August 22, 2022"
       positionDate="bottom-left"
       positionName="top-right"
-      rotationDeg={12}
+      rotationDeg={4}
     />
-    <div style="height: 20rem" />
+    <div style="height: 39rem" />
     <MemberProfileCardSwag
       sNumber={9}
       name={members.Kaede}
@@ -114,9 +115,9 @@
       date="November 9, 2022"
       positionDate="bottom-left"
       positionName="top-right"
-      rotationDeg={-6}
+      rotationDeg={-12}
     />
-    <div style="height: 20rem" />
+    <div style="height: 27rem" />
     <MemberProfileCardSwag
       sNumber={11}
       name={members.Kotone}
@@ -124,9 +125,9 @@
       date="January 2, 2023"
       positionDate="bottom-left"
       positionName="top-right"
-      rotationDeg={2}
+      rotationDeg={4}
     />
-    <div style="height: 20rem" />
+    <div style="height: 35rem" />
     <MemberProfileCardSwag
       sNumber={13}
       name={members.Nien}
@@ -136,7 +137,7 @@
       positionName="top-right"
       rotationDeg={-3}
     />
-    <div style="height: 20rem" />
+    <div style="height: 43rem" />
     <MemberProfileCardSwag
       sNumber={15}
       name={members.Xinyu}
@@ -146,7 +147,7 @@
       positionName="top-right"
       rotationDeg={6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 35rem" />
     <MemberProfileCardSwag
       sNumber={17}
       name={members.Lynn}
@@ -156,7 +157,7 @@
       positionName="top-right"
       rotationDeg={-6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 26rem" />
     <MemberProfileCardSwag
       sNumber={19}
       name={members.Hayeon}
@@ -166,7 +167,7 @@
       positionName="top-right"
       rotationDeg={8}
     />
-    <div style="height: 20rem" />
+    <div style="height: 33rem" />
     <MemberProfileCardSwag
       sNumber={21}
       name={members.Chaewon}
@@ -176,7 +177,7 @@
       positionName="top-right"
       rotationDeg={-6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 42rem" />
     <MemberProfileCardSwag
       sNumber={23}
       name={members.Seoah}
@@ -191,7 +192,7 @@
     <AlbumPlaylistCard
       albumName="ACCESS"
       groupName="Acid Angel from Asia"
-      albumDate="May 1, 2022"
+      albumDate="October 28, 2022"
       playlistId={628877}
       membersIncluded={[members.Hyerin, members.Yooyeon, members.Nakyoung, members.Yubin]}
     />
@@ -225,7 +226,7 @@
       groupName="+(KR)ystal Eyes"
       albumDate="June 27, 2023"
       playlistId={628880}
-      membersIncluded={[members.Seoyeon, members.Chaeyeon, members.Jiwoo, members.Soomin]}
+      membersIncluded={[members.Sohyun, members.Seoyeon, members.Chaeyeon, members.Jiwoo, members.Soomin]}
     />
     <AlbumPlaylistCard
       albumName="Cherry Gene"
@@ -343,7 +344,7 @@
     />
   </div>
   <div class="timeline-side timeline-right">
-    <div style="height: 7rem" />
+    <div style="height: 18rem" />
     <MemberProfileCardSwag
       sNumber={2}
       name={members.Hyerin}
@@ -353,7 +354,7 @@
       positionName="top-left"
       rotationDeg={6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 30rem" />
     <MemberProfileCardSwag
       sNumber={4}
       name={members.Chaeyeon}
@@ -363,7 +364,7 @@
       positionName="top-left"
       rotationDeg={-6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 52rem" />
     <MemberProfileCardSwag
       sNumber={6}
       name={members.Soomin}
@@ -381,9 +382,9 @@
       date="September 9, 2022"
       positionDate="bottom-right"
       positionName="top-left"
-      rotationDeg={-12}
+      rotationDeg={-6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 30rem" />
     <MemberProfileCardSwag
       sNumber={10}
       name={members.Dahyun}
@@ -393,7 +394,7 @@
       positionName="top-left"
       rotationDeg={6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 55rem" />
     <MemberProfileCardSwag
       sNumber={12}
       name={members.Yeonji}
@@ -401,9 +402,9 @@
       date="January 18, 2023"
       positionDate="bottom-right"
       positionName="top-left"
-      rotationDeg={-2}
+      rotationDeg={-8}
     />
-    <div style="height: 20rem" />
+    <div style="height: 30rem" />
     <MemberProfileCardSwag
       sNumber={14}
       name={members.Sohyun}
@@ -423,7 +424,7 @@
       positionName="top-left"
       rotationDeg={-6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 48rem" />
     <MemberProfileCardSwag
       sNumber={18}
       name={members.Joobin}
@@ -433,7 +434,7 @@
       positionName="top-left"
       rotationDeg={6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 30rem" />
     <MemberProfileCardSwag
       sNumber={20}
       name={members.Shion}
@@ -453,7 +454,8 @@
       positionName="top-left"
       rotationDeg={6}
     />
-    <div style="height: 20rem" />
+    <div style="height: 39rem" />
+    <div class="swag-hang">
     <MemberProfileCardSwag
       sNumber={24}
       name={members.Jiyeon}
@@ -463,6 +465,7 @@
       positionName="top-left"
       rotationDeg={-8}
     />
+    </div>
   </div>
 </div>
 
@@ -605,6 +608,11 @@
       flex-direction: column;
       gap: 3rem;
       align-items: center;
+    }
+
+    .swag-hang {
+      position: relative;
+      top: 8rem;
     }
   }
 </style>
