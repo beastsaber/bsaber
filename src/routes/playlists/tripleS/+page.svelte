@@ -4,6 +4,20 @@
   import OneClickDownloadButton from '$lib/OneClickDownloadButton.svelte'
   import ZipDownloadButton from '$lib/ZipDownloadButton.svelte'
   import MetaHead from '$lib/MetaHead.svelte'
+  import { audioPlayer } from '$lib/audio-player'
+
+  let nextSToClick = 1
+  const clickMember = (sNumber: number) => {
+    if (sNumber === nextSToClick) {
+      nextSToClick++
+    }
+
+    console.log('nextSToClick', nextSToClick)
+    if (nextSToClick === 25) {
+      nextSToClick = 1
+      audioPlayer.play('/playlists/tripleS/generationcoverfinal.mp3', 'generation-cover')
+    }
+  }
 
   const members = {
     Seoyeon: 'Seoyeon',
@@ -69,6 +83,7 @@
   <div class="timeline-side timeline-left">
     <div style="height: 3rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(1)}
       sNumber={1}
       name={members.Seoyeon}
       image="/playlists/tripleS/SeoYeon.png"
@@ -79,6 +94,7 @@
     />
     <div style="height: 31rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(3)}
       sNumber={3}
       name={members.Jiwoo}
       image="/playlists/tripleS/JiWoo.png"
@@ -89,6 +105,7 @@
     />
     <div style="height: 25rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(5)}
       sNumber={5}
       name={members.Yooyeon}
       image="/playlists/tripleS/YooYeon.png"
@@ -99,6 +116,7 @@
     />
     <div style="height: 35rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(7)}
       sNumber={7}
       name={members.Nakyoung}
       image="/playlists/tripleS/NaKyoung.png"
@@ -109,6 +127,7 @@
     />
     <div style="height: 39rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(9)}
       sNumber={9}
       name={members.Kaede}
       image="/playlists/tripleS/Kaede.png"
@@ -119,6 +138,7 @@
     />
     <div style="height: 27rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(11)}
       sNumber={11}
       name={members.Kotone}
       image="/playlists/tripleS/Kotone.png"
@@ -129,6 +149,7 @@
     />
     <div style="height: 35rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(13)}
       sNumber={13}
       name={members.Nien}
       image="/playlists/tripleS/Nien.png"
@@ -139,6 +160,7 @@
     />
     <div style="height: 43rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(15)}
       sNumber={15}
       name={members.Xinyu}
       image="/playlists/tripleS/Xinyu.png"
@@ -149,6 +171,7 @@
     />
     <div style="height: 35rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(17)}
       sNumber={17}
       name={members.Lynn}
       image="/playlists/tripleS/Lynn.png"
@@ -159,6 +182,7 @@
     />
     <div style="height: 26rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(19)}
       sNumber={19}
       name={members.Hayeon}
       image="/playlists/tripleS/HaYeon.png"
@@ -169,6 +193,7 @@
     />
     <div style="height: 33rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(21)}
       sNumber={21}
       name={members.Chaewon}
       image="/playlists/tripleS/ChaeWon.png"
@@ -179,6 +204,7 @@
     />
     <div style="height: 42rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(23)}
       sNumber={23}
       name={members.Seoah}
       image="/playlists/tripleS/SeoAh.png"
@@ -226,7 +252,13 @@
       groupName="+(KR)ystal Eyes"
       albumDate="June 27, 2023"
       playlistId={628880}
-      membersIncluded={[members.Sohyun, members.Seoyeon, members.Chaeyeon, members.Jiwoo, members.Soomin]}
+      membersIncluded={[
+        members.Sohyun,
+        members.Seoyeon,
+        members.Chaeyeon,
+        members.Jiwoo,
+        members.Soomin,
+      ]}
     />
     <AlbumPlaylistCard
       albumName="Cherry Gene"
@@ -346,6 +378,7 @@
   <div class="timeline-side timeline-right">
     <div style="height: 18rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(2)}
       sNumber={2}
       name={members.Hyerin}
       image="/playlists/tripleS/HyeRin.png"
@@ -356,6 +389,7 @@
     />
     <div style="height: 30rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(4)}
       sNumber={4}
       name={members.Chaeyeon}
       image="/playlists/tripleS/ChaeYeon.png"
@@ -366,6 +400,7 @@
     />
     <div style="height: 52rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(6)}
       sNumber={6}
       name={members.Soomin}
       image="/playlists/tripleS/SooMin.png"
@@ -376,6 +411,7 @@
     />
     <div style="height: 20rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(8)}
       sNumber={8}
       name={members.Yubin}
       image="/playlists/tripleS/YuBin.png"
@@ -386,6 +422,7 @@
     />
     <div style="height: 30rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(10)}
       sNumber={10}
       name={members.Dahyun}
       image="/playlists/tripleS/DaHyun.png"
@@ -396,6 +433,7 @@
     />
     <div style="height: 55rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(12)}
       sNumber={12}
       name={members.Yeonji}
       image="/playlists/tripleS/YeonJi.png"
@@ -406,6 +444,7 @@
     />
     <div style="height: 30rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(14)}
       sNumber={14}
       name={members.Sohyun}
       image="/playlists/tripleS/SoHyun.png"
@@ -416,6 +455,7 @@
     />
     <div style="height: 20rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(16)}
       sNumber={16}
       name={members.Mayu}
       image="/playlists/tripleS/Mayu.png"
@@ -426,6 +466,7 @@
     />
     <div style="height: 48rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(18)}
       sNumber={18}
       name={members.Joobin}
       image="/playlists/tripleS/JooBin.png"
@@ -436,6 +477,7 @@
     />
     <div style="height: 30rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(20)}
       sNumber={20}
       name={members.Shion}
       image="/playlists/tripleS/ShiOn.png"
@@ -446,6 +488,7 @@
     />
     <div style="height: 20rem" />
     <MemberProfileCardSwag
+      on:click={() => clickMember(22)}
       sNumber={22}
       name={members.Sullin}
       image="/playlists/tripleS/Sullin.png"
@@ -456,15 +499,16 @@
     />
     <div style="height: 39rem" />
     <div class="swag-hang">
-    <MemberProfileCardSwag
-      sNumber={24}
-      name={members.Jiyeon}
-      image="/playlists/tripleS/JiYeon.png"
-      date="April 4, 2024"
-      positionDate="bottom-right"
-      positionName="top-left"
-      rotationDeg={-8}
-    />
+      <MemberProfileCardSwag
+        on:click={() => clickMember(24)}
+        sNumber={24}
+        name={members.Jiyeon}
+        image="/playlists/tripleS/JiYeon.png"
+        date="April 4, 2024"
+        positionDate="bottom-right"
+        positionName="top-left"
+        rotationDeg={-8}
+      />
     </div>
   </div>
 </div>
