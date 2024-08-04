@@ -1,3 +1,5 @@
+import { beatSaverClientFactory } from './beatsaver-client'
+
 let featuredPlaylistCount: number | null = null
 
 const searchStartPage = 10
@@ -9,11 +11,10 @@ export const getFeaturedPlaylistCount = async (): Promise<number> => {
   }
 
   let currentTestPage = searchStartPage
+  const beatSaverClient = beatSaverClientFactory.create()
   while (currentTestPage <= searchEndPage) {
-    const response = await fetch(
-      `${
-        import.meta.env.VITE_BSABER_API_BASE ?? 'https://api.beatsaver.com'
-      }/playlists/search/${currentTestPage}?sortOrder=Curated&curated=true`,
+    const response = await beatSaverClient.fetch(
+      `/playlists/search/${currentTestPage}?sortOrder=Curated&curated=true`,
     )
 
     if (response.status === 200) {

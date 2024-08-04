@@ -45,10 +45,11 @@ Verified Mappers are vetted to have been able to demonstrate the ability to regu
 - Submit three (3) of your highest-quality maps to the review queue. The verification team is looking for maps that are above average, demonstrating mastery of mapping fundamentals and a solid grasp of intermediate concepts like consistency, emphasis, representation, and use of space and momentum.
 - BeatSage or other AI-generated or assisted maps are not accepted.
 - Challenge-style or meme/s\*\*\* post maps ("loloppe" notes, vibro, other unhittable patterns) and the use of "pauls" or "poodles" are not accepted.
-- Audio under 60 seconds and maps over 350 bpm or that contain extended sections of 350 "effective BPM" will be disregarded
+- Audio under 60 seconds will be disregarded
 - Collaborations, where mappers split the work of placing notes in a single difficulty, are not eligible. Lights and/or walls from another contributor must be credited in the map description
 - Only one map where you created one or more full "guest difficulties" (mapping) will be accepted. Downmapping difficulties created by others in the same map will not be accepted. The BeatSaver description must credit you for each difficulty to which you contributed.
 - If you are submitting a map that is in the process of being ranked, do not delete the submitted key. Applications with deleted or unpublished maps at the time of review will be rejected.
+- Very difficult maps, such as those over 350 BPM or contain sections that go above the “effective BPM” of 350 for an extended period of time, may take longer to verify and will be subject to stricter playability requirements. If you can, it is recommended that you submit easier/slower maps below this threshold instead.
 
 Once you've made your submission, all you have to do is wait! Processing times can vary depending on the time of the year and availability of the team, but patience is key! The estimated processing time is usually about 1 to 3 months.
 
@@ -93,7 +94,7 @@ Congratulations, and welcome to the ranks of nearly 450 other quality mappers ju
 6. There is a required text box at the bottom. Enter any comments you would like to add or mention. If you do not have anything to add, you can just enter one word or short sentence to this field to allow the form to be submitted.
 7. Review the requirements listed above and submit your qualifying maps!
 
-> If you're having trouble or don't understand something, we recommend you visit the [BSMG Role Application Guide](https://docs.google.com/document/d/1N6bAsxLrok9yoLusQwUzzuf6Mj9IEh-Rs5ZUo9dJt0k/edit?usp=sharing)
+> If you're having trouble or don't understand something, we recommend you visit the [BSMG Role Application Guide](https://bsmg.dev/roleappsguide)
 
 Please do not submit more than 1 mapper application at a time. The team of veterans reviewing your application will always reach out to you no matter what when your application has been processed.
 

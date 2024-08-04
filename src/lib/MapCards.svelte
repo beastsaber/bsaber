@@ -11,6 +11,7 @@
   import Fa from 'svelte-fa/src/fa.svelte'
   import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
   import { audioPlayer } from '$lib/audio-player'
+  import { beatSaverClientFactory } from './beatsaver-client'
 
   export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
     'FIRST_PUBLISHED'
@@ -29,30 +30,19 @@
     await getMaps()
   })
 
-  let baseUrl = import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com'
-  let url: string
+  const beatSaverClient = beatSaverClientFactory.create()
+
+  let path: string
   if (playlistId != null) {
-    url = `${baseUrl}/playlists/id/${playlistId}/0`
+    path = `/playlists/id/${playlistId}/0`
   } else {
-    url = `${baseUrl}/maps/latest?sort=${sortOrder}${
+    path = `/maps/latest?sort=${sortOrder}${
       verified !== undefined ? `&verified=${verified}` : ''
     }&pageSize=${maxCards ?? 8}`
   }
 
   async function getMaps() {
-    let retries = 0
-    let response = await fetch(url)
-      .then((givenResponse) => givenResponse)
-      // Currently, BeatSaver doesn't send CORS headers on 429 responses
-      // So we're catching it here and returning a fake response
-      // Not ideal - ticket has been opened: https://github.com/beatmaps-io/beatsaver-main/issues/387
-      .catch(() => ({ status: 429 } as Response))
-
-    while (response.status === 429 && retries < 3) {
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      response = await fetch(url)
-      retries++
-    }
+    let response = await beatSaverClient.fetch(path)
     if (playlistId != null) {
       maps = await response.json().then((json) => json.maps.map((x) => x.map) as Beatmap[])
     } else {
