@@ -28,6 +28,7 @@
 </script>
 
 <div
+  on:click
   class={`member-box`}
   style={`background: url(${image}); background-size: ${width} ${height}; height: ${height}; width: ${width}; background-repeat: no-repeat; background-position: center; transform: ${
     hovering ? 'scale(1.1) ' : ''
