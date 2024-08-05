@@ -62,7 +62,7 @@
     width: 2em;
     aspect-ratio: 1;
 
-    transition: background-color $transition-short;
+    transition: background-color $transition-short ease-in-out;
 
     &:hover {
       background-color: mix($color-background-secondary, $color-background-tertiary, 50%);

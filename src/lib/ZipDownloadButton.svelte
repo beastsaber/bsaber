@@ -3,9 +3,15 @@
   import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
   export let downloadURL: string
+  export let fontSize: string = '1rem'
 </script>
 
-<a title="Zip Download via BeatSaver" href={downloadURL} class="zip-download-link">
+<a
+  title="Zip Download via BeatSaver"
+  href={downloadURL}
+  class="zip-download-link"
+  style="font-size: {fontSize}"
+>
   <Fa icon={faDownload} />
 </a>
 
