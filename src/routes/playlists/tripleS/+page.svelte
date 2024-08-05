@@ -77,7 +77,7 @@
     </div>
   </div>
 </div>
-<div class="mobile-hint">This site looks better on a larger screen.</div>
+<div class="mobile-hint">This page looks better on a larger screen.</div>
 <div class="timeline">
   <div class="timeline-side timeline-left">
     <div style="height: 3rem" />
