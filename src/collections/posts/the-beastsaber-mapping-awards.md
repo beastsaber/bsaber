@@ -18,9 +18,9 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 <br />
 <p>Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.</p>
 <br />
-<h2>Submit your Nominations 🏆</h2>
+<h2>Submit Maps! 🏆</h2>
 
-> **[Click here to submit your nominations!](https://mappingawards.saeraphinx.dev/)** <br /> _Eligibility Period December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC_
+> **[Click here to submit maps!](https://mappingawards.saeraphinx.dev/)** <br /> _Eligibility Period: December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC_ <br /> _Submissions Close: December 14, 2024_
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>

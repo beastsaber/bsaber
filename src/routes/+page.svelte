@@ -64,9 +64,9 @@
       </div>
       <div class="right-side-beasties-banner">
         <h1>Beasties are Coming</h1>
-        <p>What map deserves to be nominated this year? Make it happen!</p>
+        <p>What maps deserve to win in this year's Beasties? Submit maps now!</p>
         <div class="cta-row">
-          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote now!</a>
+          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
           <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
         </div>
       </div>
