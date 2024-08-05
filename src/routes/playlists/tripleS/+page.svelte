@@ -12,7 +12,6 @@
       nextSToClick++
     }
 
-    console.log('nextSToClick', nextSToClick)
     if (nextSToClick === 25) {
       nextSToClick = 1
       audioPlayer.play('/playlists/tripleS/generationcoverfinal.mp3', 'generation-cover')
