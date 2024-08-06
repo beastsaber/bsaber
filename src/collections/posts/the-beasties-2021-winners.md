@@ -28,8 +28,6 @@ If you’re not the reading type, you can watch the announcement video [here](ht
 
 - **Rookie Mapper of the Year: [JRE_McNuggies](https://beatsaver.com/profile/4288314)**
 
-- **Rookie Lighter of the Year: [Nixie.Korten](https://beatsaver.com/profile/4286374)**
-
 <br />
 
 ## Map Style Awards

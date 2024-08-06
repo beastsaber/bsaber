@@ -3,82 +3,126 @@ title: The BeastSaber Mapping Awards
 section: speciality
 category: event
 publish: 2024-02-01T00:00:00.000Z
+lastUpdated: 2024-07-26T00:00:00.000Z
 homepageText: The BeastSaber Mapping Awards dig deep into mapping theory and practices to highlight the maps that have incredible representation, emphasis, and flow to truly capture the feel of the song.
 image: /static/uploads/posts/beasties/beasties-medals.jpg
 showInPostListing: false
 linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 ---
 
-# The BeastSaber Mapping Awards
+<div class="content">
+<div class="text">
+<h2>The BeastSaber Mapping Awards</h2>
+<h3>AKA: The Beasties - By Mappers, for Mappers</h3>
+<p>The BeastSaber Mapping Awards were launched in 2021 to highlight the best of the best of the art (and science) of making custom Beat Saber maps. The first year featured 29 categories, garnered 760 nominated maps, resulting in 96 finalists, with more than 45 medals won.</p>
+<br />
+<p>Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.</p>
+<br />
+<h2>Submit Maps! 🏆</h2>
 
-## AKA: The Beasties - By Mappers, for Mappers
+> **[Click here to submit maps!](https://mappingawards.saeraphinx.dev/)** <br /> _Eligibility Period: December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC_ <br /> _Submissions Close: December 14, 2024_
 
-The BeastSaber Mapping Awards were launched in 2021 to highlight the best of the best of the art (and science) of making custom Beat Saber maps. The first year featured 29 categories, garnered 760 nominated maps, resulting in 96 finalists, with more than 45 medals won.
+</div>
+<script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+<div class="pa-carousel-widget" style="height:400px;">
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPUw6WaDmtmnELeVG1IuEtNnbE5qoASUUs-FVdkurPwAksiV4xfKNf_tPDxGu-pTQqnf-7BwRuU9RhfgAHW0mo1PHePE4QFWOjVZiHHI1ClPnWx6-w=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPaFj9M7GzK6_TBVnXRhc-6KniP1mP55KDmazxiCb8citD__9UbMefFojyJZgCG-AO2in1sWGYbcnF1mVrYTJT8stO8nIoFC6d7GHT_LYzizY79XbM=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczOxXQyVuxD68CqEOe6O_wbaTwsfhV90AP6qoIRJuY3qJUDlMa-z0Foq4wb8Q9fpqCWMYtNmCdjL2owIWEbvtygzud9NN7oBNNRINVJIdtXn0SJG7nY=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczOKKxJ3p8B4LdokaMpvIWfO3RFKU_TTLqYJOrO10-EKn2F1c47quSV1AvrzyqSKjmgOd7MBs0vykgGrlm7bLjjiAefih-CLvjOmU197Tjq4dEmno0Y=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczM4ZwApDlHoBbTmeSHOYQ5X0ZPAlnXhdYLnpolcUBC2f2ozQDqdwtCPXRvM70XuFsT8IFTk33_jaQNtUo8t0AG2JL0lo8vyutjQhm1B5B_9D2xX6-4=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPbne3R_PkIP5IIMTxnxD6GLrS_n-4_eaqp2iv_GyK8riNtUw6EcHfmj9dgdbX-3RHqDSshk8ObdRdBh6kSIyQOV_b0xecFHF2HOu9De8Jfs8OEL2I=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPcLqAK-vIrNLT4ui0bsUQ6je5zzKc1ilSSn_0mN7iZrBKzK6HBBOrf6142LkabD6e_BQuaw7Umpeo9omrsr6ctcToucthNLFZXw7w4ueCH4lhXqDQ=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMCxR5Ex7HU5Ux36UUq8Cwt_Epwm8WR3g0DLLnaOy_LpmA3fSI_2pecODl8UnjmcEBRYTa73AJsSjq9FGbGW1xkBDsXeDSOMo_3wY_0x-x7XuxVP5E=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMx0YoP3KToN1fitSvA0hsQcX7FwlKJIY7DaR8CF4IMzkBwKCxshwQNPsWWHQFjlNvoRASZGEyHmkXIwBRmvUwCTPVC58fzjaCGLcA3LNvu-SR9tik=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczN0SB2aD5BNFVFa4yjoW_ETmaHZun15_QJCm5VfSs27Rxti4oA3hScM6QkCaJHp8OufxTGwl-TKATvsb6VJKa6BNyNgrvAUL8f1NT0_0hFV5InPXmo=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczNCElzaZ-G-cikEQJ7XqRG4pI5VLdHFUsq9Kc8UR8FeDiU5vaeDb56_SSHgMbGhF_1vMRKOrJgUCCEIH3zrO79wzbCBJmE47w-jCzqtlWOEiz-eszg=w1920-h1080"></object>
+</div>
+</div>
 
-Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.
+<style lang="scss">
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .text {
+    flex: 1;
+    font-size: 1.1rem;
+    min-width: 70%;
+  }
+  .pa-carousel-widget {
+    padding-top: 0.5rem;
+  }
+  @media (max-width: 678px) {
+    .pa-carousel-widget {
+      width: 0;
+    }
+    .content {
+      gap: 0;
+    }
+    .iframe {
+      display: none;
+    }
+  }
+</style>
+<br />
 
-## Submit your Nominations
+## Quick Navigation
 
-> **[Click here to submit your nominations!](https://forms.gle/v69wKinCfZzVHfZ17)**
-
-**Nominations are currently closed**
-
-_Eligibility Period December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC_
-
-> Stay tuned for any changes being made for 2024!
+- [**What's Changing for 2024**](#whats-changing)
+- [**2024 Categories**](#categories)
+- [**Frequently Asked Questions**](#faq)
 
 <br />
 
-<br />
+## What's Changing for 2024? [🔗](#whats-changing) {$whats-changing}
 
-## What's Changing for 2023?
+We’ve received a lot of constructive community feedback on the 2023 awards and already have a few tweaks planned for 2024! While most of the changes are actually internal and won't be seen as much on the public side, we do have the following external changes:
 
-We’ve received a lot of constructive community feedback on the 2022 awards and already have a few tweaks planned for 2023!
+- **We've revamped our nomination form!** We are trying to move away from Google Forms, and thanks to Saeraphinx, we have a [new form](https://mappingawards.saeraphinx.dev/) now available! You will be required to login with your [BeatLeader](https://beatleader.xyz) account in order to make your submissions. If you encounter any issues, please reach out and let us know in the [**BeastSaber Discord Server**](https://discord.gg/VJZHUbt) in the [#beasties-public](https://discord.com/channels/452928402203344908/1226010390190887012) channel.
 
-- **Some nominations simplified!** Instead of having you, the community, think about the difference between lighting types our experienced lighters will take your lighting nominations and sort them into the correct lighting category. This change is also happening to ranked nominations.
-- **BeatLeader Star Rating Ranked!** All of ranked is wrapped into one nomination submission. Our team will sort the nominations into the proper star range category. Be sure to specify which difficulty you are nominating! The difficulty you chose (Expert+, Expert, ect) determines which category the map is running in. You can still nominate ScoreSaber Ranked maps. ScoreSaber submissions will be converted to BeatLeader star ratings to find which category to place the map in.
-- **Multiple category changes.** Most of the 2021 and 2022 categories were retained or condensed but some additions were made to better reflect different parts of the community. Some name changes were made. See our full list of 2023 categories.
-- **Best Alternative Map Split/Rename.** Alternative Map was confusing and got nominations that did not fit the category. So the category is being renamed to Best Gimmick Map. The category had over 90% of its nomination as poodle maps in 2022. With the style dominating the rest of the gimmicks it has been given its own category (Best Poodle Map).
-- **Community only categories!** Some categories we struggled to narrow down and it caused some drama. So Pack of the Year and Best OST/DLC Map will be community award only. These categories will have a more flexible amount of finalists and will try to be diverse while still high quality.
-- **Winners and runners-up awards (TBD)** Last year, thanks to the very generous donations of the community, we raised enough funds ($1000) to provide gold medals to the winners and silver medals to the runner-ups in each category. We would love to do this again but we need your help. If you have the means to support this event click the link below to donate today.
+  \*We will be adding the ability to login through BeatSaver soon!
 
-> Want to help support The Beasties? We rely on community donations for all the Awards that are sent out, and yes, we mean actually real awards! Between purchasing these awards and mailing them, any and all support is truly appreciated! Click Here -> [PayPal Donation](https://www.paypal.com/paypalme/helencarnateBS)
+- **2021 Winners Update** Due to previously unknown circumstances, the 2021 Rookie Lighter of the Year has been removed from the Winner's page to reflect that no one nominated (the previously noted winner or any runner up) was qualified to receive an award.
+- **Alternate Account Disclosure** To prevent future issues of alternate accounts winning awards where they should not have won awards, if you are nominated for an award under an alternate account, you are required to notify a BeastSaber Admin (either Helen, RateGyro, or TheCzar1994) to properly assess if the alternate account would conflict with winning an award in the category.
 
-## Check out each year's Winners pages below
+  \*If you know of an alternate account that is nominated and believe that the Admin team is unaware, we encourage you to notify us. Keep in mind, alternate accounts are allowed to be nominated, they (the alternate account and main account) just are not allowed to win more than 1 award in a single category together or win an award in a category designated for Rookie when their main account is ineligible.
 
-- [**2021 Winners**](/posts/the-beasties-2021-winners)
-- [**2022 Winners**](/posts/the-beasties-2022-winners)
-- [**2023 Winners**](/posts/the-beasties-2023-winners)
+- **BeatLeader Star Rating Ranked!** BeatLeader and ScoreSaber will continue to be combined unless we receive enough nominations to justify separating the two.
+- **Winners and runners-up awards** Last year, thanks to the extremely generous donations of the community, we raised enough funds (more than $1000) to provide gold medals to the winners and silver medals to the runner-ups in each category, as well as medals for community choice winners!
+
+> ❤️ If you want to help provide a steady form of support for The Beasties and towards site costs, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and join either tier!
 
 <br />
+<br />
 
-## 2023 Beasties Categories
+## 2024 Beasties Categories [🔗](#categories) {$categories}
 
 We are always seeking and implementing feedback from mappers and the community over prior years on how we can improve our categories.
-
-_Any categories that do not receive at least five qualified nominees will not be awarded at the end of the year._
+\
+_\*Any categories that do not receive at least five qualified nominees will not be awarded at the end of the year._
 
 ### Overall Categories
 
 - **Map of the Year**: The best unmodded map of the year. Full stop. It has it all – representation, emphasis, flow – everything coming together for an incredible playing experience to go with the song.
 
-  Example: [Teminite – Raise the Black Flag](https://beatsaver.com/maps/1c806)
+  Example: [Teminite / Skybreak - Accelerate](https://beatsaver.com/maps/340c2)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/340c2/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-- **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2023.
+- **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2024.
 
-  Example: Skrillex - Devil's Den (no we're not giving you a free copy of a DLC map :P)
+  Example: Imagine Dragons - Bones – Mapped by ETAN & Kolezan (no we're not giving you a free copy of a DLC map :P)
 
-- **Pack of the Year - TWEAKED**: The map pack that has it all: a tight theme, new high-quality maps, and a great presentation across all difficulties, all wrapped up in a beautiful `.bplist` bow.
+- **Pack of the Year**: The map pack that has it all: a tight theme, new high-quality maps, and a great presentation across all difficulties, all wrapped up in a beautiful `.bplist` bow.
 
-  Example Pack: [S3RL Pack](https://beatsaver.com/playlists/3930)
+  Example Pack: [Teminite Pack](https://beatsaver.com/playlists/82685)
 
 - **Best Full Spread Map**: This map has something for players at every level and does it with style and masterful mapping. To qualify, the map must have all five _true_ difficulties — Easy, Normal, Hard, Expert, ExpertPlus.
 
-  Example Map: [S3RL – To Your Beat (ft. Hannah Fortune)](https://beatsaver.com/maps/1d082)
+  Example Map: [Knock2 - dashstar\*](https://beatsaver.com/maps/2f187)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/2f187/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-- **Best Non-Standard Game Mode Map - TWEAKED**: This category celebrates the best of non-standard characteristics: Single Saber, No Arrows, and 360/90-Degree maps. _Maps must actually use the alt characteristic and not mods to simulate._
+- **Best Non-Standard Game Mode Map**: This category celebrates the best of non-standard characteristics: Single Saber, No Arrows, and 360/90-Degree maps. _Maps must actually use the alt characteristic and not mods to simulate._
 
-  Example Map: [Aero Chord – Drop It](https://beatsaver.com/maps/1c88d)
+  Example Map: [JVKE - Golden Hour](https://beatsaver.com/maps/333d8)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/333d8/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 ### Individual Awards
 
@@ -94,41 +138,41 @@ _Any categories that do not receive at least five qualified nominees will not be
 
 - **Best Dance Style Map**: With a blend of big arm swings, high movement, and a bit lower density, the best map in the “Dance” category gets players of all ages grooving to the beat and sweating up a storm.
 
-  Example Map: Maroon5 – Moves Like Jagger
+  Example Map: [Aethoro - Spiritdance](https://beatsaver.com/maps/379bc)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/379bc/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Tech Style Map**: With more angles than a dodecahedron, the best map in the “Tech” category bends the concept of parity to its will to create a challenging sight-read that retains great flow.
 
-  Example Map: Kanaria – Envy Baby
+  Example Map: [MYUKKE. - The 89's Momentum](https://beatsaver.com/maps/2f386)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/2f386/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Fitness Style Map**: Build strength to the beat. The best fitness map forces constant natural movement in all dimensions with walls and bloqs that keep the flow until your legs give out.
 
-  Example Map: Stefflon Don – Sixteen Shots
+  Example Map: [Saint Punk - Warning](https://beatsaver.com/maps/2fb9d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/2fb9d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Balanced Style Map**: Look in the sky! Is it a tech map? Is it a dance map? Is it a speed map? WE DON’T KNOW! The Best Balanced Style Map is the mutt of the neighborhood – a little of this, a little of that – all combining into one fantastic map.
 
-  Example Map: The Kid Laroi & Justin Bieber – STAY,
+  Example Map: [P\*Light - ADAM](https://beatsaver.com/maps/338fe)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/338fe/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Accuracy Style Map**: Chase that sweet high accuracy in a very, very careful dance. The best map in the Accuracy category has excellent rhythmic choice and well-placed emphasis with the fewest amount of notes.
 
-  Example Map: Avicii – The Nights
+  Example Map: [NOTD, Astrid S - I Don't Know Why (Ellis Remix)](https://beatsaver.com/maps/2fbdb)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/2fbdb/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Speed Style Map**: Nothing screams “speed” more than that feeling of lactic acid setting in after tackling thousands of notes at mind-blowing BPMs, and the best map in the “Speed” category delivers an extra helping.
 
-  Example Map: Camellia – Knight Rider
+  Example Map: [Booths of Fighters (Camellia's "Barrage of Flurries" Remix) feat. DD"Nakata"Metal](https://beatsaver.com/maps/2e4bf)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/2e4bf/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Challenge Style Map**: Ranking Criteria? Curation? Mapping fundamentals? These are but chains to restrict the seemingly endless and wild imagination of challenge mappers. The best map in the “Challenge” category pushes the limits in every way.
 
-  Example Map: Destructive Tendencies Warface – Release the Kraken
+  Example Map: [Black Tiger Sex Machine x Lektrique - Religion (Lawless E+)](https://beatsaver.com/maps/2d4e6)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/2d4e6/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-- **Best Gimmick Map - TWEAKED!**: The best “Gimmick” map shows off some of the wacky manipulations that play fast and loose with gameplay and have become community fan favorites. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here!
+- **Best Gimmick Map**: The best “Gimmick” map shows off some of the wacky manipulations that play fast and loose with gameplay and have become community fan favorites. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here!
 
-  Example Map: MARENOL – LeaF
+  Example Map: [Teruo Taniguchi - Tetris 99 Main Theme (Lawless E+)](https://beatsaver.com/maps/3688b)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3688b/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-- **Best Poodle Map - NEW!**: Poodles and Pauls. The best map in the Poodle category has excellent flow and well-placed emphasis with the long hold note swing style. Spirals, Switch-backs, and more!
+- **Best Poodle Map**: Poodles and Pauls. The best map in the Poodle category has excellent flow and well-placed emphasis with the long hold note swing style. Spirals, Switch-backs, and more!
 
-  Example Map: Disco Fries – Moonlight
+  Example Map: [Coldplay ft. Beyoncé - Hymn for the Weekend (E+)](https://beatsaver.com/maps/36758)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/36758/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-### Ranked Categories - TWEAKED
+### Ranked Categories
 
 - **Best Ranked Map 0-10 Star**
 
@@ -138,9 +182,13 @@ _Any categories that do not receive at least five qualified nominees will not be
 
 ### Modded Mapping
 
-- **Best Artmap - TWEAKED**: Formerly called “Modchart Visuals,” these maps use all the power of Noodle Extensions and Chroma to convey the music and/or tell us a story through the creative use of mods and any notemods aren’t the main focus of the map.
+- **Best Artmap**: Formerly called “Modchart Visuals,” these maps use all the power of Noodle Extensions and Chroma to convey the music and/or tell us a story through the creative use of mods and any notemods aren’t the main focus of the map.
 
-- **Best Modchart - TWEAKED!** Here? There? Where is the next note coming from?! This category includes maps that feature solid mapping AND alter the gameplay in mind-blowing ways through animation and manipulation of notes and obstacles.
+  Example Map: [modus - Superluminal](https://beatsaver.com/maps/358a7)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/358a7/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+
+- **Best Modchart** Here? There? Where is the next note coming from?! This category includes maps that feature solid mapping AND alter the gameplay in mind-blowing ways through animation and manipulation of notes and obstacles.
+
+  Example Map: [Camellia - GHOUL](https://beatsaver.com/maps/31809)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/31809/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 ### Lighting Categories
 
@@ -148,19 +196,27 @@ _Any categories that do not receive at least five qualified nominees will not be
 
 - **Best Vanilla Lights**: The Best Vanilla Lights use ONLY base game V1 and V2 lighting mechanics and not only perfectly represent the music, but also add that ‘WOW’ factor when playing.
 
+  Example Map: [Teminite & MDK - Space Invaders](https://beatsaver.com/maps/318da)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/318da/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+
 - **Best Vanilla+ Map**: This category highlights maps that make amazing use of the new enhanced V3 lighting system available when using the new Official Editor.
+
+  Example Map: [Aethoro - Spiritdance](https://beatsaver.com/maps/379bc)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/379bc/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Chroma Lights**: The Best Chroma Lighting category is full of any and all light shows that might make you drop the Full Combo to marvel at the beauty in the background using RGB color, precise component control, and Light ID.
 
+  Example Map: [Ludicin - Everlasting Eternity](https://beatsaver.com/maps/34e3b)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/34e3b/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+
 - **Best Chroma+ Lights**: Chroma+ adds environment enhancement to the overall chroma toolbox to create custom experiences that are out of this world.
+
+  Example Map: [ReeK & Asatsumei (ft. L4hee) - Deity Mode](https://beatsaver.com/maps/34a3d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/34a3d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 <br />
 
-## Frequently Asked Questions
+## Frequently Asked Questions [🔗](#faq) {$faq}
 
 - **I am a mapper. Can I nominate my own work for an award?**
 
-  In 2023, yes, you can nominate your own map for the appropriate category. You are limited to self-nominating ONE of your maps for a given category so be sure you are truly focusing on your best work. Self-nominations are not permitted for Mapper/Lighter of the Year. Rookie Mappers/Lighters are free to self nominate for Rookie Mapper/Lighter of the Year.
+  Yes, you can nominate your own map for the appropriate category. You are limited to self-nominating ONE of your maps for a given category so be sure you are truly focusing on your best work. Self-nominations are not permitted for Mapper/Lighter of the Year. Rookie Mappers/Lighters are free to self nominate for Rookie Mapper/Lighter of the Year.
 
 - **Who chooses the finalists in each category?**
 
@@ -174,9 +230,9 @@ _Any categories that do not receive at least five qualified nominees will not be
 
   No. In a practice that we began 2 years ago, even if a mapper has multiple maps deemed to be “finalist quality” by our screening team, they can only have ONE map represented in the five finalists selected for a category. Likewise, a map can only be a finalist for ONE category in a given section (see the list above for the four sections). So a map can’t be a finalist for both Best Dance Map AND Best Acc Map but could be a nominee for Best Acc Map and Best Ranked Map under 4 Stars, for example.
 
-- **What is the timeline for the 2023 awards?**
+- **What is the timeline for the 2024 awards?**
 
-  The eligibility period for maps and individuals is based on the date and time shown on BeatSaver. Hover over the “Uploaded” time to see the full UTC time stamp. Maps must have been released after December 1, 2022 at 00:00 UTC or before November 30, 2023 at 23:59 UTC. Beyond the nomination period, we expect finalist selection to occur in late December/early January with the awards show planned for late January/early February 2024.
+  The eligibility period for maps and individuals is based on the date and time shown on BeatSaver. Hover over the “Uploaded” time to see the full UTC time stamp. Maps must have been released after December 1, 2023 at 00:00 UTC or before November 30, 2024 at 23:59 UTC. Beyond the nomination period, we expect finalist selection to occur in late December/early January with the awards show planned for late January/early February 2025.
 
 - **Can I nominate whatever I want for a category?**
 
@@ -187,3 +243,5 @@ _Any categories that do not receive at least five qualified nominees will not be
   Yes, within reason. We know that you might nominate something in September and then a new map comes out in November that you also want to nominate. This is perfectly acceptable as long as multiple nominations don’t get spammy. At the end of the day there can only be five finalists in a given category, so especially if you are nominating late in the year we recommend that you nominate what you think is the BEST map for the category out of all the ones you love.
 
 > Have a question that isn’t listed here? Ask us in the [BeastSaber Discord server](https://discord.gg/VJZHUbt)!
+
+## [Go back to top](#)
