@@ -138,7 +138,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Best Dance Style Map**: With a blend of big arm swings, high movement, and a bit lower density, the best map in the “Dance” category gets players of all ages grooving to the beat and sweating up a storm.
 
-  Example Map: [Aethoro - Spiritdance](https://beatsaver.com/maps/379bc)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/379bc/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [ellis - After Hours](https://beatsaver.com/maps/35136)<br /><iframe class="iframe" src="https://beatsaver.com/maps/35136/embed" width="600" height="145" loading="lazy" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Tech Style Map**: With more angles than a dodecahedron, the best map in the “Tech” category bends the concept of parity to its will to create a challenging sight-read that retains great flow.
 
