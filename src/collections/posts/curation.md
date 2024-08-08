@@ -31,7 +31,7 @@ To follow a Curator you like, go to their BeatSaver profile page and click on th
 
 <br />
 
-## For Mappers
+## For Mappers <a href="#objective-issues" style="text-decoration:none;">🔗</a> {$objective-issues}
 
 While Curation decisions are in large part subjective, the following major playability issues (often referred to as Objective Issues) will bar a map from curation.
 
@@ -55,12 +55,8 @@ While Curation decisions are in large part subjective, the following major playa
 
 Maps with objective issues in the Curation Request Queue will be marked with an ❌ reaction and will not be looked at by Curators.
 
-> It should be noted that most of our Curators regularly keep an eye on the Latest feed on BeatSaver and will usually be able to find maps out in the wild.
-
-<br />
-
-<br />
-
 ## Have a map you’d like to suggest to our Curation team?
 
-Fill out our [Curation Request Form](https://forms.gle/ppkhbA9TG4GmN3jS7) and then track the status of your request [here](https://docs.google.com/spreadsheets/d/1IBZNJUae94FjJGMmnc94JsH3SN7iBufW-CzrU2zJPEk/edit#gid=773434791).
+While most of our Curators regularly keep up with the Latest Maps feed on BeatSaver, if after a few days your map (or someone else's map) hasn't gotten curated and you feel like it hasn't gotten the attention you think it deserves, you can submit the map as a curation request.
+
+Fill out our [Curation Request Form](https://forms.gle/ppkhbA9TG4GmN3jS7) and then track the status of your request [here](https://docs.google.com/spreadsheets/d/1IBZNJUae94FjJGMmnc94JsH3SN7iBufW-CzrU2zJPEk/edit#gid=773434791). Please review the Guide/FAQ there if you have questions.
