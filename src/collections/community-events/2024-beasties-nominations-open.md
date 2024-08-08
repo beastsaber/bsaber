@@ -1,7 +1,7 @@
 ---
 host: BeastSaber
 title: 2024 Beasties Nominations Open
-url: https://bsaber.com/the-beastsaber-mapping-awards
+url: /the-beastsaber-mapping-awards
 category: awards
 startDateTime: 2024-07-26T09:30:00-05:00
 useStartTime: false
