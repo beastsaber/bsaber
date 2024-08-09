@@ -3,6 +3,7 @@ title: Diamonds in the Rough
 section: articles
 category: event
 publish: 2024-05-17T17:43:00.000Z
+lastUpdated: 2024-08-09T12:00:00.000Z
 homepageText: DITR allows new mappers to pair up with an experienced mapper to
   learn how to make a high-quality beginner map!
 image: /static/uploads/posts/ditr/ditr6-square.jpg
@@ -176,7 +177,7 @@ _\*Click on each category to learn more_
 
 | Coach:                     | Novice:            | Status:        |
 | -------------------------- | ------------------ | -------------- |
-| August                     | DiplomatPig212     | Finished       |
+| August                     | DiplomatPig212     | Novice dropped |
 | ben208                     | professor_calculus | Finished       |
 | BlAck_vOid-1001            | SwellEquation36    | Finished       |
 | BrightNight                | Contradictions     | Finished       |
