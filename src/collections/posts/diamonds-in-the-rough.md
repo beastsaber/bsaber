@@ -17,7 +17,7 @@ The goal of this event is to match interested Verified mappers up with Novice ma
 
 > Stay tuned for the next event!
 
-Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](https://beatsaver.com/playlists/641464).
+Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](/playlists/ditr-6).
 
 **Check out who's participated previously!**
 \
@@ -177,7 +177,7 @@ _\*Click on each category to learn more_
 
 | Coach:                     | Novice:            | Status:        |
 | -------------------------- | ------------------ | -------------- |
-| August                     | DiplomatPig212     | Novice dropped |
+| August                     | DiplomatPig212     | Finished       |
 | ben208                     | professor_calculus | Finished       |
 | BlAck_vOid-1001            | SwellEquation36    | Finished       |
 | BrightNight                | Contradictions     | Finished       |

@@ -17,13 +17,16 @@
   <div class="content">
     <div class="card-container">
       <div class="card">
-        <a href="https://beatsaver.com/profile/4286182"
-          ><img src="/uploads/communities/smooth_slow_bomb-mariel-warnock.gif" alt="DITR" />
+        <a href="https://discord.gg/ArT4BTQ"
+          ><img
+            src="/uploads/communities/smooth_slow_bomb-mariel-warnock.gif"
+            alt="Beat Saber Mapping Server Logo"
+          />
         </a>
       </div>
     </div>
     <div class="uploader-container">
-      <a class="uploader" href="https://discord.gg/ArT4BTQ">Beat Saber Mapping Server</a>
+      The <a class="uploader" href="https://discord.gg/ArT4BTQ">Beat Saber Mapping Server</a>
       Presents
     </div>
     <div class="body">
@@ -32,6 +35,12 @@
         Diamonds in the Rough is an event for new mappers which matches them up with experienced
         coaches to create a multi-difficulty, curation-worthy map. Keep your eyes on these rookies
         in the future as their talent develops!
+      </p>
+      <p>
+        Learn more about this event and check out the participants and coaches <a
+          class="uploader"
+          href="/posts/diamonds-in-the-rough">here!</a
+        >
       </p>
     </div>
     <div class="zip-one">
@@ -91,24 +100,18 @@
 
   .card-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
     height: 200px;
     transform: scale(15%);
     margin-top: -5rem;
   }
   .card {
-    height: 750px;
+    height: 700px;
     background: rgba(0, 0, 0, 0);
     flex: 1;
-    width: 47rem;
-  }
-  .card:hover {
-    flex: 3;
-    background: rgba(12, 171, 195, 0);
+    width: 45rem;
   }
   .card img {
-    width: 100%;
+    width: 97%;
     height: 100%;
     object-fit: cover;
     border-radius: 25px;
@@ -143,6 +146,7 @@
 
   p {
     margin: 0.5rem 0.5rem 0;
+    text-align: center;
   }
   .zip-one {
     display: flex;
@@ -165,7 +169,7 @@
   }
   .zip:hover,
   .one:hover {
-    background-color: #925500;
+    background-color: #bc5834;
     text-decoration: none;
     color: white;
   }
@@ -188,7 +192,7 @@
     color: black;
   }
   .btn:hover {
-    background-color: #925500;
+    background-color: #bc5834;
     text-decoration: none;
     color: white;
   }
