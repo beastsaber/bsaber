@@ -54,6 +54,14 @@ figure {
     font-size: 1.1rem;
     min-width: 550px;
 }
+@media (max-width: 1100px) {
+  figure {
+    margin-bottom: 1rem;
+  }
+  .text {
+    min-width: 100%;
+  }
+}
 p {
   margin-bottom: 1rem;
 }
