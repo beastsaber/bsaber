@@ -38,6 +38,8 @@ showInPostListing: true
 </ul>
 <p>Submit your masterpieces to this form: <a href="https://bsmg.dev/summer24">https://bsmg.dev/summer24</a></p>
 <p><b>Additional Information:</b> <a href="https://bsmg.dev/summer24guidelines">https://bsmg.dev/summer24guidelines</a></p>
+</div>
+</div>
 
 <style>
 .container {
