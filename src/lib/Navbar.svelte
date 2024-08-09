@@ -91,7 +91,7 @@
           href: '/the-beastsaber-mapping-awards',
         },
         {
-          name: 'Voting',
+          name: 'Submission Form',
           href: 'https://mappingawards.saeraphinx.dev/',
         },
         {
