@@ -10,7 +10,7 @@
 <MetaHead
   title="Diamonds in the Rough - Vol. 6"
   description="Diamonds in the Rough is an event for new mappers which matches them up with experienced coaches to create a multi-difficulty, curation-worthy map. Keep your eyes on these rookies in the future as their talent develops!"
-  imageUrl="/uploads/posts/ditr/ditr6-square.png"
+  imageUrl="/uploads/posts/ditr/ditr6-square.jpg"
 />
 
 <section class="hero">
