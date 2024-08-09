@@ -47,7 +47,7 @@
   .links {
     color: white;
     font-family: $font-poppins;
-    font-size: 1.1rem;
+    font-size: 16px;
     line-height: 1.5;
   }
 
@@ -58,6 +58,6 @@
   }
 
   .logo {
-    height: 30px;
+    height: 25px;
   }
 </style>

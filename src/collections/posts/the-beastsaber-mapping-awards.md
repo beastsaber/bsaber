@@ -3,7 +3,7 @@ title: The BeastSaber Mapping Awards
 section: speciality
 category: event
 publish: 2024-02-01T00:00:00.000Z
-lastUpdated: 2024-07-26T00:00:00.000Z
+lastUpdated: 2024-08-08T12:00:00.000Z
 homepageText: The BeastSaber Mapping Awards dig deep into mapping theory and practices to highlight the maps that have incredible representation, emphasis, and flow to truly capture the feel of the song.
 image: /static/uploads/posts/beasties/beasties-medals.jpg
 showInPostListing: false
@@ -20,7 +20,7 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 <br />
 <h2>Submit Maps! 🏆</h2>
 
-> **[Click here to submit maps!](https://mappingawards.saeraphinx.dev/)** <br /> _Eligibility Period: December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC_ <br /> _Submissions Close: December 14, 2024_
+> **[Click here to submit maps!](https://mappingawards.saeraphinx.dev/)** <br /> _**Eligibility Period: December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC**_ <br /> _**Submissions Close: December 14, 2024**_
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
@@ -75,13 +75,13 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 
 <br />
 
-## What's Changing for 2024? [🔗](#whats-changing) {$whats-changing}
+## What's Changing for 2024? <a href="#whats-changing" style="text-decoration:none;">🔗</a> {$whats-changing}
 
 We’ve received a lot of constructive community feedback on the 2023 awards and already have a few tweaks planned for 2024! While most of the changes are actually internal and won't be seen as much on the public side, we do have the following external changes:
 
-- **We've revamped our nomination form!** We are trying to move away from Google Forms, and thanks to Saeraphinx, we have a [new form](https://mappingawards.saeraphinx.dev/) now available! You will be required to login with your [BeatLeader](https://beatleader.xyz) account in order to make your submissions. If you encounter any issues, please reach out and let us know in the [**BeastSaber Discord Server**](https://discord.gg/VJZHUbt) in the [#beasties-public](https://discord.com/channels/452928402203344908/1226010390190887012) channel.
+- **We've revamped our nomination form!** We are trying to move away from Google Forms, and thanks to Saeraphinx, we have a [new form](https://mappingawards.saeraphinx.dev/) now available! You will be required to login with your [BeatLeader](https://beatleader.xyz) or [BeatSaver](https://beatsaver.com) account in order to make your submissions. If you come across any issues, please reach out and let us know in the [**BeastSaber Discord Server**](https://discord.gg/VJZHUbt) in the [#beasties-public](https://discord.com/channels/452928402203344908/1226010390190887012) channel.
 
-  \*We will be adding the ability to login through BeatSaver soon!
+- 🆕 **Submit through BeatLeader's Leaderboards** Thanks to our friends over at BeatLeader, you can now submit eligible maps right from their leaderboard pages! Just click the BeastSaber logo on an eligible leaderboard page, select the category, and press nominate!
 
 - **2021 Winners Update** Due to previously unknown circumstances, the 2021 Rookie Lighter of the Year has been removed from the Winner's page to reflect that no one nominated (the previously noted winner or any runner up) was qualified to receive an award.
 - **Alternate Account Disclosure** To prevent future issues of alternate accounts winning awards where they should not have won awards, if you are nominated for an award under an alternate account, you are required to notify a BeastSaber Admin (either Helen, RateGyro, or TheCzar1994) to properly assess if the alternate account would conflict with winning an award in the category.
@@ -96,7 +96,7 @@ We’ve received a lot of constructive community feedback on the 2023 awards and
 <br />
 <br />
 
-## 2024 Beasties Categories [🔗](#categories) {$categories}
+## 2024 Beasties Categories <a href="#categories" style="text-decoration:none;">🔗</a> {$categories}
 
 We are always seeking and implementing feedback from mappers and the community over prior years on how we can improve our categories.
 \
@@ -120,7 +120,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [Knock2 - dashstar\*](https://beatsaver.com/maps/2f187)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/2f187/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-- **Best Non-Standard Game Mode Map**: This category celebrates the best of non-standard characteristics: Single Saber, No Arrows, and 360/90-Degree maps. _Maps must actually use the alt characteristic and not mods to simulate._
+- **Best Non-Standard Game Mode Map**: This category celebrates the best of non-standard characteristics: One Saber, No Arrows, and 360/90-Degree maps. _Maps must actually use the alt characteristic and not mods to simulate._
 
   Example Map: [JVKE - Golden Hour](https://beatsaver.com/maps/333d8)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/333d8/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
@@ -212,7 +212,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 <br />
 
-## Frequently Asked Questions [🔗](#faq) {$faq}
+## Frequently Asked Questions <a href="#faq" style="text-decoration:none;">🔗</a> {$faq}
 
 - **I am a mapper. Can I nominate my own work for an award?**
 

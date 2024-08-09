@@ -98,7 +98,7 @@
       id={keyPrefix + '-' + index}
     >
       <!-- href to be updated with path e.g. '/community-events/event.slug' -->
-      <a class="title" href={event.url}>
+      <a class="title" href={event.url} rel="external">
         {event.title ?? ''}
       </a>
       <div class="info-container">

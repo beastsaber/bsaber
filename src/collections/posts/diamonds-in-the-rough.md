@@ -3,6 +3,7 @@ title: Diamonds in the Rough
 section: articles
 category: event
 publish: 2024-05-17T17:43:00.000Z
+lastUpdated: 2024-08-09T12:00:00.000Z
 homepageText: DITR allows new mappers to pair up with an experienced mapper to
   learn how to make a high-quality beginner map!
 image: /static/uploads/posts/ditr/ditr6-square.jpg
@@ -14,27 +15,9 @@ linkToSpecialtyPage: speciality/diamonds-in-the-rough
 
 The goal of this event is to match interested Verified mappers up with Novice mappers in a "coaching" relationship to create one high-quality, curateable map with at least three difficulties. At the end of the event, the novice-made maps will be released as a pack on BeatSaver and featured on BeastSaber, showcasing up-and-coming "undiscovered" mapping talent!
 
-> 📢 **Apps are open from May 17th to May 31st**
+> Stay tuned for the next event!
 
-## What do I need to do to get started?
-
-There will be a lot of interest in this event and not everyone will get a spot.
-
-- **COACHES:** Complete the [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8) by May 31, 2024
-
-- **NOVICES:** Complete the [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8) by May 31, 2024
-
-**Important Dates:**
-
-- Coaching & Novice Apps Close: May 31, 2024
-
-- Pairings Announced: June 7, 2023
-
-- Event Start Date: June 8, 2024
-
-- Release Date: August 8, 2024 at 17:00 UTC
-
-Check out the playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036).
+Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](https://beatsaver.com/playlists/641464).
 
 **Check out who's participated previously!**
 \
@@ -186,6 +169,35 @@ _\*Click on each category to learn more_
 | Tocxx          | meoaww            | Finished       |
 | Undeceiver     | 23raining         | Finished       |
 | Yabje          | DieEneSchrodinger | Novice dropped |
+
+</details>
+
+<details>
+<summary><b>DITR 6 - Summer of 2024</b></summary>
+
+| Coach:                     | Novice:            | Status:        |
+| -------------------------- | ------------------ | -------------- |
+| August                     | DiplomatPig212     | Novice dropped |
+| ben208                     | professor_calculus | Finished       |
+| BlAck_vOid-1001            | SwellEquation36    | Finished       |
+| BrightNight                | Contradictions     | Finished       |
+| Cratornugget               | RZzach             | Finished       |
+| Cush                       | ZeCube             | Finished       |
+| DeeDee                     | Adomi              | Finished       |
+| GeneralDumbass             | MEGAMeetsmeh       | Finished       |
+| GojiCrafter                | Beetmapper         | Novice dropped |
+| Hexagonial                 | seonsaekmi         | Novice dropped |
+| Jevk                       | cloudberry         | Novice dropped |
+| jojobanana                 | GigaSky9746        | Finished       |
+| JRE_McNuggies              | Suzie Scum         | Finished       |
+| Kansas                     | ImChloe            | Finished       |
+| lemin.limez & OneSpookyBoi | watr               | Finished       |
+| MadChase                   | LunarByte          | Finished       |
+| officialMECH               | grizlor            | Finished       |
+| RaccoonVR                  | LiamSimpsRyuu      | Finished       |
+| RateGyro                   | spacky             | Finished       |
+| symphonic                  | Azaela             | Finished       |
+| Xhera                      | MarsTheMano        | Finished       |
 
 </details>
 
