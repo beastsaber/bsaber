@@ -1,5 +1,5 @@
 ---
-host: Beat Khana
+host: Student Saber Showdown
 title: Student Saber Showdown Season 2
 url: https://beatkhana.com/tournament/2147484281
 category: tournament
