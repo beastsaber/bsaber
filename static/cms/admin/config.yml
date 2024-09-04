@@ -311,6 +311,9 @@ collections:
       - label: Comfy Sabers
         field: host
         pattern: Comfy Sabers
+      - label: Student Saber Showdown
+        field: host
+        pattern: Student Saber Showdown
     sortable_fields: ['host', 'title']
     fields:
       - name: host
