@@ -270,6 +270,7 @@
   }
   .last-updated-time {
     color: $color-muted-text;
+    padding-right: 0.5rem;
   }
 
   $pfp-diameter: 128px;
