@@ -132,19 +132,28 @@
     </h1>
   {/if}
   <div class="meta-data-line">
-    <span>
-      {#if authors.length > 0}
-        <span class="author-information"
-          >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}</span
+    <div class="author">
+      <span>
+        {#if authors.length > 0}
+          <span class="author-information"
+            >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}<span
+              class="spacer"
+            >
+              |</span
+            ></span
+          >
+        {/if}
+      </span>
+    </div>
+    <div class="publish-update">
+      {#if lastUpdated}
+        <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
+      {:else}
+        <span class="publication-time"
+          ><span class="hide-on-small">Published on </span>{formatDate(publish)}</span
         >
-        |{/if}
-      <span class="publication-time"
-        ><span class="hide-on-small">Published on </span>{formatDate(publish)}</span
-      >
-    </span>
-    {#if lastUpdated}
-      <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
-    {/if}
+      {/if}
+    </div>
     <!-- ToDo: Put Post Category Tags here - might make a good component as they are used in three locations including this one -->
     <!-- <span class="category-labels"></span> -->
   </div>
@@ -224,6 +233,27 @@
     padding-bottom: 1rem;
     border-bottom: solid 3px $color-background-tertiary;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (max-width: 552px) {
+    .meta-data-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .author {
+      margin-bottom: 0.3rem;
+    }
+  }
+  @media (min-width: 553px) {
+    .spacer {
+      display: none;
+    }
+  }
+  .spacer {
+    padding-left: 1.5rem;
   }
   // Needs to be global so because it's rendered in with @html
   :global(a.post-person-link) {
@@ -231,21 +261,15 @@
   }
   .author-information {
     margin-right: 0.5rem;
+    padding-left: 0.5rem;
   }
   .publication-time {
     margin-left: 0.5rem;
+    padding-right: 0.5rem;
     color: $color-muted-text;
   }
   .last-updated-time {
     color: $color-muted-text;
-  }
-
-  .meta-data-line {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
   }
 
   $pfp-diameter: 128px;
@@ -291,10 +315,6 @@
     cursor: pointer;
   }
 
-  .credit-line {
-    margin-top: 1rem;
-  }
-
   .hide-on-small {
     display: none;
   }
@@ -323,10 +343,6 @@
 
     .hide-on-small {
       display: inline;
-    }
-
-    .meta-data-line {
-      display: block;
     }
   }
 
