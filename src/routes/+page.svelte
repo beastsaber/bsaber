@@ -52,26 +52,23 @@
   <!-- Search to be moved to Navbar later -->
   <Search />
 
-  <div class="motw-beasties">
-    <div class="motw">
-      {#if currentMapOfTheWeek != undefined}
-        <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
-      {/if}
+  <div class="beasties-banner">
+    <div class="left-side-beasties-banner">
+      <img src="/beastie-trophy.png" alt="Beasties Trophy" />
     </div>
-    <div class="beasties-banner">
-      <div class="left-side-beasties-banner">
-        <img src="/beastie-trophy.png" alt="Beasties Trophy" />
-      </div>
-      <div class="right-side-beasties-banner">
-        <h1>Beasties are Coming</h1>
-        <p>What maps deserve to win in this year's Beasties? Submit maps now!</p>
-        <div class="cta-row">
-          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
-          <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
-        </div>
+    <div class="right-side-beasties-banner">
+      <h1>Beasties are Coming</h1>
+      <p>What maps deserve to win in this year's Beasties? Submit maps now!</p>
+      <div class="cta-row">
+        <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
+        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
       </div>
     </div>
   </div>
+
+  {#if currentMapOfTheWeek != undefined}
+    <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
+  {/if}
 
   <Header
     text="Featured Packs"
@@ -171,49 +168,45 @@
 
   .beasties-banner {
     display: flex;
-    flex: 1;
     min-width: 23.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
 
-    .left-side-beasties-banner {
-      display: flex;
-      align-items: center;
-      img {
-        height: 9rem;
-      }
+  .left-side-beasties-banner {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    img {
+      height: 9rem;
     }
 
     .right-side-beasties-banner {
       flex-direction: column;
       justify-content: center;
-      padding: 1rem;
       width: 100%;
-
-      h1 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-        text-align: left;
-      }
-      p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-      }
-      .cta-row {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        .button-link {
-          gap: 1rem;
-          font-size: 1rem;
-          padding: 0.5rem 1rem;
-          background-color: $color-accent;
-          color: var(--button-primary-text);
-          border-radius: $rounding-small;
-          text-decoration: none;
-          transition: background-color 0.2s;
-          &:hover {
-            background-color: var(--button-primary-hover);
-          }
-        }
+    }
+  }
+  .cta-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    .button-link {
+      gap: 1rem;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: $color-accent;
+      color: var(--button-primary-text);
+      border-radius: $rounding-small;
+      text-decoration: none;
+      transition: background-color 0.2s;
+      &:hover {
+        background-color: var(--button-primary-hover);
       }
     }
   }
