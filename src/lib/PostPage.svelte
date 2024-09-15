@@ -148,9 +148,7 @@
       {#if lastUpdated}
         <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
       {:else}
-        <span class="publication-time"
-          ><span class="hide-on-small">Published on </span>{formatDate(publish)}</span
-        >
+        <span class="hide-on-small">Published on </span>{formatDate(publish)}
       {/if}
     </div>
     <!-- ToDo: Put Post Category Tags here - might make a good component as they are used in three locations including this one -->
@@ -242,35 +240,27 @@
       justify-content: center;
       gap: 0.5rem;
     }
-    .author {
-      margin-bottom: 0.3rem;
-    }
   }
   @media (min-width: 553px) {
     .spacer {
       display: none;
     }
   }
-  .spacer {
-    text-align: center;
-  }
-  // Needs to be global so because it's rendered in with @html
-  :global(a.post-person-link) {
-    color: $color-danger-red;
-  }
   .author-information {
     margin-left: 0.5rem;
   }
-  .publication-time {
-    margin-right: 0.5rem;
-    color: $color-muted-text;
-  }
-  .last-updated-time {
-    margin-right: 0.5rem;
-    color: $color-muted-text;
+  .spacer {
+    text-align: center;
   }
   .publish-update {
     text-align: right;
+    color: $color-muted-text;
+    margin-right: 0.5rem;
+  }
+
+  // Needs to be global so because it's rendered in with @html
+  :global(a.post-person-link) {
+    color: $color-danger-red;
   }
 
   $pfp-diameter: 128px;
@@ -337,9 +327,6 @@
         margin: 0;
         border-radius: 0 0 $rounding-large - 2px $rounding-large - 2px; // Ensures the backdrop filter covers the entire image
       }
-    }
-    .last-updated-time {
-      float: right;
     }
 
     .hide-on-small {
