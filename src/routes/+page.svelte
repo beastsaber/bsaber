@@ -168,11 +168,20 @@
 
   .beasties-banner {
     display: flex;
-    min-width: 23.5rem;
     text-align: center;
     justify-content: center;
     align-items: center;
     margin-top: 1.5rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 556px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
   }
 
   .left-side-beasties-banner {
