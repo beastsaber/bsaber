@@ -136,15 +136,14 @@
       <span>
         {#if authors.length > 0}
           <span class="author-information"
-            >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}<span
-              class="spacer"
-            >
-              |</span
-            ></span
-          >
+            >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}
+          </span>
         {/if}
       </span>
     </div>
+    {#if authors.length > 0}
+      <div class="spacer">|</div>
+    {/if}
     <div class="publish-update">
       {#if lastUpdated}
         <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
@@ -233,8 +232,8 @@
     padding-bottom: 1rem;
     border-bottom: solid 3px $color-background-tertiary;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   @media (max-width: 552px) {
     .meta-data-line {
@@ -253,24 +252,25 @@
     }
   }
   .spacer {
-    padding-left: 1.5rem;
+    text-align: center;
   }
   // Needs to be global so because it's rendered in with @html
   :global(a.post-person-link) {
     color: $color-danger-red;
   }
   .author-information {
-    margin-right: 0.5rem;
-    padding-left: 0.5rem;
+    margin-left: 0.5rem;
   }
   .publication-time {
-    margin-left: 0.5rem;
-    padding-right: 0.5rem;
+    margin-right: 0.5rem;
     color: $color-muted-text;
   }
   .last-updated-time {
+    margin-right: 0.5rem;
     color: $color-muted-text;
-    padding-right: 0.5rem;
+  }
+  .publish-update {
+    text-align: right;
   }
 
   $pfp-diameter: 128px;
