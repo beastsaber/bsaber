@@ -178,6 +178,8 @@
   }
   .motw-container {
     position: relative;
+    margin-top: 3rem;
+    width: 100%;
     overflow: hidden;
     box-shadow: 0px 3px 3px black;
     border-radius: 12px;
