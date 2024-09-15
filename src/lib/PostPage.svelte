@@ -132,19 +132,25 @@
     </h1>
   {/if}
   <div class="meta-data-line">
-    <span>
-      {#if authors.length > 0}
-        <span class="author-information"
-          >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}</span
-        >
-        |{/if}
-      <span class="publication-time"
-        ><span class="hide-on-small">Published on </span>{formatDate(publish)}</span
-      >
-    </span>
-    {#if lastUpdated}
-      <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
+    <div class="author">
+      <span>
+        {#if authors.length > 0}
+          <span class="author-information"
+            >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}
+          </span>
+        {/if}
+      </span>
+    </div>
+    {#if authors.length > 0}
+      <div class="spacer">|</div>
     {/if}
+    <div class="publish-update">
+      {#if lastUpdated}
+        <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
+      {:else}
+        <span class="hide-on-small">Published on </span>{formatDate(publish)}
+      {/if}
+    </div>
     <!-- ToDo: Put Post Category Tags here - might make a good component as they are used in three locations including this one -->
     <!-- <span class="category-labels"></span> -->
   </div>
@@ -224,28 +230,37 @@
     padding-bottom: 1rem;
     border-bottom: solid 3px $color-background-tertiary;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
+  @media (max-width: 552px) {
+    .meta-data-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+  }
+  @media (min-width: 553px) {
+    .spacer {
+      display: none;
+    }
+  }
+  .author-information {
+    margin-left: 0.5rem;
+  }
+  .spacer {
+    text-align: center;
+  }
+  .publish-update {
+    text-align: right;
+    color: $color-muted-text;
+    margin-right: 0.5rem;
+  }
+
   // Needs to be global so because it's rendered in with @html
   :global(a.post-person-link) {
     color: $color-danger-red;
-  }
-  .author-information {
-    margin-right: 0.5rem;
-  }
-  .publication-time {
-    margin-left: 0.5rem;
-    color: $color-muted-text;
-  }
-  .last-updated-time {
-    color: $color-muted-text;
-  }
-
-  .meta-data-line {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
   }
 
   $pfp-diameter: 128px;
@@ -291,10 +306,6 @@
     cursor: pointer;
   }
 
-  .credit-line {
-    margin-top: 1rem;
-  }
-
   .hide-on-small {
     display: none;
   }
@@ -317,16 +328,9 @@
         border-radius: 0 0 $rounding-large - 2px $rounding-large - 2px; // Ensures the backdrop filter covers the entire image
       }
     }
-    .last-updated-time {
-      float: right;
-    }
 
     .hide-on-small {
       display: inline;
-    }
-
-    .meta-data-line {
-      display: block;
     }
   }
 
