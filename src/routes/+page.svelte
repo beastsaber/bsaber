@@ -61,7 +61,12 @@
       <p>What maps deserve to win in this year's Beasties? Submit maps now!</p>
       <div class="cta-row">
         <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
-        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
+        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a> |
+        <a
+          href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
+          class="text-link"
+          title="External Japanese Guide">もっと読む</a
+        >
       </div>
     </div>
   </div>
