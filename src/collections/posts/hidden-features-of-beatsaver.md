@@ -104,4 +104,4 @@ If you ever wondered where all the bot maps are that people talk about, then you
 
 # Any More Features
 
-These are the hidden features that I have learned about over the last year. Did I miss anything? Do let us know on the [BeastSaber Discord](https://discord.gg/VJZHUbt)!
+These are the hidden features that I have learned about over the last year. Did I miss anything? Do let us know on the [BeastSaber Discord](https://discord.gg/5VaEjFeuny)!

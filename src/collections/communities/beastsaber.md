@@ -19,7 +19,7 @@ socials:
   - name: GitHub
     url: https://github.com/beastsaber/bsaber
   - name: Discord
-    url: https://discord.gg/VJZHUbt
+    url: https://discord.gg/5VaEjFeuny
 languages:
   - en
 ---

@@ -76,7 +76,7 @@ Note the following when it comes to those:
 
 ## Contributing
 
-We are available for question, support and discussion on our [Discord server](https://discord.gg/VJZHUbt).
+We are available for question, support and discussion on our [Discord server](https://discord.gg/5VaEjFeuny).
 
 We would hate for you to spend valuable time on something that we end up not using. Here is some information on how to increase the likelihood of us merging your changes:
 
