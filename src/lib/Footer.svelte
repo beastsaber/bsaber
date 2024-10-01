@@ -8,7 +8,7 @@
     </div>
     <div class="links-container">
       <ul>
-        <li><a class="links" href="https://discord.gg/VJZHUbt" target="_blank">Discord</a></li>
+        <li><a class="links" href="https://discord.gg/5VaEjFeuny" target="_blank">Discord</a></li>
         <li>
           <a class="links" href="https://www.patreon.com/BeastSaberNews" target="_blank">Patreon</a>
         </li>

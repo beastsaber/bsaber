@@ -14,7 +14,7 @@ showInPostListing: true
 
 Do you enjoy writing? Are you "in the know" with cool things going on around the community? Do you know someone in the community who has an interesting story to tell? We'd love to have you write about it on our site!
 
-Join our [Discord server](https://discord.gg/VJZHUbt) and reach out to [TheCzar1994](https://discord.com/users/794381249271300136)!
+Join our [Discord server](https://discord.gg/5VaEjFeuny) and reach out to [TheCzar1994](https://discord.com/users/794381249271300136)!
 
 Don't have a Discord? We'd strongly recommend getting one so you can join in on conversations with the rest of the team, but you can also reach out on [Twitter](https://twitter.com/BeastSaberNews) or [email us](mailto:beastsaber10@gmail.com).
 
@@ -39,8 +39,8 @@ We understand that a commitment to the team might be a little intimidating. If y
 
 **Do I get anything for participating?**
 
-Like most things in the custom Beat Saber community, the time here is volunteer. We are trying to come up with more benefits for those that write for us though! Currently, you'll have a small "About the Author" section at the bottom of articles you write where you can promote your social media accounts and tell people about yourself! We're also working on Author Profiles (currently in a concept stage) which would likely have customizable features specific to you! If you're in our [Discord server](https://discord.gg/VJZHUbt), you'll also get an "Author" role!
+Like most things in the custom Beat Saber community, the time here is volunteer. We are trying to come up with more benefits for those that write for us though! Currently, you'll have a small "About the Author" section at the bottom of articles you write where you can promote your social media accounts and tell people about yourself! We're also working on Author Profiles (currently in a concept stage) which would likely have customizable features specific to you! If you're in our [Discord server](https://discord.gg/5VaEjFeuny), you'll also get an "Author" role!
 
 **Got any other questions?**
 
-Reach out either on [Discord](https://discord.gg/VJZHUbt), [Twitter](https://twitter.com/BeastSaberNews), or [email](mailto:beastsaber10@gmail.com)!
+Reach out either on [Discord](https://discord.gg/5VaEjFeuny), [Twitter](https://twitter.com/BeastSaberNews), or [email](mailto:beastsaber10@gmail.com)!
