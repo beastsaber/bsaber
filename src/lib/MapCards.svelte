@@ -12,6 +12,7 @@
   import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
   import { audioPlayer } from '$lib/audio-player'
   import { beatSaverClientFactory } from './beatsaver-client'
+  import CopyBsr from './CopyBSR.svelte'
 
   export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
     'FIRST_PUBLISHED'
@@ -112,6 +113,7 @@
             <div class="tag-row-container">
               <Tags tags={map.tags} />
               <div class="map-preview">
+                <CopyBsr mapId={map.id} />
                 <MapPreview mapId={map.id} {setPreviewKey} />
               </div>
             </div>
