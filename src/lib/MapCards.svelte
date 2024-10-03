@@ -178,7 +178,7 @@
 
     .map-preview {
       display: flex;
-      gap: 0.75rem;
+      gap: 1rem;
       align-items: center;
       opacity: 0;
       transition: opacity $transition-long;

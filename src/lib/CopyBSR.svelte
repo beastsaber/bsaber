@@ -25,21 +25,30 @@
         console.error('Failed to copy BSR:', err)
       })
   }
+  function hideTooltip() {
+    showTooltip = false
+    clearTimeout(tooltipTimeout)
+  }
 
   onMount(() => {
-    return () => {
-      clearTimeout(tooltipTimeout)
-    }
+    clearTimeout(tooltipTimeout)
   })
 </script>
 
 <div class="position-ancestor">
-  <button on:click={copyBSR} title="Copy BSR" class="copy-bsr" style="font-size: {fontSize};">
+  <button
+    on:click={copyBSR}
+    on:mouseout={hideTooltip}
+    on:blur={hideTooltip}
+    title="Copy BSR"
+    class="copy-bsr"
+    style="font-size: {fontSize};"
+  >
     <Fa icon={faTwitch} />
   </button>
 
   {#if showTooltip}
-    <div class="tooltip" in:fade={{ duration: 300 }} out:fade={{ duration: 300 }}>!bsr Copied</div>
+    <div class="tooltip" out:fade={{ duration: 300 }}>!bsr Copied</div>
   {/if}
 </div>
 
