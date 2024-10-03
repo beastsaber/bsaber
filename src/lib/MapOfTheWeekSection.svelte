@@ -119,13 +119,7 @@
               </button>
             {/if}
             <div class="interactive-buttons">
-              <CopyBsr
-                mapId={mapOfTheWeek.map.id}
-                tooltipLeft="12%"
-                tooltipTop="-33px"
-                marginRight="0"
-                marginTop="1.5px"
-              />
+              <CopyBsr mapId={mapOfTheWeek.map.id} />
               <ZipDownloadButton downloadURL={mapOfTheWeek.map.versions[0].downloadURL} />
               <OneClickButton mapId={mapOfTheWeek.map.id} />
             </div>
