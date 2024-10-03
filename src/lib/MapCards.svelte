@@ -12,6 +12,7 @@
   import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
   import { audioPlayer } from '$lib/audio-player'
   import { beatSaverClientFactory } from './beatsaver-client'
+  import CopyBsr from './CopyBSR.svelte'
 
   export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
     'FIRST_PUBLISHED'
@@ -111,13 +112,14 @@
             </div>
             <div class="tag-row-container">
               <Tags tags={map.tags} />
-              <div class="map-preview">
+              <div class="interactive-buttons">
+                <CopyBsr mapId={map.id} />
                 <MapPreview mapId={map.id} {setPreviewKey} />
               </div>
             </div>
             <div class="last-row-container">
               <Difficulties diffs={map.versions[0].diffs} />
-              <div class="download-button-container">
+              <div class="interactive-buttons">
                 <ZipDownloadButton downloadURL={map.versions[0].downloadURL} />
                 <OneClickDownloadButton mapId={map.id} />
               </div>
@@ -166,21 +168,14 @@
     transition: background-position $transition-long;
     overflow: hidden;
 
-    .download-button-container {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      opacity: 0;
-      transition: opacity $transition-long;
-    }
-
-    .map-preview {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      opacity: 0;
+    .interactive-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 20px);
+      gap: 1rem;
+      justify-items: center;
       transition: opacity $transition-long;
       margin-left: auto;
+      opacity: 0;
     }
 
     &:hover {
@@ -190,12 +185,8 @@
         background-position-x: 100%;
       }
 
-      .download-button-container {
-        opacity: 100%;
-      }
-
-      .map-preview {
-        opacity: 100%;
+      .interactive-buttons {
+        opacity: 1;
       }
     }
 
@@ -278,17 +269,12 @@
         margin-bottom: 0.25rem;
       }
 
-      .last-row-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-      }
-
+      .last-row-container,
       .tag-row-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
       }
     }
   }
