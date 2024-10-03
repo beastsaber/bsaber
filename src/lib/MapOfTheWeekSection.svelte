@@ -4,6 +4,7 @@
   import Header from './Header.svelte'
   import OneClickButton from './OneClickDownloadButton.svelte'
   import ZipDownloadButton from './ZipDownloadButton.svelte'
+  import CopyBsr from './CopyBSR.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
   import { marked } from 'marked'
@@ -117,10 +118,15 @@
                 Watch the showcase
               </button>
             {/if}
-            <div class="zip-download-button-container">
+            <div class="interactive-buttons">
+              <CopyBsr
+                mapId={mapOfTheWeek.map.id}
+                tooltipLeft="12%"
+                tooltipTop="-33px"
+                marginRight="0"
+                marginTop="1.5px"
+              />
               <ZipDownloadButton downloadURL={mapOfTheWeek.map.versions[0].downloadURL} />
-            </div>
-            <div class="one-click-download-button-container">
               <OneClickButton mapId={mapOfTheWeek.map.id} />
             </div>
           </div>
@@ -293,15 +299,12 @@
     text-shadow: $color-background-primary 1px 0 10px;
   }
 
-  .one-click-download-button-container {
+  .interactive-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
     position: absolute;
     bottom: 2rem;
     right: 1.5rem;
-  }
-
-  .zip-download-button-container {
-    position: absolute;
-    bottom: 2rem;
-    right: 3.8rem;
   }
 </style>
