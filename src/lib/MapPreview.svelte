@@ -28,7 +28,7 @@
     display: none;
     color: $color-text-secondary;
     transition: color $transition-short;
-    margin-right: 3px;
+    margin-right: 2px;
     transition: 0.6s ease;
 
     &:hover {

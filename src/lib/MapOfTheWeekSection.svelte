@@ -294,9 +294,9 @@
   }
 
   .interactive-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 20px);
+    gap: 1rem;
     position: absolute;
     bottom: 2rem;
     right: 1.5rem;
