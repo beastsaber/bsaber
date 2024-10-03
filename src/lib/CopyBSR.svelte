@@ -7,6 +7,15 @@
   export let fontSize: string = '1rem'
   export let mapId: string
 
+  // Adding props to allow these to be customizable for the MOTW Section
+  export let tooltipTop: string = '32px'
+  export let tooltipLeft: string = '92%'
+  export let tooltipTransform: string = 'translateX(-50%)'
+
+  // Margins because it looks off on the MapCards without it
+  export let marginRight: string = '4.3px'
+  export let marginTop: string = '3px'
+
   let showTooltip = false
   let tooltipTimeout: NodeJS.Timeout
 
@@ -33,12 +42,24 @@
   })
 </script>
 
-<button on:click={copyBSR} title="Copy BSR" class="copy-bsr" style="font-size: {fontSize}">
+<button
+  on:click={copyBSR}
+  title="Copy BSR"
+  class="copy-bsr"
+  style="font-size: {fontSize}; margin-right: {marginRight}; margin-top: {marginTop}"
+>
   <Fa icon={faTwitch} />
 </button>
 
 {#if showTooltip}
-  <div class="tooltip" in:fade={{ duration: 300 }} out:fade={{ duration: 300 }}>!bsr Copied</div>
+  <div
+    class="tooltip"
+    in:fade={{ duration: 300 }}
+    out:fade={{ duration: 300 }}
+    style="top: {tooltipTop}; left: {tooltipLeft}; transform: {tooltipTransform}"
+  >
+    !bsr Copied
+  </div>
 {/if}
 
 <style lang="scss">
@@ -52,8 +73,6 @@
     transition: color $transition-short, transform 0.3s ease;
     padding: 0;
     font: inherit;
-    margin-right: 4.3px; // I'm sure it's just an optical illusion but it looks off without this margin
-    margin-top: 3px; // Same here
 
     &:hover {
       color: $color-text-primary;
@@ -76,11 +95,7 @@
     border-radius: 4px;
     font-size: 0.8rem;
     opacity: 1;
-    top: 0;
-    left: 92%;
-    transform: translateX(-50%);
-    margin-top: 32px;
     text-align: center;
-    text-wrap: nowrap;
+    white-space: nowrap;
   }
 </style>
