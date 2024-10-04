@@ -13,16 +13,18 @@
   import { audioPlayer } from '$lib/audio-player'
   import { beatSaverClientFactory } from './beatsaver-client'
   import CopyBsr from './CopyBSR.svelte'
+  import { slide } from 'svelte/transition' // Import the slide transition
 
   export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
     'FIRST_PUBLISHED'
   export let verified: boolean | undefined = undefined
-  export let maxCards: number | undefined = undefined // max amount of cards to show
   export let playlistId: number | undefined = undefined
   export let forceColumnCount: number | undefined = undefined
+  export let loadMoreEnabled: boolean = false // New prop to control "Load More" button
+  export let fixedCount: number = 50 // Default fixed number of cards to show. Should account for any playlist pages
 
   let maps: Beatmap[] = []
-
+  let visibleCount = loadMoreEnabled ? 8 : fixedCount // Use fixed count if loadMoreEnabled is false
   let previewKey: string | null = null
 
   const setPreviewKey = (key: string | null) => (previewKey = key)
@@ -39,7 +41,7 @@
   } else {
     path = `/maps/latest?sort=${sortOrder}${
       verified !== undefined ? `&verified=${verified}` : ''
-    }&pageSize=${maxCards ?? 8}`
+    }&pageSize=100` // Maxes out at 100
   }
 
   async function getMaps() {
@@ -49,6 +51,10 @@
     } else {
       maps = await response.json().then((json) => json['docs'] as Beatmap[])
     }
+  }
+
+  function loadMore() {
+    visibleCount += 8 // Load 8 more cards when clicking "Load More"
   }
 
   // Having it in a class is a bit trickier to handle. So we're pulling it out there.
@@ -74,8 +80,9 @@
   {/if}
 
   {#if maps.length !== 0}
-    {#each maps as map}
-      <div class="card-wrapper">
+    {#each maps.slice(0, visibleCount) as map (map.id)}
+      <div class="card-wrapper" transition:slide={{ duration: 300 }}>
+        <!-- Apply slide transition here -->
         <div class="card">
           <div class="image-container">
             <img
@@ -84,7 +91,6 @@
               }.jpg`}
               alt={map.name}
             />
-
             <div
               class="button-overlay"
               class:force-show={$playingId === map.id}
@@ -129,11 +135,18 @@
       </div>
     {/each}
   {:else}
-    {#each Array(maxCards ?? 8) as _}
+    {#each Array(8) as _}
       <div class="card-wrapper loading" />
     {/each}
   {/if}
 </div>
+
+<!-- Conditionally show "Load More" button if loadMoreEnabled is true -->
+{#if loadMoreEnabled && visibleCount < maps.length}
+  <div class="load-more-container">
+    <a href="#" on:click|preventDefault={loadMore} class="load-more">Show More</a>
+  </div>
+{/if}
 
 <style lang="scss">
   @import 'src/scss/variables';
@@ -145,6 +158,7 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 1.25rem;
     width: 100%;
+    transition: all 0.5s ease;
 
     @media (min-width: 992px) {
       grid-template-columns: repeat(2, 1fr);
@@ -155,6 +169,17 @@
   // Don't touch these two
   $background-size: 100% + $gradient-coverage;
   $gradient-start: percentage(100% / $background-size);
+
+  .load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .load-more {
+    color: #e95d4e;
+    cursor: pointer;
+  }
 
   .card-wrapper {
     background: linear-gradient(

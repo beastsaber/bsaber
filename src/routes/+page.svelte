@@ -99,7 +99,7 @@
     }/?order=Curated&curated=true`}
     linkText="See all curated maps"
   />
-  <MapCards sortOrder="CURATED" />
+  <MapCards sortOrder="CURATED" loadMoreEnabled={true} />
 
   <Header
     text="Recent Maps by Verified Mappers"
@@ -107,7 +107,7 @@
     linkUrl={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/?verified=true`}
     linkText="See all maps by verified mappers"
   />
-  <MapCards verified={true} />
+  <MapCards verified={true} loadMoreEnabled={true} />
 
   <Header
     text="Community Events"
