@@ -176,8 +176,15 @@
   }
 
   .load-more {
-    color: #e95d4e;
-    cursor: pointer;
+    color: $color-danger-red;
+    padding: 10px 95px;
+    border-radius: $rounding-large;
+    transition: background-color $transition-long;
+
+    &:hover {
+      background-color: $color-background-secondary;
+      border-radius: $rounding-large;
+    }
   }
 
   .card-wrapper {
