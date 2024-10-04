@@ -13,7 +13,7 @@
   import { audioPlayer } from '$lib/audio-player'
   import { beatSaverClientFactory } from './beatsaver-client'
   import CopyBsr from './CopyBSR.svelte'
-  import { slide } from 'svelte/transition' // Import the slide transition
+  import { slide } from 'svelte/transition'
 
   export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
     'FIRST_PUBLISHED'
@@ -82,7 +82,6 @@
   {#if maps.length !== 0}
     {#each maps.slice(0, visibleCount) as map (map.id)}
       <div class="card-wrapper" transition:slide={{ duration: 300 }}>
-        <!-- Apply slide transition here -->
         <div class="card">
           <div class="image-container">
             <img
