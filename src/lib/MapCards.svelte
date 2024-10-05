@@ -143,7 +143,7 @@
 <!-- Conditionally show "Load More" button if loadMoreEnabled is true -->
 {#if loadMoreEnabled && visibleCount < maps.length}
   <div class="load-more-container">
-    <a href="#" on:click|preventDefault={loadMore} class="load-more">Show More</a>
+    <button on:click|preventDefault={loadMore} class="load-more">Show More</button>
   </div>
 {/if}
 
@@ -157,7 +157,6 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 1.25rem;
     width: 100%;
-    transition: all 0.5s ease;
 
     @media (min-width: 992px) {
       grid-template-columns: repeat(2, 1fr);
@@ -176,14 +175,16 @@
   }
 
   .load-more {
+    background-color: $color-background-secondary;
+    border: none;
     color: $color-danger-red;
-    padding: 10px 95px;
+    padding: 10px 40px;
     border-radius: $rounding-large;
     transition: background-color $transition-long;
+    cursor: pointer;
 
     &:hover {
-      background-color: $color-background-secondary;
-      border-radius: $rounding-large;
+      text-decoration: underline;
     }
   }
 
