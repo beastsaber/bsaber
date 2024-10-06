@@ -36,6 +36,7 @@
 
   .uploader {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     align-items: center;
 
@@ -43,6 +44,7 @@
       display: flex;
       gap: 0.5rem;
       align-items: center;
+      overflow-wrap: anywhere;
     }
 
     img {
