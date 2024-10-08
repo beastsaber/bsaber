@@ -1,3 +1,11 @@
+<script lang="ts">
+  import Fa from 'svelte-fa'
+  import { faDiscord } from '@fortawesome/free-brands-svg-icons'
+  import { faPatreon } from '@fortawesome/free-brands-svg-icons'
+  import { faYoutube } from '@fortawesome/free-brands-svg-icons'
+  import { faXTwitter } from '@fortawesome/free-brands-svg-icons'
+</script>
+
 <footer>
   <hr />
   <div class="footer-content">
@@ -8,14 +16,29 @@
     </div>
     <div class="links-container">
       <ul>
-        <li><a class="links" href="https://discord.gg/5VaEjFeuny" target="_blank">Discord</a></li>
         <li>
-          <a class="links" href="https://www.patreon.com/BeastSaberNews" target="_blank">Patreon</a>
+          <Fa icon={faDiscord} />
+          <a class="links" href="https://discord.gg/5VaEjFeuny" target="_blank">&nbsp;Discord</a>
         </li>
         <li>
-          <a class="links" href="https://youtube.com/@BeastSaberNews" target="_blank">YouTube</a>
+          <Fa icon={faPatreon} />
+          <a class="links" href="https://www.patreon.com/BeastSaberNews" target="_blank"
+            >&nbsp;Patreon</a
+          >
         </li>
-        <li><a class="links" href="https://x.com/BeastSaberNews" target="_blank">X/Twitter</a></li>
+        <li>
+          <Fa icon={faYoutube} />
+          <a class="links" href="https://youtube.com/@BeastSaberNews" target="_blank"
+            >&nbsp;YouTube</a
+          >
+        </li>
+        <li>
+          <Fa icon={faXTwitter} /><a
+            class="links"
+            href="https://x.com/BeastSaberNews"
+            target="_blank">&nbsp;Twitter</a
+          >
+        </li>
       </ul>
     </div>
   </div>
@@ -31,7 +54,7 @@
   .footer-content {
     position: relative;
     text-align: center;
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 1.5rem 0 0.5rem 0;
   }
 
   hr {
