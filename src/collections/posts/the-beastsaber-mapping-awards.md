@@ -18,9 +18,21 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 <br />
 <p>Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.</p>
 <br />
-<h2>Submit Maps! 🏆</h2>
 
-> **[Click here to submit maps!](https://mappingawards.saeraphinx.dev/)** <br /> _**Eligibility Period: December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC**_ <br /> _**Submissions Close: December 14, 2024**_
+<div class="cta">
+<h3>Submissions are currently open!</h3>
+<div class="buttons">
+  <a
+    class="btn"
+    href="https://mappingawards.saeraphinx.dev/">CLICK HERE TO SUBMIT MAPS! 🏆</a>
+</div>
+<br />
+
+\* **Eligibility Period:** December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC
+
+\* **Submissions Close:** December 14, 2024
+
+</div>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
@@ -63,6 +75,31 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
     .iframe {
       display: none;
     }
+  }
+
+  .cta {
+    border-radius: 5px;
+    padding: 13px;
+    box-shadow: inset 0 0 13px rgba(71, 71, 71, 1);
+  }
+  .buttons {
+    display: grid;
+    gap: 0.3rem;
+    justify-content: center;
+  }
+  .btn {
+    padding: 10px 40px 10px 40px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    font-weight: bolder;
+    background-color: #454088;
+    color: white;
+  }
+  .btn:hover {
+    background-color: #332f63;
+    text-decoration: none;
   }
 </style>
 <br />
