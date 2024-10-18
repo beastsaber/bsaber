@@ -5,6 +5,6 @@ url: /the-beastsaber-mapping-awards
 category: awards
 startDateTime: 2024-07-26T09:30:00-05:00
 useStartTime: false
-endDateTime: 2024-11-30T00:00:00-06:00
+endDateTime: 2024-12-14T00:00:00-06:00
 useEndTime: false
 ---
