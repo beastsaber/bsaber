@@ -37,6 +37,29 @@
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
   const maxCommunityEventsCards = 6
+
+  if (typeof document !== 'undefined') {
+    const countdownDate = new Date('December 15, 2024 00:00:00').getTime()
+    const countdownFunction = setInterval(function () {
+      const now = new Date().getTime()
+      const timeLeft = countdownDate - now
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
+      let displayTime
+      if (days >= 1) {
+        displayTime = days + 'd ' + hours + 'h ' + minutes + 'm'
+      } else {
+        displayTime = hours + 'h ' + minutes + 'm ' + seconds + 's'
+      }
+      document.getElementById('countdown').innerHTML = displayTime
+      if (timeLeft < 0) {
+        clearInterval(countdownFunction)
+        document.getElementById('countdown').innerHTML = 'Submissions Closed!'
+      }
+    }, 1000)
+  }
 </script>
 
 <MetaHead />
@@ -53,20 +76,25 @@
   <Search />
 
   <div class="beasties-banner">
-    <div class="left-side-beasties-banner">
-      <img src="/beastie-trophy.png" alt="Beasties Trophy" />
-    </div>
-    <div class="right-side-beasties-banner">
-      <h1>Beasties are Coming</h1>
-      <p>What maps deserve to win in this year's Beasties? Submit maps now!</p>
-      <div class="cta-row">
-        <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
-        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a> |
-        <a
-          href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
-          class="text-link"
-          title="External Japanese Guide">もっと読む</a
-        >
+    <div class="beasties-banner-inner">
+      <div class="left-side-beasties-banner">
+        <img src="/beastie-trophy.png" alt="Beasties Trophy" />
+      </div>
+      <div class="right-side-beasties-banner">
+        <h1>Beasties are Coming</h1>
+        <h3 class="BeastiesTimerContainer" id="BeastiesTimer">
+          Time left to submit maps: <span id="countdown">Thinking...</span>
+        </h3>
+        <div class="cta-row">
+          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
+          <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
+          <span class="separater"> | </span>
+          <a
+            href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
+            class="text-link"
+            title="External Japanese Guide">もっと読む</a
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -173,10 +201,21 @@
 
   .beasties-banner {
     display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: -13px 0 -13px 0;
+  }
+  .beasties-banner-inner {
+    border-radius: $rounding-large;
+    padding: 13px;
+    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     margin-top: 1.5rem;
+    width: max-content;
 
     h1 {
       font-size: 2.5rem;
@@ -186,6 +225,15 @@
       h1 {
         font-size: 1.5rem;
       }
+    }
+  }
+
+  .BeastiesTimerContainer {
+    color: $color-danger-red;
+  }
+  .separater {
+    @media (max-width: 498px) {
+      display: none;
     }
   }
 
@@ -205,23 +253,30 @@
   }
   .cta-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
     text-align: center;
     justify-content: center;
     margin-top: 0.5rem;
+    color: $color-danger-red;
+    font-weight: bold;
+
     .button-link {
       gap: 1rem;
       font-size: 1rem;
       padding: 0.5rem 1rem;
-      background-color: $color-accent;
-      color: var(--button-primary-text);
       border-radius: $rounding-small;
       text-decoration: none;
-      transition: background-color 0.2s;
-      &:hover {
-        background-color: var(--button-primary-hover);
-      }
+      background-color: $color-danger-red;
+      color: white;
+      transition: background-color ease 0.2s;
+    }
+    .button-link:hover {
+      background-color: $color-background-primary;
+    }
+    a {
+      color: $color-danger-red;
     }
   }
 </style>
