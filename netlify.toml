@@ -2,13 +2,13 @@
   targetPort = 3000
 
 [[redirects]]
-  from = "/cms/*"
+  from = "/cms/admin/*"
   to = "cms/admin/:splat"
   force = true
   status = 200
   conditions = {Role = ["admin"]}
 [[redirects]]
-  from = "/cms/*"
+  from = "/cms/motw/*"
   to = "/cms/motw/:splat"
   force = true
   status = 200
