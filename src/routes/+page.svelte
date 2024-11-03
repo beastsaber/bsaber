@@ -76,25 +76,23 @@
   <Search />
 
   <div class="beasties-banner">
-    <div class="beasties-banner-inner">
-      <div class="left-side-beasties-banner">
-        <img src="/beastie-trophy.png" alt="Beasties Trophy" />
-      </div>
-      <div class="right-side-beasties-banner">
-        <h1>Beasties are Coming</h1>
-        <h3 class="BeastiesTimerContainer" id="BeastiesTimer">
-          Time left to submit maps: <span id="countdown">Calculating...</span>
-        </h3>
-        <div class="cta-row">
-          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
-          <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
-          <span class="separater"> | </span>
-          <a
-            href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
-            class="text-link"
-            title="External Japanese Guide">もっと読む</a
-          >
-        </div>
+    <div class="left-side-beasties-banner">
+      <img src="/beastie-trophy.png" alt="Beasties Trophy" />
+    </div>
+    <div class="right-side-beasties-banner">
+      <h1>Beasties are Coming</h1>
+      <h3 class="BeastiesTimerContainer" id="BeastiesTimer">
+        Time left to submit maps: <span id="countdown">Calculating...</span>
+      </h3>
+      <div class="cta-row">
+        <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
+        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
+        <span class="separater"> | </span>
+        <a
+          href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
+          class="text-link"
+          title="External Japanese Guide">もっと読む</a
+        >
       </div>
     </div>
   </div>
@@ -205,17 +203,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin: -1.5rem 0 -13px 0;
-  }
-  .beasties-banner-inner {
-    border-radius: $rounding-large;
-    padding: 13px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5rem;
-    width: max-content;
+    padding-top: 10px;
 
     h1 {
       font-size: 2.5rem;
