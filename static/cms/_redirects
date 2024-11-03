@@ -1,3 +1,0 @@
-/cms/admin/ /cms/admin/:splat 200! Role=admin
-
-/cms/motw/ /cms/motw/:splat 200! Role=motw
