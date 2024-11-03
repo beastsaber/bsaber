@@ -39,7 +39,7 @@
   const maxCommunityEventsCards = 6
 
   if (typeof document !== 'undefined') {
-    const countdownDate = new Date('December 15, 2024 00:00:00').getTime()
+    const countdownDate = new Date('December 15, 2024 00:00:00 UTC').getTime()
     const countdownFunction = setInterval(function () {
       const now = new Date().getTime()
       const timeLeft = countdownDate - now
@@ -49,9 +49,9 @@
       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
       let displayTime
       if (days >= 1) {
-        displayTime = days + 'd ' + hours + 'h ' + minutes + 'm'
+        displayTime = days + ' days, ' + hours + ' hours, ' + minutes + ' minutes'
       } else {
-        displayTime = hours + 'h ' + minutes + 'm ' + seconds + 's'
+        displayTime = hours + ' hours, ' + minutes + ' minutes, ' + seconds + ' seconds'
       }
       document.getElementById('countdown').innerHTML = displayTime
       if (timeLeft < 0) {
@@ -83,7 +83,7 @@
       <div class="right-side-beasties-banner">
         <h1>Beasties are Coming</h1>
         <h3 class="BeastiesTimerContainer" id="BeastiesTimer">
-          Time left to submit maps: <span id="countdown">Thinking...</span>
+          Time left to submit maps: <span id="countdown">Calculating...</span>
         </h3>
         <div class="cta-row">
           <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
@@ -205,7 +205,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin: -13px 0 -13px 0;
+    margin: -1.5rem 0 -13px 0;
   }
   .beasties-banner-inner {
     border-radius: $rounding-large;
