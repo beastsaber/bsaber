@@ -2,12 +2,111 @@
 <html>
   <head>
     <title>BeastSaber CMS</title>
-    <script
-      type="text/javascript"
-      src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-    ></script>
+    <link rel="icon" type="image/x-icon" href="https://bsaber.com/favicon/png" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on('open', () => {
+            console.log('Identity widget opened')
+          })
+          window.netlifyIdentity.on('login', (user) => {
+            console.log('User logged in:', user)
+            handleRedirect(user)
+          })
+          window.netlifyIdentity.on('logout', () => {
+            console.log('User logged out')
+          })
+        } else {
+          console.error('Netlify Identity not loaded')
+        }
+      })
+
+      function handleRedirect(user) {
+        if (user) {
+          const roles = user.app_metadata?.roles || []
+          console.log('User roles:', roles)
+          if (roles.includes('admin')) {
+            window.location.href = '/cms/admin/index.html'
+          } else if (roles.includes('motw')) {
+            window.location.href = '/cms/motw/index.html'
+          } else {
+            window.location.href = '/cms/'
+          }
+        }
+      }
+    </script>
   </head>
   <body>
-    <div data-netlify-identity-button></div>
+    <div class="main">
+      <div class="content">
+        <div class="logo">
+          <img src="https://bsaber.com/beastsaber-logo-fullsize-square.jpg" alt="BeastSaber Logo" />
+        </div>
+        <div class="login-container">
+          <div class="title">BeastSaber CMS</div>
+          <div class="login" data-netlify-identity-button></div>
+        </div>
+      </div>
+    </div>
   </body>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background-image: linear-gradient(to top left, rgb(97, 70, 141), rgb(78, 96, 185));
+      background-attachment: fixed;
+      color: white;
+    }
+    .main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .content {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      border: 5px;
+      border-style: solid;
+      border-radius: 5px;
+      padding: 1rem;
+      background-color: #00000050;
+    }
+    .title {
+      font-size: 2rem;
+    }
+    .logo img {
+      height: 100px;
+      width: auto;
+      border-radius: 5px;
+    }
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      margin-left: 2rem;
+    }
+    .login {
+      padding: 12px;
+      cursor: pointer;
+      font-size: 15px;
+      text-align: center;
+      transition: background-color 0.5s ease;
+      border-radius: 5px;
+      font-weight: bolder;
+      padding: 10px 100px 10px 100px;
+      background-color: #ffffff;
+    }
+    .login a {
+      color: black;
+      text-decoration: none;
+    }
+  </style>
 </html>
