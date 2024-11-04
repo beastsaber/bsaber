@@ -8,16 +8,11 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         if (window.netlifyIdentity) {
-          window.netlifyIdentity.on('open', () => {
-            console.log('Identity widget opened')
-          })
+          window.netlifyIdentity.on('open', () => {})
           window.netlifyIdentity.on('login', (user) => {
-            console.log('User logged in:', user)
             handleRedirect(user)
           })
-          window.netlifyIdentity.on('logout', () => {
-            console.log('User logged out')
-          })
+          window.netlifyIdentity.on('logout', () => {})
         } else {
           console.error('Netlify Identity not loaded')
         }
@@ -26,7 +21,6 @@
       function handleRedirect(user) {
         if (user) {
           const roles = user.app_metadata?.roles || []
-          console.log('User roles:', roles)
           if (roles.includes('admin')) {
             window.location.href = '/cms/admin/index.html'
           } else if (roles.includes('motw')) {
