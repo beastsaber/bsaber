@@ -49,6 +49,10 @@
           <div class="login" data-netlify-identity-button></div>
         </div>
       </div>
+      <div class="choices">
+        <a href="https://bsaber.netlify.app/cms/admin/"><div class="admin">Admin</div></a>
+        <a href="https://bsaber.netlify.app/cms/motw/"><div class="motw">MOTW</div></a>
+      </div>
     </div>
   </body>
 
@@ -105,6 +109,30 @@
       background-color: #ffffff;
     }
     .login a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .choices {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+    .choices a {
+      text-decoration: none;
+    }
+    .admin,
+    .motw {
+      margin-top: 1rem;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 15px;
+      text-align: center;
+      transition: background-color 0.5s ease;
+      border-radius: 5px;
+      font-weight: bolder;
+      padding: 10px 100px 10px 100px;
+      background-color: #ffffff;
       color: black;
       text-decoration: none;
     }
