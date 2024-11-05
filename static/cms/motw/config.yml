@@ -9,6 +9,8 @@ collections:
     folder: src/collections/map-of-the-week
     slug: '{{startDate}}'
     create: true
+    editor:
+      preview: false
     fields:
       - name: mapId
         label: Map  ID
@@ -20,7 +22,7 @@ collections:
       - name: startDate
         label: Start Date
         hint: Starting when the map of the week should be displayed on the root page.
-        default: 2024-01-01T00:00:00Z
+        default: '{{now}}'
         widget: datetime
         picker_utc: true
       - name: showcase

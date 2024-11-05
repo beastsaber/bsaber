@@ -5,14 +5,23 @@
     <link rel="icon" type="image/x-icon" href="https://bsaber.com/favicon/png" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on('open', () => {})
           window.netlifyIdentity.on('login', (user) => {
+            const token = user.token.access_token
+            const expirationTime = jwt_decode(token).exp * 1000
+            localStorage.setItem('tokenExpiration', expirationTime)
             handleRedirect(user)
+            autoLogout(expirationTime)
           })
-          window.netlifyIdentity.on('logout', () => {})
+          window.netlifyIdentity.on('logout', () => {
+            localStorage.removeItem('tokenExpiration')
+          })
+
+          checkTokenExpirationOnLoad()
         } else {
           console.error('Netlify Identity not loaded')
         }
@@ -28,6 +37,24 @@
           } else {
             window.location.href = '/cms/'
           }
+        }
+      }
+
+      function autoLogout(expirationTime) {
+        const timeUntilExpiry = expirationTime - Date.now()
+        if (timeUntilExpiry > 0) {
+          setTimeout(() => {
+            window.netlifyIdentity.logout()
+            alert('Session expired. You have been logged out.')
+          }, timeUntilExpiry)
+        }
+      }
+
+      function checkTokenExpirationOnLoad() {
+        const expirationTime = localStorage.getItem('tokenExpiration')
+        if (expirationTime && Date.now() > expirationTime) {
+          window.netlifyIdentity.logout()
+          alert('Session expired. You have been logged out.')
         }
       }
     </script>
@@ -69,7 +96,7 @@
       flex-direction: row;
       gap: 1rem;
       align-items: center;
-      justify-content: center;
+      justify-content: space-evenly;
       border: 5px;
       border-style: solid;
       border-radius: 5px;
@@ -79,6 +106,9 @@
     .title {
       font-size: 2rem;
     }
+    .logo {
+      display: flex;
+    }
     .logo img {
       height: 100px;
       width: auto;
@@ -87,24 +117,18 @@
     .login-container {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 1rem;
       align-items: center;
-      margin-left: 2rem;
-    }
-    .login {
-      padding: 12px;
-      cursor: pointer;
-      font-size: 15px;
-      text-align: center;
-      transition: background-color 0.5s ease;
-      border-radius: 5px;
-      font-weight: bolder;
-      padding: 10px 100px 10px 100px;
-      background-color: #ffffff;
     }
     .login a {
       color: black;
       text-decoration: none;
+      padding: 10px 100px;
+      background-color: white;
+      font-size: 15px;
+      text-align: center;
+      border-radius: 5px;
+      font-weight: bolder;
     }
 
     .choices {
