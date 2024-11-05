@@ -12,13 +12,13 @@
   </body>
   <script>
     function applyDarkMode(isDarkMode) {
-      const darkCssLink = document.querySelector('link[href="/cms/admin/dark.css"]')
+      const darkCssLink = document.querySelector('link[href="/cms/dark.css"]')
 
       if (isDarkMode) {
         if (!darkCssLink) {
           const link = document.createElement('link')
           link.rel = 'stylesheet'
-          link.href = '/cms/admin/dark.css'
+          link.href = '/cms/dark.css'
           document.head.appendChild(link)
         }
       } else {
