@@ -20,19 +20,26 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 <br />
 
 <div class="cta">
-<h3>Submissions are currently open!</h3>
-<div class="buttons">
-  <a
-    class="btn"
-    href="https://mappingawards.saeraphinx.dev/">CLICK HERE TO SUBMIT MAPS! 🏆</a>
-</div>
-<br />
+  <h3 id="cta-message">Submissions are currently open!</h3>
+  <div class="buttons" id="buttons-container">
+    <a class="btn" href="https://mappingawards.saeraphinx.dev/">CLICK HERE TO SUBMIT MAPS! 🏆</a>
+  </div>
 
 \* **Eligibility Period:** December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC
 
 \* **Submissions Close:** December 14, 2024
 
 </div>
+
+<script>
+const closeDate = new Date('December 15, 2024 00:00:00 UTC').getTime();
+const now = new Date().getTime();
+
+if (now >= closeDate) {
+  document.getElementById("cta-message").innerText = "Submissions are now closed! Stay tuned for voting soon!";
+  document.getElementById("buttons-container").style.display = "none";
+}
+</script>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
@@ -86,6 +93,7 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
     display: grid;
     gap: 0.3rem;
     justify-content: center;
+    margin-bottom: 1rem;
   }
   .btn {
     padding: 10px 40px 10px 40px;

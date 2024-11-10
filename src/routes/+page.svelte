@@ -47,17 +47,16 @@
       const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
-      const daysText = days === 1 ? `${days} day` : `${days} days`
-      const hoursText = hours === 1 ? `${hours} hour` : `${hours} hours`
-      const minutesText = minutes === 1 ? `${minutes} minute` : `${minutes} minutes`
-      const secondsText = seconds === 1 ? `${seconds} second` : `${seconds} seconds`
-      let displayTime
-      if (days >= 1) {
-        displayTime = `${daysText}, ${hoursText}, ${minutesText}`
-      } else {
-        displayTime = `${hoursText}, ${minutesText}, ${secondsText}`
-      }
-      document.getElementById('countdown').innerHTML = displayTime
+      const daysText = days > 0 ? `${days}&nbsp;${days === 1 ? 'day' : 'days'}` : ''
+      const hoursText = hours > 0 ? `${hours}&nbsp;${hours === 1 ? 'hour' : 'hours'}` : ''
+      const minutesText =
+        minutes > 0 ? `${minutes}&nbsp;${minutes === 1 ? 'minute' : 'minutes'}` : ''
+      const secondsText =
+        seconds > 0 ? `${seconds}&nbsp;${seconds === 1 ? 'second' : 'seconds'}` : ''
+      let displayTime = [daysText, hoursText, minutesText, secondsText].filter(Boolean).join(', ')
+
+      document.getElementById('countdown').innerHTML = displayTime || 'Less than a second remaining'
+
       if (timeLeft < 0) {
         clearInterval(countdownFunction)
         document.getElementById('countdown').innerHTML = 'Submissions Closed!'
@@ -230,7 +229,7 @@
     color: $color-danger-red;
   }
   .separater {
-    @media (max-width: 498px) {
+    @media (max-width: 452px) {
       display: none;
     }
   }
@@ -242,13 +241,18 @@
     img {
       height: 9rem;
     }
-
-    .right-side-beasties-banner {
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-    }
   }
+
+  .right-side-beasties-banner {
+    width: 575px;
+    height: max-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .cta-row {
     display: flex;
     flex-wrap: wrap;
