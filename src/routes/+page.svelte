@@ -47,16 +47,24 @@
       const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
+      const daysText = days === 1 ? `${days} day` : `${days} days`
+      const hoursText = hours === 1 ? `${hours} hour` : `${hours} hours`
+      const minutesText = minutes === 1 ? `${minutes} minute` : `${minutes} minutes`
+      const secondsText = seconds === 1 ? `${seconds} second` : `${seconds} seconds`
       let displayTime
       if (days >= 1) {
-        displayTime = days + ' days, ' + hours + ' hours, ' + minutes + ' minutes'
+        displayTime = `${daysText}, ${hoursText}, ${minutesText}`
       } else {
-        displayTime = hours + ' hours, ' + minutes + ' minutes, ' + seconds + ' seconds'
+        displayTime = `${hoursText}, ${minutesText}, ${secondsText}`
       }
       document.getElementById('countdown').innerHTML = displayTime
       if (timeLeft < 0) {
         clearInterval(countdownFunction)
         document.getElementById('countdown').innerHTML = 'Submissions Closed!'
+        const submitDiv = document.querySelector('.submit')
+        if (submitDiv) {
+          submitDiv.style.display = 'none'
+        }
       }
     }, 1000)
   }
@@ -85,7 +93,9 @@
         Time left to submit maps: <span id="countdown">Calculating...</span>
       </h3>
       <div class="cta-row">
-        <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
+        <div class="submit">
+          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
+        </div>
         <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
         <span class="separater"> | </span>
         <a
