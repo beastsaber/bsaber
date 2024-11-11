@@ -116,7 +116,15 @@ if (now >= closeDate) {
 
 - [**What's Changing for 2024**](#whats-changing)
 - [**2024 Categories**](#categories)
+  - [**Overall Categories**](#overall-categories)
+  - [**Individual Awards**](#individual-awards)
+  - [**Map Style Categories**](#style-categories)
+  - [**Ranked Categories**](#ranked-categories)
+  - [**Modded Mapping**](#modded-mapping)
+  - [**Lighting Categories**](#lighting-categories)
 - [**Frequently Asked Questions**](#faq)
+
+> See a 🔗 icon? You can click and copy the URL to that specific section!
 
 <br />
 
@@ -147,7 +155,7 @@ We are always seeking and implementing feedback from mappers and the community o
 \
 _\*Any categories that do not receive at least five qualified nominees will not be awarded at the end of the year._
 
-### Overall Categories
+### Overall Categories <a href="#overall-categories" style="text-decoration:none;">🔗</a> {$overall-categories}
 
 - **Map of the Year**: The best unmodded map of the year. Full stop. It has it all – representation, emphasis, flow – everything coming together for an incredible playing experience to go with the song.
 
@@ -169,7 +177,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [JVKE - Golden Hour](https://beatsaver.com/maps/333d8)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/333d8/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-### Individual Awards
+### Individual Awards <a href="#individual-awards" style="text-decoration:none;">🔗</a> {$individual-awards}
 
 - **Mapper of the Year**: A mapper who not only excels in their art but also shares their experience, leads, and mentors as they are able.
 
@@ -179,7 +187,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Rookie Lighter of the Year**: The best up-and-coming lighter whose first map/lightshow was released during the nomination period. _Previously deleted maps count as first map releases._
 
-### Map Style Categories
+### Map Style Categories <a href="#style-categories" style="text-decoration:none;">🔗</a> {$style-categories}
 
 - **Best Dance Style Map**: With a blend of big arm swings, high movement, and a bit lower density, the best map in the “Dance” category gets players of all ages grooving to the beat and sweating up a storm.
 
@@ -217,7 +225,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [Coldplay ft. Beyoncé - Hymn for the Weekend (E+)](https://beatsaver.com/maps/36758)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/36758/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-### Ranked Categories
+### Ranked Categories <a href="#ranked-categories" style="text-decoration:none;">🔗</a> {$ranked-categories}
 
 - **Best Ranked Map 0-10 Star**
 
@@ -225,7 +233,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 > Nominate your favorite ranked map diff and our team will sort it into the appropriate category. Nominate BeatLeader or ScoreSaber ranked maps.
 
-### Modded Mapping
+### Modded Mapping <a href="#modded-mapping" style="text-decoration:none;">🔗</a> {$modded-mapping}
 
 - **Best Artmap**: Formerly called “Modchart Visuals,” these maps use all the power of Noodle Extensions and Chroma to convey the music and/or tell us a story through the creative use of mods and any notemods aren’t the main focus of the map.
 
@@ -235,7 +243,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [Camellia - GHOUL](https://beatsaver.com/maps/31809)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/31809/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-### Lighting Categories
+### Lighting Categories <a href="#lighting-categories" style="text-decoration:none;">🔗</a> {$lighting-categories}
 
 > Lighting nominations only have one “funnel” on the form. The Beasties team will separate maps into the right categories based on their construction.
 
