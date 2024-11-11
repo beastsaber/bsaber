@@ -53,7 +53,13 @@
         minutes > 0 ? `${minutes}&nbsp;${minutes === 1 ? 'minute' : 'minutes'}` : ''
       const secondsText =
         seconds > 0 ? `${seconds}&nbsp;${seconds === 1 ? 'second' : 'seconds'}` : ''
-      let displayTime = [daysText, hoursText, minutesText, secondsText].filter(Boolean).join(', ')
+
+      let displayTime
+      if (days >= 1) {
+        displayTime = [daysText, hoursText, minutesText].filter(Boolean).join(', ')
+      } else {
+        displayTime = [hoursText, minutesText, secondsText].filter(Boolean).join(', ')
+      }
 
       document.getElementById('countdown').innerHTML = displayTime || 'Less than a second remaining'
 
