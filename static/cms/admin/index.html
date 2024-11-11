@@ -31,7 +31,9 @@
     function initializeDarkMode() {
       const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
-      applyDarkMode(darkModeMediaQuery.matches)
+      setTimeout(() => {
+        applyDarkMode(darkModeMediaQuery.matches)
+      }, 100)
 
       darkModeMediaQuery.addEventListener('change', (e) => {
         applyDarkMode(e.matches)
