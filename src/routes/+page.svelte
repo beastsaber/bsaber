@@ -94,9 +94,9 @@
     </div>
     <div class="right-side-beasties-banner">
       <h1>Beasties are Coming</h1>
-      <h3 class="BeastiesTimerContainer" id="BeastiesTimer">
+      <p class="BeastiesTimerContainer" id="BeastiesTimer">
         Time left to submit maps: <span id="countdown">Calculating...</span>
-      </h3>
+      </p>
       <div class="cta-row">
         <div class="submit">
           <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
@@ -233,6 +233,9 @@
 
   .BeastiesTimerContainer {
     color: $color-danger-red;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
   }
   .separater {
     @media (max-width: 452px) {
