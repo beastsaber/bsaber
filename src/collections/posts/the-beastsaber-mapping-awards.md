@@ -20,19 +20,26 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 <br />
 
 <div class="cta">
-<h3>Submissions are currently open!</h3>
-<div class="buttons">
-  <a
-    class="btn"
-    href="https://mappingawards.saeraphinx.dev/">CLICK HERE TO SUBMIT MAPS! 🏆</a>
-</div>
-<br />
+  <h3 id="cta-message">Submissions are currently open!</h3>
+  <div class="buttons" id="buttons-container">
+    <a class="btn" href="https://mappingawards.saeraphinx.dev/">CLICK HERE TO SUBMIT MAPS! 🏆</a>
+  </div>
 
 \* **Eligibility Period:** December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC
 
 \* **Submissions Close:** December 14, 2024
 
 </div>
+
+<script>
+const closeDate = new Date('December 15, 2024 00:00:00 UTC').getTime();
+const now = new Date().getTime();
+
+if (now >= closeDate) {
+  document.getElementById("cta-message").innerText = "Submissions are now closed! Stay tuned for voting soon!";
+  document.getElementById("buttons-container").style.display = "none";
+}
+</script>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
@@ -86,6 +93,7 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
     display: grid;
     gap: 0.3rem;
     justify-content: center;
+    margin-bottom: 1rem;
   }
   .btn {
     padding: 10px 40px 10px 40px;
@@ -108,7 +116,15 @@ linkToSpecialtyPage: '/the-beastsaber-mapping-awards'
 
 - [**What's Changing for 2024**](#whats-changing)
 - [**2024 Categories**](#categories)
+  - [**Overall Categories**](#overall-categories)
+  - [**Individual Awards**](#individual-awards)
+  - [**Map Style Categories**](#style-categories)
+  - [**Ranked Categories**](#ranked-categories)
+  - [**Modded Mapping**](#modded-mapping)
+  - [**Lighting Categories**](#lighting-categories)
 - [**Frequently Asked Questions**](#faq)
+
+> 💡 **Hint:** See a 🔗 icon? You can click and copy the URL to that specific section!
 
 <br />
 
@@ -128,7 +144,7 @@ We’ve received a lot of constructive community feedback on the 2023 awards and
 - **BeatLeader Star Rating Ranked!** BeatLeader and ScoreSaber will continue to be combined unless we receive enough nominations to justify separating the two.
 - **Winners and runners-up awards** Last year, thanks to the extremely generous donations of the community, we raised enough funds (more than $1000) to provide gold medals to the winners and silver medals to the runner-ups in each category, as well as medals for community choice winners!
 
-> ❤️ If you want to help provide a steady form of support for The Beasties and towards site costs, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and join either tier!
+> If you want to help provide a steady form of support for The Beasties, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and contributing to any tier! All contributions are appreciated! ❤️
 
 <br />
 <br />
@@ -139,7 +155,7 @@ We are always seeking and implementing feedback from mappers and the community o
 \
 _\*Any categories that do not receive at least five qualified nominees will not be awarded at the end of the year._
 
-### Overall Categories
+### Overall Categories <a href="#overall-categories" style="text-decoration:none;">🔗</a> {$overall-categories}
 
 - **Map of the Year**: The best unmodded map of the year. Full stop. It has it all – representation, emphasis, flow – everything coming together for an incredible playing experience to go with the song.
 
@@ -161,7 +177,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [JVKE - Golden Hour](https://beatsaver.com/maps/333d8)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/333d8/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-### Individual Awards
+### Individual Awards <a href="#individual-awards" style="text-decoration:none;">🔗</a> {$individual-awards}
 
 - **Mapper of the Year**: A mapper who not only excels in their art but also shares their experience, leads, and mentors as they are able.
 
@@ -171,7 +187,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Rookie Lighter of the Year**: The best up-and-coming lighter whose first map/lightshow was released during the nomination period. _Previously deleted maps count as first map releases._
 
-### Map Style Categories
+### Map Style Categories <a href="#style-categories" style="text-decoration:none;">🔗</a> {$style-categories}
 
 - **Best Dance Style Map**: With a blend of big arm swings, high movement, and a bit lower density, the best map in the “Dance” category gets players of all ages grooving to the beat and sweating up a storm.
 
@@ -209,7 +225,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [Coldplay ft. Beyoncé - Hymn for the Weekend (E+)](https://beatsaver.com/maps/36758)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/36758/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-### Ranked Categories
+### Ranked Categories <a href="#ranked-categories" style="text-decoration:none;">🔗</a> {$ranked-categories}
 
 - **Best Ranked Map 0-10 Star**
 
@@ -217,7 +233,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 > Nominate your favorite ranked map diff and our team will sort it into the appropriate category. Nominate BeatLeader or ScoreSaber ranked maps.
 
-### Modded Mapping
+### Modded Mapping <a href="#modded-mapping" style="text-decoration:none;">🔗</a> {$modded-mapping}
 
 - **Best Artmap**: Formerly called “Modchart Visuals,” these maps use all the power of Noodle Extensions and Chroma to convey the music and/or tell us a story through the creative use of mods and any notemods aren’t the main focus of the map.
 
@@ -227,7 +243,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [Camellia - GHOUL](https://beatsaver.com/maps/31809)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/31809/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-### Lighting Categories
+### Lighting Categories <a href="#lighting-categories" style="text-decoration:none;">🔗</a> {$lighting-categories}
 
 > Lighting nominations only have one “funnel” on the form. The Beasties team will separate maps into the right categories based on their construction.
 

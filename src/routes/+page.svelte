@@ -37,6 +37,42 @@
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
   const maxCommunityEventsCards = 6
+
+  if (typeof document !== 'undefined') {
+    const countdownDate = new Date('December 15, 2024 00:00:00 UTC').getTime()
+    const countdownFunction = setInterval(function () {
+      const now = new Date().getTime()
+      const timeLeft = countdownDate - now
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
+      const daysText = days > 0 ? `${days}&nbsp;${days === 1 ? 'day' : 'days'}` : ''
+      const hoursText = hours > 0 ? `${hours}&nbsp;${hours === 1 ? 'hour' : 'hours'}` : ''
+      const minutesText =
+        minutes > 0 ? `${minutes}&nbsp;${minutes === 1 ? 'minute' : 'minutes'}` : ''
+      const secondsText =
+        seconds > 0 ? `${seconds}&nbsp;${seconds === 1 ? 'second' : 'seconds'}` : ''
+
+      let displayTime
+      if (days >= 1) {
+        displayTime = [daysText, hoursText, minutesText].filter(Boolean).join(', ')
+      } else {
+        displayTime = [hoursText, minutesText, secondsText].filter(Boolean).join(', ')
+      }
+
+      document.getElementById('countdown').innerHTML = displayTime || 'Less than a second remaining'
+
+      if (timeLeft < 0) {
+        clearInterval(countdownFunction)
+        document.getElementById('countdown').innerHTML = 'Submissions Closed!'
+        const submitDiv = document.querySelector('.submit')
+        if (submitDiv) {
+          submitDiv.style.display = 'none'
+        }
+      }
+    }, 1000)
+  }
 </script>
 
 <MetaHead />
@@ -58,10 +94,15 @@
     </div>
     <div class="right-side-beasties-banner">
       <h1>Beasties are Coming</h1>
-      <p>What maps deserve to win in this year's Beasties? Submit maps now!</p>
+      <p class="BeastiesTimerContainer" id="BeastiesTimer">
+        Time left to submit maps: <span id="countdown">Calculating...</span>
+      </p>
       <div class="cta-row">
-        <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
-        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a> |
+        <div class="submit">
+          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
+        </div>
+        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
+        <span class="separater"> | </span>
         <a
           href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
           class="text-link"
@@ -173,10 +214,11 @@
 
   .beasties-banner {
     display: flex;
-    text-align: center;
+    width: 100%;
     justify-content: center;
+    text-align: center;
     align-items: center;
-    margin-top: 1.5rem;
+    padding-top: 10px;
 
     h1 {
       font-size: 2.5rem;
@@ -189,6 +231,18 @@
     }
   }
 
+  .BeastiesTimerContainer {
+    color: $color-danger-red;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .separater {
+    @media (max-width: 452px) {
+      display: none;
+    }
+  }
+
   .left-side-beasties-banner {
     display: flex;
     align-items: center;
@@ -196,32 +250,44 @@
     img {
       height: 9rem;
     }
-
-    .right-side-beasties-banner {
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-    }
   }
+
+  .right-side-beasties-banner {
+    width: 575px;
+    height: max-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .cta-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
     text-align: center;
     justify-content: center;
     margin-top: 0.5rem;
+    color: $color-danger-red;
+    font-weight: bold;
+
     .button-link {
       gap: 1rem;
       font-size: 1rem;
       padding: 0.5rem 1rem;
-      background-color: $color-accent;
-      color: var(--button-primary-text);
       border-radius: $rounding-small;
       text-decoration: none;
-      transition: background-color 0.2s;
-      &:hover {
-        background-color: var(--button-primary-hover);
-      }
+      background-color: $color-danger-red;
+      color: white;
+      transition: background-color ease 0.2s;
+    }
+    .button-link:hover {
+      background-color: $color-background-primary;
+    }
+    a {
+      color: $color-danger-red;
     }
   }
 </style>
