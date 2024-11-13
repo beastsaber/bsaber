@@ -124,7 +124,7 @@ if (now >= closeDate) {
   - [**Lighting Categories**](#lighting-categories)
 - [**Frequently Asked Questions**](#faq)
 
-> See a 🔗 icon? You can click and copy the URL to that specific section!
+> 💡 **Hint:** See a 🔗 icon? You can click and copy the URL to that specific section!
 
 <br />
 
@@ -144,7 +144,7 @@ We’ve received a lot of constructive community feedback on the 2023 awards and
 - **BeatLeader Star Rating Ranked!** BeatLeader and ScoreSaber will continue to be combined unless we receive enough nominations to justify separating the two.
 - **Winners and runners-up awards** Last year, thanks to the extremely generous donations of the community, we raised enough funds (more than $1000) to provide gold medals to the winners and silver medals to the runner-ups in each category, as well as medals for community choice winners!
 
-> ❤️ If you want to help provide a steady form of support for The Beasties and towards site costs, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and join either tier!
+> If you want to help provide a steady form of support for The Beasties, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and contributing to any tier! All contributions are appreciated! ❤️
 
 <br />
 <br />
