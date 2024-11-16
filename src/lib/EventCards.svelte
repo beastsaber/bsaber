@@ -7,6 +7,7 @@
   import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
   import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
   import { faAward } from '@fortawesome/free-solid-svg-icons'
+  import { faHeart } from '@fortawesome/free-solid-svg-icons'
   import { isCurrentEvent } from './isCurrentEvent'
 
   export let events: CommunityEvent[]
@@ -74,6 +75,8 @@
       faIcon = faComments
     } else if (category === 'awards') {
       faIcon = faAward
+    } else if (category === 'charity') {
+      faIcon = faHeart
     } else {
       faIcon = faCalendarCheck
     }

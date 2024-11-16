@@ -338,6 +338,7 @@ collections:
           - { label: 'Learning', value: 'learning' }
           - { label: 'Awards', value: 'awards' }
           - { label: 'Generic', value: 'generic' }
+          - { label: 'Charity', value: 'charity' }
       - name: startDateTime
         label: Start Date/Time
         widget: datetime

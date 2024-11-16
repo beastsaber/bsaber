@@ -37,7 +37,13 @@ export type PostWithAuthorAndContributor = Omit<Post, 'authors' | 'credits'> & {
   credits: { contributors: Uploader[]; contribution?: string }[]
 }
 
-export type CommunityEventCategory = 'tournament' | 'social' | 'learning' | 'awards' | 'generic'
+export type CommunityEventCategory =
+  | 'tournament'
+  | 'social'
+  | 'learning'
+  | 'awards'
+  | 'charity'
+  | 'generic'
 
 export type CommunityEventCollectionData = {
   title: string
