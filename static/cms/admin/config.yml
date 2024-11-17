@@ -33,13 +33,13 @@ collections:
           - { label: 'Event', value: 'event' }
       - name: type
         label: Type
+        hint: Only used when the Category is an Event
         widget: select
         options:
           - { label: 'Tournament', value: 'tournament' }
           - { label: 'Social', value: 'social' }
           - { label: 'Learning', value: 'learning' }
           - { label: 'Awards', value: 'awards' }
-          - { label: 'Generic', value: 'generic' }
           - { label: 'Charity', value: 'charity' }
       - name: publish
         label: Publish Date

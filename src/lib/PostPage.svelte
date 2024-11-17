@@ -5,12 +5,38 @@
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
   import { postCategories } from '../maps'
+  import { postTypes } from '../maps'
+  import Fa from 'svelte-fa/src/fa.svelte'
+  import { faTrophy } from '@fortawesome/free-solid-svg-icons'
+  import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
+  import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
+  import { faAward } from '@fortawesome/free-solid-svg-icons'
+  import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
+  type PostType = 'tournament' | 'learning' | 'social' | 'awards' | 'charity'
 
   export let post: PostWithAuthorAndContributor
   const { body, title, image, authors, credits, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
   let categoryLabel = postCategories[post.category]
+  let postTypeLabel = post.type ? postTypes[post.type] : postTypes.default
+
+  export const FaIcons = {
+    tournament: faTrophy,
+    learning: faGraduationCap,
+    social: faComments,
+    awards: faAward,
+    charity: faHeart,
+  }
+
+  function isPostType(type: any): type is PostType {
+    return ['tournament', 'learning', 'social', 'awards', 'charity'].includes(type)
+  }
+
+  const postType: PostType | undefined = isPostType(post.type) ? post.type : undefined
+  const postCategory = postType ? postTypes[postType] : ''
+  const faIcon = postType ? FaIcons[postType] : null
 
   const postRenderer = new marked.Renderer()
   // This will make headings start at 2, because the title will be rendered as an h1
@@ -136,7 +162,12 @@
   {/if}
   <div class="meta-data-line">
     <div class="category-author">
-      <span class="category">{categoryLabel}</span>
+      <div class="tags">
+        <span class="category">{categoryLabel}</span>
+        {#if postType}
+          <span class="post-type"><Fa icon={faIcon} />&nbsp;{postTypeLabel}</span>
+        {/if}
+      </div>
       <span>
         {#if authors.length > 0}
           <span class="author-information"
@@ -261,7 +292,13 @@
   .category-author {
     display: flex;
   }
-  .category {
+  .tags {
+    margin: 0 0.5rem;
+    gap: 10px;
+    display: flex;
+  }
+  .category,
+  .post-type {
     font-size: 0.75rem;
     border-radius: 1.5rem;
     background-color: $color-background-secondary;
@@ -269,7 +306,6 @@
     border: 1px solid $color-danger-red;
     padding: 0.125rem 0.5rem;
     max-width: fit-content;
-    margin: 0 0.5rem;
   }
 
   // Needs to be global so because it's rendered in with @html
