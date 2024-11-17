@@ -11,6 +11,7 @@ export type Post = {
   image?: string
   icon?: string
   category: '' | 'announcement' | 'news' | 'articles' | 'interview' | 'event'
+  types: '' | 'tournament' | 'learning' | 'social' | 'awards' | 'charity'
   showInPostListing: boolean
   linkToSpecialtyPage?: string
   authors: string[]
