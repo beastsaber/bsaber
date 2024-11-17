@@ -5,22 +5,25 @@
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
   import { postCategories } from '../maps'
-  import { postTypes } from '../maps'
+  import { postEventTypes } from '../maps'
   import Fa from 'svelte-fa/src/fa.svelte'
-  import { faTrophy } from '@fortawesome/free-solid-svg-icons'
-  import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
-  import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
-  import { faAward } from '@fortawesome/free-solid-svg-icons'
-  import { faHeart } from '@fortawesome/free-solid-svg-icons'
+  import {
+    faTrophy,
+    faGraduationCap,
+    faComments,
+    faAward,
+    faHeart,
+    faTree,
+  } from '@fortawesome/free-solid-svg-icons'
 
-  type PostType = 'tournament' | 'learning' | 'social' | 'awards' | 'charity'
+  type PostEventType = 'tournament' | 'learning' | 'social' | 'awards' | 'charity' | 'seasonal'
 
   export let post: PostWithAuthorAndContributor
   const { body, title, image, authors, credits, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
   let categoryLabel = postCategories[post.category]
-  let postTypeLabel = post.type ? postTypes[post.type] : postTypes.default
+  let postEventTypeLabel = post.type ? postEventTypes[post.type] : postEventTypes.default
 
   export const FaIcons = {
     tournament: faTrophy,
@@ -28,15 +31,18 @@
     social: faComments,
     awards: faAward,
     charity: faHeart,
+    seasonal: faTree,
   }
 
-  function isPostType(type: any): type is PostType {
-    return ['tournament', 'learning', 'social', 'awards', 'charity'].includes(type)
+  function isPostEventType(type: any): type is PostEventType {
+    return ['tournament', 'learning', 'social', 'awards', 'charity', 'seasonal'].includes(type)
   }
 
-  const postType: PostType | undefined = isPostType(post.type) ? post.type : undefined
-  const postCategory = postType ? postTypes[postType] : ''
-  const faIcon = postType ? FaIcons[postType] : null
+  const postEventType: PostEventType | undefined = isPostEventType(post.type)
+    ? post.type
+    : undefined
+  const postCategory = postEventType ? postEventTypes[postEventType] : ''
+  const faIcon = postEventType ? FaIcons[postEventType] : null
 
   const postRenderer = new marked.Renderer()
   // This will make headings start at 2, because the title will be rendered as an h1
@@ -164,8 +170,8 @@
     <div class="category-author">
       <div class="tags">
         <span class="category">{categoryLabel}</span>
-        {#if postType}
-          <span class="post-type"><Fa icon={faIcon} />&nbsp;{postTypeLabel}</span>
+        {#if postEventType}
+          <span class="post-event-type"><Fa icon={faIcon} />&nbsp;{postEventTypeLabel}</span>
         {/if}
       </div>
       <span>
@@ -298,14 +304,19 @@
     display: flex;
   }
   .category,
-  .post-type {
+  .post-event-type {
     font-size: 0.75rem;
     border-radius: 1.5rem;
     background-color: $color-background-secondary;
     color: white;
-    border: 1px solid $color-danger-red;
     padding: 0.125rem 0.5rem;
     max-width: fit-content;
+  }
+  .category {
+    border: 1px solid $color-danger-red;
+  }
+  .post-event-type {
+    border: 1px solid $color-warning-yellow;
   }
 
   // Needs to be global so because it's rendered in with @html

@@ -75,10 +75,11 @@ export const postCategories: Record<string, string> = {
   event: 'Event',
 }
 
-export const postTypes: Record<string, string> = {
+export const postEventTypes: Record<string, string> = {
   tournament: 'Tournament',
   social: 'Social',
   learning: 'Learning',
   awards: 'Awards',
   charity: 'Charity',
+  seasonal: 'Seasonal',
 }
