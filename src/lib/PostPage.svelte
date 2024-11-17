@@ -4,10 +4,13 @@
   import MetaHead from './MetaHead.svelte'
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
+  import { postCategories } from '../maps'
 
   export let post: PostWithAuthorAndContributor
   const { body, title, image, authors, credits, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
+
+  let categoryLabel = postCategories[post.category]
 
   const postRenderer = new marked.Renderer()
   // This will make headings start at 2, because the title will be rendered as an h1
@@ -132,7 +135,8 @@
     </h1>
   {/if}
   <div class="meta-data-line">
-    <div class="author">
+    <div class="category-author">
+      <span class="category">{categoryLabel}</span>
       <span>
         {#if authors.length > 0}
           <span class="author-information"
@@ -246,9 +250,6 @@
       display: none;
     }
   }
-  .author-information {
-    margin-left: 0.5rem;
-  }
   .spacer {
     text-align: center;
   }
@@ -256,6 +257,19 @@
     text-align: right;
     color: $color-muted-text;
     margin-right: 0.5rem;
+  }
+  .category-author {
+    display: flex;
+  }
+  .category {
+    font-size: 0.75rem;
+    border-radius: 1.5rem;
+    background-color: $color-background-secondary;
+    color: white;
+    border: 1px solid $color-danger-red;
+    padding: 0.125rem 0.5rem;
+    max-width: fit-content;
+    margin: 0 0.5rem;
   }
 
   // Needs to be global so because it's rendered in with @html
