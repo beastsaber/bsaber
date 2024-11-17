@@ -74,3 +74,11 @@ export const postCategories: Record<string, string> = {
   interview: 'Interview',
   event: 'Event',
 }
+
+export const postTypes: Record<string, string> = {
+  tournament: 'Tournament',
+  social: 'Social',
+  learning: 'Learning',
+  awards: 'Awards',
+  charity: 'Charity',
+}
