@@ -3,11 +3,11 @@ title: How To Download And Install Mods On Beat Saber
 section: speciality
 category: guide
 publish: 2024-03-22T00:00:00.000Z
-lastUpdated: 2024-06-15T00:00:00.000Z
+lastUpdated: 2024-11-17T19:59:00.000Z
 homepageText: Learn how to install new custom songs and mods on Beat Saber with this guide!
 image: /static/uploads/posts/beat-saber-square.jpg
 authors:
-  - '4285984'
+  - "4285984"
 showInPostListing: false
 linkToSpecialtyPage: /installing-the-mod-guide-necessary-for-any-custom-songs
 ---
@@ -16,13 +16,60 @@ If you haven’t played custom songs yet and are just getting started with Beat 
 
 The modding experience for computer-based VR (PCVR) and Meta/Oculus Quest standalone VR is a bit different. Be sure to read the right section for your headset!
 
-## PCVR:
+## Quick Navigation
 
-While mods are not required to play basic custom songs, mods usually enhance your gameplay experience and unlock some cool mapping effects and general game enhancements. To get started, you’ll need to download ModAssistant.
+- [**PCVR**](#pcvr)
+  - [**BSManager - Recommended**](#bsmanager)
+  - [**Mod Assistant**](#mod-assistant)
+- [**Quest**](#quest)
+
+## PCVR <a href="#pcvr" style="text-decoration:none;">🔗</a> {$pcvr}
+
+While mods are not required to play basic custom songs, mods usually enhance your gameplay experience and unlock some cool mapping effects and general game enhancements.
 
 > ⚠️ **IMPORTANT:** You will need to have run Beat Saber at least once after installing the game before installing mods.
 
-### Installing Mods With Mod Assistant - Only available for PCVR
+### Installing Mods with BSManager - Recommended <a href="#bsmanager" style="text-decoration:none;">🔗</a> {$bsmanager}
+
+BSManager simplifies your Beat Saber experience by centralizing the management of mods, maps, and game versions in one place.
+
+1. First, you'll need to download the latest release from the [BSManager GitHub releases page](https://github.com/Zagrios/bs-manager/releases). After installation and upon opening, BSManager will automatically check for updates so you won't need to come back.
+
+<p align="center">
+    <a href="https://github.com/Zagrios/bs-manager/releases"><img src="/uploads/posts/get-started-custom-mods/bsmanager1.png"></a>
+</p>
+
+2. Click on the downloaded file and execute the installer. BSManager will start itself once the download completes.
+
+<p align="center">
+    <img src="/uploads/posts/get-started-custom-mods/bsmanager5.png">
+</p>
+
+3. Once it's done, you'll find your current version on the left. If you want to download a version, select the blue + on the bottom left and pick a version to download. You will need to either login with your Steam account, or provide an Oculus Token. There will be dialogues to help you through this part.
+
+<p align="center">
+    <img src="/uploads/posts/get-started-custom-mods/bsmanager2.png">
+</p>
+
+> 💡 You may be required to install .NET 8. Click the Download button to install it and then return to download the version
+
+<p align="center">
+    <img src="/uploads/posts/get-started-custom-mods/bsmanager3.png">
+</p>
+
+4. Once you've installed a new version, you can click on it from the left sidebar to choose your launch options, view maps or models, and install mods! You can also link your maps across versions for easy switching. When you're ready, just click the Launch button
+
+<p align="center">
+    <img src="/uploads/posts/get-started-custom-mods/bsmanager4.png">
+</p>
+
+5. That's it! If you run into any issues, head on over the [BSManager Discord](https://discord.gg/uSqbHVpKdV) to get additional support.
+
+<br />
+
+### Installing Mods With Mod Assistant <a href="#mod-assistant" style="text-decoration:none;">🔗</a> {$mod-assistant}
+
+> ⚠️ <span style="color: red;">**WARNING:** ModAssistant is no longer recommended and is being phased out. Continued use will require you to specifically select your version in order to install the correct mods and you may encounter other bugs or issues. Consider using BSManager as outlined above.</span>
 
 1. First, [click here to get ModAssistant](https://github.com/bsmg/ModAssistant/releases) and find the Latest release of the `ModAssistant.exe` file to download
 
@@ -52,7 +99,7 @@ This will download a small `ModAssistant.exe` file that you can place anywhere o
 
 5. That’s it! You can now launch your game and enjoy all the wonderful mods that the community has built! You can always open ModAssistant again later to install more mods. We recommend against installing every mod at first as you’ll likely be overwhelmed by all the new options - and you may run into issues. Instead, take the time to learn about what each mod does. Click on the "Mod Info" button after selecting a mod to read more about it.
 
-## Standalone Quest VR:
+## Standalone Quest VR <a href="#quest" style="text-decoration:none;">🔗</a> {$quest}
 
 > Quest Mods usually run well behind PC Mods. Please be patient! The Community Modders volunteer their time so you can enjoy your game - let them work out their fixes so you can enjoy a bug free experience!
 
@@ -67,3 +114,5 @@ Once your game is modded with MBF, you'll have instant access to downloading cus
 If you have any issues, join the [Beat Saber Modding Group Discord Server](https://discord.gg/beatsabermods) and ask your question in either #pc-help or #quest-help. Happy Block Slicing!
 
 ### Want to learn more about custom songs? [Click here!](/getting-started/custom-songs)
+
+## [Go back to top](#)
