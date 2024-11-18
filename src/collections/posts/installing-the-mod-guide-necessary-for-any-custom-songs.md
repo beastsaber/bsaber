@@ -7,7 +7,7 @@ lastUpdated: 2024-11-17T19:59:00.000Z
 homepageText: Learn how to install new custom songs and mods on Beat Saber with this guide!
 image: /static/uploads/posts/beat-saber-square.jpg
 authors:
-  - "4285984"
+  - '4285984'
 showInPostListing: false
 linkToSpecialtyPage: /installing-the-mod-guide-necessary-for-any-custom-songs
 ---
@@ -69,15 +69,9 @@ BSManager simplifies your Beat Saber experience by centralizing the management o
 
 ### Installing Mods With Mod Assistant <a href="#mod-assistant" style="text-decoration:none;">🔗</a> {$mod-assistant}
 
-> ⚠️ <span style="color: red;">**WARNING:** ModAssistant is no longer recommended and is being phased out. Continued use will require you to specifically select your version in order to install the correct mods and you may encounter other bugs or issues. Consider using BSManager as outlined above.</span>
+> ⚠️ <span style="color: red;">**WARNING:**</span> ModAssistant is no longer recommended and is being phased out. Continued use will require you to specifically select your version in order to install the correct mods and you may encounter other bugs or issues. Consider using BSManager as outlined above.
 
-1. First, [click here to get ModAssistant](https://github.com/bsmg/ModAssistant/releases) and find the Latest release of the `ModAssistant.exe` file to download
-
-<p align="center">
-    <img src="/uploads/posts/get-started-custom-mods/mod-assistant-github.png">
-</p>
-
-This will download a small `ModAssistant.exe` file that you can place anywhere on your computer for future use and doesn’t require installing.
+1. First, [click here to get ModAssistant](https://github.com/bsmg/ModAssistant/releases) and find the Latest release of the `ModAssistant.exe` file to download. This will download a small `ModAssistant.exe` file that you can place anywhere on your computer for future use and doesn’t require installing.
 
 2. When you first launch Mod Assistant, it will try to automatically locate where you installed your game. If it can’t find it, you will have to manually locate the folder.
 
@@ -87,15 +81,7 @@ This will download a small `ModAssistant.exe` file that you can place anywhere o
 
 3. You’ll be prompted to agree to the terms of use. Please read through these carefully as they’re important, mainly for the health of our wonderful community and relationship with Beat Games.
 
-<p align="center">
-    <img src="/uploads/posts/get-started-custom-mods/mod-assistant-agreement.png">
-</p>
-
 4. Once you agree, you’ll be able to click on the “Mods” button. All of the essential or “Core" mods will be pre-selected, but you can add as many other mods as you'd like in addition to the Core mods. When ready, you can click the “Install or Update” button.
-
-<p align="center">
-    <img src="/uploads/posts/get-started-custom-mods/mod-assistant-mods-install.png">
-</p>
 
 5. That’s it! You can now launch your game and enjoy all the wonderful mods that the community has built! You can always open ModAssistant again later to install more mods. We recommend against installing every mod at first as you’ll likely be overwhelmed by all the new options - and you may run into issues. Instead, take the time to learn about what each mod does. Click on the "Mod Info" button after selecting a mod to read more about it.
 
