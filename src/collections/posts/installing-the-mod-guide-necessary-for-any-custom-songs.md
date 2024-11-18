@@ -45,7 +45,7 @@ BSManager simplifies your Beat Saber experience by centralizing the management o
     <img src="/uploads/posts/get-started-custom-mods/bsmanager5.png">
 </p>
 
-3. Once it's done, you'll find your current version on the left. You can click on it to select your launch options, view and install maps or models, and install mods! Just click the ones you want and select the Install or update button. We recommend against installing every mod at first as you’ll likely be overwhelmed by all the new options - and you may run into issues. Instead, take the time to learn about what each mod does. You can also click on the "Mod Info" button after selecting a mod to read more about it.
+3. Once it's done, you'll find your current version on the left. You can click on it to select your launch options, view and install maps or models, and install mods! Just click the ones you want and select the Install or update button. We recommend against installing every mod at first as you’ll likely be overwhelmed by all the new options - and you may run into issues. Instead, take the time to learn about what each mod does. You can also click on the "More Info" button after selecting a mod to read more about it.
 
 <p align="center">
     <img src="/uploads/posts/get-started-custom-mods/bsmanager6.png">
@@ -57,7 +57,7 @@ BSManager simplifies your Beat Saber experience by centralizing the management o
     <img src="/uploads/posts/get-started-custom-mods/bsmanager2.png">
 </p>
 
-> 💡 **HINT:** You may be required to install .NET 8. Click the Download button to install it and then return to download the version
+> 💡 **HINT:** You may be required to install Microsoft .NET - Click the Download button to install it and then return to download the version
 
 <p align="center">
     <img src="/uploads/posts/get-started-custom-mods/bsmanager3.png">
@@ -69,7 +69,7 @@ BSManager simplifies your Beat Saber experience by centralizing the management o
     <img src="/uploads/posts/get-started-custom-mods/bsmanager4.png">
 </p>
 
-6. That's it! If you run into any issues, head on over the [BSManager Discord](https://discord.gg/uSqbHVpKdV) to get additional support.
+6. That's it! If you run into any issues, head on over the [BSManager Discord](https://discord.gg/uSqbHVpKdV) or [BSMG Discord](https://discord.gg/beatsabermods) support channels to get additional help.
 
 <br />
 
