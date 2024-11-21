@@ -3,7 +3,7 @@
 </script>
 
 <MetaHead
-  title="Download Shrek Saber"
+  title="Shrek Saber"
   description="The entire feature length movie in Beat Saber. Download Shrek Saber by KINGPEUCHE"
 />
 
@@ -20,7 +20,7 @@
     <div class="buttons">
       <a
         class="btn"
-        href="bsplaylist://playlist/https://api.beatsaver.com/playlists/id/641464/download"
+        href="https://drive.usercontent.google.com/download?id=18Uc3oJl0TbygSnnX9iS27G5t9Pk0ZcbK&export=download"
         title="Recommended Install">Download V2 Format (Recommended)</a
       >
       <a
