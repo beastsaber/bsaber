@@ -2,12 +2,24 @@
 <html>
   <head>
     <title>BeastSaber CMS</title>
-    <link rel="icon" type="image/x-icon" href="https://bsaber.com/favicon/png" />
+    <link rel="icon" type="image/x-icon" href="https://bsaber.com/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,400,700" rel="stylesheet" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        const buttonsElement = document.getElementById('buttons')
+        function hideButtons() {
+          if (buttonsElement) {
+            buttonsElement.style.display = 'none'
+          }
+        }
+        function showButtons() {
+          if (buttonsElement) {
+            buttonsElement.style.display = 'flex'
+          }
+        }
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on('open', () => {})
           window.netlifyIdentity.on('login', (user) => {
@@ -16,14 +28,22 @@
             localStorage.setItem('tokenExpiration', expirationTime)
             handleRedirect(user)
             autoLogout(expirationTime)
+            showButtons()
           })
           window.netlifyIdentity.on('logout', () => {
             localStorage.removeItem('tokenExpiration')
+            hideButtons()
           })
 
           checkTokenExpirationOnLoad()
+
+          const currentUser = window.netlifyIdentity.currentUser()
+          if (currentUser) {
+            showButtons()
+          }
         } else {
           console.error('Netlify Identity not loaded')
+          hideButtons()
         }
       })
 
@@ -62,24 +82,32 @@
   <body>
     <div class="main">
       <div class="content">
-        <div class="logo">
-          <img src="https://bsaber.com/beastsaber-logo-fullsize-square.jpg" alt="BeastSaber Logo" />
+        <div class="header">
+          <div class="logo">
+            <img
+              src="https://bsaber.com/beastsaber-logo-fullsize-square.jpg"
+              alt="BeastSaber Logo"
+            />
+          </div>
+          <div class="login-container">
+            <div class="title">
+              <span style="font-weight: 100">BEAST</span
+              ><span style="font-weight: 400">SABER</span>&nbsp;CMS
+            </div>
+            <div class="login" data-netlify-identity-button></div>
+          </div>
         </div>
-        <div class="login-container">
-          <div class="title">BeastSaber CMS</div>
-          <div class="login" data-netlify-identity-button></div>
+        <div class="buttons" id="buttons" style="display: none">
+          <a class="admin" href="/cms/admin/index.html">Admin</a>
+          <a class="motw" href="/cms/motw/index.html">MOTW</a>
         </div>
-      </div>
-      <div class="choices">
-        <a href="https://bsaber.netlify.app/cms/admin/"><div class="admin">Admin</div></a>
-        <a href="https://bsaber.netlify.app/cms/motw/"><div class="motw">MOTW</div></a>
       </div>
     </div>
   </body>
 
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Poppins';
       background-image: linear-gradient(to top left, rgb(97, 70, 141), rgb(78, 96, 185));
       background-attachment: fixed;
       color: white;
@@ -89,22 +117,27 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: max-content;
     }
     .content {
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px;
+      box-shadow: 0px 0px 30px;
+      background-color: #00000050;
+      border: solid 5px;
+    }
+    .header {
       display: flex;
       flex-direction: row;
-      gap: 1rem;
-      align-items: center;
+      gap: 3rem;
       justify-content: space-evenly;
-      border: 5px;
-      border-style: solid;
-      border-radius: 5px;
-      padding: 1rem;
-      background-color: #00000050;
+      padding: 1rem 4rem;
+      border-bottom: solid 5px #ffffff50;
     }
     .title {
-      font-size: 2rem;
+      font-size: 1.85rem;
+      display: flex;
     }
     .logo {
       display: flex;
@@ -117,10 +150,11 @@
     .login-container {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.5rem;
       align-items: center;
     }
     .login a {
+      display: flex;
       color: black;
       text-decoration: none;
       padding: 10px 100px;
@@ -131,28 +165,21 @@
       font-weight: bolder;
     }
 
-    .choices {
-      display: flex;
-      flex-direction: row;
+    .buttons {
+      justify-content: space-evenly;
       gap: 1rem;
+      padding: 1rem;
     }
-    .choices a {
+    .buttons a {
       text-decoration: none;
     }
     .admin,
     .motw {
-      margin-top: 1rem;
-      padding: 12px;
-      cursor: pointer;
-      font-size: 15px;
-      text-align: center;
-      transition: background-color 0.5s ease;
       border-radius: 5px;
       font-weight: bolder;
-      padding: 10px 100px 10px 100px;
+      padding: 10px 90px;
       background-color: #ffffff;
       color: black;
-      text-decoration: none;
     }
   </style>
 </html>
