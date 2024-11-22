@@ -10,6 +10,9 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const buttonsElement = document.getElementById('buttons')
+        const adminLink = document.querySelector('a.admin')
+        const motwLink = document.querySelector('a.motw')
+
         function hideButtons() {
           if (buttonsElement) {
             buttonsElement.style.display = 'none'
@@ -20,25 +23,63 @@
             buttonsElement.style.display = 'flex'
           }
         }
+        function disableLink(link) {
+          if (link) {
+            link.style.pointerEvents = 'none'
+            link.style.opacity = '0.5'
+          }
+        }
+        function enableLink(link) {
+          if (link) {
+            link.style.pointerEvents = 'auto'
+            link.style.opacity = '1'
+          }
+        }
+        function setButtonVisibility(roles) {
+          enableLink(adminLink)
+          enableLink(motwLink)
+          if (roles.includes('admin')) {
+            if (adminLink) adminLink.style.display = 'inline-block'
+            if (motwLink) motwLink.style.display = 'inline-block'
+          } else if (roles.includes('motw')) {
+            if (motwLink) motwLink.style.display = 'inline-block'
+            disableLink(adminLink)
+          } else {
+            disableLink(adminLink)
+            disableLink(motwLink)
+            if (adminLink) adminLink.style.display = 'inline-block'
+            if (motwLink) motwLink.style.display = 'inline-block'
+          }
+        }
+
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on('open', () => {})
           window.netlifyIdentity.on('login', (user) => {
             const token = user.token.access_token
             const expirationTime = jwt_decode(token).exp * 1000
             localStorage.setItem('tokenExpiration', expirationTime)
+            const roles = user.app_metadata?.roles || []
+            setButtonVisibility(roles)
             handleRedirect(user)
             autoLogout(expirationTime)
             showButtons()
           })
+
           window.netlifyIdentity.on('logout', () => {
             localStorage.removeItem('tokenExpiration')
             hideButtons()
+            enableLink(adminLink)
+            enableLink(motwLink)
+            if (adminLink) adminLink.style.display = 'none'
+            if (motwLink) motwLink.style.display = 'none'
           })
 
           checkTokenExpirationOnLoad()
 
           const currentUser = window.netlifyIdentity.currentUser()
           if (currentUser) {
+            const roles = currentUser.app_metadata?.roles || []
+            setButtonVisibility(roles)
             showButtons()
           }
         } else {
@@ -55,7 +96,7 @@
           } else if (roles.includes('motw')) {
             window.location.href = '/cms/motw/index.html'
           } else {
-            window.location.href = '/cms/'
+            window.location.href = '/cms/index.html'
           }
         }
       }
