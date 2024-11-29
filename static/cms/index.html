@@ -14,6 +14,7 @@
         const buttonsElement = document.getElementById('buttons')
         const adminLink = document.querySelector('a.admin')
         const motwLink = document.querySelector('a.motw')
+        const usernameElement = document.getElementById('username')
 
         function hideButtons() {
           if (buttonsElement) {
@@ -27,8 +28,13 @@
         }
         function disableLink(link) {
           if (link) {
-            link.style.pointerEvents = 'none'
-            link.style.opacity = '0.5'
+            link.style.opacity = '0.38'
+            link.removeAttribute('href')
+            link.style.cursor = 'not-allowed'
+            link.title = 'Access Denied – Insufficient Permissions'
+            link.style.transition = 'none'
+            link.style.transform = 'none'
+            link.style.userSelect = 'none'
           }
         }
         function enableLink(link) {
@@ -65,6 +71,10 @@
             handleRedirect(user)
             autoLogout(expirationTime)
             showButtons()
+
+            if (usernameElement) {
+              usernameElement.textContent = `Welcome ${user.user_metadata?.full_name || 'User'}!`
+            }
           })
 
           window.netlifyIdentity.on('logout', () => {
@@ -83,6 +93,12 @@
             const roles = currentUser.app_metadata?.roles || []
             setButtonVisibility(roles)
             showButtons()
+
+            if (usernameElement) {
+              usernameElement.textContent = `Welcome ${
+                currentUser.user_metadata?.full_name || 'User'
+              }!`
+            }
           }
         } else {
           console.error('Netlify Identity not loaded')
@@ -127,20 +143,24 @@
         background-image: linear-gradient(to top left, rgb(97, 70, 141), rgb(78, 96, 185));
         background-attachment: fixed;
         color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
       }
       .main {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: max-content;
+        max-width: 90%;
       }
       .content {
         display: flex;
         flex-direction: column;
-        border-radius: 5px;
+        width: max-content;
+        border-radius: 10px;
         box-shadow: 0px 0px 30px;
-        background-color: #00000050;
+        background-color: #00000099;
         border: solid 5px;
       }
       .header {
@@ -156,6 +176,10 @@
       }
       .logo {
         display: flex;
+        transition: transform ease 0.3s;
+        &:hover {
+          transform: scale(1.05);
+        }
       }
       .logo img {
         height: 100px;
@@ -168,6 +192,9 @@
         gap: 0.5rem;
         align-items: center;
       }
+      .login {
+        display: flex;
+      }
       .login a {
         display: flex;
         color: black;
@@ -178,16 +205,28 @@
         text-align: center;
         border-radius: 5px;
         font-weight: bolder;
+        transition: transform ease 0.3s;
+        &:hover {
+          transform: scale(1.05);
+        }
       }
 
       .buttons {
-        justify-content: space-evenly;
-        gap: 1rem;
+        flex-direction: column;
         padding: 1rem;
         border-top: solid 5px #ffffff50;
+        align-items: center;
+        gap: 1rem;
       }
       .buttons a {
         text-decoration: none;
+      }
+      .roles {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-evenly;
+        width: auto;
       }
       .admin,
       .motw {
@@ -196,6 +235,74 @@
         padding: 10px 90px;
         background-color: #ffffff;
         color: black;
+        transition: transform ease 0.3s;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+      .deploy-status {
+        padding-top: 5px;
+      }
+      @media (max-width: 600px) {
+        .title {
+          font-size: 1.25rem;
+          text-align: center;
+        }
+
+        .login a,
+        .admin,
+        .motw {
+          font-size: 14px;
+        }
+
+        .main {
+          padding: 1rem;
+          width: 100%;
+        }
+
+        .content {
+          width: 100%;
+          max-width: 500px;
+          margin: 0 auto;
+        }
+
+        .header {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: center;
+          padding: 1rem;
+        }
+
+        .logo img {
+          height: 80px;
+          width: auto;
+        }
+
+        .login-container {
+          gap: 1rem;
+        }
+
+        .login a {
+          display: flex;
+          padding: 10px 60px;
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .buttons,
+        .roles {
+          flex-direction: column;
+          gap: 0.5rem;
+          align-items: center;
+          padding: 0.5rem 1rem;
+        }
+
+        .buttons a {
+          padding: 10px 31px;
+          width: 100%;
+          max-width: 200px;
+          text-align: center;
+        }
       }
     </style>
   </head>
@@ -219,8 +326,19 @@
           </div>
         </div>
         <div class="buttons" id="buttons" style="display: none">
-          <a class="admin" href="/cms/admin/index.html">Admin</a>
-          <a class="motw" href="/cms/motw/index.html">MOTW</a>
+          <div id="username"></div>
+          <div class="roles">
+            <a class="admin" href="/cms/admin/index.html">Admin</a>
+            <a class="motw" href="/cms/motw/index.html">MOTW</a>
+          </div>
+          <div class="deploy-status">
+            <a href="https://app.netlify.com/sites/bsaber/deploys">
+              <img
+                src="https://api.netlify.com/api/v1/badges/03c23ede-30e9-41bf-9e1a-32a5ec62f5b1/deploy-status"
+                alt="Netlify Status"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
