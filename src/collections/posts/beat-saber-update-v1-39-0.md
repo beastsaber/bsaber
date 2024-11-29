@@ -1,40 +1,41 @@
 ---
 title: Beat Saber Update v1.39.0
 section: articles
-category: announcement
-publish: 2024-12-01T00:00:00.000Z
-homepageText: Learn about the newest update to beatsaber which introduces the
-  Monstercat Mixtape 2 dlc!
+category: news
+publish: 2024-11-29T16:15:00.000Z
+homepageText: Learn about the newest update to Beat Saber which introduces the
+  Monstercat Mixtape 2 DLC!
 image: /static/uploads/posts/bs-update-1.39.0.png
 authors:
   - "4323746"
+credits: []
 showInPostListing: true
 ---
 # New Update!
 
+!youtube[4oMMbboQ0P8]
 
 Beat Saber is excited to release their newest addition to the game; Monstercat Mixtape 2. This update provides us with the long-awaited sequel to Vol 1 and many other features and fixes!
 
-<p>Source: <a target=blank href="https://store.steampowered.com/news/app/620980/view/4451339035198095637">Steam News Page</a></p>
+Source: [Steam News Page](https://store.steampowered.com/news/app/620980/view/4451339035198095637)
 
 > "The new update v1.39.0 (Steam, Meta Quest Oculus Rift), v1.94 (PS VR1), and v01.027.000 (PS VR2) is now live. This update brings you the Monstercat Mixtape 2, featuring tracks from favorite artists such as Alan Walker, Öwnboss, Excision, Sullivan King, Pegboard Nerds, Teminite, and more. Additionally, the new environment boasts a spectrogram that reacts to the music like ferrofluid liquid, while big screens on either side distort the line pattern in perfect sync with the beat, creating an unforgettable visual experience."
 
 ## Track list:
-<p><i>Expert+ previews by Kival Evan. Find playthroughs of every dificilty on their <a target= blank href="https://www.youtube.com/@KivalEvan/videos">channel</a></i></p>
-<ul>
-<li><a target= blank href="https://youtu.be/vhHKmnf4sT8">Teminite & Skybreak - Accelerate</a></li>
-<li><a target= blank href="https://youtu.be/szo8jzfYpgE">Excision & Dion Timmer - DABADABADABADABA</a></li>
-<li><a target= blank href="https://youtu.be/4okm9rumF0c">Grant & Ellis - Dead Man Walking</a></li>
-<li><a target= blank href="https://youtu.be/G7huKLUyhW0">Bossfight - Endgame</a></li>
-<li><a target= blank href="https://youtu.be/ZlIxz_-RPZY">Nitro Fun - Final Boss</a></li>
-<li><a target= blank href="https://youtu.be/eL7uNYBeEDc">Dyro x Conro - Memory Bank</a></li>
-<li><a target= blank href="https://youtu.be/q5x2yLnnao8">F.O.O.L & Power Glove - Mercenary</a></li>
-<li><a target= blank href="https://youtu.be/nANrET8jlsA">Teddy Killerzs & Pegboard Nerds - Pump</a></li>
-<li><a target= blank href="https://youtu.be/8a-1lnaomC0">Tokyo Machine - RAD</a></li>
-<li><a target= blank href="https://youtu.be/wzhd4ezELa4">Öwnboss & Selva - RIOT</a></li>
-<li><a target= blank href="https://youtu.be/46CjIRfphUo">Sullivan King - Thrones of Blood</a></li>
-<li><a target= blank href="https://youtu.be/1NqhI0IZH_w">Alan Walker - Wake Up</a></li>
-</ul>
+*Expert+ previews by Kival Evan. Find playthroughs of every difficulty on their [channel](https://www.youtube.com/@KivalEvan/videos).*
+
+- [Teminite & Skybreak - Accelerate](https://youtu.be/vhHKmnf4sT8)
+- [Excision & Dion Timmer - DABADABADABADABA](https://youtu.be/szo8jzfYpgE)
+- [Grant & Ellis - Dead Man Walking](https://youtu.be/4okm9rumF0c)
+- [Bossfight - Endgame](https://youtu.be/G7huKLUyhW0)
+- [Nitro Fun - Final Boss](https://youtu.be/ZlIxz_-RPZY)
+- [Dyro x Conro - Memory Bank](https://youtu.be/eL7uNYBeEDc)
+- [F.O.O.L & Power Glove - Mercenary](https://youtu.be/q5x2yLnnao8)
+- [Teddy Killerz & Pegboard Nerds - Pump](https://youtu.be/nANrET8jlsA)
+- [Tokyo Machine - RAD](https://youtu.be/8a-1lnaomC0)
+- [Öwnboss & Selva - RIOT](https://youtu.be/wzhd4ezELa4)
+- [Sullivan King - Thrones of Blood](https://youtu.be/46CjIRfphUo)
+- [Alan Walker - Wake Up](https://youtu.be/1NqhI0IZH_w)
 
 
 ---
