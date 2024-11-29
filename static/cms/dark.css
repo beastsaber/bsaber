@@ -115,7 +115,6 @@ body {
   color: var(--primary-text-color);
 }
 a {
-  font-size: inherit;
   color: var(--url-text-color);
 }
 h1,
