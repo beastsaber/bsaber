@@ -15,6 +15,8 @@ showInPostListing: true
 
 Beat Saber is excited to release their newest addition to the game; Monstercat Mixtape 2. This update provides us with the long-awaited sequel to Vol 1 and many other features and fixes!
 
+<p>Source: <a target=blank href="https://store.steampowered.com/news/app/620980/view/4451339035198095637">Steam News Page</a></p>
+
 > "The new update v1.39.0 (Steam, Meta Quest Oculus Rift), v1.94 (PS VR1), and v01.027.000 (PS VR2) is now live. This update brings you the Monstercat Mixtape 2, featuring tracks from favorite artists such as Alan Walker, Öwnboss, Excision, Sullivan King, Pegboard Nerds, Teminite, and more. Additionally, the new environment boasts a spectrogram that reacts to the music like ferrofluid liquid, while big screens on either side distort the line pattern in perfect sync with the beat, creating an unforgettable visual experience."
 
 ## Track list:
