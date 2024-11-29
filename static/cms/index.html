@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>BeastSaber CMS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="https://bsaber.com/favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,400,700" rel="stylesheet" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -119,17 +121,95 @@
         }
       }
     </script>
+    <style>
+      body {
+        font-family: 'Poppins';
+        background-image: linear-gradient(to top left, rgb(97, 70, 141), rgb(78, 96, 185));
+        background-attachment: fixed;
+        color: white;
+      }
+      .main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: max-content;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        box-shadow: 0px 0px 30px;
+        background-color: #00000050;
+        border: solid 5px;
+      }
+      .header {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        justify-content: space-evenly;
+        padding: 1rem 4rem;
+      }
+      .title {
+        font-size: 1.85rem;
+        display: flex;
+      }
+      .logo {
+        display: flex;
+      }
+      .logo img {
+        height: 100px;
+        width: auto;
+        border-radius: 5px;
+      }
+      .login-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .login a {
+        display: flex;
+        color: black;
+        text-decoration: none;
+        padding: 10px 100px;
+        background-color: white;
+        font-size: 15px;
+        text-align: center;
+        border-radius: 5px;
+        font-weight: bolder;
+      }
+
+      .buttons {
+        justify-content: space-evenly;
+        gap: 1rem;
+        padding: 1rem;
+        border-top: solid 5px #ffffff50;
+      }
+      .buttons a {
+        text-decoration: none;
+      }
+      .admin,
+      .motw {
+        border-radius: 5px;
+        font-weight: bolder;
+        padding: 10px 90px;
+        background-color: #ffffff;
+        color: black;
+      }
+    </style>
   </head>
   <body>
     <div class="main">
       <div class="content">
         <div class="header">
-          <div class="logo">
-            <img
-              src="https://bsaber.com/beastsaber-logo-fullsize-square.jpg"
-              alt="BeastSaber Logo"
-            />
-          </div>
+          <a href="https://bsaber.com"
+            ><div class="logo">
+              <img
+                src="https://bsaber.com/beastsaber-logo-fullsize-square.jpg"
+                alt="BeastSaber Logo"
+              /></div
+          ></a>
           <div class="login-container">
             <div class="title">
               <span style="font-weight: 100">BEAST</span
@@ -145,82 +225,4 @@
       </div>
     </div>
   </body>
-
-  <style>
-    body {
-      font-family: 'Poppins';
-      background-image: linear-gradient(to top left, rgb(97, 70, 141), rgb(78, 96, 185));
-      background-attachment: fixed;
-      color: white;
-    }
-    .main {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: max-content;
-    }
-    .content {
-      display: flex;
-      flex-direction: column;
-      border-radius: 5px;
-      box-shadow: 0px 0px 30px;
-      background-color: #00000050;
-      border: solid 5px;
-    }
-    .header {
-      display: flex;
-      flex-direction: row;
-      gap: 3rem;
-      justify-content: space-evenly;
-      padding: 1rem 4rem;
-      border-bottom: solid 5px #ffffff50;
-    }
-    .title {
-      font-size: 1.85rem;
-      display: flex;
-    }
-    .logo {
-      display: flex;
-    }
-    .logo img {
-      height: 100px;
-      width: auto;
-      border-radius: 5px;
-    }
-    .login-container {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: center;
-    }
-    .login a {
-      display: flex;
-      color: black;
-      text-decoration: none;
-      padding: 10px 100px;
-      background-color: white;
-      font-size: 15px;
-      text-align: center;
-      border-radius: 5px;
-      font-weight: bolder;
-    }
-
-    .buttons {
-      justify-content: space-evenly;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .buttons a {
-      text-decoration: none;
-    }
-    .admin,
-    .motw {
-      border-radius: 5px;
-      font-weight: bolder;
-      padding: 10px 90px;
-      background-color: #ffffff;
-      color: black;
-    }
-  </style>
 </html>
