@@ -18,7 +18,7 @@
 
 {#if mapId}
   <a
-    title="OneClick&trade; Install via BeatSaver and ModAssistant"
+    title="OneClick&trade; Install via BeatSaver"
     href="beatsaver://{mapId}"
     class="one-click-download-link"
     style="font-size: {fontSize}"
@@ -27,7 +27,7 @@
   </a>
 {:else if playlistUrl}
   <a
-    title="OneClick&trade; Install via BeatSaver and ModAssistant"
+    title="OneClick&trade; Install via BeatSaver"
     href="bsplaylist://playlist/{playlistUrl}"
     class="one-click-download-link"
     style="font-size: {fontSize}"

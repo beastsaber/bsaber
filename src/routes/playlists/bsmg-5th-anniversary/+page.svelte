@@ -41,8 +41,7 @@
       <a
         class="one"
         href="bsplaylist://playlist/https://api.beatsaver.com/playlists/id/89418/download"
-        title="OneClick&trade; Install via BeatSaver and ModAssistant"
-        ><Fa icon={faCloudDownloadAlt} /></a
+        title="OneClick&trade; Install via BeatSaver"><Fa icon={faCloudDownloadAlt} /></a
       >
     </div>
     <div class="buttons">
