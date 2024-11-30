@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>BeastSaber CMS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="https://bsaber.com/favicon.png" />
+    <link href="/cms/css/main-index.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,400,700" rel="stylesheet" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const buttonsElement = document.getElementById('buttons')
         const adminLink = document.querySelector('a.admin')
         const motwLink = document.querySelector('a.motw')
+        const usernameElement = document.getElementById('username')
 
         function hideButtons() {
           if (buttonsElement) {
@@ -25,8 +28,13 @@
         }
         function disableLink(link) {
           if (link) {
-            link.style.pointerEvents = 'none'
-            link.style.opacity = '0.5'
+            link.style.opacity = '0.38'
+            link.removeAttribute('href')
+            link.style.cursor = 'not-allowed'
+            link.title = 'Access Denied – Insufficient Permissions'
+            link.style.transition = 'none'
+            link.style.boxShadow = 'none'
+            link.style.userSelect = 'none'
           }
         }
         function enableLink(link) {
@@ -63,6 +71,10 @@
             handleRedirect(user)
             autoLogout(expirationTime)
             showButtons()
+
+            if (usernameElement) {
+              usernameElement.textContent = `Welcome ${user.user_metadata?.full_name || 'User'}!`
+            }
           })
 
           window.netlifyIdentity.on('logout', () => {
@@ -81,6 +93,12 @@
             const roles = currentUser.app_metadata?.roles || []
             setButtonVisibility(roles)
             showButtons()
+
+            if (usernameElement) {
+              usernameElement.textContent = `Welcome ${
+                currentUser.user_metadata?.full_name || 'User'
+              }!`
+            }
           }
         } else {
           console.error('Netlify Identity not loaded')
@@ -124,12 +142,13 @@
     <div class="main">
       <div class="content">
         <div class="header">
-          <div class="logo">
-            <img
-              src="https://bsaber.com/beastsaber-logo-fullsize-square.jpg"
-              alt="BeastSaber Logo"
-            />
-          </div>
+          <a href="https://bsaber.com"
+            ><div class="logo">
+              <img
+                src="https://bsaber.com/beastsaber-logo-fullsize-square.jpg"
+                alt="BeastSaber Logo"
+              /></div
+          ></a>
           <div class="login-container">
             <div class="title">
               <span style="font-weight: 100">BEAST</span
@@ -139,88 +158,20 @@
           </div>
         </div>
         <div class="buttons" id="buttons" style="display: none">
-          <a class="admin" href="/cms/admin/index.html">Admin</a>
-          <a class="motw" href="/cms/motw/index.html">MOTW</a>
+          <div id="username"></div>
+          <div class="roles">
+            <a class="admin" href="/cms/admin/index.html">Admin</a>
+            <a class="motw" href="/cms/motw/index.html">MOTW</a>
+          </div>
+          <div class="deploy-status">
+            <img
+              src="https://api.netlify.com/api/v1/badges/03c23ede-30e9-41bf-9e1a-32a5ec62f5b1/deploy-status"
+              alt="Netlify Status"
+            />
+            <span class="tooltip">Build Status</span>
+          </div>
         </div>
       </div>
     </div>
   </body>
-
-  <style>
-    body {
-      font-family: 'Poppins';
-      background-image: linear-gradient(to top left, rgb(97, 70, 141), rgb(78, 96, 185));
-      background-attachment: fixed;
-      color: white;
-    }
-    .main {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: max-content;
-    }
-    .content {
-      display: flex;
-      flex-direction: column;
-      border-radius: 5px;
-      box-shadow: 0px 0px 30px;
-      background-color: #00000050;
-      border: solid 5px;
-    }
-    .header {
-      display: flex;
-      flex-direction: row;
-      gap: 3rem;
-      justify-content: space-evenly;
-      padding: 1rem 4rem;
-      border-bottom: solid 5px #ffffff50;
-    }
-    .title {
-      font-size: 1.85rem;
-      display: flex;
-    }
-    .logo {
-      display: flex;
-    }
-    .logo img {
-      height: 100px;
-      width: auto;
-      border-radius: 5px;
-    }
-    .login-container {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: center;
-    }
-    .login a {
-      display: flex;
-      color: black;
-      text-decoration: none;
-      padding: 10px 100px;
-      background-color: white;
-      font-size: 15px;
-      text-align: center;
-      border-radius: 5px;
-      font-weight: bolder;
-    }
-
-    .buttons {
-      justify-content: space-evenly;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .buttons a {
-      text-decoration: none;
-    }
-    .admin,
-    .motw {
-      border-radius: 5px;
-      font-weight: bolder;
-      padding: 10px 90px;
-      background-color: #ffffff;
-      color: black;
-    }
-  </style>
 </html>

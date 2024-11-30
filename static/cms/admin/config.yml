@@ -9,6 +9,8 @@ collections:
     label_singular: Post
     folder: src/collections/posts
     create: true
+    editor:
+      preview: false
     fields:
       - name: title
         label: Title
@@ -141,6 +143,8 @@ collections:
     folder: src/collections/community-labels
     slug: '{{label}}'
     create: true
+    editor:
+      preview: false
     fields:
       - name: label
         label: Label
@@ -156,6 +160,8 @@ collections:
     folder: src/collections/communities
     slug: '{{name}}'
     create: true
+    editor:
+      preview: false
     fields:
       - name: name
         label: Name
@@ -279,6 +285,8 @@ collections:
     folder: src/collections/community-events
     slug: '{{title}}'
     create: true
+    editor:
+      preview: false
     view_filters:
       - label: Beat Saber Modding Group
         field: host
@@ -365,6 +373,8 @@ collections:
     folder: src/collections/community-event-hosts
     slug: '{{name}}'
     create: true
+    editor:
+      preview: false
     fields:
       - name: name
         label: Name
@@ -376,6 +386,8 @@ collections:
     folder: src/collections/people
     slug: '{{name}}'
     create: true
+    editor:
+      preview: false
     fields:
       - name: name
         label: name
@@ -420,6 +432,8 @@ collections:
     folder: src/collections/featured-playlist-overwrites
     slug: '{{id}}'
     create: true
+    editor:
+      preview: false
     fields:
       - name: id
         label: BeatSaver Playlist ID

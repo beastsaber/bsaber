@@ -115,7 +115,6 @@ body {
   color: var(--primary-text-color);
 }
 a {
-  font-size: inherit;
   color: var(--url-text-color);
 }
 h1,
@@ -689,6 +688,8 @@ button.css-1f8dk1z-ButtonRound-button-EditorToggle:hover {
 .css-18h6btn,
 .css-12fzmby,
 .css-xa00c7,
+.css-1es1p1t,
+.css-t16udx,
 .css-1d0dxug {
   color: inherit;
   background-color: var(--widgets-bg-color);

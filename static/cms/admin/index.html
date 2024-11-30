@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>BeastSaber CMS - Admin</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BeastSaber Admin</title>
+    <link rel="icon" type="image/x-icon" href="https://bsaber.com/favicon.png" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
-  <link href="/cms/mobile-overrides.css" rel="stylesheet" />
   <script>
     function applyDarkMode(isDarkMode) {
       const darkCssLink = document.querySelector('link[href="/cms/dark.css"]')
@@ -19,7 +19,7 @@
         if (!darkCssLink) {
           const link = document.createElement('link')
           link.rel = 'stylesheet'
-          link.href = '/cms/dark.css'
+          link.href = '/cms/css/dark-mode.css'
           document.head.appendChild(link)
         }
       } else {
@@ -42,5 +42,14 @@
     }
 
     document.addEventListener('DOMContentLoaded', initializeDarkMode)
+
+    // Add mobile CSS overrides after everything for better usability and HTML compliance.
+    // Loading in the <head> element causes issues because the Decap CMS system hasn't fully loaded
+    window.onload = function () {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = '/cms/css/mobile-overrides.css'
+      document.head.appendChild(link)
+    }
   </script>
 </html>
