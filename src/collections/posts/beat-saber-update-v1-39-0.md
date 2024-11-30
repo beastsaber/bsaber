@@ -66,4 +66,4 @@ Source: [Steam News Page](https://store.steampowered.com/news/app/620980/view/44
 
 # Wondering if you should update?
 
-Yes! It is recomended to update to 1.39+ as most mods are now available. Scores on past or "legacy" versions will no longer be supported meaning if you play on 1.29.1 you **cannot** submit scores via mods. It is unsure when this will be enforced but it *will* happen.
+Yes! It is recommended to update to 1.39+ as most mods are now available. Scores on past or "legacy" versions will likely no longer be supported. This might mean that if you play on 1.29.1, for example, you will not be able to submit scores via mods like ScoreSaber and BeatLeader if/when the change happens.
