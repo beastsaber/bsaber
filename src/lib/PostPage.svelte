@@ -287,6 +287,7 @@
         }
         .author-box-person-info {
           margin-left: 1rem;
+          width: 100%;
           h4 {
             font-size: 1.1rem;
           }
