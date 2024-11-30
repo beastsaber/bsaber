@@ -19,7 +19,7 @@
         if (!darkCssLink) {
           const link = document.createElement('link')
           link.rel = 'stylesheet'
-          link.href = '/cms/dark.css'
+          link.href = '/cms/css/dark-mode.css'
           document.head.appendChild(link)
         }
       } else {
@@ -48,7 +48,7 @@
     window.onload = function () {
       const link = document.createElement('link')
       link.rel = 'stylesheet'
-      link.href = '/cms/mobile-overrides.css'
+      link.href = '/cms/css/mobile-overrides.css'
       document.head.appendChild(link)
     }
   </script>
