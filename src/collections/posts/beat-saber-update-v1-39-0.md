@@ -3,12 +3,10 @@ title: Beat Saber Update v1.39.0
 section: articles
 category: news
 publish: 2024-11-29T16:15:00.000Z
-homepageText: Learn about the newest update to Beat Saber which introduces the
-  Monstercat Mixtape 2 DLC!
-image: /static/uploads/posts/bs-update-1.39.0.png
+homepageText: Learn about the newest update to Beat Saber which introduces the Monstercat Mixtape 2 DLC!
+image: /static/uploads/posts/bs-update-1-39-0.png
 authors:
   - "4323746"
-credits: []
 showInPostListing: true
 ---
 # New Update!
@@ -36,7 +34,6 @@ Source: [Steam News Page](https://store.steampowered.com/news/app/620980/view/44
 - [Öwnboss & Selva - RIOT](https://youtu.be/wzhd4ezELa4)
 - [Sullivan King - Thrones of Blood](https://youtu.be/46CjIRfphUo)
 - [Alan Walker - Wake Up](https://youtu.be/1NqhI0IZH_w)
-
 
 ---
 <br />
