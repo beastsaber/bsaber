@@ -4,7 +4,7 @@ section: articles
 category: news
 publish: 2024-11-29T16:15:00.000Z
 homepageText: Learn about the newest update to Beat Saber which introduces the Monstercat Mixtape 2 DLC!
-image: /static/uploads/posts/bs-update-1-39-0.png
+image: /static/uploads/posts/BS-Update-1-39-0.png
 authors:
   - "4323746"
 showInPostListing: true
