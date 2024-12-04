@@ -31,7 +31,7 @@ collections:
           - { label: 'Guide', value: 'guide' }
           - { label: 'Interview', value: 'interview' }
           - { label: 'Event', value: 'event' }
-      - name: type
+      - name: postEventType
         label: Event Type - *Only used when the Category is an Event*
         hint: Only used when the Category is an Event
         required: false
