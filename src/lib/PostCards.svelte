@@ -1,61 +1,17 @@
 <script lang="ts">
   import type { Post } from '../types'
-  import { postCategories } from '../maps'
-  import { postEventTypes } from '../maps'
+  import { processPosts, getBackgroundImage } from './postUtils'
   import Fa from 'svelte-fa/src/fa.svelte'
-  import {
-    faTrophy,
-    faGraduationCap,
-    faComments,
-    faAward,
-    faHeart,
-    faTree,
-  } from '@fortawesome/free-solid-svg-icons'
 
-  type PostEventType = 'tournament' | 'learning' | 'social' | 'awards' | 'charity' | 'seasonal'
-  type ValidNumColumns = `${'3' | '4'}`
-
-  export const FaIcons = {
-    tournament: faTrophy,
-    learning: faGraduationCap,
-    social: faComments,
-    awards: faAward,
-    charity: faHeart,
-    seasonal: faTree,
-  }
-
-  export let maxColumns: ValidNumColumns = '4'
+  export let maxColumns: `${'3' | '4'}` = '4'
   export let posts: Post[]
-  export let maxCards: number | undefined = undefined // max amount of cards to show
+  export let maxCards: number | undefined = undefined
   export let aspectRatio: number = 1
 
-  function isPostEventType(type: any): type is PostEventType {
-    return ['tournament', 'learning', 'social', 'awards', 'charity', 'seasonal'].includes(type)
-  }
-
-  let cardsToShow =
-    maxCards !== undefined && maxCards >= 0 ? posts.slice(0, Math.round(maxCards)) : posts
-  let cardsWithLabel = cardsToShow.map((c) => {
-    const postEventType: PostEventType | undefined = isPostEventType(c.type) ? c.type : undefined
-    const postCategory = postEventType ? postEventTypes[postEventType] : ''
-    const faIcon = postEventType ? FaIcons[postEventType] : null
-
-    return {
-      ...c,
-      categoryLabel: postCategories[c.category],
-      postTypeLabel: postCategory,
-      faIcon,
-    }
-  })
-
   const maxColsClass = `max-cols-${maxColumns}`
-
-  function getBackgroundImage(image: string | undefined) {
-    if (!image) {
-      return 'none'
-    }
-    return `url(${image}`
-  }
+  const cardsToShow =
+    maxCards !== undefined && maxCards >= 0 ? posts.slice(0, Math.round(maxCards)) : posts
+  const cardsWithLabel = processPosts(cardsToShow)
 </script>
 
 <div class="cards {maxColsClass}" style="--aspect-ratio:{aspectRatio}">
@@ -67,7 +23,7 @@
     >
       <div class="content {maxColsClass}">
         <div class="tags">
-          {#if card.section !== undefined}
+          {#if card.categoryLabel}
             <span class="category">{card.categoryLabel}</span>
           {/if}
           {#if card.postTypeLabel}

@@ -4,137 +4,73 @@
   import MetaHead from './MetaHead.svelte'
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
-  import { postCategories } from '../maps'
-  import { postEventTypes } from '../maps'
   import Fa from 'svelte-fa/src/fa.svelte'
-  import {
-    faTrophy,
-    faGraduationCap,
-    faComments,
-    faAward,
-    faHeart,
-    faTree,
-  } from '@fortawesome/free-solid-svg-icons'
+  import { FaIcons, processPosts } from './postUtils' // Import from postUtils
+  import { postCategories, postEventTypes } from '../maps'
 
   type PostEventType = 'tournament' | 'learning' | 'social' | 'awards' | 'charity' | 'seasonal'
 
   export let post: PostWithAuthorAndContributor
   const { body, title, image, authors, credits, publish, lastUpdated } = post
-  const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
-  let categoryLabel = postCategories[post.category]
-  let postEventTypeLabel = post.type ? postEventTypes[post.type] : postEventTypes.default
+  const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Adjust image path
 
-  export const FaIcons = {
-    tournament: faTrophy,
-    learning: faGraduationCap,
-    social: faComments,
-    awards: faAward,
-    charity: faHeart,
-    seasonal: faTree,
-  }
+  // Process post category and event type using postUtils
+  const { postTypeLabel, faIcon } = processPosts([post])[0] // Using postUtils for post data
 
-  function isPostEventType(type: any): type is PostEventType {
-    return ['tournament', 'learning', 'social', 'awards', 'charity', 'seasonal'].includes(type)
-  }
+  // Format publish date
+  const date = new Date(publish).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  })
 
-  const postEventType: PostEventType | undefined = isPostEventType(post.type)
-    ? post.type
-    : undefined
-  const postCategory = postEventType ? postEventTypes[postEventType] : ''
-  const faIcon = postEventType ? FaIcons[postEventType] : null
+  // Removed redundant category and event type handling since it's covered by processPosts
+  const categoryLabel = postCategories[post.category]
+  const postEventTypeLabel = postEventTypes[post.postEventType ?? 'default']
+
+  // You can directly use FaIcons here (no need to assign them manually)
+  const eventIcon = faIcon ? FaIcons[post.postEventType ?? 'default'] : null
 
   const postRenderer = new marked.Renderer()
-  // This will make headings start at 2, because the title will be rendered as an h1
-  postRenderer.heading = (text, level) => {
-    const idMatch = text.match(/ {\$([a-zA-Z0-9\-_]+)}/)
-    const finalText = idMatch ? text.replace(idMatch[0], '') : text
-    const id = idMatch ? idMatch[1] : undefined
-    if (id) {
-      return `<h${level + 1} id="${id}" class="header-smooth-scroll">${finalText}</h${level + 1}>`
-    }
 
-    return `<h${level + 1}>${text}</h${level + 1}>`
-  }
-
-  // This will make links hard-reload instead of using SPA navigation
-  postRenderer.link = (href, title, text) => {
-    if (text == null) {
-      text = href
-    }
-
-    if (title != null) {
-      return `<a href="${href}" title=${title} rel="external">${text}</a>`
-    }
-
-    return `<a href="${href}" rel="external">${text}</a>`
-  }
-
-  // Injecting !youtube[video-id] tags with the respective iframe by using the paragraph renderer
-  // I did attempt using the tokenizer instead, but it just complicated things a lot
+  // Custom Markdown renderers for YouTube embeds and links
   const youtubeRegex = /^!youtube\[([^\]]+)\]/g
   const youtubePlaylistRegex = /^!youtubepl\[([^\]]+)\]/g
 
   const createYoutubeIFrameFromId = (videoId: string) => `
-  <iframe class="markdown-youtube-video" src="https://www.youtube.com/embed/${videoId}" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
-    >
-  </iframe>`
+    <iframe class="markdown-youtube-video" src="https://www.youtube.com/embed/${videoId}" 
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>`
 
   const createYoutubePlaylistIFrameFromId = (playlistId: string) => `
-  <iframe class="markdown-youtube-playlist" src="https://www.youtube.com/embed/videoseries?list=${playlistId}" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
-    >
-  </iframe>`
+    <iframe class="markdown-youtube-playlist" src="https://www.youtube.com/embed/videoseries?list=${playlistId}" 
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>`
 
   postRenderer.paragraph = (text) => {
-    let renderedText = text.replace(youtubeRegex, (_, videoId) => {
-      return createYoutubeIFrameFromId(videoId.trim())
-    })
-
-    renderedText = renderedText.replace(youtubePlaylistRegex, (_, playlistId) => {
-      return createYoutubePlaylistIFrameFromId(playlistId.trim())
-    })
-
+    let renderedText = text.replace(youtubeRegex, (_, videoId) =>
+      createYoutubeIFrameFromId(videoId.trim()),
+    )
+    renderedText = renderedText.replace(youtubePlaylistRegex, (_, playlistId) =>
+      createYoutubePlaylistIFrameFromId(playlistId.trim()),
+    )
     return `<p>${renderedText}</p>`
   }
 
-  const linkifyPerson = (person: Uploader) => {
-    return `<a class="post-person-link" href="https://beatsaver.com/profile/${person.id}">${person.name}</a>`
-  }
-  const scrollifyPerson = (person: Uploader) => {
-    return `<a class="faux-scroll-link post-person-link">${person.name}</a></div>`
-  }
-  const prettyNameConcatenation = (people: Uploader[], transformationFunction = linkifyPerson) => {
-    // Special cases
-    if (people.length === 0) return ''
-    if (people.length === 1) return transformationFunction(people[0])
-    // Usual case: First n-1 people concatenaded with commas, and the last one with an "and"
-    const lastPerson = people.pop()!
-    return `${people.map(linkifyPerson).join(', ')} and ${transformationFunction(lastPerson)}`
-  }
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
-  function formatDate(dateTimeString: string): string {
+  // Function to format date (customize as needed)
+  const formatDate = (dateTimeString: string): string => {
     const date = new Date(dateTimeString)
-    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+    return `${date.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`
   }
+
+  // Process author links (no need for custom logic if linked via processPosts)
+  const linkifyPerson = (person: Uploader) =>
+    `<a class="post-person-link" href="https://beatsaver.com/profile/${person.id}">${person.name}</a>`
+
+  // Handle smooth scrolling on author links
   let authorBox: HTMLElement
   onMount(() => {
     if (authorBox) {
@@ -157,34 +93,32 @@
 <article>
   {#if imageUrl !== undefined}
     <header style={`background-image: url(${imageUrl})`}>
-      <h1>
-        {title}
-      </h1>
+      <h1>{title}</h1>
     </header>
   {:else}
-    <h1>
-      {title}
-    </h1>
+    <h1>{title}</h1>
   {/if}
+
   <div class="meta-data-line">
     <div class="category-author">
       <div class="tags">
         <span class="category">{categoryLabel}</span>
-        {#if postEventType}
-          <span class="post-event-type"><Fa icon={faIcon} />&nbsp;{postEventTypeLabel}</span>
+        {#if postEventTypeLabel}
+          <span class="post-event-type"><Fa icon={eventIcon} />&nbsp;{postEventTypeLabel}</span>
         {/if}
       </div>
-      <span>
-        {#if authors.length > 0}
-          <span class="author-information"
-            >Written by {@html prettyNameConcatenation(authors, scrollifyPerson)}
-          </span>
-        {/if}
-      </span>
+
+      {#if authors.length > 0}
+        <span class="author-information">
+          Written by {@html prettyNameConcatenation(authors, linkifyPerson)}
+        </span>
+      {/if}
     </div>
+
     {#if authors.length > 0}
       <div class="spacer">|</div>
     {/if}
+
     <div class="publish-update">
       {#if lastUpdated}
         <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
@@ -192,35 +126,31 @@
         <span class="hide-on-small">Published on </span>{formatDate(publish)}
       {/if}
     </div>
-    <!-- ToDo: Put Post Category Tags here - might make a good component as they are used in three locations including this one -->
-    <!-- <span class="category-labels"></span> -->
   </div>
+
   {@html marked(body, { renderer: postRenderer })}
 </article>
+
 {#if authors.length > 0}
   <div class="author-box">
     <div class="author-box-header">
-      {#if authors.length > 2}
-        <h3>About the Authors</h3>
-      {:else}
-        <h3>About the Author</h3>
-      {/if}
+      <h3>{authors.length > 2 ? 'About the Authors' : 'About the Author'}</h3>
     </div>
+
     <div class="author-box-content" bind:this={authorBox}>
       {#each authors as author}
         <div class="author-box-person">
           <img class="author-profile-picture" src={author.avatar} alt={author.name} />
           <div class="author-box-person-info">
             <div class="header-line">
-              <h4 class="author-name">
-                {author.name}
-              </h4>
+              <h4 class="author-name">{author.name}</h4>
               <div class="social-links">
                 {#each author.socialLinks ?? [] as social}
                   <SocialIcon social={social.platform} id={social.id} />
                 {/each}
               </div>
             </div>
+
             {#if author.bio !== undefined}
               {@html marked(author.bio)}
             {:else}

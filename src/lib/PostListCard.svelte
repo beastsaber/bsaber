@@ -1,22 +1,14 @@
 <script lang="ts">
   import type { Post } from '../types'
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
+  import { FaIcons, processPosts } from './postUtils' // Importing from postUtils
   import Fa from 'svelte-fa/src/fa.svelte'
   import { postCategories } from '../maps'
-  import { postEventTypes } from '../maps'
-  import {
-    faTrophy,
-    faGraduationCap,
-    faComments,
-    faAward,
-    faHeart,
-    faTree,
-  } from '@fortawesome/free-solid-svg-icons'
 
-  type PostEventType = 'tournament' | 'learning' | 'social' | 'awards' | 'charity' | 'seasonal'
-
+  // Ensure post is passed in
   export let post: Post
 
+  // Process post category and publish date
   let section = postCategories[post.category]
   let date = new Date(post.publish).toLocaleDateString('en-US', {
     month: 'long',
@@ -24,24 +16,8 @@
     year: 'numeric',
   })
 
-  export const FaIcons = {
-    tournament: faTrophy,
-    learning: faGraduationCap,
-    social: faComments,
-    awards: faAward,
-    charity: faHeart,
-    seasonal: faTree,
-  }
-
-  function isPostEventType(type: any): type is PostEventType {
-    return ['tournament', 'learning', 'social', 'awards', 'charity', 'seasonal'].includes(type)
-  }
-
-  const postEventType: PostEventType | undefined = isPostEventType(post.type)
-    ? post.type
-    : undefined
-  const faIcon = postEventType ? FaIcons[postEventType] : null
-  const postTypeLabel = postEventType ? postEventTypes[postEventType] : ''
+  // Get processed post data using processPosts utility
+  const { postTypeLabel, faIcon } = processPosts([post])[0] // Apply processPosts for this post
 </script>
 
 <div class="card">
@@ -59,8 +35,10 @@
       {#if section !== undefined}
         <span class="category" title={section}>{section}</span>
       {/if}
-      {#if postEventType}
-        <span class="post-event-type"><Fa icon={faIcon} />&nbsp;{postTypeLabel}</span>
+      {#if faIcon}
+        <span class="post-event-type">
+          <Fa icon={faIcon} />&nbsp;{postTypeLabel}
+        </span>
       {/if}
     </div>
     <a class="title" href={`/posts/${post.slug}`} title={post.title}>{post.title}</a>

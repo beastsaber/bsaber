@@ -35,6 +35,7 @@ export interface Author extends Uploader {
 export type PostWithAuthorAndContributor = Omit<Post, 'authors' | 'credits'> & {
   authors: Author[]
   credits: { contributors: Uploader[]; contribution?: string }[]
+  postEventType?: string
 }
 
 export type CommunityEventCategory =
