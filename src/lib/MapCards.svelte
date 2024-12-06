@@ -15,8 +15,8 @@
   import CopyBsr from './CopyBSR.svelte'
   import { slide } from 'svelte/transition'
 
-  export let sortOrder: 'FIRST_PUBLISHED' | 'UPDATED' | 'LAST_PUBLISHED' | 'CREATED' | 'CURATED' =
-    'FIRST_PUBLISHED'
+  export let sortOrder: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random' =
+    'Latest'
   export let verified: boolean | undefined = undefined
   export let playlistId: number | undefined = undefined
   export let forceColumnCount: number | undefined = undefined
@@ -39,7 +39,7 @@
   if (playlistId != null) {
     path = `/playlists/id/${playlistId}/0`
   } else {
-    path = `/maps/latest?sort=${sortOrder}${
+    path = `/search/text/0?sortOrder=${sortOrder}${
       verified !== undefined ? `&verified=${verified}` : ''
     }&pageSize=100` // Maxes out at 100
   }
