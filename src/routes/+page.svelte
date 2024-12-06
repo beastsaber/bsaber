@@ -140,7 +140,7 @@
     }/?order=Curated&curated=true`}
     linkText="See all curated maps"
   />
-  <MapCards sortOrder="CURATED" loadMoreEnabled={true} />
+  <MapCards sortOrder="Curated" loadMoreEnabled={true} />
 
   <Header
     text="Recent Maps by Verified Mappers"
