@@ -1,12 +1,10 @@
 ---
 title: Beat Cancer Charity Event
-section: articles
+section: announcements
 category: event
 publish: 2024-11-16T14:07:00.000Z
-homepageText: BEAT CANCER will be an in-person charity event focused on
-  raising   money against Pancreatic Cancer. Attending will be over 20 prominent
-  members   of the community all for raising money for this very important
-  cause.
+homepageText: The Beat Cancer charity event is 🔴LIVE now! Tune in to support an
+  important cause!
 image: /static/uploads/posts/beatcancer-square.jpg
 showInPostListing: true
 ---
@@ -16,6 +14,7 @@ showInPostListing: true
     <img src="/uploads/posts/beatcancer-square.jpg" />
 </div>
 <div class="text">
+<h2><a href="https://www.twitch.tv/cubecommunity">Watch the event here on December 7-8, 2024</a></h2>
 <b>Event Name:</b> Beat Cancer Charity Stream
 <br />
 <b>Event Type:</b> Charity
