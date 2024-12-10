@@ -24,7 +24,7 @@
     "@fortawesome/svelte-fontawesome": "^0.2.2",
     "@playwright/test": "1.25.0",
     "@sveltejs/adapter-static": "^3.0.1",
-    "@sveltejs/kit": "^2.5.0",
+    "@sveltejs/kit": "^2.10.1",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "@types/marked": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
