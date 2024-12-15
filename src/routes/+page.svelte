@@ -61,14 +61,20 @@
         displayTime = [hoursText, minutesText, secondsText].filter(Boolean).join(', ')
       }
 
-      document.getElementById('countdown').innerHTML = displayTime || 'Less than a second remaining'
+      const countdownElement = document.getElementById('countdown')
+      if (countdownElement) {
+        countdownElement.innerHTML = displayTime || 'Less than a second remaining'
+      }
 
       if (timeLeft < 0) {
         clearInterval(countdownFunction)
-        document.getElementById('countdown').innerHTML = 'Submissions Closed!'
+        const countdownElement = document.getElementById('countdown')
+        if (countdownElement) {
+          countdownElement.innerHTML = 'Submissions Closed! Stay tuned for voting!'
+        }
         const submitDiv = document.querySelector('.submit')
         if (submitDiv) {
-          submitDiv.style.display = 'none'
+          ;(submitDiv as HTMLElement).style.display = 'none'
         }
       }
     }, 1000)
@@ -95,10 +101,11 @@
     <div class="right-side-beasties-banner">
       <h1>Beasties are Coming</h1>
       <p class="BeastiesTimerContainer" id="BeastiesTimer">
-        Time left to submit maps: <span id="countdown">Calculating...</span>
+        <span>Submissions Closed! Stay tuned for voting!</span>
       </p>
       <div class="cta-row">
-        <div class="submit">
+        <!-- Temporarily setting display to none until voting opens -->
+        <div class="submit" style="display: none;">
           <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
         </div>
         <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
@@ -232,7 +239,6 @@
   }
 
   .BeastiesTimerContainer {
-    color: $color-danger-red;
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 5px;
@@ -270,24 +276,22 @@
     text-align: center;
     justify-content: center;
     margin-top: 0.5rem;
-    color: $color-danger-red;
-    font-weight: bold;
 
     .button-link {
       gap: 1rem;
       font-size: 1rem;
       padding: 0.5rem 1rem;
+      background-color: $color-accent;
+      color: var(--button-primary-text);
       border-radius: $rounding-small;
       text-decoration: none;
-      background-color: $color-danger-red;
-      color: white;
-      transition: background-color ease 0.2s;
+      transition: background-color 0.2s;
+      &:hover {
+        background-color: var(--button-primary-hover);
+      }
     }
     .button-link:hover {
       background-color: $color-background-primary;
-    }
-    a {
-      color: $color-danger-red;
     }
   }
 </style>
