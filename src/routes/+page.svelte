@@ -21,6 +21,7 @@
   import MetaHead from '$lib/MetaHead.svelte'
   import EventCards from '$lib/EventCards.svelte'
   import { isCurrentEvent } from '$lib/isCurrentEvent'
+  import BeastiesComponent from '$lib/BeastiesComponent.svelte'
 
   export let data: RootPageSSRData
 
@@ -37,48 +38,6 @@
   const maxNewsCards = 3
   const maxFeaturedPackCards = 4
   const maxCommunityEventsCards = 6
-
-  if (typeof document !== 'undefined') {
-    const countdownDate = new Date('December 15, 2024 00:00:00 UTC').getTime()
-    const countdownFunction = setInterval(function () {
-      const now = new Date().getTime()
-      const timeLeft = countdownDate - now
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
-      const daysText = days > 0 ? `${days}&nbsp;${days === 1 ? 'day' : 'days'}` : ''
-      const hoursText = hours > 0 ? `${hours}&nbsp;${hours === 1 ? 'hour' : 'hours'}` : ''
-      const minutesText =
-        minutes > 0 ? `${minutes}&nbsp;${minutes === 1 ? 'minute' : 'minutes'}` : ''
-      const secondsText =
-        seconds > 0 ? `${seconds}&nbsp;${seconds === 1 ? 'second' : 'seconds'}` : ''
-
-      let displayTime
-      if (days >= 1) {
-        displayTime = [daysText, hoursText, minutesText].filter(Boolean).join(', ')
-      } else {
-        displayTime = [hoursText, minutesText, secondsText].filter(Boolean).join(', ')
-      }
-
-      const countdownElement = document.getElementById('countdown')
-      if (countdownElement) {
-        countdownElement.innerHTML = displayTime || 'Less than a second remaining'
-      }
-
-      if (timeLeft < 0) {
-        clearInterval(countdownFunction)
-        const countdownElement = document.getElementById('countdown')
-        if (countdownElement) {
-          countdownElement.innerHTML = 'Submissions Closed! Stay tuned for voting!'
-        }
-        const submitDiv = document.querySelector('.submit')
-        if (submitDiv) {
-          ;(submitDiv as HTMLElement).style.display = 'none'
-        }
-      }
-    }, 1000)
-  }
 </script>
 
 <MetaHead />
@@ -94,30 +53,7 @@
   <!-- Search to be moved to Navbar later -->
   <Search />
 
-  <div class="beasties-banner">
-    <div class="left-side-beasties-banner">
-      <img src="/beastie-trophy.png" alt="Beasties Trophy" />
-    </div>
-    <div class="right-side-beasties-banner">
-      <h1>Beasties are Coming</h1>
-      <p class="BeastiesTimerContainer" id="BeastiesTimer">
-        <span>Submissions Closed! Stay tuned for voting!</span>
-      </p>
-      <div class="cta-row">
-        <!-- Temporarily setting display to none until voting opens -->
-        <div class="submit" style="display: none;">
-          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
-        </div>
-        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
-        <span class="separater"> | </span>
-        <a
-          href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
-          class="text-link"
-          title="External Japanese Guide">もっと読む</a
-        >
-      </div>
-    </div>
-  </div>
+  <BeastiesComponent />
 
   {#if currentMapOfTheWeek != undefined}
     <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
@@ -174,28 +110,6 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
-  .motw-beasties {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
-    margin-top: 3rem;
-  }
-  .motw {
-    flex: 1;
-    height: auto;
-    min-width: 68%;
-  }
-
-  hr {
-    height: 1px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    background-color: #707070;
-  }
-
   .announcement {
     margin-bottom: 1.5rem;
   }
@@ -216,82 +130,6 @@
   @media (min-width: 992px) {
     .leaderboards {
       grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .beasties-banner {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding-top: 10px;
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    @media (max-width: 556px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-    }
-  }
-
-  .BeastiesTimerContainer {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  .separater {
-    @media (max-width: 452px) {
-      display: none;
-    }
-  }
-
-  .left-side-beasties-banner {
-    display: flex;
-    align-items: center;
-    padding-right: 1rem;
-    img {
-      height: 9rem;
-    }
-  }
-
-  .right-side-beasties-banner {
-    width: 575px;
-    height: max-content;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-top: 0.5rem;
-
-    .button-link {
-      gap: 1rem;
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: $color-accent;
-      color: var(--button-primary-text);
-      border-radius: $rounding-small;
-      text-decoration: none;
-      transition: background-color 0.2s;
-      &:hover {
-        background-color: var(--button-primary-hover);
-      }
-    }
-    .button-link:hover {
-      background-color: $color-background-primary;
     }
   }
 </style>
