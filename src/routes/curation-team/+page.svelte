@@ -15,6 +15,8 @@
 
 <MetaHead title="Curation Team" />
 
+<h1 style="text-align: center;">The Curation Team</h1>
+
 <div class="cards">
   {#each curators as curator (curator.id)}
     <CuratorCard
