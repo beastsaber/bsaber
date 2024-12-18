@@ -164,8 +164,8 @@ function changeBackground(theme) {
         backgroundImage: 'linear-gradient(to top left, #222222, #444444)',
       },
       theme3: {
-        backgroundColor: '#1f2a33',
-        backgroundImage: 'linear-gradient(to top left, #1a1f33, #34495e)',
+        backgroundColor: '#2c3e50',
+        backgroundImage: 'linear-gradient(to top left, #2c3e50, #1f305a)',
       },
       theme4: {
         backgroundColor: '#0d1117',
