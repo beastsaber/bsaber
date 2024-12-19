@@ -2,8 +2,10 @@
 title: Comfy Sabers
 section: articles
 category: event
+postEventType: tournament
 publish: 2024-04-24T19:00:00.000Z
-homepageText: Comfy Sabers Season 3 is here! This tournament is available to players ranked lower than 2000 on ScoreSaber. Event ends June 16, 2024.
+homepageText: Comfy Sabers Season 3 is here! This tournament is available to
+  players ranked lower than 2000 on ScoreSaber. Event ends June 16, 2024.
 image: /static/uploads/posts/comfy-sabers/comfy-sabers-no-text.png
 showInPostListing: true
 ---

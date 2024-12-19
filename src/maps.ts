@@ -74,3 +74,13 @@ export const postCategories: Record<string, string> = {
   interview: 'Interview',
   event: 'Event',
 }
+
+// Handle Event Types for Post Pages
+export const postEventTypes: Record<string, string> = {
+  tournament: 'Tournament',
+  social: 'Social',
+  learning: 'Learning',
+  awards: 'Awards',
+  charity: 'Charity',
+  seasonal: 'Seasonal',
+}

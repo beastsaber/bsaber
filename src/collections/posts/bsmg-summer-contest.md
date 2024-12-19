@@ -2,8 +2,11 @@
 title: 2024 BSMG Summer Contest
 section: articles
 category: event
+postEventType: seasonal
 publish: 2024-08-08T12:00:00.000Z
-homepageText: Introducing the first ever BSMG Summer Contest. 2024's theme is "Beach Day/Summer Nights"! Submit your best standard map, visual experience map, gameplay experience map, or models!
+homepageText: Introducing the first ever BSMG Summer Contest. 2024's theme is
+  "Beach Day/Summer Nights"! Submit your best standard map, visual experience
+  map, gameplay experience map, or models!
 image: /static/uploads/posts/bsmg/summer24_teaser.png
 showInPostListing: true
 ---
