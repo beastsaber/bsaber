@@ -33,6 +33,18 @@ collections:
           - { label: 'Guide', value: 'guide' }
           - { label: 'Interview', value: 'interview' }
           - { label: 'Event', value: 'event' }
+      - name: postEventType
+        label: Post Event Type
+        hint: Only used for event posts.
+        required: false
+        widget: select
+        options:
+          - { label: 'Tournament', value: 'tournament' }
+          - { label: 'Social', value: 'social' }
+          - { label: 'Learning', value: 'learning' }
+          - { label: 'Awards', value: 'awards' }
+          - { label: 'Charity', value: 'charity' }
+          - { label: 'Seasonal', value: 'seasonal' }
       - name: publish
         label: Publish Date
         widget: datetime

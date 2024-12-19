@@ -2,6 +2,7 @@
 title: Diamonds in the Rough
 section: articles
 category: event
+postEventType: learning
 publish: 2024-05-17T17:43:00.000Z
 lastUpdated: 2024-08-09T12:00:00.000Z
 homepageText: DITR allows new mappers to pair up with an experienced mapper to

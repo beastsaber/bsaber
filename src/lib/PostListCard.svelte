@@ -2,16 +2,32 @@
   import type { Post } from '../types'
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
   import Fa from 'svelte-fa/src/fa.svelte'
-  import { postCategories } from '../maps'
+  import { faTrophy } from '@fortawesome/free-solid-svg-icons'
+  import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
+  import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
+  import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
+  import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
+  import { faTree } from '@fortawesome/free-solid-svg-icons/faTree'
+  import { postCategories, postEventTypes } from '../maps'
 
   export let post: Post
 
   let section = postCategories[post.category]
+  let eventTypeLabel = post.postEventType ? postEventTypes[post.postEventType] : undefined
   let date = new Date(post.publish).toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
   })
+
+  const eventTypeIcons = {
+    tournament: faTrophy,
+    learning: faGraduationCap,
+    social: faComments,
+    awards: faAward,
+    charity: faHeart,
+    seasonal: faTree,
+  }
 </script>
 
 <div class="card">
@@ -25,9 +41,17 @@
     {/if}
   </a>
   <div class="content">
-    {#if section !== undefined}
-      <span class="category" title={section}>{section}</span>
-    {/if}
+    <div class="labels">
+      {#if section !== undefined}
+        <span class="category" title={section}>{section}</span>
+      {/if}
+      {#if eventTypeLabel !== undefined}
+        <span class="event-type" title={eventTypeLabel}>
+          <Fa icon={eventTypeIcons[post.postEventType]} />
+          {eventTypeLabel}
+        </span>
+      {/if}
+    </div>
     <a class="title" href={`/posts/${post.slug}`} title={post.title}>{post.title}</a>
     <p class="date">{date}</p>
     <p class="short-description">{post.homepageText}</p>
@@ -96,17 +120,27 @@
         overflow: hidden;
       }
 
+      .labels {
+        display: flex;
+        gap: 5px;
+      }
+      .event-type,
       .category {
         font-size: 0.75rem;
         border-radius: 1.5rem;
         background-color: $color-background-secondary;
-        border: 1px solid $color-danger-red;
         padding: 0.125rem 0.5rem;
+        margin-bottom: 0.25rem;
         max-width: fit-content;
-        justify-self: end;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+      .category {
+        border: 1px solid $color-danger-red;
+      }
+      .event-type {
+        border: 1px solid $color-warning-yellow;
       }
     }
   }
