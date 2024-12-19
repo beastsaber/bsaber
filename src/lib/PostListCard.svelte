@@ -129,7 +129,6 @@
         font-size: 0.75rem;
         border-radius: 1.5rem;
         background-color: $color-background-secondary;
-        color: white;
         padding: 0.125rem 0.5rem;
         margin-bottom: 0.25rem;
         max-width: fit-content;

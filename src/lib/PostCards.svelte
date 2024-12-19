@@ -53,15 +53,21 @@
       style="background-image: {getBackgroundImage(card.image)}"
     >
       <div class="content {maxColsClass}">
-        {#if card.section !== undefined}
-          <span class="category" title={card.categoryLabel}>{card.categoryLabel}</span>
-        {/if}
-        {#if card.eventTypeLabel !== undefined}
-          <span class="event-type" title={card.eventTypeLabel}>
-            <Fa icon={eventTypeIcons[card.postEventType]} />
-            {card.eventTypeLabel}
-          </span>
-        {/if}
+        <div class="labels">
+          <div class="categoryLabel">
+            {#if card.section !== undefined}
+              <span class="category" title={card.categoryLabel}>{card.categoryLabel}</span>
+            {/if}
+          </div>
+          <div class="eventTypeLabel">
+            {#if card.eventTypeLabel !== undefined}
+              <span class="event-type" title={card.eventTypeLabel}>
+                <Fa icon={eventTypeIcons[card.postEventType]} />
+                {card.eventTypeLabel}
+              </span>
+            {/if}
+          </div>
+        </div>
         <h3 class="title">{card.title ?? ''}</h3>
       </div>
     </a>
@@ -70,6 +76,10 @@
 
 <style lang="scss">
   @import '../scss/post-cards';
+  .labels {
+    gap: 5px;
+    display: flex;
+  }
   .event-type,
   .category {
     font-size: 0.75rem;
