@@ -4,10 +4,30 @@
   import MetaHead from './MetaHead.svelte'
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
+  import { postCategories, postEventTypes } from '../maps'
+  import Fa from 'svelte-fa/src/fa.svelte'
+  import { faTrophy } from '@fortawesome/free-solid-svg-icons'
+  import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
+  import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
+  import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
+  import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
+  import { faTree } from '@fortawesome/free-solid-svg-icons/faTree'
 
   export let post: PostWithAuthorAndContributor
   const { body, title, image, authors, credits, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
+
+  let categoryLabel = postCategories[post.category]
+  let eventTypeLabel = post.postEventType ? postEventTypes[post.postEventType] : undefined
+
+  const eventTypeIcons = {
+    tournament: faTrophy,
+    learning: faGraduationCap,
+    social: faComments,
+    awards: faAward,
+    charity: faHeart,
+    seasonal: faTree,
+  }
 
   const postRenderer = new marked.Renderer()
   // This will make headings start at 2, because the title will be rendered as an h1
@@ -132,7 +152,18 @@
     </h1>
   {/if}
   <div class="meta-data-line">
-    <div class="author">
+    <div class="category-author">
+      <div class="labels">
+        {#if categoryLabel !== undefined}
+          <span class="category">{categoryLabel}</span>
+        {/if}
+        {#if eventTypeLabel !== undefined}
+          <span class="event-type">
+            <Fa icon={eventTypeIcons[post.postEventType]} />
+            {eventTypeLabel}
+          </span>
+        {/if}
+      </div>
       <span>
         {#if authors.length > 0}
           <span class="author-information"
@@ -151,8 +182,6 @@
         <span class="hide-on-small">Published on </span>{formatDate(publish)}
       {/if}
     </div>
-    <!-- ToDo: Put Post Category Tags here - might make a good component as they are used in three locations including this one -->
-    <!-- <span class="category-labels"></span> -->
   </div>
   {@html marked(body, { renderer: postRenderer })}
 </article>
@@ -227,7 +256,7 @@
 
   .meta-data-line {
     margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
     border-bottom: solid 3px $color-background-tertiary;
     width: 100%;
     display: grid;
@@ -246,9 +275,6 @@
       display: none;
     }
   }
-  .author-information {
-    margin-left: 0.5rem;
-  }
   .spacer {
     text-align: center;
   }
@@ -256,6 +282,32 @@
     text-align: right;
     color: $color-muted-text;
     margin-right: 0.5rem;
+  }
+  .category-author {
+    display: flex;
+  }
+  .labels {
+    margin: 0 0.5rem;
+    gap: 5px;
+    display: flex;
+  }
+  .event-type,
+  .category {
+    font-size: 0.75rem;
+    border-radius: 1.5rem;
+    background-color: $color-background-secondary;
+    padding: 0.125rem 0.5rem;
+    margin-bottom: 0.25rem;
+    max-width: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .category {
+    border: 1px solid $color-danger-red;
+  }
+  .event-type {
+    border: 1px solid $color-warning-yellow;
   }
 
   // Needs to be global so because it's rendered in with @html
