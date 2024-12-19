@@ -256,7 +256,7 @@
 
   .meta-data-line {
     margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
     border-bottom: solid 3px $color-background-tertiary;
     width: 100%;
     display: grid;
