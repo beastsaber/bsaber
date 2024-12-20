@@ -39,7 +39,7 @@ January 18, 2025, 22:00 UTC, 2:00 PM PST, 5:00 PM EST, 10:00 PM GMT.
 
 **What versions are supported?**
 \
-We will be supporting any version available as a Steam beta branch. As of writing, that is 1.29.1, 1.34.2, 1.37.1, and the latest version, which is currently 1.39.1.
+TotalBS will be supporting any version available as a Steam beta branch. As of writing, that is 1.29.1, 1.34.2, 1.37.1, and the latest version, which is currently 1.39.1.
 
 **Where can we download the mods?**
 \
@@ -48,6 +48,8 @@ Synapse can be downloaded from the [EXSII website](https://exsii.totalbs.dev/). 
 **Will it only be once, and will I be able to play the maps after the event?**
 \
 The event will only be held once, however the individual maps along with Vivify will be released at a later point after the event concludes.
+
+Stay up to date with [TotalBS on X/Twitter](https://x.com/_TotalBS)
 
 <hr />
 <br />
