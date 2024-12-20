@@ -15,11 +15,11 @@ showInPostListing: true
 
 Our Beasties Finalist Team of roughly 30 community members with exceptional knowledge and skill in mapping and lighting best practices have completed their incredibly hard task of sifting through a record-breaking 1,141 unique submissions for this year's BeastSaber Mapping Awards! We'll post statistics on the submissions and more after the Awards show!
 
-We couldn't have accomplished this as smoothly as we did without the incredible work by [Saeraphinx](https://saera.dev/) who voluntarily offered to create an entirely new site and database to host the submission and voting logistics - instead of going through Google Forms and using Google Sheets to try to go through everything. This, in addition to collaboration with [Top_Cat]() from BeatSaver, as well as [NSGolova]() and [LightAi]() from BeatLeader, who allowed us to use their authentication abilities and helped to promote the Beasties, ended up drawing the most submissions we have ever received! We are truly greatful for their contributions! Consider supporting [BeatSaver](https://www.patreon.com/BeatSaver) and [BeatLeader](https://www.patreon.com/BeatLeader) through their respective Patreons!
+We couldn't have accomplished this as smoothly as we did without the incredible work by [Saeraphinx](https://saera.dev/) who voluntarily offered to create an entirely new site and database to host the submission and voting logistics - instead of going through Google Forms and using Google Sheets to try to go through everything. This, in addition to collaboration with [Top_Cat](https://beatsaver.com/profile/53608) from BeatSaver, as well as [NSGolova](https://golova.dev/) and [LightAi](https://github.com/LightAi39) from BeatLeader, who allowed us to use their authentication abilities and helped to promote the Beasties, ended up drawing the most submissions we have ever received! We are truly greatful for their contributions! Consider supporting [BeatSaver on Patreon](https://www.patreon.com/BeatSaver) and [BeatLeader on Patreon](https://www.patreon.com/BeatLeader)!
 
-This year also included lots of help from some wonderful people in the JP Community who helped write [an entire guide on the Beasties in Japanese](https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c), in addition to helping to translate the submission and voting pages on Searaphinx's Beasties site we used. We wanted to shout out the work from [Okyou](), [mochichi](), and [Ge2toro]() for getting that together!
+This year also included lots of help from some wonderful people in the JP Community who helped write [an entire guide on the Beasties in Japanese](https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c), in addition to helping to translate the submission and voting pages on Searaphinx's Beasties site we used. We wanted to shout out the work from [Okyou](https://x.com/okyou029), [mochichi](https://www.twitch.tv/mochichi72), and [Ge2toro](https://x.com/ge2toro) for getting that together!
 
-Lastly, we need to shout out the work done by [RateGyro]() who, for the second year in a row, has taken the reins over for this monumental project and has continued to keep The Beasties alive! Wrangling together everyone, from the Finalist Team and making sure everyone completes the finalist selections, to the Show Helpers and making sure content creation is handled is no small task. Rate poured a huge amount of his personal time into this and we are super thankful for him!
+Lastly, we need to shout out the work done by [RateGyro](https://rategyro.carrd.co/) who, for the second year in a row, has taken the reins over for this monumental project and has continued to keep The Beasties alive! Wrangling together everyone, from the Finalist Team and making sure everyone completes the finalist selections, to the Show Helpers and making sure content creation is handled is no small task. Rate poured a huge amount of his personal time into this and we are super thankful for him!
 
 If you see any of these dedicated community members mentioned above around the community, be sure to send them some love and thanks for us!
 
@@ -28,11 +28,9 @@ If you see any of these dedicated community members mentioned above around the c
 - [**Download the Playlists**](#playlists)
 - [**Vote**](#vote)
 - [**Supporting Map Award Finalists**](#supporting-map-awards)
-- [**Lighting & Modded Mapping Award Finalists**](#lighting-and-modded)
+- [**Lighting Award Finalists**](#lighting)
 - [**Map Style Award Finalists**](#map-style-categories)
 - [**Individual Award Finalists**](#individual-awards)
-
-> 💡 **Hint:** See a 🔗 icon? You can click and copy the URL to that specific section!
 
 # Introducing this year’s finalists
 
@@ -59,6 +57,19 @@ You can watch the announcement video or read below for a complete list of finali
 ## Vote by January 14th! <a href="#vote" style="text-decoration:none;">🔗</a> {$vote}
 
 [Verified Mappers](/posts/so-you-want-to-be-a-verified-mapper.md) will be selecting our first place and runner up medal winners but everyone in the community can vote on “Community Choice” winners in each category! **Voting closes on January 14th so don’t wait to get your vote in.**
+
+We've made some additional updates! [See all updates from 2024 here.](/posts/the-beastsaber-mapping-awards#whats-changing)
+
+- 🆕 **Modded Map of the Year** We're combining the Artmap and Gameplay Modchart into one single "Modded Map of the Year"! While similar to the Map of the Year, this category now includes and allows the usage and full power of Noodle Extensions, Chroma, as well as any other gameplay mods!
+
+- 🆕 **Low End Tech & High End Tech categories** Due to the overwhelming number of submissions for "Tech" style maps, we're splitting the category to allow for better chances across both low and high end tech style maps. Splitting was done roughly based on BeatLeader star estimates agreed upon by our Finalist Team Judges.
+
+- 🆕 **Ranked has been split up!** We've received enough nominations to justify splitting ranked, plus splitting leaderboards. To keep it the most fair, we've split it the following ways:
+  - Below 8 Stars (BeatLeader and ScoreSaber separately)
+  - 8-12 Stars (BeatLeader and ScoreSaber separately)
+  - 12 Stars + (BeatLeader and ScoreSaber separately)
+
+<br />
 
 <div class="cta" id="cta-container">
   <div class="buttons" id="buttons-container">
@@ -101,17 +112,33 @@ You can watch the announcement video or read below for a complete list of finali
 
 - a
 
-**Best Ranked Map Under 10 Star**:
+**Best BeatLeader Ranked Map Under 8 Stars**:
 
 - a
 
-**Best Ranked Map Over 10 Star**:
+**Best BeatLeader Ranked Map 8-12 Stars**:
+
+- a
+
+**Best BeatLeader Ranked Map 12+ Stars**:
+
+- a
+
+**Best ScoreSaber Ranked Map Under 8 Stars**:
+
+- a
+
+**Best ScoreSaber Ranked Map 8-12 Stars**:
+
+- a
+
+**Best ScoreSaber Ranked Map 12+ Stars**:
 
 - a
 
 <br />
 
-## Lighting & Modded Mapping Awards <a href="#lighting-and-modded" style="text-decoration:none;">🔗</a> {$lighting-and-modded}
+## Lighting Awards <a href="#lighting" style="text-decoration:none;">🔗</a> {$lighting-and-modded}
 
 **Best Vanilla Lights**:
 
@@ -126,14 +153,6 @@ You can watch the announcement video or read below for a complete list of finali
 - a
 
 **Best Chroma+ Lights**:
-
-- a
-
-**Best Artmap**:
-
-- a
-
-**Best Gameplay Modchart**:
 
 - a
 
@@ -198,6 +217,10 @@ You can watch the announcement video or read below for a complete list of finali
 - a
 
 **Mapper of the Year**:
+
+- a
+
+**Modded Map of the Year**:
 
 - a
 

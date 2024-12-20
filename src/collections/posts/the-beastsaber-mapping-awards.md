@@ -4,7 +4,7 @@ section: speciality
 category: event
 postEventType: awards
 publish: 2024-02-01T00:00:00.000Z
-lastUpdated: 2024-08-08T12:00:00.000Z
+lastUpdated: 2024-12-31T12:00:00.000Z
 homepageText: The BeastSaber Mapping Awards dig deep into mapping theory and
   practices to highlight the maps that have incredible representation, emphasis,
   and flow to truly capture the feel of the song.
@@ -28,9 +28,7 @@ linkToSpecialtyPage: /the-beastsaber-mapping-awards
     <a class="btn" href="https://mappingawards.saeraphinx.dev/">CLICK HERE TO VOTE! 🏆</a>
   </div>
 
-\* **Eligibility Period:** December 1, 2023 at 00:00 UTC to November 30, 2024 at 23:59 UTC
-
-\* **Submissions Closed:** December 14, 2024
+\* [**Take a look at the finalists here!**](/posts/the-beasties-your-2024-finalists)
 
 \* **Voting Closes:** January 14, 2025
 
@@ -138,16 +136,31 @@ if (now >= closeDate) {
 
 We’ve received a lot of constructive community feedback on the 2023 awards and already have a few tweaks planned for 2024! While most of the changes are actually internal and won't be seen as much on the public side, we do have the following external changes:
 
+**New Updates: (12/31/2024)**
+
+- 🆕 **Modded Map of the Year** We're combining the Artmap and Gameplay Modchart into one single "Modded Map of the Year"! While similar to the Map of the Year, this category now includes and allows the usage and full power of Noodle Extensions, Chroma, as well as any other gameplay mods!
+
+- 🆕 **Low End Tech & High End Tech categories** Due to the overwhelming number of submissions for "Tech" style maps, we're splitting the category to allow for better chances across both low and high end tech style maps. Splitting was done roughly based on BeatLeader star estimates agreed upon by our Finalist Team Judges.
+
+- 🆕 **Ranked has been split up!** We've received enough nominations to justify splitting ranked, plus splitting leaderboards. To keep it the most fair, we've split it the following ways:
+  - Below 8 Stars (BeatLeader and ScoreSaber separately)
+  - 8-12 Stars (BeatLeader and ScoreSaber separately)
+  - 12 Stars + (BeatLeader and ScoreSaber separately)
+
+<br />
+
+Initial Updates:
+
 - **We've revamped our nomination form!** We are trying to move away from Google Forms, and thanks to Saeraphinx, we have a [new form](https://mappingawards.saeraphinx.dev/) now available! You will be required to login with your [BeatLeader](https://beatleader.xyz) or [BeatSaver](https://beatsaver.com) account in order to make your submissions. If you come across any issues, please reach out and let us know in the [**BeastSaber Discord Server**](https://discord.gg/5VaEjFeuny) in the [#beasties-public](https://discord.com/channels/452928402203344908/1226010390190887012) channel.
 
-- 🆕 **Submit through BeatLeader's Leaderboards** Thanks to our friends over at BeatLeader, you can now submit eligible maps right from their leaderboard pages! Just click the BeastSaber logo on an eligible leaderboard page, select the category, and press nominate!
+- **Submit through BeatLeader's Leaderboards** Thanks to our friends over at BeatLeader, you can now submit eligible maps right from their leaderboard pages! Just click the BeastSaber logo on an eligible leaderboard page, select the category, and press nominate!
 
 - **2021 Winners Update** Due to previously unknown circumstances, the 2021 Rookie Lighter of the Year has been removed from the Winner's page to reflect that no one nominated (the previously noted winner or any runner up) was qualified to receive an award.
 - **Alternate Account Disclosure** To prevent future issues of alternate accounts winning awards where they should not have won awards, if you are nominated for an award under an alternate account, you are required to notify a BeastSaber Admin (either Helen, RateGyro, or TheCzar1994) to properly assess if the alternate account would conflict with winning an award in the category.
 
   \*If you know of an alternate account that is nominated and believe that the Admin team is unaware, we encourage you to notify us. Keep in mind, alternate accounts are allowed to be nominated, they (the alternate account and main account) just are not allowed to win more than 1 award in a single category together or win an award in a category designated for Rookie when their main account is ineligible.
 
-- **BeatLeader Star Rating Ranked!** BeatLeader and ScoreSaber will continue to be combined unless we receive enough nominations to justify separating the two.
+- ~~**BeatLeader Star Rating Ranked!** BeatLeader and ScoreSaber will continue to be combined unless we receive enough nominations to justify separating the two.~~
 - **Winners and runners-up awards** Last year, thanks to the extremely generous donations of the community, we raised enough funds (more than $1000) to provide gold medals to the winners and silver medals to the runner-ups in each category, as well as medals for community choice winners!
 
 > If you want to help provide a steady form of support for The Beasties, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and contributing to any tier! All contributions are appreciated! ❤️
@@ -166,6 +179,8 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 - **Map of the Year**: The best unmodded map of the year. Full stop. It has it all – representation, emphasis, flow – everything coming together for an incredible playing experience to go with the song.
 
   Example: [Teminite / Skybreak - Accelerate](https://beatsaver.com/maps/340c2)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/340c2/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+
+- **Modded Map of the Year**: Combining the full power of Noodle Extensions, Chroma, or any other gameplay or visual mods; this map is an example of excellence by using visual mods to truly capture and convey the music and/or alter the gameplay in mind-blowing ways through animation and manipulation of notes and obstacles.
 
 - **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2024.
 
@@ -233,21 +248,13 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 ### Ranked Categories <a href="#ranked-categories" style="text-decoration:none;">🔗</a> {$ranked-categories}
 
-- **Best Ranked Map 0-10 Star**
+- **Best Ranked Map Below 8 Stars** (BeatLeader and ScoreSaber separately)
 
-- **Best Ranked Map Above 10 Star**
+- **Best Ranked Map 8-12 Stars** (BeatLeader and ScoreSaber separately)
+
+- **Best Ranked Map 12 Stars +** (BeatLeader and ScoreSaber separately)
 
 > Nominate your favorite ranked map diff and our team will sort it into the appropriate category. Nominate BeatLeader or ScoreSaber ranked maps.
-
-### Modded Mapping <a href="#modded-mapping" style="text-decoration:none;">🔗</a> {$modded-mapping}
-
-- **Best Artmap**: Formerly called “Modchart Visuals,” these maps use all the power of Noodle Extensions and Chroma to convey the music and/or tell us a story through the creative use of mods and any notemods aren’t the main focus of the map.
-
-  Example Map: [modus - Superluminal](https://beatsaver.com/maps/358a7)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/358a7/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
-
-- **Best Modchart** Here? There? Where is the next note coming from?! This category includes maps that feature solid mapping AND alter the gameplay in mind-blowing ways through animation and manipulation of notes and obstacles.
-
-  Example Map: [Camellia - GHOUL](https://beatsaver.com/maps/31809)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/31809/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 ### Lighting Categories <a href="#lighting-categories" style="text-decoration:none;">🔗</a> {$lighting-categories}
 
