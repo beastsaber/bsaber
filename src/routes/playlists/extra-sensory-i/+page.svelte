@@ -70,7 +70,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('/uploads/posts/exsii/gifofnoods.gif') no-repeat center center;
+    background: url('/uploads/posts/exsii/blackbackground.png') no-repeat center center;
     background-size: cover;
     filter: brightness(30%) blur(5px);
     z-index: -1;
