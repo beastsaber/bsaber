@@ -135,6 +135,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        user-select: none;
       }
       .category {
         border: 1px solid $color-danger-red;
