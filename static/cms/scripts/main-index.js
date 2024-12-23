@@ -127,9 +127,9 @@ function autoLogout(expirationTime) {
   const timeUntilExpiry = expirationTime - Date.now()
   if (timeUntilExpiry > 0) {
     setTimeout(() => {
-      hideButtons()
       alert('Session expired. You have been logged out.')
       window.netlifyIdentity.logout()
+      hideButtons()
     }, timeUntilExpiry)
   }
 }
@@ -137,9 +137,9 @@ function autoLogout(expirationTime) {
 function checkTokenExpirationOnLoad() {
   const expirationTime = localStorage.getItem('tokenExpiration')
   if (expirationTime && Date.now() > expirationTime) {
-    hideButtons()
     alert('Session expired. You have been logged out.')
     window.netlifyIdentity.logout()
+    hideButtons()
   }
 }
 
@@ -173,9 +173,9 @@ function changeBackground(theme) {
       },
       custom: () => {
         const customBackgroundUrl = localStorage.getItem('customBackground')
-        if (customBackgroundUrl) {
+        if (customBackgroundUrl && /^https?:\/\/[^\s]+$/.test(customBackgroundUrl)) {
           backgroundContainer.style = `
-            background-image: url("${customBackgroundUrl}");
+            background-image: url("${sanitizeInput(customBackgroundUrl)}");
             filter: blur(5px);
             background-position: center;
             background-size: cover;
@@ -184,7 +184,7 @@ function changeBackground(theme) {
             width: 100vw;
           `
         } else {
-          alert('No custom background found.')
+          alert('No valid custom background found.')
           return false
         }
         return true
@@ -228,6 +228,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   userIdInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
+      const inputValue = userIdInput.value.trim()
+      if (!inputValue || !/^[a-zA-Z0-9_-]+$/.test(inputValue)) {
+        alert('Invalid input. Only letters, numbers, hyphens, and underscores are allowed.')
+        return
+      }
       fetchBLBackground()
     }
   })
@@ -240,6 +245,10 @@ async function fetchBLBackground() {
     alert('Please enter a user ID or username.')
     return
   }
+  if (!/^[a-zA-Z0-9_-]+$/.test(userIdOrUsername)) {
+    alert('Invalid input. Only letters, numbers, hyphens, and underscores are allowed.')
+    return
+  }
 
   try {
     let userId
@@ -248,7 +257,7 @@ async function fetchBLBackground() {
     } else {
       const searchResponse = await fetch(
         `https://api.beatleader.xyz/players?sortBy=name&page=1&count=1&search=${encodeURIComponent(
-          userIdOrUsername,
+          sanitizeInput(userIdOrUsername),
         )}`,
       )
       if (!searchResponse.ok) throw new Error('Failed to fetch user data by username.')
@@ -279,6 +288,12 @@ async function fetchBLBackground() {
     console.error('Error fetching BeatLeader profile cover:', error)
     alert('Failed to fetch background from BeatLeader')
   }
+}
+
+function sanitizeInput(input) {
+  const div = document.createElement('div')
+  div.appendChild(document.createTextNode(input))
+  return div.innerHTML
 }
 
 function isNumeric(value) {

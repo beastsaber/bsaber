@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   background-color: transparent;
 }
 #backgroundContainer::before {
@@ -151,47 +151,6 @@ body {
   box-shadow: inset 0 0 0 2px #00000099;
 }
 
-/* Deployment Status Tooltip */
-.deploy-status {
-  padding-top: 5px;
-  position: relative;
-  display: inline-block;
-}
-
-.deploy-status .tooltip {
-  visibility: hidden;
-  background-color: #4a4a4a;
-  color: #ffffff;
-  text-align: center;
-  border-radius: 4px;
-  padding: 5px;
-  position: absolute;
-  top: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  z-index: 1;
-  font-size: 0.875rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.deploy-status .tooltip::after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent #333333 transparent;
-}
-
-.deploy-status:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-}
-
 /* Popup Overlay */
 #popup-overlay {
   display: none;
@@ -273,7 +232,7 @@ body {
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.15s;
 }
 
 .theme-options button:hover {
@@ -297,7 +256,7 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.15s;
 }
 
 .theme-toggle button:hover {
