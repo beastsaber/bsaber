@@ -12,7 +12,10 @@
   const getPageLink = (page: number) => `/maps-of-the-week/${page}`
 </script>
 
-<MetaHead />
+<MetaHead
+  title="Maps of the Week"
+  description="A listing of all Maps of the Week. These maps are recommended by Curators, selected by Senior Curators, and have a level of quality and craftsmanship that demonstrates clear attention to detail in capturing the music."
+/>
 
 <div class="header">
   <div class="title">
