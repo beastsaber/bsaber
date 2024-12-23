@@ -4,58 +4,56 @@
   onMount(() => {
     if (typeof document !== 'undefined') {
       const countdownDate = new Date('January 15, 2025 00:00:00 UTC').getTime()
-      const submitDiv = document.querySelector('.submit')
-      if (submitDiv) {
-        ;(submitDiv as HTMLElement).style.display = 'none'
-      }
-      const countdownFunction = setInterval(function () {
+      const submitDiv = document.querySelector('.submit') as HTMLElement
+      const headerDiv = document.querySelector('.header') as HTMLElement
+      const tlDiv = document.querySelector('.tl') as HTMLElement
+      const countdownElement = document.getElementById('countdown')
+
+      if (submitDiv) submitDiv.style.display = 'none'
+
+      function updateCountdown() {
         const now = new Date().getTime()
         const timeLeft = countdownDate - now
+
+        if (timeLeft <= 0) {
+          if (headerDiv) headerDiv.style.display = 'none'
+          if (tlDiv) tlDiv.style.display = 'none'
+          if (countdownElement) {
+            countdownElement.textContent = 'Voting has closed! Stay tuned for the Awards Show!'
+          }
+          if (submitDiv) submitDiv.style.display = 'none'
+          return
+        }
+
         const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
         const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
-        const daysText = days > 0 ? `${days}&nbsp;${days === 1 ? 'day' : 'days'}` : ''
-        const hoursText = hours > 0 ? `${hours}&nbsp;${hours === 1 ? 'hour' : 'hours'}` : ''
-        const minutesText =
-          minutes > 0 ? `${minutes}&nbsp;${minutes === 1 ? 'minute' : 'minutes'}` : ''
-        const secondsText =
-          seconds > 0 ? `${seconds}&nbsp;${seconds === 1 ? 'second' : 'seconds'}` : ''
+        const daysText = days > 0 ? `${days} ${days === 1 ? 'day' : 'days'}` : ''
+        const hoursText = hours > 0 ? `${hours} ${hours === 1 ? 'hour' : 'hours'}` : ''
+        const minutesText = minutes > 0 ? `${minutes} ${minutes === 1 ? 'minute' : 'minutes'}` : ''
+        const secondsText = seconds > 0 ? `${seconds} ${seconds === 1 ? 'second' : 'seconds'}` : ''
 
-        let displayTime
-        if (days >= 1) {
-          displayTime = [daysText, hoursText, minutesText].filter(Boolean).join(', ')
-        } else {
-          displayTime = [hoursText, minutesText, secondsText].filter(Boolean).join(', ')
-        }
+        const displayTime =
+          days >= 1
+            ? [daysText, hoursText, minutesText].filter(Boolean).join(', ')
+            : [hoursText, minutesText, secondsText].filter(Boolean).join(', ')
 
-        const countdownElement = document.getElementById('countdown')
         if (countdownElement) {
-          countdownElement.innerHTML = displayTime || 'Less than a second remaining'
+          countdownElement.textContent = displayTime || 'Less than a second remaining'
         }
 
-        if (timeLeft > 0 && submitDiv) {
-          ;(submitDiv as HTMLElement).style.display = 'block'
+        if (submitDiv) {
+          submitDiv.style.display = timeLeft > 0 ? 'block' : 'none'
         }
+      }
 
-        if (timeLeft < 0) {
-          clearInterval(countdownFunction)
-          const headerDiv = document.querySelector('.header')
-          if (headerDiv) {
-            ;(headerDiv as HTMLElement).style.display = 'none'
-          }
-          const tlDiv = document.querySelector('.tl')
-          if (tlDiv) {
-            ;(tlDiv as HTMLElement).style.display = 'none'
-          }
-          const countdownElement = document.getElementById('countdown')
-          if (countdownElement) {
-            countdownElement.innerHTML = 'Voting closed! Stay tuned for the Awards Show!'
-          }
-          const submitDiv = document.querySelector('.submit')
-          if (submitDiv) {
-            ;(submitDiv as HTMLElement).style.display = 'none'
-          }
+      updateCountdown()
+
+      const countdownInterval = setInterval(() => {
+        updateCountdown()
+        if (new Date().getTime() > countdownDate) {
+          clearInterval(countdownInterval)
         }
       }, 1000)
     }
