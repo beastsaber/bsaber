@@ -68,8 +68,8 @@
     <div class="right-side-beasties-banner">
       <h1>Beasties are Coming</h1>
       <p class="BeastiesTimerContainer" id="BeastiesTimer">
-        <span class="header" style="color: #e95d4e;"><h2>Voting is Now Open!</h2></span>
-        <span class="tl">Time left to vote: </span><span id="countdown">Calculating...</span>
+        <span class="header"><h2>Voting is Now Open!</h2></span>
+        <span class="tl">Time left to vote: </span><span id="countdown" />
       </p>
       <div class="cta-row">
         <div class="submit">
@@ -137,6 +137,10 @@
   .BeastiesTimerContainer {
     font-size: 1.2rem;
     font-weight: bold;
+  }
+
+  .header {
+    color: #e95d4e;
   }
 
   .left-side-beasties-banner {
