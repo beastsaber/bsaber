@@ -39,7 +39,8 @@ const closeDate = new Date('January 15, 2025 00:00:00 UTC').getTime();
 const now = new Date().getTime();
 
 if (now >= closeDate) {
-  document.getElementById("cta-message").innerText = "Submissions are now closed! Stay tuned for voting soon!";
+  document.getElementById("cta-message").innerText = "Voting has now closed! Stay tuned for the Awards show!";
+  document.getElementById("cta-message").style.color = "white";
   document.getElementById("buttons-container").style.display = "none";
 }
 </script>
@@ -145,7 +146,7 @@ We’ve received a lot of constructive community feedback on the 2023 awards and
 - 🆕 **Ranked has been split up!** We've received enough nominations to justify splitting ranked, plus splitting leaderboards. To keep it the most fair, we've split it the following ways:
   - Below 8 Stars (BeatLeader and ScoreSaber separately)
   - 8-12 Stars (BeatLeader and ScoreSaber separately)
-  - 12 Stars + (BeatLeader and ScoreSaber separately)
+  - 12+ Stars (BeatLeader and ScoreSaber separately)
 
 <br />
 
