@@ -121,9 +121,11 @@
             <div class="date-first-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
               {event.startDateText}
             </div>
-            <div class="date-second-row">- {event.endDateText}</div>
+            <div class="date-second-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
+              - {event.endDateText}
+            </div>
           {:else}
-            <div class="date-first-row">
+            <div class="date-first-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
               {event.startDateText}
               {#if event.endDateText}
                 - {event.endDateText}
@@ -180,6 +182,7 @@
     color: white;
     font-weight: bold;
     z-index: 1;
+    max-width: fit-content;
   }
 
   .info-container {
