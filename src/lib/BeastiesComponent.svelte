@@ -44,7 +44,7 @@
         }
 
         if (submitDiv) {
-          submitDiv.style.display = timeLeft > 0 ? 'block' : 'none'
+          submitDiv.style.display = timeLeft > 0 ? 'flex' : 'none'
         }
       }
 
@@ -170,7 +170,7 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
 
     .submit {
       display: flex;

@@ -17,26 +17,22 @@
     <div class="links-container">
       <ul>
         <li>
-          <Fa icon={faDiscord} />
-          <a class="links" href="https://discord.gg/5VaEjFeuny" target="_blank">&nbsp;Discord</a>
+          <Fa icon={faDiscord} />&nbsp;
+          <a class="links" href="https://discord.gg/5VaEjFeuny" target="_blank">Discord</a>
         </li>
         <li>
-          <Fa icon={faPatreon} />
-          <a class="links" href="https://www.patreon.com/BeastSaberNews" target="_blank"
-            >&nbsp;Patreon</a
-          >
+          <Fa icon={faPatreon} />&nbsp;
+          <a class="links" href="https://www.patreon.com/BeastSaberNews" target="_blank">Patreon</a>
         </li>
         <li>
-          <Fa icon={faYoutube} />
-          <a class="links" href="https://youtube.com/@BeastSaberNews" target="_blank"
-            >&nbsp;YouTube</a
-          >
+          <Fa icon={faYoutube} />&nbsp;
+          <a class="links" href="https://youtube.com/@BeastSaberNews" target="_blank">YouTube</a>
         </li>
         <li>
-          <Fa icon={faXTwitter} /><a
+          <Fa icon={faXTwitter} />&nbsp;<a
             class="links"
             href="https://x.com/BeastSaberNews"
-            target="_blank">&nbsp;Twitter</a
+            target="_blank">Twitter</a
           >
         </li>
       </ul>

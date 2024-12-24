@@ -3,7 +3,6 @@ backend:
   name: git-gateway
   branch: master
   squash_merges: true
-site_url: https://bsaber.com
 logo_url: https://bsaber.com/beastsaber-logo.svg
 collections:
   - name: map-of-the-week

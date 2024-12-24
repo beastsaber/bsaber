@@ -141,7 +141,7 @@
         border: 1px solid $color-danger-red;
       }
       .event-type {
-        border: 1px solid $color-warning-yellow;
+        border: 1px solid $color-info-blue;
       }
     }
   }
