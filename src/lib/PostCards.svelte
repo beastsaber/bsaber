@@ -47,10 +47,12 @@
 
 <div class="cards {maxColsClass}" style="--aspect-ratio:{aspectRatio}">
   {#each cardsWithLabel as card}
+    <!-- Forcing rel="external" to allow scripts to load properly within Post pages -->
     <a
       class="card"
       href={`/posts/${card.slug}`}
       style="background-image: {getBackgroundImage(card.image)}"
+      rel="external"
     >
       <div class="content {maxColsClass}">
         <div class="labels">

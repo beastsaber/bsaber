@@ -52,7 +52,8 @@
         </span>
       {/if}
     </div>
-    <a class="title" href={`/posts/${post.slug}`} title={post.title}>{post.title}</a>
+    <!-- Forcing rel="external" to allow scripts to load properly within Post pages -->
+    <a class="title" href={`/posts/${post.slug}`} rel="external" title={post.title}>{post.title}</a>
     <p class="date">{date}</p>
     <p class="short-description">{post.homepageText}</p>
   </div>
