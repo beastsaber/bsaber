@@ -142,7 +142,7 @@
         border: 1px solid $color-danger-red;
       }
       .event-type {
-        border: 1px solid $color-info-blue;
+        border: 1px solid $color-warning-yellow;
       }
     }
   }
