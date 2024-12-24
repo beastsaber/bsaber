@@ -125,7 +125,6 @@ if (now >= closeDate) {
   - [**Individual Awards**](#individual-awards)
   - [**Map Style Categories**](#style-categories)
   - [**Ranked Categories**](#ranked-categories)
-  - [**Modded Mapping**](#modded-mapping)
   - [**Lighting Categories**](#lighting-categories)
 - [**Frequently Asked Questions**](#faq)
 
@@ -253,9 +252,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Best Ranked Map 8-12 Stars** (BeatLeader and ScoreSaber separately)
 
-- **Best Ranked Map 12 Stars +** (BeatLeader and ScoreSaber separately)
-
-> Nominate your favorite ranked map diff and our team will sort it into the appropriate category. Nominate BeatLeader or ScoreSaber ranked maps.
+- **Best Ranked Map 12+ Stars** (BeatLeader and ScoreSaber separately)
 
 ### Lighting Categories <a href="#lighting-categories" style="text-decoration:none;">🔗</a> {$lighting-categories}
 
