@@ -57,6 +57,10 @@ export async function load({
         `https://cdn.assets.beatleader.xyz/songcover-${singleMapOfTheWeek.mapId}-full.webp`
 
       const beatSaverMapData = allBeatSaverMapData[singleMapOfTheWeek.mapId]
+      if(beatSaverMapData == null) {
+        console.warn(`Map of the Week with the id ${singleMapOfTheWeek.mapId} does not seem to exist - skipping.`);
+        continue;
+      }
 
       paginatedFullMapsOfTheWeek.push({
         map: beatSaverMapData,
