@@ -86,7 +86,8 @@ export type MapOfTheWeekCollectionData = {
   showcase?: {
     id?: string
     type?: 'youtube-short' | 'youtube-video'
-  }
+  },
+  hide?: boolean;
   coverUrlOverwrite?: string
 }
 
