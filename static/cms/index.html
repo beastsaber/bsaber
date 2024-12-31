@@ -10,7 +10,6 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <script src="/cms/scripts/main-index.js"></script>
-    <script src="/cms/scripts/themes.js"></script>
   </head>
   <body>
     <div id="backgroundContainer" class="background-container"></div>
@@ -46,26 +45,6 @@
               src="https://api.netlify.com/api/v1/badges/03c23ede-30e9-41bf-9e1a-32a5ec62f5b1/deploy-status"
               alt="Netlify Status"
             />
-          </div>
-        </div>
-      </div>
-      <div class="footer">
-        <div class="theme-toggle">
-          <button onclick="toggleThemeOptions()">Change Background</button>
-          <div id="themeOptions" class="theme-options">
-            <button onclick="changeBackground('theme1')">Default</button>
-            <button onclick="changeBackground('theme2')">Gradient Gray</button>
-            <button onclick="changeBackground('theme3')">Dusk</button>
-            <button onclick="changeBackground('theme4')">Dark Night</button>
-            <button id="beatLeaderButton" onclick="toggleCustomBackgroundSection(event)">
-              <span>BeatLeader</span>
-            </button>
-            <div id="customBackgroundSection" class="custom-background-section">
-              <label for="userIdInput">Enter BL Username or ID:</label>
-              <input type="text" id="userIdInput" placeholder="BL Username or ID" />
-              <button onclick="fetchBLBackground()">Fetch Background</button>
-              <button onclick="removeCustomBackground()">Remove Custom Background</button>
-            </div>
           </div>
         </div>
       </div>
