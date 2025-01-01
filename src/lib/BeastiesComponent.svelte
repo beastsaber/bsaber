@@ -41,7 +41,7 @@
   }
 
   onMount(() => {
-    countdownDate = new Date('January 15, 2025 00:00:00 UTC').getTime()
+    countdownDate = new Date('2025-01-15T00:00:00Z').getTime()
     updateCountdown()
 
     const countdownInterval = setInterval(() => {
