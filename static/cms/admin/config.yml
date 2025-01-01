@@ -3,6 +3,7 @@ backend:
   name: git-gateway
   branch: master
   squash_merges: true
+logo_url: https://bsaber.com/beastsaber-logo.svg
 collections:
   - name: posts
     label: Posts

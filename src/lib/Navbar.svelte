@@ -55,6 +55,10 @@
       expanded: false,
       Items: [
         {
+          name: 'Maps of the Week',
+          href: '/maps-of-the-week/1',
+        },
+        {
           name: 'Curator Recommended',
           href: 'https://beatsaver.com/?order=Curated&curated=true',
         },
@@ -89,6 +93,14 @@
         {
           name: 'About the Awards',
           href: '/the-beastsaber-mapping-awards',
+        },
+        {
+          name: 'Voting',
+          href: 'https://mappingawards.saeraphinx.dev/',
+        },
+        {
+          name: '2024 Nominees',
+          href: '/posts/the-beasties-2024-nominees',
         },
         {
           name: '2023 Winners',

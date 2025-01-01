@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on('open', () => {})
-    window.netlifyIdentity.on('login', (user) => {
+    window.netlifyIdentity.on('login', async (user) => {
       const token = user.token.access_token
       const expirationTime = jwt_decode(token).exp * 1000
       localStorage.setItem('tokenExpiration', expirationTime)
@@ -97,13 +97,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })
 
+if (window.netlifyIdentity) {
+  netlifyIdentity.on('login', () => netlifyIdentity.close())
+  netlifyIdentity.on('logout', () => netlifyIdentity.close())
+}
+
 function handleRedirect(user) {
   if (user) {
     const roles = user.app_metadata?.roles || []
-    if (roles.includes('admin')) {
-      window.location.href = '/cms/admin/index.html'
-    } else if (roles.includes('motw')) {
-      window.location.href = '/cms/motw/index.html'
+
+    if (roles.includes('admin') || roles.includes('motw')) {
+      const overlay = document.getElementById('popup-overlay')
+      overlay.style.display = 'block'
+      setTimeout(() => {
+        overlay.remove()
+        if (roles.includes('admin')) {
+          window.location.href = '/cms/admin/index.html'
+        } else if (roles.includes('motw')) {
+          window.location.href = '/cms/motw/index.html'
+        }
+      }, 2000)
     } else {
       window.location.href = '/cms/index.html'
     }
@@ -114,8 +127,9 @@ function autoLogout(expirationTime) {
   const timeUntilExpiry = expirationTime - Date.now()
   if (timeUntilExpiry > 0) {
     setTimeout(() => {
-      window.netlifyIdentity.logout()
       alert('Session expired. You have been logged out.')
+      window.netlifyIdentity.logout()
+      hideButtons()
     }, timeUntilExpiry)
   }
 }
@@ -123,7 +137,8 @@ function autoLogout(expirationTime) {
 function checkTokenExpirationOnLoad() {
   const expirationTime = localStorage.getItem('tokenExpiration')
   if (expirationTime && Date.now() > expirationTime) {
-    window.netlifyIdentity.logout()
     alert('Session expired. You have been logged out.')
+    window.netlifyIdentity.logout()
+    hideButtons()
   }
 }

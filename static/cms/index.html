@@ -12,6 +12,7 @@
     <script src="/cms/scripts/main-index.js"></script>
   </head>
   <body>
+    <div id="backgroundContainer" class="background-container"></div>
     <div class="main">
       <div class="content">
         <div class="header">
@@ -31,6 +32,9 @@
           </div>
         </div>
         <div class="buttons" id="buttons" style="display: none">
+          <div id="popup-overlay">
+            <div id="redirect-popup">Please wait to be redirected...</div>
+          </div>
           <div id="username"></div>
           <div class="roles">
             <a class="admin" href="/cms/admin/index.html">Admin</a>
@@ -41,7 +45,6 @@
               src="https://api.netlify.com/api/v1/badges/03c23ede-30e9-41bf-9e1a-32a5ec62f5b1/deploy-status"
               alt="Netlify Status"
             />
-            <span class="tooltip">Build Status</span>
           </div>
         </div>
       </div>

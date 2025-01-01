@@ -11,19 +11,23 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .main {
   display: flex;
   max-width: 90%;
 }
+
 .content {
   display: flex;
   flex-direction: column;
   width: max-content;
   border-radius: 10px;
   box-shadow: 0px 0px 30px;
-  background-color: #00000099;
+  background-color: #000000d1;
   border: solid 5px;
 }
+
+/* Header Styles */
 .header {
   display: flex;
   flex-direction: row;
@@ -31,31 +35,39 @@ body {
   justify-content: space-evenly;
   padding: 1rem 4rem;
 }
+
 .title {
   font-size: 1.85rem;
   display: flex;
 }
+
 .logo {
   display: flex;
-  transition: transform ease 0.15s;
-  &:hover {
-    transform: scale(1.05);
-  }
+  transition: transform 0.15s ease;
 }
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
 .logo img {
   height: 100px;
   width: auto;
   border-radius: 5px;
 }
+
+/* Login Styles */
 .login-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
 }
+
 .login {
   display: flex;
 }
+
 .login a {
   display: flex;
   color: black;
@@ -66,19 +78,23 @@ body {
   text-align: center;
   border-radius: 5px;
   font-weight: bolder;
-  transition: box-shadow ease 0.25s;
-  &:hover {
-    box-shadow: inset 0 0 0 2px #00000099;
-  }
+  transition: box-shadow 0.25s ease;
 }
 
+.login a:hover {
+  box-shadow: inset 0 0 0 2px #00000099;
+}
+
+/* Button Styles */
 .buttons {
+  display: flex;
   flex-direction: column;
   padding: 1rem;
   border-top: solid 5px #ffffff50;
   align-items: center;
   gap: 1rem;
 }
+
 .buttons a {
   text-decoration: none;
   flex: 1 1 calc(50% - 10px);
@@ -86,11 +102,14 @@ body {
   width: 100%;
   text-align: center;
 }
+
+/* Role Styles */
 .roles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
+
 .admin,
 .motw {
   text-align: center;
@@ -99,49 +118,53 @@ body {
   padding: 10px 90px;
   background-color: #ffffff;
   color: black;
-  transition: box-shadow ease 0.25s;
-  &:hover {
-    box-shadow: inset 0 0 0 2px #00000099;
+  transition: box-shadow 0.25s ease;
+}
+
+.admin:hover,
+.motw:hover {
+  box-shadow: inset 0 0 0 2px #00000099;
+}
+
+/* Popup Overlay */
+#popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Redirect Popup */
+#redirect-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
-.deploy-status {
-  padding-top: 5px;
-  position: relative;
-  display: inline-block;
-}
-.deploy-status .tooltip {
-  visibility: hidden;
-  background-color: #4a4a4a;
-  color: #ffffff;
-  text-align: center;
-  border-radius: 4px;
-  padding: 5px;
-  position: absolute;
-  top: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  z-index: 1;
-  font-size: 0.875rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
 
-.deploy-status .tooltip::after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent #333333 transparent;
-}
-
-.deploy-status:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-}
+/* Media Queries */
 @media (max-width: 600px) {
   .title {
     font-size: 1.25rem;
@@ -174,7 +197,6 @@ body {
 
   .logo img {
     height: 80px;
-    width: auto;
   }
 
   .login-container {
@@ -182,7 +204,6 @@ body {
   }
 
   .login a {
-    display: flex;
     padding: 10px 60px;
     width: 100%;
     max-width: 300px;
@@ -200,6 +221,5 @@ body {
     padding: 10px 31px;
     width: 100%;
     max-width: 200px;
-    text-align: center;
   }
 }

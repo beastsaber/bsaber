@@ -155,10 +155,10 @@
     <div class="category-author">
       <div class="labels">
         {#if categoryLabel !== undefined}
-          <span class="category">{categoryLabel}</span>
+          <span class="category" title={categoryLabel}>{categoryLabel}</span>
         {/if}
         {#if eventTypeLabel !== undefined}
-          <span class="event-type">
+          <span class="event-type" title={eventTypeLabel}>
             <Fa icon={eventTypeIcons[post.postEventType]} />
             {eventTypeLabel}
           </span>
@@ -245,6 +245,7 @@
     margin: -20px -12px 1rem; // compensating for padding on <main>
     background-size: cover;
     background-position: center;
+    user-select: none;
 
     h1 {
       font-size: 1.5rem;
@@ -302,6 +303,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    user-select: none;
   }
   .category {
     border: 1px solid $color-danger-red;
