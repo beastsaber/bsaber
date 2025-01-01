@@ -64,7 +64,7 @@
       <h1>Beasties are Coming</h1>
       <p class="BeastiesTimerContainer" id="BeastiesTimer">
         {#if headerVisible}
-          <span class="header"><h2>Voting is Now Open!</h2></span>
+          <div class="header"><h2>Voting is Now Open!</h2></div>
         {/if}
         {#if tlVisible}
           <span class="tl">Time left to vote: </span>
