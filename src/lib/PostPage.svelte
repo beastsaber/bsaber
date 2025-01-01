@@ -245,6 +245,7 @@
     margin: -20px -12px 1rem; // compensating for padding on <main>
     background-size: cover;
     background-position: center;
+    user-select: none;
 
     h1 {
       font-size: 1.5rem;

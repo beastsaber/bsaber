@@ -23,6 +23,7 @@
     display: flex;
     gap: 0.5rem;
     overflow: hidden;
+    user-select: none;
 
     .tag {
       font-size: 0.75rem;

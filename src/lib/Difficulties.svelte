@@ -44,6 +44,7 @@
     gap: 0.5rem;
     align-items: center;
     font-size: 0.75rem;
+    user-select: none;
 
     .characteristic {
       height: 1rem;
