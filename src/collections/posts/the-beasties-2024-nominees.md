@@ -48,13 +48,13 @@ You can watch the announcement video or read below for a complete list of nomine
 
 ## Download the playlists <a href="#playlists" style="text-decoration:none;">🔗</a> {$playlists}
 
-- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=1XCXqZBWZ_FvEXyjRH90XXFRBzq7d4PF2&export=download)
+- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=1zKCZR_zgrqUwZv6Xwphg5QzPtydyVHnH&export=download)
 
   > ⚠️ This is a large file and may take some time to queue depending on your Internet speed
 
-- All nominees in one playlist - [Download (1.16 MB)](https://drive.usercontent.google.com/uc?id=1vWSxyGcMLoZAen7_Gv2dwMm2IDHFbHB_&export=download)
+- All nominees in one playlist - [Download (1.16 MB)](https://drive.usercontent.google.com/uc?id=1VX3qrzaS0_okIEMHBa52F0lCKdTaS4Na&export=download)
 
-- All nominees grouped into 5 categories based on category type below - [Download (4.31 MB)](https://drive.usercontent.google.com/uc?id=1whlBCZYw_BX4h_hDmnIzbUmx4TxM0a51&export=download)
+- All nominees grouped into 5 categories based on category type below - [Download (4.31 MB)](https://drive.usercontent.google.com/uc?id=1RxMFGUMbtSyDxFI86T7ugxbcTiXLzAbQ&export=download)
   1. Lighting = Vanilla, Vanilla+, Chroma, & Chroma+
   2. Styles = Full Spread, Balanced, High-Tech, Low-Tech, Fitness, Dance, Accuracy
   3. More Styles = Non-Standard, Speed, Challenge, Poodles, Gimmick
@@ -66,9 +66,9 @@ You can watch the announcement video or read below for a complete list of nomine
 
 ## Vote by January 14th! <a href="#vote" style="text-decoration:none;">🔗</a> {$vote}
 
-[Verified Mappers](/posts/so-you-want-to-be-a-verified-mapper.md) will be selecting our first place and runner up winners but everyone in the community can vote on “Community Choice” winners in each category! **Voting closes on January 14th so don’t wait to get your vote in.**
+[Verified Mappers](/posts/so-you-want-to-be-a-verified-mapper) will be selecting our first place and runner up winners but everyone in the community can vote on “Community Choice” winners in each category! **Voting closes on January 14th so don’t wait to get your vote in.**
 
-We've made some additional updates! [See all updates from 2024 here.](/posts/the-beastsaber-mapping-awards#whats-changing)
+We've made some additional updates! [See all updates from 2024 here.](/the-beastsaber-mapping-awards#whats-changing)
 
 - 🆕 **Modded Map of the Year** We've combined the Artmap and Gameplay Modchart into one single "Modded Map of the Year"! While similar to the Map of the Year, this category now includes and allows the usage and full power of Noodle Extensions, Chroma, as well as any other gameplay mods!
 
@@ -299,7 +299,7 @@ We've made some additional updates! [See all updates from 2024 here.](/posts/the
 
 - [[Chroma] STARSET - TokSik](https://beatsaver.com/maps/401e8) - Standard ExpertPlus - Mapped by Bytrius
 
-- [Bling-Bang-Bang-Born / Creepy Nut](https://beatsaver.com/maps/3ba3a) - Standard ExpertPlus - Mapped by Emiru
+- [Bling-Bang-Bang-Born / Creepy Nuts](https://beatsaver.com/maps/3ba3a) - Standard ExpertPlus - Mapped by Emiru
 
 - [[Rin/Len Anniversary Pack] Giga & Reol - Gigantic O.T.N [Cinema]](https://beatsaver.com/maps/3858a) - Standard ExpertPlus - Mapped by Ge2toro
 
@@ -333,7 +333,7 @@ We've made some additional updates! [See all updates from 2024 here.](/posts/the
 
 - [[Fitbeat] GODS - League of Legends (ft. NewJeans)](https://beatsaver.com/maps/3ed73) - Lawless Hard - Mapped by RateGyro
 
-- [Skrillex - Kill Everybody](https://beatsaver.com/maps/3f744) - Lawless ExpertPlus - Mapped by Undeceiver
+- [Skrillex - Kill Everybody](https://beatsaver.com/maps/3f744) - Standard ExpertPlus - Mapped by Undeceiver
 
 - [[Fitbeat+] Dua Lipa - Levitating](https://beatsaver.com/maps/390b8) - Standard ExpertPlus - Mapped by Alice
 
@@ -363,7 +363,7 @@ We've made some additional updates! [See all updates from 2024 here.](/posts/the
 
 - [Camellia - Diastrophism (“Anamorphism” Long ver.)](https://beatsaver.com/maps/3cd51) - Standard ExpertPlus - Mapped by Retrx
 
-- [Laur vs 大国奏音 - Latent Kingdom](https://beatsaver.com/maps/38560) - Standard ExpertPlus - Mapped by yabje & Nolanmination
+- [Laur vs 大国奏音 - Latent Kingdom](https://beatsaver.com/maps/38560) - Standard ExpertPlus - Mapped by yabje & Nolanimations
 
 **Best Accuracy Style Map**:
 
