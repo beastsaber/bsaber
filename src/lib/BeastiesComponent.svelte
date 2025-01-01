@@ -1,62 +1,57 @@
 <script lang="ts">
   import { onMount } from 'svelte'
 
-  onMount(() => {
-    if (typeof document !== 'undefined') {
-      const countdownDate = new Date('January 15, 2025 00:00:00 UTC').getTime()
-      const submitDiv = document.querySelector('.submit') as HTMLElement
-      const headerDiv = document.querySelector('.header') as HTMLElement
-      const tlDiv = document.querySelector('.tl') as HTMLElement
-      const countdownElement = document.getElementById('countdown')
+  let countdownText = 'Calculating...'
+  let submitVisible = false
+  let headerVisible = true
+  let tlVisible = true
+  let countdownDate: number
 
-      if (submitDiv) submitDiv.style.display = 'none'
+  function formatTime(days: number, hours: number, minutes: number, seconds: number): string {
+    const daysText = days > 0 ? `${days} ${days === 1 ? 'day' : 'days'}` : ''
+    const hoursText = hours > 0 ? `${hours} ${hours === 1 ? 'hour' : 'hours'}` : ''
+    const minutesText = minutes > 0 ? `${minutes} ${minutes === 1 ? 'minute' : 'minutes'}` : ''
+    const secondsText = seconds > 0 ? `${seconds} ${seconds === 1 ? 'second' : 'seconds'}` : ''
+    return [daysText, hoursText, minutesText, secondsText].filter(Boolean).join(', ')
+  }
 
-      function updateCountdown() {
-        const now = new Date().getTime()
-        const timeLeft = countdownDate - now
+  function updateCountdown() {
+    const now = new Date().getTime()
+    const timeLeft = countdownDate - now
 
-        if (timeLeft <= 0) {
-          if (headerDiv) headerDiv.style.display = 'none'
-          if (tlDiv) tlDiv.style.display = 'none'
-          if (countdownElement) {
-            countdownElement.textContent = 'Voting has closed! Stay tuned for the Awards Show!'
-          }
-          if (submitDiv) submitDiv.style.display = 'none'
-          return
-        }
-
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
-        const daysText = days > 0 ? `${days} ${days === 1 ? 'day' : 'days'}` : ''
-        const hoursText = hours > 0 ? `${hours} ${hours === 1 ? 'hour' : 'hours'}` : ''
-        const minutesText = minutes > 0 ? `${minutes} ${minutes === 1 ? 'minute' : 'minutes'}` : ''
-        const secondsText = seconds > 0 ? `${seconds} ${seconds === 1 ? 'second' : 'seconds'}` : ''
-
-        const displayTime =
-          days >= 1
-            ? [daysText, hoursText, minutesText].filter(Boolean).join(', ')
-            : [hoursText, minutesText, secondsText].filter(Boolean).join(', ')
-
-        if (countdownElement) {
-          countdownElement.textContent = displayTime || 'Less than a second remaining'
-        }
-
-        if (submitDiv) {
-          submitDiv.style.display = timeLeft > 0 ? 'flex' : 'none'
-        }
-      }
-
-      updateCountdown()
-
-      const countdownInterval = setInterval(() => {
-        updateCountdown()
-        if (new Date().getTime() > countdownDate) {
-          clearInterval(countdownInterval)
-        }
-      }, 1000)
+    if (timeLeft <= 0) {
+      countdownText = 'Voting has closed! Stay tuned for the Awards Show!'
+      submitVisible = false
+      headerVisible = false
+      tlVisible = false
+      return
     }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
+
+    countdownText =
+      days >= 1 ? formatTime(days, hours, minutes, 0) : formatTime(0, hours, minutes, seconds)
+
+    submitVisible = timeLeft > 0
+    headerVisible = true
+    tlVisible = true
+  }
+
+  onMount(() => {
+    countdownDate = new Date('January 15, 2025 00:00:00 UTC').getTime()
+    updateCountdown()
+
+    const countdownInterval = setInterval(() => {
+      updateCountdown()
+      if (new Date().getTime() > countdownDate) {
+        clearInterval(countdownInterval)
+      }
+    }, 1000)
+
+    return () => clearInterval(countdownInterval)
   })
 </script>
 
@@ -68,14 +63,19 @@
     <div class="right-side-beasties-banner">
       <h1>Beasties are Coming</h1>
       <p class="BeastiesTimerContainer" id="BeastiesTimer">
-        <span class="header"><h2>Voting is Now Open!</h2></span>
-        <span class="tl">Time left to vote: </span><span id="countdown" />
+        {#if headerVisible}
+          <span class="header"><h2>Voting is Now Open!</h2></span>
+        {/if}
+        {#if tlVisible}
+          <span class="tl">Time left to vote: </span>
+        {/if}
+        <span id="countdown">{countdownText}</span>
       </p>
       <div class="cta-row">
-        <div class="submit">
+        <div class="submit {submitVisible ? '' : 'hidden'}">
           <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote!</a>
         </div>
-        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn more</a>
+        <a href="/posts/the-beasties-2024-nominees" rel="external" class="text-link">Learn more</a>
         <span class="separater"> | </span>
         <a
           href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
@@ -176,6 +176,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .submit.hidden {
+      display: none;
     }
 
     .button-link {

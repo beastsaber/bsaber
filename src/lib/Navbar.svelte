@@ -99,6 +99,10 @@
           href: 'https://mappingawards.saeraphinx.dev/',
         },
         {
+          name: '2024 Nominees',
+          href: '/posts/the-beasties-2024-nominees',
+        },
+        {
           name: '2023 Winners',
           href: '/posts/the-beasties-2023-winners',
         },
