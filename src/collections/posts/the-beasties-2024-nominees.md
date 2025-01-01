@@ -48,13 +48,13 @@ You can watch the announcement video or read below for a complete list of nomine
 
 ## Download the playlists <a href="#playlists" style="text-decoration:none;">🔗</a> {$playlists}
 
-- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=1zKCZR_zgrqUwZv6Xwphg5QzPtydyVHnH&export=download)
+- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=11zr7Emx36sF-xtgm6bEwYbaA5b7R7Y-u&export=download)
 
   > ⚠️ This is a large file and may take some time to queue depending on your Internet speed
 
-- All nominees in one playlist - [Download (1.16 MB)](https://drive.usercontent.google.com/uc?id=1VX3qrzaS0_okIEMHBa52F0lCKdTaS4Na&export=download)
+- All nominees in one playlist - [Download (1.16 MB)](https://drive.usercontent.google.com/uc?id=1X2s1zdcTneNO1_E0E4YNYcnRHOcH90UC&export=download)
 
-- All nominees grouped into 5 categories based on category type below - [Download (4.31 MB)](https://drive.usercontent.google.com/uc?id=1RxMFGUMbtSyDxFI86T7ugxbcTiXLzAbQ&export=download)
+- All nominees grouped into 5 categories based on category type below - [Download (4.31 MB)](https://drive.usercontent.google.com/uc?id=1rlC5swVF1RHZJqX7Q9H2yKvoJ9KaF2V3&export=download)
   1. Lighting = Vanilla, Vanilla+, Chroma, & Chroma+
   2. Styles = Full Spread, Balanced, High-Tech, Low-Tech, Fitness, Dance, Accuracy
   3. More Styles = Non-Standard, Speed, Challenge, Poodles, Gimmick
