@@ -331,7 +331,7 @@ We've made some additional updates! [See all updates from 2024 here.](/the-beast
 
 - [[Fitbeat] Apashe - Revenge of the Orchestra](https://beatsaver.com/maps/3d98d) - Standard ExpertPlus - Mapped by Irahi
 
-- [[Fitbeat] GODS - League of Legends (ft. NewJeans)](https://beatsaver.com/maps/3ed73) - Lawless Hard - Mapped by RateGyro
+- [[Fitbeat] GODS - League of Legends (ft. NewJeans)](https://beatsaver.com/maps/3ed73) - Standard ExpertPlus - Mapped by RateGyro
 
 - [Skrillex - Kill Everybody](https://beatsaver.com/maps/3f744) - Standard ExpertPlus - Mapped by Undeceiver
 
