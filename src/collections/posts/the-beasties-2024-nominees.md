@@ -3,6 +3,7 @@ title: The Beasties - 2024 Nominees
 section: articles
 category: news
 publish: 2024-12-31T20:52:00.000Z
+lastUpdated: 2025-01-02T16:34:00.000Z
 homepageText: The nominees for the 2024 BeastSaber Mapping Awards are here!
   Voting for the nominees closes on January 14, 2025 so be sure to get your
   votes in beforehand!
@@ -48,13 +49,13 @@ You can watch the announcement video or read below for a complete list of nomine
 
 ## Download the playlists <a href="#playlists" style="text-decoration:none;">🔗</a> {$playlists}
 
-- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=13tPc_JJ3NUAfgtjKT5mWdLdNHk86-D_k&export=download)
+- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=1R4l63dGTf2LhqnJrM9_ZejhYMaV6CL0z&export=download)
 
   > ⚠️ This is a large file and may take some time to queue depending on your Internet speed
 
-- All nominees in one playlist - [Download (1.16 MB)](https://drive.usercontent.google.com/uc?id=1DW1K6kwiR1UJK07sxU0oUD-CT3OsUgH-&export=download)
+- All nominees in one playlist - [Download (1.16 MB)](https://drive.usercontent.google.com/uc?id=1OetV3lAtLq_PI4w1iAA8jM8Ei7UC2yTm&export=download)
 
-- All nominees grouped into 5 categories based on category type below - [Download (4.31 MB)](https://drive.usercontent.google.com/uc?id=1Z0gibjrdbsvdUYRjOBWMK6sHj0KWomEJ&export=download)
+- All nominees grouped into 5 categories based on category type below - [Download (4.31 MB)](https://drive.usercontent.google.com/uc?id=1KGXwLZoaJjegTZ-8-GlRu4mYginmwHKP&export=download)
   1. Lighting = Vanilla, Vanilla+, Chroma, & Chroma+
   2. Styles = Full Spread, Balanced, High-Tech, Low-Tech, Fitness, Dance, Accuracy
   3. More Styles = Non-Standard, Speed, Challenge, Poodles, Gimmick
