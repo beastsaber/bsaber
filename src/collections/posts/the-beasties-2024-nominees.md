@@ -373,7 +373,7 @@ We've made some additional updates! [See all updates from 2024 here.](/the-beast
 
 - [Anarbor - Letter in a Suitcase](https://beatsaver.com/maps/38b7a) - Standard Normal - Mapped by fqrb
 
-- [Artemas - i like the way you kiss me](https://beatsaver.com/maps/3c0bb) - Standard Expert - Mapped by Kassi
+- [Artemas - i like the way you kiss me](https://beatsaver.com/maps/3c0bb) - Standard ExpertPlus - Mapped by Kassi
 
 - [Ariana Grande - Into You (3LAU Remix)](https://beatsaver.com/maps/3c43d) - Standard ExpertPlus - Mapped by Aquaflee
 
