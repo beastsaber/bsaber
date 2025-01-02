@@ -48,13 +48,13 @@ You can watch the announcement video or read below for a complete list of nomine
 
 ## Download the playlists <a href="#playlists" style="text-decoration:none;">🔗</a> {$playlists}
 
-- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=11zr7Emx36sF-xtgm6bEwYbaA5b7R7Y-u&export=download)
+- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=13tPc_JJ3NUAfgtjKT5mWdLdNHk86-D_k&export=download)
 
   > ⚠️ This is a large file and may take some time to queue depending on your Internet speed
 
-- All nominees in one playlist - [Download (1.16 MB)](https://drive.usercontent.google.com/uc?id=1X2s1zdcTneNO1_E0E4YNYcnRHOcH90UC&export=download)
+- All nominees in one playlist - [Download (1.16 MB)](https://drive.usercontent.google.com/uc?id=1DW1K6kwiR1UJK07sxU0oUD-CT3OsUgH-&export=download)
 
-- All nominees grouped into 5 categories based on category type below - [Download (4.31 MB)](https://drive.usercontent.google.com/uc?id=1rlC5swVF1RHZJqX7Q9H2yKvoJ9KaF2V3&export=download)
+- All nominees grouped into 5 categories based on category type below - [Download (4.31 MB)](https://drive.usercontent.google.com/uc?id=1Z0gibjrdbsvdUYRjOBWMK6sHj0KWomEJ&export=download)
   1. Lighting = Vanilla, Vanilla+, Chroma, & Chroma+
   2. Styles = Full Spread, Balanced, High-Tech, Low-Tech, Fitness, Dance, Accuracy
   3. More Styles = Non-Standard, Speed, Challenge, Poodles, Gimmick
@@ -141,7 +141,7 @@ We've made some additional updates! [See all updates from 2024 here.](/the-beast
 
 - [[Chroma+] All Of Me - John Legend](https://beatsaver.com/maps/3a510) - Standard ExpertPlus (90 Degrees) - Mapped by MadChase
 
-- [Apologize - OneRepublic (Chroma+)](https://beatsaver.com/maps/3ea7f) - Standard ExpertPlus (360 Degrees) - Mapped by RateGyro
+- [Apologize - OneRepublic (Chroma+)](https://beatsaver.com/maps/3ea7f) - Standard Expert (360 Degrees) - Mapped by RateGyro
 
 - [Camellia (feat. Camellia) - Ashed Wings](https://beatsaver.com/maps/3c7d9) - OneSaber ExpertPlus - Mapped by Darkrealm7
 
@@ -351,7 +351,7 @@ We've made some additional updates! [See all updates from 2024 here.](/the-beast
 
 - [[V3] Sabrina Carpenter - Espresso](https://beatsaver.com/maps/3bcb2) - Standard ExpertPlus - Mapped by Lekrkoekj
 
-- [[Cinema] UNITE IN THE SKY (あうりん mv ver.) - unity-chan](https://beatsaver.com/maps/3c5c9) - Standard ExpertPlus - Mapped by Ge2toro & misterlihao
+- [VIVIZ - Untie](https://beatsaver.com/maps/39a04) - Standard ExpertPlus - Mapped by fatahkent
 
 **Best Speed Style Map**:
 
