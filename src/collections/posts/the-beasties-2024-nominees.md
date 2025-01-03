@@ -49,7 +49,7 @@ You can watch the announcement video or read below for a complete list of nomine
 
 ## Download the playlists <a href="#playlists" style="text-decoration:none;">🔗</a> {$playlists}
 
-- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=1R4l63dGTf2LhqnJrM9_ZejhYMaV6CL0z&export=download)
+- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=1O8GVmylYA9aGw6HRCLOW9nWLSvXHFR_c&export=download)
 
   > ⚠️ This is a large file and may take some time to queue depending on your Internet speed
 
