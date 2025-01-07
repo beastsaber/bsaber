@@ -51,9 +51,6 @@
       maps = await response.json().then((json) => json['docs'] as Beatmap[])
     }
   }
-  function isNsfw(map: Beatmap): boolean {
-    return map.nsfw === true
-  }
 
   function loadMore() {
     visibleCount += 8 // Load 8 more cards when clicking "Load More"
@@ -91,7 +88,7 @@
                 map.versions[0].hash
               }.jpg`}
               alt={map.name}
-              class:blur={isNsfw(map)}
+              class:blur={map.nsfw === true}
             />
             <div
               class="button-overlay"
