@@ -15,8 +15,7 @@
   import CopyBsr from './CopyBSR.svelte'
   import { slide } from 'svelte/transition'
 
-  export let sortOrder: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random' =
-    'Latest'
+  export let sortOrder: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random' = 'Latest'
   export let verified: boolean | undefined = undefined
   export let playlistId: number | undefined = undefined
   export let forceColumnCount: number | undefined = undefined
@@ -89,6 +88,7 @@
                 map.versions[0].hash
               }.jpg`}
               alt={map.name}
+              class:blur={map.nsfw === true}
             />
             <div
               class="button-overlay"
@@ -245,8 +245,14 @@
 
     .image-container {
       position: relative;
+      overflow: hidden;
+      border-radius: $rounding-large;
       height: $image-size;
       flex: $image-size 0 0;
+
+      .blur {
+        filter: blur(10px);
+      }
 
       img {
         height: 128px;

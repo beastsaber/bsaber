@@ -86,8 +86,8 @@ export type MapOfTheWeekCollectionData = {
   showcase?: {
     id?: string
     type?: 'youtube-short' | 'youtube-video'
-  },
-  hide?: boolean;
+  }
+  hide?: boolean
   coverUrlOverwrite?: string
 }
 
@@ -122,6 +122,7 @@ export type Beatmap = {
   versions: BeatmapVersion[]
   tags: string[] | undefined
   collaborators: Uploader[]
+  nsfw?: boolean
 }
 
 export type BeatmapVersion = {
