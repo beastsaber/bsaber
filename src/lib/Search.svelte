@@ -273,13 +273,14 @@
     border: 0;
   }
   .image-wrapper {
+    display: flex;
     overflow: hidden;
     border-radius: 5px;
   }
   .image-wrapper img {
-    display: block;
     width: 4rem;
     height: 4rem;
+    border-radius: 5px;
   }
   .blur {
     filter: blur(5px);
