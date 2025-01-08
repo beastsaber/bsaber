@@ -38,6 +38,7 @@
     upvotes: number
     downvotes: number
     score: number
+    nsfw?: boolean
   }[] = []
 
   let searchPreviewTimeout
@@ -93,6 +94,7 @@
                   upvotes: song.stats.upvotes,
                   downvotes: song.stats.downvotes,
                   score: song.stats.score,
+                  nsfw: song.nsfw,
                 }
               })
             }
@@ -175,7 +177,9 @@
     >
       {#each previewResults as preview}
         <a class="dropdown-item" href={preview.url}>
-          <img src={preview.image} class="dropdown-item-image" alt="Map Thumbnail" />
+          <div class="image-wrapper">
+            <img src={preview.image} class:blur={preview.nsfw === true} alt="Map Thumbnail" />
+          </div>
           <div class="dropdown-item-map-name">
             {preview.name}<br />
             <div class="dropdown-item-uploader">Uploaded by: {preview.uploader}</div>
@@ -268,6 +272,18 @@
     background-color: transparent;
     border: 0;
   }
+  .image-wrapper {
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  .image-wrapper img {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+  }
+  .blur {
+    filter: blur(5px);
+  }
   a.dropdown-item {
     width: auto;
     overflow: hidden;
@@ -280,16 +296,11 @@
   .dropdown-item:hover {
     background-color: lighten($color-bsaber-purple, 5%);
   }
-  .dropdown-item-image {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 5px;
-    margin-right: 0.5rem;
-  }
   .dropdown-item-map-name {
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    margin-left: 0.5rem;
   }
   .dropdown-item-uploader {
     padding-top: 0.15rem;

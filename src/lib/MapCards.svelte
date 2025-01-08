@@ -251,7 +251,7 @@
       flex: $image-size 0 0;
 
       .blur {
-        filter: blur(10px);
+        filter: blur(5px);
       }
 
       img {
