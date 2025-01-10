@@ -49,13 +49,11 @@ You can watch the announcement video or read below for a complete list of nomine
 
 ## Download the playlists <a href="#playlists" style="text-decoration:none;">🔗</a> {$playlists}
 
-- All categories in separate playlists - [Download (20.04 MB)](https://drive.usercontent.google.com/uc?id=1O8GVmylYA9aGw6HRCLOW9nWLSvXHFR_c&export=download)
+- All categories in separate playlists - [Download (19.9 MB)](https://dm8tn9cmu21mc.cloudfront.net/2024_beasties_nominee_r5.zip)
 
-  > ⚠️ This is a large file and may take some time to queue depending on your Internet speed
+- All nominees in one playlist - [Download (1.2 MB)](https://dm8tn9cmu21mc.cloudfront.net/beasties_all_r5.bplist)
 
-- All nominees in one playlist - [Download (1.16 MB)](https://drive.usercontent.google.com/uc?id=1OetV3lAtLq_PI4w1iAA8jM8Ei7UC2yTm&export=download)
-
-- All nominees grouped into 5 categories based on category type below - [Download (4.31 MB)](https://drive.usercontent.google.com/uc?id=1KGXwLZoaJjegTZ-8-GlRu4mYginmwHKP&export=download)
+- All nominees grouped into 5 categories based on category type below - [Download (4.3 MB)](https://dm8tn9cmu21mc.cloudfront.net/beasties_five_categories_r5.zip)
   1. Lighting = Vanilla, Vanilla+, Chroma, & Chroma+
   2. Styles = Full Spread, Balanced, High-Tech, Low-Tech, Fitness, Dance, Accuracy
   3. More Styles = Non-Standard, Speed, Challenge, Poodles, Gimmick
