@@ -55,6 +55,71 @@ While Curation decisions are in large part subjective, the following major playa
 
 Maps with objective issues in the Curation Request Queue will be marked with an ❌ reaction and will not be looked at by Curators.
 
+<br />
+
+## Pets!
+
+For reading through all of our requirements, have some pictures of our Curator's (and some retired Curator's) pets!
+
+<div class="photos">
+  <figure>
+    <img src="/uploads/posts/curation/bella.jpg" alt="Bella" />
+    <figcaption>OneSpookyBoi's dog, "Bella"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/charles.jpg" alt="Charles" />
+    <figcaption>Phoenix's cat, "Charles"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/cleo.jpg" alt="Cleo" />
+    <figcaption>nitronik.exe's cat, "Cleo"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/echo-zuko.jpg" alt="Echo & Zuko" />
+    <figcaption>Symphonic's cats, "Echo" & "Zuko"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/gnocchi.jpg" alt="Gnocchi" />
+    <figcaption>Pixelguy's dog, "Gnocchi"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/rocket.jpg" alt="Rocket" />
+    <figcaption>RateGyro's dog, "Rocket"</figcaption>
+  </figure>
+</div>
+
+<style>
+  .photos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  figure {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ffffff50;
+    border-radius: 5px;
+  }
+  figure img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 300px;
+    width: auto;
+    margin: 1rem;
+  }
+  figcaption {
+    text-align: center;
+    margin: -0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+</style>
+
+<br />
+
+<br />
+
 ## Have a map you’d like to suggest to our Curation team?
 
 While most of our Curators regularly keep up with the Latest Maps feed on BeatSaver, if after a few days your map (or someone else's map) hasn't gotten curated and you feel like it hasn't gotten the attention you think it deserves, you can submit the map as a curation request.
