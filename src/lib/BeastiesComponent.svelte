@@ -8,10 +8,10 @@
   let countdownDate: number
 
   function formatTime(days: number, hours: number, minutes: number, seconds: number): string {
-    const daysText = days > 0 ? `${days} ${days === 1 ? 'day' : 'days'}` : ''
-    const hoursText = hours > 0 ? `${hours} ${hours === 1 ? 'hour' : 'hours'}` : ''
-    const minutesText = minutes > 0 ? `${minutes} ${minutes === 1 ? 'minute' : 'minutes'}` : ''
-    const secondsText = seconds > 0 ? `${seconds} ${seconds === 1 ? 'second' : 'seconds'}` : ''
+    const daysText = days > 0 ? `${days}\u00A0${days === 1 ? 'day' : 'days'}` : ''
+    const hoursText = hours > 0 ? `${hours}\u00A0${hours === 1 ? 'hour' : 'hours'}` : ''
+    const minutesText = minutes > 0 ? `${minutes}\u00A0${minutes === 1 ? 'minute' : 'minutes'}` : ''
+    const secondsText = seconds > 0 ? `${seconds}\u00A0${seconds === 1 ? 'second' : 'seconds'}` : ''
     return [daysText, hoursText, minutesText, secondsText].filter(Boolean).join(', ')
   }
 
@@ -161,6 +161,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-width: 470px;
+    @media (max-width: 486px) {
+      min-width: unset;
+    }
   }
 
   .cta-row {
