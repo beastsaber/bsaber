@@ -95,10 +95,6 @@
           href: '/the-beastsaber-mapping-awards',
         },
         {
-          name: 'Voting',
-          href: 'https://mappingawards.saeraphinx.dev/',
-        },
-        {
           name: '2024 Nominees',
           href: '/posts/the-beasties-2024-nominees',
         },
