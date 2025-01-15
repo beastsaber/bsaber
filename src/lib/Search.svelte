@@ -1,5 +1,6 @@
 <script lang="ts">
   import { slide } from 'svelte/transition'
+  import { showNSFW } from './storeNsfwPreference'
 
   const dropdownItems: {
     name: string
@@ -178,7 +179,7 @@
       {#each previewResults as preview}
         <a class="dropdown-item" href={preview.url}>
           <div class="image-wrapper">
-            <img src={preview.image} class:blur={preview.nsfw === true} alt="Map Thumbnail" />
+            <img src={preview.image} class:blur={$showNSFW && preview.nsfw} alt="Map Thumbnail" />
           </div>
           <div class="dropdown-item-map-name">
             {preview.name}<br />

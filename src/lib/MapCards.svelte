@@ -14,6 +14,7 @@
   import { beatSaverClientFactory } from './beatsaver-client'
   import CopyBsr from './CopyBSR.svelte'
   import { slide } from 'svelte/transition'
+  import { showNSFW } from './storeNsfwPreference'
 
   export let sortOrder: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random' = 'Latest'
   export let verified: boolean | undefined = undefined
@@ -88,7 +89,7 @@
                 map.versions[0].hash
               }.jpg`}
               alt={map.name}
-              class:blur={map.nsfw === true}
+              class:blur={$showNSFW && map.nsfw}
             />
             <div
               class="button-overlay"
