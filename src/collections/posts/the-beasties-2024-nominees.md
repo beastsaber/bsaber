@@ -29,7 +29,6 @@ If you see any of these dedicated community members mentioned above around the c
 ## Quick Navigation
 
 - [**Download the Playlists**](#playlists)
-- [**Vote**](#vote)
 - [**Supporting Map Award Nominees**](#supporting-map-award-nominees)
 - [**Lighting Award Nominees**](#lighting-nominees)
 - [**Map Style Award Nominees**](#map-style-category-nominees)
@@ -49,11 +48,11 @@ You can watch the announcement video or read below for a complete list of nomine
 
 ## Download the playlists <a href="#playlists" style="text-decoration:none;">🔗</a> {$playlists}
 
-- All categories in separate playlists - [Download (19.9 MB)](https://dm8tn9cmu21mc.cloudfront.net/2024_beasties_nominee_r5.zip)
+- All categories in separate playlists - [Download (19.9 MB)](https://cdn.theczar1994.dev/2024_beasties_nominee_r5.zip)
 
-- All nominees in one playlist - [Download (1.2 MB)](https://dm8tn9cmu21mc.cloudfront.net/beasties_all_r5.bplist)
+- All nominees in one playlist - [Download (1.2 MB)](https://cdn.theczar1994.dev/beasties_all_r5.bplist)
 
-- All nominees grouped into 5 categories based on category type below - [Download (4.3 MB)](https://dm8tn9cmu21mc.cloudfront.net/beasties_five_categories_r5.zip)
+- All nominees grouped into 5 categories based on category type below - [Download (4.3 MB)](https://cdn.theczar1994.dev/beasties_five_categories_r5.zip)
   1. Lighting = Vanilla, Vanilla+, Chroma, & Chroma+
   2. Styles = Full Spread, Balanced, High-Tech, Low-Tech, Fitness, Dance, Accuracy
   3. More Styles = Non-Standard, Speed, Challenge, Poodles, Gimmick
@@ -63,7 +62,7 @@ You can watch the announcement video or read below for a complete list of nomine
 <hr />
 <br />
 
-## Vote by January 14th! <a href="#vote" style="text-decoration:none;">🔗</a> {$vote}
+## Vote by January 14th!
 
 [Verified Mappers](/posts/so-you-want-to-be-a-verified-mapper) will be selecting our first place and runner up winners but everyone in the community can vote on “Community Choice” winners in each category! **Voting closes on January 14th so don’t wait to get your vote in.**
 
@@ -77,35 +76,6 @@ We've made some additional updates! [See all updates from 2024 here.](/the-beast
   - Below 8 Stars (BeatLeader and ScoreSaber separately)
   - 8-12 Stars (BeatLeader and ScoreSaber separately)
   - 12+ Stars (BeatLeader and ScoreSaber separately)
-
-<br />
-
-<div class="cta" id="cta-container">
-  <div class="buttons" id="buttons-container">
-    <a class="btn" href="https://mappingawards.saeraphinx.dev/" target="_blank">CLICK HERE TO VOTE! 🏆</a>
-  </div>
-</div>
-
-<style>
-  .buttons {
-    justify-content: start;
-    margin-bottom: 2.5rem;
-  }
-  .btn {
-    padding: 10px 40px 10px 40px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-    font-weight: bolder;
-    background-color: #b73425;
-    color: white;
-  }
-  .btn:hover {
-    background-color: #792117;
-    text-decoration: none;
-  }
-</style>
 
 <hr />
 <br />
