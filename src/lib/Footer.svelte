@@ -16,12 +16,14 @@
 <footer>
   {#if $toggleVisibility}
     <div class="nsfw-toggle-container">
-      <span class="toggle-title">NSFW Filter</span>
-      <div class="toggle-wrapper" on:click={toggleNSFW}>
-        <div class="toggle-pill" class:active={$showNSFW}>
-          <span class="toggle-status"
-            >{#if $showNSFW}ON{:else}OFF{/if}</span
-          >
+      <div class="nsfw-component" title="Toggle blur for NSFW covers if present">
+        <span class="toggle-title">NSFW Filter:</span>
+        <div class="toggle-wrapper" on:click={toggleNSFW}>
+          <div class="toggle-pill" class:active={$showNSFW}>
+            <span class="toggle-status"
+              >{#if $showNSFW}ON{:else}OFF{/if}</span
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -65,6 +67,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    margin-bottom: 1rem;
   }
   .footer-content {
     position: relative;
@@ -100,12 +103,20 @@
   }
 
   .nsfw-toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nsfw-component {
     text-align: center;
-    margin: 1.5rem;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    width: max-content;
   }
 
   .toggle-title {
     color: white;
+    font-weight: bold;
   }
 
   .toggle-wrapper {
