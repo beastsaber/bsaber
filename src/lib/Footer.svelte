@@ -13,6 +13,16 @@
 </script>
 
 <footer>
+  <div class="nsfw-toggle-container">
+    <span class="toggle-title">NSFW Filter:</span>
+    <div class="toggle-wrapper" on:click={toggleNSFW}>
+      <div class="toggle-pill" class:active={$showNSFW}>
+        <span class="toggle-status">
+          {#if $showNSFW}ON{:else}OFF{/if}
+        </span>
+      </div>
+    </div>
+  </div>
   <hr />
   <div class="footer-content">
     <div>
@@ -43,16 +53,6 @@
         </li>
       </ul>
     </div>
-    <div class="nsfw-toggle-container">
-      <span class="toggle-title">NSFW Filter:</span>
-      <div class="toggle-wrapper" on:click={toggleNSFW}>
-        <div class="toggle-pill" class:active={$showNSFW}>
-          <span class="toggle-status">
-            {#if $showNSFW}ON{:else}OFF{/if}
-          </span>
-        </div>
-      </div>
-    </div>
   </div>
 </footer>
 
@@ -76,7 +76,7 @@
   }
 
   .links-container {
-    margin-top: 0.5rem;
+    margin: 0.5rem;
   }
 
   .links {
@@ -98,6 +98,7 @@
 
   .nsfw-toggle-container {
     text-align: center;
+    margin: 1.5rem;
   }
 
   .toggle-title {
