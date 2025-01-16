@@ -1,15 +1,15 @@
 <script lang="ts">
   import { slide } from 'svelte/transition'
-  import { showNSFW } from './storeNsfwPreference'
-  import { toggleVisibility } from './storeNsfwPreference'
+  import { filterNsfw } from './storeNsfwPreference'
+  import { nsfwToggleVisibility } from './storeNsfwPreference'
   import { onMount, onDestroy } from 'svelte'
 
   onMount(() => {
-    toggleVisibility.set(true)
+    nsfwToggleVisibility.set(true)
   })
 
   onDestroy(() => {
-    toggleVisibility.set(false)
+    nsfwToggleVisibility.set(false)
   })
 
   const dropdownItems: {
@@ -189,7 +189,7 @@
       {#each previewResults as preview}
         <a class="dropdown-item" href={preview.url}>
           <div class="image-wrapper">
-            <img src={preview.image} class:blur={$showNSFW && preview.nsfw} alt="Map Thumbnail" />
+            <img src={preview.image} class:blur={$filterNsfw && preview.nsfw} alt="Map Thumbnail" />
           </div>
           <div class="dropdown-item-map-name">
             {preview.name}<br />

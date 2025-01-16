@@ -14,8 +14,8 @@
   import { beatSaverClientFactory } from './beatsaver-client'
   import CopyBsr from './CopyBSR.svelte'
   import { slide } from 'svelte/transition'
-  import { showNSFW } from './storeNsfwPreference'
-  import { toggleVisibility } from './storeNsfwPreference'
+  import { filterNsfw } from './storeNsfwPreference'
+  import { nsfwToggleVisibility } from './storeNsfwPreference'
 
   export let sortOrder: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random' = 'Latest'
   export let verified: boolean | undefined = undefined
@@ -31,12 +31,12 @@
   const setPreviewKey = (key: string | null) => (previewKey = key)
 
   onMount(async () => {
-    toggleVisibility.set(true)
+    nsfwToggleVisibility.set(true)
     await getMaps()
   })
 
   onDestroy(() => {
-    toggleVisibility.set(false)
+    nsfwToggleVisibility.set(false)
   })
 
   const beatSaverClient = beatSaverClientFactory.create()
@@ -95,7 +95,7 @@
                 map.versions[0].hash
               }.jpg`}
               alt={map.name}
-              class:blur={$showNSFW && map.nsfw}
+              class:blur={$filterNsfw && map.nsfw}
             />
             <div
               class="button-overlay"

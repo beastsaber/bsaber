@@ -5,24 +5,22 @@
   import { faYoutube } from '@fortawesome/free-brands-svg-icons'
   import { faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
-  import { showNSFW } from './storeNsfwPreference'
-  import { toggleVisibility } from './storeNsfwPreference'
+  import { filterNsfw } from './storeNsfwPreference'
+  import { nsfwToggleVisibility } from './storeNsfwPreference'
 
   function toggleNSFW() {
-    showNSFW.update((value) => !value)
+    filterNsfw.update((value) => !value)
   }
 </script>
 
 <footer>
-  {#if $toggleVisibility}
+  {#if $nsfwToggleVisibility}
     <div class="nsfw-toggle-container">
       <div class="nsfw-component" title="Toggle blur for NSFW covers if present">
         <span class="toggle-title">NSFW Filter:</span>
         <div class="toggle-wrapper" on:click={toggleNSFW}>
-          <div class="toggle-pill" class:active={$showNSFW}>
-            <span class="toggle-status"
-              >{#if $showNSFW}ON{:else}OFF{/if}</span
-            >
+          <div class="toggle-pill" class:active={$filterNsfw}>
+            <span class="toggle-status">{$filterNsfw ? 'ON' : 'OFF'}</span>
           </div>
         </div>
       </div>
