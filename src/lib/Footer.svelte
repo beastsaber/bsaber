@@ -6,6 +6,7 @@
   import { faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
   import { showNSFW } from './storeNsfwPreference'
+  import { toggleVisibility } from './storeNsfwPreference'
 
   function toggleNSFW() {
     showNSFW.update((value) => !value)
@@ -13,16 +14,18 @@
 </script>
 
 <footer>
-  <div class="nsfw-toggle-container">
-    <span class="toggle-title">NSFW Filter:</span>
-    <div class="toggle-wrapper" on:click={toggleNSFW}>
-      <div class="toggle-pill" class:active={$showNSFW}>
-        <span class="toggle-status">
-          {#if $showNSFW}ON{:else}OFF{/if}
-        </span>
+  {#if $toggleVisibility}
+    <div class="nsfw-toggle-container">
+      <span class="toggle-title">NSFW Filter</span>
+      <div class="toggle-wrapper" on:click={toggleNSFW}>
+        <div class="toggle-pill" class:active={$showNSFW}>
+          <span class="toggle-status"
+            >{#if $showNSFW}ON{:else}OFF{/if}</span
+          >
+        </div>
       </div>
     </div>
-  </div>
+  {/if}
   <hr />
   <div class="footer-content">
     <div>

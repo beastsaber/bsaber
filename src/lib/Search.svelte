@@ -1,6 +1,16 @@
 <script lang="ts">
   import { slide } from 'svelte/transition'
   import { showNSFW } from './storeNsfwPreference'
+  import { toggleVisibility } from './storeNsfwPreference'
+  import { onMount, onDestroy } from 'svelte'
+
+  onMount(() => {
+    toggleVisibility.set(true)
+  })
+
+  onDestroy(() => {
+    toggleVisibility.set(false)
+  })
 
   const dropdownItems: {
     name: string

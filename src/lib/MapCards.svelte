@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Beatmap } from '../types'
-  import { onMount } from 'svelte'
+  import { onMount, onDestroy } from 'svelte'
   import Uploader from '$lib/Uploader.svelte'
   import Tags from '$lib/Tags.svelte'
   import Difficulties from '$lib/Difficulties.svelte'
@@ -15,6 +15,7 @@
   import CopyBsr from './CopyBSR.svelte'
   import { slide } from 'svelte/transition'
   import { showNSFW } from './storeNsfwPreference'
+  import { toggleVisibility } from './storeNsfwPreference'
 
   export let sortOrder: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random' = 'Latest'
   export let verified: boolean | undefined = undefined
@@ -30,7 +31,12 @@
   const setPreviewKey = (key: string | null) => (previewKey = key)
 
   onMount(async () => {
+    toggleVisibility.set(true)
     await getMaps()
+  })
+
+  onDestroy(() => {
+    toggleVisibility.set(false)
   })
 
   const beatSaverClient = beatSaverClientFactory.create()
