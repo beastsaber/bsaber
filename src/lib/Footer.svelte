@@ -4,9 +4,28 @@
   import { faPatreon } from '@fortawesome/free-brands-svg-icons'
   import { faYoutube } from '@fortawesome/free-brands-svg-icons'
   import { faXTwitter } from '@fortawesome/free-brands-svg-icons'
+
+  import { filterNsfw } from './storeNsfwPreference'
+  import { nsfwToggleVisibility } from './storeNsfwPreference'
+
+  function toggleNSFW() {
+    filterNsfw.update((value) => !value)
+  }
 </script>
 
 <footer>
+  {#if $nsfwToggleVisibility}
+    <div class="nsfw-toggle-container">
+      <div class="nsfw-component" title="Toggle blur for NSFW covers if present">
+        <span class="toggle-title">NSFW Filter:</span>
+        <div class="toggle-wrapper" on:click={toggleNSFW}>
+          <div class="toggle-pill" class:active={$filterNsfw}>
+            <span class="toggle-status">{$filterNsfw ? 'ON' : 'OFF'}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  {/if}
   <hr />
   <div class="footer-content">
     <div>
@@ -46,6 +65,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    margin-bottom: 1rem;
   }
   .footer-content {
     position: relative;
@@ -78,5 +98,52 @@
 
   .logo {
     height: 25px;
+  }
+
+  .nsfw-toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nsfw-component {
+    text-align: center;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    width: max-content;
+  }
+
+  .toggle-title {
+    color: white;
+    font-weight: bold;
+  }
+
+  .toggle-wrapper {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .toggle-pill {
+    width: 60px;
+    height: 25px;
+    background-color: $color-danger-red;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+  }
+
+  .toggle-pill.active {
+    background-color: $color-success-green;
+  }
+
+  .toggle-status {
+    position: relative;
+    z-index: 1;
   }
 </style>

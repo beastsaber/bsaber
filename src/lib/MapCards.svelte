@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Beatmap } from '../types'
-  import { onMount } from 'svelte'
+  import { onMount, onDestroy } from 'svelte'
   import Uploader from '$lib/Uploader.svelte'
   import Tags from '$lib/Tags.svelte'
   import Difficulties from '$lib/Difficulties.svelte'
@@ -14,6 +14,8 @@
   import { beatSaverClientFactory } from './beatsaver-client'
   import CopyBsr from './CopyBSR.svelte'
   import { slide } from 'svelte/transition'
+  import { filterNsfw } from './storeNsfwPreference'
+  import { nsfwToggleVisibility } from './storeNsfwPreference'
 
   export let sortOrder: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random' = 'Latest'
   export let verified: boolean | undefined = undefined
@@ -29,7 +31,12 @@
   const setPreviewKey = (key: string | null) => (previewKey = key)
 
   onMount(async () => {
+    nsfwToggleVisibility.set(true)
     await getMaps()
+  })
+
+  onDestroy(() => {
+    nsfwToggleVisibility.set(false)
   })
 
   const beatSaverClient = beatSaverClientFactory.create()
@@ -88,7 +95,7 @@
                 map.versions[0].hash
               }.jpg`}
               alt={map.name}
-              class:blur={map.nsfw === true}
+              class:blur={$filterNsfw && map.nsfw}
             />
             <div
               class="button-overlay"
