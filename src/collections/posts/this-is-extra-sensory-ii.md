@@ -52,4 +52,16 @@ Stay up to date with [TotalBS on X/Twitter](https://x.com/_TotalBS)
 <hr />
 <br />
 
-After the event is over, check back here for interviews with some of the members from the TotalBS team!
+[Take a look at the Extra Sensory II playlist!](/playlists/extra-sensory-ii)
+
+<hr />
+<br />
+
+## Learn more about some of the Community Members behind TotalBS!
+
+- [Interview with Aeroluna](/posts/totalbs-interview-with-aeroluna)
+- [Interview with Mawntee](/posts/totalbs-interview-with-mawntee)
+- [Interview with Swifter](/posts/totalbs-interview-with-swifter)
+- [Interview with TheGoodBoi](/posts/totalbs-interview-with-thegoodboi)
+- [Interview with Nasafrasa](/posts/totalbs-interview-with-nasafrasa)
+- [Interview with Chaimzy](/posts/totalbs-interview-with-chaimzy)
