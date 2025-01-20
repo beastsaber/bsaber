@@ -92,54 +92,66 @@
   })
 </script>
 
-<div class="cards">
-  {#each processedEventData as event, index (keyPrefix + '-' + index)}
-    <div
-      class="card"
-      class:current={event.isCurrent}
-      class:passed={!event.isCurrent}
-      id={keyPrefix + '-' + index}
-    >
-      <!-- href to be updated with path e.g. '/community-events/event.slug' -->
-      <a class="title" href={event.url} rel="external">
-        {event.title ?? ''}
-      </a>
-      <div class="info-container">
-        <div class="icon-circle">
-          {#if event.faIcon}
-            <Fa style="height: 25px; width: 25px;" fw icon={event.faIcon} />
-          {:else if event.customIcon}
-            <img class="icon" src={event.customIcon} alt="" />
-          {/if}
-        </div>
-        <div class="text-container">
-          <!-- host href should be updated with future route, e.g. {`/members/createSlug(event.hostUsername)`}-->
-          <span class="host">
-            Hosted by <a href={event.host.url}>{event.host.name}</a>
-          </span>
-          {#if event.endDateText && event.dateParams.useStartTime && event.dateParams.useEndTime}
-            <div class="date-first-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
-              {event.startDateText}
-            </div>
-            <div class="date-second-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
-              - {event.endDateText}
-            </div>
-          {:else}
-            <div class="date-first-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
-              {event.startDateText}
-              {#if event.endDateText}
+{#if processedEventData.length > 0}
+  <div class="cards">
+    {#each processedEventData as event, index (keyPrefix + '-' + index)}
+      <div
+        class="card"
+        class:current={event.isCurrent}
+        class:passed={!event.isCurrent}
+        id={keyPrefix + '-' + index}
+      >
+        <!-- href to be updated with path e.g. '/community-events/event.slug' -->
+        <a class="title" href={event.url} rel="external">
+          {event.title ?? ''}
+        </a>
+        <div class="info-container">
+          <div class="icon-circle">
+            {#if event.faIcon}
+              <Fa style="height: 25px; width: 25px;" fw icon={event.faIcon} />
+            {:else if event.customIcon}
+              <img class="icon" src={event.customIcon} alt="" />
+            {/if}
+          </div>
+          <div class="text-container">
+            <!-- host href should be updated with future route, e.g. {`/members/createSlug(event.hostUsername)`}-->
+            <span class="host">
+              Hosted by <a href={event.host.url}>{event.host.name}</a>
+            </span>
+            {#if event.endDateText && event.dateParams.useStartTime && event.dateParams.useEndTime}
+              <div class="date-first-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
+                {event.startDateText}
+              </div>
+              <div class="date-second-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
                 - {event.endDateText}
-              {/if}
-            </div>
-          {/if}
+              </div>
+            {:else}
+              <div class="date-first-row" title={Intl.DateTimeFormat().resolvedOptions().timeZone}>
+                {event.startDateText}
+                {#if event.endDateText}
+                  - {event.endDateText}
+                {/if}
+              </div>
+            {/if}
+          </div>
         </div>
       </div>
-    </div>
-  {/each}
-</div>
+    {/each}
+  </div>
+{:else}
+  <div class="no-events">No Upcoming Events Scheduled</div>
+{/if}
 
 <style lang="scss">
   @import 'src/scss/variables';
+
+  .no-events {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    color: $color-muted-text;
+  }
 
   .cards {
     display: grid;
