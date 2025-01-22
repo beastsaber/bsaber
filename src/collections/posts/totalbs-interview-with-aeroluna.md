@@ -2,19 +2,27 @@
 title: TotalBS - Interview with Aeroluna
 section: articles
 category: interview
-publish: 2024-11-19T00:00:00.000Z
+publish: 2025-01-21T00:00:00.000Z
 homepageText: ''
 image: /static/uploads/posts/exsii/totalbslogo.png
 authors:
   - '4285984'
-showInPostListing: false
+showInPostListing: true
 ---
 
 [Go back to **"This is Extra Sensory II"**](/posts/this-is-extra-sensory-ii)
 
 <div class="profile">
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source
+        src="https://exsii.totalbs.dev/resource/background.webm"
+        type="video/mp4"
+      />
+    </video>
+  </div>
   <div class="image">
-    <img style="border-radius: 50%; width: 92px; height: auto;" id="avatar" alt="avatar" />
+    <img style="border-radius: 50%; width: 92px; height: auto; padding: 5px;" id="avatar" alt="avatar" />
   </div>
   <div class="bio">
       <div class="name"><a href="https://beatsaver.com/profile/4284266" id="name"></a></div>
@@ -82,20 +90,24 @@ showInPostListing: false
     display: flex;
     flex-direction: row;
     box-shadow: 0px 3px 3px black;
+    overflow: hidden;
+    border-radius: 5px;
   }
-  .profile::before {
-    content: '';
+  .video-background {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('/uploads/posts/exsii/Main.00_01_13_07.Still035.png');
-    background-position: center;
-    background-size: cover;
-    filter: brightness(50%);
-    z-index: -1;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    filter: brightness(60%) blur(10px);
+  }
+  video {
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
+    object-fit: cover;
+    overflow: hidden;
   }
 
   .image {
@@ -212,49 +224,96 @@ showInPostListing: false
 <hr />
 <br />
 
-Aeroluna, aka the creator of [Heck](https://github.com/Aeroluna/Heck), which allows mappers immense control over note and environment properties by the use of Chroma and Noodle Extensions!
+Aeroluna, aka the main creator of [Heck](https://github.com/Aeroluna/Heck), which allows mappers immense control over note and environment properties by the use of Chroma and Noodle Extensions!
+
+They are back at it again as one of the masterminds behind Extra Sensory II! If you participated in the recent event, this is one of the main people to thank for everything!
+
+<hr />
+<br />
 
 # Interview with Aeroluna
 
 ### Q: Tell us who you are! Your name, how long you’ve been playing Beat Saber, what got you started playing, what got you started modding, hobbies, etc.
 
-**A:**
+**A:** Hiiii, I'm Aeroluna! You probably know me from the mods I've created! I started Beat Saber in December 2018 after getting my first VR headset.
+
+I initially got involved with mapping, but slowly moved onto lighting, and eventually got into using ChromaLite to color my lightshows. However, there was a problem, the original Chroma developer had already move on from Beat Saber.
+I had no experience with C#, but I learned by updating Chroma, and that's how I got into modding.
+
+<br />
 
 ### Q: Where else do you participate in the Custom Beat Saber Community? Mapping? Ranking? How long?
 
-**A:**
+**A:** Oops! All modcharts for me. I used to be more involved with the mapping scene, but now I tend to stick to modcharts.
+
+<br />
 
 ### Q: When and why did you start coding?
 
-**A:**
+**A:** I started scripting for Warcraft III custom maps before I can remember, and then got heavy into GameMaker Studio in 2016 as I was getting interested in game development. Then, in 2019 I got into Beat Saber and learned C# to develop mods!
+
+Coding has always tickled the logic part of my brain that loves problem solving. I always start with a goal in mind for what I want my code to result in, then figure out how to get there by any means; and that's how I motivate myself to learn new coding techniques!
+
+<br />
 
 ### Q: What mod(s), websites, tools, etc. have you made or contributed to for the Beat Saber community? (If any)
 
-**A:**
+**A:** I am the main developer of [CustomJSONData](https://github.com/Aeroluna/CustomJSONData), [Heck](https://github.com/Aeroluna/Heck), [Noodle Extensions](https://github.com/Aeroluna/NoodleExtensions), [Chroma](https://github.com/Aeroluna/Chroma), [Technicolor](https://github.com/Aeroluna/Technicolor), [Vivify](), [Synapse](), [BS Audiolink port](https://github.com/Aeroluna/BSAudioLink), as well as the main developer, mapper, and project lead of [Extra Sensory I](/playlists/extra-sensory-i) and [Extra Sensory II](/playlists/extra-sensory-ii).
+If you're wondering how Beat Saber got modcharts, I'm right here!
+
+<br />
 
 ### Q: For you, what was the most interesting or exciting part behind Extra Sensory I (Noodle Extensions)? What is your favorite Noodle Extensions map? (Feel free to include your own if you have one and someone else's if you want)
 
-**A:**
+**A:** As the developer for Extra Sensory I, the most exciting part was getting to collaborate with my two close friends, [CyanSnow](https://beatsaver.com/profile/4235138) and [Reaxt](https://beatsaver.com/profile/4235136), for hours on end as we worked away on it. Of course, being able to be the one to debut modcharts in a new game was nothing short of amazing either!
+
+For my favorite Noodle map, I'll have to give that honor to [IX's Shadow](https://beatsaver.com/maps/33232) by Pleast. It's got the two things I love most from any map, strong theming and some great notemods and manages to be fun to watch and fun to play. However, I do have to give some credit toward's Reaxt's [Nulctrl]https://beatsaver.com/maps/ed2a), as it accomplishes much the same, but unfortunately I think Pleast's is an improvement.
+
+<br />
 
 ### Q: What was your role in Extra Sensory II? Give us a deeper dive into how you became involved, the commitment of keeping progress moving, were there any struggles? (Can also focus on the good qualities of the process instead of struggles. Were there any huge accomplishments where everyone worked together?)
 
-**A:**
+**A:** For Extra Sensory II, I was the sole developer of both mods, Synapse and Vivify, the website, and the server backend, as well as creating a map of my own. The idea for Extra Sensory II came around awhile after the first ended, when I had realized the next level for modcharts had to be assetbundles. There were definitely times when the work seemed overwhelming, but I stayed committed to my vision of bringing shaders to Beat Saber, and [Swifter](/posts/totalbs-interview-with-swifter) really helped pick up a lot of the slack!
+
+<br />
 
 ### Q: What was the most challenging part of getting this together?
 
-**A:**
+**A:** One of the the biggest struggles was time management. Everybody on the team can tell you that the closer we got to the deadline, the harder we had to start crunching, and I certainly wish we had spread out the work a little better. But at the end of the day, I'm proud of our team for setting a deadline and delivering it. There were times we considered delaying it but ultimately the stars aligned and we knocked it out of the ballpark.
+
+<br />
 
 ### Q: For someone who doesn't know anything about coding, where and how do you recommend they get started? Do you have any role models in the community?
 
-**A:**
+**A:** What really helped me was knowing what I wanted before I even started. It doesn't matter how many coding tutorials you look up on YouTube if you don't have the motivation to follow through on it.
+
+The way I first learned how to mod was throwing myself at Chroma, Googling, trying stuff out, and referencing other mods until eventually I got something that worked.
+
+On that note, a huge thank you to all the modders in the community who open-source their mods! You guys don't know how much it helped me and I hope that my code can do the same for someone else!
+
+<br />
 
 ### Q: Is there anything else you’d like to share about the project?
 
-**A:**
+**A:** If you are interested in making modcharts, bust out the Unity Editor and start learning shaders. It's never too late to learn, I knew nothing about them when I first started this project (Shout out to Book of Shaders).
+
+Everyone else, get ready for some beautiful maps, I think Extra Sensory II does a great job showing off what's possible.
+
+And lastly, be prepared for more exciting map drops. Synapse isn't going anywhere, and has shown how exciting it can be to get everyone together playing the maps!
+
+<br />
 
 ### Q: Is there anything else you'd like to share in general?
 
-**A:**
+**A:** A little personal bias but, thank the modders, really. It's unsung work.
+
+When you play Beat Saber, how often do you think about the people who spend hours coding so you can have custom sabers or platforms? I believe our community is blessed to have such talented and active modders who are still willing to keep this game active.
+
+And on that note, thank you to the community as a whole. All of you who showed up and chatted really made this experience something special.
+
+All the sleepless nights and countless hours of coding were worth it after seeing all those people join, seeing the reactions of everyone after each map, and even the little things like everyone joining in on the countdown in chat.
+
+Thank you, all of you, for being there.
 
 <br />
 
