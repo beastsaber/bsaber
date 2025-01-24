@@ -2,21 +2,19 @@
 title: TotalBS - Interview with Swifter
 section: articles
 category: interview
-publish: 2024-11-19T00:00:00.000Z
+publish: 2025-01-21T01:00:00.000Z
 homepageText: "Surely you've heard of Swifter!? You know... one of the mappers
   involved in the (as of writing this article) #2 map of all time with a
   whopping 16,000 upvotes. Check out this article to learn more about Swifter!"
 image: /static/uploads/posts/exsii/totalbslogo.png
-authors:
-  - '4285984'
-showInPostListing: false
+showInPostListing: true
 ---
 
-[Go back to **"This is Extra Sensory II"**](/posts/this-is-extra-sensory-ii)
+[Go back to **"This is Total BS"**](/posts/this-is-totalbs)
 
 <div class="profile">
    <div class="image">
-      <img style="border-radius: 50%; width: 92px; height: auto;" id="avatar" alt="avatar" />
+      <img class="avatar" id="avatar" alt="avatar" />
    </div>
    <div class="bio">
       <div class="name"><a href="https://beatsaver.com/profile/4284246" id="name"></a></div>
@@ -63,48 +61,51 @@ showInPostListing: false
 <br />
 
 <script>
-    function getRoles(user) {
-        const roles = [];
+async function fetchUserData() {
+  try {
+    const response = await fetch('https://api.beatsaver.com/users/id/4284246');
+    if (!response.ok) throw new Error('Failed to fetch user data');
 
-        if (user.admin) roles.push('Admin');
-        if (user.seniorCurator) {
-            roles.push('Senior Curator');
-        } else if (user.curator) {
-            roles.push('Curator');
-        }
-        if (user.verifiedMapper) roles.push('Verified Mapper');
+    const data = await response.json();
 
-        return roles.join(', ');
+    document.getElementById('avatar').src = data.avatar || '';
+    document.getElementById('avatar').alt = data.name || 'User Avatar';
+    document.getElementById('name').textContent = data.name || 'Unknown User';
+    document.getElementById('description').innerHTML = formatDescription(data.description || '');
+    document.getElementById('roleString').textContent = getRoles(data);
+    } catch (error) {
+    console.error('Error fetching user data:', error);
+    document.getElementById('roleString').textContent = 'Error loading roles';
+    document.getElementById('description').textContent = 'Unable to load description.';
     }
+  }
 
-    function formatDescription(text) {
-        return text
-            .replace(/\n/g, '<br>') // Convert line breaks to <br>
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convert **bold** to <strong> tags
-            .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" style="color: white;">$1</a>') // Convert URLs to clickable links
-            .replace(/(^|\s)@(\w+)/g, '$1<a href="https://beatsaver.com/profile/username/$2" target="_blank">@$2</a>'); // Convert @mentions to profile links
-    }
+fetchUserData();
+    
+function getRoles(user) {
+  const roles = [];
 
-    async function fetchUserData() {
-        try {
-            const response = await fetch('https://api.beatsaver.com/users/id/4284246');
-            if (!response.ok) throw new Error('Failed to fetch user data');
+  if (user.admin) roles.push('Admin');
+  if (user.seniorCurator) {
+      roles.push('Senior Curator');
+  } else if (user.curator) {
+      roles.push('Curator');
+  }
+  if (user.verifiedMapper) {
+      roles.push('Verified Mapper');
+  } else if (user.stats?.totalMaps >= 1) {
+      roles.push('Mapper');
+  }
+  return roles.join(', ');
+}
 
-            const data = await response.json();
-
-            document.getElementById('avatar').src = data.avatar || '';
-            document.getElementById('avatar').alt = data.name || 'User Avatar';
-            document.getElementById('name').textContent = data.name || 'Unknown User';
-            document.getElementById('description').innerHTML = formatDescription(data.description || '');
-            document.getElementById('roleString').textContent = getRoles(data);
-        } catch (error) {
-            console.error('Error fetching user data:', error);
-            document.getElementById('roleString').textContent = 'Error loading roles';
-            document.getElementById('description').textContent = 'Unable to load description.';
-        }
-    }
-
-    window.onload = fetchUserData;
+function formatDescription(text) {
+  return text
+    .replace(/\n/g, '<br>') // Convert line breaks to <br>
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convert **bold** to <strong> tags
+    .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" style="color: white;">$1</a>') // Convert URLs to clickable links
+    .replace(/(^|\s)@(\w+)/g, '$1<a href="https://beatsaver.com/profile/username/$2" target="_blank">@$2</a>'); // Convert @mentions to profile links
+  }
 </script>
 
 <style>
@@ -135,7 +136,10 @@ showInPostListing: false
     border-radius: 5px 0 0 5px;
   }
   .avatar {
-    padding: 5px;
+    border-radius: 50%;
+    width: 92px;
+    height: auto;
+    padding: 10px;
   }
 
   .bio {
@@ -280,7 +284,7 @@ _Video playthrough of Somewhere Out There_
 
 The motivation definitely depends on the project, but in general I find it really fun and addicting. There's a lot to it, it's more than just trying to solve a problem, but it's to do so elegantly and concisely. Just like how in writing you can have sentences that are hard to follow, you can have code that is hard to follow. I enjoy expressing myself through my solutions and watching my creations come to life!
 
-### Q: What mod(s), websites, tools, etc. have you made or contributed to for the Beat Saber community? (If any)
+### Q: What mod(s), websites, tools, etc. have you made or contributed to for the Beat Saber community?
 
 **A:** I have made a couple of tools for the community, most notably [ReMapper](https://github.com/Swifter1243/ReMapper), which is a TypeScript framework for manipulating beatmaps. ReMapper was "founded" by me and [Fern](https://github.com/Fernthedev), a creator who ports most of Aeroluna's mods to the quest version of the game. I wanted to make the techniques I developed during Somewhere Out There more abstracted and accessible, while Fern wanted to guarantee proper syntax in the map data so that mapper's mistakes wouldn't cause problems for modders. It was really the perfect project; Fern is sort of a professional so he basically took on the role of mentoring me during development. Believe it or not, ReMapper also counted toward credits that enabled me to graduate high school. Lots of popular maps in the community are made using ReMapper or some adaptation of the code/ideas from it, which is really fantastic!
 
@@ -312,7 +316,7 @@ Coming into the Noodle Extensions era, I think the most influential map to me wa
 
 **A:** I first got involved around late 2020. I believe around this time I was sending my charts to Mawntee for playtesting quite regularly, and we became good friends. He was impressed with how I was creating interesting things on my own and decided to send me an invite. It was really cool to see all of the most influential and innovative mappers all in one place, I felt like I was included into something unique and special.
 
-### Q: How and where did you contribute to Extra Sensory 2?
+### Q: How and where did you contribute to Extra Sensory II?
 
 **A:** Back when Vivify was revealed internally, I was just focused on trying to make a map for the event as I had no idea how to even use Unity. As I developed my skills though, I slowly took on more things and became more of a project lead.
 

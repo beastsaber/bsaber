@@ -2,19 +2,17 @@
 title: TotalBS - Interview with Mawntee
 section: articles
 category: interview
-publish: 2024-11-19T00:00:00.000Z
+publish: 2025-01-21T01:00:00.000Z
 homepageText: ''
 image: /static/uploads/posts/exsii/totalbslogo.png
-authors:
-  - '4285984'
-showInPostListing: false
+showInPostListing: true
 ---
 
-[Go back to **"This is Extra Sensory II"**](/posts/this-is-extra-sensory-ii)
+[Go back to **"This is TotalBS"**](/posts/this-is-totalbs)
 
 <div class="profile">
   <div class="image">
-    <img style="border-radius: 50%; width: 92px; height: auto;" id="avatar" alt="avatar" />
+    <img class="avatar" id="avatar" alt="avatar" />
   </div>
   <div class="bio">
       <div class="name"><a href="https://beatsaver.com/profile/4285959" id="name"></a></div>
@@ -30,12 +28,7 @@ showInPostListing: false
     </div>
           <div class="badges">
         <a href="/the-beastsaber-mapping-awards" rel="external"><div class="beasties">
-          <img
-            height="24"
-            width="auto"
-            src="/BeastSaber-logo-transformer.png"
-            alt="Logo"
-          />
+          <img src="/BeastSaber-logo-transformer.png" height="24" width="auto" alt="BeastSaber" />
           <p>Beasties Award Winner</p>
         </div></a>
         </div>
@@ -44,48 +37,51 @@ showInPostListing: false
 </div>
 
 <script>
-    function getRoles(user) {
-        const roles = [];
+async function fetchUserData() {
+  try {
+    const response = await fetch('https://api.beatsaver.com/users/id/4285959');
+    if (!response.ok) throw new Error('Failed to fetch user data');
 
-        if (user.admin) roles.push('Admin');
-        if (user.seniorCurator) {
-            roles.push('Senior Curator');
-        } else if (user.curator) {
-            roles.push('Curator');
-        }
-        if (user.verifiedMapper) roles.push('Verified Mapper');
+    const data = await response.json();
 
-        return roles.join(', ');
+    document.getElementById('avatar').src = data.avatar || '';
+    document.getElementById('avatar').alt = data.name || 'User Avatar';
+    document.getElementById('name').textContent = data.name || 'Unknown User';
+    document.getElementById('description').innerHTML = formatDescription(data.description || '');
+    document.getElementById('roleString').textContent = getRoles(data);
+    } catch (error) {
+    console.error('Error fetching user data:', error);
+    document.getElementById('roleString').textContent = 'Error loading roles';
+    document.getElementById('description').textContent = 'Unable to load description.';
     }
+  }
 
-    function formatDescription(text) {
-        return text
-            .replace(/\n/g, '<br>') // Convert line breaks to <br>
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convert **bold** to <strong> tags
-            .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" style="color: white;">$1</a>') // Convert URLs to clickable links
-            .replace(/(^|\s)@(\w+)/g, '$1<a href="https://beatsaver.com/profile/username/$2" target="_blank">@$2</a>'); // Convert @mentions to profile links
-    }
+fetchUserData();
+    
+function getRoles(user) {
+  const roles = [];
 
-    async function fetchUserData() {
-        try {
-            const response = await fetch('https://api.beatsaver.com/users/id/4285959');
-            if (!response.ok) throw new Error('Failed to fetch user data');
+  if (user.admin) roles.push('Admin');
+  if (user.seniorCurator) {
+      roles.push('Senior Curator');
+  } else if (user.curator) {
+      roles.push('Curator');
+  }
+  if (user.verifiedMapper) {
+      roles.push('Verified Mapper');
+  } else if (user.stats?.totalMaps >= 1) {
+      roles.push('Mapper');
+  }
+  return roles.join(', ');
+}
 
-            const data = await response.json();
-
-            document.getElementById('avatar').src = data.avatar || '';
-            document.getElementById('avatar').alt = data.name || 'User Avatar';
-            document.getElementById('name').textContent = data.name || 'Unknown User';
-            document.getElementById('description').innerHTML = formatDescription(data.description || '');
-            document.getElementById('roleString').textContent = getRoles(data);
-        } catch (error) {
-            console.error('Error fetching user data:', error);
-            document.getElementById('roleString').textContent = 'Error loading roles';
-            document.getElementById('description').textContent = 'Unable to load description.';
-        }
-    }
-
-    window.onload = fetchUserData;
+function formatDescription(text) {
+  return text
+    .replace(/\n/g, '<br>') // Convert line breaks to <br>
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convert **bold** to <strong> tags
+    .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" style="color: white;">$1</a>') // Convert URLs to clickable links
+    .replace(/(^|\s)@(\w+)/g, '$1<a href="https://beatsaver.com/profile/username/$2" target="_blank">@$2</a>'); // Convert @mentions to profile links
+  }
 </script>
 
 <style>
@@ -116,7 +112,10 @@ showInPostListing: false
     border-radius: 5px 0 0 5px;
   }
   .avatar {
-    padding: 5px;
+    border-radius: 50%;
+    width: 92px;
+    height: auto;
+    padding: 10px;
   }
 
   .bio {

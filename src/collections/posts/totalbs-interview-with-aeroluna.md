@@ -2,27 +2,25 @@
 title: TotalBS - Interview with Aeroluna
 section: articles
 category: interview
-publish: 2025-01-21T00:00:00.000Z
-homepageText: ''
+publish: 2025-01-21T01:00:00.000Z
+homepageText: 'Aeroluna is the main developer of Vivify, Synapse, as well as a host of numerous other modchart mapping tools and mods. They are also one of the project leads for Extra Sensory II. Check out this article to learn more about Aeroluna!'
 image: /static/uploads/posts/exsii/totalbslogo.png
-authors:
-  - '4285984'
 showInPostListing: true
 ---
 
-[Go back to **"This is Extra Sensory II"**](/posts/this-is-extra-sensory-ii)
+[Go back to **"This is TotalBS"**](/posts/this-is-totalbs)
 
 <div class="profile">
   <div class="video-background">
     <video autoplay muted loop>
       <source
-        src="https://exsii.totalbs.dev/resource/background.webm"
+        src="https://cdn.theczar1994.dev/bsaber/aeroluna-background.webm"
         type="video/mp4"
       />
     </video>
   </div>
   <div class="image">
-    <img style="border-radius: 50%; width: 92px; height: auto; padding: 5px;" id="avatar" alt="avatar" />
+    <img class="avatar" id="avatar" alt="avatar" />
   </div>
   <div class="bio">
       <div class="name"><a href="https://beatsaver.com/profile/4284266" id="name"></a></div>
@@ -39,48 +37,51 @@ showInPostListing: true
 <br />
 
 <script>
-    function getRoles(user) {
-        const roles = [];
+async function fetchUserData() {
+  try {
+    const response = await fetch('https://api.beatsaver.com/users/id/4284266');
+    if (!response.ok) throw new Error('Failed to fetch user data');
 
-        if (user.admin) roles.push('Admin');
-        if (user.seniorCurator) {
-            roles.push('Senior Curator');
-        } else if (user.curator) {
-            roles.push('Curator');
-        }
-        if (user.verifiedMapper) roles.push('Verified Mapper');
+    const data = await response.json();
 
-        return roles.join(', ');
+    document.getElementById('avatar').src = data.avatar || '';
+    document.getElementById('avatar').alt = data.name || 'User Avatar';
+    document.getElementById('name').textContent = data.name || 'Unknown User';
+    document.getElementById('description').innerHTML = formatDescription(data.description || '');
+    document.getElementById('roleString').textContent = getRoles(data);
+    } catch (error) {
+    console.error('Error fetching user data:', error);
+    document.getElementById('roleString').textContent = 'Error loading roles';
+    document.getElementById('description').textContent = 'Unable to load description.';
     }
+  }
 
-    function formatDescription(text) {
-        return text
-            .replace(/\n/g, '<br>') // Convert line breaks to <br>
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convert **bold** to <strong> tags
-            .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" style="color: white;">$1</a>') // Convert URLs to clickable links
-            .replace(/(^|\s)@(\w+)/g, '$1<a href="https://beatsaver.com/profile/username/$2" target="_blank">@$2</a>'); // Convert @mentions to profile links
-    }
+fetchUserData();
+    
+function getRoles(user) {
+  const roles = [];
 
-    async function fetchUserData() {
-        try {
-            const response = await fetch('https://api.beatsaver.com/users/id/4284266');
-            if (!response.ok) throw new Error('Failed to fetch user data');
+  if (user.admin) roles.push('Admin');
+  if (user.seniorCurator) {
+      roles.push('Senior Curator');
+  } else if (user.curator) {
+      roles.push('Curator');
+  }
+  if (user.verifiedMapper) {
+      roles.push('Verified Mapper');
+  } else if (user.stats?.totalMaps >= 1) {
+      roles.push('Mapper');
+  }
+  return roles.join(', ');
+}
 
-            const data = await response.json();
-
-            document.getElementById('avatar').src = data.avatar || '';
-            document.getElementById('avatar').alt = data.name || 'User Avatar';
-            document.getElementById('name').textContent = data.name || 'Unknown User';
-            document.getElementById('description').innerHTML = formatDescription(data.description || '');
-            document.getElementById('roleString').textContent = getRoles(data);
-        } catch (error) {
-            console.error('Error fetching user data:', error);
-            document.getElementById('roleString').textContent = 'Error loading roles';
-            document.getElementById('description').textContent = 'Unable to load description.';
-        }
-    }
-
-    window.onload = fetchUserData;
+function formatDescription(text) {
+  return text
+    .replace(/\n/g, '<br>') // Convert line breaks to <br>
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convert **bold** to <strong> tags
+    .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" style="color: white;">$1</a>') // Convert URLs to clickable links
+    .replace(/(^|\s)@(\w+)/g, '$1<a href="https://beatsaver.com/profile/username/$2" target="_blank">@$2</a>'); // Convert @mentions to profile links
+  }
 </script>
 
 <style>
@@ -100,7 +101,7 @@ showInPostListing: true
     width: 100%;
     height: 100%;
     z-index: -5;
-    filter: brightness(60%) blur(10px);
+    filter: brightness(60%) blur(7px);
   }
   video {
     width: 100%;
@@ -115,7 +116,10 @@ showInPostListing: true
     border-radius: 5px 0 0 5px;
   }
   .avatar {
-    padding: 5px;
+    border-radius: 50%;
+    width: 92px;
+    height: auto;
+    padding: 10px;
   }
 
   .bio {
@@ -224,9 +228,9 @@ showInPostListing: true
 <hr />
 <br />
 
-Aeroluna, aka the main creator of [Heck](https://github.com/Aeroluna/Heck), which allows mappers immense control over note and environment properties by the use of Chroma and Noodle Extensions!
+Aeroluna, aka, the main creator of [Heck](https://github.com/Aeroluna/Heck), which allows mappers immense control over note and environment properties by the use of Chroma and Noodle Extensions! If you've enjoyed modhcarts in the past at all, Aeroluna is one of the main people to thank for how far they've come over the years! You can see all their work on their GitHub page linked above.
 
-They are back at it again as one of the masterminds behind Extra Sensory II! If you participated in the recent event, this is one of the main people to thank for everything!
+Now they're back as the lead developer of Synapse and Vivify to create a whole new way to experience modhcarts in Beat Saber!
 
 <hr />
 <br />
@@ -238,6 +242,7 @@ They are back at it again as one of the masterminds behind Extra Sensory II! If 
 **A:** Hiiii, I'm Aeroluna! You probably know me from the mods I've created! I started Beat Saber in December 2018 after getting my first VR headset.
 
 I initially got involved with mapping, but slowly moved onto lighting, and eventually got into using ChromaLite to color my lightshows. However, there was a problem, the original Chroma developer had already move on from Beat Saber.
+
 I had no experience with C#, but I learned by updating Chroma, and that's how I got into modding.
 
 <br />
@@ -256,22 +261,30 @@ Coding has always tickled the logic part of my brain that loves problem solving.
 
 <br />
 
-### Q: What mod(s), websites, tools, etc. have you made or contributed to for the Beat Saber community? (If any)
+### Q: What mod(s), websites, tools, etc. have you made or contributed to for the Beat Saber community?
 
 **A:** I am the main developer of [CustomJSONData](https://github.com/Aeroluna/CustomJSONData), [Heck](https://github.com/Aeroluna/Heck), [Noodle Extensions](https://github.com/Aeroluna/NoodleExtensions), [Chroma](https://github.com/Aeroluna/Chroma), [Technicolor](https://github.com/Aeroluna/Technicolor), [Vivify](), [Synapse](), [BS Audiolink port](https://github.com/Aeroluna/BSAudioLink), as well as the main developer, mapper, and project lead of [Extra Sensory I](/playlists/extra-sensory-i) and [Extra Sensory II](/playlists/extra-sensory-ii).
 If you're wondering how Beat Saber got modcharts, I'm right here!
 
 <br />
 
-### Q: For you, what was the most interesting or exciting part behind Extra Sensory I (Noodle Extensions)? What is your favorite Noodle Extensions map? (Feel free to include your own if you have one and someone else's if you want)
+### Q: For you, what was the most interesting or exciting part behind Extra Sensory I (Noodle Extensions)? What is your favorite Noodle Extensions map?
 
 **A:** As the developer for Extra Sensory I, the most exciting part was getting to collaborate with my two close friends, [CyanSnow](https://beatsaver.com/profile/4235138) and [Reaxt](https://beatsaver.com/profile/4235136), for hours on end as we worked away on it. Of course, being able to be the one to debut modcharts in a new game was nothing short of amazing either!
 
-For my favorite Noodle map, I'll have to give that honor to [IX's Shadow](https://beatsaver.com/maps/33232) by Pleast. It's got the two things I love most from any map, strong theming and some great notemods and manages to be fun to watch and fun to play. However, I do have to give some credit toward's Reaxt's [Nulctrl]https://beatsaver.com/maps/ed2a), as it accomplishes much the same, but unfortunately I think Pleast's is an improvement.
+For my favorite Noodle map, I'll have to give that honor to [IX's Shadow](https://beatsaver.com/maps/33232) by Pleast. It's got the two things I love most from any map, strong theming and some great notemods and manages to be fun to watch and fun to play. However, I do have to give some credit toward's Reaxt's [Nulctrl](https://beatsaver.com/maps/ed2a), as it accomplishes much the same, but unfortunately I think Pleast's is an improvement.
+
+!youtube[7D1T3sjYc_E]
+\
+_Playthrough of IX's Shadow_
+
+!youtube[xGICwOKNa9Y]
+\
+_Playthrough of NULCTRL_
 
 <br />
 
-### Q: What was your role in Extra Sensory II? Give us a deeper dive into how you became involved, the commitment of keeping progress moving, were there any struggles? (Can also focus on the good qualities of the process instead of struggles. Were there any huge accomplishments where everyone worked together?)
+### Q: What was your role in Extra Sensory II? Give us a deeper dive into how you became involved, the commitment of keeping progress moving, were there any struggles?
 
 **A:** For Extra Sensory II, I was the sole developer of both mods, Synapse and Vivify, the website, and the server backend, as well as creating a map of my own. The idea for Extra Sensory II came around awhile after the first ended, when I had realized the next level for modcharts had to be assetbundles. There were definitely times when the work seemed overwhelming, but I stayed committed to my vision of bringing shaders to Beat Saber, and [Swifter](/posts/totalbs-interview-with-swifter) really helped pick up a lot of the slack!
 
