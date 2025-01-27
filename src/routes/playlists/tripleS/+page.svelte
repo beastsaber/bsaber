@@ -5,8 +5,14 @@
   import ZipDownloadButton from '$lib/ZipDownloadButton.svelte'
   import MetaHead from '$lib/MetaHead.svelte'
   import { audioPlayer } from '$lib/audio-player'
+  import {filterNsfw} from "$lib/storeNsfwPreference";
 
   let nextSToClick = 1
+  let pictureDir = 'original'
+  filterNsfw.subscribe(value => {
+    pictureDir = value ? 'original' : 'summer'
+  })
+
   const clickMember = (sNumber: number) => {
     if (sNumber === nextSToClick) {
       nextSToClick++
@@ -85,7 +91,7 @@
       on:click={() => clickMember(1)}
       sNumber={1}
       name={members.Seoyeon}
-      image="/playlists/tripleS/SeoYeon.png"
+      image="/playlists/tripleS/{pictureDir}/SeoYeon.png"
       date="May 1, 2022"
       positionDate="bottom-left"
       positionName="top-right"
@@ -96,7 +102,7 @@
       on:click={() => clickMember(3)}
       sNumber={3}
       name={members.Jiwoo}
-      image="/playlists/tripleS/JiWoo.png"
+      image="/playlists/tripleS/{pictureDir}/JiWoo.png"
       date="June 1, 2022"
       positionDate="bottom-left"
       positionName="top-right"
@@ -107,7 +113,7 @@
       on:click={() => clickMember(5)}
       sNumber={5}
       name={members.Yooyeon}
-      image="/playlists/tripleS/YooYeon.png"
+      image="/playlists/tripleS/{pictureDir}/YooYeon.png"
       date="July 15, 2022"
       positionDate="bottom-left"
       positionName="top-right"
@@ -118,7 +124,7 @@
       on:click={() => clickMember(7)}
       sNumber={7}
       name={members.Nakyoung}
-      image="/playlists/tripleS/NaKyoung.png"
+      image="/playlists/tripleS/{pictureDir}/NaKyoung.png"
       date="August 22, 2022"
       positionDate="bottom-left"
       positionName="top-right"
@@ -129,7 +135,7 @@
       on:click={() => clickMember(9)}
       sNumber={9}
       name={members.Kaede}
-      image="/playlists/tripleS/Kaede.png"
+      image="/playlists/tripleS/{pictureDir}/Kaede.png"
       date="November 9, 2022"
       positionDate="bottom-left"
       positionName="top-right"
@@ -140,7 +146,7 @@
       on:click={() => clickMember(11)}
       sNumber={11}
       name={members.Kotone}
-      image="/playlists/tripleS/Kotone.png"
+      image="/playlists/tripleS/{pictureDir}/Kotone.png"
       date="January 2, 2023"
       positionDate="bottom-left"
       positionName="top-right"
@@ -151,7 +157,7 @@
       on:click={() => clickMember(13)}
       sNumber={13}
       name={members.Nien}
-      image="/playlists/tripleS/Nien.png"
+      image="/playlists/tripleS/{pictureDir}/Nien.png"
       date="March 20, 2023"
       positionDate="bottom-left"
       positionName="top-right"
@@ -162,7 +168,7 @@
       on:click={() => clickMember(15)}
       sNumber={15}
       name={members.Xinyu}
-      image="/playlists/tripleS/Xinyu.png"
+      image="/playlists/tripleS/{pictureDir}/Xinyu.png"
       date="July 2, 2023"
       positionDate="bottom-left"
       positionName="top-right"
@@ -173,7 +179,7 @@
       on:click={() => clickMember(17)}
       sNumber={17}
       name={members.Lynn}
-      image="/playlists/tripleS/Lynn.png"
+      image="/playlists/tripleS/{pictureDir}/Lynn.png"
       date="December 26, 2023"
       positionDate="bottom-left"
       positionName="top-right"
@@ -184,7 +190,7 @@
       on:click={() => clickMember(19)}
       sNumber={19}
       name={members.Hayeon}
-      image="/playlists/tripleS/HaYeon.png"
+      image="/playlists/tripleS/{pictureDir}/HaYeon.png"
       date="December 28, 2023"
       positionDate="bottom-left"
       positionName="top-right"
@@ -195,7 +201,7 @@
       on:click={() => clickMember(21)}
       sNumber={21}
       name={members.Chaewon}
-      image="/playlists/tripleS/ChaeWon.png"
+      image="/playlists/tripleS/{pictureDir}/ChaeWon.png"
       date="April 1, 2024"
       positionDate="bottom-left"
       positionName="top-right"
@@ -206,7 +212,7 @@
       on:click={() => clickMember(23)}
       sNumber={23}
       name={members.Seoah}
-      image="/playlists/tripleS/SeoAh.png"
+      image="/playlists/tripleS/{pictureDir}/SeoAh.png"
       date="April 3, 2024"
       positionDate="bottom-left"
       positionName="top-right"
@@ -380,7 +386,7 @@
       on:click={() => clickMember(2)}
       sNumber={2}
       name={members.Hyerin}
-      image="/playlists/tripleS/HyeRin.png"
+      image="/playlists/tripleS/{pictureDir}/HyeRin.png"
       date="May 17, 2022"
       positionDate="bottom-right"
       positionName="top-left"
@@ -391,7 +397,7 @@
       on:click={() => clickMember(4)}
       sNumber={4}
       name={members.Chaeyeon}
-      image="/playlists/tripleS/ChaeYeon.png"
+      image="/playlists/tripleS/{pictureDir}/ChaeYeon.png"
       date="June 22, 2022"
       positionDate="bottom-right"
       positionName="top-left"
@@ -402,7 +408,7 @@
       on:click={() => clickMember(6)}
       sNumber={6}
       name={members.Soomin}
-      image="/playlists/tripleS/SooMin.png"
+      image="/playlists/tripleS/{pictureDir}/SooMin.png"
       date="August 8, 2022"
       positionDate="bottom-right"
       positionName="top-left"
@@ -413,7 +419,7 @@
       on:click={() => clickMember(8)}
       sNumber={8}
       name={members.Yubin}
-      image="/playlists/tripleS/YuBin.png"
+      image="/playlists/tripleS/{pictureDir}/YuBin.png"
       date="September 9, 2022"
       positionDate="bottom-right"
       positionName="top-left"
@@ -424,7 +430,7 @@
       on:click={() => clickMember(10)}
       sNumber={10}
       name={members.Dahyun}
-      image="/playlists/tripleS/DaHyun.png"
+      image="/playlists/tripleS/{pictureDir}/DaHyun.png"
       date="December 9, 2022"
       positionDate="bottom-right"
       positionName="top-left"
@@ -435,7 +441,7 @@
       on:click={() => clickMember(12)}
       sNumber={12}
       name={members.Yeonji}
-      image="/playlists/tripleS/YeonJi.png"
+      image="/playlists/tripleS/{pictureDir}/YeonJi.png"
       date="January 18, 2023"
       positionDate="bottom-right"
       positionName="top-left"
@@ -446,7 +452,7 @@
       on:click={() => clickMember(14)}
       sNumber={14}
       name={members.Sohyun}
-      image="/playlists/tripleS/SoHyun.png"
+      image="/playlists/tripleS/{pictureDir}/SoHyun.png"
       date="April 14, 2023"
       positionDate="bottom-right"
       positionName="top-left"
@@ -457,7 +463,7 @@
       on:click={() => clickMember(16)}
       sNumber={16}
       name={members.Mayu}
-      image="/playlists/tripleS/Mayu.png"
+      image="/playlists/tripleS/{pictureDir}/Mayu.png"
       date="June 19, 2023"
       positionDate="bottom-right"
       positionName="top-left"
@@ -468,7 +474,7 @@
       on:click={() => clickMember(18)}
       sNumber={18}
       name={members.Joobin}
-      image="/playlists/tripleS/JooBin.png"
+      image="/playlists/tripleS/{pictureDir}/JooBin.png"
       date="December 27, 2023"
       positionDate="bottom-right"
       positionName="top-left"
@@ -479,7 +485,7 @@
       on:click={() => clickMember(20)}
       sNumber={20}
       name={members.Shion}
-      image="/playlists/tripleS/ShiOn.png"
+      image="/playlists/tripleS/{pictureDir}/ShiOn.png"
       date="December 29, 2023"
       positionDate="bottom-right"
       positionName="top-left"
@@ -490,7 +496,7 @@
       on:click={() => clickMember(22)}
       sNumber={22}
       name={members.Sullin}
-      image="/playlists/tripleS/Sullin.png"
+      image="/playlists/tripleS/{pictureDir}/Sullin.png"
       date="April 2, 2024"
       positionDate="bottom-right"
       positionName="top-left"
@@ -502,7 +508,7 @@
         on:click={() => clickMember(24)}
         sNumber={24}
         name={members.Jiyeon}
-        image="/playlists/tripleS/JiYeon.png"
+        image="/playlists/tripleS/{pictureDir}/JiYeon.png"
         date="April 4, 2024"
         positionDate="bottom-right"
         positionName="top-left"
