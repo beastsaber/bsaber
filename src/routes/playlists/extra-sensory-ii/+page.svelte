@@ -15,7 +15,7 @@
 
 <section class="hero">
   <div class="video-background">
-    <video autoplay muted loop>
+    <video autoplay muted loop playsinline>
       <source
         src="https://cdn.theczar1994.dev/bsaber/playlists/exsii-background.mp4"
         type="video/mp4"
