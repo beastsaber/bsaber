@@ -31,7 +31,7 @@
 </script>
 
 <div class="card">
-  <a href={`/posts/${post.slug}`} rel="external" class="image-link">
+  <a href={`/posts/${post.slug}`} class="image-link">
     {#if post.image !== undefined}
       <img src={post.image} alt={post.title} />
     {:else}
