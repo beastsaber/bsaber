@@ -8,8 +8,8 @@
 </script>
 
 <MetaHead
-  title="Extra Sensory I"
-  description="EXTRA SENSORY I - The original Extra Sensory event pack release which debuted in 2020"
+  title="Extra Sensory II"
+  description="The sequel to the original Extra Sensory event in 2020; EXSII pushes the limits like never before. With ten new maps that will completely flip how you play (and make modhcarts) on its head."
   imageUrl="/uploads/playlists/totalbslogo1.png"
 />
 
@@ -35,13 +35,11 @@
         Time for something you've never seen before!
         <br />
         <br />
-        The Extra Sensory event saw the release of five new maps that use the game in new, creative ways
-        that will flip how you play on its head. This song pack contains all of them in one place for
-        you! From hell to cities, hitting bombs and notes that can't sit still, you're sure to find a
-        new unexpected experience here.
+        The sequel to the original Extra Sensory event in 2020; EXSII pushes the limits like never before.
+        With ten new maps that will completely flip how you play (and make modhcarts) on its head.
         <br />
         <br />
-        <a class="uploader" href="/posts/this-is-extra-sensory-ii"
+        <a class="uploader" href="/posts/this-is-totalbs" style="font-size: large;"
           >Learn more about the TotalBS Team!</a
         >
       </p>
@@ -49,26 +47,19 @@
     <div class="zip-one">
       <a
         class="zip"
-        href="https://api.beatsaver.com/playlists/id/50/download"
+        href="https://api.beatsaver.com/playlists/id/797071/download"
         title="Zip Download via BeatSaver"><Fa icon={faDownload} /></a
       >
       <a
         class="one"
-        href="bsplaylist://playlist/https://api.beatsaver.com/playlists/id/50/download"
+        href="bsplaylist://playlist/https://api.beatsaver.com/playlists/id/797071/download"
         title="OneClick&trade; Install via BeatSaver and ModAssistant"
         ><Fa icon={faCloudDownloadAlt} /></a
       >
     </div>
     <div class="buttons">
-      <a
-        class="btn"
-        href="https://beatmods.com/uploads/6600b82cdfb5962c5bb29d42/universal/NoodleExtensions-1.6.1.zip"
-        title="Archived Noodle Extensions Mod - NOT UP TO DATE">MOD 1?</a
-      >
-      <a
-        class="btn"
-        href="https://beatmods.com/uploads/6600b865dfb5962c5bb29d45/universal/Chroma-2.8.1.zip"
-        title="Archived Chroma Mod - NOT UP TO DATE">MOD 2?</a
+      <a class="btn" target="_blank" href="https://github.com/Aeroluna/Vivify/releases/latest"
+        >Download the Vivify Mod</a
       >
     </div>
   </div>
@@ -76,7 +67,7 @@
 <br />
 <h2><Fa icon={faMap} />&nbsp;Download the maps below!</h2>
 <hr class="fade" />
-<MapCards playlistId={50} />
+<MapCards playlistId={797071} />
 
 <style lang="scss">
   .hero {
@@ -94,7 +85,7 @@
     width: 100%;
     height: 100%;
     z-index: -5;
-    filter: brightness(40%) blur(15px);
+    filter: brightness(35%) blur(10px);
   }
   video {
     width: 100%;

@@ -228,9 +228,9 @@ function formatDescription(text) {
 <hr />
 <br />
 
-Aeroluna, aka, the main creator of [Heck](https://github.com/Aeroluna/Heck), which allows mappers immense control over note and environment properties by the use of Chroma and Noodle Extensions! If you've enjoyed modhcarts in the past at all, Aeroluna is one of the main people to thank for how far they've come over the years! You can see all their work on their GitHub page linked above.
+Aeroluna, aka, the main creator of [Heck](https://github.com/Aeroluna/Heck), which allows mappers immense control over note and environment properties by the use of Chroma and Noodle Extensions! If you've enjoyed modhcarts in the past at all, Aeroluna is one of the main people to thank for how far they've come over the years! You can see all their work on their GitHub page linked above in their profile banner.
 
-Now they're back as the lead developer of Synapse and Vivify to create a whole new way to experience modhcarts in Beat Saber!
+Now they're back as the lead developer of Synapse and Vivify to create a whole new way to experience modhcarts in Beat Saber! [Check out their website for the project here!](https://exsii.totalbs.dev/)
 
 <hr />
 <br />
@@ -263,7 +263,7 @@ Coding has always tickled the logic part of my brain that loves problem solving.
 
 ### Q: What mod(s), websites, tools, etc. have you made or contributed to for the Beat Saber community?
 
-**A:** I am the main developer of [CustomJSONData](https://github.com/Aeroluna/CustomJSONData), [Heck](https://github.com/Aeroluna/Heck), [Noodle Extensions](https://github.com/Aeroluna/NoodleExtensions), [Chroma](https://github.com/Aeroluna/Chroma), [Technicolor](https://github.com/Aeroluna/Technicolor), [Vivify](), [Synapse](), [BS Audiolink port](https://github.com/Aeroluna/BSAudioLink), as well as the main developer, mapper, and project lead of [Extra Sensory I](/playlists/extra-sensory-i) and [Extra Sensory II](/playlists/extra-sensory-ii).
+**A:** I am the main developer of [CustomJSONData](https://github.com/Aeroluna/CustomJSONData), [Heck](https://github.com/Aeroluna/Heck), [Noodle Extensions](https://github.com/Aeroluna/NoodleExtensions), [Chroma](https://github.com/Aeroluna/Chroma), [Technicolor](https://github.com/Aeroluna/Technicolor), [Vivify](https://github.com/Aeroluna/Vivify), Synapse, [BS Audiolink port](https://github.com/Aeroluna/BSAudioLink), as well as the main developer, mapper, and project lead of [Extra Sensory I](/playlists/extra-sensory-i) and [Extra Sensory II](/playlists/extra-sensory-ii).
 If you're wondering how Beat Saber got modcharts, I'm right here!
 
 <br />

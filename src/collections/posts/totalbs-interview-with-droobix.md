@@ -1,9 +1,9 @@
 ---
-title: TotalBS - Interview with TheGoodBoi
+title: TotalBS - Interview with Droobix
 section: articles
 category: interview
 publish: 2025-01-21T00:00:00.000Z
-homepageText: "Whether you're new to the community or a seasoned player, you probably know of TheGoodBoi for their classic Up & Down map which had garnered over 13K upvotes by the time of this interview! Check out this article to learn more about TheGoodBoi!"
+homepageText: "Whether you're new to the community or a seasoned player, you probably know of Droobix for their classic Up & Down map which had garnered over 13K upvotes by the time of this interview! Check out this article to learn more about Droobix!"
 image: /static/uploads/posts/exsii/totalbslogo.png
 showInPostListing: true
 ---
@@ -221,7 +221,7 @@ function formatDescription(text) {
   }
 </style>
 
-Whether you're new to the community or a seasoned player, you probably know of TheGoodBoi for their classic [Up & Down](https://beatsaver.com/maps/11cf8) Noodle Extensions map which had garnered over 13,000+ upvotes by the time of this interview!
+Whether you're new to the community or a seasoned player, you probably know of Droobix (formerly known as TheGoodBoi) for their classic [Up & Down](https://beatsaver.com/maps/11cf8) Noodle Extensions map which had garnered over 13,000+ upvotes by the time of this interview!
 
 They also have a [new version](https://beatsaver.com/maps/2c2f4) that they collabed with SuperMemer417 which has received over 1,700 upvotes!
 
@@ -234,7 +234,7 @@ _Check out a preview of their new version of Up & Down!_
 <hr />
 <br />
 
-# Interview with TheGoodBoi
+# Interview with Droobix
 
 ### Q: Tell us who you are! Your name, how long you’ve been playing Beat Saber, what got you started playing, what got you started modding, hobbies, etc.
 
