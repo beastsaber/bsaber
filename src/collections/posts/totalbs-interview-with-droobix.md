@@ -2,7 +2,7 @@
 title: TotalBS - Interview with Droobix
 section: articles
 category: interview
-publish: 2025-01-21T00:00:00.000Z
+publish: 2025-02-03T12:00:00.000Z
 homepageText: "Whether you're new to the community or a seasoned player, you probably know of Droobix for their classic Up & Down map which had garnered over 13K upvotes by the time of this interview! Check out this article to learn more about Droobix!"
 image: /static/uploads/posts/exsii/totalbslogo.png
 showInPostListing: true

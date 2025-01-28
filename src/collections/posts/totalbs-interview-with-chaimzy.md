@@ -2,7 +2,7 @@
 title: TotalBS - Interview with Chaimzy
 section: articles
 category: interview
-publish: 2025-01-21T00:00:00.000Z
+publish: 2025-02-03T12:00:00.000Z
 homepageText: 'Chaimzy, been around since the start of Beat Saber and made a map called "End Times" that was part of the Extra Sensory II event! They also helped in QA of the project as a whole. Check out this article to learn more about Chaimzy!'
 image: /static/uploads/posts/exsii/totalbslogo.png
 showInPostListing: true
@@ -230,7 +230,7 @@ Chaimzy has been around since the start and made a map called "End Times" that w
 
 ### Q: Tell us who you are! Your name, how long you’ve been playing Beat Saber, what got you started playing, what got you started modding, hobbies, etc.
 
-**A:** Hi! I'm Chaimzy! I've started playing Beat Saber the first week it released and have been playing ever since! I've always been a fan of modcharts across all rhythm games, especially "NotITG". When Extra Sensory first released, it was a mind-blowing experience for me. It was incredible to finally see proper modcharts in the Beat Saber community. After its release, I started playing *every single* Noodle chart that came out for about the next year and a half. It's safe to say that I was obsessed.
+**A:** Hi! I'm Chaimzy! I've started playing Beat Saber the first week it released and have been playing ever since! I've always been a fan of modcharts across all rhythm games, especially "NotITG". When Extra Sensory first released, it was a mind-blowing experience for me. It was incredible to finally see proper modcharts in the Beat Saber community. After its release, I started playing _every single_ Noodle chart that came out for about the next year and a half. It's safe to say that I was obsessed.
 
 ### Q: Where else do you participate in the Custom Beat Saber Community? Mapping? Ranking? How long?
 
@@ -248,7 +248,7 @@ Chaimzy has been around since the start and made a map called "End Times" that w
 
 ### Q: What was your role in Extra Sensory II? Give us a deeper dive into how you became involved. Were there any struggles?
 
-**A:** My involvement in Extra Sensory II was mostly with my map, End Times, and some general QA Testing. The biggest issues that I ran into throughout the process was just with End Times, the biggest issues being with the replay system that I did in it. It was a struggle to get working in the first place. I had to figure out a way to essentially "record" the players actions without any scripting and make it look like the replay system does in Outer Wilds. The way I eventually found was by taking advantage of a Unity quirk that made it so if I turned off a camera, the render texture that was attached to that camera would display the last frame that it saw, meaning that I had to use a different camera with a seperate render texture and material for *every single frame* of the replay system. That ended up totaling up to 314 cameras used in the map. The second issue that I ran into was when it came to making the replay system work in stereoscopic 3d, which involved having two separate cameras each take a photo from two *slightly* different view points, and then I would render the result of one to each eye, creating the 3D effect ingame.
+**A:** My involvement in Extra Sensory II was mostly with my map, End Times, and some general QA Testing. The biggest issues that I ran into throughout the process was just with End Times, the biggest issues being with the replay system that I did in it. It was a struggle to get working in the first place. I had to figure out a way to essentially "record" the players actions without any scripting and make it look like the replay system does in Outer Wilds. The way I eventually found was by taking advantage of a Unity quirk that made it so if I turned off a camera, the render texture that was attached to that camera would display the last frame that it saw, meaning that I had to use a different camera with a seperate render texture and material for _every single frame_ of the replay system. That ended up totaling up to 314 cameras used in the map. The second issue that I ran into was when it came to making the replay system work in stereoscopic 3d, which involved having two separate cameras each take a photo from two _slightly_ different view points, and then I would render the result of one to each eye, creating the 3D effect ingame.
 
 ### Q: For someone who doesn't know anything about coding, where and how do you recommend they get started? Do you have any role models in the community?
 

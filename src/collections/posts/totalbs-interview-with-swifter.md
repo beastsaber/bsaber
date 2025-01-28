@@ -2,7 +2,7 @@
 title: TotalBS - Interview with Swifter
 section: articles
 category: interview
-publish: 2025-01-21T01:00:00.000Z
+publish: 2025-02-03T12:05:00.000Z
 homepageText: "Surely you've heard of Swifter!? You know... one of the mappers
   involved in the (as of writing this article) #2 map of all time with a
   whopping 16,000 upvotes. Check out this article to learn more about Swifter!"

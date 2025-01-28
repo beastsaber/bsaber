@@ -2,7 +2,7 @@
 title: TotalBS - Interview with Nasafrasa
 section: articles
 category: interview
-publish: 2025-01-21T00:00:00.000Z
+publish: 2025-02-03T12:00:00.000Z
 homepageText: 'Nasafrasa. Modchart creator. Artmap creator. Beasties Award Winner. Kind of a big deal! Check out this article to learn more about Nasafrasa!'
 image: /static/uploads/posts/exsii/totalbslogo.png
 showInPostListing: true
@@ -258,7 +258,7 @@ _Video playthrough of Superluminal_
 
 ### Q: Tell us who you are! Your name, how long you’ve been playing Beat Saber, what got you started playing, what got you started modding, hobbies, etc.
 
-**A:** Hello! I'm nasafrasa, and I’m just a guy that makes anything with computers. 
+**A:** Hello! I'm nasafrasa, and I’m just a guy that makes anything with computers.
 
 I first got Beat Saber around the time I got my Quest 2, back in 2021, and played it for a few weeks and even tried making some custom maps, but nothing came of it at the time. Then a year passed and I got back into it because of the release of OST 5. I started making a few simple maps again and experimented a bit with the V3 lighting system, but not too much came of it. But then during my time of losing interest in the game again, I saw a video on [Swifter’s “Fragments” map](https://beatsaver.com/maps/25ebc). This is what then inspired me to get back into the game and start making specifically modcharts. And the rest is history!
 

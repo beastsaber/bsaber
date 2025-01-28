@@ -2,7 +2,7 @@
 title: TotalBS - Interview with Aeroluna
 section: articles
 category: interview
-publish: 2025-01-21T01:00:00.000Z
+publish: 2025-02-03T12:05:00.000Z
 homepageText: 'Aeroluna is the main developer of Vivify, Synapse, as well as a host of numerous other modchart mapping tools and mods. They are also one of the project leads for Extra Sensory II. Check out this article to learn more about Aeroluna!'
 image: /static/uploads/posts/exsii/totalbslogo.png
 showInPostListing: true

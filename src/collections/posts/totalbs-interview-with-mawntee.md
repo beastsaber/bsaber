@@ -2,7 +2,7 @@
 title: TotalBS - Interview with Mawntee
 section: articles
 category: interview
-publish: 2025-01-21T01:00:00.000Z
+publish: 2025-02-03T12:05:00.000Z
 homepageText: ''
 image: /static/uploads/posts/exsii/totalbslogo.png
 showInPostListing: true

@@ -2,7 +2,7 @@
 title: This Is TotalBS
 section: articles
 category: interview
-publish: 2025-01-22T19:47:00.000Z
+publish: 2025-02-03T12:05:00.000Z
 homepageText: 'TotalBS, aka, the group behind Noodle Extensions, Extra Sensory II, Vivify, Synapse, and basically modhcarting as a whole; and we got a chance to interview various members! Learn more about the team!'
 image: /static/uploads/posts/exsii/totalbslogo.png
 authors:
