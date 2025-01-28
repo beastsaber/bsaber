@@ -28,7 +28,7 @@ showInPostListing: true
   </div>
   <div class="bio">
       <div class="name"><a href="https://beatsaver.com/profile/4284266" id="name"></a></div>
-      <div class="status"><p id="roleString" /></div>
+      <div class="roles"><p id="roleString" /></div>
   <div class="description" id="description"></div>
   <hr class="break" />
   <div class="socials">
@@ -90,7 +90,7 @@ function formatDescription(text) {
 
 <style>
   .profile {
-    padding: 1rem;
+    padding: 0.75rem;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -118,18 +118,18 @@ function formatDescription(text) {
   .image {
     background-color: #00000080;
     border-radius: 5px 0 0 5px;
+    padding: 10px 1rem 10px 10px;
   }
   .avatar {
     border-radius: 50%;
     width: 92px;
     height: auto;
-    padding: 10px;
   }
 
   .bio {
     border-radius: 0 5px 5px 0;
     background-color: #00000080;
-    padding: 5px 5px 5px 1rem;
+    padding: 5px;
     width: 100%;
   }
     @media (max-width: 512px) {
@@ -152,7 +152,7 @@ function formatDescription(text) {
       color: white;
     }
   }
-  .status p {
+  .roles p {
     color: #888;
     padding-left: 2px;
     margin-bottom: 2px;
