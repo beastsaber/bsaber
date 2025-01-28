@@ -67,7 +67,7 @@
 <br />
 <h2><Fa icon={faMap} />&nbsp;Download the maps below!</h2>
 <hr class="fade" />
-<MapCards playlistId={797071} />
+<MapCards playlistId={797071} showToggle={false} />
 
 <style lang="scss">
   .hero {
