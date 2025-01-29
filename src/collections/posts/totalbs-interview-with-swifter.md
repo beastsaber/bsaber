@@ -38,7 +38,7 @@ showInPostListing: true
       </div>
       <div class="badges">
         <a href="/the-beastsaber-mapping-awards" rel="external"><div class="beasties">
-          <img src="/BeastSaber-logo-transformer.png" height="24" width="auto" alt="BeastSaber" />
+          <img src="/beastsabersvgaifinal.svg" height="24" width="24" alt="BeastSaber" />
           <p>Beasties Award Winner</p>
         </div></a>
         <a href="https://discord.gg/beatsabermods"><div class="bsmg">
