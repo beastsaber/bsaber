@@ -17,7 +17,7 @@ showInPostListing: true
       <img class="avatar" id="avatar" alt="avatar" />
    </div>
    <div class="bio">
-      <div class="name"><a href="https://beatsaver.com/profile/4284246" id="name"></a></div>
+      <div class="name"><a href="https://beatsaver.com/profile/4284246" id="name">Swifter</a></div>
       <div class="roles"><p id="roleString" /></div>
       <div class="description" id="description"></div>
       <hr class="break" />
@@ -115,6 +115,7 @@ function formatDescription(text) {
     display: flex;
     flex-direction: row;
     box-shadow: 0px 3px 3px black;
+    border-radius: 5px;
   }
   .profile::before {
     content: '';
@@ -227,6 +228,9 @@ function formatDescription(text) {
     border-width: 1.5px !important;
     border-style: solid !important;
     border-radius: 5px;
+    & img {
+      border-radius: unset;
+    }
   }
   .beasties {
     background-color: #45408875;

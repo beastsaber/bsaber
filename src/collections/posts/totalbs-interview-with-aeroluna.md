@@ -27,7 +27,7 @@ showInPostListing: true
     <img class="avatar" id="avatar" alt="avatar" />
   </div>
   <div class="bio">
-      <div class="name"><a href="https://beatsaver.com/profile/4284266" id="name"></a></div>
+      <div class="name"><a href="https://beatsaver.com/profile/4284266" id="name">Aeroluna</a></div>
       <div class="roles"><p id="roleString" /></div>
   <div class="description" id="description"></div>
   <hr class="break" />
