@@ -18,7 +18,17 @@
   description="See a listing of highlighted events from across the Beat Saber community including tournaments, training sessions, social events, contests, and more!"
 />
 
-<h1 class="page-header">Community Events</h1>
+<div class="page-header">
+  <h1>Community Events</h1>
+</div>
+<hr class="fade" />
+<p>
+  Want to have your Beat Saber event listed here? <a
+    href="https://docs.google.com/forms/d/e/1FAIpQLSdmrDu-KHqk2mvwhiJXZ8isnfa1rnoG1A-o2aEVTRaE0YoR_g/viewform"
+    >Fill out this form!</a
+  >
+</p>
+<br />
 <EventCards
   events={resortedCommunityEvents}
   maxCards={data.pageSize}
@@ -39,7 +49,13 @@
     margin-top: 1.3rem;
   }
 
-  .page-header {
-    margin-bottom: 2rem;
+  .page-header h1 {
+    text-align: left;
+  }
+  hr.fade {
+    border: none;
+    height: 2px;
+    margin-block: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, #999999 0%, rgba(153, 153, 153, 0) 100%);
   }
 </style>
