@@ -23,6 +23,7 @@
   export let forceColumnCount: number | undefined = undefined
   export let loadMoreEnabled: boolean = false // New prop to control "Load More" button
   export let fixedCount: number = 50 // Default fixed number of cards to show. Should account for any playlist pages
+  export let showToggle = true // Allow excplictly hiding the NSFW toggle with default being true
 
   let maps: Beatmap[] = []
   let visibleCount = loadMoreEnabled ? 8 : fixedCount // Use fixed count if loadMoreEnabled is false
@@ -31,12 +32,16 @@
   const setPreviewKey = (key: string | null) => (previewKey = key)
 
   onMount(async () => {
-    nsfwToggleVisibility.set(true)
+    if (showToggle) {
+      nsfwToggleVisibility.set(true)
+    }
     await getMaps()
   })
 
   onDestroy(() => {
-    nsfwToggleVisibility.set(false)
+    if (showToggle) {
+      nsfwToggleVisibility.set(false)
+    }
   })
 
   const beatSaverClient = beatSaverClientFactory.create()
