@@ -39,7 +39,7 @@ During the 2023 Beasties Awards Show, Mawntee, who is a member of the TotalBS te
 We were lucky enough to get a few of the TotalBS team members together and do some interviews with them! Click below to learn more!
 
 - [Interview with Aeroluna](/posts/totalbs-interview-with-aeroluna)
-- [Interview with Mawntee](/posts/totalbs-interview-with-mawntee)
+- Interview with Mawntee (Coming Soon!™️)
 - [Interview with Swifter](/posts/totalbs-interview-with-swifter)
 - [Interview with Droobix](/posts/totalbs-interview-with-droobix)
 - [Interview with Nasafrasa](/posts/totalbs-interview-with-nasafrasa)
