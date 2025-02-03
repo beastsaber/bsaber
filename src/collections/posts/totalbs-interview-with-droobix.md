@@ -242,12 +242,13 @@ _Check out a preview of their new version of Up & Down!_
 
 ### Q: Tell us who you are! Your name, how long you’ve been playing Beat Saber, what got you started playing, what got you started modding, hobbies, etc.
 
-**A:** Hiii!!! I'm TheGoodBoi, or GoodBoi for short, but my real-life name is Tobias. My time zone is pretty west, so if I ever take too long to respond to your messages it's like definitely because of that.
+**A:** Hiii!!! I'm Droobix, formerly known as TheGoodBoi.
 
-In late 2018 I saw PewDiePie play some custom songs in this virtual reality game called Beat Saber, and I was instantly hooked. I first played the game on Christmas of that year, where I got the original Oculus Rift as a present. Me, at an age younger than what's probably healthy to be using VR, had no idea how computers even worked let alone how to mod the game.
+In late 2018 I saw PewDiePie play some custom songs in this virtual reality game called Beat Saber, and I was instantly hooked. I first played the game on Christmas of that year, where I got the original Oculus Rift as a present. Me, at an age younger than what was probably healthy to be using VR, had no idea how to properly use a computer let alone how to mod the game.
 
 It wasn't until summer of 2019 where I figured out how to install mods and custom songs. I believe that finally figuring it out and being able to play Believer mapped by Rustic for the first time was one of the happiest moments in my life LOL.
-Also, if you're asking about pets, I have a dog. She's cute. No, I will not eLABorate.
+
+Also, if you're asking about pets, I have a dog. She's cute.
 \
 ![TheGoodBoi's Doggo](/uploads/posts/exsii/thegoodboidog.jpg "TheGoodBoi's Doggo")
 
@@ -261,7 +262,7 @@ Also, if you're asking about pets, I have a dog. She's cute. No, I will not eLAB
 
 ### Q: When and why did you start coding?
 
-**A:** I first used the block coding website Scratch in fourth grade, played around in Roblox Studio in mid 2020, but only seriously decided to learn to code in late 2021. I got into JavaScript specifically to make a better Noodle Extension map than the "incident" you probably know about. I learned a lot to make The Glorious Octagon of Destiny, and it's essentially what got me into actually coding. Since then I've slowly kept improving. The minimal programming skills I gained from map making have expanded into a few other practical and entertainment parts of my life, and it's been pretty sweet!
+**A:** I first used the block coding website Scratch in fourth grade, played around in Roblox Studio in mid 2020, but only seriously decided to learn to code in late 2021. I got into JavaScript specifically to make a better Noodle Extensions map than Up & Down. I learned a lot to make The Glorious Octagon of Destiny, and it's essentially what got me into actually coding. Since then I've slowly kept improving. The minimal programming skills I gained from map making have expanded into a few other practical and entertaining parts of my life, so it's been pretty sweet!
 
 <br />
 
@@ -273,23 +274,23 @@ Also, if you're asking about pets, I have a dog. She's cute. No, I will not eLAB
 
 ### Q: For you, what was the most interesting or exciting part behind Extra Sensory I (Noodle Extensions)? What is your favorite Noodle Extensions map?
 
-**A:** Since I didn't participate in EXSI (Extra Sensory I), I was really just astounded at the possibilities the maps presented. Everything about them was super cool, and while I never thought I would have ever been able to create anything like them at the time, I still felt a rush of inspiration and opportunity.
+**A:** Since I didn't participate in Extra Sensory I, I was really just astounded at the possibilities the maps presented. Everything about them was super cool, and while I never thought I would have ever been able to create anything like them at the time, I still felt a rush of inspiration and opportunity. It's still completely crazy to me how I went from that to actually working on Extra Sensory II!
 
-Choosing a favorite Noodle map is hard, but I'd have to go for Mawntee's map: [DJ TECHNORCH - Love Love Love You I Love You (Eye's by Eyes Remix)](https://beatsaver.com/maps/133c5). The effects and note mods are insane and have personally been the most visually pleasing and fun to play. [Capone - Oh No (instrumental)](https://beatsaver.com/maps/108ee) also by Mawntee is a close second though. Creative idea, fantastically executed, and super hilarious.
+Choosing a favorite Noodle map is hard, but I'd have to go for Mawntee's map: [DJ TECHNORCH - Love Love Love You I Love You (Eye's by Eyes Remix)](https://beatsaver.com/maps/133c5). The effects and notemods are insane and are extremely visually pleasing and fun to play. [Capone - Oh No (instrumental)](https://beatsaver.com/maps/108ee) also by Mawntee is a close second though. Creative idea, fantastically executed, and super hilarious.
 
 <br />
 
 ### Q: How did you get involved in TotalBS?
 
-**A:** After I uploaded Up & Down and thought that my few days of fame were up, I received a DM inviting me into private Discord server. That seems to be how everyone else got in too, just randomly being recruited when one's skills would show enough potential in modcharting.
+**A:** After I uploaded Up & Down and thought that my few days of fame were up, I received a DM inviting me into a private Discord server. That seems to be how everyone else got in too, just randomly being recruited when one's skills would show enough potential in modcharting.
 
 A fun fact about when I first got into the secret TBS club is that there was a double-secret TBS club, the place where first talks of a sight-read tournament were happening. Me eventually getting into double-secret status felt like finding out your friend group had a separate and more active group chat with everyone except you. Good thing this hierarchy doesn't exist anymore! At least I think so, perhaps there's a triple-secret I don't know about, hmm…
 
-I got involved in the EXSII event when I was teaching myself Vivify and sharing some progress with TBS when not many others seemed to be trying it out at that point. Eventually though, all members had a chance to participate, with each having their own varying levels of success.
+I got involved in the EXSII event specifically when I was teaching myself Vivify and sharing some progress with TotalBS when I could. The tournament was a great source of motivation for me to keep working on all the new modding stuff.
 
 ### Q: What was your role in Extra Sensory II?
 
-**A:** I made two maps for the event, one of which was used in the teaser, which is sick. For development help, I guess you could say the maps introduced and revealed quite a few bugs to fix. I also tested and gave feedback on several maps made by others, and I even sorta made the EXSII banner logo used for the event:
+**A:** I made two maps for the event, one of which was used heavily in advertising the event, which is sick. For development help, I guess you could say the maps I made introduced and revealed quite a few bugs to fix. I also tested and gave feedback on several maps made by others, and I even made most of the EXSII banner logo used for the event:
 
 <p align="center">
     <img alt="EXSII Sight Read Tournament Banner" src="/uploads/posts/exsii/tbs-exsii-srt.png">
@@ -297,23 +298,21 @@ I got involved in the EXSII event when I was teaching myself Vivify and sharing 
 
 When making my maps for EXSII, I tried to keep up with HR/Mawntee's soft deadlines the best I could, but I think the hardest part was getting everyone else involved to do the same. Something that got people moving at one point was the announcement of "Alright guys we're making the trailer" which I found to be pretty funny.
 
-A huge positive part of the process though was getting to share work-in-progress stuff then getting a wave of compliments and feedback about your silly ideas. The Breezer map I made for the event was originally intended as a small side project to put together a joke I had in mind a few months before. After sharing a video of the map with the group, the concept was liked so much that it was chosen to be the teaser and first map in EXSII. With the help of other members it was developed to be an actual modchart with a neat gameplay gimmick, something that would've never happened without the back-and-forths with TBS.
-
-<!-- Assuming this is published after release, get a video play through-->
+A huge positive part of the process though was getting to share work-in-progress stuff then getting a wave of compliments and feedback about my silly ideas. The Breezer map I made for the event was originally intended as a small side project to put together a joke I had in mind a few months before, but after sharing a video of the map with the group, the concept was liked so much that it was chosen to be the teaser and first map in EXSII. With the help of other members it was developed to be an actual modhcart with a neat gameplay gimmick, something that would've never happened without the back-and-forths with TBS.
 
 <br />
 
 ### Q: What was the most challenging part of getting this together?
 
-**A:** For me, it was making the maps while Vivify was being developed. There were multiple times I had to reinstall Beat Saber, change my Unity project file's version, fix prefabs, swap out plugins, update my shaders, etc. It got incredibly tedious at times; in fact, my project file in Unity is named "Aero sux" because of this. Thankfully, Aeroluna and several other TBS members were very willing to help out with any issues and confusion I had.
+**A:** For me, it was making the maps while Vivify was being developed. There were multiple times I had to reinstall Beat Saber, change my Unity project file's version, fix prefabs, swap out plugins, update my shaders, etc. It got incredibly tedious at times; in fact, my project file in Unity was named "Aero sux" because of this. Thankfully, Aeroluna and several other TBS members were very willing to help out with any issues and confusion I had.
 
 <br />
 
 ### Q: For someone who doesn't know anything about coding, where and how do you recommend they get started? Do you have any role models in the community?
 
-**A:** I mean hey, if you wanna do what I did, go ahead and watch [freeCodeCamp.org's 3-hour JavaScript course](https://youtu.be/PkZNo7MFNFg) on YouTube. That got me most of the way there for coding!
+**A:** I mean hey, if you wanna do what I did, go ahead and watch [freeCodeCamp.org's 3-hour JavaScript course](https://youtu.be/PkZNo7MFNFg) on YouTube. That got me most of the way there!
 
-I definitely have to highlight [Mawntee](/posts/totalbs-interview-with-mawntee) as a role model in coding and modcharting in general, with all the meme songs and notemod-focused maps he's made, I can only dream of being as talented as he is lol.
+I definitely have to highlight Mawntee as a role model in coding and modcharting in general, with all the meme songs and notemod-focused maps he's made, I can only dream of being as talented as he is lol.
 
 <br />
 
@@ -321,13 +320,15 @@ I definitely have to highlight [Mawntee](/posts/totalbs-interview-with-mawntee) 
 
 **A:** I'd like to mention that participating in this event got me to learn the basics for a bunch of different things related to digital art. These mainly being Blender, 3D modeling and simulations, Unity, and shaders. Shaders are definitely the most fun and interesting to me out of these, and have actually given me a real-world use for stuff like trigonometry and matrices I've learned about in school, which I think is pretty neat.
 
+Also, please go support all the mappers and members of TBS who made the EXSII event possible. It all comes from volunteer work!
+
 <br />
 
 ### Q: Is there anything else you'd like to share in general?
 
-**A:** I have a second YouTube channel [@Droobix](https://youtube.com/@Droobix), which is the username I'm using in any new communities I join. If you ever wanna contact me, don't hesitate to do so at the email: droobix@proton.me
+**A:** I think that a common mistake I make in several places in my life is thinking that I'm too late to something, when really I'm not, because I couldn't have been. It's almost always never too late to get in on something. I certainly thought this after playing the original Extra Sensory maps, bummed that I was automatically way behind everyone else who had participated in making them. My point is, if you played EXSII and think there's no point in trying to catch up with the maps it has, you're wrong. All of us are still learning and exploring the limits of this mod, if there even are any. Even if you're reading this years later, you can still come up with creative new gimmicks and environments no one has seen before, because everyone has their own different style. TotalBS still regularly recruits members who make cool stuff, no matter when they started playing or creating on Beat Saber. Just read Mawntee's status on Discord lol. You got this!!!
 
-Have a great rest of your day! :D
+And one last thing as a farewell: Have a great rest of your day! :D
 
 <br />
 
