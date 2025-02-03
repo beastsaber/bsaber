@@ -53,14 +53,11 @@
       <a
         class="one"
         href="bsplaylist://playlist/https://api.beatsaver.com/playlists/id/797071/download"
-        title="OneClick&trade; Install via BeatSaver and ModAssistant"
-        ><Fa icon={faCloudDownloadAlt} /></a
+        title="OneClick&trade; Install via BeatSaver"><Fa icon={faCloudDownloadAlt} /></a
       >
     </div>
     <div class="buttons">
-      <a class="btn" target="_blank" href="https://github.com/Aeroluna/Vivify/releases/latest"
-        >Download the Vivify Mod</a
-      >
+      <a class="btn" target="_blank" href="https://exsii.totalbs.dev/">Download the Mods</a>
     </div>
   </div>
 </section>

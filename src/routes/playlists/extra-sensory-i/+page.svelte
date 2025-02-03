@@ -47,6 +47,7 @@
     </div>
     <br />
     <br />
+    <a class="uploader" href="/playlists/extra-sensory-ii">Extra Sensory II is now available!</a>
   </div>
 </section>
 <br />
