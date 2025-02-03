@@ -220,8 +220,6 @@ function formatDescription(text) {
 </style>
 
 <br />
-<hr />
-<br />
 
 It sometimes feels like not a lot of people can say they've been around since the start of Beat Saber and are still contributing towards creating new and exciting ways to change the game in ways we've never seen or expected!
 

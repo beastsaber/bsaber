@@ -233,8 +233,6 @@ function formatDescription(text) {
 </style>
 
 <br />
-<hr />
-<br />
 
 Nasafrasa. Modchart creator. Artmap creator. Beasties Award Winner. Kind of a big deal!
 

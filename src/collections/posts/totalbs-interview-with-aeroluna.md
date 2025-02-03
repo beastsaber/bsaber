@@ -229,9 +229,6 @@ function formatDescription(text) {
   }
 </style>
 
-<hr />
-<br />
-
 Aeroluna, aka, the main creator of [Heck](https://github.com/Aeroluna/Heck), which allows mappers immense control over note and environment properties by the use of Chroma and Noodle Extensions! If you've enjoyed modhcarts in the past at all, Aeroluna is one of the main people to thank for how far they've come over the years! You can see all their work on their GitHub page linked above in their profile banner.
 
 Now they're back as the lead developer of Synapse and Vivify to create a whole new way to experience modhcarts in Beat Saber! [Check out their website for the project here!](https://exsii.totalbs.dev/)
