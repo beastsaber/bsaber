@@ -242,7 +242,7 @@ Now they're back as the lead developer of Synapse and Vivify to create a whole n
 
 **A:** Hiiii, I'm Aeroluna! You probably know me from the mods I've created! I started Beat Saber in December 2018 after getting my first VR headset.
 
-I initially got involved with mapping, but slowly moved onto lighting, and eventually got into using ChromaLite to color my lightshows. However, there was a problem, the original Chroma developer had already move on from Beat Saber.
+I initially got involved with mapping, but slowly moved onto lighting, and eventually got into using ChromaLite to color my lightshows. However, there was a problem, the original Chroma developer had already moved on from Beat Saber.
 
 I had no experience with C#, but I learned by updating Chroma, and that's how I got into modding.
 
