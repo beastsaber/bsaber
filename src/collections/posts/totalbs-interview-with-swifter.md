@@ -294,7 +294,7 @@ The motivation definitely depends on the project, but in general I find it reall
 
 Another smaller thing I made was [Enlighten](https://github.com/Swifter1243/Enlighten), which is just a plugin for ChroMapper that helps create advanced lighting patterns. It allows you to do things like hue shift lighting events, change their saturation, or adjust their brightness. And on top of that, the strength/parameters of those effects can be changed over time!
 
-I'm also working on some tools to lower the barrier to entry for the new mod. I'm preparing a Unity project that will export for all versions of the game necessary, and it provides a bunch of scenes with shader examples. ReMapper will also work with this new mod at launch with some really need integration with the Unity project. It will allow you to have information about all of your assets while you're typing the code!
+I'm also working on some tools to lower the barrier to entry for the new mod. I'm preparing a Unity project that will export for all versions of the game necessary, and it provides a bunch of scenes with shader examples. ReMapper will also work with this new mod at launch with some really neat integration with the Unity project. It will allow you to have information about all of your assets while you're typing the code!
 
 ### Q: For you, what was the most interesting or exciting part behind Extra Sensory I?
 

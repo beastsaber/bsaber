@@ -334,6 +334,6 @@ And one last thing as a farewell: Have a great rest of your day! :D
 
 ---
 
-**We'd like to thank TheGoodBoi for taking the time to answer our questions! Be sure to check out the interviews with the rest of the team!**
+**We'd like to thank Droobix for taking the time to answer our questions! Be sure to check out the interviews with the rest of the team!**
 \
 \*_This interview was lightly edited for spelling, grammar, formatting, and clarity._
