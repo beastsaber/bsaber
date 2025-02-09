@@ -31,7 +31,7 @@ The events listed on our homepage and our [Community Events page](/community-eve
 
 ## How do I get my event on the site?
 
-If you host structured and well-planned events, reach out to TheCzar1994 on Discord! As long as your event is structured, well-planned, and has appropriate moderation in place to keep the event suitable for all users, there's a good chance we can get you added!
+If you host structured and well-planned events, you can [fill out this form](https://docs.google.com/forms/d/e/1FAIpQLSdmrDu-KHqk2mvwhiJXZ8isnfa1rnoG1A-o2aEVTRaE0YoR_g/viewform)! As long as your event is structured, well-planned, and has appropriate moderation in place to keep the event suitable for all users, there's a good chance we can get you added!
 
 ## Why are some events not shown on the site?
 

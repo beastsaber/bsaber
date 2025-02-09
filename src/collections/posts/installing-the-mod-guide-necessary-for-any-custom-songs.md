@@ -3,7 +3,7 @@ title: How To Download And Install Mods On Beat Saber
 section: speciality
 category: guide
 publish: 2024-03-22T00:00:00.000Z
-lastUpdated: 2024-11-17T19:59:00.000Z
+lastUpdated: 2025-01-31T13:15:00.000Z
 homepageText: Learn how to install new custom songs and mods on Beat Saber with this guide!
 image: /static/uploads/posts/beat-saber-square.jpg
 authors:
@@ -57,12 +57,6 @@ BSManager simplifies your Beat Saber experience by centralizing the management o
     <img src="/uploads/posts/get-started-custom-mods/bsmanager2.png">
 </p>
 
-> 💡 **HINT:** You may be required to install Microsoft .NET - Click the Download button to install it and then return to download the version
-
-<p align="center">
-    <img src="/uploads/posts/get-started-custom-mods/bsmanager3.png">
-</p>
-
 5. Once you've installed a new version, you can click on it from the left sidebar to choose your launch options, view maps or models, and install mods for that version too! You can also link your maps across versions for easy switching. When you're ready to play, just click the Launch button
 
 <p align="center">
@@ -74,8 +68,6 @@ BSManager simplifies your Beat Saber experience by centralizing the management o
 <br />
 
 ### Installing Mods With Mod Assistant <a href="#mod-assistant" style="text-decoration:none;">🔗</a> {$mod-assistant}
-
-> ⚠️ <span style="color: red;">**WARNING:**</span> ModAssistant is no longer recommended and is being phased out. Continued use will require you to specifically select your version in order to install the correct mods and you may encounter other bugs or issues. Consider using BSManager as outlined above.
 
 1. First, [click here to get ModAssistant](https://github.com/bsmg/ModAssistant/releases) and find the Latest release of the `ModAssistant.exe` file to download. This will download a small `ModAssistant.exe` file that you can place anywhere on your computer for future use and doesn’t require installing.
 
