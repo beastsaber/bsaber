@@ -13,6 +13,14 @@ showInPostListing: true
 [Go back to **"This is Total BS"**](/posts/this-is-totalbs)
 
 <div class="profile">
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source
+        src="https://cdn.theczar1994.dev/bsaber/low-swifter-background.webm"
+        type="video/webm"
+      />
+    </video>
+  </div>
    <div class="image">
       <img class="avatar" id="avatar" alt="avatar" />
    </div>
@@ -115,21 +123,24 @@ function formatDescription(text) {
     display: flex;
     flex-direction: row;
     box-shadow: 0px 3px 3px black;
+    overflow: hidden;
     border-radius: 5px;
   }
-  .profile::before {
-    content: '';
+  .video-background {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('/uploads/posts/exsii/Main.00_00_39_07.Still020.png');
-    background-position: center;
-    background-size: cover;
-    filter: brightness(50%);
-    z-index: -1;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    filter: brightness(60%) blur(7px);
+  }
+  video {
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
+    object-fit: cover;
+    overflow: hidden;
   }
 
   .image {
