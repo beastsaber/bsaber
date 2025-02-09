@@ -16,14 +16,65 @@
   })
 
   const members = {
-    John: 'John',
+    Dia_Kurosawa: 'Dia Kurosawa',
+    Sayaka_Murano: 'Sayaka Murano',
+    Hanayo_Koizumi: 'Hanayo Koizumi',
+    Wien_Margarete: 'Wien Margarete',
+    Kazumi_Nakasu: 'Kazumi Nakasu',
+    Kanan_Matsuura: 'Kanan Matsuura',
+    Lanzhu_Zhong: 'Lanzhu Zhong',
+    Chisato_Arashi: 'Chisato Arashi',
+    Emma_Verde: 'Emma Verde',
+    Kozuzu_Kachimachi: 'Kozuzu Kachimachi',
+    Hanamaru_Kunikida: 'Hanamaru Kunikida',
+    Umi_Sonoda: 'Umi Sonoda',
+    Ayumu_Uehara: 'Ayumu Uehara',
+    Shizuku_Osaka: 'Shizuku Osaka',
+    Kinako_Sakurakoji: 'Kinako Sakurakoji',
+    You_Watanabe: 'You Watanabe',
+    Maki_Nishikino: 'Maki Nishikino',
+    Kanon_Shibuya: 'Kanon Shibuya',
+    Sarah_Kazuno: 'Sarah Kazuno',
+    Kaho_Hinoshita: 'Kaho Hinoshita',
+    Ai_Miyashita: 'Ai Miyashita',
+    Nozomi_Tojo: 'Nozomi Tojo',
+    Mari_Ohara: 'Mari Ohara',
+    Kozue_Otomune: 'Kozue Otomune',
+    Shiki_Wakana: 'Shiki Wakana',
+    Karin_Asaka: 'Karin Asaka',
+    Yoshiko_Tsushima: 'Yoshiko Tsushima',
+    Keke_Tang: 'Keke Tang',
+    Nico_Yazawa: 'Nico Yazawa',
+    Chika_Takami: 'Chika Takami',
+    Honoka_Kosaka: 'Honoka Kosaka',
+    Natsumi_Onitsuka: 'Natsumi Onitsuka',
+    Setsuna_Yuki: 'Setsuna Yuki',
+    Rurino_Osawa: 'Rurino Osawa',
+    Kotori_Minami: 'Kotori Minami',
+    Riko_Sakurauchi: 'Riko Sakurauchi',
+    Ruby_Kurosawa: 'Ruby Kurosawa',
+    Hime_Anyoji: 'Hime Anyoji',
+    Sumire_Heanna: 'Sumire Heanna',
+    Shioriko_Mifune: 'Shioriko Mifune',
+    Ginko_Momose: 'Ginko Momose',
+    Eli_Ayase: 'Eli Ayase',
+    Mei_Yoneme: 'Mei Yoneme',
+    Rin_Hozhizora: 'Rin Hozhizora',
+    Rina_Tennoji: 'Rina Tennoji',
+    Tsuzuri_Yugiri: 'Tsuzuri Yugiri',
+    Ren_Hazuki: 'Ren Hazuki',
+    Mia_Taylor: 'Mia Taylor',
+    Leah_Kazuno: 'Leah Kazuno',
+    Kanata_Konoe: 'Kanata Konoe',
+    Megumi_Fujishima: 'Megumi Fujishima',
+    Tomari_Onitsuka: 'Tomari Onitsuka',
   }
 </script>
 
 <MetaHead
   title="Love Live! Birthday Pack"
   description="Presenting a year-long effort to highlight every idol in the Love Live! franchise, symphonic has gathered an army of mappers to release maps featuring each of these idols individually on their birthdays! All maps come with custom lightshows!"
-  imageUrl="/uploads/playlists/OneRepublic.png"
+  imageUrl="/uploads/playlists/Love Live! Birthday Pack - Cover - With Text.png"
 />
 
 <section class="hero">
@@ -62,120 +113,134 @@
     </div>
   </div>
 </section>
-<br />
-<div class="trailer">
-  <h2>Watch the pack Trailer!</h2>
-  <iframe
-    src="https://www.youtube.com/embed/v0btb_hd50Q?si=PpegLO0UwX5Or75S"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-  />
-</div>
-<br />
 
 <div class="timeline">
   <div class="timeline-side timeline-left">
     <div style="height: 3rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/uploads/playlists/love-live/01_Dia_Kurosawa.png"
-      date="May 1, 2022"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Dia_Kurosawa}
+      image="/uploads/playlists/love-live/01-01_Dia_Kurosawa.png"
+      date="January 1"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 31rem" />
+    <div style="height: 15rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/uploads/playlists/love-live/02-1_Anju_Yuki.png"
-      date="June 1, 2022"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Sayaka_Murano}
+      image="/uploads/playlists/love-live/01-13_Sayaka_Murano.png"
+      date="January 13"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 25rem" />
+    <div style="height: 19rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/uploads/playlists/love-live/02-2_Tsubasa_Kira.png"
-      date="July 15, 2022"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Hanayo_Koizumi}
+      image="/uploads/playlists/love-live/01-17_Hanayo_Koizumi.png"
+      date="January 17"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 35rem" />
+    <div style="height: 17rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image=""
-      date="August 22, 2022"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Wien_Margarete}
+      image="/uploads/playlists/love-live/01-20_Wien_Margarete.png"
+      date="January 20"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 39rem" />
+    <div style="height: 19.5rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/Kaede.png"
-      date="November 9, 2022"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Kazumi_Nakasu}
+      image="/uploads/playlists/love-live/01-23_Kazumi_Nakasu.png"
+      date="January 23"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 27rem" />
+    <div style="height: 13.5rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/Kotone.png"
-      date="January 2, 2023"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Kanan_Matsuura}
+      image="/uploads/playlists/love-live/02-10_Kanan_Matsuura.png"
+      date="February 10"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 35rem" />
+    <div style="height: 17.5rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/Nien.png"
-      date="March 20, 2023"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Lanzhu_Zhong}
+      image="/uploads/playlists/love-live/02-15_Lanzhu_Zhong.png"
+      date="February 15"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 43rem" />
+    <div style="height: 21.5rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/Xinyu.png"
-      date="July 2, 2023"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Chisato_Arashi}
+      image="/uploads/playlists/love-live/02-25_Chisato_Arashi.png"
+      date="February 25"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 35rem" />
+    <div style="height: 17.5rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/Lynn.png"
-      date="December 26, 2023"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Emma_Verde}
+      image="/uploads/playlists/love-live/02_05_Emma_Verde.png"
+      date="February 5"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 26rem" />
+    <div style="height: 13rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/HaYeon.png"
-      date="December 28, 2023"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Kozuzu_Kachimachi}
+      image="/uploads/playlists/love-live/02_28_Kozuzu_Kachimachi.png"
+      date="February 28"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 33rem" />
+    <div style="height: 16.5rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/ChaeWon.png"
-      date="April 1, 2024"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Hanamaru_Kunikida}
+      image="/uploads/playlists/love-live/03-04_Hanamaru_Kunikida.png"
+      date="March 4"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
-    <div style="height: 42rem" />
+    <div style="height: 21rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/SeoAh.png"
-      date="April 3, 2024"
-      positionDate="bottom-left"
-      positionName="top-right"
+      name={members.Umi_Sonoda}
+      image="/uploads/playlists/love-live/03-15_Umi_Sonoda.png"
+      date="March 15"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 21rem" />
+    <MemberProfileCardSwag
+      name={members.Shiki_Wakana}
+      image="/uploads/playlists/love-live/06-17_Shiki_Wakana.png"
+      date="June 17"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 21rem" />
+    <MemberProfileCardSwag
+      name={members.Karin_Asaka}
+      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
+      date="June 29"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
   </div>
   <div class="timeline-center">
+    <div class="trailer">
+      <h2>Watch the pack Trailer!</h2>
+      <iframe
+        src="https://www.youtube.com/embed/v0btb_hd50Q?si=PpegLO0UwX5Or75S"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      />
+    </div>
     <AlbumPlaylistCard
       albumName="Love Live! Birthday Pack"
       groupName="Mappers: symphonic, FeudBoy_YT, swukpuff, calamity, misterlihao, Ge2toro, AchiCirno, steeak, Acubens, CMP1111, Kinz, vekikano, Fuyakeru, P90KILLR, emiru, ashad, mikuri, Elecast, Ken_Monogatari, Joetastic, yuchisese, BanditByTheStreet, chikinbiskit, NTS-Azazel, Bytrius, Comyute, umeko, ImChloe"
@@ -183,102 +248,118 @@
     />
   </div>
   <div class="timeline-side timeline-right">
-    <div style="height: 18rem" />
+    <div style="height: 12rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/HyeRin.png"
-      date="May 17, 2022"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Ayumu_Uehara}
+      image="/uploads/playlists/love-live/03_01_Ayumu_Uehara.png"
+      date="March 1"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 30rem" />
+    <div style="height: 19rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/ChaeYeon.png"
-      date="June 22, 2022"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Shizuku_Osaka}
+      image="/uploads/playlists/love-live/04-03_Shizuku_Osaka.png"
+      date="April 3"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 52rem" />
+    <div style="height: 26rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/SooMin.png"
-      date="August 8, 2022"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Kinako_Sakurakoji}
+      image="/uploads/playlists/love-live/04-10_Kinako_Sakurakoji.png"
+      date="April 10"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 20rem" />
+    <div style="height: 15rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/YuBin.png"
-      date="September 9, 2022"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.You_Watanabe}
+      image="/uploads/playlists/love-live/04-17_You_Watanabe.png"
+      date="April 17"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 30rem" />
+    <div style="height: 15rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/DaHyun.png"
-      date="December 9, 2022"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Maki_Nishikino}
+      image="/uploads/playlists/love-live/04-19_Maki_Nishikino.png"
+      date="April 19"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 55rem" />
+    <div style="height: 27.5rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/YeonJi.png"
-      date="January 18, 2023"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Kanon_Shibuya}
+      image="/uploads/playlists/love-live/05-01_Kanon_Shibuya.png"
+      date="May 1"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 30rem" />
+    <div style="height: 15rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/SoHyun.png"
-      date="April 14, 2023"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Sarah_Kazuno}
+      image="/uploads/playlists/love-live/05-04_Sarah_Kazuno.png"
+      date="May 4"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 20rem" />
+    <div style="height: 17rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/Mayu.png"
-      date="June 19, 2023"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Kaho_Hinoshita}
+      image="/uploads/playlists/love-live/05-22_Kaho_Hinoshita.png"
+      date="May 22"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 48rem" />
+    <div style="height: 15rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/JooBin.png"
-      date="December 27, 2023"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Ai_Miyashita}
+      image="/uploads/playlists/love-live/05-30_Ai_Miyashita.png"
+      date="May 30"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 30rem" />
+    <div style="height: 17rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/ShiOn.png"
-      date="December 29, 2023"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Nozomi_Tojo}
+      image="/uploads/playlists/love-live/06-09_Nozomi_Tojo.png"
+      date="June 9"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 20rem" />
+    <div style="height: 15rem" />
     <MemberProfileCardSwag
-      name={members.John}
-      image="/playlists/tripleS/Sullin.png"
-      date="April 2, 2024"
-      positionDate="bottom-right"
-      positionName="top-left"
+      name={members.Mari_Ohara}
+      image="/uploads/playlists/love-live/06-13_Mari_Ohara.png"
+      date="June 13"
+      positionDate="bottom-left"
+      positionName="top-right"
     />
-    <div style="height: 39rem" />
+    <div style="height: 16rem" />
+    <MemberProfileCardSwag
+      name={members.Kozue_Otomune}
+      image="/uploads/playlists/love-live/06-15_Kozue_Otomune.png"
+      date="June 15"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 16rem" />
+    <MemberProfileCardSwag
+      name={members.Yoshiko_Tsushima}
+      image="/uploads/playlists/love-live/07-13_Yoshiko_Tsushima.png"
+      date="July 13"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 12rem" />
     <div class="swag-hang">
       <MemberProfileCardSwag
-        name={members.John}
-        image="/playlists/tripleS/JiYeon.png"
-        date="April 4, 2024"
-        positionDate="bottom-right"
-        positionName="top-left"
+        name={members.Keke_Tang}
+        image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
+        date="July 17"
+        positionDate="bottom-left"
+        positionName="top-right"
       />
     </div>
   </div>
@@ -444,9 +525,7 @@
     .timeline {
       width: 100%;
       display: grid;
-      grid-template-columns: calc(var(--triples-card-width) + 1rem) auto calc(
-          var(--triples-card-width) + 1rem
-        );
+      grid-template-columns: calc(var(--card-width) + 1rem) auto calc(var(--card-width) + 1rem);
     }
 
     .timeline-side {
@@ -473,10 +552,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
     padding: 1rem;
+    width: 100%;
   }
   iframe {
+    display: flex;
     width: 100%;
     max-width: 800px;
     aspect-ratio: 16 / 9;

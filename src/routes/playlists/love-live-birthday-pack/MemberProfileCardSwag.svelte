@@ -20,8 +20,8 @@
 
   // set width and height css variables
   onMount(() => {
-    window.document.documentElement.style.setProperty('--triples-card-width', width)
-    window.document.documentElement.style.setProperty('--triples-card-height', height)
+    window.document.documentElement.style.setProperty('--card-width', width)
+    window.document.documentElement.style.setProperty('--card-height', height)
   })
   let hovering = false
 </script>
@@ -29,7 +29,7 @@
 <div
   on:click
   class={`member-box`}
-  style={`background: url(${image}); background-size: ${width} ${height}; height: ${height}; width: ${width}; background-repeat: no-repeat; background-position: center; transform: ${
+  style={`background: url(${image}); background-size: cover; height: ${height}; width: ${width}; background-repeat: no-repeat; background-position: center; transform: ${
     hovering ? 'scale(1.1) ' : ''
   }rotate(${hovering ? '0' : rotationDeg}deg);`}
   on:mouseenter={() => (hovering = true)}
@@ -60,39 +60,25 @@
     color: white;
     background-color: rgba(0, 0, 0, 1);
     text-align: center;
-    // margin: 0 auto;
     padding: 0.2rem 1rem;
     font-size: 1.4rem;
   }
 
   .date {
     margin: 0 auto;
-    color: #ffd700;
+    color: #371226;
+    background-color: white;
 
     &.bottom-right {
-      transform: translateY(1rem) translateX(5rem) rotate(-16deg);
-    }
-
-    &.top-left {
-      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem)) translateX(0rem)
-        rotate(0deg);
-    }
-
-    &.top-right {
-      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem)) translateX(5rem)
-        rotate(16deg);
+      transform: translateY(1rem) translateX(5rem) rotate(5deg);
     }
 
     &.bottom-left {
-      transform: translateY(1rem) translateX(-5rem) rotate(16deg);
+      transform: translateY(1rem) translateX(-5rem) rotate(-5deg);
     }
 
     &.top-center {
-      transform: translateY(calc((-1 * var(--triples-card-height)) + 1rem));
-    }
-
-    &.bottom-center {
-      transform: translateY(1rem);
+      transform: translateY(calc((-1 * var(--card-height)) + 1rem));
     }
   }
 
@@ -100,30 +86,12 @@
     margin: 0 auto;
     border-radius: 5px;
 
-    &.bottom-right {
-      transform: translateY(calc((var(--triples-card-height)) - 1rem)) translateX(5rem)
-        rotate(-18deg);
-    }
-
     &.top-left {
-      transform: translateY(-1rem) translateX(-5rem) rotate(-18deg);
+      transform: translateY(-1rem) translateX(-4rem) rotate(-16deg);
     }
 
     &.top-right {
-      transform: translateY(-1rem) translateX(5rem) rotate(18deg);
-    }
-
-    &.bottom-left {
-      transform: translateY(calc((var(--triples-card-height)) - 1rem)) translateX(-5rem)
-        rotate(18deg);
-    }
-
-    &.top-center {
-      transform: translateY(-1rem);
-    }
-
-    &.bottom-center {
-      transform: translateY(calc((var(--triples-card-height)) - 1rem));
+      transform: translateY(-1rem) translateX(5rem) rotate(16deg);
     }
   }
 </style>

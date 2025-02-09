@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="map-cards-containers">
-    <MapCards {playlistId} forceColumnCount={1} fixedCount={51} />
+    <MapCards {playlistId} forceColumnCount={1} fixedCount={51} showToggle={false} />
   </div>
 </div>
 
@@ -49,8 +49,9 @@
     }
 
     &:hover .map-cards-containers {
-      border-left: 1.5px dashed $color-background-tertiary;
-      border-right: 1px dashed $color-background-tertiary;
+      border-right: 1.5px solid $color-background-tertiary;
+      border-bottom: 1.5px solid $color-background-tertiary;
+      border-left: 1.5px solid $color-background-tertiary;
     }
   }
 
@@ -129,7 +130,12 @@
   .map-cards-containers {
     margin: 0;
     padding: 1rem;
-    border-left: 1.5px dashed $color-background-secondary;
-    border-right: 1px dashed $color-background-secondary;
+    border-left: 1.5px solid $color-background-secondary;
+    border-right: 1.5px solid $color-background-secondary;
+    border-bottom: 1.5px solid $color-background-secondary;
+    border-radius: 0 0 $rounding-small $rounding-small;
+    transition-property: border-left, border-right, border-bottom;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
   }
 </style>
