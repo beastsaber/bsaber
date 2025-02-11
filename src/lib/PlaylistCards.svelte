@@ -11,11 +11,26 @@
 
   export let playlists: Playlist[] = []
 
-  onMount(async () => {
-    await getPlaylists()
-  })
+  const rawCurationOverrides = import.meta.glob(
+    '/src/collections/playlist-curation-date-overwrites/*.md',
+    { eager: true },
+  )
+
+  let curationOverrideMap: Record<string, string> = {}
+  for (const path in rawCurationOverrides) {
+    const file = rawCurationOverrides[path]
+    const { id, curationOverwrite } = file.metadata || file
+    if (id && curationOverwrite) {
+      curationOverrideMap[id] = curationOverwrite
+    }
+  }
 
   const beatSaverClient = beatSaverClientFactory.create()
+
+  onMount(async () => {
+    await getPlaylists()
+    applyCurationOverrides()
+  })
 
   async function getPlaylists() {
     if (playlists.length > 0) return
@@ -23,6 +38,16 @@
       `/playlists/latest?sort=CURATED&pageSize=${maxCards ?? 4}`,
     )
     playlists = await response.json().then((json) => json['docs'] as Playlist[])
+  }
+
+  function applyCurationOverrides() {
+    playlists = playlists.map((playlist) => {
+      if (curationOverrideMap[playlist.playlistId]) {
+        return { ...playlist, curatedAt: curationOverrideMap[playlist.playlistId] }
+      }
+      return playlist
+    })
+    playlists.sort((a, b) => new Date(b.curatedAt).getTime() - new Date(a.curatedAt).getTime())
   }
 </script>
 
