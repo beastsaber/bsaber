@@ -15,8 +15,8 @@
   export let rotationDeg = 0
   export let positionName: PositionName = 'top-center'
   export let positionDate: PositionName = 'bottom-center'
-  const height = '15rem'
-  const width = '15rem'
+  const height = '12rem'
+  const width = '12rem'
 
   // set width and height css variables
   onMount(() => {
@@ -45,7 +45,6 @@
     flex-direction: column;
     border-radius: 5px;
     justify-content: space-between;
-
     transition-property: transform;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
@@ -61,7 +60,7 @@
     background-color: rgba(0, 0, 0, 1);
     text-align: center;
     padding: 0.2rem 1rem;
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
   .date {
@@ -70,11 +69,11 @@
     background-color: white;
 
     &.bottom-right {
-      transform: translateY(1rem) translateX(5rem) rotate(5deg);
+      transform: translateY(1rem) translateX(3rem) rotate(5deg);
     }
 
     &.bottom-left {
-      transform: translateY(1rem) translateX(-5rem) rotate(-5deg);
+      transform: translateY(1rem) translateX(-2rem) rotate(-5deg);
     }
 
     &.top-center {
@@ -87,11 +86,11 @@
     border-radius: 5px;
 
     &.top-left {
-      transform: translateY(-1rem) translateX(-4rem) rotate(-16deg);
+      transform: translateY(-1rem) translateX(-2rem) rotate(-16deg);
     }
 
     &.top-right {
-      transform: translateY(-1rem) translateX(5rem) rotate(16deg);
+      transform: translateY(-1rem) translateX(3rem) rotate(16deg);
     }
   }
 </style>

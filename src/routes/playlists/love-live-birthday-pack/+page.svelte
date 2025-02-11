@@ -116,7 +116,7 @@
 
 <div class="timeline">
   <div class="timeline-side timeline-left">
-    <div style="height: 3rem" />
+    <div style="height: 1rem" />
     <MemberProfileCardSwag
       name={members.Dia_Kurosawa}
       image="/uploads/playlists/love-live/01-01_Dia_Kurosawa.png"
@@ -124,7 +124,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 15rem" />
+    <div style="height: 7rem" />
     <MemberProfileCardSwag
       name={members.Sayaka_Murano}
       image="/uploads/playlists/love-live/01-13_Sayaka_Murano.png"
@@ -132,7 +132,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 19rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Hanayo_Koizumi}
       image="/uploads/playlists/love-live/01-17_Hanayo_Koizumi.png"
@@ -140,7 +140,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 17rem" />
+    <div style="height: 8.5rem" />
     <MemberProfileCardSwag
       name={members.Wien_Margarete}
       image="/uploads/playlists/love-live/01-20_Wien_Margarete.png"
@@ -148,7 +148,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 19.5rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Kazumi_Nakasu}
       image="/uploads/playlists/love-live/01-23_Kazumi_Nakasu.png"
@@ -156,7 +156,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 13.5rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Kanan_Matsuura}
       image="/uploads/playlists/love-live/02-10_Kanan_Matsuura.png"
@@ -164,7 +164,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 17.5rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Lanzhu_Zhong}
       image="/uploads/playlists/love-live/02-15_Lanzhu_Zhong.png"
@@ -172,7 +172,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 21.5rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Chisato_Arashi}
       image="/uploads/playlists/love-live/02-25_Chisato_Arashi.png"
@@ -180,7 +180,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 17.5rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Emma_Verde}
       image="/uploads/playlists/love-live/02_05_Emma_Verde.png"
@@ -188,7 +188,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 13rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Kozuzu_Kachimachi}
       image="/uploads/playlists/love-live/02_28_Kozuzu_Kachimachi.png"
@@ -196,7 +196,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 16.5rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Hanamaru_Kunikida}
       image="/uploads/playlists/love-live/03-04_Hanamaru_Kunikida.png"
@@ -204,7 +204,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 21rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Umi_Sonoda}
       image="/uploads/playlists/love-live/03-15_Umi_Sonoda.png"
@@ -212,7 +212,7 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 21rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Shiki_Wakana}
       image="/uploads/playlists/love-live/06-17_Shiki_Wakana.png"
@@ -220,7 +220,55 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 21rem" />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Karin_Asaka}
+      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
+      date="June 29"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Karin_Asaka}
+      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
+      date="June 29"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Karin_Asaka}
+      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
+      date="June 29"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Karin_Asaka}
+      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
+      date="June 29"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Karin_Asaka}
+      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
+      date="June 29"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Karin_Asaka}
+      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
+      date="June 29"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Karin_Asaka}
       image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
@@ -256,7 +304,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 19rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Shizuku_Osaka}
       image="/uploads/playlists/love-live/04-03_Shizuku_Osaka.png"
@@ -264,7 +312,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 26rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Kinako_Sakurakoji}
       image="/uploads/playlists/love-live/04-10_Kinako_Sakurakoji.png"
@@ -272,7 +320,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 15rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.You_Watanabe}
       image="/uploads/playlists/love-live/04-17_You_Watanabe.png"
@@ -280,7 +328,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 15rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Maki_Nishikino}
       image="/uploads/playlists/love-live/04-19_Maki_Nishikino.png"
@@ -288,7 +336,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 27.5rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Kanon_Shibuya}
       image="/uploads/playlists/love-live/05-01_Kanon_Shibuya.png"
@@ -296,7 +344,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 15rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Sarah_Kazuno}
       image="/uploads/playlists/love-live/05-04_Sarah_Kazuno.png"
@@ -304,7 +352,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 17rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Kaho_Hinoshita}
       image="/uploads/playlists/love-live/05-22_Kaho_Hinoshita.png"
@@ -312,7 +360,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 15rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Ai_Miyashita}
       image="/uploads/playlists/love-live/05-30_Ai_Miyashita.png"
@@ -320,7 +368,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 17rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Nozomi_Tojo}
       image="/uploads/playlists/love-live/06-09_Nozomi_Tojo.png"
@@ -328,7 +376,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 15rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Mari_Ohara}
       image="/uploads/playlists/love-live/06-13_Mari_Ohara.png"
@@ -336,7 +384,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 16rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Kozue_Otomune}
       image="/uploads/playlists/love-live/06-15_Kozue_Otomune.png"
@@ -344,7 +392,7 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 16rem" />
+    <div style="height: 9rem" />
     <MemberProfileCardSwag
       name={members.Yoshiko_Tsushima}
       image="/uploads/playlists/love-live/07-13_Yoshiko_Tsushima.png"
@@ -352,7 +400,55 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 12rem" />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Keke_Tang}
+      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
+      date="July 17"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Keke_Tang}
+      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
+      date="July 17"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Keke_Tang}
+      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
+      date="July 17"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Keke_Tang}
+      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
+      date="July 17"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Keke_Tang}
+      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
+      date="July 17"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 9rem" />
+    <MemberProfileCardSwag
+      name={members.Keke_Tang}
+      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
+      date="July 17"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem" />
     <div class="swag-hang">
       <MemberProfileCardSwag
         name={members.Keke_Tang}
