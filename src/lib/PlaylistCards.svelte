@@ -34,8 +34,9 @@
 
   async function getPlaylists() {
     if (playlists.length > 0) return
+    const pageSize = 100
     let response = await beatSaverClient.fetch(
-      `/playlists/latest?sort=CURATED&pageSize=${maxCards ?? 4}`,
+      `/playlists/latest?sort=CURATED&pageSize=${pageSize}`,
     )
     playlists = await response.json().then((json) => json['docs'] as Playlist[])
   }
@@ -48,6 +49,11 @@
       return playlist
     })
     playlists.sort((a, b) => new Date(b.curatedAt).getTime() - new Date(a.curatedAt).getTime())
+    if (maxCards !== undefined && playlists.length > maxCards) {
+      playlists = playlists.slice(0, maxCards)
+      // Need to fix that these changes only puts the overwritten one at the end of Page 1
+      // and not necessarily where it's supposed to go. I didn't notice this previously
+    }
   }
 </script>
 
