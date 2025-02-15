@@ -11,49 +11,18 @@
 
   export let playlists: Playlist[] = []
 
-  const rawCurationOverrides = import.meta.glob(
-    '/src/collections/playlist-curation-date-overwrites/*.md',
-    { eager: true },
-  )
-
-  let curationOverrideMap: Record<string, string> = {}
-  for (const path in rawCurationOverrides) {
-    const file = rawCurationOverrides[path]
-    const { id, curationOverwrite } = file.metadata || file
-    if (id && curationOverwrite) {
-      curationOverrideMap[id] = curationOverwrite
-    }
-  }
+  onMount(async () => {
+    await getPlaylists()
+  })
 
   const beatSaverClient = beatSaverClientFactory.create()
 
-  onMount(async () => {
-    await getPlaylists()
-    applyCurationOverrides()
-  })
-
   async function getPlaylists() {
     if (playlists.length > 0) return
-    const pageSize = 100
     let response = await beatSaverClient.fetch(
-      `/playlists/latest?sort=CURATED&pageSize=${pageSize}`,
+      `/playlists/latest?sort=CURATED&pageSize=${maxCards ?? 4}`,
     )
     playlists = await response.json().then((json) => json['docs'] as Playlist[])
-  }
-
-  function applyCurationOverrides() {
-    playlists = playlists.map((playlist) => {
-      if (curationOverrideMap[playlist.playlistId]) {
-        return { ...playlist, curatedAt: curationOverrideMap[playlist.playlistId] }
-      }
-      return playlist
-    })
-    playlists.sort((a, b) => new Date(b.curatedAt).getTime() - new Date(a.curatedAt).getTime())
-    if (maxCards !== undefined && playlists.length > maxCards) {
-      playlists = playlists.slice(0, maxCards)
-      // Need to fix that these changes only puts the overwritten one at the end of Page 1
-      // and not necessarily where it's supposed to go. I didn't notice this previously
-    }
   }
 </script>
 
