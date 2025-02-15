@@ -111,7 +111,6 @@ export type Playlist = {
   playlistImage: string
   playlistImage512: string
   owner: Uploader
-  curatedAt: string
 }
 
 export type Beatmap = {

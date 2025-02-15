@@ -11,46 +11,18 @@
 
   export let playlists: Playlist[] = []
 
-  const overrideFiles = import.meta.glob('/src/collections/playlist-curation-date-override/*.md', {
-    eager: true,
-  })
-
-  let curationDateOverrideMap: Record<string, string> = {}
-  for (const path in overrideFiles) {
-    const file = overrideFiles[path] as any
-    const { id, curationDateOverride } = file?.metadata ?? {}
-    if (id && curationDateOverride) {
-      curationDateOverrideMap[id] = curationDateOverride
-    }
-  }
-
-  const beatSaverClient = beatSaverClientFactory.create()
-
   onMount(async () => {
     await getPlaylists()
   })
 
+  const beatSaverClient = beatSaverClientFactory.create()
+
   async function getPlaylists() {
     if (playlists.length > 0) return
-    let response = await beatSaverClient.fetch(`/playlists/latest?sort=CURATED&pageSize=50`)
-
-    playlists = await response.json().then((json) => {
-      let fetched = json.docs as Playlist[]
-
-      fetched.forEach((p) => {
-        if (curationDateOverrideMap[p.playlistId]) {
-          p.curatedAt = curationDateOverrideMap[p.playlistId]
-        }
-      })
-
-      fetched.sort((a, b) => new Date(b.curatedAt).getTime() - new Date(a.curatedAt).getTime())
-
-      if (maxCards != null) {
-        fetched = fetched.slice(0, maxCards)
-      }
-
-      return fetched
-    })
+    let response = await beatSaverClient.fetch(
+      `/playlists/latest?sort=CURATED&pageSize=${maxCards ?? 4}`,
+    )
+    playlists = await response.json().then((json) => json['docs'] as Playlist[])
   }
 </script>
 
