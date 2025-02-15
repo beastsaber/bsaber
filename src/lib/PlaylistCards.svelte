@@ -11,17 +11,16 @@
 
   export let playlists: Playlist[] = []
 
-  const rawCurationOverrides = import.meta.glob(
-    '/src/collections/playlist-curation-date-overwrites/*.md',
-    { eager: true },
-  )
+  const overrideFiles = import.meta.glob('/src/collections/playlist-curation-date-override/*.md', {
+    eager: true,
+  })
 
-  let curationOverrideMap: Record<string, string> = {}
-  for (const path in rawCurationOverrides) {
-    const file = rawCurationOverrides[path]
-    const { id, curationOverwrite } = file.metadata || file
-    if (id && curationOverwrite) {
-      curationOverrideMap[id] = curationOverwrite
+  let curationDateOverrideMap: Record<string, string> = {}
+  for (const path in overrideFiles) {
+    const file = overrideFiles[path] as any
+    const { id, curationDateOverride } = file?.metadata ?? {}
+    if (id && curationDateOverride) {
+      curationDateOverrideMap[id] = curationDateOverride
     }
   }
 
@@ -29,31 +28,29 @@
 
   onMount(async () => {
     await getPlaylists()
-    applyCurationOverrides()
   })
 
   async function getPlaylists() {
     if (playlists.length > 0) return
-    const pageSize = 100
-    let response = await beatSaverClient.fetch(
-      `/playlists/latest?sort=CURATED&pageSize=${pageSize}`,
-    )
-    playlists = await response.json().then((json) => json['docs'] as Playlist[])
-  }
+    let response = await beatSaverClient.fetch(`/playlists/latest?sort=CURATED&pageSize=50`)
 
-  function applyCurationOverrides() {
-    playlists = playlists.map((playlist) => {
-      if (curationOverrideMap[playlist.playlistId]) {
-        return { ...playlist, curatedAt: curationOverrideMap[playlist.playlistId] }
+    playlists = await response.json().then((json) => {
+      let fetched = json.docs as Playlist[]
+
+      fetched.forEach((p) => {
+        if (curationDateOverrideMap[p.playlistId]) {
+          p.curatedAt = curationDateOverrideMap[p.playlistId]
+        }
+      })
+
+      fetched.sort((a, b) => new Date(b.curatedAt).getTime() - new Date(a.curatedAt).getTime())
+
+      if (maxCards != null) {
+        fetched = fetched.slice(0, maxCards)
       }
-      return playlist
+
+      return fetched
     })
-    playlists.sort((a, b) => new Date(b.curatedAt).getTime() - new Date(a.curatedAt).getTime())
-    if (maxCards !== undefined && playlists.length > maxCards) {
-      playlists = playlists.slice(0, maxCards)
-      // Need to fix that these changes only puts the overwritten one at the end of Page 1
-      // and not necessarily where it's supposed to go. I didn't notice this previously
-    }
   }
 </script>
 
