@@ -42,7 +42,7 @@
         beats, passionate vocals, and enticing lyrics that stir the soul and ignite desire.
         <br />
         <br />
-        <a class="uploader" href="/playlists/sensual-rhythms-vol-2" style="font-size: large;"
+        <a class="reference" href="/playlists/sensual-rhythms-vol-2" style="font-size: large;"
           >Check out Volume 2 here!</a
         >
       </p>
@@ -137,6 +137,14 @@
   .uploader {
     color: white;
     font-weight: 1000;
+  }
+
+  .reference {
+    color: white;
+    font-weight: 1000;
+    border: solid 1.5px white;
+    border-radius: 5px;
+    padding: 8px;
   }
 
   h1 {
