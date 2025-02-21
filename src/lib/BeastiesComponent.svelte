@@ -20,7 +20,7 @@
     const timeLeft = countdownDate - now
 
     if (timeLeft <= 0) {
-      countdownText = 'Voting has closed! Stay tuned for the Awards Show!'
+      countdownText = 'Tune into the BSMG YouTube for the show!'
       submitVisible = false
       headerVisible = false
       tlVisible = false
@@ -41,7 +41,7 @@
   }
 
   onMount(() => {
-    countdownDate = new Date('2025-01-15T00:00:00Z').getTime()
+    countdownDate = new Date('2025-03-01T22:00:00Z').getTime()
     updateCountdown()
 
     const countdownInterval = setInterval(() => {
@@ -61,27 +61,20 @@
       <img src="/beastie-trophy.png" alt="Beasties Trophy" />
     </div>
     <div class="right-side-beasties-banner">
-      <h1>Beasties are Coming</h1>
+      <h1>2024 Beasties</h1>
       <p class="BeastiesTimerContainer" id="BeastiesTimer">
         {#if headerVisible}
-          <div class="header"><h2>Voting is Now Open!</h2></div>
+          <div class="header"><h2>The Awards Show Is Almost Here!</h2></div>
         {/if}
         {#if tlVisible}
-          <span class="tl">Time left to vote: </span>
+          <span class="tl">Time left till the premiere: </span>
         {/if}
         <span id="countdown">{countdownText}</span>
       </p>
       <div class="cta-row">
-        <div class="submit {submitVisible ? '' : 'hidden'}">
-          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote!</a>
-        </div>
         <a href="/posts/the-beasties-2024-nominees" rel="external" class="text-link">Learn more</a>
         <span class="separater"> | </span>
-        <a
-          href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
-          class="text-link"
-          title="External Japanese Guide">もっと読む</a
-        >
+        <a href="https://www.youtube.com/@BeatSaberMods" class="text-link">BSMG YouTube</a>
       </div>
     </div>
   </div>
