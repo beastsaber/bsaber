@@ -25,13 +25,15 @@
   <div class="content">
     <div class="card-container">
       <div class="card">
-        <a href="https://beatsaver.com/profile/247853"
+        <a href="https://beatsaver.com/profile/247853#playlists"
           ><img src="/uploads/playlists/247853.jpg" alt="SSMG" />
         </a>
       </div>
     </div>
     <div class="uploader-container">
-      <a class="uploader" href="https://beatsaver.com/profile/247853">Sonic Seduction MG</a>
+      <a class="uploader" href="https://beatsaver.com/profile/247853#playlists"
+        >Sonic Seduction MG</a
+      >
       Presents
     </div>
     <div class="body">
