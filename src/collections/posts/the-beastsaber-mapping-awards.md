@@ -22,9 +22,7 @@ linkToSpecialtyPage: /the-beastsaber-mapping-awards
 <p>Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.</p>
 <br />
 
-## Tune into the [BSMG YouTube](https://www.youtube.com/@BeatSaberMods) to watch the Awards Show!
-
-\* [**Take a look at the nominees here!**](/posts/the-beasties-2024-nominees)
+## Watch the [2024 Awards Show](https://youtu.be/u7CJoYyRVWg)
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>

@@ -11,15 +11,6 @@ image: /static/uploads/posts/beasties/AdobeStock_139586575square.jpeg
 showInPostListing: true
 ---
 
-# The Awards Show is Almost Here!
-
-Tune into the [BSMG YouTube](https://www.youtube.com/@BeatSaberMods) to watch!
-
-![2024 Beasties Times](/uploads/posts/beasties/2024_beasties_times.png)
-
-<hr>
-<br />
-
 # The 2024 Beasties Nominees
 
 Our Beasties Finalist Team of roughly 30 community members with exceptional knowledge and skill in mapping and lighting best practices have completed their incredibly hard task of sifting through a record-breaking 1,141 unique submissions for this year's BeastSaber Mapping Awards! We'll post statistics on the submissions and more after the Awards show!
