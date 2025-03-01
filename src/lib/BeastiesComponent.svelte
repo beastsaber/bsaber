@@ -20,7 +20,7 @@
     const timeLeft = countdownDate - now
 
     if (timeLeft <= 0) {
-      countdownText = ''
+      countdownText = "Thank you for being there! We'll see you next year!"
       submitVisible = false
       headerVisible = false
       tlVisible = false
@@ -57,21 +57,21 @@
 
 <div class="beasties-banner">
   <div class="container">
+    <div class="left-side-beasties-banner">
+      <img src="/beastie-trophy.png" alt="Beasties Trophy" />
+    </div>
     <div class="right-side-beasties-banner">
-      <h1>Watch the premiere of The 2024 Beasties</h1>
-      <iframe
-        style="width: 100%; aspect-ratio: 16 / 9; max-width: 600px; margin-top: 1rem;"
-        src="https://www.youtube.com/embed/u7CJoYyRVWg?si=0jQCQpd8-5YHiqiv&autoplay=1&mute=1"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      />
+      <h1>The 2024 Beasties</h1>
+      <p class="BeastiesTimerContainer" id="BeastiesTimer">
+        <span id="countdown">{countdownText}</span>
+      </p>
       <div class="cta-row">
-        <a href="/posts/the-beasties-2024-nominees" class="text-link">Learn more</a>
+        <div class="submit {submitVisible ? '' : 'hidden'}">
+          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote!</a>
+        </div>
+        <a href="/posts/the-beasties-2024-winners" class="text-link">2024 Winners</a>
         <span class="separater"> | </span>
-        <a href="https://www.youtube.com/@BeatSaberMods" class="text-link">BSMG YouTube</a>
+        <a href="https://youtu.be/u7CJoYyRVWg" class="text-link">Watch the premiere</a>
       </div>
     </div>
   </div>
@@ -93,13 +93,16 @@
     margin-top: 1.5rem;
     box-shadow: 0px 3px 3px black;
 
+    h1 {
+      font-size: 2.5rem;
+    }
+
     @media (max-width: 556px) {
       h1 {
         font-size: 1.5rem;
       }
     }
   }
-
   .beasties-banner::before {
     content: '';
     position: absolute;
@@ -107,13 +110,13 @@
     height: 100%;
     background: url('/beasties-banner-bg.png') no-repeat center;
     background-size: cover;
-    filter: brightness(30%) blur(5px);
+    filter: brightness(50%) blur(5px);
     z-index: -1;
   }
 
   .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 1rem 0;
     @media (max-width: 486px) {
@@ -130,6 +133,29 @@
     color: #e95d4e;
   }
 
+  .left-side-beasties-banner {
+    display: flex;
+    align-items: center;
+    img {
+      height: 10rem;
+    }
+    @media (max-width: 486px) {
+      display: none;
+    }
+  }
+
+  .right-side-beasties-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 470px;
+    @media (max-width: 486px) {
+      min-width: unset;
+    }
+  }
+
   .cta-row {
     display: flex;
     flex-wrap: wrap;
@@ -138,6 +164,16 @@
     text-align: center;
     justify-content: center;
     margin-top: 0.5rem;
+
+    .submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .submit.hidden {
+      display: none;
+    }
 
     .button-link {
       gap: 1rem;
@@ -151,7 +187,6 @@
         background-color: #792117;
       }
     }
-
     a {
       color: white;
       font-weight: bold;

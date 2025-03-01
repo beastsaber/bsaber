@@ -95,8 +95,8 @@
           href: '/the-beastsaber-mapping-awards',
         },
         {
-          name: '2024 Nominees',
-          href: '/posts/the-beasties-2024-nominees',
+          name: '2024 Winners',
+          href: '/posts/the-beasties-2024-winners',
         },
         {
           name: '2023 Winners',
