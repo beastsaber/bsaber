@@ -38,7 +38,7 @@
       <h1>Eminem Pack</h1>
       <p>
         TG Mapping Group presents... The Eminem Pack! Slash though some iconic songs from 8
-        different albums, from the newly released Death From Slim Shady, to classics like The Eminem
+        different albums, from the newly released Death of Slim Shady, to classics like The Eminem
         Show!
       </p>
     </div>
