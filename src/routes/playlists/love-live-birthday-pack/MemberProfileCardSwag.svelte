@@ -50,10 +50,6 @@
     transition-timing-function: ease-in-out;
   }
 
-  h2 {
-    font-size: 1.5rem;
-  }
-
   .date,
   .name {
     color: white;

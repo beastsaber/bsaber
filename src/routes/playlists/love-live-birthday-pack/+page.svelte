@@ -16,27 +16,29 @@
   })
 
   const members = {
-    Dia_Kurosawa: 'Dia Kurosawa',
+    Dia_Kurosawa: 'Kurosawa Dia',
+    A_Rise: 'A-RISE',
+    Sunny_Passion: 'Sunny Passion',
     Sayaka_Murano: 'Sayaka Murano',
     Hanayo_Koizumi: 'Hanayo Koizumi',
     Wien_Margarete: 'Wien Margarete',
-    Kazumi_Nakasu: 'Kazumi Nakasu',
+    Nakasu_Kasumi: 'Nakasu Kazumi',
     Kanan_Matsuura: 'Kanan Matsuura',
     Lanzhu_Zhong: 'Lanzhu Zhong',
     Chisato_Arashi: 'Chisato Arashi',
     Emma_Verde: 'Emma Verde',
     Kozuzu_Kachimachi: 'Kozuzu Kachimachi',
     Hanamaru_Kunikida: 'Hanamaru Kunikida',
-    Umi_Sonoda: 'Umi Sonoda',
+    Sonoda_Umi: 'Sonoda Umi',
     Ayumu_Uehara: 'Ayumu Uehara',
     Shizuku_Osaka: 'Shizuku Osaka',
     Kinako_Sakurakoji: 'Kinako Sakurakoji',
     You_Watanabe: 'You Watanabe',
-    Maki_Nishikino: 'Maki Nishikino',
+    Maki_Nishikino: 'Nishikino Maki',
     Kanon_Shibuya: 'Kanon Shibuya',
     Sarah_Kazuno: 'Sarah Kazuno',
     Kaho_Hinoshita: 'Kaho Hinoshita',
-    Ai_Miyashita: 'Ai Miyashita',
+    Ai_Miyashita: 'Miyashita Ai',
     Nozomi_Tojo: 'Nozomi Tojo',
     Mari_Ohara: 'Mari Ohara',
     Kozue_Otomune: 'Kozue Otomune',
@@ -48,7 +50,7 @@
     Chika_Takami: 'Chika Takami',
     Honoka_Kosaka: 'Honoka Kosaka',
     Natsumi_Onitsuka: 'Natsumi Onitsuka',
-    Setsuna_Yuki: 'Setsuna Yuki',
+    Setsuna_Yuki: 'Yuki Setsuna',
     Rurino_Osawa: 'Rurino Osawa',
     Kotori_Minami: 'Kotori Minami',
     Riko_Sakurauchi: 'Riko Sakurauchi',
@@ -59,7 +61,7 @@
     Ginko_Momose: 'Ginko Momose',
     Eli_Ayase: 'Eli Ayase',
     Mei_Yoneme: 'Mei Yoneme',
-    Rin_Hozhizora: 'Rin Hozhizora',
+    Rin_Hozhizora: 'Hozhizora Rin',
     Rina_Tennoji: 'Rina Tennoji',
     Tsuzuri_Yugiri: 'Tsuzuri Yugiri',
     Ren_Hazuki: 'Ren Hazuki',
@@ -116,7 +118,7 @@
 
 <div class="timeline">
   <div class="timeline-side timeline-left">
-    <div style="height: 3rem" />
+    <div style="height: 40rem" />
     <MemberProfileCardSwag
       name={members.Dia_Kurosawa}
       image="/uploads/playlists/love-live/01-01_Dia_Kurosawa.png"
@@ -124,19 +126,11 @@
       positionDate="bottom-right"
       positionName="top-left"
     />
-    <div style="height: 1rem" />
+    <div style="height: 2rem" />
     <MemberProfileCardSwag
       name={members.Sayaka_Murano}
       image="/uploads/playlists/love-live/01-13_Sayaka_Murano.png"
       date="January 13"
-      positionDate="bottom-right"
-      positionName="top-left"
-    />
-    <div style="height: 1rem" />
-    <MemberProfileCardSwag
-      name={members.Hanayo_Koizumi}
-      image="/uploads/playlists/love-live/01-17_Hanayo_Koizumi.png"
-      date="January 17"
       positionDate="bottom-right"
       positionName="top-left"
     />
@@ -150,17 +144,9 @@
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Kazumi_Nakasu}
-      image="/uploads/playlists/love-live/01-23_Kazumi_Nakasu.png"
-      date="January 23"
-      positionDate="bottom-right"
-      positionName="top-left"
-    />
-    <div style="height: 1rem" />
-    <MemberProfileCardSwag
-      name={members.Kanan_Matsuura}
-      image="/uploads/playlists/love-live/02-10_Kanan_Matsuura.png"
-      date="February 10"
+      name={members.Emma_Verde}
+      image="/uploads/playlists/love-live/02_05_Emma_Verde.png"
+      date="February 5"
       positionDate="bottom-right"
       positionName="top-left"
     />
@@ -169,22 +155,6 @@
       name={members.Lanzhu_Zhong}
       image="/uploads/playlists/love-live/02-15_Lanzhu_Zhong.png"
       date="February 15"
-      positionDate="bottom-right"
-      positionName="top-left"
-    />
-    <div style="height: 1rem" />
-    <MemberProfileCardSwag
-      name={members.Chisato_Arashi}
-      image="/uploads/playlists/love-live/02-25_Chisato_Arashi.png"
-      date="February 25"
-      positionDate="bottom-right"
-      positionName="top-left"
-    />
-    <div style="height: 1rem" />
-    <MemberProfileCardSwag
-      name={members.Emma_Verde}
-      image="/uploads/playlists/love-live/02_05_Emma_Verde.png"
-      date="February 5"
       positionDate="bottom-right"
       positionName="top-left"
     />
@@ -199,80 +169,160 @@
     <div style="height: 1rem" />
     <MemberProfileCardSwag
       name={members.Hanamaru_Kunikida}
-      image="/uploads/playlists/love-live/03-04_Hanamaru_Kunikida.png"
-      date="March 4"
+      image="/uploads/playlists/love-live/03_01_Ayumu_Uehara.png"
+      date="March 1"
       positionDate="bottom-right"
       positionName="top-left"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Umi_Sonoda}
-      image="/uploads/playlists/love-live/03-15_Umi_Sonoda.png"
-      date="March 15"
+      name={members.Sunny_Passion}
+      image="/uploads/playlists/love-live/sunny-passion.png"
+      date="March 28"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Kinako_Sakurakoji}
+      image="/uploads/playlists/love-live/04-10_Kinako_Sakurakoji.png"
+      date="April 10"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Maki_Nishikino}
+      image="/uploads/playlists/love-live/04-19_Maki_Nishikino.png"
+      date="April 19"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Sarah_Kazuno}
+      image="/uploads/playlists/love-live/05-04_Sarah_Kazuno.png"
+      date="May 4"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Ai_Miyashita}
+      image="/uploads/playlists/love-live/05-30_Ai_Miyashita.png"
+      date="May 30"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Mari_Ohara}
+      image="/uploads/playlists/love-live/06-13_Mari_Ohara.png"
+      date="June 13"
       positionDate="bottom-right"
       positionName="top-left"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
       name={members.Shiki_Wakana}
-      image="/uploads/playlists/love-live/06-17_Shiki_Wakana.png"
-      date="June 17"
+      image="/uploads/playlists/love-live/06-15_Kozue_Otomune.png"
+      date="June 15"
       positionDate="bottom-right"
       positionName="top-left"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Karin_Asaka}
-      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
-      date="June 29"
+      name={members.Yoshiko_Tsushima}
+      image="/uploads/playlists/love-live/07-13_Yoshiko_Tsushima.png"
+      date="July 13"
       positionDate="bottom-right"
       positionName="top-left"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Karin_Asaka}
-      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
-      date="June 29"
+      name={members.Nico_Yazawa}
+      image="/uploads/playlists/love-live/07-22_Nico_Yazawa.png"
+      date="July 22"
       positionDate="bottom-right"
       positionName="top-left"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Karin_Asaka}
-      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
-      date="June 29"
+      name={members.Honoka_Kosaka}
+      image="/uploads/playlists/love-live/08-03_Honoka_Kosaka.png"
+      date="August 3"
       positionDate="bottom-right"
       positionName="top-left"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Karin_Asaka}
-      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
-      date="June 29"
+      name={members.Setsuna_Yuki}
+      image="/uploads/playlists/love-live/08-08_Setsuna_Yuki.png"
+      date="August 8"
       positionDate="bottom-right"
       positionName="top-left"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Karin_Asaka}
-      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
-      date="June 29"
+      name={members.Kotori_Minami}
+      image="/uploads/playlists/love-live/09-12_Kotori_Minami.png"
+      date="September 12"
       positionDate="bottom-right"
       positionName="top-left"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Karin_Asaka}
-      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
-      date="June 29"
+      name={members.Ruby_Kurosawa}
+      image="/uploads/playlists/love-live/09-21_Ruby_Kurosawa.png"
+      date="September 21"
       positionDate="bottom-right"
       positionName="top-left"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Karin_Asaka}
-      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
-      date="June 29"
+      name={members.Shioriko_Mifune}
+      image="/uploads/playlists/love-live/10-05_Shioriko_Mifune.png"
+      date="October 5"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Mei_Yoneme}
+      image="/uploads/playlists/love-live/10-29_Mei_Yoneme.png"
+      date="October 29"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Rina_Tennoji}
+      image="/uploads/playlists/love-live/11-13_Rina_Tennoji.png"
+      date="November 13"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Ren_Hazuki}
+      image="/uploads/playlists/love-live/11-24_Ren_Hazuki.png"
+      date="November 24"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Leah_Kazuno}
+      image="/uploads/playlists/love-live/12-12_Leah_Kazuno.png"
+      date="December 12"
+      positionDate="bottom-right"
+      positionName="top-left"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Megumi_Fujishima}
+      image="/uploads/playlists/love-live/12-20_Megumi_Fujishima.png"
+      date="December 20"
       positionDate="bottom-right"
       positionName="top-left"
     />
@@ -296,11 +346,59 @@
     />
   </div>
   <div class="timeline-side timeline-right">
-    <div style="height: 3rem" />
+    <div style="height: 51rem" />
+    <MemberProfileCardSwag
+      name={members.A_Rise}
+      image="/uploads/playlists/love-live/a-rise.png"
+      date="January 6"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 2rem" />
+    <MemberProfileCardSwag
+      name={members.Hanayo_Koizumi}
+      image="/uploads/playlists/love-live/01-17_Hanayo_Koizumi.png"
+      date="January 17"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Nakasu_Kasumi}
+      image="/uploads/playlists/love-live/01-23_Kazumi_Nakasu.png"
+      date="January 23"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 0.1rem" />
+    <MemberProfileCardSwag
+      name={members.Kanan_Matsuura}
+      image="/uploads/playlists/love-live/02-10_Kanan_Matsuura.png"
+      date="February 10"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 0.5rem" />
+    <MemberProfileCardSwag
+      name={members.Chisato_Arashi}
+      image="/uploads/playlists/love-live/02-25_Chisato_Arashi.png"
+      date="February 25"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem" />
     <MemberProfileCardSwag
       name={members.Ayumu_Uehara}
       image="/uploads/playlists/love-live/03_01_Ayumu_Uehara.png"
       date="March 1"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Sonoda_Umi}
+      image="/uploads/playlists/love-live/03-15_Umi_Sonoda.png"
+      date="March 15"
       positionDate="bottom-left"
       positionName="top-right"
     />
@@ -314,25 +412,9 @@
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Kinako_Sakurakoji}
-      image="/uploads/playlists/love-live/04-10_Kinako_Sakurakoji.png"
-      date="April 10"
-      positionDate="bottom-left"
-      positionName="top-right"
-    />
-    <div style="height: 1rem" />
-    <MemberProfileCardSwag
       name={members.You_Watanabe}
       image="/uploads/playlists/love-live/04-17_You_Watanabe.png"
       date="April 17"
-      positionDate="bottom-left"
-      positionName="top-right"
-    />
-    <div style="height: 1rem" />
-    <MemberProfileCardSwag
-      name={members.Maki_Nishikino}
-      image="/uploads/playlists/love-live/04-19_Maki_Nishikino.png"
-      date="April 19"
       positionDate="bottom-left"
       positionName="top-right"
     />
@@ -344,27 +426,11 @@
       positionDate="bottom-left"
       positionName="top-right"
     />
-    <div style="height: 1rem" />
-    <MemberProfileCardSwag
-      name={members.Sarah_Kazuno}
-      image="/uploads/playlists/love-live/05-04_Sarah_Kazuno.png"
-      date="May 4"
-      positionDate="bottom-left"
-      positionName="top-right"
-    />
-    <div style="height: 1rem" />
+    <div style="height: 1.5rem" />
     <MemberProfileCardSwag
       name={members.Kaho_Hinoshita}
       image="/uploads/playlists/love-live/05-22_Kaho_Hinoshita.png"
       date="May 22"
-      positionDate="bottom-left"
-      positionName="top-right"
-    />
-    <div style="height: 1rem" />
-    <MemberProfileCardSwag
-      name={members.Ai_Miyashita}
-      image="/uploads/playlists/love-live/05-30_Ai_Miyashita.png"
-      date="May 30"
       positionDate="bottom-left"
       positionName="top-right"
     />
@@ -378,14 +444,6 @@
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Mari_Ohara}
-      image="/uploads/playlists/love-live/06-13_Mari_Ohara.png"
-      date="June 13"
-      positionDate="bottom-left"
-      positionName="top-right"
-    />
-    <div style="height: 1rem" />
-    <MemberProfileCardSwag
       name={members.Kozue_Otomune}
       image="/uploads/playlists/love-live/06-15_Kozue_Otomune.png"
       date="June 15"
@@ -394,9 +452,9 @@
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Yoshiko_Tsushima}
-      image="/uploads/playlists/love-live/07-13_Yoshiko_Tsushima.png"
-      date="July 13"
+      name={members.Karin_Asaka}
+      image="/uploads/playlists/love-live/06-29_Karin_Asaka.png"
+      date="June 29"
       positionDate="bottom-left"
       positionName="top-right"
     />
@@ -410,49 +468,81 @@
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Keke_Tang}
-      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
-      date="July 17"
+      name={members.Chika_Takami}
+      image="/uploads/playlists/love-live/08-01_Chika_Takami.png"
+      date="August 1"
       positionDate="bottom-left"
       positionName="top-right"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Keke_Tang}
-      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
-      date="July 17"
+      name={members.Natsumi_Onitsuka}
+      image="/uploads/playlists/love-live/08-07_Natsumi_Onitsuka.png"
+      date="August 7"
       positionDate="bottom-left"
       positionName="top-right"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Keke_Tang}
-      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
-      date="July 17"
+      name={members.Rurino_Osawa}
+      image="/uploads/playlists/love-live/08-31_Rurino_Osawa.png"
+      date="August 31"
       positionDate="bottom-left"
       positionName="top-right"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Keke_Tang}
-      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
-      date="July 17"
+      name={members.Riko_Sakurauchi}
+      image="/uploads/playlists/love-live/09-19_Riko_Sakurauchi.png"
+      date="September 19"
       positionDate="bottom-left"
       positionName="top-right"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Keke_Tang}
-      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
-      date="July 17"
+      name={members.Sumire_Heanna}
+      image="/uploads/playlists/love-live/09-28_Sumire_Heanna.png"
+      date="September 28"
       positionDate="bottom-left"
       positionName="top-right"
     />
     <div style="height: 1rem" />
     <MemberProfileCardSwag
-      name={members.Keke_Tang}
-      image="/uploads/playlists/love-live/07-17_Keke_Tang.png"
-      date="July 17"
+      name={members.Eli_Ayase}
+      image="/uploads/playlists/love-live/10-21_Eli_Ayase.png"
+      date="October 21"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Rin_Hozhizora}
+      image="/uploads/playlists/love-live/11-01_Rin_Hozhizora.png"
+      date="November 1"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Tsuzuri_Yugiri}
+      image="/uploads/playlists/love-live/11-17_Tsuzuri_Yugiri.png"
+      date="November 17"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Mia_Taylor}
+      image="/uploads/playlists/love-live/12-02_Mia_Taylor.png"
+      date="December 2"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem" />
+    <MemberProfileCardSwag
+      name={members.Kanata_Konoe}
+      image="/uploads/playlists/love-live/12-16_Kanata_Konoe.png"
+      date="December 16"
       positionDate="bottom-left"
       positionName="top-right"
     />

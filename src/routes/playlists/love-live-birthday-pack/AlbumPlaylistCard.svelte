@@ -43,8 +43,7 @@
   .playlist-card {
     width: 100%;
 
-    &:hover .header,
-    &:hover .footer {
+    &:hover .header {
       background-color: $color-background-tertiary;
     }
 
@@ -69,16 +68,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .footer {
-    display: flex;
-    padding: 1rem;
-    background-color: $color-background-secondary;
-    border-radius: 0 0 $rounding-small $rounding-small;
-    transition-property: background-color;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
   }
 
   .second-line {
@@ -109,18 +98,6 @@
     height: 4rem;
     width: 4rem;
     border-radius: 5px;
-  }
-
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  .release-date {
-    font-size: 1rem;
-    flex: 1;
-    flex-grow: 1;
-    padding-left: 1rem;
-    color: $color-text-secondary;
   }
 
   .group-name {
