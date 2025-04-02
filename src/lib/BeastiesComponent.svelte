@@ -20,7 +20,7 @@
     const timeLeft = countdownDate - now
 
     if (timeLeft <= 0) {
-      countdownText = 'Voting has closed! Stay tuned for the Awards Show!'
+      countdownText = "Thank you for being there! We'll see you next year!"
       submitVisible = false
       headerVisible = false
       tlVisible = false
@@ -41,7 +41,7 @@
   }
 
   onMount(() => {
-    countdownDate = new Date('2025-01-15T00:00:00Z').getTime()
+    countdownDate = new Date('January 15, 2024 00:00:00 UTC').getTime()
     updateCountdown()
 
     const countdownInterval = setInterval(() => {
@@ -61,27 +61,17 @@
       <img src="/beastie-trophy.png" alt="Beasties Trophy" />
     </div>
     <div class="right-side-beasties-banner">
-      <h1>Beasties are Coming</h1>
+      <h1>The 2024 Beasties</h1>
       <p class="BeastiesTimerContainer" id="BeastiesTimer">
-        {#if headerVisible}
-          <div class="header"><h2>Voting is Now Open!</h2></div>
-        {/if}
-        {#if tlVisible}
-          <span class="tl">Time left to vote: </span>
-        {/if}
         <span id="countdown">{countdownText}</span>
       </p>
       <div class="cta-row">
         <div class="submit {submitVisible ? '' : 'hidden'}">
           <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote!</a>
         </div>
-        <a href="/posts/the-beasties-2024-nominees" rel="external" class="text-link">Learn more</a>
+        <a href="/posts/the-beasties-2024-winners" class="text-link">2024 Winners</a>
         <span class="separater"> | </span>
-        <a
-          href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
-          class="text-link"
-          title="External Japanese Guide">もっと読む</a
-        >
+        <a href="https://youtu.be/u7CJoYyRVWg" class="text-link">Watch the premiere</a>
       </div>
     </div>
   </div>
@@ -146,7 +136,6 @@
   .left-side-beasties-banner {
     display: flex;
     align-items: center;
-    padding-right: 20px;
     img {
       height: 10rem;
     }
@@ -174,7 +163,7 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
 
     .submit {
       display: flex;

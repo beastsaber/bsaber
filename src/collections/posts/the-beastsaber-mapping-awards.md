@@ -22,28 +22,7 @@ linkToSpecialtyPage: /the-beastsaber-mapping-awards
 <p>Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.</p>
 <br />
 
-<div class="cta">
-  <h3 id="cta-message">Voting is currently open!</h3>
-  <div class="buttons" id="buttons-container">
-    <a class="btn" href="https://mappingawards.saeraphinx.dev/">CLICK HERE TO VOTE! 🏆</a>
-  </div>
-
-\* [**Take a look at the nominees here!**](/posts/the-beasties-2024-nominees)
-
-\* **Voting Closes:** January 14, 2025
-
-</div>
-
-<script>
-const closeDate = new Date('January 15, 2025 00:00:00 UTC').getTime();
-const now = new Date().getTime();
-
-if (now >= closeDate) {
-  document.getElementById("cta-message").innerText = "Voting has now closed! Stay tuned for the Awards show!";
-  document.getElementById("cta-message").style.color = "white";
-  document.getElementById("buttons-container").style.display = "none";
-}
-</script>
+## Watch the [2024 Awards Show](https://youtu.be/u7CJoYyRVWg)
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
