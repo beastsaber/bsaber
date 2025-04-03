@@ -16,29 +16,29 @@
   })
 
   const members = {
-    Dia_Kurosawa: 'Kurosawa Dia',
+    Dia_Kurosawa: 'Dia Kurosawa',
     A_Rise: 'A-RISE',
     Sunny_Passion: 'Sunny Passion',
     Sayaka_Murano: 'Sayaka Murano',
     Hanayo_Koizumi: 'Hanayo Koizumi',
     Wien_Margarete: 'Wien Margarete',
-    Nakasu_Kasumi: 'Nakasu Kazumi',
+    Nakasu_Kasumi: 'Kasumi Nakasu',
     Kanan_Matsuura: 'Kanan Matsuura',
     Lanzhu_Zhong: 'Lanzhu Zhong',
     Chisato_Arashi: 'Chisato Arashi',
     Emma_Verde: 'Emma Verde',
     Kozuzu_Kachimachi: 'Kozuzu Kachimachi',
     Hanamaru_Kunikida: 'Hanamaru Kunikida',
-    Sonoda_Umi: 'Sonoda Umi',
+    Sonoda_Umi: 'Umi Sonoda',
     Ayumu_Uehara: 'Ayumu Uehara',
     Shizuku_Osaka: 'Shizuku Osaka',
     Kinako_Sakurakoji: 'Kinako Sakurakoji',
     You_Watanabe: 'You Watanabe',
-    Maki_Nishikino: 'Nishikino Maki',
+    Maki_Nishikino: 'Maki Nishikino',
     Kanon_Shibuya: 'Kanon Shibuya',
     Sarah_Kazuno: 'Sarah Kazuno',
     Kaho_Hinoshita: 'Kaho Hinoshita',
-    Ai_Miyashita: 'Miyashita Ai',
+    Ai_Miyashita: 'Ai Miyashita',
     Nozomi_Tojo: 'Nozomi Tojo',
     Mari_Ohara: 'Mari Ohara',
     Kozue_Otomune: 'Kozue Otomune',
@@ -50,7 +50,7 @@
     Chika_Takami: 'Chika Takami',
     Honoka_Kosaka: 'Honoka Kosaka',
     Natsumi_Onitsuka: 'Natsumi Onitsuka',
-    Setsuna_Yuki: 'Yuki Setsuna',
+    Setsuna_Yuki: 'Setsuna Yuki',
     Rurino_Osawa: 'Rurino Osawa',
     Kotori_Minami: 'Kotori Minami',
     Riko_Sakurauchi: 'Riko Sakurauchi',
@@ -61,7 +61,7 @@
     Ginko_Momose: 'Ginko Momose',
     Eli_Ayase: 'Eli Ayase',
     Mei_Yoneme: 'Mei Yoneme',
-    Rin_Hozhizora: 'Hozhizora Rin',
+    Rin_Hozhizora: 'Rin Hoshizora',
     Rina_Tennoji: 'Rina Tennoji',
     Tsuzuri_Yugiri: 'Tsuzuri Yugiri',
     Ren_Hazuki: 'Ren Hazuki',
@@ -170,7 +170,7 @@
     <MemberProfileCardSwag
       name={members.Hanamaru_Kunikida}
       image="/uploads/playlists/love-live/03_01_Ayumu_Uehara.png"
-      date="March 1"
+      date="March 4"
       positionDate="bottom-right"
       positionName="top-left"
     />
@@ -226,7 +226,7 @@
     <MemberProfileCardSwag
       name={members.Shiki_Wakana}
       image="/uploads/playlists/love-live/06-15_Kozue_Otomune.png"
-      date="June 15"
+      date="June 17"
       positionDate="bottom-right"
       positionName="top-left"
     />
