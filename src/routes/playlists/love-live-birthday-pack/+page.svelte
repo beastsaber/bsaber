@@ -169,7 +169,7 @@
     <div style="height: 1rem" />
     <MemberProfileCardSwag
       name={members.Hanamaru_Kunikida}
-      image="/uploads/playlists/love-live/03_01_Ayumu_Uehara.png"
+      image="/uploads/playlists/love-live/03-04_Hanamaru_Kunikida.png"
       date="March 4"
       positionDate="bottom-right"
       positionName="top-left"
@@ -225,7 +225,7 @@
     <div style="height: 1rem" />
     <MemberProfileCardSwag
       name={members.Shiki_Wakana}
-      image="/uploads/playlists/love-live/06-15_Kozue_Otomune.png"
+      image="/uploads/playlists/love-live/06-17_Shiki_Wakana.png"
       date="June 17"
       positionDate="bottom-right"
       positionName="top-left"
