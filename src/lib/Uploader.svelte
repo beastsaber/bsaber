@@ -4,15 +4,19 @@
   export let uploader: Uploader
 
   export let curator: Uploader | undefined = undefined
+
+  const randomId = Math.random().toString(36).substring(2, 15)
 </script>
 
 <div class="uploader">
+  <label id="{randomId}-mapped-by" for="{randomId}-uploader-link" class="sr-only">Mapped by</label>
   <a
     class="uploader-link"
+    id="{randomId}-uploader-link"
     href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${
       uploader.id
     }`}
-    aria-label="Mapped by {uploader.name}"
+    aria-labelledby="{randomId}-mapped-by {randomId}-uploader-link"
   >
     <img src={uploader.avatar} alt="" aria-hidden="true" />
     {uploader.name}
@@ -23,9 +27,10 @@
   {#if curator !== undefined}
     <span class="curator" aria-hidden="true">-</span>
     <span class="curator">
-      <span aria-hidden="true">Curated by </span>
+      <span id="{randomId}-curated-by">Curated by </span>
       <a
-        aria-label="Curated by {curator.name}"
+        aria-labelledby="{randomId}-curated-by {randomId}-curator-link"
+        id="{randomId}-curator-link"
         href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${
           curator.id
         }`}>{curator.name}</a
