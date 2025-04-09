@@ -24,7 +24,7 @@
 </script>
 
 <section>
-  <body id="error-page" class="error">
+  <div id="error-page" class="error">
     <div class="message">
       <blockquote>
         <center
@@ -66,7 +66,7 @@
         {/if}
       </blockquote>
     </div>
-  </body>
+  </div>
 </section>
 
 <style lang="scss">
@@ -76,7 +76,7 @@
     margin: 0;
   }
 
-  body.error {
+  div.error {
     background: #1c1c1c;
     color: LightGray;
     min-width: min-content;

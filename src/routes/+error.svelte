@@ -1,6 +1,6 @@
 <script>
   import MetaHead from '$lib/MetaHead.svelte'
-  import ErrorPage from './__error.svelte'
+  import ErrorPage from './error-page.svelte'
 </script>
 
 <MetaHead title="Not Found" description="This page has not been found." />

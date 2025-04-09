@@ -46,7 +46,7 @@ You can watch the announcement video or read below for a complete list of nomine
 <hr />
 <br />
 
-## Download the playlists <a href="#playlists" style="text-decoration:none;">🔗</a> {$playlists}
+## Download the playlists <a href="#playlists" style="text-decoration:none;">🔗</a> {globalThis.$playlists}
 
 - All categories in separate playlists - [Download (19.9 MB)](https://cdn.theczar1994.dev/bsaber/beasties-playlists/2024_beasties_nominees.zip)
 
@@ -80,7 +80,7 @@ We've made some additional updates! [See all updates from 2024 here.](/the-beast
 <hr />
 <br />
 
-## Supporting Map Award Nominees <a href="#supporting-map-award-nominees" style="text-decoration:none;">🔗</a> {$supporting-map-award-nominees}
+## Supporting Map Award Nominees <a href="#supporting-map-award-nominees" style="text-decoration:none;">🔗</a> {globalThis.$supporting-map-award-nominees}
 
 **Best OST/DLC Map**:
 
@@ -203,7 +203,7 @@ We've made some additional updates! [See all updates from 2024 here.](/the-beast
 <hr />
 <br />
 
-## Lighting Award Nominees <a href="#lighting-nominees" style="text-decoration:none;">🔗</a> {$lighting-nominees}
+## Lighting Award Nominees <a href="#lighting-nominees" style="text-decoration:none;">🔗</a> {globalThis.$lighting-nominees}
 
 **Best Vanilla Lights**:
 
@@ -256,7 +256,7 @@ We've made some additional updates! [See all updates from 2024 here.](/the-beast
 <hr />
 <br />
 
-## Map Style Award Nominees <a href="#map-style-category-nominees" style="text-decoration:none;">🔗</a> {$map-style-category-nominees}
+## Map Style Award Nominees <a href="#map-style-category-nominees" style="text-decoration:none;">🔗</a> {globalThis.$map-style-category-nominees}
 
 **Best Balanced Style Map**:
 
@@ -385,7 +385,7 @@ We've made some additional updates! [See all updates from 2024 here.](/the-beast
 <hr />
 <br />
 
-## Individual Award Nominees <a href="#individual-award-nominees" style="text-decoration:none;">🔗</a> {$individual-award-nominees}
+## Individual Award Nominees <a href="#individual-award-nominees" style="text-decoration:none;">🔗</a> {globalThis.$individual-award-nominees}
 
 **Pack of the Year**:
 
