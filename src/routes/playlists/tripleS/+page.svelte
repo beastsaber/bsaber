@@ -5,11 +5,11 @@
   import ZipDownloadButton from '$lib/ZipDownloadButton.svelte'
   import MetaHead from '$lib/MetaHead.svelte'
   import { audioPlayer } from '$lib/audio-player'
-  import {filterNsfw} from "$lib/storeNsfwPreference";
+  import { filterNsfw } from '$lib/storeNsfwPreference'
 
   let nextSToClick = 1
   let pictureDir = 'original'
-  filterNsfw.subscribe(value => {
+  filterNsfw.subscribe((value) => {
     pictureDir = value ? 'original' : 'summer'
   })
 

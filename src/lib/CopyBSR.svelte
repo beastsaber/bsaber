@@ -60,7 +60,9 @@
     background: none;
     border: none;
     color: $color-text-secondary;
-    transition: color $transition-short, transform 0.3s ease;
+    transition:
+      color $transition-short,
+      transform 0.3s ease;
     padding: 0;
     font: inherit;
 

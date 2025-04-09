@@ -401,8 +401,10 @@
       font-family: $font-poppins;
       text-transform: uppercase;
       text-decoration: none;
-      transition: color $transition-short ease-in-out,
-        background-color $transition-short ease-in-out, border-color $transition-short ease-in-out;
+      transition:
+        color $transition-short ease-in-out,
+        background-color $transition-short ease-in-out,
+        border-color $transition-short ease-in-out;
       color: $color-text-primary;
       a {
         color: $color-text-primary;

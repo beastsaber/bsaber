@@ -176,16 +176,24 @@
       display: block;
       animation: expandDifficulty 0.3s ease-out;
       &:nth-of-type(4) {
-        animation: moveDifficulty2 0.3s ease-out, expandDifficulty 0.3s ease-out !important;
+        animation:
+          moveDifficulty2 0.3s ease-out,
+          expandDifficulty 0.3s ease-out !important;
       }
       &:nth-of-type(6) {
-        animation: moveDifficulty3 0.3s ease-out, expandDifficulty 0.3s ease-out !important;
+        animation:
+          moveDifficulty3 0.3s ease-out,
+          expandDifficulty 0.3s ease-out !important;
       }
       &:nth-of-type(8) {
-        animation: moveDifficulty4 0.3s ease-out, expandDifficulty 0.3s ease-out !important;
+        animation:
+          moveDifficulty4 0.3s ease-out,
+          expandDifficulty 0.3s ease-out !important;
       }
       &:nth-of-type(10) {
-        animation: moveDifficulty5 0.3s ease-out, expandDifficulty 0.3s ease-out !important;
+        animation:
+          moveDifficulty5 0.3s ease-out,
+          expandDifficulty 0.3s ease-out !important;
       }
     }
 

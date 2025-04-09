@@ -13,12 +13,9 @@ export const getSortedMapsOfTheWeekNetlifyData = async () => {
     }),
   )
 
-
   const mapsOfTheWeeksToShow = unsortedMapsOfTheWeeks
-  .filter((motw) => motw.hide !== true)
-  .filter(
-    (motw) => motw.startDate.getTime() <= new Date().getTime() ,
-  )
+    .filter((motw) => motw.hide !== true)
+    .filter((motw) => motw.startDate.getTime() <= new Date().getTime())
 
   return mapsOfTheWeeksToShow
     .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())

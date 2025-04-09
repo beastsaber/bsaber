@@ -189,7 +189,11 @@
       {#each previewResults as preview}
         <a class="dropdown-item" href={preview.url}>
           <div class="image-wrapper">
-            <img src={preview.image} class:blur={globalThis.$filterNsfw && preview.nsfw} alt="Map Thumbnail" />
+            <img
+              src={preview.image}
+              class:blur={globalThis.$filterNsfw && preview.nsfw}
+              alt="Map Thumbnail"
+            />
           </div>
           <div class="dropdown-item-map-name">
             {preview.name}<br />
@@ -344,7 +348,9 @@
     border: 1px solid #222;
     appearance: none;
     border-radius: 0 0.25rem 0.25rem 0;
-    transition: border-color $transition-short ease-in-out, box-shadow $transition-short ease-in-out;
+    transition:
+      border-color $transition-short ease-in-out,
+      box-shadow $transition-short ease-in-out;
   }
   div,
   a,
@@ -368,8 +374,11 @@
     padding: 0.375rem 0.75rem;
     font-size: 0.9375rem;
     border-radius: 0.25rem;
-    transition: color $transition-short ease-in-out, background-color $transition-short ease-in-out,
-      border-color $transition-short ease-in-out, box-shadow $transition-short ease-in-out;
+    transition:
+      color $transition-short ease-in-out,
+      background-color $transition-short ease-in-out,
+      border-color $transition-short ease-in-out,
+      box-shadow $transition-short ease-in-out;
   }
 
   .btn-search {
