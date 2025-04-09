@@ -14,7 +14,7 @@
     }`}
     aria-label="Mapped by {uploader.name}"
   >
-    <img src={uploader.avatar} alt="" aria-hidden="" />
+    <img src={uploader.avatar} alt="" aria-hidden="true" />
     {uploader.name}
   </a>
   {#if uploader.verifiedMapper}
@@ -22,8 +22,8 @@
   {/if}
   {#if curator !== undefined}
     <span class="curator" aria-hidden="true">-</span>
-    <span class="curator" aria-hidden="true">
-      Curated by
+    <span class="curator">
+      <span aria-hidden="true">Curated by </span>
       <a
         aria-label="Curated by {curator.name}"
         href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${
