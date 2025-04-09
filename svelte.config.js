@@ -28,6 +28,7 @@ const config = {
 
     prerender: {
       crawl: true,
+      handleMissingId: 'warn',
     },
   },
   extensions: ['.svelte', '.svelte.md', '.md', '.svx'],
