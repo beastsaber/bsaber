@@ -12,17 +12,20 @@
     href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${
       uploader.id
     }`}
+    aria-label="Mapped by {uploader.name}"
   >
-    <img src={uploader.avatar} alt={uploader.name} />
+    <img src={uploader.avatar} alt="" aria-hidden="" />
     {uploader.name}
   </a>
   {#if uploader.verifiedMapper}
-    <img class="verified" src="/verified.svg" alt="Verified" title="Verified" />
+    <img class="verified" src="/verified.svg" alt="Verified Mapper" title="Verified" />
   {/if}
   {#if curator !== undefined}
-    <span class="curator">-</span>
-    <span class="curator">
-      Curated by <a
+    <span class="curator" aria-hidden="true">-</span>
+    <span class="curator" aria-hidden="true">
+      Curated by
+      <a
+        aria-label="Curated by {curator.name}"
         href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${
           curator.id
         }`}>{curator.name}</a
