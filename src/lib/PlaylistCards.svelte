@@ -63,7 +63,7 @@
     {/each}
   {:else}
     {#each Array(maxCards ?? 4) as _}
-      <div class="card loading" />
+      <div class="card loading"></div>
     {/each}
   {/if}
 </div>

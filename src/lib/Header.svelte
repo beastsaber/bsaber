@@ -19,7 +19,7 @@
     {/if}
     <h2>{text}</h2>
     <div class="accent-line-container">
-      <div class="line" />
+      <div class="line"></div>
     </div>
   </div>
   <div class="link-container">

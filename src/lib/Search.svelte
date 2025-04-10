@@ -147,7 +147,7 @@
         id="dropdownMenuButton"
         aria-expanded={dropdownShown}
       >
-        <i class="fas fa-angle-up" />
+        <i class="fas fa-angle-up"></i>
         <span class="d-none d-lg-inline">{searchType}</span>
       </button>
       <!-- </button> -->

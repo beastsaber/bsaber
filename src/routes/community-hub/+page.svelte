@@ -302,7 +302,7 @@
             &nbsp;<span
               title="{LanguageName[language]} speaking server"
               class="fi fi-{LanguageFlag[language]}"
-            />
+            ></span>
           {/if}
         {/each}
       </h2>

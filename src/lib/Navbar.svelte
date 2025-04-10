@@ -233,7 +233,7 @@
       aria-expanded={showMobileNavbar ? 'true' : 'false'}
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon" data-toggler="" />
+      <span class="navbar-toggler-icon" data-toggler=""></span>
     </button>
     {#if windowSize > 1100 || showMobileNavbar}
       <div
@@ -255,7 +255,7 @@
                       toggleDropdown(item, `dropdown-menu-${index}`)}
                     ><span
                       >{item.name}
-                      <div class="dropdown-toggle" /></span
+                      <div class="dropdown-toggle"></div></span
                     >
                   </a>
                 </div>
@@ -269,7 +269,7 @@
                     {#each item.Items as navItem}
                       <a href={navItem.href} rel="external" class="dropdown-item">{navItem.name}</a>
                       {#if navItem.dividerAfter}
-                        <div class="dropdown-divider" />
+                        <div class="dropdown-divider"></div>
                       {/if}
                       {#if navItem.Items}
                         {#each navItem.Items as navSubItem}
@@ -277,7 +277,7 @@
                             >{navSubItem.name}</a
                           >
                           {#if navSubItem.dividerAfter}
-                            <div class="dropdown-divider" />
+                            <div class="dropdown-divider"></div>
                           {/if}
                         {/each}
                       {/if}

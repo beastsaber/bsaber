@@ -30,6 +30,8 @@
   }
 
   const postRenderer = new marked.Renderer()
+  // Function responsible for converting markdown headings,
+  // heading should be in the format {id$name}
   // This will make headings start at 2, because the title will be rendered as an h1
   postRenderer.heading = (text, level) => {
     const idMatch = text.match(/ {id\$([a-zA-Z0-9\-_]+)}/)

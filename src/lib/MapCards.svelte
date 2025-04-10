@@ -147,7 +147,7 @@
     {/each}
   {:else}
     {#each Array(8) as _}
-      <div class="card-wrapper loading" />
+      <div class="card-wrapper loading"></div>
     {/each}
   {/if}
 </div>

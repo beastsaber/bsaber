@@ -23,10 +23,10 @@
   import { isCurrentEvent } from '$lib/isCurrentEvent'
 
   interface Props {
-    data: RootPageSSRData;
+    data: RootPageSSRData
   }
 
-  let { data }: Props = $props();
+  let { data }: Props = $props()
 
   let {
     announcements,

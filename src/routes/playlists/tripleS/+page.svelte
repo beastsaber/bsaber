@@ -86,7 +86,7 @@
 <div class="mobile-hint">This page looks better on a larger screen.</div>
 <div class="timeline">
   <div class="timeline-side timeline-left">
-    <div style="height: 3rem" />
+    <div style="height: 3rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(1)}
       sNumber={1}
@@ -97,7 +97,7 @@
       positionName="top-right"
       rotationDeg={-6}
     />
-    <div style="height: 31rem" />
+    <div style="height: 31rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(3)}
       sNumber={3}
@@ -108,7 +108,7 @@
       positionName="top-right"
       rotationDeg={10}
     />
-    <div style="height: 25rem" />
+    <div style="height: 25rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(5)}
       sNumber={5}
@@ -119,7 +119,7 @@
       positionName="top-right"
       rotationDeg={-8}
     />
-    <div style="height: 35rem" />
+    <div style="height: 35rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(7)}
       sNumber={7}
@@ -130,7 +130,7 @@
       positionName="top-right"
       rotationDeg={4}
     />
-    <div style="height: 39rem" />
+    <div style="height: 39rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(9)}
       sNumber={9}
@@ -141,7 +141,7 @@
       positionName="top-right"
       rotationDeg={-12}
     />
-    <div style="height: 27rem" />
+    <div style="height: 27rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(11)}
       sNumber={11}
@@ -152,7 +152,7 @@
       positionName="top-right"
       rotationDeg={4}
     />
-    <div style="height: 35rem" />
+    <div style="height: 35rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(13)}
       sNumber={13}
@@ -163,7 +163,7 @@
       positionName="top-right"
       rotationDeg={-3}
     />
-    <div style="height: 43rem" />
+    <div style="height: 43rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(15)}
       sNumber={15}
@@ -174,7 +174,7 @@
       positionName="top-right"
       rotationDeg={6}
     />
-    <div style="height: 35rem" />
+    <div style="height: 35rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(17)}
       sNumber={17}
@@ -185,7 +185,7 @@
       positionName="top-right"
       rotationDeg={-6}
     />
-    <div style="height: 26rem" />
+    <div style="height: 26rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(19)}
       sNumber={19}
@@ -196,7 +196,7 @@
       positionName="top-right"
       rotationDeg={8}
     />
-    <div style="height: 33rem" />
+    <div style="height: 33rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(21)}
       sNumber={21}
@@ -207,7 +207,7 @@
       positionName="top-right"
       rotationDeg={-6}
     />
-    <div style="height: 42rem" />
+    <div style="height: 42rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(23)}
       sNumber={23}
@@ -381,7 +381,7 @@
     />
   </div>
   <div class="timeline-side timeline-right">
-    <div style="height: 18rem" />
+    <div style="height: 18rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(2)}
       sNumber={2}
@@ -392,7 +392,7 @@
       positionName="top-left"
       rotationDeg={6}
     />
-    <div style="height: 30rem" />
+    <div style="height: 30rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(4)}
       sNumber={4}
@@ -403,7 +403,7 @@
       positionName="top-left"
       rotationDeg={-6}
     />
-    <div style="height: 52rem" />
+    <div style="height: 52rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(6)}
       sNumber={6}
@@ -414,7 +414,7 @@
       positionName="top-left"
       rotationDeg={12}
     />
-    <div style="height: 20rem" />
+    <div style="height: 20rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(8)}
       sNumber={8}
@@ -425,7 +425,7 @@
       positionName="top-left"
       rotationDeg={-6}
     />
-    <div style="height: 30rem" />
+    <div style="height: 30rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(10)}
       sNumber={10}
@@ -436,7 +436,7 @@
       positionName="top-left"
       rotationDeg={6}
     />
-    <div style="height: 55rem" />
+    <div style="height: 55rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(12)}
       sNumber={12}
@@ -447,7 +447,7 @@
       positionName="top-left"
       rotationDeg={-8}
     />
-    <div style="height: 30rem" />
+    <div style="height: 30rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(14)}
       sNumber={14}
@@ -458,7 +458,7 @@
       positionName="top-left"
       rotationDeg={3}
     />
-    <div style="height: 20rem" />
+    <div style="height: 20rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(16)}
       sNumber={16}
@@ -469,7 +469,7 @@
       positionName="top-left"
       rotationDeg={-6}
     />
-    <div style="height: 48rem" />
+    <div style="height: 48rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(18)}
       sNumber={18}
@@ -480,7 +480,7 @@
       positionName="top-left"
       rotationDeg={6}
     />
-    <div style="height: 30rem" />
+    <div style="height: 30rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(20)}
       sNumber={20}
@@ -491,7 +491,7 @@
       positionName="top-left"
       rotationDeg={-8}
     />
-    <div style="height: 20rem" />
+    <div style="height: 20rem"></div>
     <MemberProfileCardSwag
       on:click={() => clickMember(22)}
       sNumber={22}
@@ -502,7 +502,7 @@
       positionName="top-left"
       rotationDeg={6}
     />
-    <div style="height: 39rem" />
+    <div style="height: 39rem"></div>
     <div class="swag-hang">
       <MemberProfileCardSwag
         on:click={() => clickMember(24)}
