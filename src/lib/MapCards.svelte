@@ -8,7 +8,7 @@
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import MapPreview from './MapPreview.svelte'
   import MapPreviewModal from '$lib/MapPreviewModal.svelte'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
   import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
   import { audioPlayer } from '$lib/audio-player'
   import { beatSaverClientFactory } from './beatsaver-client'
