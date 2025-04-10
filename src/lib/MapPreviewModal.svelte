@@ -25,6 +25,8 @@
 </div>
 
 <style lang="scss">
+  @use "sass:math";
+
   .preview-container {
     display: flex;
     z-index: 100;
@@ -45,7 +47,7 @@
       background-color: #000c;
     }
     $fill-percentage: 80;
-    $aspect-ratio: 16/9;
+    $aspect-ratio: math.div(16, 9);
     .content {
       z-index: 101;
       aspect-ratio: $aspect-ratio;
