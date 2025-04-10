@@ -31,7 +31,7 @@ To follow a Curator you like, go to their BeatSaver profile page and click on th
 
 <br />
 
-## For Mappers <a href="#objective-issues" style="text-decoration:none;">🔗</a> {globalThis.$objective-issues}
+## For Mappers <a href="#objective-issues" style="text-decoration:none;">🔗</a> {id$objective-issues}
 
 While Curation decisions are in large part subjective, the following major playability issues (often referred to as Objective Issues) will bar a map from curation.
 

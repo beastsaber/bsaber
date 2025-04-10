@@ -27,7 +27,7 @@
     }
   }
 
-  // Apparently cannot use $page in the {globalThis.$if tag - hence this workaround}
+  // Apparently cannot use $page in the {id$if tag - hence this workaround}
   const path = $page.url.pathname
 </script>
 

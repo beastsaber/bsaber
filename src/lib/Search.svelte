@@ -191,7 +191,7 @@
           <div class="image-wrapper">
             <img
               src={preview.image}
-              class:blur={globalThis.$filterNsfw && preview.nsfw}
+              class:blur={id$filterNsfw && preview.nsfw}
               alt="Map Thumbnail"
             />
           </div>

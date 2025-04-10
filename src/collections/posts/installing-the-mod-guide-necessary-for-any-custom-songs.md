@@ -23,13 +23,13 @@ The modding experience for computer-based VR (PCVR) and Meta/Oculus Quest standa
   - [**Mod Assistant**](#mod-assistant)
 - [**Quest**](#quest)
 
-## PCVR <a href="#pcvr" style="text-decoration:none;">🔗</a> {globalThis.$pcvr}
+## PCVR <a href="#pcvr" style="text-decoration:none;">🔗</a> {id$pcvr}
 
 While mods are not required to play basic custom songs, mods usually enhance your gameplay experience and unlock some cool mapping effects and general game enhancements.
 
 > ⚠️ **IMPORTANT:** You will need to have run Beat Saber at least once after installing the game before installing mods.
 
-### Installing Mods with BSManager - Recommended <a href="#bsmanager" style="text-decoration:none;">🔗</a> {globalThis.$bsmanager}
+### Installing Mods with BSManager - Recommended <a href="#bsmanager" style="text-decoration:none;">🔗</a> {id$bsmanager}
 
 BSManager simplifies your Beat Saber experience by centralizing the management of mods, maps, and game versions in one place.
 
@@ -67,7 +67,7 @@ BSManager simplifies your Beat Saber experience by centralizing the management o
 
 <br />
 
-### Installing Mods With Mod Assistant <a href="#mod-assistant" style="text-decoration:none;">🔗</a> {globalThis.$mod-assistant}
+### Installing Mods With Mod Assistant <a href="#mod-assistant" style="text-decoration:none;">🔗</a> {id$mod-assistant}
 
 1. First, [click here to get ModAssistant](https://github.com/bsmg/ModAssistant/releases) and find the Latest release of the `ModAssistant.exe` file to download. This will download a small `ModAssistant.exe` file that you can place anywhere on your computer for future use and doesn’t require installing.
 
@@ -85,7 +85,7 @@ BSManager simplifies your Beat Saber experience by centralizing the management o
 
 <br />
 
-## Standalone Quest VR <a href="#quest" style="text-decoration:none;">🔗</a> {globalThis.$quest}
+## Standalone Quest VR <a href="#quest" style="text-decoration:none;">🔗</a> {id$quest}
 
 > Quest Mods usually run well behind PC Mods. Please be patient! The Community Modders volunteer their time so you can enjoy your game - let them work out their fixes so you can enjoy a bug free experience!
 

@@ -100,11 +100,11 @@
                 map.versions[0].hash
               }.jpg`}
               alt={map.name}
-              class:blur={globalThis.$filterNsfw && map.nsfw}
+              class:blur={id$filterNsfw && map.nsfw}
             />
             <div
               class="button-overlay"
-              class:force-show={globalThis.$playingId === map.id}
+              class:force-show={id$playingId === map.id}
               on:click={() => togglePlayingAudio(map.id, map.versions[0].previewURL)}
             >
               {#if $playingId === map.id}
