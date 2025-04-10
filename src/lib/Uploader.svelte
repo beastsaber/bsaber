@@ -4,25 +4,33 @@
   export let uploader: Uploader
 
   export let curator: Uploader | undefined = undefined
+
+  const randomId = Math.random().toString(36).substring(2, 15)
 </script>
 
 <div class="uploader">
+  <label id="{randomId}-mapped-by" for="{randomId}-uploader-link" class="sr-only">Mapped by</label>
   <a
     class="uploader-link"
+    id="{randomId}-uploader-link"
     href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${
       uploader.id
     }`}
+    aria-labelledby="{randomId}-mapped-by {randomId}-uploader-link"
   >
-    <img src={uploader.avatar} alt={uploader.name} />
+    <img src={uploader.avatar} alt="" aria-hidden="true" />
     {uploader.name}
   </a>
   {#if uploader.verifiedMapper}
-    <img class="verified" src="/verified.svg" alt="Verified" title="Verified" />
+    <img class="verified" src="/verified.svg" alt="Verified Mapper" title="Verified" />
   {/if}
   {#if curator !== undefined}
-    <span class="curator">-</span>
+    <span class="curator" aria-hidden="true">-</span>
     <span class="curator">
-      Curated by <a
+      <span id="{randomId}-curated-by">Curated by </span>
+      <a
+        aria-labelledby="{randomId}-curated-by {randomId}-curator-link"
+        id="{randomId}-curator-link"
         href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${
           curator.id
         }`}>{curator.name}</a
