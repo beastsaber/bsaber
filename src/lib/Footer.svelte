@@ -19,8 +19,8 @@
       <div class="nsfw-component" title="Toggle blur for NSFW covers if present">
         <span class="toggle-title">NSFW Filter:</span>
         <div class="toggle-wrapper" on:click={toggleNSFW}>
-          <div class="toggle-pill" class:active={globalThis.$filterNsfw}>
-            <span class="toggle-status">{globalThis.$filterNsfw ? 'ON' : 'OFF'}</span>
+          <div class="toggle-pill" class:active={filterNsfw}>
+            <span class="toggle-status">{filterNsfw ? 'ON' : 'OFF'}</span>
           </div>
         </div>
       </div>

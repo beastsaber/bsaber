@@ -110,7 +110,7 @@ linkToSpecialtyPage: /the-beastsaber-mapping-awards
 
 <br />
 
-## What's Changing for 2024? <a href="#whats-changing" style="text-decoration:none;">🔗</a> {globalThis.$whats-changing}
+## What's Changing for 2024? <a href="#whats-changing" style="text-decoration:none;">🔗</a> {whats-changing}
 
 **New Updates: (12/31/2024)**
 
@@ -144,13 +144,13 @@ linkToSpecialtyPage: /the-beastsaber-mapping-awards
 <br />
 <br />
 
-## 2024 Beasties Categories <a href="#categories" style="text-decoration:none;">🔗</a> {globalThis.$categories}
+## 2024 Beasties Categories <a href="#categories" style="text-decoration:none;">🔗</a> {categories}
 
 We are always seeking and implementing feedback from mappers and the community over prior years on how we can improve our categories.
 \
 _\*Any categories that do not receive at least five qualified nominees will not be awarded at the end of the year._
 
-### Supporting Map Award Categories <a href="#supporting-map-categories" style="text-decoration:none;">🔗</a> {globalThis.$supporting-map-categories}
+### Supporting Map Award Categories <a href="#supporting-map-categories" style="text-decoration:none;">🔗</a> {supporting-map-categories}
 
 - **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2024.
 
@@ -170,7 +170,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - 🆕 **Best Ranked Map 12+ Stars** (BeatLeader and ScoreSaber separately): The best Ranked Map 12+ Stars exemplifies top-tier mapping techniques, refined through rigorous quality checks and adjustments. It provides a thrilling challenge for highly skilled players looking to push their limits.
 
-### Lighting Categories <a href="#lighting-categories" style="text-decoration:none;">🔗</a> {globalThis.$lighting-categories}
+### Lighting Categories <a href="#lighting-categories" style="text-decoration:none;">🔗</a> {lighting-categories}
 
 > Lighting nominations only have one “funnel” on the form. The Beasties team will separate maps into the right categories based on their construction.
 
@@ -190,7 +190,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [ReeK & Asatsumei (ft. L4hee) - Deity Mode](https://beatsaver.com/maps/34a3d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/34a3d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-### Map Style Categories <a href="#style-categories" style="text-decoration:none;">🔗</a> {globalThis.$style-categories}
+### Map Style Categories <a href="#style-categories" style="text-decoration:none;">🔗</a> {style-categories}
 
 - **Best Balanced Style Map**: Look in the sky! Is it a tech map? Is it a dance map? Is it a speed map? WE DON’T KNOW! The Best Balanced Style Map is the mutt of the neighborhood – a little of this, a little of that – all combining into one fantastic map.
 
@@ -228,7 +228,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [Teruo Taniguchi - Tetris 99 Main Theme (Lawless E+)](https://beatsaver.com/maps/3688b)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3688b/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-### Individual Awards <a href="#individual-awards" style="text-decoration:none;">🔗</a> {globalThis.$individual-awards}
+### Individual Awards <a href="#individual-awards" style="text-decoration:none;">🔗</a> {individual-awards}
 
 - **Pack of the Year**: The map pack that has it all: a tight theme, new high-quality maps, and a great presentation across all difficulties, all wrapped up in a beautiful `.bplist` bow.
 
@@ -250,7 +250,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 <br />
 
-## Frequently Asked Questions <a href="#faq" style="text-decoration:none;">🔗</a> {globalThis.$faq}
+## Frequently Asked Questions <a href="#faq" style="text-decoration:none;">🔗</a> {faq}
 
 - **I am a mapper. Can I nominate my own work for an award?**
 
