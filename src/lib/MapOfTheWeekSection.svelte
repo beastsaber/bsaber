@@ -56,12 +56,12 @@
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
-    />
+    ></iframe>
   </div>
-  <div class="showcase-backdrop" on:click={hideShowcase} />
+  <div class="showcase-backdrop" on:click={hideShowcase}></div>
 {/if}
 <div class="motw-container">
-  <div class="background-image" style="background-image: url({mapOfTheWeek.coverUrl});" />
+  <div class="background-image" style="background-image: url({mapOfTheWeek.coverUrl});"></div>
   <div class="card">
     {#if showHeader}
       <Header

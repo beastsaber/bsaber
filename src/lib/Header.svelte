@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { IconDefinition } from '@fortawesome/fontawesome-common-types'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
   import IconLink from './IconLink.svelte'
 
   export let text: string
@@ -19,7 +19,7 @@
     {/if}
     <h2>{text}</h2>
     <div class="accent-line-container">
-      <div class="line" />
+      <div class="line"></div>
     </div>
   </div>
   <div class="link-container">

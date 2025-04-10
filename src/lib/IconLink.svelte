@@ -4,7 +4,7 @@
 </script>
 
 <span class="link">
-  <div class="icon" />
+  <div class="icon"></div>
   <a href={linkUrl}>{linkText}</a>
 </span>
 

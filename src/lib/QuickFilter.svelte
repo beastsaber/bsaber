@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { IconDefinition } from '@fortawesome/fontawesome-common-types'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
 
   export let text: string
   export let type: string

@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Post } from '../types'
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
   import { faTrophy } from '@fortawesome/free-solid-svg-icons'
   import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
   import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'

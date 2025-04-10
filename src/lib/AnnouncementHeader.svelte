@@ -2,7 +2,7 @@
   import type { Post } from '../types'
 
   import { faBullhorn } from '@fortawesome/free-solid-svg-icons/faBullhorn'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
 
   const icon = faBullhorn
   export let announcement: Post

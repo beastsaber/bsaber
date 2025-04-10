@@ -8,7 +8,7 @@
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import MapPreview from './MapPreview.svelte'
   import MapPreviewModal from '$lib/MapPreviewModal.svelte'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
   import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
   import { audioPlayer } from '$lib/audio-player'
   import { beatSaverClientFactory } from './beatsaver-client'
@@ -100,11 +100,11 @@
                 map.versions[0].hash
               }.jpg`}
               alt={map.name}
-              class:blur={$filterNsfw && map.nsfw}
+              class:blur={id$filterNsfw && map.nsfw}
             />
             <div
               class="button-overlay"
-              class:force-show={$playingId === map.id}
+              class:force-show={id$playingId === map.id}
               on:click={() => togglePlayingAudio(map.id, map.versions[0].previewURL)}
             >
               {#if $playingId === map.id}
@@ -147,7 +147,7 @@
     {/each}
   {:else}
     {#each Array(8) as _}
-      <div class="card-wrapper loading" />
+      <div class="card-wrapper loading"></div>
     {/each}
   {/if}
 </div>

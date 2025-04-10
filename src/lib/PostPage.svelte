@@ -5,7 +5,7 @@
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
   import { postCategories, postEventTypes } from '../maps'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
   import { faTrophy } from '@fortawesome/free-solid-svg-icons'
   import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
   import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
@@ -30,9 +30,11 @@
   }
 
   const postRenderer = new marked.Renderer()
+  // Function responsible for converting markdown headings,
+  // heading should be in the format {id$name}
   // This will make headings start at 2, because the title will be rendered as an h1
   postRenderer.heading = (text, level) => {
-    const idMatch = text.match(/ {\$([a-zA-Z0-9\-_]+)}/)
+    const idMatch = text.match(/ {id\$([a-zA-Z0-9\-_]+)}/)
     const finalText = idMatch ? text.replace(idMatch[0], '') : text
     const id = idMatch ? idMatch[1] : undefined
     if (id) {

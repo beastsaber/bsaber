@@ -596,7 +596,8 @@ p[class*='WorkflowTopDescription'] {
 [class*='StyledModal'] [class*='checkerboard'] {
   background-color: var(--checkerboard-bg-color);
   border-bottom: 2px solid var(--modal-border-color);
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       45deg,
       var(--checkerboard-dark-color) 25%,
       transparent 25%,
@@ -784,7 +785,8 @@ button.css-1f8dk1z-ButtonRound-button-EditorToggle:hover {
 [class*='ImageWrapper-checkerboard'] {
   border: 2px solid var(--widgets-border-color);
   background-color: var(--checkerboard-bg-color);
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       45deg,
       var(--checkerboard-dark-color) 25%,
       transparent 25%,

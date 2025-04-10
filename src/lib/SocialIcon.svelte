@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
   import { iconMapping } from './iconMapping'
 
   export let social: keyof typeof iconMapping = 'Website'
