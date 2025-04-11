@@ -100,7 +100,7 @@
                 map.versions[0].hash
               }.jpg`}
               alt={map.name}
-              class:blur={id$filterNsfw && map.nsfw}
+              class:blur={filterNsfw && map.nsfw}
             />
             <div
               class="button-overlay"
