@@ -94,7 +94,7 @@
     return `<a class="post-person-link" href="https://beatsaver.com/profile/${person.id}">${person.name}</a>`
   }
   const scrollifyPerson = (person: Uploader) => {
-    return `<a class="faux-scroll-link post-person-link">${person.name}</a></div>`
+    return `<a class="faux-scroll-link post-person-link">${person.name}</a>`
   }
   const prettyNameConcatenation = (people: Uploader[], transformationFunction = linkifyPerson) => {
     // Special cases
