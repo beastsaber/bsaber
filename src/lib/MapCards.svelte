@@ -160,6 +160,7 @@
 {/if}
 
 <style lang="scss">
+  @use 'sass:math';
   @import 'src/scss/variables';
 
   $image-size: 8rem;
@@ -178,7 +179,7 @@
   $gradient-coverage: 60%;
   // Don't touch these two
   $background-size: 100% + $gradient-coverage;
-  $gradient-start: percentage(100% / $background-size);
+  $gradient-start: percentage(math.div(100%, $background-size));
 
   .load-more-container {
     display: flex;
