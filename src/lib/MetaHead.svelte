@@ -21,23 +21,23 @@
 
   const origin = DEPLOY_PRIME_URL || 'https://bsaber.com'
 
-  let normalizedImage = $state(imageUrl)
-  if (normalizedImage && !normalizedImage.startsWith('http') && normalizedImage.startsWith('/')) {
-    normalizedImage = origin + imageUrl
-  } else if (
-    normalizedImage &&
-    !normalizedImage.startsWith('/') &&
-    !normalizedImage.startsWith('http')
-  ) {
-    if (page.url.href.endsWith('/')) {
-      normalizedImage = page.url.href + imageUrl
-    } else {
-      normalizedImage = page.url.href + '/' + imageUrl
-    }
-  }
+  let normalizedImage = $state(imageUrl);
 
-  // Apparently cannot use $page in the {#if tag - hence this workaround}
-  const path = page.url.pathname
+  $effect(() => {
+    if (normalizedImage && !normalizedImage.startsWith('http') && normalizedImage.startsWith('/')) {
+      normalizedImage = origin + imageUrl;
+    } else if (
+      normalizedImage &&
+      !normalizedImage.startsWith('/') &&
+      !normalizedImage.startsWith('http')
+    ) {
+      if (page.url.href.endsWith('/')) {
+        normalizedImage = page.url.href + imageUrl;
+      } else {
+        normalizedImage = page.url.href + '/' + imageUrl;
+      }
+    }
+  });
 </script>
 
 <svelte:head>
@@ -57,7 +57,7 @@
 
   <!-- Put the canonical URL - which should be a the full URL according to google -->
   <!-- Only put it down if we are not already on the conanical URL -->
-  {#if canonicalUrl && canonicalUrl !== path}
+  {#if canonicalUrl && canonicalUrl !== page.url.pathname}
     <link rel="canonical" href={origin + canonicalUrl} />
   {/if}
 
