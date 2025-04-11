@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores'
+  import { page } from '$app/state'
   import { DEPLOY_PRIME_URL } from './environmentVariables'
 
   export let title: string | undefined = undefined
