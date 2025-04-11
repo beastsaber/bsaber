@@ -104,7 +104,7 @@
             />
             <div
               class="button-overlay"
-              class:force-show={id$playingId === map.id}
+              class:force-show={$playingId === map.id}
               on:click={() => togglePlayingAudio(map.id, map.versions[0].previewURL)}
             >
               {#if $playingId === map.id}
