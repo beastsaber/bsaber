@@ -2,8 +2,12 @@
   import Fa from 'svelte-fa'
   import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
-  export let downloadURL: string
-  export let fontSize: string = '1rem'
+  interface Props {
+    downloadURL: string;
+    fontSize?: string;
+  }
+
+  const { downloadURL, fontSize = '1rem' }: Props = $props();
 </script>
 
 <a
