@@ -52,7 +52,7 @@
     nsfw?: boolean
   }[] = []
 
-  let searchPreviewTimeout
+  let searchPreviewTimeout: string | number | NodeJS.Timeout | undefined
   let searchButton: HTMLAnchorElement
   let searchUrl: string
 
@@ -77,7 +77,7 @@
     searchButton.click()
   }
 
-  function searchPreview(event?, force?: boolean) {
+  function searchPreview(event?: any, force?: boolean) {
     clearTimeout(searchPreviewTimeout)
     lastQuery = searchQuery
     searchQuery = event ? event.target.value : searchQuery
@@ -96,7 +96,7 @@
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((song) => {
+              previewResults = data.docs.map((song: any) => {
                 return {
                   name: song.name,
                   uploader: song.uploader.name,
@@ -115,7 +115,7 @@
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((playlist) => {
+              previewResults = data.docs.map((playlist: any) => {
                 return {
                   name: playlist.name,
                   uploader: playlist.owner.name,
@@ -191,7 +191,7 @@
           <div class="image-wrapper">
             <img
               src={preview.image}
-              class:blur={filterNsfw && preview.nsfw}
+              class:blur={$filterNsfw && preview.nsfw}
               alt="Map Thumbnail"
             />
           </div>
