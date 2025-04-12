@@ -3,6 +3,24 @@
   import { filterNsfw } from './storeNsfwPreference'
   import { nsfwToggleVisibility } from './storeNsfwPreference'
   import { onMount, onDestroy } from 'svelte'
+  import { beatSaverClientFactory } from './beatsaver-client'
+  import type { Beatmap, Playlist } from '../types'
+
+  interface BeatmapDetailed extends Beatmap {
+    stats: {
+      upvotes: number
+      downvotes: number
+      score: number
+    }
+  }
+
+  interface PlaylistDetailed extends Playlist {
+    stats: {
+      upVotes: number
+      downVotes: number
+      avgScore: number
+    }
+  }
 
   onMount(() => {
     nsfwToggleVisibility.set(true)
@@ -26,20 +44,19 @@
     },
   ]
 
+  const beatSaverClient = beatSaverClientFactory.create()
+
   const beatsaverRoot = import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com' + '/'
-  const beatsaverApiRoot =
-    import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com' + '/'
+  const mapSearchPath = '/search/text/'
+  const playlistsPath = '/playlists/search/'
 
-  const mapsSearchApiEndpoint = `${beatsaverApiRoot}search/text/`
-  const playlistsApiEndpoint = `${beatsaverApiRoot}playlists/search/`
+  let { forceSearchType = null } = $props()
 
-  export let forceSearchType: string | null = null
-
-  let searchType: string = forceSearchType ?? dropdownItems[0].name
-  let searchQuery: string = ''
+  let searchType: string = $state(forceSearchType ?? dropdownItems[0].name)
+  let searchQuery: string = $state('')
   let lastQuery: string = ''
 
-  let dropdownShown: boolean = false
+  let dropdownShown: boolean = $state(false)
 
   let previewResults: {
     name: string
@@ -50,11 +67,11 @@
     downvotes: number
     score: number
     nsfw?: boolean
-  }[] = []
+  }[] = $state([])
 
   let searchPreviewTimeout: string | number | NodeJS.Timeout | undefined
   let searchButton: HTMLAnchorElement
-  let searchUrl: string
+  let searchUrl: string = $state('')
 
   const getSearchUrl = (inputSearchType: string, inputSearchQuery: string) => {
     if (inputSearchType === dropdownItems[0].name) {
@@ -66,10 +83,13 @@
     return '/posts/search?q=' + searchQuery
   }
 
-  $: searchUrl = getSearchUrl(searchType, searchQuery)
+  $effect(() => {
+    searchUrl = getSearchUrl(searchType, searchQuery)
+  })
 
   // Search function that opens a new url in the browser
-  function search() {
+  function search(event: Event) {
+    event.preventDefault()
     if (searchQuery === '') {
       return
     }
@@ -77,10 +97,13 @@
     searchButton.click()
   }
 
-  function searchPreview(event?: any, force?: boolean) {
+  function searchPreview(
+    event?: (Event & { currentTarget: EventTarget & HTMLInputElement }) | null,
+    force?: boolean,
+  ) {
     clearTimeout(searchPreviewTimeout)
     lastQuery = searchQuery
-    searchQuery = event ? event.target.value : searchQuery
+    searchQuery = event ? event.currentTarget.value : searchQuery
     searchPreviewTimeout = setTimeout(() => {
       // We're checking if the query is the same as the last query to avoid making unnecessary requests
       if (searchQuery === lastQuery && !force) {
@@ -91,31 +114,34 @@
       if (searchQuery.length < 1) {
         return
       }
+      // TODO: Handle errors and show an appropriate message
       if (searchType === dropdownItems[0].name) {
-        fetch(`${mapsSearchApiEndpoint}0?q=${searchQuery}&sortOrder=Relevance`)
+        beatSaverClient
+          .fetch(`${mapSearchPath}0?q=${searchQuery}&sortOrder=Relevance`)
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((song: any) => {
+              previewResults = data.docs.map((song: BeatmapDetailed) => {
                 return {
                   name: song.name,
                   uploader: song.uploader.name,
                   url: `${beatsaverRoot}${searchType.toLowerCase()}/${song.id}`,
-                  image: song.versions.at(-1).coverURL,
+                  image: song.versions?.at(-1)?.coverURL ?? '',
                   upvotes: song.stats.upvotes,
                   downvotes: song.stats.downvotes,
                   score: song.stats.score,
-                  nsfw: song.nsfw,
+                  nsfw: song.nsfw ?? false,
                 }
               })
             }
           })
       } else if (searchType === dropdownItems[1].name) {
-        fetch(`${playlistsApiEndpoint}0?q=${searchQuery}&sortOrder=Relevance`)
+        beatSaverClient
+          .fetch(`${playlistsPath}0?q=${searchQuery}&sortOrder=Relevance`)
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((playlist: any) => {
+              previewResults = data.docs.map((playlist: PlaylistDetailed) => {
                 return {
                   name: playlist.name,
                   uploader: playlist.owner.name,
@@ -137,13 +163,13 @@
   }
 </script>
 
-<form on:submit|preventDefault={search}>
+<form onsubmit={search}>
   <div class="search">
     {#if forceSearchType == null}
       <button
         class="filter-dropdown btn btn-primary dropdown-toggle"
         type="button"
-        on:click={() => (dropdownShown = !dropdownShown)}
+        onclick={() => (dropdownShown = !dropdownShown)}
         id="dropdownMenuButton"
         aria-expanded={dropdownShown}
       >
@@ -157,11 +183,11 @@
           class="dropdown-menu filter"
           aria-labelledby="dropdownMenuButton"
         >
-          {#each dropdownItems as item}
+          {#each dropdownItems as item (item.name)}
             <button
               type="button"
               class="dropdown-item"
-              on:click={() => {
+              onclick={() => {
                 searchType = item.name
                 dropdownShown = false
                 searchPreview(null, true)
@@ -177,7 +203,7 @@
       type="search"
       class="form-control"
       placeholder="Enter Keywords"
-      on:input={searchPreview}
+      oninput={searchPreview}
     />
   </div>
   {#if previewResults.length > 0}
@@ -186,7 +212,7 @@
       class="dropdown-menu dropdown-menu-list"
       aria-labelledby="dropdownMenuButton"
     >
-      {#each previewResults as preview}
+      {#each previewResults as preview (preview.url)}
         <a class="dropdown-item" href={preview.url}>
           <div class="image-wrapper">
             <img src={preview.image} class:blur={$filterNsfw && preview.nsfw} alt="Map Thumbnail" />
