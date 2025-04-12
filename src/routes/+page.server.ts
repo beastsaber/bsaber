@@ -47,7 +47,7 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
       .fetch(`/maps/id/${currentMOTWCollectionData.mapId}`)
       .then((res) => res.json())
 
-    let coverUrl =
+    const coverUrl =
       currentMOTWCollectionData.coverUrlOverwrite ??
       `https://cdn.assets.beatleader.xyz/songcover-${currentMOTWCollectionData.mapId}-full.webp`
 

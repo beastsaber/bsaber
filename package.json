@@ -13,6 +13,7 @@
     "check:meta-headers": "node ./check-meta-headers.js",
     "lint": "prettier --check . && eslint",
     "format": "prettier --write .",
+    "format:lint": "prettier --write . && eslint --fix",
     "create-indices": "node create-indices",
     "server": "node backend/server",
     "decap-server": "npx decap-server"
