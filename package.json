@@ -18,6 +18,7 @@
     "decap-server": "npx decap-server"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.8",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
