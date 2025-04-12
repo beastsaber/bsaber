@@ -41,7 +41,8 @@
           : overwriteMap[playlist.playlistId].linkOverwrite}
         style={`background-image: url(${playlist.playlistImage512 ?? playlist.playlistImage})`}
       >
-        <div></div> <!--This empty div is purely there as a bug workaround-->
+        <!--This empty div is purely there as a bug workaround-->
+        <div></div>
         <div class="zip-download-button-container">
           <ZipDownloadButton
             downloadURL="{import.meta.env.VITE_BSABER_API_BASE ??

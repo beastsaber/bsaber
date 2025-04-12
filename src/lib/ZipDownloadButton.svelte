@@ -3,11 +3,11 @@
   import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
   interface Props {
-    downloadURL: string;
-    fontSize?: string;
+    downloadURL: string
+    fontSize?: string
   }
 
-  const { downloadURL, fontSize = '1rem' }: Props = $props();
+  const { downloadURL, fontSize = '1rem' }: Props = $props()
 </script>
 
 <a

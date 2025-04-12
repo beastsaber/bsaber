@@ -24,7 +24,7 @@ export async function load({ params: { page } }: LoadParameter): Promise<PostPag
     await Promise.all(
       Object.entries(import.meta.glob('/src/collections/posts/*.md')).map(
         async ([path, module]) => {
-          const { metadata } = await module() as { metadata: { [key: string]: any } }
+          const { metadata } = (await module()) as { metadata: { [key: string]: any } }
           const slug = path.split('/').reverse()[0].split('.')[0]
           const { image } = metadata
           return {
