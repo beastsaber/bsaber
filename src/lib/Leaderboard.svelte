@@ -22,8 +22,7 @@
 </script>
 
 <Listing {title} {img} {linkText} {linkUrl}>
-  <!-- Using player.name as key but ideally it should be some kind of uid -->
-  {#each players as player (player.name)}
+  {#each players as player (player)}
     <div class="player-container">
       <div class="player">
         <div class="rank {rankColor}">{player.rank}</div>
