@@ -1,6 +1,6 @@
 <script lang="ts">
   import { marked } from 'marked'
-  import type { Author, PostWithAuthorAndContributor, Uploader } from '../types'
+  import type { PostWithAuthorAndContributor, Uploader } from '../types'
   import MetaHead from './MetaHead.svelte'
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
@@ -14,7 +14,7 @@
   import { faTree } from '@fortawesome/free-solid-svg-icons/faTree'
 
   export let post: PostWithAuthorAndContributor
-  const { body, title, image, authors, credits, publish, lastUpdated } = post
+  const { body, title, image, authors, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
   let categoryLabel = postCategories[post.category]
@@ -315,8 +315,8 @@
   }
 
   .add-trailing-space::after {
-      content: " ";
-      white-space: pre;
+    content: ' ';
+    white-space: pre;
   }
 
   // Needs to be global so because it's rendered in with @html

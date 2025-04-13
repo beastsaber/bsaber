@@ -6,7 +6,7 @@
   export let groupName: string
   export let playlistId: number
 
-  const playlistUrl = `https://api.beatsaver.com/playlists/id/${playlistId}/download/beatsaver-${playlistId}.bplist`
+  // const playlistUrl = `https://api.beatsaver.com/playlists/id/${playlistId}/download/beatsaver-${playlistId}.bplist`
 </script>
 
 <div class="playlist-card">

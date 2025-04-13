@@ -2,18 +2,18 @@
   import type { LanguageKeys } from '../../types'
   import type { CommunityHubSSRData } from './+page.server'
   import MetaHead from '$lib/MetaHead.svelte'
-  import {
-    faDiscord,
-    faFacebook,
-    faInstagram,
-    faTwitch,
-    faXTwitter,
-    faYoutube,
-    faReddit,
-    faGithub,
-  } from '@fortawesome/free-brands-svg-icons'
-  import { faLink, faBook } from '@fortawesome/free-solid-svg-icons'
-  import Fa from 'svelte-fa'
+  // import {
+  //   faDiscord,
+  //   faFacebook,
+  //   faInstagram,
+  //   faTwitch,
+  //   faXTwitter,
+  //   faYoutube,
+  //   faReddit,
+  //   faGithub,
+  // } from '@fortawesome/free-brands-svg-icons'
+  // import { faLink, faBook } from '@fortawesome/free-solid-svg-icons'
+  // import Fa from 'svelte-fa'
   import Fuse from 'fuse.js'
   import SocialIcon from '$lib/SocialIcon.svelte'
   import { iconMapping } from '$lib/iconMapping'
