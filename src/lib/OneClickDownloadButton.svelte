@@ -55,7 +55,7 @@
     }
   }
 
-  @media (min-width: 678px) {
+  @media (hover: hover) {
     .one-click-download-link {
       display: block;
     }

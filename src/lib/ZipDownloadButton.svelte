@@ -37,7 +37,7 @@
     }
   }
 
-  @media (min-width: 678px) {
+  @media (hover: hover) {
     .zip-download-link {
       display: block;
     }

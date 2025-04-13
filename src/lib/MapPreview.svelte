@@ -37,7 +37,7 @@
     }
   }
 
-  @media (min-width: 678px) {
+  @media (hover: hover) {
     .preview-map {
       display: block;
     }

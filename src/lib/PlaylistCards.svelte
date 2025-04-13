@@ -94,7 +94,7 @@
     padding: 0.3em 0.45em;
   }
 
-  @media (min-width: 678px) {
+  @media (hover: hover) {
     a:hover .one-click-download-button-container {
       opacity: 1;
     }

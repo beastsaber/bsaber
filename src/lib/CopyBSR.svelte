@@ -73,7 +73,7 @@
     }
   }
 
-  @media (min-width: 678px) {
+  @media (hover: hover) {
     .copy-bsr {
       display: inline-block;
     }
