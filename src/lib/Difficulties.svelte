@@ -16,7 +16,7 @@
     alt={firstCharacteristic}
     title={firstCharacteristic}
   />
-  {#each visibleDiffs as diff}
+  {#each visibleDiffs as diff (diff.characteristic + diff.difficulty)}
     <span
       class="{difficulties[diff.difficulty]?.slug} difficulty short"
       title="{diff.difficulty} {diff.nps.toFixed(1)} NPS"

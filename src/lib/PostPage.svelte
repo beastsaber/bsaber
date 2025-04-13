@@ -197,7 +197,7 @@
       {/if}
     </div>
     <div class="author-box-content" bind:this={authorBox}>
-      {#each authors as author}
+      {#each authors as author (author.id)}
         <div class="author-box-person">
           <img class="author-profile-picture" src={author.avatar} alt={author.name} />
           <div class="author-box-person-info">
@@ -206,7 +206,7 @@
                 {author.name}
               </h4>
               <div class="social-links">
-                {#each author.socialLinks ?? [] as social}
+                {#each author.socialLinks ?? [] as social (social.platform + social.id)}
                   <SocialIcon social={social.platform} id={social.id} />
                 {/each}
               </div>
@@ -218,7 +218,7 @@
             {/if}
 
             <div class="social-links-mobile">
-              {#each author.socialLinks ?? [] as social}
+              {#each author.socialLinks ?? [] as social (social.platform + social.id)}
                 <SocialIcon social={social.platform} id={social.id} />
               {/each}
             </div>
