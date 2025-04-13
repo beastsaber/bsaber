@@ -98,12 +98,14 @@
     )
   }
 
-  let debounceTimeout: any = null
-  const updateNameAndDescriptionFilter = (event: InputEvent) => {
+  let debounceTimeout: NodeJS.Timeout | null = null
+  const updateNameAndDescriptionFilter = (
+    event: Event & { currentTarget: EventTarget & HTMLInputElement },
+  ) => {
     if (debounceTimeout != null) {
       clearTimeout(debounceTimeout)
     }
-    nameAndDescriptionFilter = (event.target as HTMLInputElement).value
+    nameAndDescriptionFilter = event.currentTarget.value
     debounceTimeout = setTimeout(() => {
       filteredCommunities = filterCommunities(
         data.communities,
@@ -276,7 +278,7 @@
             title={name}
             on:click={toggleSocialFilter(name)}
           >
-            <SocialIcon social={name} noLink={true} />
+            <SocialIcon social={name as any} noLink={true} />
           </span>
         {/each}
       </div>
