@@ -22,24 +22,16 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
-  // Initially hiding it and only showing it at a certain screen size
-  // Smaller screen size will usually be smartphones
   .zip-download-link {
-    display: none;
-    color: $color-text-secondary;
-    transition: color $transition-short;
-    transition: 0.6s ease;
-
-    &:hover {
-      color: $color-text-primary;
-      transform: scale(1.2);
-      transition: 0.3s ease;
-    }
-  }
-
-  @media (hover: hover) {
-    .zip-download-link {
       display: block;
-    }
+      color: $color-text-secondary;
+      transition: color $transition-short;
+      transition: 0.6s ease;
+      &:hover {
+        color: $color-text-primary;
+        transform: scale(1.2);
+        transition: 0.3s ease;
+      }
   }
+
 </style>

@@ -217,7 +217,7 @@
       display: none;
     }
 
-    @media screen and (min-width: 678px) {
+    @media screen and (min-width: 560px) {
       .interactive-buttons {
         display: grid;
         grid-template-columns: repeat(2, 20px);
@@ -226,6 +226,12 @@
         transition: opacity $transition-long;
         margin-left: auto;
         opacity: 0;
+      }
+    }
+
+    @media (hover: none) {
+      .interactive-buttons {
+        opacity: 1;
       }
     }
 

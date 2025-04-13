@@ -24,7 +24,7 @@
   @import 'src/scss/variables';
 
   .preview-map {
-    display: none;
+    display: block;
     color: $color-text-secondary;
     transition: color $transition-short;
     margin-right: 2px;
@@ -34,12 +34,6 @@
       color: $color-text-primary;
       transform: scale(1.2);
       transition: 0.3s ease;
-    }
-  }
-
-  @media (hover: hover) {
-    .preview-map {
-      display: block;
     }
   }
 </style>

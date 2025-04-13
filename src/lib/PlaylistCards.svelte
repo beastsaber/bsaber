@@ -74,8 +74,6 @@
   @import '../scss/post-cards';
   a .one-click-download-button-container,
   a .zip-download-button-container {
-    transition: opacity $transition-long ease-in-out;
-    opacity: 0;
     position: absolute;
     top: 0.3rem;
     z-index: 1;
@@ -95,6 +93,11 @@
   }
 
   @media (hover: hover) {
+    a .one-click-download-button-container,
+    a .zip-download-button-container {
+      transition: opacity $transition-long ease-in-out;
+      opacity: 0;
+    }
     a:hover .one-click-download-button-container {
       opacity: 1;
     }
