@@ -214,13 +214,19 @@
     overflow: hidden;
 
     .interactive-buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 20px);
-      gap: 1rem;
-      justify-items: center;
-      transition: opacity $transition-long;
-      margin-left: auto;
-      opacity: 0;
+      display: none;
+    }
+
+    @media screen and (min-width: 678px) {
+      .interactive-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 20px);
+        gap: 1rem;
+        justify-items: center;
+        transition: opacity $transition-long;
+        margin-left: auto;
+        opacity: 0;
+      }
     }
 
     &:hover {
