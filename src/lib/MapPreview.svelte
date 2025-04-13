@@ -14,8 +14,7 @@
   on:click={(e) => {
     e.preventDefault()
 
-    // @ts-ignore
-    setPreviewKey?.call(this, mapId)
+    setPreviewKey?.(mapId)
   }}
 >
   <Fa icon={faPlay} />
