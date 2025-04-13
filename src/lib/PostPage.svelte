@@ -5,7 +5,7 @@
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
   import { postCategories, postEventTypes } from '../maps'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
   import { faTrophy } from '@fortawesome/free-solid-svg-icons'
   import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
   import { faComments } from '@fortawesome/free-solid-svg-icons/faComments'
@@ -30,9 +30,11 @@
   }
 
   const postRenderer = new marked.Renderer()
+  // Function responsible for converting markdown headings,
+  // heading should be in the format {id$name}
   // This will make headings start at 2, because the title will be rendered as an h1
   postRenderer.heading = (text, level) => {
-    const idMatch = text.match(/ {\$([a-zA-Z0-9\-_]+)}/)
+    const idMatch = text.match(/ {id\$([a-zA-Z0-9\-_]+)}/)
     const finalText = idMatch ? text.replace(idMatch[0], '') : text
     const id = idMatch ? idMatch[1] : undefined
     if (id) {
@@ -92,7 +94,7 @@
     return `<a class="post-person-link" href="https://beatsaver.com/profile/${person.id}">${person.name}</a>`
   }
   const scrollifyPerson = (person: Uploader) => {
-    return `<a class="faux-scroll-link post-person-link">${person.name}</a></div>`
+    return `<a class="faux-scroll-link post-person-link">${person.name}</a>`
   }
   const prettyNameConcatenation = (people: Uploader[], transformationFunction = linkifyPerson) => {
     // Special cases
@@ -179,7 +181,7 @@
       {#if lastUpdated}
         <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
       {:else}
-        <span class="hide-on-small">Published on </span>{formatDate(publish)}
+        <span class="hide-on-small add-trailing-space">Published on</span>{formatDate(publish)}
       {/if}
     </div>
   </div>
@@ -210,7 +212,7 @@
               </div>
             </div>
             {#if author.bio !== undefined}
-              {@html marked(author.bio)}
+              {@html marked(author.bio, { renderer: new marked.Renderer() })}
             {:else}
               <p>Writing for BeastSaber as a guest.</p>
             {/if}
@@ -310,6 +312,11 @@
   }
   .event-type {
     border: 1px solid $color-warning-yellow;
+  }
+
+  .add-trailing-space::after {
+      content: " ";
+      white-space: pre;
   }
 
   // Needs to be global so because it's rendered in with @html

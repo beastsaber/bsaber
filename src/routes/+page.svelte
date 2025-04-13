@@ -22,7 +22,11 @@
   import EventCards from '$lib/EventCards.svelte'
   import { isCurrentEvent } from '$lib/isCurrentEvent'
 
-  export let data: RootPageSSRData
+  interface Props {
+    data: RootPageSSRData
+  }
+
+  let { data }: Props = $props()
 
   let {
     announcements,
@@ -59,7 +63,7 @@
   <Header
     text="Featured Packs"
     icon={faRectangleList}
-    linkUrl={'/playlists/page/1'}
+    linkUrl="/playlists/page/1"
     linkText="See all featured packs"
   />
   <PlaylistCards maxCards={maxFeaturedPackCards} overwriteMap={featuredPlaylistOverwriteMap} />

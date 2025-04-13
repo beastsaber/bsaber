@@ -41,6 +41,8 @@
           : overwriteMap[playlist.playlistId].linkOverwrite}
         style={`background-image: url(${playlist.playlistImage512 ?? playlist.playlistImage})`}
       >
+        <!--This empty div is purely there as a bug workaround-->
+        <div></div>
         <div class="zip-download-button-container">
           <ZipDownloadButton
             downloadURL="{import.meta.env.VITE_BSABER_API_BASE ??
@@ -63,7 +65,7 @@
     {/each}
   {:else}
     {#each Array(maxCards ?? 4) as _}
-      <div class="card loading" />
+      <div class="card loading"></div>
     {/each}
   {/if}
 </div>

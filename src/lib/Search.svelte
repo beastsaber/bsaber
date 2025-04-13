@@ -52,7 +52,7 @@
     nsfw?: boolean
   }[] = []
 
-  let searchPreviewTimeout
+  let searchPreviewTimeout: string | number | NodeJS.Timeout | undefined
   let searchButton: HTMLAnchorElement
   let searchUrl: string
 
@@ -77,7 +77,7 @@
     searchButton.click()
   }
 
-  function searchPreview(event?, force?: boolean) {
+  function searchPreview(event?: any, force?: boolean) {
     clearTimeout(searchPreviewTimeout)
     lastQuery = searchQuery
     searchQuery = event ? event.target.value : searchQuery
@@ -96,7 +96,7 @@
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((song) => {
+              previewResults = data.docs.map((song: any) => {
                 return {
                   name: song.name,
                   uploader: song.uploader.name,
@@ -115,7 +115,7 @@
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((playlist) => {
+              previewResults = data.docs.map((playlist: any) => {
                 return {
                   name: playlist.name,
                   uploader: playlist.owner.name,
@@ -147,7 +147,7 @@
         id="dropdownMenuButton"
         aria-expanded={dropdownShown}
       >
-        <i class="fas fa-angle-up" />
+        <i class="fas fa-angle-up"></i>
         <span class="d-none d-lg-inline">{searchType}</span>
       </button>
       <!-- </button> -->
@@ -344,7 +344,9 @@
     border: 1px solid #222;
     appearance: none;
     border-radius: 0 0.25rem 0.25rem 0;
-    transition: border-color $transition-short ease-in-out, box-shadow $transition-short ease-in-out;
+    transition:
+      border-color $transition-short ease-in-out,
+      box-shadow $transition-short ease-in-out;
   }
   div,
   a,
@@ -368,8 +370,11 @@
     padding: 0.375rem 0.75rem;
     font-size: 0.9375rem;
     border-radius: 0.25rem;
-    transition: color $transition-short ease-in-out, background-color $transition-short ease-in-out,
-      border-color $transition-short ease-in-out, box-shadow $transition-short ease-in-out;
+    transition:
+      color $transition-short ease-in-out,
+      background-color $transition-short ease-in-out,
+      border-color $transition-short ease-in-out,
+      box-shadow $transition-short ease-in-out;
   }
 
   .btn-search {

@@ -1,5 +1,5 @@
 import { mdsvex } from 'mdsvex'
-import preprocess from 'svelte-preprocess'
+import { sveltePreprocess } from 'svelte-preprocess'
 import adapter from '@sveltejs/adapter-static'
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -7,7 +7,7 @@ const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
   preprocess: [
-    preprocess(),
+    sveltePreprocess(),
     mdsvex({
       extensions: ['.svelte.md', '.md', '.svx'],
       smartypants: {
@@ -28,6 +28,7 @@ const config = {
 
     prerender: {
       crawl: true,
+      handleMissingId: 'warn',
     },
   },
   extensions: ['.svelte', '.svelte.md', '.md', '.svx'],

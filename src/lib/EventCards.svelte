@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { CommunityEvent } from '../types'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
 
   import { faTrophy } from '@fortawesome/free-solid-svg-icons'
   import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'

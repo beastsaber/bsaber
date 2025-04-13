@@ -84,7 +84,10 @@ class BeatSaverClient {
 class BeatSaverClientFactory {
   private lastRelevantRequests: FixedSizeQueue<number>
 
-  constructor(public baseUrl: string, rateLimit: number) {
+  constructor(
+    public baseUrl: string,
+    rateLimit: number,
+  ) {
     this.lastRelevantRequests = new FixedSizeQueue(rateLimit)
   }
 

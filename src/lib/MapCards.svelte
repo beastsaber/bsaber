@@ -8,7 +8,7 @@
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import MapPreview from './MapPreview.svelte'
   import MapPreviewModal from '$lib/MapPreviewModal.svelte'
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
   import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
   import { audioPlayer } from '$lib/audio-player'
   import { beatSaverClientFactory } from './beatsaver-client'
@@ -147,7 +147,7 @@
     {/each}
   {:else}
     {#each Array(8) as _}
-      <div class="card-wrapper loading" />
+      <div class="card-wrapper loading"></div>
     {/each}
   {/if}
 </div>
@@ -160,6 +160,7 @@
 {/if}
 
 <style lang="scss">
+  @use 'sass:math';
   @import 'src/scss/variables';
 
   $image-size: 8rem;
@@ -178,7 +179,7 @@
   $gradient-coverage: 60%;
   // Don't touch these two
   $background-size: 100% + $gradient-coverage;
-  $gradient-start: percentage(100% / $background-size);
+  $gradient-start: percentage(math.div(100%, $background-size));
 
   .load-more-container {
     display: flex;

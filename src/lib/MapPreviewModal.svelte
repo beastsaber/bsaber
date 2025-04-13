@@ -12,7 +12,7 @@
 </script>
 
 <div class="preview-container">
-  <div class="backdrop" on:click={close} />
+  <div class="backdrop" on:click={close}></div>
   <div class="content">
     <iframe
       src="https://allpoland.github.io/ArcViewer/?id={key}"
@@ -20,11 +20,13 @@
       height="100%"
       width="100%"
       allowfullscreen="true"
-    />
+    ></iframe>
   </div>
 </div>
 
 <style lang="scss">
+  @use 'sass:math';
+
   .preview-container {
     display: flex;
     z-index: 100;
@@ -45,7 +47,7 @@
       background-color: #000c;
     }
     $fill-percentage: 80;
-    $aspect-ratio: 16/9;
+    $aspect-ratio: math.div(16, 9);
     .content {
       z-index: 101;
       aspect-ratio: $aspect-ratio;
