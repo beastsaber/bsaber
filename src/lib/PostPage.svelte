@@ -29,12 +29,6 @@
     seasonal: faTree,
   }
 
-  const bioRenderer = new marked.Renderer()
-
-  bioRenderer.paragraph = (text) => {
-    return `<p>${text}</p>`
-  }
-
   const postRenderer = new marked.Renderer()
   // Function responsible for converting markdown headings,
   // heading should be in the format {id$name}
@@ -218,7 +212,7 @@
               </div>
             </div>
             {#if author.bio !== undefined}
-              {@html marked(author.bio, { renderer: bioRenderer })}
+              {@html marked(author.bio, { renderer: new marked.Renderer() })}
             {:else}
               <p>Writing for BeastSaber as a guest.</p>
             {/if}
