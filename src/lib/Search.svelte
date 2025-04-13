@@ -6,7 +6,18 @@
   import { beatSaverClientFactory } from './beatsaver-client'
   import type { Beatmap, Playlist } from '../types'
 
-  interface BeatmapDetailed extends Beatmap {
+  interface Preview {
+    name: string
+    uploader: string
+    url: string
+    image: string
+    upvotes: number
+    downvotes: number
+    score: number
+    nsfw?: boolean
+  }
+
+  interface BeatmapWithStats extends Beatmap {
     stats: {
       upvotes: number
       downvotes: number
@@ -14,14 +25,13 @@
     }
   }
 
-  interface PlaylistDetailed extends Playlist {
+  interface PlaylistWithStats extends Playlist {
     stats: {
       upVotes: number
       downVotes: number
       avgScore: number
     }
   }
-
   onMount(() => {
     nsfwToggleVisibility.set(true)
   })
@@ -58,20 +68,13 @@
 
   let dropdownShown: boolean = $state(false)
 
-  let previewResults: {
-    name: string
-    uploader: string
-    url: string
-    image: string
-    upvotes: number
-    downvotes: number
-    score: number
-    nsfw?: boolean
-  }[] = $state([])
+  let previewResults: Preview[] = $state([])
 
   let searchPreviewTimeout: string | number | NodeJS.Timeout | undefined
   let searchButton: HTMLAnchorElement
   let searchUrl: string = $state('')
+
+  let beatSaverPromise: Promise<any> | undefined = $state()
 
   const getSearchUrl = (inputSearchType: string, inputSearchQuery: string) => {
     if (inputSearchType === dropdownItems[0].name) {
@@ -116,12 +119,12 @@
       }
       // TODO: Handle errors and show an appropriate message
       if (searchType === dropdownItems[0].name) {
-        beatSaverClient
+        beatSaverPromise = beatSaverClient
           .fetch(`${mapSearchPath}0?q=${searchQuery}&sortOrder=Relevance`)
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((song: BeatmapDetailed) => {
+              previewResults = data.docs.map((song: BeatmapWithStats) => {
                 return {
                   name: song.name,
                   uploader: song.uploader.name,
@@ -134,14 +137,15 @@
                 }
               })
             }
+            return previewResults
           })
       } else if (searchType === dropdownItems[1].name) {
-        beatSaverClient
+        beatSaverPromise = beatSaverClient
           .fetch(`${playlistsPath}0?q=${searchQuery}&sortOrder=Relevance`)
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((playlist: PlaylistDetailed) => {
+              previewResults = data.docs.map((playlist: PlaylistWithStats) => {
                 return {
                   name: playlist.name,
                   uploader: playlist.owner.name,
@@ -153,6 +157,7 @@
                 }
               })
             }
+            return previewResults
           })
       } else if (searchType === dropdownItems[2].name) {
         // No Op
@@ -162,6 +167,8 @@
     }, 400)
   }
 </script>
+
+<!-- {@debug searchQuery, beatSaverPromise, previewResults} -->
 
 <form onsubmit={search}>
   <div class="search">
@@ -206,28 +213,44 @@
       oninput={searchPreview}
     />
   </div>
-  {#if previewResults.length > 0}
+  {#if searchQuery !== ''}
     <div
       transition:slide={{ duration: 150 }}
       class="dropdown-menu dropdown-menu-list"
       aria-labelledby="dropdownMenuButton"
     >
-      {#each previewResults as preview (preview.url)}
-        <a class="dropdown-item" href={preview.url}>
-          <div class="image-wrapper">
-            <img src={preview.image} class:blur={$filterNsfw && preview.nsfw} alt="Map Thumbnail" />
-          </div>
-          <div class="dropdown-item-map-name">
-            {preview.name}<br />
-            <div class="dropdown-item-uploader">Uploaded by: {preview.uploader}</div>
-            <div class="dropdown-item-stats">
-              Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(
-                preview.score * 100
-              ).toFixed(2)}%
-            </div>
-          </div></a
-        >
-      {/each}
+      {#await beatSaverPromise}
+        <p class="dropdown-item dropdown-item-map-name">Loading....</p>
+      {:then previews}
+        {#if previews != undefined && previews.length > 0}
+          {#each previews as preview (preview.url)}
+            <a class="dropdown-item" href={preview.url}>
+              <div class="image-wrapper">
+                <img
+                  src={preview.image}
+                  class:blur={$filterNsfw && preview.nsfw}
+                  alt="Map Thumbnail"
+                />
+              </div>
+              <div class="dropdown-item-map-name">
+                {preview.name}<br />
+                <div class="dropdown-item-uploader">Uploaded by: {preview.uploader}</div>
+                <div class="dropdown-item-stats">
+                  Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(
+                    preview.score * 100
+                  ).toFixed(2)}%
+                </div>
+              </div></a
+            >
+          {/each}
+        {:else}
+          <p class="dropdown-item dropdown-item-map-name">No results found</p>
+        {/if}
+      {:catch error}
+        <p class="dropdown-item dropdown-item-map-name">
+          An error occured: {error}
+        </p>
+      {/await}
     </div>
   {/if}
   <a class="btn btn-primary btn-search" href={searchUrl} bind:this={searchButton}>Search</a>
@@ -322,7 +345,8 @@
   .blur {
     filter: blur(5px);
   }
-  a.dropdown-item {
+  a.dropdown-item,
+  p.dropdown-item {
     width: auto;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -334,6 +358,11 @@
   .dropdown-item:hover {
     background-color: lighten($color-bsaber-purple, 5%);
   }
+
+  p.dropdown-item:hover {
+    background-color: inherit;
+  }
+
   .dropdown-item-map-name {
     overflow-x: hidden;
     text-overflow: ellipsis;
