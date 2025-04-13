@@ -146,7 +146,7 @@
       </div>
     {/each}
   {:else}
-    {#each Array(8) as _}
+    {#each { length: 8 }}
       <div class="card-wrapper loading"></div>
     {/each}
   {/if}
