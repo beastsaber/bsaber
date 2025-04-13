@@ -181,7 +181,7 @@
       {#if lastUpdated}
         <span class="last-updated-time">Last updated on {formatDate(lastUpdated)}</span>
       {:else}
-        <span class="hide-on-small">Published on </span>{formatDate(publish)}
+        <span class="hide-on-small add-trailing-space">Published on</span>{formatDate(publish)}
       {/if}
     </div>
   </div>
@@ -212,7 +212,7 @@
               </div>
             </div>
             {#if author.bio !== undefined}
-              {@html marked(author.bio)}
+              {@html marked(author.bio, { renderer: new marked.Renderer() })}
             {:else}
               <p>Writing for BeastSaber as a guest.</p>
             {/if}
@@ -312,6 +312,11 @@
   }
   .event-type {
     border: 1px solid $color-warning-yellow;
+  }
+
+  .add-trailing-space::after {
+      content: " ";
+      white-space: pre;
   }
 
   // Needs to be global so because it's rendered in with @html
