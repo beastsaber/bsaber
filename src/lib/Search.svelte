@@ -1,7 +1,6 @@
 <script lang="ts">
   import { slide } from 'svelte/transition'
-  import { filterNsfw } from './storeNsfwPreference'
-  import { nsfwToggleVisibility } from './storeNsfwPreference'
+  import { filterNsfw, nsfwToggleVisibility } from '$lib/storeNsfwPreference'
   import { onMount, onDestroy } from 'svelte'
   import { beatSaverClientFactory } from './beatsaver-client'
   import type { Beatmap, Playlist } from '../types'
@@ -67,14 +66,12 @@
   let lastQuery: string = ''
 
   let dropdownShown: boolean = $state(false)
-
-  let previewResults: Preview[] = $state([])
-
+  
   let searchPreviewTimeout: string | number | NodeJS.Timeout | undefined
   let searchButton: HTMLAnchorElement
   let searchUrl: string = $state('')
 
-  let beatSaverPromise: Promise<any> | undefined = $state()
+  let beatSaverPromise: Promise<Preview[]> | undefined = $state()
 
   const getSearchUrl = (inputSearchType: string, inputSearchQuery: string) => {
     if (inputSearchType === dropdownItems[0].name) {
@@ -112,8 +109,10 @@
       if (searchQuery === lastQuery && !force) {
         return
       }
+
+      let previewResults: Preview[] = []
+
       // If the query is empty, we don't need to do anything
-      previewResults = []
       if (searchQuery.length < 1) {
         return
       }
@@ -213,6 +212,7 @@
       oninput={searchPreview}
     />
   </div>
+  <!-- TODO: Possibly only show once we run the search request, though not a big deal if we don't, but it'll show as "No results found" for a brief time -->
   {#if searchQuery !== ''}
     <div
       transition:slide={{ duration: 150 }}
