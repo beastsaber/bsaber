@@ -35,7 +35,7 @@
     showToggle: boolean
   } = $props()
 
-  let maps: Promise<Beatmap[]> = $state(Promise.resolve([]));
+  let maps: Promise<Beatmap[]> | undefined = $state();
   let visibleCount = $state(loadMoreEnabled ? 8 : fixedCount) // Use fixed count if loadMoreEnabled is false
   let previewKey: string | null = $state(null)
 
@@ -107,7 +107,7 @@
       <div class="card-wrapper loading"></div>
     {/each}
   {:then bmaps}
-    {#if bmaps.length !== 0}
+    {#if bmaps != undefined && bmaps.length !== 0}
       {#each bmaps.slice(0, visibleCount) as map (map.id)}
         <div class="card-wrapper" transition:slide={{ duration: 300 }}>
           <div class="card">
@@ -165,17 +165,21 @@
           </div>
         </div>
       {/each}
-    {:else}
+    {:else if bmaps != undefined}
       <div class="card-wrapper">
         <p>Oh, quite empty here</p>
       </div>
+    {:else}
+      {#each { length: 8 }}
+        <div class="card-wrapper loading"></div>
+      {/each}
+    {/if}
 
-      <!-- Conditionally show "Load More" button if loadMoreEnabled is true -->
-      {#if loadMoreEnabled && visibleCount < (bmaps?.length ?? 0)}
-        <div class="load-more-container">
-          <button onclick={loadMore} class="load-more">Show More</button>
-        </div>
-      {/if}
+    <!-- Conditionally show "Load More" button if loadMoreEnabled is true -->
+    {#if loadMoreEnabled && visibleCount < (bmaps?.length ?? 0)}
+      <div class="load-more-container">
+        <button onclick={loadMore} class="load-more">Show More</button>
+      </div>
     {/if}
   {:catch err}
     <div class="card-wrapper">
