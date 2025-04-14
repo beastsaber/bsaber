@@ -205,9 +205,24 @@
     background: linear-gradient(
       90deg,
       $color-background-primary $gradient-start,
-      $color-background-tertiary 100%
+      $color-background-secondary 100%
     );
-    background-size: $background-size;
+
+    &:hover {
+      background: linear-gradient(
+        90deg,
+        $color-background-primary $gradient-start,
+        $color-background-tertiary 100%
+      );
+    }
+    @media (hover: hover) {
+      background: linear-gradient(
+        90deg,
+        $color-background-primary $gradient-start,
+        $color-background-tertiary 100%
+      );
+      background-size: $background-size;
+    }
     padding: 2px;
     border-radius: $rounding-large + 2px;
     transition: background-position $transition-long;
