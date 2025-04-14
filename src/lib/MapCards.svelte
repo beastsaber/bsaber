@@ -92,6 +92,12 @@
   }
 </script>
 
+{#snippet loadingSkeleton()}
+  {#each { length: 8 }}
+  <div class="card-wrapper loading"></div>
+  {/each}
+{/snippet}
+
 <div
   class="cards max-cols-3"
   style={forceColumnCount != null
@@ -103,9 +109,7 @@
   {/if}
 
   {#await maps}
-    {#each { length: 8 }}
-      <div class="card-wrapper loading"></div>
-    {/each}
+    {@render loadingSkeleton()}
   {:then bmaps}
     {#if bmaps != undefined && bmaps.length !== 0}
       {#each bmaps.slice(0, visibleCount) as map (map.id)}
@@ -170,9 +174,7 @@
         <p>Oh, quite empty here</p>
       </div>
     {:else}
-      {#each { length: 8 }}
-        <div class="card-wrapper loading"></div>
-      {/each}
+      {@render loadingSkeleton()}
     {/if}
 
     <!-- Conditionally show "Load More" button if loadMoreEnabled is true -->
