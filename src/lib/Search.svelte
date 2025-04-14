@@ -66,7 +66,6 @@
   let lastQuery: string = ''
 
   let dropdownShown: boolean = $state(false)
-  
   let searchPreviewTimeout: string | number | NodeJS.Timeout | undefined
   let searchButton: HTMLAnchorElement
   let searchUrl: string = $state('')

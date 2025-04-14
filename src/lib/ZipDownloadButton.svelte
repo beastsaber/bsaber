@@ -23,15 +23,14 @@
   @import 'src/scss/variables';
 
   .zip-download-link {
-      display: block;
-      color: $color-text-secondary;
-      transition: color $transition-short;
-      transition: 0.6s ease;
-      &:hover {
-        color: $color-text-primary;
-        transform: scale(1.2);
-        transition: 0.3s ease;
-      }
+    display: block;
+    color: $color-text-secondary;
+    transition: color $transition-short;
+    transition: 0.6s ease;
+    &:hover {
+      color: $color-text-primary;
+      transform: scale(1.2);
+      transition: 0.3s ease;
+    }
   }
-
 </style>
