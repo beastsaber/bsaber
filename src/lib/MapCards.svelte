@@ -35,7 +35,7 @@
     showToggle: boolean
   } = $props()
 
-  let maps: Promise<Beatmap[]> = Promise.resolve([]);
+  let maps: Promise<Beatmap[]> = $state(Promise.resolve([]));
   let visibleCount = $state(loadMoreEnabled ? 8 : fixedCount) // Use fixed count if loadMoreEnabled is false
   let previewKey: string | null = $state(null)
 
