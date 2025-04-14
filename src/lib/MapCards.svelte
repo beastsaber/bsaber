@@ -15,6 +15,7 @@
   import CopyBsr from './CopyBSR.svelte'
   import { slide } from 'svelte/transition'
   import { filterNsfw, nsfwToggleVisibility } from '$lib/storeNsfwPreference'
+  import { browser } from '$app/environment'
 
   let {
     sortOrder = 'Latest',
@@ -34,6 +35,7 @@
     showToggle: boolean
   } = $props()
 
+  let maps: Promise<Beatmap[]> = Promise.resolve([]);
   let visibleCount = $state(loadMoreEnabled ? 8 : fixedCount) // Use fixed count if loadMoreEnabled is false
   let previewKey: string | null = $state(null)
 
@@ -43,6 +45,17 @@
     if (showToggle) {
       nsfwToggleVisibility.set(true)
     }
+
+    let responsePromise = beatSaverClient.fetch(path)
+      if (playlistId != null) {
+        maps = responsePromise
+          .then((res: Response) => res.json())
+          .then((json: { maps: { map: Beatmap }[] }) => json.maps.map((x) => x.map))
+      } else {
+        maps = responsePromise
+          .then((res: Response) => res.json())
+          .then((json: { docs: Beatmap[] }) => json.docs)
+      }
   })
 
   onDestroy(() => {
@@ -60,21 +73,6 @@
     path = `/search/text/0?sortOrder=${sortOrder}${
       verified !== undefined ? `&verified=${verified}` : ''
     }&pageSize=100` // Maxes out at 100
-  }
-
-  async function getMaps(): Promise<Beatmap[]> {
-    let responsePromise = beatSaverClient.fetch(path)
-    let mapResponse
-    if (playlistId != null) {
-      mapResponse = responsePromise
-        .then((res: Response) => res.json())
-        .then((json: { maps: { map: Beatmap }[] }) => json.maps.map((x) => x.map))
-    } else {
-      mapResponse = responsePromise
-        .then((res: Response) => res.json())
-        .then((json: { docs: Beatmap[] }) => json.docs)
-    }
-    return mapResponse
   }
 
   function loadMore(e: Event) {
@@ -104,7 +102,7 @@
     <MapPreviewModal bind:key={previewKey} />
   {/if}
 
-  {#await getMaps()}
+  {#await maps}
     {#each { length: 8 }}
       <div class="card-wrapper loading"></div>
     {/each}
