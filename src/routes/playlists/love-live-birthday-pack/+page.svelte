@@ -27,7 +27,7 @@
     Lanzhu_Zhong: 'Lanzhu Zhong',
     Chisato_Arashi: 'Chisato Arashi',
     Emma_Verde: 'Emma Verde',
-    Kozuzu_Kachimachi: 'Kozuzu Kachimachi',
+    Kozuzu_Kachimachi: 'Kosuzu Kachimachi',
     Hanamaru_Kunikida: 'Hanamaru Kunikida',
     Sonoda_Umi: 'Umi Sonoda',
     Ayumu_Uehara: 'Ayumu Uehara',
@@ -87,7 +87,7 @@
       </div>
     </div>
     <div class="uploader-container">
-      <a class="uploader" href="https://beatsaver.com/profile/4286182">symphonic</a>
+      <a class="uploader" href="https://beatsaver.com/profile/4292041">symphonic</a>
       and others Present
     </div>
     <div class="body">
