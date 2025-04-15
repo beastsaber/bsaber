@@ -35,8 +35,9 @@
     showToggle: boolean
   } = $props()
 
-  let maps: Promise<Beatmap[]> | undefined = $state();
+  let maps: Promise<Beatmap[]> | undefined = $state()
   let visibleCount = $state(loadMoreEnabled ? 8 : fixedCount) // Use fixed count if loadMoreEnabled is false
+  let mapsLength: number = $state(0)
   let previewKey: string | null = $state(null)
 
   const setPreviewKey = (key: string | null) => (previewKey = key)
@@ -46,6 +47,7 @@
       nsfwToggleVisibility.set(true)
     }
 
+    mapsLength = 0
     let responsePromise = beatSaverClient.fetch(path)
       if (playlistId != null) {
         maps = responsePromise
@@ -56,6 +58,8 @@
           .then((res: Response) => res.json())
           .then((json: { docs: Beatmap[] }) => json.docs)
       }
+
+      mapsLength = (await maps).length
   })
 
   onDestroy(() => {
@@ -176,19 +180,20 @@
     {:else}
       {@render loadingSkeleton()}
     {/if}
-
-    <!-- Conditionally show "Load More" button if loadMoreEnabled is true -->
-    {#if loadMoreEnabled && visibleCount < (bmaps?.length ?? 0)}
-      <div class="load-more-container">
-        <button onclick={loadMore} class="load-more">Show More</button>
-      </div>
-    {/if}
   {:catch err}
     <div class="card-wrapper">
       <p>Oh no, an error occured: {err}</p>
     </div>
   {/await}
 </div>
+
+<!-- Conditionally show "Load More" button if loadMoreEnabled is true -->
+{#if loadMoreEnabled && visibleCount < mapsLength}
+  <div class="load-more-container">
+    <button onclick={loadMore} class="load-more">Show More</button>
+  </div>
+{/if}
+
 
 <style lang="scss">
   @use 'sass:math';
