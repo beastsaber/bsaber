@@ -15,7 +15,6 @@
   import CopyBsr from './CopyBSR.svelte'
   import { slide } from 'svelte/transition'
   import { filterNsfw, nsfwToggleVisibility } from '$lib/storeNsfwPreference'
-  import { browser } from '$app/environment'
 
   let {
     sortOrder = 'Latest',
