@@ -357,6 +357,7 @@
     width: 7rem;
     height: 7rem;
     border-radius: 5px;
+    align-self: center;
   }
   .blur {
     filter: blur(5px);
