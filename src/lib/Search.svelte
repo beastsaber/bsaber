@@ -3,7 +3,9 @@
   import { filterNsfw, nsfwToggleVisibility } from '$lib/storeNsfwPreference'
   import { onMount, onDestroy } from 'svelte'
   import { beatSaverClientFactory } from './beatsaver-client'
-  import type { Beatmap, Playlist } from '../types'
+  import type { Beatmap, BeatmapDifficulty, Playlist } from '../types'
+  import Tags from './Tags.svelte'
+  import Difficulties from './Difficulties.svelte'
 
   interface Preview {
     name: string
@@ -13,6 +15,8 @@
     upvotes: number
     downvotes: number
     score: number
+    tags?: string[] | undefined
+    diffs?: BeatmapDifficulty[] | undefined
     nsfw?: boolean
   }
 
@@ -131,6 +135,8 @@
                   upvotes: song.stats.upvotes,
                   downvotes: song.stats.downvotes,
                   score: song.stats.score,
+                  tags: song.tags,
+                  diffs: song.versions[0].diffs,
                   nsfw: song.nsfw ?? false,
                 }
               })
@@ -223,7 +229,7 @@
       {:then previews}
         {#if previews != undefined && previews.length > 0}
           {#each previews as preview (preview.url)}
-            <a class="dropdown-item" href={preview.url}>
+            <a class="dropdown-item card" href={preview.url}>
               <div class="image-wrapper">
                 <img
                   src={preview.image}
@@ -238,6 +244,16 @@
                   Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(
                     preview.score * 100
                   ).toFixed(2)}%
+                </div>
+                <div class="tags-diffs">
+                  {#if preview.tags}
+                    <Tags tags={preview.tags}  />
+                  {/if}
+                  {#if preview.diffs}
+                  <div class="tags">
+                    <Difficulties diffs={preview.diffs} />
+                  </div>
+                  {/if}
                 </div>
               </div></a
             >
@@ -333,12 +349,13 @@
   }
   .image-wrapper {
     display: flex;
+    min-width: fit-content;
     overflow: hidden;
     border-radius: 5px;
   }
   .image-wrapper img {
-    width: 4rem;
-    height: 4rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 5px;
   }
   .blur {
@@ -367,6 +384,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-left: 0.5rem;
+    overflow: hidden;
   }
   .dropdown-item-uploader {
     padding-top: 0.15rem;
@@ -384,6 +402,22 @@
     white-space: nowrap;
     padding-top: 4.5px;
   }
+
+  .tags-diffs {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    flex-direction: column;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+    }
+  }
+
+  .tags {
+    margin-left: 2px;
+  }
+
   .form-control {
     display: block;
     flex-grow: 1;
