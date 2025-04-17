@@ -248,9 +248,9 @@
                   ).toFixed(2)}%
                 </div>
                 <div class="tags-diffs">
-                  {#if preview.tags}
+                  <!-- {#if preview.tags}
                     <Tags tags={preview.tags}  />
-                  {/if}
+                  {/if} -->
                   {#if preview.diffs}
                   <div class="tags">
                     <Difficulties diffs={preview.diffs} />
@@ -356,8 +356,10 @@
     border-radius: 5px;
   }
   .image-wrapper img {
-    width: 7rem;
-    height: 7rem;
+    // width: 7rem;
+    // height: 7rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 5px;
     align-self: center;
   }
