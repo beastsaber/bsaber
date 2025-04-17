@@ -6,6 +6,8 @@
   import type { Beatmap, BeatmapDifficulty, Playlist } from '../types'
   import Tags from './Tags.svelte'
   import Difficulties from './Difficulties.svelte'
+  import Fa from 'svelte-fa'
+  import { faCaretDown, faCaretUp, faFire } from '@fortawesome/free-solid-svg-icons'
 
   interface Preview {
     name: string
@@ -241,7 +243,7 @@
                 {preview.name}<br />
                 <div class="dropdown-item-uploader">Uploaded by: {preview.uploader}</div>
                 <div class="dropdown-item-stats">
-                  Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(
+                  <Fa icon={faCaretUp} color="green" scale={1.2} style="padding: 0px 4px"/> {preview.upvotes}  <Fa icon={faCaretDown} color="red"  scale={1.2} style="padding: 0px 4px 0px 8px" /> {preview.downvotes}  <Fa icon={faFire}  scale={1.2} color="orange" style="padding: 0px 4px 0px 8px" /> {(
                     preview.score * 100
                   ).toFixed(2)}%
                 </div>
@@ -361,6 +363,10 @@
   }
   .blur {
     filter: blur(5px);
+  }
+
+  .px-2px {
+    
   }
   a.dropdown-item,
   p.dropdown-item {
