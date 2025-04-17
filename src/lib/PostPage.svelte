@@ -13,7 +13,7 @@
   import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
   import { faTree } from '@fortawesome/free-solid-svg-icons/faTree'
 
-  let { post }: { post: PostWithAuthorAndContributor } = $props();
+  let { post }: { post: PostWithAuthorAndContributor } = $props()
   const { body, title, image, authors, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
@@ -102,7 +102,7 @@
     if (people.length === 1) return transformationFunction(people[0])
     // Usual case: First n-1 people concatenaded with commas, and the last one with an "and"
     const lastPerson = people[people.length - 1]
-    const firstPersons = people.slice(0 ,-1)
+    const firstPersons = people.slice(0, -1)
     return `${firstPersons.map(linkifyPerson).join(', ')} and ${transformationFunction(lastPerson)}`
   }
   const months = [

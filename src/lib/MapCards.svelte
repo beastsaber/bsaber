@@ -48,17 +48,17 @@
 
     mapsLength = 0
     let responsePromise = beatSaverClient.fetch(path)
-      if (playlistId != null) {
-        maps = responsePromise
-          .then((res: Response) => res.json())
-          .then((json: { maps: { map: Beatmap }[] }) => json.maps.map((x) => x.map))
-      } else {
-        maps = responsePromise
-          .then((res: Response) => res.json())
-          .then((json: { docs: Beatmap[] }) => json.docs)
-      }
+    if (playlistId != null) {
+      maps = responsePromise
+        .then((res: Response) => res.json())
+        .then((json: { maps: { map: Beatmap }[] }) => json.maps.map((x) => x.map))
+    } else {
+      maps = responsePromise
+        .then((res: Response) => res.json())
+        .then((json: { docs: Beatmap[] }) => json.docs)
+    }
 
-      mapsLength = (await maps).length
+    mapsLength = (await maps).length
   })
 
   onDestroy(() => {
@@ -97,7 +97,7 @@
 
 {#snippet loadingSkeleton()}
   {#each { length: 8 }}
-  <div class="card-wrapper loading"></div>
+    <div class="card-wrapper loading"></div>
   {/each}
 {/snippet}
 
@@ -192,7 +192,6 @@
     <button onclick={loadMore} class="load-more">Show More</button>
   </div>
 {/if}
-
 
 <style lang="scss">
   @use 'sass:math';
