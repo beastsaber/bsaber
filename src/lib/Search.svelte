@@ -250,7 +250,7 @@
                   {preview.upvotes}
                   <Fa icon={faCaretDown} color="red" scale={1.2} style="padding: 0px 4px 0px 8px" />
                   {preview.downvotes}
-                  <Fa icon={faFire} scale={1.2} color="orange" style="padding: 0px 4px 0px 8px" />
+                  <Fa icon={faFire}  color="orange" scale={1.2} style="padding: 0px 4px 0px 8px" />
                   {(preview.score * 100).toFixed(2)}%
                 </div>
                 <div class="dropdown-item-tags-diffs">
