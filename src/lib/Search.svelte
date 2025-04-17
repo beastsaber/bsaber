@@ -7,7 +7,7 @@
   import Tags from './Tags.svelte'
   import Difficulties from './Difficulties.svelte'
   import Fa from 'svelte-fa'
-  import { faCaretDown, faCaretUp, faFire } from '@fortawesome/free-solid-svg-icons'
+  import { faCaretDown, faCaretUp, faFire, faUser } from '@fortawesome/free-solid-svg-icons'
 
   interface Preview {
     name: string
@@ -220,7 +220,7 @@
     />
   </div>
   <!-- TODO: Possibly only show once we run the search request, though not a big deal if we don't, but it'll show as "No results found" for a brief time -->
-  {#if searchQuery !== ''}
+  {#if searchQuery !== '' && beatSaverPromise != undefined}
     <div
       transition:slide={{ duration: 150 }}
       class="dropdown-menu dropdown-menu-list"
@@ -241,20 +241,21 @@
               </div>
               <div class="dropdown-item-map-name">
                 {preview.name}<br />
-                <div class="dropdown-item-uploader">Uploaded by: {preview.uploader}</div>
-                <div class="dropdown-item-stats">
-                  <Fa icon={faCaretUp} color="green" scale={1.2} style="padding: 0px 4px"/> {preview.upvotes}  <Fa icon={faCaretDown} color="red"  scale={1.2} style="padding: 0px 4px 0px 8px" /> {preview.downvotes}  <Fa icon={faFire}  scale={1.2} color="orange" style="padding: 0px 4px 0px 8px" /> {(
-                    preview.score * 100
-                  ).toFixed(2)}%
+                <div class="dropdown-item-uploader">
+                  <Fa icon={faUser} style="padding: 0px 2px" />
+                  {preview.uploader}
                 </div>
-                <div class="tags-diffs">
-                  <!-- {#if preview.tags}
-                    <Tags tags={preview.tags}  />
-                  {/if} -->
+                <div class="dropdown-item-stats">
+                  <Fa icon={faCaretUp} color="green" scale={1.2} style="padding: 0px 4px 0px 3px" />
+                  {preview.upvotes}
+                  <Fa icon={faCaretDown} color="red" scale={1.2} style="padding: 0px 4px 0px 8px" />
+                  {preview.downvotes}
+                  <Fa icon={faFire} scale={1.2} color="orange" style="padding: 0px 4px 0px 8px" />
+                  {(preview.score * 100).toFixed(2)}%
+                </div>
+                <div class="dropdown-item-tags-diffs">
                   {#if preview.diffs}
-                  <div class="tags">
                     <Difficulties diffs={preview.diffs} />
-                  </div>
                   {/if}
                 </div>
               </div></a
@@ -275,7 +276,6 @@
 
 <style lang="scss">
   @import 'src/scss/variables';
-
   form {
     position: relative;
     display: flex;
@@ -356,8 +356,6 @@
     border-radius: 5px;
   }
   .image-wrapper img {
-    // width: 7rem;
-    // height: 7rem;
     width: 6rem;
     height: 6rem;
     border-radius: 5px;
@@ -367,9 +365,6 @@
     filter: blur(5px);
   }
 
-  .px-2px {
-    
-  }
   a.dropdown-item,
   p.dropdown-item {
     width: auto;
@@ -389,12 +384,18 @@
   }
 
   .dropdown-item-map-name {
+    font-size: 14px;
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-left: 0.5rem;
     overflow: hidden;
+
+    @media (min-width: 425px) {
+      font-size: 16px;
+    }
   }
+
   .dropdown-item-uploader {
     padding-top: 0.15rem;
     font-size: small;
@@ -412,18 +413,8 @@
     padding-top: 4.5px;
   }
 
-  .tags-diffs {
-    display: flex;
-    gap: 10px;
+  .dropdown-item-tags-diffs {
     margin-top: 5px;
-    flex-direction: column;
-
-    @media (min-width: 600px) {
-      flex-direction: row;
-    }
-  }
-
-  .tags {
     margin-left: 2px;
   }
 
