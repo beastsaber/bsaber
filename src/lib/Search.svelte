@@ -4,10 +4,10 @@
   import { onMount, onDestroy } from 'svelte'
   import { beatSaverClientFactory } from './beatsaver-client'
   import type { Beatmap, BeatmapDifficulty, Playlist } from '../types'
-  import Tags from './Tags.svelte'
   import Difficulties from './Difficulties.svelte'
   import Fa from 'svelte-fa'
-  import { faCaretDown, faCaretUp, faFire, faUser } from '@fortawesome/free-solid-svg-icons'
+  import { faCaretDown, faCaretUp, faChartLine, faFire, faUser } from '@fortawesome/free-solid-svg-icons'
+  import type { float } from '@opensearch-project/opensearch/api/types.js'
 
   interface Preview {
     name: string
@@ -172,9 +172,17 @@
       }
     }, 400)
   }
-</script>
 
-<!-- {@debug searchQuery, beatSaverPromise, previewResults} -->
+  // Ideally I'd do the below using CSS but
+  // the svelte compiler seems to remove these css classes
+
+  // Function to calculate color based on percentage takes percentage as float
+  function getGradientColor(rating: float) {
+    // Map rating percentage (0-100) to hue range (0 = red, 120 = green)
+    const hue = rating * 120; // 0% = red, 100% = green
+    return `hsl(${hue}, 100%, 50%)`; // Full saturation and 50% lightness
+  }
+</script>
 
 <form onsubmit={search}>
   <div class="search">
@@ -250,7 +258,7 @@
                   {preview.upvotes}
                   <Fa icon={faCaretDown} color="red" scale={1.2} style="padding: 0px 4px 0px 8px" />
                   {preview.downvotes}
-                  <Fa icon={faFire}  color="orange" scale={1.2} style="padding: 0px 4px 0px 8px" />
+                  <Fa icon={faChartLine} color={getGradientColor(preview.score)} scale={1.2} style="padding: 0px 4px 0px 8px;" />
                   {(preview.score * 100).toFixed(2)}%
                 </div>
                 <div class="dropdown-item-tags-diffs">
@@ -276,6 +284,7 @@
 
 <style lang="scss">
   @import 'src/scss/variables';
+
   form {
     position: relative;
     display: flex;
