@@ -64,7 +64,7 @@
       </a>
     {/each}
   {:else}
-    {#each Array(maxCards ?? 4) as _}
+    {#each { length: maxCards ?? 4 }}
       <div class="card loading"></div>
     {/each}
   {/if}
@@ -74,8 +74,6 @@
   @import '../scss/post-cards';
   a .one-click-download-button-container,
   a .zip-download-button-container {
-    transition: opacity $transition-long ease-in-out;
-    opacity: 0;
     position: absolute;
     top: 0.3rem;
     z-index: 1;
@@ -94,7 +92,12 @@
     padding: 0.3em 0.45em;
   }
 
-  @media (min-width: 678px) {
+  @media (hover: hover) {
+    a .one-click-download-button-container,
+    a .zip-download-button-container {
+      transition: opacity $transition-long ease-in-out;
+      opacity: 0;
+    }
     a:hover .one-click-download-button-container {
       opacity: 1;
     }

@@ -3,8 +3,8 @@
 
   let countdownText = 'Calculating...'
   let submitVisible = false
-  let headerVisible = true
-  let tlVisible = true
+  // let headerVisible = true
+  // let tlVisible = true
   let countdownDate: number
 
   function formatTime(days: number, hours: number, minutes: number, seconds: number): string {
@@ -22,8 +22,8 @@
     if (timeLeft <= 0) {
       countdownText = "Thank you for being there! We'll see you next year!"
       submitVisible = false
-      headerVisible = false
-      tlVisible = false
+      // headerVisible = false
+      // tlVisible = false
       return
     }
 
@@ -36,8 +36,8 @@
       days >= 1 ? formatTime(days, hours, minutes, 0) : formatTime(0, hours, minutes, seconds)
 
     submitVisible = timeLeft > 0
-    headerVisible = true
-    tlVisible = true
+    // headerVisible = true
+    // tlVisible = true
   }
 
   onMount(() => {

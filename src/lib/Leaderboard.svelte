@@ -22,7 +22,7 @@
 </script>
 
 <Listing {title} {img} {linkText} {linkUrl}>
-  {#each players as player, index}
+  {#each players as player (player)}
     <div class="player-container">
       <div class="player">
         <div class="rank {rankColor}">{player.rank}</div>

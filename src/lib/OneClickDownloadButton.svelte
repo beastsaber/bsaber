@@ -39,11 +39,9 @@
 <style lang="scss">
   @import 'src/scss/variables';
 
-  // Initially hiding it and only showing it at a certain screen size
-  // Smaller screen size will usually be smartphones
-  // They can't download maps directly from the site, so we hide it
+  ///
   .one-click-download-link {
-    display: none;
+    display: block;
     color: $color-text-secondary;
     transition: color $transition-short;
     transition: 0.6s ease;
@@ -55,9 +53,11 @@
     }
   }
 
-  @media (min-width: 678px) {
+  @media (hover: hover) {
     .one-click-download-link {
-      display: block;
+      color: $color-text-secondary;
+      transition: color $transition-short;
+      transition: 0.6s ease;
     }
   }
 </style>

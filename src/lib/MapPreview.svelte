@@ -14,8 +14,7 @@
   on:click={(e) => {
     e.preventDefault()
 
-    // @ts-ignore
-    setPreviewKey?.call(this, mapId)
+    setPreviewKey?.(mapId)
   }}
 >
   <Fa icon={faPlay} />
@@ -25,7 +24,7 @@
   @import 'src/scss/variables';
 
   .preview-map {
-    display: none;
+    display: block;
     color: $color-text-secondary;
     transition: color $transition-short;
     margin-right: 2px;
@@ -35,12 +34,6 @@
       color: $color-text-primary;
       transform: scale(1.2);
       transition: 0.3s ease;
-    }
-  }
-
-  @media (min-width: 678px) {
-    .preview-map {
-      display: block;
     }
   }
 </style>

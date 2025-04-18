@@ -1,6 +1,6 @@
 <script lang="ts">
   import { marked } from 'marked'
-  import type { Author, PostWithAuthorAndContributor, Uploader } from '../types'
+  import type { PostWithAuthorAndContributor, Uploader } from '../types'
   import MetaHead from './MetaHead.svelte'
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
@@ -13,8 +13,8 @@
   import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
   import { faTree } from '@fortawesome/free-solid-svg-icons/faTree'
 
-  export let post: PostWithAuthorAndContributor
-  const { body, title, image, authors, credits, publish, lastUpdated } = post
+  let { post }: { post: PostWithAuthorAndContributor } = $props()
+  const { body, title, image, authors, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
   let categoryLabel = postCategories[post.category]
@@ -101,8 +101,9 @@
     if (people.length === 0) return ''
     if (people.length === 1) return transformationFunction(people[0])
     // Usual case: First n-1 people concatenaded with commas, and the last one with an "and"
-    const lastPerson = people.pop()!
-    return `${people.map(linkifyPerson).join(', ')} and ${transformationFunction(lastPerson)}`
+    const lastPerson = people[people.length - 1]
+    const firstPersons = people.slice(0, -1)
+    return `${firstPersons.map(linkifyPerson).join(', ')} and ${transformationFunction(lastPerson)}`
   }
   const months = [
     'January',
@@ -190,14 +191,14 @@
 {#if authors.length > 0}
   <div class="author-box">
     <div class="author-box-header">
-      {#if authors.length > 2}
+      {#if authors.length >= 2}
         <h3>About the Authors</h3>
       {:else}
         <h3>About the Author</h3>
       {/if}
     </div>
     <div class="author-box-content" bind:this={authorBox}>
-      {#each authors as author}
+      {#each authors as author (author.id)}
         <div class="author-box-person">
           <img class="author-profile-picture" src={author.avatar} alt={author.name} />
           <div class="author-box-person-info">
@@ -206,7 +207,7 @@
                 {author.name}
               </h4>
               <div class="social-links">
-                {#each author.socialLinks ?? [] as social}
+                {#each author.socialLinks ?? [] as social (social.platform + social.id)}
                   <SocialIcon social={social.platform} id={social.id} />
                 {/each}
               </div>
@@ -218,7 +219,7 @@
             {/if}
 
             <div class="social-links-mobile">
-              {#each author.socialLinks ?? [] as social}
+              {#each author.socialLinks ?? [] as social (social.platform + social.id)}
                 <SocialIcon social={social.platform} id={social.id} />
               {/each}
             </div>
@@ -315,8 +316,8 @@
   }
 
   .add-trailing-space::after {
-      content: " ";
-      white-space: pre;
+    content: ' ';
+    white-space: pre;
   }
 
   // Needs to be global so because it's rendered in with @html
