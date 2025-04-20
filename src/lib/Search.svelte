@@ -107,6 +107,7 @@
     force?: boolean,
   ) {
     clearTimeout(searchPreviewTimeout)
+    beatSaverPromise = undefined;
     lastQuery = searchQuery
     searchQuery = event ? event.currentTarget.value : searchQuery
     searchPreviewTimeout = setTimeout(() => {
