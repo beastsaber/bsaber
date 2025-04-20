@@ -157,15 +157,15 @@
               <div class="tag-row-container">
                 <Tags tags={map.tags} />
                 <div class="interactive-buttons">
+                  <MapPreview mapId={map.id} {setPreviewKey} class="mobile-hidden" />
                   <CopyBsr mapId={map.id} />
-                  <MapPreview mapId={map.id} {setPreviewKey} />
                 </div>
               </div>
               <div class="last-row-container">
                 <Difficulties diffs={map.versions[0].diffs} />
                 <div class="interactive-buttons">
+                  <OneClickDownloadButton mapId={map.id} class="mobile-hidden" />
                   <ZipDownloadButton downloadURL={map.versions[0].downloadURL} />
-                  <OneClickDownloadButton mapId={map.id} />
                 </div>
               </div>
             </div>
@@ -272,6 +272,7 @@
         grid-template-columns: repeat(2, 20px);
         gap: 1rem;
         justify-items: center;
+        direction: rtl;
         transition: opacity $transition-long;
         margin-left: auto;
         opacity: 0;

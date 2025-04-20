@@ -2,16 +2,21 @@
   import Fa from 'svelte-fa'
   import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
-  export let mapId: string
+  interface Prop { 
+    mapId: string, 
+    class?: string,
+    setPreviewKey: ((key: string | null) => void) | undefined,
+  }
 
-  export let setPreviewKey: ((key: string | null) => void) | undefined = undefined
+  let { mapId, class: classes, setPreviewKey = undefined }: Prop = $props()
+
 </script>
 
 <a
   title="Preview Map"
   href="https://allpoland.github.io/ArcViewer/?id={mapId}"
-  class="preview-map"
-  on:click={(e) => {
+  class="{classes} preview-map"
+  onclick={(e) => {
     e.preventDefault()
 
     setPreviewKey?.(mapId)

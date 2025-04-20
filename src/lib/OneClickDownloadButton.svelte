@@ -1,11 +1,16 @@
 <script lang="ts">
-  import Fa from 'svelte-fa/src/fa.svelte'
+  import Fa from 'svelte-fa'
   import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
 
-  export let mapId: string | undefined = undefined
-  export let playlistUrl: string | undefined = undefined
 
-  export let fontSize: string = '1rem'
+  interface Props {
+    mapId?: string | undefined;
+    playlistUrl?: string | undefined;
+    fontSize?: string;
+    class?: string;
+  }
+
+  let { mapId = undefined, playlistUrl = undefined, fontSize = '1rem', class: classes}: Props = $props();
 
   if (mapId && playlistUrl) {
     console.error('Only one of mapId or playlistUrl can be provided. mapId takes priority.')
@@ -20,7 +25,7 @@
   <a
     title="OneClick&trade; Install via BeatSaver"
     href="beatsaver://{mapId}"
-    class="one-click-download-link"
+    class="{classes} one-click-download-link"
     style="font-size: {fontSize}"
   >
     <Fa icon={faCloudDownloadAlt} />
