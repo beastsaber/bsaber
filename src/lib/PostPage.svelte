@@ -14,7 +14,7 @@
   import { faTree } from '@fortawesome/free-solid-svg-icons/faTree'
 
   let { post }: { post: PostWithAuthorAndContributor } = $props()
-  const { body, title, image, authors, publish, lastUpdated } = post
+  const { body, title, image, authors, credits, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
   let categoryLabel = postCategories[post.category]
@@ -123,7 +123,8 @@
     const date = new Date(dateTimeString)
     return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
   }
-  let authorBox: HTMLElement
+  let authorBox: HTMLElement | undefined = $state()
+
   onMount(() => {
     if (authorBox) {
       document.querySelectorAll('.faux-scroll-link').forEach((link) => {
@@ -226,6 +227,35 @@
           </div>
         </div>
       {/each}
+      {#if credits.length == 1}
+        {#each credits as singleCredit}
+          <div class="credits-line">
+            Thanks to
+            {@html prettyNameConcatenation(singleCredit.contributors)}
+            {#if singleCredit.contribution}
+              {singleCredit.contribution}.
+            {:else}
+              for their contribution.
+            {/if}
+          </div>
+        {/each}
+      {:else if credits.length > 1}
+          <div class="credits-line">
+            Thanks to:
+            <ul>
+              {#each credits as singleCredit}
+                <li>
+                  {@html prettyNameConcatenation(singleCredit.contributors)}: 
+                  {#if singleCredit.contribution}
+                    <span>{singleCredit.contribution}</span>
+                  {:else}
+                    For their contribution
+                  {/if}
+                </li>
+              {/each}
+            </ul>
+          </div>
+      {/if}
     </div>
   </div>
 {/if}
@@ -374,12 +404,21 @@
   }
 
   // Separation between different authors
-  .author-box-person + .author-box-person {
+  .author-box-person + .author-box-person,
+  .author-box-person + .credits-line {
     padding-top: 1.2rem;
     margin-top: 1.4rem;
     border-top: 1px solid $color-background-tertiary;
   }
 
+  .credits-line {
+    span {
+      display: inline-block;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
   @media (min-width: 992px) {
     header {
       margin: -20px 0 1rem;
