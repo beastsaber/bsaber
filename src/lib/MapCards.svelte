@@ -16,23 +16,25 @@
   import { slide } from 'svelte/transition'
   import { filterNsfw, nsfwToggleVisibility } from '$lib/storeNsfwPreference'
 
-  let {
-    sortOrder = 'Latest',
-    verified = undefined,
-    playlistId = undefined,
-    forceColumnCount = undefined,
-    loadMoreEnabled = false, // New prop to control "Load More" button
-    fixedCount = 50, // Default fixed number of cards to show. Should account for any playlist pages
-    showToggle = true, // Allow excplictly hiding the NSFW toggle with default being true
-  }: {
-    sortOrder: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random'
+  interface Props {
+    sortOrder?: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random'
     verified?: boolean
     playlistId?: number
     forceColumnCount?: number
-    loadMoreEnabled: boolean
-    fixedCount: number
-    showToggle: boolean
-  } = $props()
+    loadMoreEnabled?: boolean
+    fixedCount?: number
+    showToggle?: boolean
+  }
+
+  let {
+    sortOrder = 'Latest',
+    verified,
+    playlistId,
+    forceColumnCount,
+    loadMoreEnabled = false, // New prop to control "Load More" button
+    fixedCount = 50, // Default fixed number of cards to show. Should account for any playlist pages
+    showToggle = true, // Allow excplictly hiding the NSFW toggle with default being true
+  }: Props  = $props()
 
   let maps: Promise<Beatmap[]> | undefined = $state()
   let visibleCount = $state(loadMoreEnabled ? 8 : fixedCount) // Use fixed count if loadMoreEnabled is false
