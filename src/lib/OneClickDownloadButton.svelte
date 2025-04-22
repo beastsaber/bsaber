@@ -2,15 +2,19 @@
   import Fa from 'svelte-fa'
   import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
 
-
   interface Props {
-    mapId?: string | undefined;
-    playlistUrl?: string | undefined;
-    fontSize?: string;
-    class?: string;
+    mapId?: string | undefined
+    playlistUrl?: string | undefined
+    fontSize?: string
+    class?: string
   }
 
-  let { mapId = undefined, playlistUrl = undefined, fontSize = '1rem', class: classes}: Props = $props();
+  let {
+    mapId = undefined,
+    playlistUrl = undefined,
+    fontSize = '1rem',
+    class: classes,
+  }: Props = $props()
 
   if (mapId && playlistUrl) {
     console.error('Only one of mapId or playlistUrl can be provided. mapId takes priority.')
