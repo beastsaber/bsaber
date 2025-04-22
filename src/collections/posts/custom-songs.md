@@ -8,6 +8,13 @@ homepageText: Learn how to find and install high quality custom songs for Beat S
 image: /static/uploads/posts/beat-saber-square.jpg
 authors:
   - '4285984'
+credits:
+  - contribution: for writing this post
+    contributors:
+      - '4285984'
+  - contribution: as a person
+    contributors:
+      - '139574'
 showInPostListing: false
 linkToSpecialtyPage: /getting-started/custom-songs
 ---
