@@ -2,14 +2,13 @@
   import Fa from 'svelte-fa'
   import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
-  interface Prop { 
-    mapId: string, 
-    class?: string,
-    setPreviewKey: ((key: string | null) => void) | undefined,
+  interface Prop {
+    mapId: string
+    class?: string
+    setPreviewKey: ((key: string | null) => void) | undefined
   }
 
   let { mapId, class: classes, setPreviewKey = undefined }: Prop = $props()
-
 </script>
 
 <a
