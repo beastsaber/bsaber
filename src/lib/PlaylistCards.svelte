@@ -6,10 +6,13 @@
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import { beatSaverClientFactory } from './beatsaver-client'
 
-  export let maxCards: number | undefined = undefined // max amount of cards to show
-  export let overwriteMap: Record<string, FeaturedPlaylistOverwriteCollectionData> = {}
+  interface Props {
+    maxCards?: number | undefined // max amount of cards to show
+    overwriteMap?: Record<string, FeaturedPlaylistOverwriteCollectionData>
+    playlists?: Playlist[]
+  }
 
-  export let playlists: Playlist[] = []
+  let { maxCards = undefined, overwriteMap = {}, playlists = $bindable([]) }: Props = $props()
 
   onMount(async () => {
     await getPlaylists()
@@ -41,19 +44,21 @@
           : overwriteMap[playlist.playlistId].linkOverwrite}
         style={`background-image: url(${playlist.playlistImage512 ?? playlist.playlistImage})`}
       >
-        <!--This empty div is purely there as a bug workaround-->
-        <div></div>
-        <div class="zip-download-button-container">
-          <ZipDownloadButton
-            downloadURL="{import.meta.env.VITE_BSABER_API_BASE ??
-              'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
-          />
-        </div>
-        <div class="one-click-download-button-container">
-          <OneClickDownloadButton
-            playlistUrl="{import.meta.env.VITE_BSABER_API_BASE ??
-              'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
-          />
+        <!-- Incase we change our mind and want this displayed on mobile, just remove the "mobile-hidden" class 
+             Currently hiding both, can't be bothered to fix alignment here otherwise -->
+        <div class="mobile-hidden">
+          <div class="zip-download-button-container">
+            <ZipDownloadButton
+              downloadURL="{import.meta.env.VITE_BSABER_API_BASE ??
+                'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
+            />
+          </div>
+          <div class="one-click-download-button-container">
+            <OneClickDownloadButton
+              playlistUrl="{import.meta.env.VITE_BSABER_API_BASE ??
+                'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
+            />
+          </div>
         </div>
         <div class="content max-cols-4">
           <Uploader uploader={playlist.owner} />
