@@ -314,6 +314,6 @@ Participants must have a basic Mapper or Verified Mapper role on the [Beat Saber
 
 - **What do I need to include in my map when I release it?**
 
-  The BeatSaver title for your map should start with [DITR5] and your description should include the following blurb along with anything else you want to say (a shout out to your coach is highly encouraged)
+  The BeatSaver title for your map should start with [DITR7] and your description should include the following blurb along with anything else you want to say (a shout out to your coach is highly encouraged)
 
 Diamonds in the Rough is an event for new mappers which matches them up with experienced coaches to create a multi-difficulty, curation-worthy map. Keep your eyes on these rookies in the future as their talent develops!
