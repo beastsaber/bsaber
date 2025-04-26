@@ -19,6 +19,10 @@ The goal of this event is to match interested Verified mappers up with Novice ma
 
 - [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8)
 - [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8)
+- [Official Event Info](https://docs.google.com/document/d/1HHRA1GHPC5oF3o18YZkWqLkGcGzqML4s3CUkWds7Qhs/edit?usp=sharing)
+- [コーチ用応募フォーム](https://forms.gle/nbwZwxG5u4s1RDAh6)
+- [初心者マッパー用応募フォーム](https://forms.gle/Vr7sGVeHeiXrEUNr6)
+- [イベント詳細リンク](https://docs.google.com/document/d/1Q47oKY1QmfbNk1hN4X61yK4hgeJg22Gk4hSkuRIEYIw/edit?usp=sharing)
 
 Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](/playlists/ditr-6).
 
