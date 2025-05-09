@@ -37,7 +37,7 @@
 
 <h1>Article Search</h1>
 <div class="cards">
-  {#each posts as post}
+  {#each posts as post (post)}
     <PostListCard {post} />
   {/each}
 </div>
