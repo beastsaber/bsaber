@@ -240,21 +240,21 @@
           </div>
         {/each}
       {:else if credits.length > 1}
-          <div class="credits-line">
-            Thanks to:
-            <ul>
-              {#each credits as singleCredit}
-                <li>
-                  {@html prettyNameConcatenation(singleCredit.contributors)}: 
-                  {#if singleCredit.contribution}
-                    <span>{singleCredit.contribution}</span>
-                  {:else}
-                    For their contribution
-                  {/if}
-                </li>
-              {/each}
-            </ul>
-          </div>
+        <div class="credits-line">
+          Thanks to:
+          <ul>
+            {#each credits as singleCredit}
+              <li>
+                {@html prettyNameConcatenation(singleCredit.contributors)}
+                {#if singleCredit.contribution}
+                  <span>{singleCredit.contribution}</span>
+                {:else}
+                  For their contribution
+                {/if}
+              </li>
+            {/each}
+          </ul>
+        </div>
       {/if}
     </div>
   </div>
