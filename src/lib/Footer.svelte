@@ -17,8 +17,22 @@
   {#if $nsfwToggleVisibility}
     <div class="nsfw-toggle-container">
       <div class="nsfw-component" title="Toggle blur for NSFW covers if present">
-        <span class="toggle-title">NSFW Filter:</span>
-        <div class="toggle-wrapper" on:click={toggleNSFW} on:keydown={e => {e.preventDefault(); if (e.key == " ") {toggleNSFW()}}} tabindex="0" role="checkbox" aria-checked={$filterNsfw}>
+        <span class="toggle-title" id="nsfwToggle">NSFW Filter:</span>
+        <div
+          class="toggle-wrapper"
+          on:click={toggleNSFW}
+          on:keydown={(e) => {
+            e.preventDefault()
+            if (e.key == ' ') {
+              toggleNSFW()
+            }
+          }}
+          tabindex="0"
+          role="checkbox"
+          aria-checked={$filterNsfw}
+          aria-label="Filter NSFW"
+          aria-details="Blur NSFW covers"
+        >
           <div class="toggle-pill" class:active={$filterNsfw}>
             <span class="toggle-status">{$filterNsfw ? 'ON' : 'OFF'}</span>
           </div>
