@@ -86,6 +86,10 @@ For reading through all of our requirements, have some pictures of our Curator's
     <img src="/uploads/posts/curation/rocket.jpg" alt="Rocket" />
     <figcaption>RateGyro's dog, "Rocket"</figcaption>
   </figure>
+  <figure>
+    <img src="/uploads/posts/curation/oscar.jpg" alt="Oscar" />
+    <figcaption>Meme Doggo's doggo, "Oscar"</figcaption>
+  </figure>
 </div>
 
 <style>

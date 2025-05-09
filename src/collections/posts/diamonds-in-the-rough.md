@@ -1,13 +1,12 @@
 ---
 title: Diamonds in the Rough
-section: articles
+section: announcements
 category: event
 postEventType: learning
-publish: 2024-05-17T17:43:00.000Z
-lastUpdated: 2024-08-09T12:00:00.000Z
-homepageText: DITR allows new mappers to pair up with an experienced mapper to
-  learn how to make a high-quality beginner map!
-image: /static/uploads/posts/ditr/ditr6-square.jpg
+publish: 2025-04-25T12:00:00.000Z
+lastUpdated: 2025-04-25T12:00:00.000Z
+homepageText: " Applications for Diamonds In The Rough Vol. 7 Are Now Open!"
+image: /static/uploads/posts/ditr/ditr7-square.png
 showInPostListing: true
 linkToSpecialtyPage: speciality/diamonds-in-the-rough
 ---
@@ -16,7 +15,14 @@ linkToSpecialtyPage: speciality/diamonds-in-the-rough
 
 The goal of this event is to match interested Verified mappers up with Novice mappers in a "coaching" relationship to create one high-quality, curateable map with at least three difficulties. At the end of the event, the novice-made maps will be released as a pack on BeatSaver and featured on BeastSaber, showcasing up-and-coming "undiscovered" mapping talent!
 
-> Stay tuned for the next event!
+## 🚨 Applications for DITR 7 are now open until May 31st!
+
+- [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8)
+- [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8)
+- [Official Event Info](https://docs.google.com/document/d/1HHRA1GHPC5oF3o18YZkWqLkGcGzqML4s3CUkWds7Qhs/edit?usp=sharing)
+- [コーチ用応募フォーム](https://forms.gle/nbwZwxG5u4s1RDAh6)
+- [初心者マッパー用応募フォーム](https://forms.gle/Vr7sGVeHeiXrEUNr6)
+- [イベント詳細リンク](https://docs.google.com/document/d/1Q47oKY1QmfbNk1hN4X61yK4hgeJg22Gk4hSkuRIEYIw/edit?usp=sharing)
 
 Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](/playlists/ditr-6).
 
@@ -296,7 +302,7 @@ Participants must have a basic Mapper or Verified Mapper role on the [Beat Saber
 
 - **Is it possible that my map won't get curated?**
 
-  Yes. Coaches are required to have had maps curated in the past and should have a good sense for what is curation-worthy. Curation standards have been on the rise and if your map is not refined enough to make the cut it will not be curated. It will still, however, be included in the map pack. For reference, [here are the standards](/curation) that curators follow when curating maps.
+  Yes. Coaches are required to have had maps curated in the past and should have a good sense for what is curation-worthy. Curation standards have been on the rise and if your map is not refined enough to make the cut it will not be curated. It will still, however, be included in the map pack. For reference, [here are the standards](/curation#objective-issues) that curators follow when curating maps.
 
 - **Can I do a full spread if I want to?**
 
@@ -308,6 +314,6 @@ Participants must have a basic Mapper or Verified Mapper role on the [Beat Saber
 
 - **What do I need to include in my map when I release it?**
 
-  The BeatSaver title for your map should start with [DITR5] and your description should include the following blurb along with anything else you want to say (a shout out to your coach is highly encouraged)
+  The BeatSaver title for your map should start with [DITR7] and your description should include the following blurb along with anything else you want to say (a shout out to your coach is highly encouraged)
 
 Diamonds in the Rough is an event for new mappers which matches them up with experienced coaches to create a multi-difficulty, curation-worthy map. Keep your eyes on these rookies in the future as their talent develops!
