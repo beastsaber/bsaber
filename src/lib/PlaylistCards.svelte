@@ -44,9 +44,9 @@
           : overwriteMap[playlist.playlistId].linkOverwrite}
         style={`background-image: url(${playlist.playlistImage512 ?? playlist.playlistImage})`}
       >
-        <!-- Incase we change our mind and want this displayed on mobile, just remove the "mobile-hidden" class 
-             Currently hiding both, can't be bothered to fix alignment here otherwise -->
-        <div class="mobile-hidden">
+        <div></div> <!-- This div is here to workaround a breaking SSR bug -->
+        <!-- <div class="mobile-hidden"> -->
+        <div>
           <div class="zip-download-button-container">
             <ZipDownloadButton
               downloadURL="{import.meta.env.VITE_BSABER_API_BASE ??
@@ -88,16 +88,26 @@
   }
 
   a .one-click-download-button-container {
+    display: none;
+  }
+
+  a .zip-download-button-container {
     right: 0.3rem;
     padding: 0.3rem;
   }
 
-  a .zip-download-button-container {
-    right: 2.5rem;
-    padding: 0.3em 0.45em;
-  }
-
   @media (hover: hover) {
+
+    a .one-click-download-button-container {
+      display: inherit;
+      right: 0.3rem;
+      padding: 0.3rem;
+    }
+
+    a .zip-download-button-container {
+      right: 2.5rem;
+      padding: 0.3em 0.45em;
+    }
     a .one-click-download-button-container,
     a .zip-download-button-container {
       transition: opacity $transition-long ease-in-out;
