@@ -353,6 +353,10 @@
 
         opacity: 0;
         transition: opacity 0.3s;
+
+        border-style: none;
+        box-shadow: none;
+
         @media (hover: hover) {
           &:hover {
             opacity: 1;
