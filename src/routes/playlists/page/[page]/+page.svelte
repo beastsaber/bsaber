@@ -3,6 +3,7 @@
   import PlaylistCards from '$lib/PlaylistCards.svelte'
   import PaginationBar from '$lib/PaginationBar.svelte'
   import MetaHead from '$lib/MetaHead.svelte'
+  import ErrorHandler from '$lib/ErrorHandler.svelte'
 
   export let data: FeaturedPlaylistOverviewPageData
 
@@ -18,11 +19,20 @@
 <h1 class="page-title">Featured Packs</h1>
 <br />
 
-<PlaylistCards {playlists} overwriteMap={featuredPlaylistOverwriteMap} />
+<svelte:boundary>
+  <PlaylistCards {playlists} overwriteMap={featuredPlaylistOverwriteMap} />
 
-<div class="pagination-bar">
-  <PaginationBar {currentPage} numberOfPages={pageCount} {getPageLink} forceExternal={true} />
-</div>
+  <div class="pagination-bar">
+    <PaginationBar {currentPage} numberOfPages={pageCount} {getPageLink} forceExternal={true} />
+  </div>
+
+  {#snippet failed(error, reset)}
+    <ErrorHandler
+      error={error}
+      reset={reset}
+    />
+  {/snippet}
+</svelte:boundary>
 
 <style lang="scss">
   @import 'src/scss/variables';
