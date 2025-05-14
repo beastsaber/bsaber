@@ -119,9 +119,9 @@
               </button>
             {/if}
             <div class="interactive-buttons">
-              <CopyBsr mapId={mapOfTheWeek.map.id} />
+              <OneClickButton mapId={mapOfTheWeek.map.id} class="mobile-hidden" />
               <ZipDownloadButton downloadURL={mapOfTheWeek.map.versions[0].downloadURL} />
-              <OneClickButton mapId={mapOfTheWeek.map.id} />
+              <CopyBsr mapId={mapOfTheWeek.map.id} />
             </div>
           </div>
         </div>
@@ -297,6 +297,8 @@
     display: grid;
     grid-template-columns: repeat(3, 20px);
     gap: 1rem;
+    direction: rtl;
+    text-align: center;
     position: absolute;
     bottom: 2rem;
     right: 1.5rem;

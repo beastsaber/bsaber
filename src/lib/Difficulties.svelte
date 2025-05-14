@@ -16,7 +16,7 @@
     alt={firstCharacteristic}
     title={firstCharacteristic}
   />
-  {#each visibleDiffs as diff}
+  {#each visibleDiffs as diff (diff.characteristic + diff.difficulty)}
     <span
       class="{difficulties[diff.difficulty]?.slug} difficulty short"
       title="{diff.difficulty} {diff.nps.toFixed(1)} NPS"
@@ -45,6 +45,7 @@
     align-items: center;
     font-size: 0.75rem;
     user-select: none;
+    // container-type: inline-size;
 
     .characteristic {
       height: 1rem;
@@ -154,6 +155,10 @@
     display: none;
   }
 
+  // Switch to the below whenever there's proper support for it in svelte/sass
+  // @container (width > 650px) {
+
+  // Find a solution for the below that also properly works for search cards
   @media (min-width: 1300px), (max-width: 992px) and (min-width: 678px) {
     .difficulty.short {
       animation: retractDifficulty 0.3s ease-out;

@@ -105,3 +105,10 @@ iframe.markdown-youtube-playlist {
 .sr-only {
   display: none;
 }
+
+// Not really mobile first but allows overriding existing css rules
+.mobile-hidden {
+  @media (hover: none) {
+    display: none !important;
+  }
+}
