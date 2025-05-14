@@ -298,6 +298,7 @@
     grid-template-columns: repeat(3, 20px);
     gap: 1rem;
     direction: rtl;
+    text-align: center;
     position: absolute;
     bottom: 2rem;
     right: 1.5rem;
