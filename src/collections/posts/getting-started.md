@@ -12,7 +12,7 @@ linkToSpecialtyPage: '/getting-started'
 authors:
   - '139574'
 credits:
-  - contribution: the feedback and proofreading the guide
+  - contribution: for the feedback and proofreading the guide
     contributors:
       - '4286051'
 ---
