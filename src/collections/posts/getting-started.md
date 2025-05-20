@@ -11,7 +11,6 @@ showInPostListing: true
 linkToSpecialtyPage: '/getting-started'
 authors:
   - '139574'
-  - '4285984'
 credits:
   - contribution: the feedback and proofreading the guide
     contributors:
