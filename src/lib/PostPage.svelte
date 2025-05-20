@@ -1,6 +1,6 @@
 <script lang="ts">
   import { marked } from 'marked'
-  import type { Author, PostWithAuthorAndContributor, Uploader } from '../types'
+  import type { PostWithAuthorAndContributor, Uploader } from '../types'
   import MetaHead from './MetaHead.svelte'
   import { onMount } from 'svelte'
   import SocialIcon from './SocialIcon.svelte'
@@ -13,7 +13,7 @@
   import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
   import { faTree } from '@fortawesome/free-solid-svg-icons/faTree'
 
-  export let post: PostWithAuthorAndContributor
+  let { post }: { post: PostWithAuthorAndContributor } = $props()
   const { body, title, image, authors, credits, publish, lastUpdated } = post
   const imageUrl = image?.substring(image.indexOf('/static/') + 7) // Kinda silly, but it works
 
@@ -101,8 +101,9 @@
     if (people.length === 0) return ''
     if (people.length === 1) return transformationFunction(people[0])
     // Usual case: First n-1 people concatenaded with commas, and the last one with an "and"
-    const lastPerson = people.pop()!
-    return `${people.map(linkifyPerson).join(', ')} and ${transformationFunction(lastPerson)}`
+    const lastPerson = people[people.length - 1]
+    const firstPersons = people.slice(0, -1)
+    return `${firstPersons.map(linkifyPerson).join(', ')} and ${transformationFunction(lastPerson)}`
   }
   const months = [
     'January',
@@ -122,7 +123,8 @@
     const date = new Date(dateTimeString)
     return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
   }
-  let authorBox: HTMLElement
+  let authorBox: HTMLElement | undefined = $state()
+
   onMount(() => {
     if (authorBox) {
       document.querySelectorAll('.faux-scroll-link').forEach((link) => {
@@ -190,14 +192,14 @@
 {#if authors.length > 0}
   <div class="author-box">
     <div class="author-box-header">
-      {#if authors.length > 2}
+      {#if authors.length >= 2}
         <h3>About the Authors</h3>
       {:else}
         <h3>About the Author</h3>
       {/if}
     </div>
     <div class="author-box-content" bind:this={authorBox}>
-      {#each authors as author}
+      {#each authors as author (author.id)}
         <div class="author-box-person">
           <img class="author-profile-picture" src={author.avatar} alt={author.name} />
           <div class="author-box-person-info">
@@ -206,7 +208,7 @@
                 {author.name}
               </h4>
               <div class="social-links">
-                {#each author.socialLinks ?? [] as social}
+                {#each author.socialLinks ?? [] as social (social.platform + social.id)}
                   <SocialIcon social={social.platform} id={social.id} />
                 {/each}
               </div>
@@ -218,13 +220,42 @@
             {/if}
 
             <div class="social-links-mobile">
-              {#each author.socialLinks ?? [] as social}
+              {#each author.socialLinks ?? [] as social (social.platform + social.id)}
                 <SocialIcon social={social.platform} id={social.id} />
               {/each}
             </div>
           </div>
         </div>
       {/each}
+      {#if credits.length == 1}
+        {#each credits as singleCredit}
+          <div class="credits-line">
+            Thanks to
+            {@html prettyNameConcatenation(singleCredit.contributors)}
+            {#if singleCredit.contribution}
+              {singleCredit.contribution}.
+            {:else}
+              for their contribution.
+            {/if}
+          </div>
+        {/each}
+      {:else if credits.length > 1}
+        <div class="credits-line">
+          Thanks to:
+          <ul>
+            {#each credits as singleCredit}
+              <li>
+                {@html prettyNameConcatenation(singleCredit.contributors)}
+                {#if singleCredit.contribution}
+                  <span>{singleCredit.contribution}</span>
+                {:else}
+                  For their contribution
+                {/if}
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {/if}
     </div>
   </div>
 {/if}
@@ -315,8 +346,8 @@
   }
 
   .add-trailing-space::after {
-      content: " ";
-      white-space: pre;
+    content: ' ';
+    white-space: pre;
   }
 
   // Needs to be global so because it's rendered in with @html
@@ -373,12 +404,21 @@
   }
 
   // Separation between different authors
-  .author-box-person + .author-box-person {
+  .author-box-person + .author-box-person,
+  .author-box-person + .credits-line {
     padding-top: 1.2rem;
     margin-top: 1.4rem;
     border-top: 1px solid $color-background-tertiary;
   }
 
+  .credits-line {
+    span {
+      display: inline-block;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
   @media (min-width: 992px) {
     header {
       margin: -20px 0 1rem;

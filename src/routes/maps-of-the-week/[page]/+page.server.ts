@@ -71,7 +71,7 @@ export async function load({
         startDate: singleMapOfTheWeek.startDate,
         showcase: singleMapOfTheWeek.showcase,
       })
-    } catch (e) {
+    } catch {
       console.error(`Something went wrong fetching info for map ${singleMapOfTheWeek.mapId}.`)
     }
   }
