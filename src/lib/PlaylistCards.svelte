@@ -93,7 +93,7 @@
 
   a .zip-download-button-container {
     right: 0.3rem;
-    padding: 0.3rem;
+    padding: .3em .45em;
   }
 
   @media (hover: hover) {
