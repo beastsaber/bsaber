@@ -1,9 +1,48 @@
 <script lang="ts">
   import { slide } from 'svelte/transition'
-  import { filterNsfw } from './storeNsfwPreference'
-  import { nsfwToggleVisibility } from './storeNsfwPreference'
+  import { filterNsfw, nsfwToggleVisibility } from '$lib/storeNsfwPreference'
   import { onMount, onDestroy } from 'svelte'
+  import { beatSaverClientFactory } from './beatsaver-client'
+  import type { Beatmap, BeatmapDifficulty, Playlist } from '../types'
+  import Difficulties from './Difficulties.svelte'
+  import Fa from 'svelte-fa'
+  import {
+    faCaretDown,
+    faCaretUp,
+    faChartLine,
+    faFire,
+    faUser,
+  } from '@fortawesome/free-solid-svg-icons'
+  import type { float } from '@opensearch-project/opensearch/api/types.js'
 
+  interface Preview {
+    name: string
+    uploader: string
+    url: string
+    image: string
+    upvotes: number
+    downvotes: number
+    score: number
+    tags?: string[] | undefined
+    diffs?: BeatmapDifficulty[] | undefined
+    nsfw?: boolean
+  }
+
+  interface BeatmapWithStats extends Beatmap {
+    stats: {
+      upvotes: number
+      downvotes: number
+      score: number
+    }
+  }
+
+  interface PlaylistWithStats extends Playlist {
+    stats: {
+      upVotes: number
+      downVotes: number
+      avgScore: number
+    }
+  }
   onMount(() => {
     nsfwToggleVisibility.set(true)
   })
@@ -26,35 +65,24 @@
     },
   ]
 
+  const beatSaverClient = beatSaverClientFactory.create()
+
   const beatsaverRoot = import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com' + '/'
-  const beatsaverApiRoot =
-    import.meta.env.VITE_BEATSAVER_API_BASE || 'https://api.beatsaver.com' + '/'
+  const mapSearchPath = '/search/text/'
+  const playlistsPath = '/playlists/search/'
 
-  const mapsSearchApiEndpoint = `${beatsaverApiRoot}search/text/`
-  const playlistsApiEndpoint = `${beatsaverApiRoot}playlists/search/`
+  let { forceSearchType = null } = $props()
 
-  export let forceSearchType: string | null = null
-
-  let searchType: string = forceSearchType ?? dropdownItems[0].name
-  let searchQuery: string = ''
+  let searchType: string = $state(forceSearchType ?? dropdownItems[0].name)
+  let searchQuery: string = $state('')
   let lastQuery: string = ''
 
-  let dropdownShown: boolean = false
-
-  let previewResults: {
-    name: string
-    uploader: string
-    url: string
-    image: string
-    upvotes: number
-    downvotes: number
-    score: number
-    nsfw?: boolean
-  }[] = []
-
+  let dropdownShown: boolean = $state(false)
   let searchPreviewTimeout: string | number | NodeJS.Timeout | undefined
   let searchButton: HTMLAnchorElement
-  let searchUrl: string
+  let searchUrl: string = $state('')
+
+  let beatSaverPromise: Promise<Preview[]> | undefined = $state()
 
   const getSearchUrl = (inputSearchType: string, inputSearchQuery: string) => {
     if (inputSearchType === dropdownItems[0].name) {
@@ -66,10 +94,13 @@
     return '/posts/search?q=' + searchQuery
   }
 
-  $: searchUrl = getSearchUrl(searchType, searchQuery)
+  $effect(() => {
+    searchUrl = getSearchUrl(searchType, searchQuery)
+  })
 
   // Search function that opens a new url in the browser
-  function search() {
+  function search(event: Event) {
+    event.preventDefault()
     if (searchQuery === '') {
       return
     }
@@ -77,45 +108,57 @@
     searchButton.click()
   }
 
-  function searchPreview(event?: any, force?: boolean) {
+  function searchPreview(
+    event?: (Event & { currentTarget: EventTarget & HTMLInputElement }) | null,
+    force?: boolean,
+  ) {
     clearTimeout(searchPreviewTimeout)
+    beatSaverPromise = undefined
     lastQuery = searchQuery
-    searchQuery = event ? event.target.value : searchQuery
+    searchQuery = event ? event.currentTarget.value : searchQuery
     searchPreviewTimeout = setTimeout(() => {
       // We're checking if the query is the same as the last query to avoid making unnecessary requests
       if (searchQuery === lastQuery && !force) {
         return
       }
+
+      let previewResults: Preview[] = []
+
       // If the query is empty, we don't need to do anything
-      previewResults = []
       if (searchQuery.length < 1) {
         return
       }
+      // TODO: Handle errors and show an appropriate message
       if (searchType === dropdownItems[0].name) {
-        fetch(`${mapsSearchApiEndpoint}0?q=${searchQuery}&sortOrder=Relevance`)
+        beatSaverPromise = beatSaverClient
+          .fetch(`${mapSearchPath}0?q=${searchQuery}&sortOrder=Relevance`)
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((song: any) => {
+              previewResults = data.docs.map((song: BeatmapWithStats) => {
                 return {
                   name: song.name,
                   uploader: song.uploader.name,
                   url: `${beatsaverRoot}${searchType.toLowerCase()}/${song.id}`,
-                  image: song.versions.at(-1).coverURL,
+                  image: song.versions?.at(-1)?.coverURL ?? '',
                   upvotes: song.stats.upvotes,
                   downvotes: song.stats.downvotes,
                   score: song.stats.score,
-                  nsfw: song.nsfw,
+                  tags: song.tags,
+                  diffs: song.versions[0].diffs,
+                  nsfw: song.nsfw ?? false,
                 }
               })
             }
+            return previewResults
           })
       } else if (searchType === dropdownItems[1].name) {
-        fetch(`${playlistsApiEndpoint}0?q=${searchQuery}&sortOrder=Relevance`)
+        beatSaverPromise = beatSaverClient
+          .fetch(`${playlistsPath}0?q=${searchQuery}&sortOrder=Relevance`)
           .then((response) => response.json())
           .then((data) => {
             if (searchQuery !== '') {
-              previewResults = data.docs.map((playlist: any) => {
+              previewResults = data.docs.map((playlist: PlaylistWithStats) => {
                 return {
                   name: playlist.name,
                   uploader: playlist.owner.name,
@@ -127,6 +170,7 @@
                 }
               })
             }
+            return previewResults
           })
       } else if (searchType === dropdownItems[2].name) {
         // No Op
@@ -135,15 +179,25 @@
       }
     }, 400)
   }
+
+  // Ideally I'd do the below using CSS but
+  // the svelte compiler seems to remove these css classes
+
+  // Function to calculate color based on percentage takes percentage as float
+  function getGradientColor(rating: float) {
+    // Map rating percentage (0-100) to hue range (0 = red, 120 = green)
+    const hue = rating * 120 // 0% = red, 100% = green
+    return `hsl(${hue}, 100%, 50%)` // Full saturation and 50% lightness
+  }
 </script>
 
-<form on:submit|preventDefault={search}>
+<form onsubmit={search}>
   <div class="search">
     {#if forceSearchType == null}
       <button
         class="filter-dropdown btn btn-primary dropdown-toggle"
         type="button"
-        on:click={() => (dropdownShown = !dropdownShown)}
+        onclick={() => (dropdownShown = !dropdownShown)}
         id="dropdownMenuButton"
         aria-expanded={dropdownShown}
       >
@@ -157,11 +211,11 @@
           class="dropdown-menu filter"
           aria-labelledby="dropdownMenuButton"
         >
-          {#each dropdownItems as item}
+          {#each dropdownItems as item (item.name)}
             <button
               type="button"
               class="dropdown-item"
-              on:click={() => {
+              onclick={() => {
                 searchType = item.name
                 dropdownShown = false
                 searchPreview(null, true)
@@ -177,31 +231,64 @@
       type="search"
       class="form-control"
       placeholder="Enter Keywords"
-      on:input={searchPreview}
+      oninput={searchPreview}
     />
   </div>
-  {#if previewResults.length > 0}
+  <!-- TODO: Possibly only show once we run the search request, though not a big deal if we don't, but it'll show as "No results found" for a brief time -->
+  {#if searchQuery !== '' && beatSaverPromise != undefined}
     <div
       transition:slide={{ duration: 150 }}
       class="dropdown-menu dropdown-menu-list"
       aria-labelledby="dropdownMenuButton"
     >
-      {#each previewResults as preview}
-        <a class="dropdown-item" href={preview.url}>
-          <div class="image-wrapper">
-            <img src={preview.image} class:blur={$filterNsfw && preview.nsfw} alt="Map Thumbnail" />
-          </div>
-          <div class="dropdown-item-map-name">
-            {preview.name}<br />
-            <div class="dropdown-item-uploader">Uploaded by: {preview.uploader}</div>
-            <div class="dropdown-item-stats">
-              Upvotes: {preview.upvotes} - Downvotes: {preview.downvotes} - Rating: {(
-                preview.score * 100
-              ).toFixed(2)}%
-            </div>
-          </div></a
-        >
-      {/each}
+      {#await beatSaverPromise}
+        <p class="dropdown-item dropdown-item-map-name">Loading....</p>
+      {:then previews}
+        {#if previews != undefined && previews.length > 0}
+          {#each previews as preview (preview.url)}
+            <a class="dropdown-item card" href={preview.url}>
+              <div class="image-wrapper">
+                <img
+                  src={preview.image}
+                  class:blur={$filterNsfw && preview.nsfw}
+                  alt="Map Thumbnail"
+                />
+              </div>
+              <div class="dropdown-item-map-name">
+                {preview.name}<br />
+                <div class="dropdown-item-uploader">
+                  <Fa icon={faUser} style="padding: 0px 2px" />
+                  {preview.uploader}
+                </div>
+                <div class="dropdown-item-stats">
+                  <Fa icon={faCaretUp} color="green" scale={1.2} style="padding: 0px 4px 0px 3px" />
+                  {preview.upvotes}
+                  <Fa icon={faCaretDown} color="red" scale={1.2} style="padding: 0px 4px 0px 8px" />
+                  {preview.downvotes}
+                  <Fa
+                    icon={faChartLine}
+                    color={getGradientColor(preview.score)}
+                    scale={1.2}
+                    style="padding: 0px 4px 0px 8px;"
+                  />
+                  {(preview.score * 100).toFixed(2)}%
+                </div>
+                <div class="dropdown-item-tags-diffs">
+                  {#if preview.diffs}
+                    <Difficulties diffs={preview.diffs} />
+                  {/if}
+                </div>
+              </div></a
+            >
+          {/each}
+        {:else}
+          <p class="dropdown-item dropdown-item-map-name">No results found</p>
+        {/if}
+      {:catch error}
+        <p class="dropdown-item dropdown-item-map-name">
+          An error occured: {error}
+        </p>
+      {/await}
     </div>
   {/if}
   <a class="btn btn-primary btn-search" href={searchUrl} bind:this={searchButton}>Search</a>
@@ -285,18 +372,22 @@
   }
   .image-wrapper {
     display: flex;
+    min-width: fit-content;
     overflow: hidden;
     border-radius: 5px;
   }
   .image-wrapper img {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 5px;
+    align-self: center;
   }
   .blur {
     filter: blur(5px);
   }
-  a.dropdown-item {
+
+  a.dropdown-item,
+  p.dropdown-item {
     width: auto;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -308,12 +399,24 @@
   .dropdown-item:hover {
     background-color: lighten($color-bsaber-purple, 5%);
   }
+
+  p.dropdown-item:hover {
+    background-color: inherit;
+  }
+
   .dropdown-item-map-name {
+    font-size: 14px;
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-left: 0.5rem;
+    overflow: hidden;
+
+    @media (min-width: 425px) {
+      font-size: 16px;
+    }
   }
+
   .dropdown-item-uploader {
     padding-top: 0.15rem;
     font-size: small;
@@ -330,6 +433,12 @@
     white-space: nowrap;
     padding-top: 4.5px;
   }
+
+  .dropdown-item-tags-diffs {
+    margin-top: 5px;
+    margin-left: 2px;
+  }
+
   .form-control {
     display: block;
     flex-grow: 1;

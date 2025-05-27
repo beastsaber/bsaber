@@ -20,7 +20,7 @@
   >
     <Fa icon={faAngleLeft} />
   </a>
-  {#each pageNumbers as singlePageNumber}
+  {#each pageNumbers as singlePageNumber (singlePageNumber)}
     <a
       class="page-button"
       class:active={singlePageNumber === currentPage}

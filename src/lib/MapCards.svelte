@@ -14,20 +14,32 @@
   import { beatSaverClientFactory } from './beatsaver-client'
   import CopyBsr from './CopyBSR.svelte'
   import { slide } from 'svelte/transition'
-  import { filterNsfw } from './storeNsfwPreference'
-  import { nsfwToggleVisibility } from './storeNsfwPreference'
+  import { filterNsfw, nsfwToggleVisibility } from '$lib/storeNsfwPreference'
 
-  export let sortOrder: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random' = 'Latest'
-  export let verified: boolean | undefined = undefined
-  export let playlistId: number | undefined = undefined
-  export let forceColumnCount: number | undefined = undefined
-  export let loadMoreEnabled: boolean = false // New prop to control "Load More" button
-  export let fixedCount: number = 50 // Default fixed number of cards to show. Should account for any playlist pages
-  export let showToggle = true // Allow excplictly hiding the NSFW toggle with default being true
+  interface Props {
+    sortOrder?: 'Latest' | 'Relevance' | 'Rating' | 'Curated' | 'Random'
+    verified?: boolean
+    playlistId?: number
+    forceColumnCount?: number
+    loadMoreEnabled?: boolean
+    fixedCount?: number
+    showToggle?: boolean
+  }
 
-  let maps: Beatmap[] = []
-  let visibleCount = loadMoreEnabled ? 8 : fixedCount // Use fixed count if loadMoreEnabled is false
-  let previewKey: string | null = null
+  let {
+    sortOrder = 'Latest',
+    verified,
+    playlistId,
+    forceColumnCount,
+    loadMoreEnabled = false, // New prop to control "Load More" button
+    fixedCount = 50, // Default fixed number of cards to show. Should account for any playlist pages
+    showToggle = true, // Allow excplictly hiding the NSFW toggle with default being true
+  }: Props = $props()
+
+  let maps: Promise<Beatmap[]> | undefined = $state()
+  let visibleCount = $state(loadMoreEnabled ? 8 : fixedCount) // Use fixed count if loadMoreEnabled is false
+  let mapsLength: number = $state(0)
+  let previewKey: string | null = $state(null)
 
   const setPreviewKey = (key: string | null) => (previewKey = key)
 
@@ -35,7 +47,20 @@
     if (showToggle) {
       nsfwToggleVisibility.set(true)
     }
-    await getMaps()
+
+    mapsLength = 0
+    let responsePromise = beatSaverClient.fetch(path)
+    if (playlistId != null) {
+      maps = responsePromise
+        .then((res: Response) => res.json())
+        .then((json: { maps: { map: Beatmap }[] }) => json.maps.map((x) => x.map))
+    } else {
+      maps = responsePromise
+        .then((res: Response) => res.json())
+        .then((json: { docs: Beatmap[] }) => json.docs)
+    }
+
+    mapsLength = (await maps).length
   })
 
   onDestroy(() => {
@@ -55,16 +80,8 @@
     }&pageSize=100` // Maxes out at 100
   }
 
-  async function getMaps() {
-    let response = await beatSaverClient.fetch(path)
-    if (playlistId != null) {
-      maps = await response.json().then((json) => json.maps.map((x) => x.map) as Beatmap[])
-    } else {
-      maps = await response.json().then((json) => json['docs'] as Beatmap[])
-    }
-  }
-
-  function loadMore() {
+  function loadMore(e: Event) {
+    e.preventDefault()
     visibleCount += 8 // Load 8 more cards when clicking "Load More"
   }
 
@@ -80,6 +97,12 @@
   }
 </script>
 
+{#snippet loadingSkeleton()}
+  {#each { length: 8 }}
+    <div class="card-wrapper loading"></div>
+  {/each}
+{/snippet}
+
 <div
   class="cards max-cols-3"
   style={forceColumnCount != null
@@ -90,72 +113,85 @@
     <MapPreviewModal bind:key={previewKey} />
   {/if}
 
-  {#if maps.length !== 0}
-    {#each maps.slice(0, visibleCount) as map (map.id)}
-      <div class="card-wrapper" transition:slide={{ duration: 300 }}>
-        <div class="card">
-          <div class="image-container">
-            <img
-              src={`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${
-                map.versions[0].hash
-              }.jpg`}
-              alt={map.name}
-              class:blur={$filterNsfw && map.nsfw}
-            />
-            <div
-              class="button-overlay"
-              class:force-show={$playingId === map.id}
-              on:click={() => togglePlayingAudio(map.id, map.versions[0].previewURL)}
-            >
-              {#if $playingId === map.id}
-                <Fa icon={faPause} />
-              {:else}
-                <Fa icon={faPlay} />
-              {/if}
-            </div>
-          </div>
-          <div class="content">
-            <div>
-              <a
-                href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
-                  map.id
-                }`}
-                class="title"
-                title={map.name}
+  {#await maps}
+    {@render loadingSkeleton()}
+  {:then bmaps}
+    {#if bmaps != undefined && bmaps.length !== 0}
+      {#each bmaps.slice(0, visibleCount) as map (map.id)}
+        <div class="card-wrapper" transition:slide={{ duration: 300 }}>
+          <div class="card">
+            <div class="image-container">
+              <img
+                src={`${import.meta.env.VITE_BEATSAVER_CDN_BASE || 'https://cdn.beatsaver.com'}/${
+                  map.versions[0].hash
+                }.jpg`}
+                alt={map.name}
+                class:blur={$filterNsfw && map.nsfw}
+              />
+              <button
+                class="button-overlay"
+                class:force-show={$playingId === map.id}
+                type="button"
+                aria-pressed={$playingId === map.id}
+                aria-label={$playingId === map.id ? 'Play' : 'Stop'}
+                onclick={() => togglePlayingAudio(map.id, map.versions[0].previewURL)}
               >
-                {map.name}
-              </a>
-              <Uploader uploader={map.uploader} curator={map.curator} />
+                {#if $playingId === map.id}
+                  <Fa icon={faPause} />
+                {:else}
+                  <Fa icon={faPlay} />
+                {/if}
+              </button>
             </div>
-            <div class="tag-row-container">
-              <Tags tags={map.tags} />
-              <div class="interactive-buttons">
-                <CopyBsr mapId={map.id} />
-                <MapPreview mapId={map.id} {setPreviewKey} />
+            <div class="content">
+              <div>
+                <a
+                  href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/maps/${
+                    map.id
+                  }`}
+                  class="title"
+                  title={map.name}
+                >
+                  {map.name}
+                </a>
+                <Uploader uploader={map.uploader} curator={map.curator} />
               </div>
-            </div>
-            <div class="last-row-container">
-              <Difficulties diffs={map.versions[0].diffs} />
-              <div class="interactive-buttons">
-                <ZipDownloadButton downloadURL={map.versions[0].downloadURL} />
-                <OneClickDownloadButton mapId={map.id} />
+              <div class="tag-row-container">
+                <Tags tags={map.tags} />
+                <div class="interactive-buttons">
+                  <MapPreview mapId={map.id} {setPreviewKey} class="mobile-hidden" />
+                  <CopyBsr mapId={map.id} />
+                </div>
+              </div>
+              <div class="last-row-container">
+                <Difficulties diffs={map.versions[0].diffs} />
+                <div class="interactive-buttons">
+                  <OneClickDownloadButton mapId={map.id} class="mobile-hidden" />
+                  <ZipDownloadButton downloadURL={map.versions[0].downloadURL} />
+                </div>
               </div>
             </div>
           </div>
         </div>
+      {/each}
+    {:else if bmaps != undefined}
+      <div class="card-wrapper">
+        <p>Oh, quite empty here</p>
       </div>
-    {/each}
-  {:else}
-    {#each Array(8) as _}
-      <div class="card-wrapper loading"></div>
-    {/each}
-  {/if}
+    {:else}
+      {@render loadingSkeleton()}
+    {/if}
+  {:catch err}
+    <div class="card-wrapper">
+      <p>Oh no, an error occured: {err}</p>
+    </div>
+  {/await}
 </div>
 
 <!-- Conditionally show "Load More" button if loadMoreEnabled is true -->
-{#if loadMoreEnabled && visibleCount < maps.length}
+{#if loadMoreEnabled && visibleCount < mapsLength}
   <div class="load-more-container">
-    <button on:click|preventDefault={loadMore} class="load-more">Show More</button>
+    <button onclick={loadMore} class="load-more">Show More</button>
   </div>
 {/if}
 
@@ -205,22 +241,51 @@
     background: linear-gradient(
       90deg,
       $color-background-primary $gradient-start,
-      $color-background-tertiary 100%
+      $color-background-secondary 100%
     );
-    background-size: $background-size;
+
+    &:hover {
+      background: linear-gradient(
+        90deg,
+        $color-background-primary $gradient-start,
+        $color-background-tertiary 100%
+      );
+      background-size: 160%;
+    }
+    @media (hover: hover) {
+      background: linear-gradient(
+        90deg,
+        $color-background-primary $gradient-start,
+        $color-background-tertiary 100%
+      );
+      background-size: $background-size;
+    }
     padding: 2px;
     border-radius: $rounding-large + 2px;
     transition: background-position $transition-long;
     overflow: hidden;
 
     .interactive-buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 20px);
-      gap: 1rem;
-      justify-items: center;
-      transition: opacity $transition-long;
-      margin-left: auto;
-      opacity: 0;
+      display: none;
+    }
+
+    @media screen and (min-width: 560px) {
+      .interactive-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 20px);
+        gap: 1rem;
+        justify-items: center;
+        direction: rtl;
+        transition: opacity $transition-long;
+        margin-left: auto;
+        opacity: 0;
+      }
+    }
+
+    @media (hover: none) {
+      .interactive-buttons {
+        opacity: 1;
+      }
     }
 
     &:hover {
@@ -289,6 +354,10 @@
 
         opacity: 0;
         transition: opacity 0.3s;
+
+        border-style: none;
+        box-shadow: none;
+
         @media (hover: hover) {
           &:hover {
             opacity: 1;

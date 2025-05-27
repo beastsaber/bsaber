@@ -56,7 +56,7 @@
   @import 'src/scss/variables';
 
   .copy-bsr {
-    display: none;
+    display: inline-block;
     background: none;
     border: none;
     color: $color-text-secondary;
@@ -70,12 +70,6 @@
       color: $color-text-primary;
       transform: scale(1.2);
       cursor: pointer;
-    }
-  }
-
-  @media (min-width: 678px) {
-    .copy-bsr {
-      display: inline-block;
     }
   }
 

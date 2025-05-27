@@ -6,10 +6,13 @@
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import { beatSaverClientFactory } from './beatsaver-client'
 
-  export let maxCards: number | undefined = undefined // max amount of cards to show
-  export let overwriteMap: Record<string, FeaturedPlaylistOverwriteCollectionData> = {}
+  interface Props {
+    maxCards?: number | undefined // max amount of cards to show
+    overwriteMap?: Record<string, FeaturedPlaylistOverwriteCollectionData>
+    playlists?: Playlist[]
+  }
 
-  export let playlists: Playlist[] = []
+  let { maxCards = undefined, overwriteMap = {}, playlists = $bindable([]) }: Props = $props()
 
   onMount(async () => {
     await getPlaylists()
@@ -44,19 +47,21 @@
             : (playlist.playlistImage512 ?? playlist.playlistImage)
         })()})`}
       >
-        <!--This empty div is purely there as a bug workaround-->
-        <div></div>
-        <div class="zip-download-button-container">
-          <ZipDownloadButton
-            downloadURL="{import.meta.env.VITE_BSABER_API_BASE ??
-              'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
-          />
-        </div>
-        <div class="one-click-download-button-container">
-          <OneClickDownloadButton
-            playlistUrl="{import.meta.env.VITE_BSABER_API_BASE ??
-              'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
-          />
+        <div></div> <!-- This div is here to workaround a breaking SSR bug -->
+        <!-- <div class="mobile-hidden"> -->
+        <div>
+          <div class="zip-download-button-container">
+            <ZipDownloadButton
+              downloadURL="{import.meta.env.VITE_BSABER_API_BASE ??
+                'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
+            />
+          </div>
+          <div class="one-click-download-button-container">
+            <OneClickDownloadButton
+              playlistUrl="{import.meta.env.VITE_BSABER_API_BASE ??
+                'https://api.beatsaver.com'}/playlists/id/{playlist.playlistId}/download"
+            />
+          </div>
         </div>
         <div class="content max-cols-4">
           <Uploader uploader={playlist.owner} />
@@ -67,7 +72,7 @@
       </a>
     {/each}
   {:else}
-    {#each Array(maxCards ?? 4) as _}
+    {#each { length: maxCards ?? 4 }}
       <div class="card loading"></div>
     {/each}
   {/if}
@@ -77,8 +82,6 @@
   @import '../scss/post-cards';
   a .one-click-download-button-container,
   a .zip-download-button-container {
-    transition: opacity $transition-long ease-in-out;
-    opacity: 0;
     position: absolute;
     top: 0.3rem;
     z-index: 1;
@@ -88,16 +91,31 @@
   }
 
   a .one-click-download-button-container {
-    right: 0.3rem;
-    padding: 0.3rem;
+    display: none;
   }
 
   a .zip-download-button-container {
-    right: 2.5rem;
-    padding: 0.3em 0.45em;
+    right: 0.3rem;
+    padding: .3em .45em;
   }
 
-  @media (min-width: 678px) {
+  @media (hover: hover) {
+
+    a .one-click-download-button-container {
+      display: inherit;
+      right: 0.3rem;
+      padding: 0.3rem;
+    }
+
+    a .zip-download-button-container {
+      right: 2.5rem;
+      padding: 0.3em 0.45em;
+    }
+    a .one-click-download-button-container,
+    a .zip-download-button-container {
+      transition: opacity $transition-long ease-in-out;
+      opacity: 0;
+    }
     a:hover .one-click-download-button-container {
       opacity: 1;
     }

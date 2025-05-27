@@ -1,33 +1,31 @@
 <script lang="ts">
+  import { innerWidth } from 'svelte/reactivity/window'
   import { slide } from 'svelte/transition'
 
-  let navbarMenu: HTMLElement | null = null
-  let showMobileNavbar: boolean = false
-  let windowSize: number
+  let navbarMenu: HTMLElement | null = $state(null)
+  let showMobileNavbar: boolean = $state(false)
+  let windowSize = $derived(innerWidth.current || 0)
   let expandedDropdownId: string | null = null
 
-  interface DropdownItem {
-    name?: string
-    expanded?: boolean
-    Items?: any[]
+  interface NavbarBase {
+    name: string
+    href?: string
+    Items?: NavbarChild[]
   }
 
-  let navbarDropdownItems: {
-    name: string
-    expanded?: boolean
-    href?: string
-    Items?: {
-      name: string
-      href: string
-      dividerAfter?: boolean
-      expanded?: boolean
-      Items?: {
-        name: string
-        href: string
-        dividerAfter?: boolean
-      }[]
-    }[]
-  }[] = [
+  interface NavbarChild extends NavbarBase {
+    href: string
+    dividerAfter?: boolean
+  }
+
+  interface NavbarDropdown extends NavbarBase {
+    Items: NavbarChild[]
+    expanded: boolean
+  }
+
+  type Navbar = NavbarDropdown | (NavbarBase & { Items?: never; href: string })
+
+  let navbarDropdownItems: Navbar[] = $state([
     {
       name: 'Get Started',
       expanded: false,
@@ -166,26 +164,35 @@
       name: 'Community Hub',
       href: '/community-hub',
     },
-  ]
+  ])
 
-  const toggleDropdown = (selectedItem: DropdownItem, dropdownId: string) => {
+  const toggleDropdown = (event: Event, selectedItem: NavbarDropdown, dropdownId: string) => {
+    event.preventDefault()
+    event.stopPropagation()
     if (selectedItem.expanded) {
       selectedItem.expanded = false
-      navbarDropdownItems = navbarDropdownItems
       return
     }
     collapseAllDropdowns()
     expandDropdown(selectedItem, dropdownId, true)
   }
 
-  const expandDropdown = (dropdownItem: DropdownItem, dropdownId: string, forceUpdate = false) => {
+  const expandDropdown = (
+    dropdownItem: NavbarDropdown,
+    dropdownId: string,
+    forceUpdate = false,
+  ) => {
     dropdownItem.expanded = true
     expandedDropdownId = dropdownId
     if (forceUpdate) navbarDropdownItems = navbarDropdownItems
   }
 
   const collapseAllDropdowns = (forceUpdate = false) => {
-    navbarDropdownItems.forEach((item) => (item.expanded = false))
+    navbarDropdownItems.forEach((item) => {
+      if ('expanded' in item && typeof item.expanded === 'boolean') {
+        item.expanded = false
+      }
+    })
     expandedDropdownId = null
     if (forceUpdate) navbarDropdownItems = navbarDropdownItems
   }
@@ -208,15 +215,11 @@
 
   const slideInOnMobile = (element: Element) => {
     if (windowSize > 1100) return {} // undefined would be a type issue...
-    return slide(element, { duration: 150 }) as __sveltets_2_SvelteTransitionReturnType
+    return slide(element, { duration: 150 })
   }
 </script>
 
-<svelte:window
-  bind:innerWidth={windowSize}
-  on:touchstart={closeDropdownMenus}
-  on:click={closeDropdownMenus}
-/>
+<svelte:window on:touchstart={closeDropdownMenus} on:click={closeDropdownMenus} />
 
 <nav class="navbar">
   <div class="container">
@@ -226,7 +229,7 @@
     <button
       type="button"
       class="navbar-toggler"
-      on:click={() => (showMobileNavbar = !showMobileNavbar)}
+      onclick={() => (showMobileNavbar = !showMobileNavbar)}
       data-target="navbar-menu"
       data-toggler=""
       aria-controls="navbar-menu"
@@ -243,16 +246,15 @@
         bind:this={navbarMenu}
       >
         <ul class="navbar-list">
-          {#each navbarDropdownItems as item, index}
+          {#each navbarDropdownItems as item, index (item.name + item.href)}
             {#if item.Items}
               <li class="nav-item">
                 <div class="nav-link">
-                  <!-- svelte-ignore a11y-invalid-attribute -->
+                  <!-- svelte-ignore a11y_invalid_attribute -->
                   <a
                     href=""
                     rel="external"
-                    on:click|preventDefault|stopPropagation={() =>
-                      toggleDropdown(item, `dropdown-menu-${index}`)}
+                    onclick={(event) => toggleDropdown(event, item, `dropdown-menu-${index}`)}
                     ><span
                       >{item.name}
                       <div class="dropdown-toggle"></div></span
@@ -260,19 +262,18 @@
                   </a>
                 </div>
                 {#if item.expanded}
-                  <!-- svelte-ignore a11y-mouse-events-have-key-events -->
                   <div
                     transition:slide={{ duration: 150 }}
                     id="dropdown-menu-{index}"
                     class="dropdown-menu"
                   >
-                    {#each item.Items as navItem}
+                    {#each item.Items as navItem (navItem.name + navItem.href)}
                       <a href={navItem.href} rel="external" class="dropdown-item">{navItem.name}</a>
                       {#if navItem.dividerAfter}
                         <div class="dropdown-divider"></div>
                       {/if}
                       {#if navItem.Items}
-                        {#each navItem.Items as navSubItem}
+                        {#each navItem.Items as navSubItem (navSubItem.name + navSubItem.href)}
                           <a href={navSubItem.href} rel="external" class="dropdown-item sub-item"
                             >{navSubItem.name}</a
                           >

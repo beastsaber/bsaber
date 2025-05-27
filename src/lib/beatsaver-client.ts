@@ -41,26 +41,30 @@ class BeatSaverClient {
 
   // Assumed rate limit depends on fixed queue size. If it's n-sized it will implicitly assume that the rate limit is n requests per second.
   fetch(path: string): ReturnType<typeof fetch> {
-    return new Promise(async (resolve, reject) => {
-      const now = Date.now()
-      // If we're not at capacity, we can make the request immediately
-      if (this.lastRelevantRequests.isAtCapacity) {
-        // If we're at capacity, we might need to wait before making the request
-        const lastRequestTimestamp = this.lastRelevantRequests.last
-        if (lastRequestTimestamp) {
-          const timeSinceLastRequest = now - lastRequestTimestamp
-          const timeToWait = 1000 - timeSinceLastRequest
-          if (timeToWait > 0) {
-            await sleep(timeToWait)
+    return new Promise((resolve, reject) => {
+      const handleRequest = async () => {
+        const now = Date.now()
+        // If we're not at capacity, we can make the request immediately
+        if (this.lastRelevantRequests.isAtCapacity) {
+          // If we're at capacity, we might need to wait before making the request
+          const lastRequestTimestamp = this.lastRelevantRequests.last
+          if (lastRequestTimestamp) {
+            const timeSinceLastRequest = now - lastRequestTimestamp
+            const timeToWait = 1000 - timeSinceLastRequest
+            if (timeToWait > 0) {
+              await sleep(timeToWait)
+            }
           }
         }
+        this.lastRelevantRequests.add(now)
+        this.unrateLimitedFetch(`${this.baseUrl}${path}`).then(resolve).catch(reject)
       }
-
-      this.lastRelevantRequests.add(now)
-      this.unrateLimitedFetch(`${this.baseUrl}${path}`).then(resolve).catch(reject)
+      handleRequest().catch(reject)
     })
   }
 
+  // TODO: Avoid using explicit any, normally this should be of type unknown and then casted to the proper type
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   private async unrateLimitedFetch(url: string): Promise<any> {
     return this.underlyingFetchFunction(url)
       .then(async (response) => {
