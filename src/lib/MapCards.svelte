@@ -250,6 +250,7 @@
         $color-background-primary $gradient-start,
         $color-background-tertiary 100%
       );
+      background-size: 160%;
     }
     @media (hover: hover) {
       background: linear-gradient(
