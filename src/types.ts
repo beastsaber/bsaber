@@ -94,6 +94,7 @@ export type MapOfTheWeekCollectionData = {
 export type FeaturedPlaylistOverwriteCollectionData = {
   id: string
   linkOverwrite?: string
+  imageOverwrite?: string
 }
 
 export type MapOfTheWeek = {
