@@ -22,7 +22,7 @@
   }
 
   const createStartDateTimeText = ({
-    dateParams: { startDateTimeUTC, endDateTimeUTC, useStartTime, useEndTime },
+    dateParams: { startDateTimeUTC, useStartTime },
   }: CommunityEvent): string => {
     const startDateText = useStartTime
       ? startDateTimeUTC.toLocaleDateString('en-US', timeFormatOptions)

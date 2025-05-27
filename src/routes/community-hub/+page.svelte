@@ -2,18 +2,6 @@
   import type { LanguageKeys } from '../../types'
   import type { CommunityHubSSRData } from './+page.server'
   import MetaHead from '$lib/MetaHead.svelte'
-  import {
-    faDiscord,
-    faFacebook,
-    faInstagram,
-    faTwitch,
-    faXTwitter,
-    faYoutube,
-    faReddit,
-    faGithub,
-  } from '@fortawesome/free-brands-svg-icons'
-  import { faLink, faBook } from '@fortawesome/free-solid-svg-icons'
-  import Fa from 'svelte-fa'
   import Fuse from 'fuse.js'
   import SocialIcon from '$lib/SocialIcon.svelte'
   import { iconMapping } from '$lib/iconMapping'
@@ -98,12 +86,14 @@
     )
   }
 
-  let debounceTimeout: any = null
-  const updateNameAndDescriptionFilter = (event: InputEvent) => {
+  let debounceTimeout: NodeJS.Timeout | null = null
+  const updateNameAndDescriptionFilter = (
+    event: Event & { currentTarget: EventTarget & HTMLInputElement },
+  ) => {
     if (debounceTimeout != null) {
       clearTimeout(debounceTimeout)
     }
-    nameAndDescriptionFilter = (event.target as HTMLInputElement).value
+    nameAndDescriptionFilter = event.currentTarget.value
     debounceTimeout = setTimeout(() => {
       filteredCommunities = filterCommunities(
         data.communities,
@@ -276,7 +266,7 @@
             title={name}
             on:click={toggleSocialFilter(name)}
           >
-            <SocialIcon social={name} noLink={true} />
+            <SocialIcon social={name as any} noLink={true} />
           </span>
         {/each}
       </div>

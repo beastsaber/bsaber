@@ -6,7 +6,7 @@
 
 {#if tags !== undefined && tags.length !== 0}
   <div class="tags">
-    {#each tags as tag}
+    {#each tags as tag (tag)}
       {#if tag in styleTags}
         <span class="style tag" title={styleTags[tag]}>{styleTags[tag]}</span>
       {:else if tag in genreTags}

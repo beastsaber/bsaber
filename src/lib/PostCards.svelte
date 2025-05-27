@@ -46,7 +46,7 @@
 </script>
 
 <div class="cards {maxColsClass}" style="--aspect-ratio:{aspectRatio}">
-  {#each cardsWithLabel as card}
+  {#each cardsWithLabel as card (card.title + card.image + card.lastUpdated)}
     <!-- Forcing rel="external" to allow scripts to load properly within Post pages -->
     <a
       class="card"
