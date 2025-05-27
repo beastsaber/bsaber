@@ -38,11 +38,14 @@
         class:overridden={overwriteMap[playlist.playlistId] != null}
         href={overwriteMap[playlist.playlistId] == null ||
         overwriteMap[playlist.playlistId].linkOverwrite == null
-          ? `${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${
-              playlist.playlistId
-            }`
+          ? `${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${playlist.playlistId}`
           : overwriteMap[playlist.playlistId].linkOverwrite}
-        style={`background-image: url(${playlist.playlistImage512 ?? playlist.playlistImage})`}
+        style={`background-image: url(${(() => {
+          const img = overwriteMap[playlist.playlistId]?.imageOverwrite
+          return img
+            ? img.substring(img.indexOf('/static/') + 7)
+            : (playlist.playlistImage512 ?? playlist.playlistImage)
+        })()})`}
       >
         <div></div> <!-- This div is here to workaround a breaking SSR bug -->
         <!-- <div class="mobile-hidden"> -->
