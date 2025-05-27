@@ -13,11 +13,13 @@ showInPostListing: true
 
 Featured Packs (or playlists) are a great way to find a collection of quality maps that go together cohesively to match a specific theme. This can make it easier to quickly download several fun maps all at once instead of trying to find specific maps to download.
 
-You can see a collection of featured playlists [here](/playlists)! Playlists with a gold glowing border indicate a pack featured directly on BeastSaber with a customized page!
+You can see a collection of featured playlists [here](/playlists/page/1)! Playlists with a gold glowing border indicate a pack featured directly on BeastSaber with a customized page!
 
 ## What is a Featured Pack?
 
 A featured pack is a collection of maps that fit a clear theme. For example, there could be genre related packs (rock, hip-hop, dance, etc.), artist/album/record label packs (packs based around a certain artist or record label, or packs that include songs from a certain album), or event packs (playlists that were uploaded as part of an event hosted by organizations such as BSMG. Unlike other featured playlists, the quality of the maps in event packs does not make a difference). The title and description of each pack must make it clear what the theme of the playlist is.
+
+<br />
 
 ## What are the requirements? <a href="#requirements" style="text-decoration:none;">🔗</a> {id$requirements}
 
@@ -38,6 +40,8 @@ A featured pack is a collection of maps that fit a clear theme. For example, the
   | 10, 11, or 12 | 2 |
   | 13, 14, or 15 | 3 |
   | 16+ | 25% of the total |
+
+<br />
 
 ## How do I get my pack featured?
 
@@ -85,5 +89,7 @@ This is for mappers that are making follow up packs/"Volume 2s" to their previou
 6. Change the Cover Art
  
     Do some cosmetic changes to the pack (cover art as a minimum). Make it feel new and exciting as it returns to the front page!
+
+<br />
 
 Have any questions about getting your pack featured? Feel free to reach out in our [Discord server](https://discord.gg/5VaEjFeuny)!
