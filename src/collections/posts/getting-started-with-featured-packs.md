@@ -8,6 +8,10 @@ homepageText: What is a featured playlist? How do I get my playlist featured?
 image: /static/uploads/posts/featured-playlists.png
 authors:
   - "4285984"
+credits:
+  - contributors:
+      - "4284201"
+    contribution: for the majority of the post information and outline
 showInPostListing: true
 ---
 
@@ -48,7 +52,7 @@ A featured pack is a collection of maps that fit a clear theme. For example, the
 You'll need to be in the [**BeastSaber Discord Server**](https://discord.gg/5VaEjFeuny) and head to the [💬 featured-pack-request](https://discord.com/channels/452928402203344908/1054923661267705917) thread channel. From there, you'll see a "How to request a pack and what rules to follow" thread pinned at the top with all of the latest requirements (this post may eventually become outdated). That thread will contain a post format that you can use to start a post.
 
 You'll also need to:
-  - Attach 1280 x 1280 pack image, if available
+  - Attach a 512x512 (square) pack image, if available
   - Post your published map links and the finished playlist link as separate messages (without embeds) in the post **at least 48 hours before the date you'd like the pack to be featured on BeastSaber**. That gives our curation team time to vet the pack before its featured. Note that we will only guarantee each of your maps to be checked once, so make sure they are up to standard before submitting them. Curators may still check a map again after it was fixed, but that is out of their own goodwill, so don't rely on that.
   - Check the [Pack Planner](https://docs.google.com/spreadsheets/d/1FFjgmFBHBaFO47isEOor7MVqY_l-qfWnUeEZzHuDD90/edit?usp=sharing) to determine what date you want your playlist featured. Make sure you choose a date that has an available slot. We do our best to spread out packs, especially those from frequent pack-makers so that we have something new being featured each week. Packs can be "released" on BeatSaver any week but they won't be featured until their scheduled date.
 
