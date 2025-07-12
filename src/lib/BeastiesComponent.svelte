@@ -3,8 +3,8 @@
 
   let countdownText = 'Calculating...'
   let submitVisible = false
-  // let headerVisible = true
-  // let tlVisible = true
+  let headerVisible = true
+  let tlVisible = true
   let countdownDate: number
 
   function formatTime(days: number, hours: number, minutes: number, seconds: number): string {
@@ -22,8 +22,8 @@
     if (timeLeft <= 0) {
       countdownText = "Thank you for being there! We'll see you next year!"
       submitVisible = false
-      // headerVisible = false
-      // tlVisible = false
+      headerVisible = false
+      tlVisible = false
       return
     }
 
@@ -36,12 +36,12 @@
       days >= 1 ? formatTime(days, hours, minutes, 0) : formatTime(0, hours, minutes, seconds)
 
     submitVisible = timeLeft > 0
-    // headerVisible = true
-    // tlVisible = true
+    headerVisible = true
+    tlVisible = true
   }
 
   onMount(() => {
-    countdownDate = new Date('January 15, 2024 00:00:00 UTC').getTime()
+    countdownDate = new Date('December 15, 2025 00:00:00 UTC').getTime()
     updateCountdown()
 
     const countdownInterval = setInterval(() => {
@@ -61,17 +61,21 @@
       <img src="/beastie-trophy.png" alt="Beasties Trophy" />
     </div>
     <div class="right-side-beasties-banner">
-      <h1>The 2024 Beasties</h1>
+      <h1>Beasties are Coming</h1>
       <p class="BeastiesTimerContainer" id="BeastiesTimer">
-        <span id="countdown">{countdownText}</span>
+        Time left to submit maps:&nbsp;<span id="countdown">{countdownText}</span>
       </p>
+      <i style="margin-top: 0.25rem;">*Map eligibility cutoff: November 30, 2025</i>
       <div class="cta-row">
         <div class="submit {submitVisible ? '' : 'hidden'}">
-          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote!</a>
+          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
         </div>
-        <a href="/posts/the-beasties-2024-winners" class="text-link">2024 Winners</a>
+        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn More</a>
         <span class="separater"> | </span>
-        <a href="https://youtu.be/u7CJoYyRVWg" class="text-link">Watch the premiere</a>
+        <a
+          href="https://fancy-heath-653.notion.site/The-Beasties-10ac696bffca80a79826f47be321b15c"
+          class="text-link">もっと読む</a
+        >
       </div>
     </div>
   </div>
@@ -110,7 +114,7 @@
     height: 100%;
     background: url('/beasties-banner-bg.png') no-repeat center;
     background-size: cover;
-    filter: brightness(50%) blur(5px);
+    filter: brightness(50%) blur(5px) contrast(1.1);
     z-index: -1;
   }
 
@@ -136,6 +140,7 @@
   .left-side-beasties-banner {
     display: flex;
     align-items: center;
+    margin-right: 1rem;
     img {
       height: 10rem;
     }
@@ -179,12 +184,12 @@
       gap: 1rem;
       font-size: 1rem;
       padding: 0.5rem 1rem;
-      background-color: #b73425;
+      background-color: #00a87e;
       border-radius: $rounding-small;
       text-decoration: none;
       transition: background-color 0.3s;
       &:hover {
-        background-color: #792117;
+        background-color: #007256;
       }
     }
     a {
