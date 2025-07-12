@@ -117,6 +117,8 @@
               <button class="open-showcase-button" on:click={() => openShowcase()}>
                 Watch the showcase
               </button>
+            {:else}
+              <span> &nbsp; </span>
             {/if}
             <div class="interactive-buttons">
               <OneClickButton mapId={mapOfTheWeek.map.id} class="mobile-hidden" />
