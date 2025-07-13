@@ -154,7 +154,11 @@
                 >
                   {map.name}
                 </a>
-                <Uploader uploader={map.uploader} curator={map.curator} />
+                <Uploader
+                  uploader={map.uploader}
+                  collaborators={map.collaborators}
+                  curator={map.curator}
+                />
               </div>
               <div class="tag-row-container">
                 <Tags tags={map.tags} />
