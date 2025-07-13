@@ -264,7 +264,6 @@
                     icon={preview.collaborators && preview.collaborators.length > 0
                       ? faUserGroup
                       : faUser}
-                    style="padding: 0px 2px"
                   />
                   {preview.uploader}
                   {#if preview.collaborators && preview.collaborators.length > 0}
