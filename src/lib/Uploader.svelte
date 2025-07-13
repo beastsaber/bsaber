@@ -2,6 +2,7 @@
   import Fa from 'svelte-fa'
   import { faUserGroup } from '@fortawesome/free-solid-svg-icons'
   import { onMount } from 'svelte'
+  import { fade } from 'svelte/transition'
   import type { Uploader } from '../types'
 
   export let uploader: Uploader
@@ -9,6 +10,7 @@
   export let collaborators: Uploader[] = []
 
   let showTooltip = false
+  let hideTimeout: ReturnType<typeof setTimeout> | null = null
 
   const randomId = Math.random().toString(36).substring(2, 15)
 
@@ -44,25 +46,26 @@
     <img class="verified" src="/verified.svg" alt="Verified Mapper" title="Verified" />
   {/if}
   {#if collaborators.length > 0}
-    <div class="collaborators-container tooltip-scope">
-      <button
-        class="collaborators-button"
-        aria-label="Show collaborators"
-        on:click={() => (showTooltip = !showTooltip)}
-      >
+    <div
+      class="collaborators-container tooltip-scope"
+      role="group"
+      onmouseenter={() => {
+        if (hideTimeout) clearTimeout(hideTimeout)
+        showTooltip = true
+      }}
+      onmouseleave={() => {
+        hideTimeout = setTimeout(() => {
+          showTooltip = false
+        }, 100)
+      }}
+    >
+      <button class="collaborators-button" aria-label="Show collaborators">
         <Fa icon={faUserGroup} />
         <span class="collab-count">+{collaborators.length}</span>
       </button>
 
       {#if showTooltip}
-        <div class="collaborators-tooltip" role="tooltip">
-          <button
-            class="close-button"
-            on:click={() => (showTooltip = false)}
-            aria-label="Close tooltip"
-          >
-            ×
-          </button>
+        <div class="collaborators-tooltip" role="tooltip" transition:fade={{ duration: 150 }}>
           <div class="collaborator-line">
             {#each collaborators as collaborator, i}
               <a
@@ -174,21 +177,6 @@
       min-width: max-content;
       max-width: 90vw;
       white-space: nowrap;
-
-      .close-button {
-        position: absolute;
-        top: 0.05rem;
-        right: 0.05rem;
-        background: none;
-        border: none;
-        font-size: 1rem;
-        color: #ccc;
-        cursor: pointer;
-
-        &:hover {
-          color: #fff;
-        }
-      }
 
       .collaborator-line {
         display: flex;
