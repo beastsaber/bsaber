@@ -265,10 +265,7 @@
                       ? faUserGroup
                       : faUser}
                   />
-                  {preview.uploader}
-                  {#if preview.collaborators && preview.collaborators.length > 0}
-                    , {preview.collaborators.join(', ')}
-                  {/if}
+                  {[preview.uploader, ...(preview.collaborators ?? [])].join(', ')}
                 </div>
                 <div class="dropdown-item-stats">
                   <Fa icon={faCaretUp} color="green" scale={1.2} style="padding: 0px 4px 0px 3px" />
