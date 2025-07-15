@@ -12,12 +12,14 @@
     faChartLine,
     faFire,
     faUser,
+    faUserGroup,
   } from '@fortawesome/free-solid-svg-icons'
   import type { float } from '@opensearch-project/opensearch/api/types.js'
 
   interface Preview {
     name: string
     uploader: string
+    collaborators?: string[] | undefined
     url: string
     image: string
     upvotes: number
@@ -139,6 +141,7 @@
                 return {
                   name: song.name,
                   uploader: song.uploader.name,
+                  collaborators: song.collaborators?.map((collab) => collab.name),
                   url: `${beatsaverRoot}${searchType.toLowerCase()}/${song.id}`,
                   image: song.versions?.at(-1)?.coverURL ?? '',
                   upvotes: song.stats.upvotes,
@@ -257,8 +260,12 @@
               <div class="dropdown-item-map-name">
                 {preview.name}<br />
                 <div class="dropdown-item-uploader">
-                  <Fa icon={faUser} style="padding: 0px 2px" />
-                  {preview.uploader}
+                  <Fa
+                    icon={preview.collaborators && preview.collaborators.length > 0
+                      ? faUserGroup
+                      : faUser}
+                  />
+                  {[preview.uploader, ...(preview.collaborators ?? [])].join(', ')}
                 </div>
                 <div class="dropdown-item-stats">
                   <Fa icon={faCaretUp} color="green" scale={1.2} style="padding: 0px 4px 0px 3px" />
