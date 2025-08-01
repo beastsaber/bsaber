@@ -1,11 +1,32 @@
 <script lang="ts">
+  import Fa from 'svelte-fa'
+  import { faUserGroup } from '@fortawesome/free-solid-svg-icons'
+  import { onMount } from 'svelte'
+  import { fade } from 'svelte/transition'
   import type { Uploader } from '../types'
 
   export let uploader: Uploader
-
   export let curator: Uploader | undefined = undefined
+  export let collaborators: Uploader[] = []
+
+  let showTooltip = false
+  let hideTimeout: ReturnType<typeof setTimeout> | null = null
 
   const randomId = Math.random().toString(36).substring(2, 15)
+
+  onMount(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const clickedInside = (event.target as HTMLElement)?.closest('.tooltip-scope')
+      if (!clickedInside) {
+        showTooltip = false
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside)
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  })
 </script>
 
 <div class="uploader">
@@ -23,6 +44,45 @@
   </a>
   {#if uploader.verifiedMapper}
     <img class="verified" src="/verified.svg" alt="Verified Mapper" title="Verified" />
+  {/if}
+  {#if collaborators.length > 0}
+    <div
+      class="collaborators-container tooltip-scope"
+      role="group"
+      onmouseenter={() => {
+        if (hideTimeout) clearTimeout(hideTimeout)
+        showTooltip = true
+      }}
+      onmouseleave={() => {
+        hideTimeout = setTimeout(() => {
+          showTooltip = false
+        }, 100)
+      }}
+    >
+      <button class="collaborators-button" aria-label="Show collaborators">
+        <Fa icon={faUserGroup} />
+        <span class="collab-count">+{collaborators.length}</span>
+      </button>
+
+      {#if showTooltip}
+        <div class="collaborators-tooltip" role="tooltip" transition:fade={{ duration: 150 }}>
+          <div class="collaborator-line">
+            {#each collaborators as collaborator, i}
+              <a
+                class="uploader-link"
+                href={`${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/profile/${collaborator.id}`}
+              >
+                <img src={collaborator.avatar} alt="" aria-hidden="true" />
+                {collaborator.name}
+              </a>
+              {#if i < collaborators.length - 1}
+                <span class="dash">–</span>
+              {/if}
+            {/each}
+          </div>
+        </div>
+      {/if}
+    </div>
   {/if}
   {#if curator !== undefined}
     <span class="curator" aria-hidden="true">-</span>
@@ -79,6 +139,76 @@
 
       @media (min-width: 992px) {
         display: inline-block;
+      }
+    }
+  }
+
+  .collaborators-container {
+    position: relative;
+    display: inline-block;
+
+    .collaborators-button {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.8rem;
+      background: none;
+      border: 1px;
+      color: $color-danger-red;
+      padding: 0.25rem;
+      cursor: pointer;
+    }
+
+    .collab-count {
+      font-weight: bold;
+    }
+
+    .collaborators-tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(4.5rem);
+      background: $color-background-tertiary;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      z-index: 9999;
+      min-width: max-content;
+      max-width: 90vw;
+      white-space: nowrap;
+
+      .collaborator-line {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        .dash {
+          color: #aaa;
+        }
+
+        .uploader-link {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          font-size: 0.75rem;
+          color: $color-danger-red;
+          text-decoration: none;
+
+          img {
+            height: 1.25rem;
+            width: 1.25rem;
+            border-radius: 50%;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      @media (max-width: 992px) {
+        display: none;
       }
     }
   }
