@@ -36,6 +36,12 @@
         coaches to create a multi-difficulty, curation-worthy map. Keep your eyes on these rookies
         in the future as their talent develops!
       </p>
+      <p>
+        Learn more about this event and check out the participants and coaches <a
+          class="uploader"
+          href="/posts/diamonds-in-the-rough">here!</a
+        >
+      </p>
     </div>
     <div class="zip-one">
       <a

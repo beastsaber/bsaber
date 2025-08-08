@@ -17,9 +17,9 @@ linkToSpecialtyPage: speciality/diamonds-in-the-rough
 
 The goal of this event is to match interested Verified mappers up with Novice mappers in a "coaching" relationship to create one high-quality, curateable map with at least three difficulties. At the end of the event, the novice-made maps will be released as a pack on BeatSaver and featured on BeastSaber, showcasing up-and-coming "undiscovered" mapping talent!
 
-## DITR 7 is currently in progress!
+## DITR 7 has concluded! Keep an eye out next year for info on the 8th edition!!
 
-Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](/playlists/ditr-6).
+Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](/playlists/ditr-6), [DITR7](/playlists/ditr-7).
 
 **Check out who's participated previously!**
 \
@@ -200,6 +200,34 @@ _\*Click on each category to learn more_
 | RateGyro                   | spacky             | Finished       |
 | symphonic                  | Azaela             | Finished       |
 | Xhera                      | MarsTheMano        | Finished       |
+
+</details>
+
+<details>
+<summary><b>DITR 7 - Summer of 2025</b></summary>
+
+| Coach:          | Novice:          | Status:  |
+| --------------- | ---------------- | -------- |
+| Bellus          | 0jp1             | Finished |
+| Ben208          | Pleb             | Finished |
+| BlAck_vOid-1001 | THMX             | Finished |
+| CookedChili     | TheGeriatricJedi | Finished |
+| D7oomyAli       | spartplat        | Finished |
+| Dee-Dee         | kazumurako       | Finished |
+| Klondike        | nallak           | Finished |
+| MadChase        | SebKNinja        | Finished |
+| Nolanimations   | Pashankie        | Finished |
+| Noveliniel      | StrangeSparky    | Finished |
+| OneSpookyBoi    | Kiwiberryyy      | Finished |
+| RateGyro        | Mozz_Zm          | Finished |
+| RUI_RUI         | Okyou            | Finished |
+| Sk4venger       | AmeliaGL0_0      | Finished |
+| spinvvy         | Barnotek         | Finished |
+| steeak          | Davlar           | Finished |
+| symphonic       | Fail_Snail       | Finished |
+| tainted_bread   | deadpacity       | Finished |
+| yabje           | Cloudburst       | Finished |
+| ZeCube          | Rklplol          | Finished |
 
 </details>
 
