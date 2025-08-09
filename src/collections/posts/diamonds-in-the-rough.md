@@ -4,7 +4,7 @@ section: articles
 category: event
 postEventType: learning
 publish: 2025-04-25T12:00:00.000Z
-lastUpdated: 2025-04-25T12:00:00.000Z
+lastUpdated: 2025-08-08T11:00:00.000-05:00
 homepageText: Diamonds in the Rough is an event for new mappers which matches
   them up with experienced coaches to create a multi-difficulty, curation-worthy
   map.
