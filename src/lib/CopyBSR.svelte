@@ -63,8 +63,7 @@
     transition:
       color $transition-short,
       transform 0.3s ease;
-    padding: 10;
-    margin: -10px;
+    padding: 0;
     font: inherit;
 
     &:hover {
