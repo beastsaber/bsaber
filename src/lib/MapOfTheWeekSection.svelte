@@ -305,4 +305,13 @@
     bottom: 2rem;
     right: 1.5rem;
   }
+
+  :global(.interactive-buttons button::before) {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    bottom: -5px;
+    left: -10px;
+  }
 </style>
