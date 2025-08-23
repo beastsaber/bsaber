@@ -127,7 +127,7 @@ if (now >= closeDate) {
 ## Quick Navigation
 
 - [**What's Changing for 2025**](#whats-changing)
-- [**2024 Categories**](#categories)
+- [**2025 Categories**](#categories)
   - [**Supporting Map Categories**](#supporting-map-categories)
   - [**Lighting Categories**](#lighting-categories)
   - [**Map Style Categories**](#style-categories)
