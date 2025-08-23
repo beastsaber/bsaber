@@ -1,6 +1,6 @@
 <script lang="ts">
   import Fa from 'svelte-fa'
-  import { faTwitch } from '@fortawesome/free-brands-svg-icons'
+  import { faExclamation } from '@fortawesome/free-solid-svg-icons'
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
 
@@ -44,7 +44,7 @@
     class="copy-bsr"
     style="font-size: {fontSize};"
   >
-    <Fa icon={faTwitch} />
+    <Fa icon={faExclamation} />
   </button>
 
   {#if showTooltip}
@@ -78,7 +78,7 @@
     top: -2.2rem;
     background-color: $color-background-tertiary;
     color: $color-text-primary;
-    transform: translateX(-40%); // Not sure why, but -50% looks and is off-center
+    transform: translateX(40%);
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 0.8rem;
