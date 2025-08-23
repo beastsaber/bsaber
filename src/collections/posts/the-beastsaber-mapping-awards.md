@@ -132,9 +132,13 @@ if (now >= closeDate) {
 
 ## What's Changing for 2025? <a href="#whats-changing" style="text-decoration:none;">🔗</a> {id$whats-changing}
 
-- [INSERT CHANGES HERE]
+- **New and updated categories** - We have a new "_Best Vivify Visuals_" lighting category, and have updated the "_Best Gimmick Map_" to "_Best Wildcard Map_". We've also made some minor text adjustments to the "_Modded Map of the Year_", and added a grace period for "_Rookie Mapper of the Year_".
+  - Best Vivify Visuals: This category takes custom experiences to a whole new level with jaw dropping art. Who needs gameplay when you have visuals like this. Chroma and Noodle are allowed but the focus is Vivify.
+  - Best Wildcard Map: This category shines a light on maps that explore beyond "normal" mapping. Cult classics, bending of mechanics, and different ways of thinking can be found here. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here! 
+  - Modded Map of the Year: The best modded map of the year. Full stop. Combining the full power of Vivify, Noodle Extensions, Chroma, or any other gameplay or visual mods; this map using mods to truly capture and convey the music and/or alter the gameplay in mind-blowing ways.
+  - Rookie Mapper of the Year: The best up-and-coming mapper whose first map was released during the nomination period, now with the added grace period of 6 months leading up to the nomination period (June 1st 2024). Previously deleted maps count as first map releases. At most five maps can be from June 1st 2024-Dec 1st 2024.
 
-> The BeastSaber Mapping Awards relies on community donations to provide awards for community winners! If you want to help provide a steady form of support for The Beasties, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and contributing to any tier! All contributions are appreciated! ❤️
+> **The BeastSaber Mapping Awards relies on community donations to provide awards for community winners! If you want to help provide a steady form of support for The Beasties, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and contributing to any tier! All contributions are appreciated!** ❤️
 
 <br />
 <br />
@@ -196,6 +200,8 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [[Love Live! Birthday Pack] [Chroma+] Wien Margarete - Butterfly Wing](https://beatsaver.com/maps/3918e)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3918e/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
+- 🆕 **Best Vivify Visuals**: This category takes custom experiences to a whole new level with jaw dropping art. Who needs gameplay when you have visuals like this. Chroma and Noodle are allowed but the focus is Vivify.
+
 ### Map Style Categories <a href="#style-categories" style="text-decoration:none;">🔗</a> {id$style-categories}
 
 - **Best Balanced Style Map**: Look in the sky! Is it a tech map? Is it a dance map? Is it a speed map? WE DON’T KNOW! The Best Balanced Style Map is the mutt of the neighborhood – a little of this, a little of that – all combining into one fantastic map.
@@ -234,7 +240,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [[Chroma+] Come Play - Stray Kids (Arcane - League of Legends)](https://beatsaver.com/maps/40fa7)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/40fa7/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-- **Best Gimmick Map**: The best “Gimmick” map shows off some of the wacky manipulations that play fast and loose with gameplay and have become community fan favorites. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here!
+- 🔁 **Best ~~Gimmick~~ Wildcard Map**: This category shines a light on maps that explore beyond "normal" mapping. Cult classics, bending of mechanics, and different ways of thinking can be found here. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here!
 
   Example Map: [FREE.99 - TRANS RIOT MUSIC](https://beatsaver.com/maps/3ab81)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3ab81/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
@@ -246,13 +252,13 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Rookie Lighter of the Year**: The best up-and-coming lighter whose first map/lightshow was released during the nomination period. _Previously deleted maps count as first map releases._
 
-- **Rookie Mapper of the Year**: The best up-and-coming mapper whose first map was released during the nomination period. _Previously deleted maps count as first map releases._
+- 🔁 **Rookie Mapper of the Year**: The best up-and-coming mapper whose first map was released during the nomination period, now with the added grace period of 6 months leading up to the nomination period (June 1st 2024). _Previously deleted maps count as first map releases. At most five maps can be from June 1st 2024-Dec 1st 2024._
 
 - **Lighter of the Year**: A lighter, vanilla or chroma, who not only excels in their art but also shares their experience, leads, and mentors as they are able.
 
 - **Mapper of the Year**: A mapper who not only excels in their art but also shares their experience, leads, and mentors as they are able.
 
-- **Modded Map of the Year**: Combining the full power of Noodle Extensions, Chroma, or any other gameplay or visual mods; this map is an example of excellence by using visual mods to truly capture and convey the music and/or alter the gameplay in mind-blowing ways through animation and manipulation of notes and obstacles.
+- 🔁 **Modded Map of the Year**: The best modded map of the year. Full stop. Combining the full power of Vivify, Noodle Extensions, Chroma, or any other gameplay or visual mods; this map using mods to truly capture and convey the music and/or alter the gameplay in mind-blowing ways.
 
   Example Map: [[Modchart] Leslie Wai - Paradigm](https://beatsaver.com/maps/3bbb0)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3bbb0/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
