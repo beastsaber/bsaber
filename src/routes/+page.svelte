@@ -22,6 +22,8 @@
   import EventCards from '$lib/EventCards.svelte'
   import { isCurrentEvent } from '$lib/isCurrentEvent'
 
+  import BeastiesComponent from '$lib/BeastiesComponent.svelte'
+
   interface Props {
     data: RootPageSSRData
   }
@@ -55,6 +57,8 @@
   <QuickFilters />
   <!-- Search to be moved to Navbar later -->
   <Search />
+
+  <BeastiesComponent />
 
   {#if currentMapOfTheWeek != undefined}
     <MapOfTheWeekSection showHeader={true} mapOfTheWeek={currentMapOfTheWeek} />
