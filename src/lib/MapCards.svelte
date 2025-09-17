@@ -269,6 +269,7 @@
     transition: background-position $transition-long;
     overflow: hidden;
 
+    // interactive buttons has some global overrides set in MapOfTheWeekSection.svelte
     .interactive-buttons {
       display: none;
     }
