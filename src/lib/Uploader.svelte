@@ -128,9 +128,9 @@
         aria-haspopup={isNarrow ? 'dialog' : 'listbox'}
         aria-controls={isNarrow ? sheetId : popoverId}
         aria-expanded={open}
-        onmouseenter={() => !isNarrow && openNow()}
-        onmouseleave={() => !isNarrow && closeSoon()}
-        onclick={() => {
+        on:mouseenter={() => !isNarrow && openNow()}
+        on:mouseleave={() => !isNarrow && closeSoon()}
+        on:click={() => {
           open = !open
           if (open) {
             if (!isNarrow) positionPopover()
@@ -154,8 +154,8 @@
           role="listbox"
           tabindex="0"
           style={popoverStyle}
-          onmouseenter={openNow}
-          onmouseleave={() => closeSoon()}
+          on:mouseenter={openNow}
+          on:mouseleave={() => closeSoon()}
           transition:fade={{ duration: 100 }}
         >
           <div class="arrow"></div>
@@ -178,7 +178,7 @@
       {/if}
 
       {#if open && isNarrow}
-        <div class="sheet-backdrop" role="presentation" onclick={closeNow}></div>
+        <div class="sheet-backdrop" role="presentation" on:click={closeNow}></div>
         <div
           class="sheet"
           id={sheetId}
@@ -190,7 +190,7 @@
           <div class="sheet-handle" aria-hidden="true"></div>
           <div class="sheet-header">
             <h3 id={`${sheetId}-title`}>Collaborators</h3>
-            <button class="icon-btn" aria-label="Close" onclick={closeNow}>
+            <button class="icon-btn" aria-label="Close" on:click={closeNow}>
               <Fa icon={faXmark} />
             </button>
           </div>
