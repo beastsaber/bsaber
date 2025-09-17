@@ -26,8 +26,10 @@
   const buttonId = `${uid}-collab-button`
 
   const srList = collaborators.map((c) => c.name).join(', ')
+  const BROWSER = typeof window !== 'undefined' && typeof document !== 'undefined'
 
   function setNarrow() {
+    if (!BROWSER) return
     isNarrow = window.innerWidth < 992
   }
   function clamp(n: number, min: number, max: number) {
@@ -35,7 +37,7 @@
   }
 
   function positionPopover() {
-    if (!anchorEl) return
+    if (!BROWSER || !anchorEl) return
     const r = anchorEl.getBoundingClientRect()
     const gap = 8
     const vw = window.innerWidth
@@ -69,10 +71,9 @@
   }
 
   function lockScroll(lock: boolean) {
-    if (isNarrow) {
-      if (lock) document.documentElement.classList.add('no-scroll')
-      else document.documentElement.classList.remove('no-scroll')
-    }
+    if (!BROWSER || !isNarrow) return
+    if (lock) document.documentElement.classList.add('no-scroll')
+    else document.documentElement.classList.remove('no-scroll')
   }
 
   function onKeydown(e: KeyboardEvent) {
@@ -88,14 +89,15 @@
   }
 
   onMount(() => {
+    if (!BROWSER) return
     setNarrow()
     window.addEventListener('resize', onResize)
     window.addEventListener('scroll', () => !isNarrow && positionPopover(), { passive: true })
     document.addEventListener('keydown', onKeydown)
   })
   onDestroy(() => {
+    if (!BROWSER) return
     window.removeEventListener('resize', onResize)
-    window.removeEventListener('scroll', () => {})
     document.removeEventListener('keydown', onKeydown)
     lockScroll(false)
   })
