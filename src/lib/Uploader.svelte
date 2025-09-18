@@ -10,9 +10,7 @@
   export let collaborators: UploaderType[] = []
 
   let open = false
-  const BROWSER = typeof window !== 'undefined' && typeof document !== 'undefined'
-  let isNarrow = BROWSER ? window.innerWidth < 992 : false
-
+  let isNarrow = false
   let anchorEl: HTMLButtonElement | null = null
   let popoverEl: HTMLDivElement | null = null
   let hideTimeout: ReturnType<typeof setTimeout> | null = null
@@ -28,6 +26,7 @@
   const buttonId = `${uid}-collab-button`
 
   const srList = collaborators.map((c) => c.name).join(', ')
+  const BROWSER = typeof window !== 'undefined' && typeof document !== 'undefined'
 
   function setNarrow() {
     if (!BROWSER) return
@@ -83,36 +82,22 @@
       anchorEl?.focus()
     }
   }
-  const onScroll = () => {
-    if (!isNarrow) positionPopover()
-  }
   function onResize() {
     setNarrow()
     if (open && !isNarrow) positionPopover()
     if (!open) lockScroll(false)
   }
 
-  function portal(node: HTMLElement) {
-    if (!BROWSER) return
-    document.body.appendChild(node)
-    return {
-      destroy() {
-        if (node.parentNode) node.parentNode.removeChild(node)
-      },
-    }
-  }
-
   onMount(() => {
     if (!BROWSER) return
     setNarrow()
     window.addEventListener('resize', onResize)
-    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('scroll', () => !isNarrow && positionPopover(), { passive: true })
     document.addEventListener('keydown', onKeydown)
   })
   onDestroy(() => {
     if (!BROWSER) return
     window.removeEventListener('resize', onResize)
-    window.removeEventListener('scroll', onScroll)
     document.removeEventListener('keydown', onKeydown)
     lockScroll(false)
   })
@@ -143,9 +128,9 @@
         aria-haspopup={isNarrow ? 'dialog' : 'listbox'}
         aria-controls={isNarrow ? sheetId : popoverId}
         aria-expanded={open}
-        on:mouseenter={() => !isNarrow && openNow()}
-        on:mouseleave={() => !isNarrow && closeSoon()}
-        on:click={() => {
+        onmouseenter={() => !isNarrow && openNow()}
+        onmouseleave={() => !isNarrow && closeSoon()}
+        onclick={() => {
           open = !open
           if (open) {
             if (!isNarrow) positionPopover()
@@ -163,15 +148,14 @@
 
       {#if open && !isNarrow}
         <div
-          use:portal
           bind:this={popoverEl}
           class="collaborators-popover {placement}"
           id={popoverId}
           role="listbox"
           tabindex="0"
           style={popoverStyle}
-          on:mouseenter={openNow}
-          on:mouseleave={() => closeSoon()}
+          onmouseenter={openNow}
+          onmouseleave={() => closeSoon()}
           transition:fade={{ duration: 100 }}
         >
           <div class="arrow"></div>
@@ -194,7 +178,7 @@
       {/if}
 
       {#if open && isNarrow}
-        <div class="sheet-backdrop" role="presentation" on:click={closeNow} use:portal></div>
+        <div class="sheet-backdrop" role="presentation" onclick={closeNow}></div>
         <div
           class="sheet"
           id={sheetId}
@@ -202,12 +186,11 @@
           aria-modal="true"
           aria-labelledby={`${sheetId}-title`}
           transition:fade={{ duration: 120 }}
-          use:portal
         >
           <div class="sheet-handle" aria-hidden="true"></div>
           <div class="sheet-header">
             <h3 id={`${sheetId}-title`}>Collaborators</h3>
-            <button class="icon-btn" aria-label="Close" on:click={closeNow}>
+            <button class="icon-btn" aria-label="Close" onclick={closeNow}>
               <Fa icon={faXmark} />
             </button>
           </div>
