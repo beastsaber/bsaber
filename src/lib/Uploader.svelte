@@ -10,7 +10,9 @@
   export let collaborators: UploaderType[] = []
 
   let open = false
-  let isNarrow = false
+  const BROWSER = typeof window !== 'undefined' && typeof document !== 'undefined'
+  let isNarrow = BROWSER ? window.innerWidth < 992 : false
+
   let anchorEl: HTMLButtonElement | null = null
   let popoverEl: HTMLDivElement | null = null
   let hideTimeout: ReturnType<typeof setTimeout> | null = null
@@ -26,7 +28,6 @@
   const buttonId = `${uid}-collab-button`
 
   const srList = collaborators.map((c) => c.name).join(', ')
-  const BROWSER = typeof window !== 'undefined' && typeof document !== 'undefined'
 
   function setNarrow() {
     if (!BROWSER) return
@@ -82,22 +83,36 @@
       anchorEl?.focus()
     }
   }
+  const onScroll = () => {
+    if (!isNarrow) positionPopover()
+  }
   function onResize() {
     setNarrow()
     if (open && !isNarrow) positionPopover()
     if (!open) lockScroll(false)
   }
 
+  function portal(node: HTMLElement) {
+    if (!BROWSER) return
+    document.body.appendChild(node)
+    return {
+      destroy() {
+        if (node.parentNode) node.parentNode.removeChild(node)
+      },
+    }
+  }
+
   onMount(() => {
     if (!BROWSER) return
     setNarrow()
     window.addEventListener('resize', onResize)
-    window.addEventListener('scroll', () => !isNarrow && positionPopover(), { passive: true })
+    window.addEventListener('scroll', onScroll, { passive: true })
     document.addEventListener('keydown', onKeydown)
   })
   onDestroy(() => {
     if (!BROWSER) return
     window.removeEventListener('resize', onResize)
+    window.removeEventListener('scroll', onScroll)
     document.removeEventListener('keydown', onKeydown)
     lockScroll(false)
   })
@@ -148,6 +163,7 @@
 
       {#if open && !isNarrow}
         <div
+          use:portal
           bind:this={popoverEl}
           class="collaborators-popover {placement}"
           id={popoverId}
@@ -178,7 +194,7 @@
       {/if}
 
       {#if open && isNarrow}
-        <div class="sheet-backdrop" role="presentation" on:click={closeNow}></div>
+        <div class="sheet-backdrop" role="presentation" on:click={closeNow} use:portal></div>
         <div
           class="sheet"
           id={sheetId}
@@ -186,6 +202,7 @@
           aria-modal="true"
           aria-labelledby={`${sheetId}-title`}
           transition:fade={{ duration: 120 }}
+          use:portal
         >
           <div class="sheet-handle" aria-hidden="true"></div>
           <div class="sheet-header">
