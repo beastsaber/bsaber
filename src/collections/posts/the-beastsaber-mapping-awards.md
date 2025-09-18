@@ -66,6 +66,7 @@ if (now >= closeDate) {
   <object data="https://lh3.googleusercontent.com/pw/AP1GczMDgfgeCbrLZpeMiy36r_7aQt4himNyk50d_3I1uddKIDDIjlU7msnonwfZy7Fj0AbUKALRvo3e3innN4Vu7uC7SePrSfmh1m5_LuE4rkXOuLMjsMk=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczMFnSuABjTrt0O_9oAM0XcakWSkAECgEp1KonbCWzTllOHdH3V0TuYXVOD7LY-KUdF3__dRCG1iwx3EMLVc66gc91EmPJCA8HFSAbJsAeukbKDHdAk=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczOjwOxyKbwmlTqpAdUDbWt3wytup1D_KOcuMfu4lpSqaD1C_WYRKb8eVY6carrDTFLnULnjjuhpphp0HdWNuUf9QNuzWlPidsQId7r_HKMGe0D9dxg=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczOYwuSriarIC0gYy4wM2O1psI87DNXnvuUG5ebfIzeyUjlQFN_SU7GNlDkLUiGj-GDvoZNXP1kAnsiWUgXgQJ9t2A7B8rNui72DLQZXNIiAqX55Ed8=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczOy62kW1Bl_5HPaXVXT_wGHRHuf9bacuWweg2VLYsEIq6NKaS-xtTabU7KWHSZtWGKCD0O4t4EgRXEYjGDqAQ2h8tE2M3V6geJvEEcW3Rje0LAxfSM=w1920-h1080"></object>
 </div>
 </div>
