@@ -19,14 +19,10 @@ All songs in this pack, are all part of the Gone EP, including all instrumentals
   <div class="video-background">
     <video autoplay muted loop playsinline>
       <source
-        src="https://cdn.theczar1994.dev/bsaber/playlists/GOH_Background_Video.mp4"
+        src="https://cdn.theczar1994.dev/bsaber/playlists/Gone_Background_2.mp4"
         type="video/mp4"
       />
     </video>
-  </div>
-  <div class="pictures">
-    <img src="/uploads/playlists/swarm-pack/Nitro.png" alt="Nitro" />
-    <img src="/uploads/playlists/swarm-pack/OneSpookyBoi.png" alt="Spooky" />
   </div>
   <div class="content">
     <div class="card-container">
@@ -104,65 +100,6 @@ All songs in this pack, are all part of the Gone EP, including all instrumentals
     z-index: 1;
     width: 100%;
     height: 100%;
-  }
-
-  .pictures {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    z-index: -4;
-    filter: brightness(45%);
-
-    img {
-      height: 12rem;
-      width: auto;
-      filter: brightness(45%);
-      animation: ghostFloat 3.5s ease-in-out infinite alternate;
-      transition:
-        transform 0.4s ease-in-out,
-        filter 0.4s ease-in-out;
-
-      &:hover {
-        transform: translateY(-10px) rotate(3deg) scale(1.05) translateX(5px);
-        filter: brightness(100%);
-      }
-
-      @media (max-width: 678px) {
-        height: 10rem;
-      }
-      @media (max-width: 400px) {
-        height: 8rem;
-      }
-    }
-
-    img:nth-child(1) {
-      animation-duration: 3s;
-      animation-delay: 0s;
-    }
-    img:nth-child(2) {
-      animation-duration: 3.8s;
-      animation-delay: 0.7s;
-      animation-name: ghostFloatAlt;
-    }
-  }
-  @keyframes ghostFloat {
-    0% {
-      transform: translateY(0) translateX(0) scale(1);
-    }
-    100% {
-      transform: translateY(-12px) translateX(6px) scale(1.02);
-    }
-  }
-  @keyframes ghostFloatAlt {
-    0% {
-      transform: translateY(0) translateX(0) scale(1);
-    }
-    100% {
-      transform: translateY(10px) translateX(-5px) scale(1.02);
-    }
   }
 
   .card-container {
