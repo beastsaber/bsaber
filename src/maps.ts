@@ -6,6 +6,7 @@ export const styleTags: Record<string, string> = {
   challenge: 'Challenge',
   accuracy: 'Accuracy',
   fitness: 'Fitness',
+  poodle: 'Poodle',
 }
 
 export const genreTags: Record<string, string> = {
