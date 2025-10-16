@@ -10,7 +10,7 @@
 <MetaHead
   title="Genres of Halloween - Vol. 2"
   description="Ready for Round 2?! TG Mapping Group returns, for Vol. 2 of Genres of Halloween!"
-  imageUrl="/uploads/playlists/swarm-pack/swarm-gone.jpg"
+  imageUrl="/uploads/playlists/1033478.jpg"
 />
 
 <section class="hero">
