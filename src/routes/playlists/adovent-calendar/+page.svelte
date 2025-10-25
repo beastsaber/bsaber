@@ -25,7 +25,7 @@
 <MetaHead
   title="ADOvent Calendar"
   description="Ado is a Japanese singer known for her powerful vocals, enigmatic persona, and distinctive blend of J-pop, rock, and Vocaloid influences. To celebrate her birthday on October 24th, one map is released each day starting October 1st, like an advent calendar leading up to Christmas."
-  imageUrl="/uploads/posts/ditr/ditr7-square.png"
+  imageUrl="/uploads/playlists/AdoCover.png"
 />
 
 <section class="hero">
