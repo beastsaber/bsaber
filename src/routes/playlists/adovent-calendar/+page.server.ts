@@ -1,5 +1,3 @@
-export const prerender = false
-
 type BeatSaverPlaylist = {
   id: number
   name: string
