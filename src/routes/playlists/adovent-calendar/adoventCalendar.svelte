@@ -84,32 +84,36 @@
 
 <div class="layout">
   <div class="calendar" aria-label="ADOvent calendar">
-    {#each days as d, i (d.number)}
-      <a
-        class="tile"
-        href={d.url || '#'}
-        target="_blank"
-        rel="noopener"
-        aria-label={d.title ? `${d.number}: ${d.title}` : `Day ${d.number}`}
-        draggable="true"
-        on:dragstart={(e) => onDragStart(e, i, 'days')}
-        on:dragover={(e) => onDragOver(e, i, 'days')}
-        on:dragleave={onDragLeave}
-        on:drop={(e) => onDrop(e, i, 'days')}
-        on:dragend={onDragEnd}
-      >
-        {#if d.cover}
-          <span class="bg" style={`background-image:url('${d.cover}')`}></span>
-          <span class="scrim" aria-hidden="true"></span>
-        {/if}
+    <div class="days-grid">
+      {#each days as d, i (d.number)}
+        <a
+          class="tile"
+          href={d.url || '#'}
+          target="_blank"
+          rel="noopener"
+          aria-label={d.title ? `${d.number}: ${d.title}` : `Day ${d.number}`}
+          draggable="true"
+          on:dragstart={(e) => onDragStart(e, i, 'days')}
+          on:dragover={(e) => onDragOver(e, i, 'days')}
+          on:dragleave={onDragLeave}
+          on:drop={(e) => onDrop(e, i, 'days')}
+          on:dragend={onDragEnd}
+        >
+          {#if d.cover}
+            <span class="bg" style={`background-image:url('${d.cover}')`}></span>
+            <span class="scrim" aria-hidden="true"></span>
+          {/if}
 
-        <span class="num">{d.number}</span>
+          <span class="num">{d.number}</span>
 
-        {#if d.title}
-          <span class="overlay">{d.title}</span>
-        {/if}
-      </a>
-    {/each}
+          {#if d.title}
+            <span class="overlay"><span class="overlay-text">{d.title}</span></span>
+          {/if}
+        </a>
+      {/each}
+    </div>
+
+    <hr class="fade" />
 
     <div class="bonus-grid">
       {#each bonus as b, i (b.label)}
@@ -142,7 +146,7 @@
   </div>
 
   <aside class="credits">
-    <h3>Artist Credits</h3>
+    <h3 style="text-align: center;">Artist Credits</h3>
     <ul class="credit-list">
       {#each credits as c}
         <li class="credit-item">
@@ -187,25 +191,55 @@
     gap: 1.25rem;
     align-items: start;
   }
+
   .calendar {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 0.75rem;
   }
-  .calendar .tile:nth-child(5),
-  .calendar .tile:nth-child(10),
-  .calendar .tile:nth-child(15),
-  .calendar .tile:nth-child(20) {
+
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    border: 2px solid #2e2e2e;
+    border-radius: 14px;
+    padding: 0.75rem;
+  }
+  .days-grid .tile:nth-child(5),
+  .days-grid .tile:nth-child(9),
+  .days-grid .tile:nth-child(13),
+  .days-grid .tile:nth-child(17),
+  .days-grid .tile:nth-child(21) {
     grid-column: 1;
   }
+  hr.fade {
+    border: none;
+    height: 2px;
+    margin-block: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, #99999900 0%, #999 50%, #99999900 100%);
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+
   .bonus-grid {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.75rem;
     margin-top: 0.25rem;
   }
+  @media (max-width: 720px) {
+    .bonus-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 400px) {
+    .bonus-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   .tile {
+    font-family: 'Times New Roman', Times, serif;
     position: relative;
     display: grid;
     place-items: center;
@@ -214,6 +248,10 @@
     border-radius: 14px;
     text-decoration: none;
     background: #061c4b;
+    background-image: url(/uploads/playlists/adovent/adoroes.png);
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     transition:
@@ -265,16 +303,16 @@
   .tile:focus-visible .scrim {
     opacity: 1;
   }
-
   @media (max-width: 720px) {
     .tile .bg,
     .tile .scrim {
       opacity: 1;
     }
   }
+
   .tile .num {
     position: relative;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 800;
     color: #ffffff;
     letter-spacing: 0.02em;
@@ -293,11 +331,13 @@
     border-radius: 6px;
     background: rgba(0, 0, 0, 0.55);
   }
+
   .tile .overlay {
     position: absolute;
     inset: 0;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.75rem;
     text-align: center;
     font-weight: 700;
@@ -316,14 +356,43 @@
     opacity: 1;
     transform: translateY(0);
   }
+  .overlay-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    max-width: 90%;
+  }
+  @media (max-width: 720px) {
+    .tile .overlay {
+      opacity: 1;
+      transform: none;
+      background: rgba(0, 0, 0, 0.55);
+    }
+    .tile .num {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.55);
+    }
+  }
+
   .tile.bonus {
     border-style: dashed;
     border-color: #5a5a5a;
     background: #061c4b;
+    background-image: url(/uploads/playlists/adovent/adoroes.png);
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
   }
   .tile.bonus:hover {
     border-color: #061c4b;
   }
+
   .credit-list {
     list-style: none;
     padding: 0;
@@ -333,7 +402,6 @@
     gap: 1.5rem;
     justify-items: center;
   }
-
   .credit-item {
     display: flex;
     flex-direction: column;
@@ -341,7 +409,6 @@
     text-align: center;
     gap: 0.4rem;
   }
-
   .avatar {
     width: 250px;
     height: 250px;
@@ -357,13 +424,14 @@
     transition: border-color 160ms ease;
   }
   .credit-name a:hover {
-    border-color: #009c9a;
+    text-decoration: underline #ffffff;
   }
   .credit-role {
     font-size: 0.85rem;
     color: #cfcfcf;
     line-height: 1.2;
   }
+
   @media (max-width: 1200px) {
     .layout {
       grid-template-columns: 1fr 260px;
@@ -387,13 +455,14 @@
     }
   }
   @media (max-width: 720px) {
-    .calendar {
+    .days-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    .calendar .tile:nth-child(5),
-    .calendar .tile:nth-child(10),
-    .calendar .tile:nth-child(15),
-    .calendar .tile:nth-child(20) {
+    .days-grid .tile:nth-child(5),
+    .days-grid .tile:nth-child(9),
+    .days-grid .tile:nth-child(13),
+    .days-grid .tile:nth-child(17),
+    .days-grid .tile:nth-child(21) {
       grid-column: auto;
     }
     .tile .num {
@@ -405,7 +474,7 @@
     }
   }
   @media (max-width: 400px) {
-    .calendar {
+    .days-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .avatar {

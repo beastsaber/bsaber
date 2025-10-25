@@ -25,7 +25,7 @@
 <MetaHead
   title="ADOvent Calendar"
   description="Ado is a Japanese singer known for her powerful vocals, enigmatic persona, and distinctive blend of J-pop, rock, and Vocaloid influences. To celebrate her birthday on October 24th, one map is released each day starting October 1st, like an advent calendar leading up to Christmas."
-  imageUrl="/uploads/playlists/AdoCover.png"
+  imageUrl="/uploads/playlists/adovent/AdoCover.png"
 />
 
 <section class="hero">
@@ -41,7 +41,7 @@
     <div class="card-container">
       <div class="card">
         <a href="https://beatsaver.com/profile/4284201">
-          <img src="/uploads/playlists/nitronik.gif" alt="nitronik.exe" />
+          <img src="/uploads/playlists/adovent/nitronik.gif" alt="nitronik.exe" />
         </a>
       </div>
     </div>
@@ -50,11 +50,11 @@
     </div>
     <div class="body">
       <h1>{data.playlistName}</h1>
-      <p>
+      <p class="description">
         Ado is a Japanese singer known for her powerful vocals, enigmatic persona, and distinctive
         blend of J-pop, rock, and Vocaloid influences.
       </p>
-      <p>
+      <p class="description">
         To celebrate her birthday on October 24th, one map is released each day starting October
         1st, like an Advent Calendar leading up to Christmas.
       </p>
@@ -65,40 +65,41 @@
 <br />
 
 <div class="download-buttons">
-  <div class="saber-pc">
-    <a
-      class="btn-saber"
-      href={'https://cdn.theczar1994.dev/bsaber/Adovent2025AdoRoseSaber.saber'}
-      title="Ado Saber PC Download">Ado Saber Download (PC)</a
-    >
-  </div>
-  <div class="normal-buttons">
-    <div class="zip-one">
-      <a
-        class="zip"
-        href={'https://api.beatsaver.com/playlists/id/' + data.playlistId + '/download'}
-        title="Zip Download via BeatSaver"><Fa icon={faDownload} /></a
-      >
-      <a
-        class="one"
-        href={'bsplaylist://playlist/https://api.beatsaver.com/playlists/id/' +
-          data.playlistId +
-          '/download'}
-        title="OneClick&trade; Install via BeatSaver"><Fa icon={faCloudDownloadAlt} /></a
-      >
-    </div>
+  <a
+    href="https://cdn.theczar1994.dev/bsaber/Adovent2025AdoRoseSaber.saber"
+    title="Ado Saber PC Download"
+  >
+    Ado Saber Download (PC)
+  </a>
 
-    <div class="buttons">
-      <a class="btn" href={'https://beatsaver.com/playlists/' + data.playlistId}>BEATSAVER</a>
-    </div>
-  </div>
-  <div class="saber-quest">
-    <a
-      class="btn-saber"
-      href={'https://cdn.theczar1994.dev/bsaber/Adovent2025AdoRoseSaber.whacker'}
-      title="Ado Saber Quest Download">Ado Saber Download (Quest)</a
-    >
-  </div>
+  <a
+    class="zip"
+    href={'https://api.beatsaver.com/playlists/id/' + data.playlistId + '/download'}
+    title="Zip Download via BeatSaver"
+  >
+    <Fa icon={faDownload} />
+  </a>
+
+  <a href={'https://beatsaver.com/playlists/' + data.playlistId} title="Open on BeatSaver">
+    BEATSAVER
+  </a>
+
+  <a
+    class="one"
+    href={'bsplaylist://playlist/https://api.beatsaver.com/playlists/id/' +
+      data.playlistId +
+      '/download'}
+    title="OneClick™ Install via BeatSaver"
+  >
+    <Fa icon={faCloudDownloadAlt} />
+  </a>
+
+  <a
+    href="https://cdn.theczar1994.dev/bsaber/Adovent2025AdoRoseSaber.whacker"
+    title="Ado Saber Quest Download"
+  >
+    Ado Saber Download (Quest)
+  </a>
 </div>
 
 <br />
@@ -182,97 +183,56 @@
     margin: 0.5rem 0.5rem 0;
     text-align: center;
   }
+  .description {
+    font-size: 1.1rem;
+  }
   .download-buttons {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: repeat(5, 1fr);
     gap: 0.75rem;
-  }
-  .zip-one {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    padding-bottom: 0.3rem;
-  }
-  .zip,
-  .one {
-    padding: 12px;
-    cursor: pointer;
-    font-size: 15px;
-    text-align: center;
-    transition: background-color 0.5s ease;
-    border-radius: 5px;
-    font-weight: bolder;
-    width: 84px;
-    background: #fffdfd;
-    color: #000;
-  }
-  .zip:hover,
-  .one:hover {
-    background: #061c4b;
-    color: #fff;
-    text-decoration: none;
-  }
-  .buttons,
-  .saber-pc,
-  .saber-quest {
-    display: grid;
-    gap: 0.5rem;
-    justify-content: center;
+    align-items: stretch;
+    justify-items: stretch;
     width: 100%;
   }
-  .btn {
+
+  .download-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     padding: 12px;
-    cursor: pointer;
     font-size: 15px;
-    text-align: center;
-    transition: background-color 0.5s ease;
-    border-radius: 5px;
     font-weight: bolder;
-    width: 197px;
-    background: #fffdfd;
-    color: #000;
-  }
-  .btn:hover {
+    text-align: center;
+    border-radius: 5px;
     background: #061c4b;
     color: #fff;
     text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
   }
-  .btn-saber {
-    padding: 12px;
-    cursor: pointer;
-    font-size: 15px;
-    text-align: center;
-    transition: background-color 0.5s ease;
-    border-radius: 5px;
-    font-weight: bolder;
-    width: 100% !important;
-    background: #fffdfd;
-    color: #000;
-  }
-  .btn-saber:hover {
-    background: #061c4b;
+  .download-buttons a:hover {
+    background: #c72024;
     color: #fff;
-    text-decoration: none;
   }
+
+  .zip,
+  .one {
+    width: 100%;
+  }
+
   hr.fade {
     border: none;
     height: 2px;
     margin-block: 0.75rem 1.5rem;
     background: linear-gradient(90deg, #999 0%, rgba(153, 153, 153, 0) 100%);
   }
+
   @media (max-width: 960px) {
     .download-buttons {
       grid-template-columns: 1fr;
-    }
-    .saber-pc,
-    .normal-buttons,
-    .saber-quest {
-      width: 100%;
-    }
-    .btn {
-      width: 100%;
+      gap: 0.5rem;
     }
   }
 </style>
