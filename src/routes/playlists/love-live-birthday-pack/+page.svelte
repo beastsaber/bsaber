@@ -280,9 +280,17 @@
     />
     <div style="height: 1rem"></div>
     <MemberProfileCardSwag
-      name={members.Shioriko_Mifune}
-      image="/uploads/playlists/love-live/10-05_Shioriko_Mifune.png"
-      date="October 5"
+      name={members.Sumire_Heanna}
+      image="/uploads/playlists/love-live/09-28_Sumire_Heanna.png"
+      date="September 28"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem"></div>
+    <MemberProfileCardSwag
+      name={members.Ginko_Momose}
+      image="/uploads/playlists/love-live/10-20_Ginko_Momose.png"
+      date="October 20"
       positionDate="bottom-right"
       positionName="top-left"
     />
@@ -341,7 +349,7 @@
     </div>
     <AlbumPlaylistCard
       albumName="Love Live! Birthday Pack"
-      groupName="Mappers: symphonic, FeudBoy_YT, swukpuff, calamity, misterlihao, Ge2toro, AchiCirno, steeak, Acubens, CMP1111, Kinz, vekikano, Fuyakeru, P90KILLR, emiru, ashad, mikuri, Elecast, Klondike, Ken_Monogatari, Joetastic, yuchisese, BanditByTheStreet, chikinbiskit, NTS-Azazel, Bytrius, Comyute, umeko, ImChloe"
+      groupName="Mappers: symphonic, FeudBoy_YT, swukpuff, calamity, misterlihao, Ge2toro, AchiCirno, steeak, Acubens, CMP1111, Kinz, vekikano, Fuyakeru, P90KILLR, emiru, ashad, mikuri, Elecast, Klondike, Ken_Monogatari, Joetastic, yuchisese, BanditByTheStreet, chikinbiskit, NTS-Azazel, Bytrius, Comyute, umeko, ImChloe, Poochy"
       playlistId={268749}
     />
   </div>
@@ -500,11 +508,19 @@
     />
     <div style="height: 1rem"></div>
     <MemberProfileCardSwag
-      name={members.Sumire_Heanna}
-      image="/uploads/playlists/love-live/09-28_Sumire_Heanna.png"
-      date="September 28"
+      name={members.Hime_Anyoji}
+      image="/uploads/playlists/love-live/09-24_Hime_Anyoji.png"
+      date="September 24"
       positionDate="bottom-left"
       positionName="top-right"
+    />
+    <div style="height: 1rem"></div>
+    <MemberProfileCardSwag
+      name={members.Shioriko_Mifune}
+      image="/uploads/playlists/love-live/10-05_Shioriko_Mifune.png"
+      date="October 5"
+      positionDate="bottom-right"
+      positionName="top-left"
     />
     <div style="height: 1rem"></div>
     <MemberProfileCardSwag
@@ -543,6 +559,14 @@
       name={members.Kanata_Konoe}
       image="/uploads/playlists/love-live/12-16_Kanata_Konoe.png"
       date="December 16"
+      positionDate="bottom-left"
+      positionName="top-right"
+    />
+    <div style="height: 1rem"></div>
+    <MemberProfileCardSwag
+      name={members.Tomari_Onitsuka}
+      image="/uploads/playlists/love-live/12-28_Tomari_Onitsuka.png"
+      date="December 28"
       positionDate="bottom-left"
       positionName="top-right"
     />

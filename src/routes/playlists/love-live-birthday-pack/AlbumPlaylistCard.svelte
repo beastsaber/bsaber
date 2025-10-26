@@ -5,7 +5,6 @@
   export let albumName: string
   export let groupName: string
   export let playlistId: number
-
 </script>
 
 <div class="playlist-card">
@@ -14,6 +13,7 @@
       <img
         class="header-logo"
         src="/uploads/playlists/Love Live! Birthday Pack - Cover - With Text.png"
+        loading="lazy"
       />
     </div>
     <div class="header-content-container">
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="map-cards-containers">
-    <MapCards {playlistId} forceColumnCount={1} fixedCount={51} showToggle={false} />
+    <MapCards {playlistId} forceColumnCount={1} fixedCount={54} showToggle={false} />
   </div>
 </div>
 
