@@ -131,6 +131,7 @@
   .BeastiesTimerContainer {
     font-size: 1.2rem;
     font-weight: bold;
+    color: #e95d4e;
   }
 
   .header {
@@ -184,12 +185,12 @@
       gap: 1rem;
       font-size: 1rem;
       padding: 0.5rem 1rem;
-      background-color: #00a87e;
+      background-color: #c34d40;
       border-radius: $rounding-small;
       text-decoration: none;
       transition: background-color 0.3s;
       &:hover {
-        background-color: #007256;
+        background-color: #7c3028;
       }
     }
     a {
