@@ -17,7 +17,8 @@
     <Fa style="width: 100%; height: 100%;" class="fa" fw {icon} />
   </div>
   <p>
-    <strong class="start">Announcement: </strong>{content} <a href="/posts/{slug}">Read more.</a>
+    <strong class="start">Announcement:</strong>&nbsp;{content}
+    <a href="/posts/{slug}">Read more.</a>
   </p>
 </div>
 
