@@ -20,7 +20,7 @@
     const timeLeft = countdownDate - now
 
     if (timeLeft <= 0) {
-      countdownText = "Thank you for being there! We'll see you next year!"
+      countdownText = 'Submissions are now closed! Stay tuned for voting soon!'
       submitVisible = false
       headerVisible = false
       tlVisible = false
@@ -35,7 +35,7 @@
     countdownText =
       days >= 1 ? formatTime(days, hours, minutes, 0) : formatTime(0, hours, minutes, seconds)
 
-    submitVisible = timeLeft > 0
+    submitVisible = true
     headerVisible = true
     tlVisible = true
   }
@@ -63,9 +63,16 @@
     <div class="right-side-beasties-banner">
       <h1>Beasties are Coming</h1>
       <p class="BeastiesTimerContainer" id="BeastiesTimer">
-        Time left to submit maps:&nbsp;<span id="countdown">{countdownText}</span>
+        {#if tlVisible}
+          Time left to submit maps:&nbsp;
+        {/if}
+        <span id="countdown">{countdownText}</span>
       </p>
-      <i style="margin-top: 0.25rem;">*Map eligibility cutoff: November 30, 2025</i>
+
+      {#if tlVisible}
+        <i style="margin-top: 0.25rem;">*Map eligibility cutoff: November 30, 2025</i>
+      {/if}
+
       <div class="cta-row">
         <div class="submit {submitVisible ? '' : 'hidden'}">
           <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
@@ -134,10 +141,6 @@
     color: #e95d4e;
   }
 
-  .header {
-    color: #e95d4e;
-  }
-
   .left-side-beasties-banner {
     display: flex;
     align-items: center;
@@ -156,7 +159,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 470px;
+    min-width: 550px;
     @media (max-width: 486px) {
       min-width: unset;
     }
