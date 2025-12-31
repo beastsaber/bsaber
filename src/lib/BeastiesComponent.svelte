@@ -20,7 +20,7 @@
     const timeLeft = countdownDate - now
 
     if (timeLeft <= 0) {
-      countdownText = 'Submissions are now closed! Stay tuned for voting soon!'
+      countdownText = 'Voting has closed! Stay tuned for the Awards Show!'
       submitVisible = false
       headerVisible = false
       tlVisible = false
@@ -34,14 +34,13 @@
 
     countdownText =
       days >= 1 ? formatTime(days, hours, minutes, 0) : formatTime(0, hours, minutes, seconds)
-
-    submitVisible = true
+    submitVisible = timeLeft > 0
     headerVisible = true
     tlVisible = true
   }
 
   onMount(() => {
-    countdownDate = new Date('December 16, 2025 00:00:00 UTC').getTime()
+    countdownDate = new Date('January 15, 2026 00:00:00 UTC').getTime()
     updateCountdown()
 
     const countdownInterval = setInterval(() => {
@@ -62,22 +61,22 @@
     </div>
     <div class="right-side-beasties-banner">
       <h1>Beasties are Coming</h1>
-      <p class="BeastiesTimerContainer" id="BeastiesTimer">
+      <span class="BeastiesTimerContainer" id="BeastiesTimer">
+        {#if headerVisible}
+          <span class="header"><h2>Voting is Now Open!</h2></span>
+        {/if}
         {#if tlVisible}
-          Time left to submit maps:&nbsp;
+          <span class="tl">Time left to vote: </span>
         {/if}
         <span id="countdown">{countdownText}</span>
-      </p>
-
-      {#if tlVisible}
-        <i style="margin-top: 0.25rem;">*Map eligibility cutoff: November 30, 2025</i>
-      {/if}
-
+      </span>
       <div class="cta-row">
         <div class="submit {submitVisible ? '' : 'hidden'}">
-          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Submit Maps</a>
+          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote!</a>
         </div>
-        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn More</a>
+        <a href="/posts/the-beasties-2025-nominees" rel="external" class="text-link"
+          >2025 Nominees</a
+        >
         <span class="separater"> | </span>
         <a
           href="https://fancy-heath-653.notion.site/2025-The-Beasties-27bc696bffca8034ba71d20fa2789291"
@@ -138,6 +137,8 @@
   .BeastiesTimerContainer {
     font-size: 1.2rem;
     font-weight: bold;
+  }
+  .header {
     color: #e95d4e;
   }
 
@@ -148,7 +149,7 @@
     img {
       height: 10rem;
     }
-    @media (max-width: 486px) {
+    @media (max-width: 730px) {
       display: none;
     }
   }
@@ -160,7 +161,7 @@
     align-items: center;
     justify-content: center;
     min-width: 550px;
-    @media (max-width: 486px) {
+    @media (max-width: 730px) {
       min-width: unset;
     }
   }
@@ -188,12 +189,12 @@
       gap: 1rem;
       font-size: 1rem;
       padding: 0.5rem 1rem;
-      background-color: #c34d40;
+      background-color: #b73425;
       border-radius: $rounding-small;
       text-decoration: none;
       transition: background-color 0.3s;
       &:hover {
-        background-color: #7c3028;
+        background-color: #792117;
       }
     }
     a {

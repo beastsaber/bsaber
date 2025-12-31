@@ -7,6 +7,8 @@ homepageText: Do you want to give feedback on other people’s maps? Do you want
   to learn to give better feedback? Are you a mapper seeking experienced and
   detailed feedback on your own maps? Check this out!
 image: /static/uploads/posts/getfeedbackstonksgoup.png
+authors:
+  - "4333811"
 showInPostListing: true
 ---
 
