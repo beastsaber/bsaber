@@ -436,7 +436,7 @@ Voting closes January 15, 2026 at 00:00 UTC so don’t wait to get your votes in
 
 - [ZenithGD](https://beatsaver.com/profile/219475)
 
-- [Barontek](https://beatsaver.com/profile/231520)
+- [Barnotek](https://beatsaver.com/profile/231520)
 
 - [McMelon_XoXo](https://beatsaver.com/profile/213727)
 
