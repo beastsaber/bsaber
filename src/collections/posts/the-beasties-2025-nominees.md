@@ -22,6 +22,8 @@ Everyone can vote on "Community Choice" winners in each category!
 
 Voting closes January 15, 2026 at 00:00 UTC so don’t wait to get your votes in.
 
+## [VOTE NOW](https://saera.dev/beasties)
+
 <hr />
 <br />
 
