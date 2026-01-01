@@ -414,6 +414,8 @@ Voting closes January 15, 2026 at 00:00 UTC so don’t wait to get your votes in
 
 - [wishlane - Nobody's listening!](https://beatsaver.com/playlists/842329) - Organized by Phoenix
 
+- [Love! Live! Birthday Pack](https://beatsaver.com/playlists/268749) - Organized by symphonic
+
 **Rookie Lighter of the Year**:
 
 - [Pashankie](https://beatsaver.com/profile/277521)
