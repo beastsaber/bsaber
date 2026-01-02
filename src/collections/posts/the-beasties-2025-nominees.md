@@ -51,8 +51,11 @@ Voting closes January 15, 2026 at 00:00 UTC so don’t wait to get your votes in
   4. Ranked = BeatLeader Under 8, 8-12, 12+, & ScoreSaber Under 8, 8-12, 12+
   5. MOTY = Modded Map of the Year & Map of the Year
 
-- Mapper/Lighter of the Year Showcases - <span style="color: gray; cursor:not-allowed">**Download Link Coming Soon!**</span>
-  - **\*_If you're a finalist in Rookie/Mapper/Lighter of the Year categories, reach out to RateGyro or Czar for a map you want to use to highlight your work!_**
+- Mapper/Lighter of the Year Showcases - [**Download (4.7 MB)**](https://cdn.theczar1994.dev/bsaber/beasties-playlists/2025_beasties_oty.zip)
+  1. Lighter of the Year Showcase Maps
+  2. Mapper of the Year Showcase Maps
+  3. Rookie Lighter of the Year Showcase Maps
+  4. Rookie Mapper of the Year Showcase Maps
 
 <hr />
 <br />
