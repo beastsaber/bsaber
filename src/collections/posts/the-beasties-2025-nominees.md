@@ -22,8 +22,6 @@ Everyone can vote on "Community Choice" winners in each category!
 
 Voting closes January 15, 2026 at 00:00 UTC so don’t wait to get your votes in.
 
-## [VOTE NOW](https://saera.dev/beasties)
-
 <hr />
 <br />
 
@@ -60,7 +58,7 @@ Voting closes January 15, 2026 at 00:00 UTC so don’t wait to get your votes in
 <hr />
 <br />
 
-## Jeff Map Award Nominees <a href="#supporting-map-award-nominees" style="text-decoration:none;">🔗</a> {id$supporting-map-award-nominees}
+## Supporting Map Award Nominees <a href="#supporting-map-award-nominees" style="text-decoration:none;">🔗</a> {id$supporting-map-award-nominees}
 
 **Best OST/DLC Map**:
 
