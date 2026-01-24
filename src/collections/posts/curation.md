@@ -88,7 +88,39 @@ For reading through all of our requirements, have some pictures of our Curator's
   </figure>
   <figure>
     <img src="/uploads/posts/curation/oscar.jpg" alt="Oscar" />
-    <figcaption>Meme Doggo's doggo, "Oscar"</figcaption>
+    <figcaption>Sonoluminn's dog, "Oscar"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/barney_bailey.jpg" alt="Barney & Bailey" />
+    <figcaption>Tonkie's dogs, "Barney" & "Bailey"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/cookie.jpg" alt="Cookie" />
+    <figcaption>chikinbiskit's cat, "Cookie"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/empathy.png" alt="Empathy" />
+    <figcaption>Undeceiver's dog, "Empathy"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/evie.jpg" alt="Evie" />
+    <figcaption>Noveliniel's cat, "Evie"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/millie.jpg" alt="Millie" />
+    <figcaption>Miljon's cat, "Millie"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/saber_maxine.jpg" alt="Saber & Maxine" />
+    <figcaption>TinkerVr85's cats, "Saber" & "Maxine"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/sammy.jpg" alt="Sammy" />
+    <figcaption>Jonas' cat, "Sammy"</figcaption>
+  </figure>
+  <figure>
+    <img src="/uploads/posts/curation/lora_ellie.png" alt="Lora & Ellie" />
+    <figcaption>Darkrealm7's dog, "Lora" and cat, "Ellie"</figcaption>
   </figure>
 </div>
 
