@@ -250,7 +250,7 @@ It wasn't until summer of 2019 where I figured out how to install mods and custo
 
 Also, if you're asking about pets, I have a dog. She's cute.
 \
-![TheGoodBoi's Doggo](/uploads/posts/exsii/thegoodboidog.jpg "TheGoodBoi's Doggo")
+![TheGoodBoi's Doggo](/uploads/posts/exsii/thegoodboidoggo.JPG "TheGoodBoi's Doggo")
 
 <br />
 
