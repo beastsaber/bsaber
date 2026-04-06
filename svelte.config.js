@@ -1,6 +1,9 @@
 import { mdsvex } from 'mdsvex'
 import { sveltePreprocess } from 'svelte-preprocess'
 import adapter from '@sveltejs/adapter-static'
+import { fileURLToPath } from 'node:url'
+
+const postLayout = fileURLToPath(new URL('./src/lib/PostLayout.svelte', import.meta.url))
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,7 +17,7 @@ const config = {
         dashes: 'oldschool',
       },
       layout: {
-        posts: './src/routes/+layout.svelte',
+        posts: postLayout,
       },
       remarkPlugins: [],
       rehypePlugins: [],
