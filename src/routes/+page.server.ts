@@ -49,7 +49,7 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
 
     const coverUrl =
       currentMOTWCollectionData.coverUrlOverwrite ??
-      `https://cdn.assets.beatleader.xyz/songcover-${currentMOTWCollectionData.mapId}-full.webp`
+      `https://cdn.assets.beatleader.com/songcover-${currentMOTWCollectionData.mapId}-full.webp`
 
     currentMapOfTheWeek = {
       map: beatSaverMapData,

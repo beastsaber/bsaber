@@ -54,7 +54,7 @@ export async function load({
     try {
       const coverUrl =
         singleMapOfTheWeek.coverUrlOverwrite ??
-        `https://cdn.assets.beatleader.xyz/songcover-${singleMapOfTheWeek.mapId}-full.webp`
+        `https://cdn.assets.beatleader.com/songcover-${singleMapOfTheWeek.mapId}-full.webp`
 
       const beatSaverMapData = allBeatSaverMapData[singleMapOfTheWeek.mapId]
       if (beatSaverMapData == null) {

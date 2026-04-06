@@ -35,7 +35,7 @@
   img="/beatleader-logo.svg"
   rankColor="info-blue"
   linkText="See full rankings"
-  linkUrl="https://www.beatleader.xyz/ranking/1"
+  linkUrl="https://www.beatleader.com/ranking/1"
   players={players.beatleader}
 />
 
