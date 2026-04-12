@@ -40,7 +40,7 @@
   }
 
   onMount(() => {
-    countdownDate = new Date('April 18, 2026 21:00:00 UTC').getTime()
+    countdownDate = new Date('April 19, 2026 21:00:00 UTC').getTime()
     updateCountdown()
 
     const countdownInterval = setInterval(() => {
