@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
 
-  let countdownText = 'Calculating...'
+  let countdownText = "Thank you for being there! We'll see you next year!"
   let submitVisible = false
   let headerVisible = true
   let tlVisible = true
@@ -20,7 +20,7 @@
     const timeLeft = countdownDate - now
 
     if (timeLeft <= 0) {
-      countdownText = 'Tune into the BeastSaber Youtube for the show!'
+      countdownText = "Thank you for being there! We'll see you next year!"
       submitVisible = false
       headerVisible = false
       tlVisible = false
@@ -40,7 +40,7 @@
   }
 
   onMount(() => {
-    countdownDate = new Date('April 19, 2026 21:00:00 UTC').getTime()
+    countdownDate = new Date('April 10, 2026 21:00:00 UTC').getTime()
     updateCountdown()
 
     const countdownInterval = setInterval(() => {
@@ -60,23 +60,18 @@
       <img src="/beastie-trophy.png" alt="Beasties Trophy" />
     </div>
     <div class="right-side-beasties-banner">
-      <h1>2025 Beasties</h1>
-      <span class="BeastiesTimerContainer" id="BeastiesTimer">
-        {#if headerVisible}
-          <span class="header"><h2>The Awards Show Is Almost Here!</h2></span>
-        {/if}
-        {#if tlVisible}
-          <span class="tl">Time left till the premiere: </span>
-        {/if}
+      <h1>The 2025 Beasties</h1>
+      <p class="BeastiesTimerContainer" id="BeastiesTimer">
         <span id="countdown">{countdownText}</span>
-      </span>
+      </p>
       <div class="cta-row">
-        <a href="/posts/the-beasties-2025-nominees" rel="external" class="text-link"
-          >2025 Nominees</a
-        >
+        <div class="submit {submitVisible ? '' : 'hidden'}">
+          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote!</a>
+        </div>
+        <a href="/posts/the-beasties-2025-winners" class="text-link">2025 Winners</a>
         <span class="separater"> | </span>
-        <a href="https://youtube.com/@BeastSaberNews" target="_blank" class="text-link"
-          >BeastSaber YouTube</a
+        <a href="https://youtu.be/tZpEPTaWuxA" target="_blank" class="text-link"
+          >Watch the premiere</a
         >
       </div>
     </div>

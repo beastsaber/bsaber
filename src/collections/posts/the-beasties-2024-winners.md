@@ -12,9 +12,10 @@ showInPostListing: true
 
 2,236 total submissions, 585 unique mappers and lighters. 185 nominees. 102 winners!
 \
-Congratulations to all of the winners in this year’s BeastSaber Mapping Awards! Trophies, medals, and ribbons will be on their way to winners soon!
+Shout out to those that made it to the final [nominees](/posts/the-beasties-2024-nominees)! And congratulations to all of the winners in this year’s BeastSaber Mapping Awards! Trophies, medals, and ribbons will be on their way to winners soon!
 
-## Download the Playlists
+
+## Download the Winner Playlists
 
 - [**2024 Beasties: Winners**](https://beatsaver.com/playlists/830924)
 

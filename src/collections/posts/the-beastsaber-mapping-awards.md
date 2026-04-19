@@ -20,33 +20,6 @@ linkToSpecialtyPage: /the-beastsaber-mapping-awards
 <p>The BeastSaber Mapping Awards were launched in 2021 to highlight the best of the best of the art (and science) of making custom Beat Saber maps. The first year featured 29 categories, garnered 760 nominated maps, resulting in 96 nominees, with more than 45 medals won.</p>
 <br />
 <p>Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.</p>
-<br />
-
-<div class="cta">
-  <h3 id="cta-message">Voting is currently open!</h3>
-  <div class="buttons" id="buttons-container">
-    <a class="btn" href="https://mappingawards.saeraphinx.dev/">CLICK HERE TO VOTE!</a>
-  </div>
-
-\* **Check out the 2025 Nominees [here](/posts/the-beasties-2025-nominees)**
-
-\* **Voting closes:** January 15, 2025 00:00 UTC
-
-\* ~~Eligibility Period: December 1, 2024 at 00:00 UTC to November 30, 2025 at 23:59 UTC~~
-
-\* ~~Submissions Close: December 14, 2025~~
-
-</div>
-
-<script>
-const closeDate = new Date('January 15, 2026 00:00:00 UTC').getTime();
-const now = new Date().getTime();
-
-if (now >= closeDate) {
-  document.getElementById("cta-message").innerText = "Voting is now closed! Stay tuned for information on the awards show!";
-  document.getElementById("buttons-container").style.display = "none";
-}
-</script>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
@@ -167,31 +140,33 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2025.
 
-  Example: Camellia - Tempo-Katana | Mapped by ETAN (no we're not giving you a free copy of a DLC map :P)
+  Example: The Master II: Blades Of Chaos | By: altrewin (no we're not giving you a free copy of a DLC map :P)
 
 - **Best Non-Standard Game Mode Map**: This category celebrates the best of non-standard characteristics: One Saber, No Arrows, and 360/90-Degree maps. _Maps must actually use the alt characteristic and not mods to simulate._
 
-  Example Map: [Camellia (feat. Camellia) - Ashed Wings](https://beatsaver.com/maps/3c7d9)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3c7d9/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Sacrifice ft. G.E.M. - League of Legends (Chroma+)](https://beatsaver.com/maps/4b575)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4b575/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Full Spread Map**: This map has something for players at every level and does it with style and masterful mapping. To qualify, the map must have all five _true_ difficulties — Easy, Normal, Hard, Expert, ExpertPlus.
 
-  Example Map: [Se mettre sur son trente-et-un ! - Furina Character Demo | Genshin Impact](https://beatsaver.com/maps/39039)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/39039/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Holy Knight [Beat Saber World Cup 2025]](https://beatsaver.com/maps/42690)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/42690/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Ranked Map Below 8 Stars** (BeatLeader and ScoreSaber separately): The best Ranked Map Below 8 Stars embodies top-notch mapping principles and is fine-tuned through rigorous quality checks and adjustments. It strikes the perfect balance between accessibility and challenge, making it an excellent choice for intermediate players looking to develop their skills.
 
-  Example Map: [[Ranked] [Chroma+] YOASOBI - Idol](https://beatsaver.com/maps/33321)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/33321/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Astrum - Yooh [BSWC 2025]](https://beatsaver.com/maps/48445)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/48445/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-  Example Map: [[Chroma] SEREBRO - Mi Mi Mi](https://beatsaver.com/maps/37177)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/37177/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [[Ranked] Emma Stevens - Gold Rush](https://beatsaver.com/maps/420b7)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/420b7/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Ranked Map 8-12 Stars** (BeatLeader and ScoreSaber separately): The best Ranked Map 8-12 Stars exemplifies top-tier mapping practices, refined through rigorous quality checks and adjustments. It strikes the perfect balance of challenge and fun, making it an excellent choice for advanced players looking to test their skills.
 
-  Example Map: [$44,000 - PISSCORD](https://beatsaver.com/maps/3a111)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3a111/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Raja Kumari, Stefflon Don, Jarina DeMarco - Renegade](https://beatsaver.com/maps/440c1)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/440c1/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+
+  Example Map: [[RANKED] t+pazolite - HYPER4ID](https://beatsaver.com/maps/3fd94)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3fd94/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Ranked Map 12+ Stars** (BeatLeader and ScoreSaber separately): The best Ranked Map 12+ Stars exemplifies top-tier mapping techniques, refined through rigorous quality checks and adjustments. It provides a thrilling challenge for highly skilled players looking to push their limits.
 
-  Example Map: [Camellia - `#1f1e33` (Ultimate Long Version)](https://beatsaver.com/maps/387a0)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/387a0/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [The Quick Brown Fox & Klippa - MELANCHOLY passing into MANIA](https://beatsaver.com/maps/47dcd)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/47dcd/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-  Example Map: [katagiri - Kyuukou](https://beatsaver.com/maps/3b2f8)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3b2f8/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [[Ranked] t+pazolite - Garakuta Doll Play](https://beatsaver.com/maps/482bd)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/482bd/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 
 ### Lighting Categories <a href="#lighting-categories" style="text-decoration:none;">🔗</a> {id$lighting-categories}
@@ -200,85 +175,91 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Best Vanilla Lights**: The Best Vanilla Lights use ONLY base game V1 and V2 lighting mechanics and not only perfectly represent the music, but also add that ‘WOW’ factor when playing.
 
-  Example Map: [[12 Genres of Christmas Pack] David Foster - Carol of the Bells](https://beatsaver.com/maps/37fbb)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/37fbb/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [M2U - Promise (feat. Sherie)](https://beatsaver.com/maps/47d2d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/47d2d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Vanilla+ Map**: This category highlights maps that make amazing use of the new enhanced V3 lighting system available when using the new Official Editor.
 
-  Example Map: [[DITR6] Pratanallis - Black Berserker](https://beatsaver.com/maps/3f5c7)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3f5c7/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Laur - The Abyss of Despair (feat. Nakuru Aitsuki)](https://beatsaver.com/maps/4b27e)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4b27e/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Chroma Lights**: The Best Chroma Lighting category is full of any and all light shows that might make you drop the Full Combo to marvel at the beauty in the background using RGB color, precise component control, and Light ID.
 
-  Example Map: [t+pazolite - Emergency curtain call (BSWC 2024 grand finals tiebreaker)](https://beatsaver.com/maps/3f6e6)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3f6e6/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [[RANKED] [CHROMA] Offset - Sad Keyboard Guy (feat. xia)](https://beatsaver.com/maps/48544)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/48544/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Chroma+ Lights**: Chroma+ adds environment enhancement to the overall chroma toolbox to create custom experiences that are out of this world.
 
-  Example Map: [[Love Live! Birthday Pack] [Chroma+] Wien Margarete - Butterfly Wing](https://beatsaver.com/maps/3918e)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3918e/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [[Chroma+] Nanashi Mumei - mume](https://beatsaver.com/maps/453ba)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/453ba/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-- 🆕 **Best Vivify Visuals**: This category takes custom experiences to a whole new level with jaw dropping art. Who needs gameplay when you have visuals like this. Chroma and Noodle are allowed but the focus is Vivify.
+- **Best Vivify Visuals**: This category takes custom experiences to a whole new level with jaw dropping art. Who needs gameplay when you have visuals like this. Chroma and Noodle are allowed but the focus is Vivify.
+
+  Example Map: [{Vivify} Jaron - 743⁺Aether*✧ ˳ ⁎ ¹¹¹} ⁺ . ˳](https://beatsaver.com/maps/4968d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4968d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 ### Map Style Categories <a href="#style-categories" style="text-decoration:none;">🔗</a> {id$style-categories}
 
 - **Best Balanced Style Map**: Look in the sky! Is it a tech map? Is it a dance map? Is it a speed map? WE DON’T KNOW! The Best Balanced Style Map is the mutt of the neighborhood – a little of this, a little of that – all combining into one fantastic map.
 
-  Example Map: [Virtual Riot - Fork Funeral](https://beatsaver.com/maps/3bd1e)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3bd1e/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Paramore - Hard Times](https://beatsaver.com/maps/49a95)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/49a95/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best High-Tech Style Map**: With more angles than a dodecahedron, the best map in the “High-Tech” category bends the concept of parity to its will to create a challenging sight-read that retains great flow.
 
-  Example Map: [[BL RANKED] Teminite & Boom Kitty - The Master](https://beatsaver.com/maps/3db71)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3db71/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Geordie Greep - Blues](https://beatsaver.com/maps/421a8)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/421a8/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Low-Tech Style Map**: With slightly less angles than a dodecahedron, the best map in the "Low-Tech" category bends the concept of parity to that perfect sweet spot to create a pleasantly surprising gameplay experience, while still retaining great flow.
 
-  Example Map: [IVE - Accendio](https://beatsaver.com/maps/3c433)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3c433/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [IZ*ONE - Panorama](https://beatsaver.com/maps/462e4)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/462e4/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Fitness Style Map**: Build strength to the beat. The best fitness map forces constant natural movement in all dimensions with walls and bloqs that keep the flow until your legs give out.
 
-  Example Map: [[Fitbeat+] Dua Lipa - Levitating](https://beatsaver.com/maps/390b8)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/390b8/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [[Fitbeat] bbno$ - 1-800 (ft. ironmouse)](https://beatsaver.com/maps/48912)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/48912/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Dance Style Map**: With a blend of big arm swings, high movement, and a bit lower density, the best map in the “Dance” category gets players of all ages grooving to the beat and sweating up a storm.
 
-  Example Map: [[V3] Sabrina Carpenter - Espresso](https://beatsaver.com/maps/3bcb2)<br /><iframe class="iframe" src="https://beatsaver.com/maps/3bcb2/embed" width="600" height="145" loading="lazy" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Hearts2Hearts - FOCUS](https://beatsaver.com/maps/4b6f1)<br /><iframe class="iframe" src="https://beatsaver.com/maps/4b6f1/embed" width="600" height="145" loading="lazy" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Speed Style Map**: Nothing screams “speed” more than that feeling of lactic acid setting in after tackling thousands of notes at mind-blowing BPMs, and the best map in the “Speed” category delivers an extra helping.
 
-  Example Map: [Camellia - Diastrophism (“Anamorphism” Long ver.)](https://beatsaver.com/maps/3cd51)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3cd51/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Bad Apple!! (feat.nomico) (Camellia's "Bad Psy" Remix)](https://beatsaver.com/maps/4b07c)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4b07c/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Accuracy Style Map**: Chase that sweet high accuracy in a very, very careful dance. The best map in the Accuracy category has excellent rhythmic choice and well-placed emphasis with the fewest amount of notes.
 
-  Example Map: [FWLR & A-SHO - Cave Me In](https://beatsaver.com/maps/417bc)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/417bc/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Grafix - Body Language](https://beatsaver.com/maps/49201)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/49201/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Challenge Style Map**: Ranking Criteria? Curation? Mapping fundamentals? These are but chains to restrict the seemingly endless and wild imagination of challenge mappers. The best map in the “Challenge” category pushes the limits in every way.
 
-  Example Map: [[FREAKY TOP DIFFS] REQUiRE - buggin'](https://beatsaver.com/maps/3c470)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3c470/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [underscores - Stupid (Can't run from the urge)](https://beatsaver.com/maps/474e3)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/474e3/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Best Poodle Map**: Poodles and Pauls. The best map in the Poodle category has excellent flow and well-placed emphasis with the long hold note swing style. Spirals, Switch-backs, and more!
 
-  Example Map: [[Chroma+] Come Play - Stray Kids (Arcane - League of Legends)](https://beatsaver.com/maps/40fa7)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/40fa7/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [[Moving Walls] Bite Marks - League of Legends (ft. TEYA)](https://beatsaver.com/maps/434e4)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/434e4/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-- 🔁 **Best ~~Gimmick~~ Wildcard Map**: This category shines a light on maps that explore beyond "normal" mapping. Cult classics, bending of mechanics, and different ways of thinking can be found here. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here!
+- **Best Wildcard Map**: This category shines a light on maps that explore beyond "normal" mapping. Cult classics, bending of mechanics, and different ways of thinking can be found here. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here!
 
-  Example Map: [FREE.99 - TRANS RIOT MUSIC](https://beatsaver.com/maps/3ab81)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3ab81/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [Protokseed - Burn Like Fire](https://beatsaver.com/maps/4618e)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4618e/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+
+- **Best Gameplay Modchart Style Map**: Here? There? Where is the next note coming from?! This category includes maps that feature solid mapping AND alter the gameplay in mind-blowing ways through animation and manipulation of notes and obstacles.
+
+  Example Map: [[Extra Sensory II] RXLZQ - Through The Screen](https://beatsaver.com/maps/43a5d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/43a5d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 ### Individual Awards <a href="#individual-awards" style="text-decoration:none;">🔗</a> {id$individual-awards}
 
 - **Pack of the Year**: The map pack that has it all: a tight theme, new high-quality maps, and a great presentation across all difficulties, all wrapped up in a beautiful `.bplist` bow.
 
-  Example Pack: [WALLSOCKET PROJECT](https://beatsaver.com/playlists/386241)
+  Example Pack: [Extra Sensory II](/playlists/extra-sensory-ii)
 
 - **Rookie Lighter of the Year**: The best up-and-coming lighter whose first map/lightshow was released during the nomination period. _Previously deleted maps count as first map releases._
 
-- 🔁 **Rookie Mapper of the Year**: The best up-and-coming mapper whose first map was released during the nomination period, now with the added grace period of 6 months leading up to the nomination period (June 1st 2024). _Previously deleted maps count as first map releases. At most five maps can be from June 1st 2024-Dec 1st 2024._
+- **Rookie Mapper of the Year**: The best up-and-coming mapper whose first map was released during the nomination period, now with the added grace period of 6 months leading up to the nomination period (June 1st 2024). _Previously deleted maps count as first map releases. At most five maps can be from June 1st 2024-Dec 1st 2024._
 
 - **Lighter of the Year**: A lighter, vanilla or chroma, who not only excels in their art but also shares their experience, leads, and mentors as they are able.
 
 - **Mapper of the Year**: A mapper who not only excels in their art but also shares their experience, leads, and mentors as they are able.
 
-- 🔁 **Modded Map of the Year**: The best modded map of the year. Full stop. Combining the full power of Vivify, Noodle Extensions, Chroma, or any other gameplay or visual mods; this map using mods to truly capture and convey the music and/or alter the gameplay in mind-blowing ways.
+- **Modded Map of the Year**: The best modded map of the year. Full stop. Combining the full power of Vivify, Noodle Extensions, Chroma, or any other gameplay or visual mods; this map using mods to truly capture and convey the music and/or alter the gameplay in mind-blowing ways.
 
-  Example Map: [[Modchart] Leslie Wai - Paradigm](https://beatsaver.com/maps/3bbb0)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3bbb0/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [{Vivify} Jaron - 743⁺Aether*✧ ˳ ⁎ ¹¹¹} ⁺ . ˳](https://beatsaver.com/maps/4968d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4968d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Map of the Year**: The best unmodded map of the year. Full stop. It has it all – representation, emphasis, flow – everything coming together for an incredible playing experience to go with the song.
 
-  Example: [[Chroma] surk - Impulse (Short Ver.)](https://beatsaver.com/maps/3b5cf)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/3b5cf/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example: [seatrus - M◇◇nlit [JBSL10 Grand Finals Tiebreaker]](https://beatsaver.com/maps/4be4a)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4be4a/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 <br />
 
