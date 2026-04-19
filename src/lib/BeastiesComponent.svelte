@@ -69,10 +69,6 @@
           <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote!</a>
         </div>
         <a href="/posts/the-beasties-2025-winners" class="text-link">2025 Winners</a>
-        <span class="separater"> | </span>
-        <a href="https://youtu.be/tZpEPTaWuxA" target="_blank" class="text-link"
-          >Watch the premiere</a
-        >
       </div>
     </div>
   </div>
