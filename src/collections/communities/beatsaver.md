@@ -6,7 +6,6 @@ image: /static/uploads/communities/android-chrome-512x512-mariel-warnock.png
 circleFrameImage: false
 labels:
   - General
-  - Mapping
 activityLevel: high
 socials:
   - name: Website

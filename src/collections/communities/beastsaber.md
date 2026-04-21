@@ -7,7 +7,6 @@ image: /static/uploads/communities/beastsaber-logo-fullsize-square.jpg
 circleFrameImage: true
 labels:
   - General
-  - Modding
 activityLevel: high
 socials:
   - name: Website

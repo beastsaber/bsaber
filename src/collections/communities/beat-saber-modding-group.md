@@ -5,6 +5,7 @@ description: The hub for all things modding Beat Saber, from how to mod the game
 image: /static/uploads/communities/bsmg-logo-beat-saber-modding-group.png
 circleFrameImage: true
 labels:
+  - Mapping
   - Modding
 activityLevel: high
 socials:
