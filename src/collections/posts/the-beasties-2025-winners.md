@@ -24,9 +24,9 @@ Shout out to those that made it to the final [nominees](/posts/the-beasties-2025
 
 - [**2025 Beasties: Community Choice**](https://beatsaver.com/playlists/1176653)
 
-### Check out the video announcement [here](https://youtu.be/52UEYJtbRJs)
+### Check out the video announcement [here](https://youtu.be/tZpEPTaWuxA)
 
-!youtube[52UEYJtbRJs]
+!youtube[tZpEPTaWuxA]
 
 ## Supporting Map Awards
 
