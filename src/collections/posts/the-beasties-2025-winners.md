@@ -230,7 +230,7 @@ Shout out to those that made it to the final [nominees](/posts/the-beasties-2025
 
 **Best Gameplay Modchart Style Map**
 
-- Winner: [[Extra Sensory II] RXLZQ - Through The Screen](https://beatsaver.com/maps/43a5d) - Standard ExpertPlus - Mapped by Mawntee, fatalution
+- Winner: [[Extra Sensory II] RXLZQ - Through The Screen](https://beatsaver.com/maps/43a5d) - Standard ExpertPlus - Mapped by Mawntee
 
 - Runner-Up: [[Extra Sensory II] rN vs. nm-y (Cataclysmia) - 42-flux](https://beatsaver.com/maps/43999) - Standard ExpertPlus - Mapped by Aeroluna
 
