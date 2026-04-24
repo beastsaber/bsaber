@@ -366,7 +366,7 @@ Voting closes January 15, 2026 at 00:00 UTC so don’t wait to get your votes in
 
 **Best Gameplay Modchart Style Map**
 
-- [[Extra Sensory II] RXLZQ - Through The Screen](https://beatsaver.com/maps/43a5d) - Standard ExpertPlus - Mapped by Mawntee, fatalution
+- [[Extra Sensory II] RXLZQ - Through The Screen](https://beatsaver.com/maps/43a5d) - Standard ExpertPlus - Mapped by Mawntee
 
 - [Schwank - HYPERCLOCKED](https://beatsaver.com/maps/48a37) - Standard ExpertPlus - Mapped by SaltyFish
 
