@@ -10,7 +10,7 @@
 <MetaHead
   title="ReSVRGEnce Pack"
   description="Barnotek and TG Mapping Group returns with another artist themed pack! Jam out to these Bass House songs, from artist SVRGE"
-  imageUrl="/uploads/playlists/swarm-pack/ReSVRGEnce.png"
+  imageUrl="/uploads/playlists/ReSVRGEnce.png"
 />
 
 <section class="hero">
