@@ -1,14 +1,11 @@
 ---
 title: Diamonds in the Rough
-section: articles
+section: announcements
 category: event
 postEventType: learning
-publish: 2025-04-25T12:00:00.000Z
-lastUpdated: 2025-08-08T11:00:00.000-05:00
-homepageText: Diamonds in the Rough is an event for new mappers which matches
-  them up with experienced coaches to create a multi-difficulty, curation-worthy
-  map.
-image: /static/uploads/posts/ditr/ditr7-square.png
+publish: 2026-04-28T12:00:00.000Z
+homepageText: Applications for Diamonds in the Rough Vol. 8 are now open!
+image: /static/uploads/posts/ditr/ditr8-square.png
 showInPostListing: true
 linkToSpecialtyPage: speciality/diamonds-in-the-rough
 ---
@@ -17,7 +14,14 @@ linkToSpecialtyPage: speciality/diamonds-in-the-rough
 
 The goal of this event is to match interested Verified mappers up with Novice mappers in a "coaching" relationship to create one high-quality, curateable map with at least three difficulties. At the end of the event, the novice-made maps will be released as a pack on BeatSaver and featured on BeastSaber, showcasing up-and-coming "undiscovered" mapping talent!
 
-## DITR 7 has concluded! Keep an eye out next year for info on the 8th edition!!
+## Applications for DITR 8 are now open! Join the [Beat Saber Mapping Server](https://discord.gg/ArT4BTQ) for more information!
+
+- [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8)
+- [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8)
+
+### Applications close May 31st!
+
+<br />
 
 Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](/playlists/ditr-6), [DITR7](/playlists/ditr-7).
 
