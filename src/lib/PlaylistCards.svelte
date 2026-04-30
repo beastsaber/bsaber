@@ -33,13 +33,9 @@
   {#if playlists.length !== 0}
     {#each playlists as playlist (playlist.playlistId)}
       <!-- Default to beatsaver playlist page - if url overwrite is given apply that -->
-      <a
+      <div
         class="card"
         class:overridden={overwriteMap[playlist.playlistId] != null}
-        href={overwriteMap[playlist.playlistId] == null ||
-        overwriteMap[playlist.playlistId].linkOverwrite == null
-          ? `${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${playlist.playlistId}`
-          : overwriteMap[playlist.playlistId].linkOverwrite}
         style={`background-image: url(${(() => {
           const img = overwriteMap[playlist.playlistId]?.imageOverwrite
           return img
@@ -47,7 +43,17 @@
             : (playlist.playlistImage512 ?? playlist.playlistImage)
         })()})`}
       >
-        <div></div> <!-- This div is here to workaround a breaking SSR bug -->
+        <a
+          class="card-link"
+          aria-label={`Open playlist ${playlist.name ?? ''}`}
+          href={overwriteMap[playlist.playlistId] == null ||
+          overwriteMap[playlist.playlistId].linkOverwrite == null
+            ? `${import.meta.env.VITE_BEATSAVER_BASE || 'https://beatsaver.com'}/playlists/${playlist.playlistId}`
+            : overwriteMap[playlist.playlistId].linkOverwrite}
+        ></a>
+
+        <div></div>
+        <!-- This div is here to workaround a breaking SSR bug -->
         <!-- <div class="mobile-hidden"> -->
         <div>
           <div class="zip-download-button-container">
@@ -69,7 +75,7 @@
             <h3 class="title">{playlist.name ?? ''}</h3>
           </div>
         </div>
-      </a>
+      </div>
     {/each}
   {:else}
     {#each { length: maxCards ?? 4 }}
@@ -80,47 +86,65 @@
 
 <style lang="scss">
   @import '../scss/post-cards';
-  a .one-click-download-button-container,
-  a .zip-download-button-container {
+
+  .card {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .card .one-click-download-button-container,
+  .card .zip-download-button-container {
     position: absolute;
     top: 0.3rem;
-    z-index: 1;
+    z-index: 3;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
     border-radius: 50%;
     overflow: visible;
   }
 
-  a .one-click-download-button-container {
+  .card .one-click-download-button-container {
     display: none;
   }
 
-  a .zip-download-button-container {
+  .card .zip-download-button-container {
     right: 0.3rem;
-    padding: .3em .45em;
+    padding: 0.3em 0.45em;
   }
 
   @media (hover: hover) {
-
-    a .one-click-download-button-container {
+    .card .one-click-download-button-container {
       display: inherit;
       right: 0.3rem;
       padding: 0.3rem;
     }
 
-    a .zip-download-button-container {
+    .card .zip-download-button-container {
       right: 2.5rem;
       padding: 0.3em 0.45em;
     }
-    a .one-click-download-button-container,
-    a .zip-download-button-container {
+
+    .card .one-click-download-button-container,
+    .card .zip-download-button-container {
       transition: opacity $transition-long ease-in-out;
       opacity: 0;
     }
-    a:hover .one-click-download-button-container {
+
+    .card:hover .one-click-download-button-container {
       opacity: 1;
     }
 
-    a:hover .zip-download-button-container {
+    .card:hover .zip-download-button-container {
       opacity: 1;
     }
   }
