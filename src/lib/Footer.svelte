@@ -1,6 +1,12 @@
 <script lang="ts">
   import Fa from 'svelte-fa'
-  import { faDiscord, faPatreon, faYoutube, faXTwitter } from '@fortawesome/free-brands-svg-icons'
+  import {
+    faDiscord,
+    faPatreon,
+    faYoutube,
+    faXTwitter,
+    faKoFi,
+  } from '@fortawesome/free-brands-svg-icons'
 
   import { filterNsfw, nsfwToggleVisibility } from './storeNsfwPreference'
 
@@ -67,6 +73,19 @@
 
         <li>
           <a
+            href="https://ko-fi.com/beastsaber"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Ko-fi"
+            aria-label="BeastSaber Ko-fi"
+          >
+            <Fa icon={faKoFi} />
+            <span>Ko-fi</span>
+          </a>
+        </li>
+
+        <li>
+          <a
             href="https://youtube.com/@BeastSaberNews"
             target="_blank"
             rel="noopener noreferrer"
@@ -123,7 +142,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1rem 0 0.5rem 0;
+    padding: 1rem 0.25rem 0.5rem 0.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.18);
   }
 
