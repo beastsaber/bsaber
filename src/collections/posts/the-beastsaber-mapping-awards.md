@@ -169,6 +169,9 @@ _\*Any categories that do not receive at least five qualified nominees will not 
   Example Map: [[Ranked] t+pazolite - Garakuta Doll Play](https://beatsaver.com/maps/482bd)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/482bd/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 
+> ***Ranked nominations are based on the date they are ranked, not the date they are uploaded**
+
+
 ### Lighting Categories <a href="#lighting-categories" style="text-decoration:none;">🔗</a> {id$lighting-categories}
 
 > Lighting nominations only have one “funnel” on the form. The Beasties team will separate maps into the right categories based on their construction.
