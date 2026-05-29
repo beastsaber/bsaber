@@ -10,6 +10,7 @@
   }>
   export let linkText: string
   export let linkUrl: string
+  export let error: string | null = null
 
   type RankColorType = 'info-blue' | 'warning-yellow' | 'success-green'
   export let rankColor: RankColorType
@@ -22,18 +23,26 @@
 </script>
 
 <Listing {title} {img} {linkText} {linkUrl}>
-  {#each players as player (player)}
-    <div class="player-container">
-      <div class="player">
-        <div class="rank {rankColor}">{player.rank}</div>
-        <img class="avatar" src={player.avatar} alt="" />
-        <div class="name">{player.name}</div>
-        <div class="change" class:up={player.change >= 1} class:down={player.change <= -1}>
-          {contentFromChange(player.change)}
+  {#if error}
+    <div class="leaderboard-error">
+      {error}
+    </div>
+  {:else if players.length}
+    {#each players as player (`${player.name}-${player.rank}`)}
+      <div class="player-container">
+        <div class="player">
+          <div class="rank {rankColor}">{player.rank}</div>
+          <img class="avatar" src={player.avatar} alt="" />
+          <div class="name">{player.name}</div>
+          <div class="change" class:up={player.change >= 1} class:down={player.change <= -1}>
+            {contentFromChange(player.change)}
+          </div>
         </div>
       </div>
-    </div>
-  {/each}
+    {/each}
+  {:else}
+    <div class="leaderboard-empty">No players available.</div>
+  {/if}
 </Listing>
 
 <style lang="scss">
@@ -104,5 +113,20 @@
     &.down {
       color: $color-danger-red;
     }
+  }
+
+  .leaderboard-error,
+  .leaderboard-empty {
+    padding: 10px 5px;
+    font-family: $font-primary;
+    font-weight: 700;
+  }
+
+  .leaderboard-error {
+    color: $color-danger-red;
+  }
+
+  .leaderboard-empty {
+    color: $color-muted-text;
   }
 </style>
