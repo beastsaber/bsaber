@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="map-cards-containers">
-    <MapCards {playlistId} fixedCount={4} showToggle={false} />
+    <MapCards {playlistId} showToggle={false} />
   </div>
 </div>
 
