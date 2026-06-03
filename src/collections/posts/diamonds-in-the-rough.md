@@ -1,10 +1,12 @@
 ---
 title: Diamonds in the Rough
-section: announcements
+section: articles
 category: event
 postEventType: learning
 publish: 2026-04-28T12:00:00.000Z
-homepageText: Applications for Diamonds in the Rough Vol. 8 are now open!
+homepageText: Diamonds in the Rough is an event for new mappers which matches
+  them up with experienced coaches to create a multi-difficulty, curation-worthy
+  map.
 image: /static/uploads/posts/ditr/ditr8-square.png
 showInPostListing: true
 linkToSpecialtyPage: speciality/diamonds-in-the-rough
@@ -13,13 +15,6 @@ linkToSpecialtyPage: speciality/diamonds-in-the-rough
 # The [Beat Saber Mapping Server](https://discord.gg/ArT4BTQ) Presents: Diamonds in the Rough
 
 The goal of this event is to match interested Verified mappers up with Novice mappers in a "coaching" relationship to create one high-quality, curateable map with at least three difficulties. At the end of the event, the novice-made maps will be released as a pack on BeatSaver and featured on BeastSaber, showcasing up-and-coming "undiscovered" mapping talent!
-
-## Applications for DITR 8 are now open! Join the [Beat Saber Mapping Server](https://discord.gg/ArT4BTQ) for more information!
-
-- [Coaching Application](https://forms.gle/o97UTYXsNEdRxzNW8)
-- [Novice Application](https://forms.gle/2ToZ4LnWMEnj7mNW8)
-
-### Applications close May 31st!
 
 <br />
 
