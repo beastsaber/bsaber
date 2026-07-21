@@ -19,7 +19,7 @@
     "decap-server": "npx decap-server"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.8",
+    "@eslint/compat": "^2.1.0",
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-brands-svg-icons": "^7.2.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
@@ -30,7 +30,7 @@
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@types/marked": "^6.0.0",
     "concurrently": "^8.2.2",
-    "eslint": "^9.18.0",
+    "eslint": "^10.7.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-svelte": "^3.0.0",
     "prettier": "^3.4.2",
