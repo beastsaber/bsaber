@@ -5,13 +5,14 @@
   import OneClickButton from './OneClickDownloadButton.svelte'
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import CopyBsr from './CopyBSR.svelte'
+  import Tags from '$lib/Tags.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
   import { marked } from 'marked'
 
   let aspectRatio = mapOfTheWeek.showcase?.type === 'youtube-short' ? '9/16' : '16/9'
   let sizeDeterminer =
-    mapOfTheWeek.showcase?.type === 'youtube-short' ? 'height: 90vh' : 'width: 90vw'
+    mapOfTheWeek.showcase?.type === 'youtube-short' ? 'height: 80vh' : 'width: 90vw'
   let sizeLimiter =
     mapOfTheWeek.showcase?.type === 'youtube-short' ? 'max-height: 50,625vw' : 'max-width: 160vh'
 
@@ -52,7 +53,7 @@
     <iframe
       width="100%"
       height="100%"
-      src="https://www.youtube.com/embed/{mapOfTheWeek?.showcase.id}?rel=0&autoplay=1&loop=1"
+      src="https://www.youtube.com/embed/{mapOfTheWeek?.showcase.id}?rel=0&autoplay=0&loop=1"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
@@ -111,6 +112,13 @@
           <!-- @formatter:on -->
           <!-- prettier-ignore-end -->
           <!-- eslint-enable -->
+
+          {#if mapOfTheWeek.map.tags?.length}
+            <div class="map-tags">
+              <Tags tags={mapOfTheWeek.map.tags} />
+            </div>
+          {/if}
+
           <p class="review">{@html marked(mapOfTheWeek.review)}</p>
           <div class="action-bar">
             {#if mapOfTheWeek.showcase != null && mapOfTheWeek.showcase.id != null && mapOfTheWeek.showcase.type != null}
@@ -240,6 +248,9 @@
     width: 0;
     height: 0;
     display: hidden;
+  }
+  .map-tags {
+    margin-bottom: 1rem;
   }
 
   @media (min-width: 678px) {
