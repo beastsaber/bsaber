@@ -10,7 +10,9 @@
       {#if tag in styleTags}
         <span class="style tag" title={styleTags[tag]}>{styleTags[tag]}</span>
       {:else if tag in genreTags}
-        <span class="genre tag" title={genreTags[tag]}>{genreTags[tag]}</span>
+        <span class="genre tag" class:ai={tag === 'ai'} title={genreTags[tag]}>
+          {genreTags[tag]}
+        </span>
       {/if}
     {/each}
   </div>
@@ -41,6 +43,10 @@
 
       &.genre {
         border-color: $color-success-green;
+      }
+
+      &.ai {
+        border-color: $color-warning-yellow;
       }
     }
   }

@@ -10,6 +10,7 @@ export const styleTags: Record<string, string> = {
 }
 
 export const genreTags: Record<string, string> = {
+  ai: 'AI Music',
   swing: 'Swing',
   nightcore: 'Nightcore',
   'folk-acoustic': 'Folk & Acoustic',
