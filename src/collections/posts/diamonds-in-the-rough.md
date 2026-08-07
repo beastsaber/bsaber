@@ -233,30 +233,30 @@ _\*Click on each category to learn more_
 <details>
 <summary><b>DITR 8 - Summer of 2026</b></summary>
 
-| Coach:         | Novice:             | Status:              |
-| -------------- | ------------------- | -------------------- |
-| 3psilon9       | oatmeal             | Finished             |
-| August         | Bluepelt            | Finished             |
-| Avexus         | Shuriken255         | Finished             |
-| Barnotek       | sephley             | Finished             |
-| CMP1111        | Blasted             | Finished             |
-| Cush           | Gloop               | Finished             |
-| Fvrwvrd        | satokai             | Finished             |
-| Grizlor        | punter75            | Finished             |
-| Klondike       | migats21            | Finished             |
-| Ken_Monogatari | pincone4            | Finished             |
-| kurage3835     | Ada510              | Finished             |
-| MadChase       | WpnMkay             | Finished             |
-| Miljon         | earblind69          | Finished             |
-| Noveliniel     | toraneko72          | Finished             |
-| RateGyro       | Alyssssamazing      | Finished             |
-| SneakySpeckMan | jakefromstatefarm_0 | Finished             |
-| steeak         | holothere           | Finished             |
-| symphonic      | WithersChat         | Finished             |
-| TheLunarCarver | adlaiii             | Novice dropped       |
-| Tonkie         | toggle              | Finished             |
-| Vasilidesu     | currentlypending    | Currently Pending 🙂‍↕️ |
-| yao_min        | lio0864             | Finished             |
+| Coach:         | Novice:             | Status:        |
+| -------------- | ------------------- | -------------- |
+| 3psilon9       | oatmeal             | Finished       |
+| August         | Bluepelt            | Finished       |
+| Avexus         | Shuriken255         | Finished       |
+| Barnotek       | sephley             | Finished       |
+| CMP1111        | Blasted             | Finished       |
+| Cush           | Gloop               | Finished       |
+| Fvrwvrd        | satokai             | Finished       |
+| Grizlor        | punter75            | Finished       |
+| Klondike       | migats21            | Finished       |
+| Ken_Monogatari | pincone4            | Finished       |
+| kurage3835     | Ada510              | Finished       |
+| MadChase       | WpnMkay             | Finished       |
+| Miljon         | earblind69          | Finished       |
+| Noveliniel     | toraneko72          | Finished       |
+| RateGyro       | Alyssssamazing      | Finished       |
+| SneakySpeckMan | jakefromstatefarm_0 | Finished       |
+| steeak         | holothere           | Finished       |
+| symphonic      | WithersChat         | Finished       |
+| TheLunarCarver | adlaiii             | Novice dropped |
+| Tonkie         | toggle              | Finished       |
+| Vasilidesu     | currentlypending    | Finished       |
+| yao_min        | lio0864             | Finished       |
 
 </details>
 
