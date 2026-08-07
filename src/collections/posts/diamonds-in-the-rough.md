@@ -3,7 +3,7 @@ title: Diamonds in the Rough
 section: articles
 category: event
 postEventType: learning
-publish: 2026-04-28T12:00:00.000Z
+publish: 2026-08-07T12:00:00.000Z
 homepageText: Diamonds in the Rough is an event for new mappers which matches
   them up with experienced coaches to create a multi-difficulty, curation-worthy
   map.
@@ -18,7 +18,7 @@ The goal of this event is to match interested Verified mappers up with Novice ma
 
 <br />
 
-Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](/playlists/ditr-6), [DITR7](/playlists/ditr-7).
+Check out playlists from past events: [DITR1](https://beatsaver.com/playlists/3977), [DITR2](https://beatsaver.com/playlists/5), [DITR3](https://beatsaver.com/playlists/542), [DITR4](https://beatsaver.com/playlists/5002), [DITR5](https://beatsaver.com/playlists/162036), [DITR6](/playlists/ditr-6), [DITR7](/playlists/ditr-7), [DITR8](/playlists/ditr-8).
 
 **Check out who's participated previously!**
 \
@@ -230,6 +230,36 @@ _\*Click on each category to learn more_
 
 </details>
 
+<details>
+<summary><b>DITR 8 - Summer of 2026</b></summary>
+
+| Coach:         | Novice:             | Status:              |
+| -------------- | ------------------- | -------------------- |
+| 3psilon9       | oatmeal             | Finished             |
+| August         | Bluepelt            | Finished             |
+| Avexus         | Shuriken255         | Finished             |
+| Barnotek       | sephley             | Finished             |
+| CMP1111        | Blasted             | Finished             |
+| Cush           | Gloop               | Finished             |
+| Fvrwvrd        | satokai             | Finished             |
+| Grizlor        | punter75            | Finished             |
+| Klondike       | migats21            | Finished             |
+| Ken_Monogatari | pincone4            | Finished             |
+| kurage3835     | Ada510              | Finished             |
+| MadChase       | WpnMkay             | Finished             |
+| Miljon         | earblind69          | Finished             |
+| Noveliniel     | toraneko72          | Finished             |
+| RateGyro       | Alyssssamazing      | Finished             |
+| SneakySpeckMan | jakefromstatefarm_0 | Finished             |
+| steeak         | holothere           | Finished             |
+| symphonic      | WithersChat         | Finished             |
+| TheLunarCarver | adlaiii             | Novice dropped       |
+| Tonkie         | toggle              | Finished             |
+| Vasilidesu     | currentlypending    | Currently Pending 🙂‍↕️ |
+| yao_min        | lio0864             | Finished             |
+
+</details>
+
 <br />
 
 ## How does the event work?
@@ -243,7 +273,6 @@ _\*Click on each category to learn more_
   \*Keep it clean-ish. Swears are OK but stay away from NSFW stuff.
 
 - There will be FOUR checkpoints throughout the event to help Novices pace themselves:
-
   - 2 Weeks In: Song must be selected and map should be timed out and structure planned
 
   - 4 Weeks In: First diff should be complete
