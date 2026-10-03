@@ -255,5 +255,5 @@ export type Community = {
   activityLevel: 'high' | 'medium' | 'low'
   labels: string[]
   socials: Social[]
-  language: LanguageKeys[]
+  languages: LanguageKeys[]
 }

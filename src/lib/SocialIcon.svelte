@@ -5,7 +5,7 @@
   export let social: keyof typeof iconMapping = 'Website'
   export let id: string | undefined = undefined
   export let link: string | undefined = undefined
-  let titleOverwrite: string | undefined = undefined
+  export let titleOverwrite: string | undefined = undefined
   export let noLink = false
   let finalLink = link
 

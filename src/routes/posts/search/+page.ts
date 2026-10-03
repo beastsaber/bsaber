@@ -1,9 +1,9 @@
-import type { Post } from '../../../types'
+import type { ImportPostModuleData, Post } from '../../../types'
 
 export async function load() {
   const posts: Post[] = (
     await Promise.all(
-      Object.entries(import.meta.glob('/src/collections/posts/*.md')).map(
+      Object.entries(import.meta.glob<ImportPostModuleData>('/src/collections/posts/*.md')).map(
         async ([path, module]) => {
           const { metadata } = await module()
           const slug = path.split('/').reverse()[0].split('.')[0]
