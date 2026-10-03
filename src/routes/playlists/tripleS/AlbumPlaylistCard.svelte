@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="map-cards-containers">
-    <MapCards {playlistId} maxCards={4} forceColumnCount={1} />
+    <MapCards {playlistId} fixedCount={4} forceColumnCount={1} />
   </div>
   <div class="footer">With {memberNames}</div>
 </div>

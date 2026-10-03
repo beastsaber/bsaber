@@ -130,7 +130,7 @@
       document.querySelectorAll('.faux-scroll-link').forEach((link) => {
         link.addEventListener('click', (event) => {
           event.preventDefault()
-          authorBox.scrollIntoView({ behavior: 'smooth' })
+          authorBox?.scrollIntoView({ behavior: 'smooth' })
         })
       })
     }
