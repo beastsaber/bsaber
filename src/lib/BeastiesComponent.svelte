@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
 
-  let countdownText = "Thank you for being there! We'll see you next year!"
+  let countdownText = 'Calculating...'
   let submitVisible = false
   let headerVisible = true
   let tlVisible = true
@@ -20,8 +20,10 @@
     const timeLeft = countdownDate - now
 
     if (timeLeft <= 0) {
-      countdownText = "Thank you for being there! We'll see you next year!"
-      submitVisible = false
+      countdownText = 'Submissions are now closed! Stay tuned for voting soon!'
+      // countdownText = 'Voting has closed! Stay tuned for the Awards Show!'
+      // countdownText = "Thank you for being there! We'll see you next year!"
+      submitVisible = timeLeft > 0
       headerVisible = false
       tlVisible = false
       return
@@ -34,13 +36,14 @@
 
     countdownText =
       days >= 1 ? formatTime(days, hours, minutes, 0) : formatTime(0, hours, minutes, seconds)
-    submitVisible = timeLeft > 0
+
+    submitVisible = true
     headerVisible = true
     tlVisible = true
   }
 
   onMount(() => {
-    countdownDate = new Date('April 10, 2026 21:00:00 UTC').getTime()
+    countdownDate = new Date('December 15, 2026 00:00:00 UTC').getTime()
     updateCountdown()
 
     const countdownInterval = setInterval(() => {
@@ -60,19 +63,31 @@
       <img src="/beastie-trophy.png" alt="Beasties Trophy" />
     </div>
     <div class="right-side-beasties-banner">
-      <h1>The 2025 Beasties</h1>
+      <h1>Beasties are Coming</h1>
       <p class="BeastiesTimerContainer" id="BeastiesTimer">
+        {#if tlVisible}
+          Time left to submit maps:&nbsp;
+        {/if}
         <span id="countdown">{countdownText}</span>
       </p>
+
+      {#if tlVisible}
+        <i style="margin-top: 0.25rem;">*Map eligibility cutoff: November 30, 2026</i>
+      {/if}
+
       <div class="cta-row">
         <div class="submit {submitVisible ? '' : 'hidden'}">
-          <a href="https://mappingawards.saeraphinx.dev/" class="button-link">Vote!</a>
+          <a href="https://mappingawards.saeraphinx.dev/" target="_blank" class="button-link"
+            >Submit Maps</a
+          >
         </div>
-        <a href="/posts/the-beasties-2025-winners" class="text-link">2025 Winners</a>
-        <span class="separater"> | </span>
-        <a href="https://youtu.be/tZpEPTaWuxA" target="_blank" class="text-link"
-          >Watch the premiere</a
+        <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn More</a>
+        <!--<span class="separater"> | </span>
+        <a
+          href="https://fancy-heath-653.notion.site/2025-The-Beasties-27bc696bffca8034ba71d20fa2789291"
+          class="text-link">もっと読む</a
         >
+          -->
       </div>
     </div>
   </div>
@@ -109,9 +124,9 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('/beasties-banner-bg.png') no-repeat center;
+    background: url('/2026_background.png') no-repeat center;
     background-size: cover;
-    filter: brightness(50%) blur(5px) contrast(1.1);
+    filter: brightness(120%) blur(5px);
     z-index: -1;
   }
 
@@ -128,8 +143,6 @@
   .BeastiesTimerContainer {
     font-size: 1.2rem;
     font-weight: bold;
-  }
-  .header {
     color: #e95d4e;
   }
 

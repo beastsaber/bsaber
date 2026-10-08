@@ -4,7 +4,7 @@ section: speciality
 category: event
 postEventType: awards
 publish: 2024-02-01T00:00:00.000Z
-lastUpdated: 2025-08-23T15:00:00.000Z
+lastUpdated: 2026-10-07T15:00:00.000Z
 homepageText: The BeastSaber Mapping Awards dig deep into mapping theory and
   practices to highlight the maps that have incredible representation, emphasis,
   and flow to truly capture the feel of the song.
@@ -20,6 +20,30 @@ linkToSpecialtyPage: /the-beastsaber-mapping-awards
 <p>The BeastSaber Mapping Awards were launched in 2021 to highlight the best of the best of the art (and science) of making custom Beat Saber maps. The first year featured 29 categories, garnered 760 nominated maps, resulting in 96 nominees, with more than 45 medals won.</p>
 <br />
 <p>Map curation is focused on maps that avoid objectively bad mapping and have a “fun factor” that appeals to a member of our curation team – the “blockbuster movies” of the custom map world. The Beasties go beyond the fun factor to dig deep into mapping theory and practices to highlight the maps that may not have grabbed the spotlight but are well-constructed and have incredible representation, emphasis, and flow to truly capture the feel of the song – the art films of the custom map world.</p>
+
+<br />
+
+<div class="cta">
+  <h3 id="cta-message">Submissions are currently open!</h3>
+  <div class="buttons" id="buttons-container">
+    <a class="btn" href="https://mappingawards.saeraphinx.dev/" target="_blank">CLICK HERE TO SUBMIT MAPS! 🏆</a>
+  </div>
+
+\* **Map Eligibility Period:** December 1, 2025 at 00:00 UTC to November 30, 2026 at 23:59 UTC
+
+\* **Submissions Close:** December 14, 2026
+
+</div>
+
+<script>
+const closeDate = new Date('December 15, 2026 00:00:00 UTC').getTime();
+const now = new Date().getTime();
+
+if (now >= closeDate) {
+  document.getElementById("cta-message").innerText = "Submissions are now closed! Stay tuned for voting soon!";
+  document.getElementById("buttons-container").style.display = "none";
+}
+</script>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
@@ -105,8 +129,8 @@ linkToSpecialtyPage: /the-beastsaber-mapping-awards
 
 ## Quick Navigation
 
-- [**What's Changing for 2025**](#whats-changing)
-- [**2025 Categories**](#categories)
+- [**What's Changing for 2026**](#whats-changing)
+- [**2026 Categories**](#categories)
   - [**Supporting Map Categories**](#supporting-map-categories)
   - [**Lighting Categories**](#lighting-categories)
   - [**Map Style Categories**](#style-categories)
@@ -117,20 +141,18 @@ linkToSpecialtyPage: /the-beastsaber-mapping-awards
 
 <br />
 
-## What's Changing for 2025? <a href="#whats-changing" style="text-decoration:none;">🔗</a> {id$whats-changing}
+## What's Changing for 2026? <a href="#whats-changing" style="text-decoration:none;">🔗</a> {id$whats-changing}
 
-- **New and updated categories** - We have a new "_Best Vivify Visuals_" lighting category, and have updated the "_Best Gimmick Map_" to "_Best Wildcard Map_". We've also made some minor text adjustments to the "_Modded Map of the Year_", and added a grace period for "_Rookie Mapper of the Year_".
-  - Best Vivify Visuals: This category takes custom experiences to a whole new level with jaw dropping art. Who needs gameplay when you have visuals like this. Chroma and Noodle are allowed but the focus is Vivify.
-  - Best Wildcard Map: This category shines a light on maps that explore beyond "normal" mapping. Cult classics, bending of mechanics, and different ways of thinking can be found here. This is the catch all category. Have something that is unique and doesn’t fit a category? Nominate it here! 
-  - Modded Map of the Year: The best modded map of the year. Full stop. Combining the full power of Vivify, Noodle Extensions, Chroma, or any other gameplay or visual mods; this map using mods to truly capture and convey the music and/or alter the gameplay in mind-blowing ways.
-  - Rookie Mapper of the Year: The best up-and-coming mapper whose first map was released during the nomination period, now with the added grace period of 6 months leading up to the nomination period (June 1st 2024). Previously deleted maps count as first map releases. At most five maps can be from June 1st 2024-Dec 1st 2024.
+- "Best High-Tech Map" and "Best Low-Tech Map" have been combined into a single "Best Tech Map"
+
+- 🆕 "Best Extreme Map" category with the following description: "It's not really Beat Saber if it doesn't hurt. And what's better than a map that hurts your brain at the same time that it hurts your arms? Extreme maps feature high speed AND high complexity patterns, testing speed and tech playing skills at the highest level alike, but still abide by conventional mapping standards to keep things as smooth as possible."
 
 > **The BeastSaber Mapping Awards relies on community donations to provide awards for community winners! If you want to help provide a steady form of support for The Beasties, please consider visiting our [**Patreon**](https://www.patreon.com/BeastSaberNews) and contributing to any tier! All contributions are appreciated!** ❤️
 
 <br />
 <br />
 
-## 2025 Beasties Categories <a href="#categories" style="text-decoration:none;">🔗</a> {id$categories}
+## 2026 Beasties Categories <a href="#categories" style="text-decoration:none;">🔗</a> {id$categories}
 
 We are always seeking and implementing feedback from mappers and the community over prior years on how we can improve our categories.
 \
@@ -168,9 +190,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [[Ranked] t+pazolite - Garakuta Doll Play](https://beatsaver.com/maps/482bd)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/482bd/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-
-> ***Ranked nominations are based on the date they are ranked, not the date they are uploaded**
-
+> **\*Ranked nominations are based on the date they are ranked, not the date they are uploaded**
 
 ### Lighting Categories <a href="#lighting-categories" style="text-decoration:none;">🔗</a> {id$lighting-categories}
 
@@ -194,7 +214,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Best Vivify Visuals**: This category takes custom experiences to a whole new level with jaw dropping art. Who needs gameplay when you have visuals like this. Chroma and Noodle are allowed but the focus is Vivify.
 
-  Example Map: [{Vivify} Jaron - 743⁺Aether*✧ ˳ ⁎ ¹¹¹} ⁺ . ˳](https://beatsaver.com/maps/4968d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4968d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [{Vivify} Jaron - 743⁺Aether\*✧ ˳ ⁎ ¹¹¹} ⁺ . ˳](https://beatsaver.com/maps/4968d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4968d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 ### Map Style Categories <a href="#style-categories" style="text-decoration:none;">🔗</a> {id$style-categories}
 
@@ -202,13 +222,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
   Example Map: [Paramore - Hard Times](https://beatsaver.com/maps/49a95)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/49a95/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
-- **Best High-Tech Style Map**: With more angles than a dodecahedron, the best map in the “High-Tech” category bends the concept of parity to its will to create a challenging sight-read that retains great flow.
-
-  Example Map: [Geordie Greep - Blues](https://beatsaver.com/maps/421a8)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/421a8/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
-
-- **Best Low-Tech Style Map**: With slightly less angles than a dodecahedron, the best map in the "Low-Tech" category bends the concept of parity to that perfect sweet spot to create a pleasantly surprising gameplay experience, while still retaining great flow.
-
-  Example Map: [IZ*ONE - Panorama](https://beatsaver.com/maps/462e4)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/462e4/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+- **Best Tech Style Map**: With more angles than a dodecahedron, the best map in the "Tech" category bends the concept of parity to its will to create a challenging sight-read that retains great flow.
 
 - **Best Fitness Style Map**: Build strength to the beat. The best fitness map forces constant natural movement in all dimensions with walls and bloqs that keep the flow until your legs give out.
 
@@ -258,7 +272,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Modded Map of the Year**: The best modded map of the year. Full stop. Combining the full power of Vivify, Noodle Extensions, Chroma, or any other gameplay or visual mods; this map using mods to truly capture and convey the music and/or alter the gameplay in mind-blowing ways.
 
-  Example Map: [{Vivify} Jaron - 743⁺Aether*✧ ˳ ⁎ ¹¹¹} ⁺ . ˳](https://beatsaver.com/maps/4968d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4968d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
+  Example Map: [{Vivify} Jaron - 743⁺Aether\*✧ ˳ ⁎ ¹¹¹} ⁺ . ˳](https://beatsaver.com/maps/4968d)<br /><iframe class="iframe" loading="lazy" src="https://beatsaver.com/maps/4968d/embed" width="600" height="145" style="border: none; border-radius: 4px;"></iframe>
 
 - **Map of the Year**: The best unmodded map of the year. Full stop. It has it all – representation, emphasis, flow – everything coming together for an incredible playing experience to go with the song.
 
