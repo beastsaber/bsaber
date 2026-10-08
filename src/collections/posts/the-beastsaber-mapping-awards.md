@@ -296,11 +296,11 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Can a mapper have more than one map as a nominee in a category?**
 
-  No. In a practice that we began 2 years ago, even if a mapper has multiple maps deemed to be “nominee quality” by our screening team, they can only have ONE map represented in the five nominees selected for a category. Likewise, a map can only be a nominee for ONE category in a given section (see the list above for the four sections). So a map can’t be a nominee for both Best Dance Map AND Best Acc Map but could be a nominee for Best Acc Map and Best Ranked Map under 4 Stars, for example.
+  No. In a practice that we began 3 years ago, even if a mapper has multiple maps deemed to be “nominee quality” by our screening team, they can only have ONE map represented in the five nominees selected for a category. Likewise, a map can only be a nominee for ONE category in a given section (see the list above for the four sections). So a map can’t be a nominee for both Best Dance Map AND Best Acc Map but could be a nominee for Best Acc Map and Best Ranked Map under 4 Stars, for example.
 
-- **What is the timeline for the 2025 awards?**
+- **What is the timeline for the 2026 awards?**
 
-  The eligibility period for maps and individuals is based on the date and time shown on BeatSaver. Hover over the “Uploaded” time to see the full UTC time stamp. **Maps must have been released after December 1, 2024 at 00:00 UTC or before November 30, 2025 at 23:59 UTC.** Beyond the nomination period, we expect judging to occur in November through December with the awards show planned for February 2026.
+  The eligibility period for maps and individuals is based on the date and time shown on BeatSaver. Hover over the “Uploaded” time to see the full UTC time stamp. **Maps must have been released after December 1, 2025 at 00:00 UTC or before November 30, 2026 at 23:59 UTC.** Beyond the nomination period, we expect judging to occur in November through December with the awards show planned for February 2027.
 
 - **Can I nominate whatever I want for a category?**
 
