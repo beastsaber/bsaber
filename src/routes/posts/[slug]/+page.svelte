@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PostWithAuthorAndContributor } from '../../types'
+  import type { PostWithAuthorAndContributor } from '../../../types'
   import PostPage from '$lib/PostPage.svelte'
   import type { ConvertToAttributeKeyedObject } from '$lib/retrieveCollectionData'
 
