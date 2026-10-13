@@ -62,7 +62,10 @@ export async function load({ fetch }: LoadParameters): Promise<RootPageSSRData> 
     console.error(`Could not find a suitable map of the week.`)
   }
 
-  const rootPageSSRData: Omit<RootPageSSRData, 'currentMapOfTheWeek' | 'communityEvents'> = {
+  const rootPageSSRData: Omit<
+    RootPageSSRData,
+    'currentMapOfTheWeek' | 'communityEvents' | 'featuredPlaylistOverwriteMap'
+  > = {
     announcements: [],
     articles: [],
     others: [],
