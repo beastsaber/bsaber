@@ -160,7 +160,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 ### Supporting Map Award Categories <a href="#supporting-map-categories" style="text-decoration:none;">🔗</a> {id$supporting-map-categories}
 
-- **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made in 2025.
+- **OST/DLC Map of the Year**: Let’s take a moment to shine some light on the great work that our community-turned-official mappers have done and celebrate the best official map made for the year.
 
   Example: The Master II: Blades Of Chaos | By: altrewin (no we're not giving you a free copy of a DLC map :P)
 
@@ -264,7 +264,7 @@ _\*Any categories that do not receive at least five qualified nominees will not 
 
 - **Rookie Lighter of the Year**: The best up-and-coming lighter whose first map/lightshow was released during the nomination period. _Previously deleted maps count as first map releases._
 
-- **Rookie Mapper of the Year**: The best up-and-coming mapper whose first map was released during the nomination period, now with the added grace period of 6 months leading up to the nomination period (June 1st 2024). _Previously deleted maps count as first map releases. At most five maps can be from June 1st 2024-Dec 1st 2024._
+- **Rookie Mapper of the Year**: The best up-and-coming mapper whose first map was released during the nomination period, now with the added grace period of 6 months leading up to the nomination period. _Previously deleted maps count as first map releases. At most five maps can be from June 1st 2025-Dec 1st 2026._
 
 - **Lighter of the Year**: A lighter, vanilla or chroma, who not only excels in their art but also shares their experience, leads, and mentors as they are able.
 
