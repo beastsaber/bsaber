@@ -19,7 +19,7 @@
       title="Map Preview"
       height="100%"
       width="100%"
-      allowfullscreen="true"
+      allow="fullscreen"
     ></iframe>
   </div>
 </div>

@@ -321,7 +321,11 @@
       </div>
       <div class="social-icons">
         {#each community.socials as social, socialIndex (`${communityIndex}-${socialIndex}-${social.name}`)}
-          <SocialIcon social={social.name} link={social.url} titleOverwrite={social.title} />
+          <SocialIcon
+            social={social.name}
+            link={social.url}
+            titleOverwrite={social.titleOverwrite}
+          />
         {/each}
       </div>
     </div>
