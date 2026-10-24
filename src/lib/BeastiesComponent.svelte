@@ -82,12 +82,11 @@
           >
         </div>
         <a href="/the-beastsaber-mapping-awards" rel="external" class="text-link">Learn More</a>
-        <!--<span class="separater"> | </span>
+        <span class="separater"> | </span>
         <a
-          href="https://fancy-heath-653.notion.site/2025-The-Beasties-27bc696bffca8034ba71d20fa2789291"
+          href="https://fancy-heath-653.notion.site/2026-The-Beasties-984c696bffca82388e3e019451afd837"
           class="text-link">もっと読む</a
         >
-          -->
       </div>
     </div>
   </div>
