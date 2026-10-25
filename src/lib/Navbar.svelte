@@ -129,19 +129,19 @@
       Items: [
         {
           name: 'Avatars',
-          href: 'https://modelsaber.com/Avatars/',
+          href: 'https://beatmods.com/assets?type=avatar_avatar',
         },
         {
           name: 'Sabers',
-          href: 'https://modelsaber.com/Sabers/',
+          href: 'https://beatmods.com/assets?type=saber_whacker%2Csaber_saber',
         },
         {
           name: 'Notes',
-          href: 'https://modelsaber.com/Bloqs/',
+          href: 'https://beatmods.com/assets?type=note_bloq%2Cnote_cyoob',
         },
         {
-          name: 'Platforms',
-          href: 'https://modelsaber.com/Platforms/',
+          name: 'All Assets',
+          href: 'https://beatmods.com/assets',
         },
       ],
     },
