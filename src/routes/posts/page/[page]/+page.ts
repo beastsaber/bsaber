@@ -1,4 +1,4 @@
-import { paginateArray } from '$lib/paginateArray'
+import { paginateArray } from '#lib/paginateArray.ts'
 import type { Post } from '../../../../types'
 
 const pageSize = 10

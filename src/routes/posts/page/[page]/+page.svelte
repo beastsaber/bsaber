@@ -1,7 +1,7 @@
 <script lang="ts">
-  import MetaHead from '$lib/MetaHead.svelte'
-  import PostListCard from '$lib/PostListCard.svelte'
-  import PaginationBar from '$lib/PaginationBar.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
+  import PostListCard from '#lib/PostListCard.svelte'
+  import PaginationBar from '#lib/PaginationBar.svelte'
   import type { PostPagePaginatedSSRData } from './+page'
 
   const getPageLink = (page: number) => `/posts/page/${page}`

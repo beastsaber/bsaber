@@ -1,10 +1,10 @@
 <script lang="ts">
-    interface Props {
-      error: unknown
-      reset: () => void
-    }
+  interface Props {
+    error: unknown
+    reset: () => void
+  }
 
-      const { error, reset }: Props = $props()
+  const { error, reset }: Props = $props()
 </script>
 
 <div class="error">
@@ -17,10 +17,9 @@
   <button onclick={reset} class="retry-button">Retry</button>
 </div>
 
-
 <style lang="scss">
   @import 'src/scss/variables';
-    
+
   .error {
     background: #1c1c1c;
     color: LightGray;

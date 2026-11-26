@@ -5,7 +5,7 @@
   import OneClickButton from './OneClickDownloadButton.svelte'
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import CopyBsr from './CopyBSR.svelte'
-  import Tags from '$lib/Tags.svelte'
+  import Tags from '#lib/Tags.svelte'
   export let mapOfTheWeek: MapOfTheWeek
   export let showHeader = false
   import { marked } from 'marked'

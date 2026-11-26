@@ -1,4 +1,4 @@
-import { retrievePostDataWithAuthorAndContributors } from '$lib/retrieveCollectionData'
+import { retrievePostDataWithAuthorAndContributors } from '#lib/retrieveCollectionData.ts'
 
 type LoadParameter = {
   params: {

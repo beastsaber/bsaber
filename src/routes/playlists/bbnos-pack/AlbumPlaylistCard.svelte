@@ -1,7 +1,7 @@
 <script lang="ts">
-  import MapCards from '$lib/MapCards.svelte'
-  import OneClickDownloadButton from '$lib/OneClickDownloadButton.svelte'
-  import ZipDownloadButton from '$lib/ZipDownloadButton.svelte'
+  import MapCards from '#lib/MapCards.svelte'
+  import OneClickDownloadButton from '#lib/OneClickDownloadButton.svelte'
+  import ZipDownloadButton from '#lib/ZipDownloadButton.svelte'
 
   export let albumName: string
   export let mappers: string

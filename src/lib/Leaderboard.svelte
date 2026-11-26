@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Listing from '$lib/Listing.svelte'
+  import Listing from '#lib/Listing.svelte'
   export let img: string
   export let title: string
   export let players: Array<{

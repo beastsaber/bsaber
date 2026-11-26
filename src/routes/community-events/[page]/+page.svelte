@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { CommunityEventsPagePaginatedSSRData } from './+page.server'
-  import PaginationBar from '$lib/PaginationBar.svelte'
-  import MetaHead from '$lib/MetaHead.svelte'
-  import EventCards from '$lib/EventCards.svelte'
-  import { isCurrentEvent } from '$lib/isCurrentEvent'
+  import PaginationBar from '#lib/PaginationBar.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
+  import EventCards from '#lib/EventCards.svelte'
+  import { isCurrentEvent } from '#lib/isCurrentEvent.ts'
 
   export let data: CommunityEventsPagePaginatedSSRData
   const currentEvents = data.communityEvents.filter(isCurrentEvent).reverse()

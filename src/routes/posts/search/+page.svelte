@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { Post } from '../../../types'
-  import PostListCard from '$lib/PostListCard.svelte'
+  import PostListCard from '#lib/PostListCard.svelte'
   import { onMount } from 'svelte'
   import Fuse from 'fuse.js'
-  import MetaHead from '$lib/MetaHead.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
 
   export let data
   let posts: Post[] = []

@@ -1,7 +1,7 @@
-import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
+import { getSortedMapsOfTheWeekNetlifyData } from '#lib/getMapsOfTheWeekNetlifyData.ts'
 import type { MapOfTheWeek } from '../../../types'
-import { paginateArray } from '$lib/paginateArray'
-import { beatSaverClientFactory } from '$lib/beatsaver-client'
+import { paginateArray } from '#lib/paginateArray.ts'
+import { beatSaverClientFactory } from '#lib/beatsaver-client.ts'
 
 const pageSize = 15
 

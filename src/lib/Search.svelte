@@ -1,6 +1,6 @@
 <script lang="ts">
   import { slide } from 'svelte/transition'
-  import { filterNsfw, nsfwToggleVisibility } from '$lib/storeNsfwPreference'
+  import { filterNsfw, nsfwToggleVisibility } from '#lib/storeNsfwPreference.js'
   import { onMount, onDestroy } from 'svelte'
   import { beatSaverClientFactory } from './beatsaver-client'
   import type { Beatmap, BeatmapDifficulty, Playlist } from '../types'

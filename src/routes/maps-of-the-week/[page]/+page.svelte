@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { MapsOfTheWeekPagePaginatedSSRData } from './+page.server'
-  import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
-  import PaginationBar from '$lib/PaginationBar.svelte'
-  import MetaHead from '$lib/MetaHead.svelte'
+  import MapOfTheWeekSection from '#lib/MapOfTheWeekSection.svelte'
+  import PaginationBar from '#lib/PaginationBar.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
   import Fa from 'svelte-fa'
   import { faDownload } from '@fortawesome/free-solid-svg-icons'
   import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import type { Uploader } from '../../types.js'
-  import CuratorCard from '$lib/CuratorCard.svelte'
-  import MetaHead from '$lib/MetaHead.svelte'
-  import { beatSaverClientFactory } from '$lib/beatsaver-client.js'
+  import CuratorCard from '#lib/CuratorCard.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
+  import { beatSaverClientFactory } from '#lib/beatsaver-client.js'
 
   let curators: Uploader[] = []
 

@@ -1,4 +1,4 @@
-import type { iconMapping } from '$lib/iconMapping'
+import type { iconMapping } from '#lib/iconMapping.ts'
 
 export type Post = {
   title: string

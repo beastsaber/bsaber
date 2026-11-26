@@ -1,11 +1,11 @@
 <script lang="ts">
   import AlbumPlaylistCard from './AlbumPlaylistCard.svelte'
   import MemberProfileCardSwag from './MemberProfileCardSwag.svelte'
-  import OneClickDownloadButton from '$lib/OneClickDownloadButton.svelte'
-  import ZipDownloadButton from '$lib/ZipDownloadButton.svelte'
-  import MetaHead from '$lib/MetaHead.svelte'
-  import { audioPlayer } from '$lib/audio-player'
-  import { filterNsfw } from '$lib/storeNsfwPreference'
+  import OneClickDownloadButton from '#lib/OneClickDownloadButton.svelte'
+  import ZipDownloadButton from '#lib/ZipDownloadButton.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
+  import { audioPlayer } from '#lib/audio-player.ts'
+  import { filterNsfw } from '#lib/storeNsfwPreference.js'
 
   let nextSToClick = 1
   let pictureDir = 'original'

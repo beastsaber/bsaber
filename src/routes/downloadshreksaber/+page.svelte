@@ -1,5 +1,5 @@
 <script>
-  import MetaHead from '$lib/MetaHead.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
 </script>
 
 <MetaHead
