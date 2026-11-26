@@ -8,6 +8,7 @@
     "generate:sitemap": "svelte-sitemap --domain https://bsaber.com -i '/admin'",
     "preview": "vite preview",
     "test": "playwright test",
+    "precheck": "node scripts/generate-environment.mjs",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "check:meta-headers": "node ./check-meta-headers.js",
