@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import Leaderboard from '$lib/Leaderboard.svelte'
+  import Leaderboard from '#lib/Leaderboard.svelte'
 
   type Player = {
     name: string

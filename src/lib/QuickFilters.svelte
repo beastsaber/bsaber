@@ -1,5 +1,5 @@
 <script lang="ts">
-  import QuickFilter from '$lib/QuickFilter.svelte'
+  import QuickFilter from '#lib/QuickFilter.svelte'
 
   import { faStar } from '@fortawesome/free-solid-svg-icons/faStar'
   import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'

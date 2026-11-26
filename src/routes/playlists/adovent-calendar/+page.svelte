@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MetaHead from '$lib/MetaHead.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
   import Fa from 'svelte-fa'
   import { faDownload, faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
   import AdoventCalendar, { type Day, type Bonus, type Credit } from './adoventCalendar.svelte'

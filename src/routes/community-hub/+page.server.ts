@@ -1,4 +1,4 @@
-import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
+import { retrieveAllCollectionDataOfType } from '#lib/retrieveCollectionData.ts'
 import type { Community, CommunityLabel } from '../../types'
 
 export type CommunityHubSSRData = {

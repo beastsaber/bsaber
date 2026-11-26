@@ -1,4 +1,4 @@
-import { getSortedMapsOfTheWeekNetlifyData } from '$lib/getMapsOfTheWeekNetlifyData'
+import { getSortedMapsOfTheWeekNetlifyData } from '#lib/getMapsOfTheWeekNetlifyData.ts'
 import type {
   Post,
   MapOfTheWeek,
@@ -6,9 +6,9 @@ import type {
   ImportPostModuleData,
   FeaturedPlaylistOverwriteCollectionData,
 } from '../types'
-import { retrieveCommunityEvents } from '$lib/retrieveCommunityEvents'
-import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
-import { beatSaverClientFactory } from '$lib/beatsaver-client'
+import { retrieveCommunityEvents } from '#lib/retrieveCommunityEvents.ts'
+import { retrieveAllCollectionDataOfType } from '#lib/retrieveCollectionData.ts'
+import { beatSaverClientFactory } from '#lib/beatsaver-client.ts'
 
 export type RootPageSSRData = {
   announcements: Post[]

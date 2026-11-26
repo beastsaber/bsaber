@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { FeaturedPlaylistOverwriteCollectionData, Playlist } from '../types'
   import { onMount } from 'svelte'
-  import Uploader from '$lib/Uploader.svelte'
+  import Uploader from '#lib/Uploader.svelte'
   import OneClickDownloadButton from './OneClickDownloadButton.svelte'
   import ZipDownloadButton from './ZipDownloadButton.svelte'
   import { beatSaverClientFactory } from './beatsaver-client'

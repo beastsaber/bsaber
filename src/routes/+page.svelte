@@ -1,13 +1,13 @@
 <script lang="ts">
-  import AnnouncementHeader from '$lib/AnnouncementHeader.svelte'
+  import AnnouncementHeader from '#lib/AnnouncementHeader.svelte'
 
-  import QuickFilters from '$lib/QuickFilters.svelte'
-  import Search from '$lib/Search.svelte'
-  import PostCards from '$lib/PostCards.svelte'
-  import Header from '$lib/Header.svelte'
-  import Leaderboards from '$lib/Leaderboards.svelte'
-  import PlaylistCards from '$lib/PlaylistCards.svelte'
-  import MapCards from '$lib/MapCards.svelte'
+  import QuickFilters from '#lib/QuickFilters.svelte'
+  import Search from '#lib/Search.svelte'
+  import PostCards from '#lib/PostCards.svelte'
+  import Header from '#lib/Header.svelte'
+  import Leaderboards from '#lib/Leaderboards.svelte'
+  import PlaylistCards from '#lib/PlaylistCards.svelte'
+  import MapCards from '#lib/MapCards.svelte'
 
   import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
   import { faRectangleList } from '@fortawesome/free-solid-svg-icons/faRectangleList'
@@ -17,11 +17,11 @@
   import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 
   import type { RootPageSSRData } from './+page.server.ts'
-  import MapOfTheWeekSection from '$lib/MapOfTheWeekSection.svelte'
-  import MetaHead from '$lib/MetaHead.svelte'
-  import EventCards from '$lib/EventCards.svelte'
-  import { isCurrentEvent } from '$lib/isCurrentEvent'
-  import BeastiesComponent from '$lib/BeastiesComponent.svelte'
+  import MapOfTheWeekSection from '#lib/MapOfTheWeekSection.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
+  import EventCards from '#lib/EventCards.svelte'
+  import { isCurrentEvent } from '#lib/isCurrentEvent.ts'
+  import BeastiesComponent from '#lib/BeastiesComponent.svelte'
 
   interface Props {
     data: RootPageSSRData

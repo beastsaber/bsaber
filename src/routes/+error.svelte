@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state'
-  import MetaHead from '$lib/MetaHead.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
 
   // Having the message in a variable as it seems they get seperated on each line that starts with a html tag
   let helpfullMessages: string[] = [

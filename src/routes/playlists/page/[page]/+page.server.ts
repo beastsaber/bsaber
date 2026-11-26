@@ -1,8 +1,8 @@
-import { paginateArray } from '$lib/paginateArray'
-import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
+import { paginateArray } from '#lib/paginateArray.ts'
+import { retrieveAllCollectionDataOfType } from '#lib/retrieveCollectionData.ts'
 import type { FeaturedPlaylistOverwriteCollectionData, Playlist } from '../../../../types'
-import { getFeaturedPlaylistCount } from '$lib/getFeaturedPlaylistCount'
-import { beatSaverClientFactory } from '$lib/beatsaver-client'
+import { getFeaturedPlaylistCount } from '#lib/getFeaturedPlaylistCount.ts'
+import { beatSaverClientFactory } from '#lib/beatsaver-client.ts'
 
 const pageSize = 20
 

@@ -1,5 +1,5 @@
 import type { CommunityEvent, EventDateParams } from '../types'
-import { retrieveAllCollectionDataOfType } from '$lib/retrieveCollectionData'
+import { retrieveAllCollectionDataOfType } from '#lib/retrieveCollectionData.ts'
 
 export const retrieveCommunityEvents = async (): Promise<CommunityEvent[]> => {
   const eventCollectionData = await retrieveAllCollectionDataOfType('community-events')

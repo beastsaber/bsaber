@@ -1,6 +1,6 @@
 import type { CommunityEvent } from '../../../types'
-import { paginateArray } from '$lib/paginateArray'
-import { retrieveCommunityEvents } from '$lib/retrieveCommunityEvents'
+import { paginateArray } from '#lib/paginateArray.ts'
+import { retrieveCommunityEvents } from '#lib/retrieveCommunityEvents.ts'
 
 const pageSize = 18
 

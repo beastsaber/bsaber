@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { FeaturedPlaylistOverviewPageData } from './+page.server'
-  import PlaylistCards from '$lib/PlaylistCards.svelte'
-  import PaginationBar from '$lib/PaginationBar.svelte'
-  import MetaHead from '$lib/MetaHead.svelte'
-  import ErrorHandler from '$lib/ErrorHandler.svelte'
+  import PlaylistCards from '#lib/PlaylistCards.svelte'
+  import PaginationBar from '#lib/PaginationBar.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
+  import ErrorHandler from '#lib/ErrorHandler.svelte'
 
   export let data: FeaturedPlaylistOverviewPageData
 
@@ -27,10 +27,7 @@
   </div>
 
   {#snippet failed(error, reset)}
-    <ErrorHandler
-      error={error}
-      reset={reset}
-    />
+    <ErrorHandler {error} {reset} />
   {/snippet}
 </svelte:boundary>
 

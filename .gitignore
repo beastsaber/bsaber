@@ -12,5 +12,6 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vscode
+/src/lib/environmentVariables.ts
 # Local Netlify folder
 .netlify

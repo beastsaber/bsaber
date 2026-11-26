@@ -1,7 +1,7 @@
 <script lang="ts">
   import '../app.scss'
-  import Navbar from '$lib/Navbar.svelte'
-  import Footer from '$lib/Footer.svelte'
+  import Navbar from '#lib/Navbar.svelte'
+  import Footer from '#lib/Footer.svelte'
   interface Props {
     children?: import('svelte').Snippet
   }

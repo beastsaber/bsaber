@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { LanguageKeys } from '../../types'
   import type { CommunityHubSSRData } from './+page.server'
-  import MetaHead from '$lib/MetaHead.svelte'
+  import MetaHead from '#lib/MetaHead.svelte'
   import Fuse from 'fuse.js'
-  import SocialIcon from '$lib/SocialIcon.svelte'
-  import { iconMapping } from '$lib/iconMapping'
+  import SocialIcon from '#lib/SocialIcon.svelte'
+  import { iconMapping } from '#lib/iconMapping.ts'
 
   const filterCommunities = (
     communities: CommunityHubSSRData['communities'],

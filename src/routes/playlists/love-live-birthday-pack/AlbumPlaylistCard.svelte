@@ -1,6 +1,6 @@
 <script lang="ts">
-  import MapCards from '$lib/MapCards.svelte'
-  import SocialIcon from '$lib/SocialIcon.svelte'
+  import MapCards from '#lib/MapCards.svelte'
+  import SocialIcon from '#lib/SocialIcon.svelte'
 
   export let albumName: string
   export let groupName: string
